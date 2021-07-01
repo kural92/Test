@@ -161,7 +161,7 @@ public class M3_Subscription extends BaseClass {
 
 		// Step 12:Promo Code Check//
 
-		String Promocode = driver.findElement(By.xpath("")).getText();
+		String Promocode = driver.findElement(By.xpath("(//div[@class=\"applypromo appliedpromocpn ng-star-inserted\"])[2]")).getText();
 		System.out.println(Promocode);
 		String actualpromocode = "SUBS20";
 		Assert.assertEquals(Promocode, actualpromocode);
