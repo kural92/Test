@@ -403,7 +403,11 @@ public class Monepom extends BaseClass {
 	}
 	
 	
-	
+	@FindBy(xpath = "//div[@class='cpncode_review']")
+	private WebElement M2_CoupCode_text;
+	public WebElement getM2_CoupCode_text() {
+		return M2_CoupCode_text;
+	}
 	
 	
 }
