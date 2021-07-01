@@ -72,6 +72,7 @@ public class M2_Flow_Search extends BaseClass {
 				System.out.println("Already Logged In");
 			}
 			Thread.sleep(3000);
+			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
 			logger.log(Status.PASS, "Successfully navigated to home page" );
 			Thread.sleep(3000);
 			
@@ -149,6 +150,11 @@ public class M2_Flow_Search extends BaseClass {
 			 Thread.sleep(10000);
 			
 		//////////////////////////////
+			 Thread.sleep(3000);
+			 String Pcode = m.getM2_CoupCode_text().getText();
+			 System.out.println(Pcode);
+			 
+			 
 			
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
@@ -206,9 +212,11 @@ public class M2_Flow_Search extends BaseClass {
 				} catch (Exception e) {
 					System.out.println("Already Logged In");
 				}
-			logger.log(Status.PASS, "Successfully navigate to home page" );
-			Thread.sleep(3000);
 			
+			Thread.sleep(3000);
+			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
+			logger.log(Status.PASS, "Successfully navigated to home page" );
+			Thread.sleep(3000);
 			
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
@@ -254,6 +262,9 @@ public class M2_Flow_Search extends BaseClass {
 			
 		
 		//////////////////////////////
+			 Thread.sleep(3000);
+			 String Pcode = m.getM2_CoupCode_text().getText();
+			 System.out.println(Pcode);
 			
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
@@ -312,9 +323,10 @@ public class M2_Flow_Search extends BaseClass {
 					System.out.println("Already Logged In");
 				}
 			
-			logger.log(Status.PASS, "Successfully navigate to home page" );
-			Thread.sleep(5000);
-			
+			Thread.sleep(3000);
+			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
+			logger.log(Status.PASS, "Successfully navigated to home page" );
+			Thread.sleep(3000);
 			
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
@@ -352,6 +364,9 @@ public class M2_Flow_Search extends BaseClass {
 			
 		
 		//////////////////////////////
+			 Thread.sleep(3000);
+			 String Pcode = m.getM2_CoupCode_text().getText();
+			 System.out.println(Pcode);
 			
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
@@ -410,8 +425,10 @@ public class M2_Flow_Search extends BaseClass {
 					System.out.println("Already Logged In");
 				}
 			
-			logger.log(Status.PASS, "Successfully navigate to home page" );
-			Thread.sleep(5000);
+			Thread.sleep(3000);
+			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
+			logger.log(Status.PASS, "Successfully navigated to home page" );
+			Thread.sleep(3000);
 			
 			
 			btncli(m.getUpload_cta());
@@ -462,6 +479,9 @@ public class M2_Flow_Search extends BaseClass {
 			 Thread.sleep(10000);
 			
 		//////////////////////////////
+			 Thread.sleep(3000);
+			 String Pcode = m.getM2_CoupCode_text().getText();
+			 System.out.println(Pcode);
 			
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
