@@ -10,7 +10,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -61,111 +63,148 @@ public class M3_Subscription extends BaseClass {
 		logger = report.createTest("M3OTCandnonrxSubscription");
 		logger.log(Status.PASS, "*************M3OTCandnonrxSubscription********************");
 
-//Step1 :Launch Browser//		
-		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		//Step1 :Launch Browser//		
+				Monepom m = new Monepom();
+				driver.manage().window().maximize();
 
-//Step 2 :Login with user name and password//
-		btncli(m.getSignin());
-		Thread.sleep(5000);
+		//Step 2 :Login with user name and password//
+				btncli(m.getSignin());
+				Thread.sleep(5000);
 
-		type(m.getMobileno(), "8072281468");
-		Thread.sleep(3000);
-
-		//btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
-		btncli(m.getUsepwdbtn());
-		Thread.sleep(3000);
-		type(m.getPassword(), "test@123");
-
-		btncli(m.getSignInpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to home page");
-
-//Step 3 : Navigate to user profile//
-
-		btncli(m.getUserprofile());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to userprofile");
-
-//Step 4 : Navigate to Mysubscription page//
-
-		btncli(m.getMysubscriptionpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
-		
-//Step 5 :Click create new fill button//
-
-		btncli(m.getCreatenewfill());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully button was clicked");
-
-//Step 6:Search Product//
-
-		for (int i = 0; i < 2; i++) {
-
-			type(m.getM3productsearch(), BaseClass.getExcelData("Subs", i, 0));
-
-			// btncli(m.getSearchIcon());
-			logger.log(Status.PASS, "Successfully navigate to search result page");
-
-			String Cart_Excel = BaseClass.getExcelData("Subs", i, 1);
-
-//Step 7 : Add product to the cart//
-			try {
+				type(m.getMobileno(), "8072281468");
 				Thread.sleep(3000);
 
-				WebDriverWait wait = new WebDriverWait(driver, 30);
-				WebElement Cart_btn = wait.until(
-						ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),\"Add to Cart\")]")));
+				//btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+				btncli(m.getUsepwdbtn());
+				Thread.sleep(3000);
+				type(m.getPassword(), "test@123");
 
+				btncli(m.getSignInpage());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully navigate to home page");
+
+		//Step 3 : Navigate to user profile//
+
+				btncli(m.getUserprofile());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully navigate to userprofile");
+
+		//Step 4 : Navigate to Mysubscription page//
+
+				btncli(m.getMysubscriptionpage());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
+				
+		//Step 5 :Click create new fill button//
+
+				btncli(m.getCreatenewfill());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully button was clicked");
+
+		//Step 6:Search Product//
+
+				for (int i = 0; i < 3; i++) {
+
+					type(m.getM3productsearch(), BaseClass.getExcelData("Subs", i, 0));
+
+					// btncli(m.getSearchIcon());
+					logger.log(Status.PASS, "Successfully navigate to search result page");
+
+					String Cart_Excel = BaseClass.getExcelData("Subs", i, 1);
+
+		//Step 7 : Add product to the cart//
+					try {
+						Thread.sleep(3000);
+
+						WebDriverWait wait = new WebDriverWait(driver, 30);
+						WebElement Cart_btn = wait.until(
+								ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),\"Add to Cart\")]")));
+
+						Thread.sleep(3000);
+
+						btncli(Cart_btn);
+						
+
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
+					Thread.sleep(3000);
+					driver.navigate().back();
+
+					Thread.sleep(3000);
+				}
+
+		//Step 8 : Click view Cart//	
+
+				btncli(m.getViewcart());
+				Thread.sleep(2000);
+				logger.log(Status.PASS, "Successfully navigate to cartpage");
+			
+		//Step 9 :Increase qty//		
+				Select qtyincrease = new Select(driver.findElement(By.xpath("//div[@id='itemid-918948']//select[@name='quantity']")));
+				qtyincrease.selectByIndex(2);
+				Thread.sleep(3000);
+				
+		//Step 10 :Remove qty//
+				
+				driver.findElement(By.xpath("//div[@id='itemid-913279']//a[@title='Remove item'][normalize-space()='Remove']")).click();
 				Thread.sleep(3000);
 
-				btncli(Cart_btn);
+		//Step 11: Decrease qty//
+				
+				Select qtydecrease = new Select(driver.findElement(By.xpath("//div[@id='itemid-918948']//select[@name='quantity']")));
+				qtydecrease.selectByIndex(1);
+				Thread.sleep(3000);
+				
+				
+		//Step 12:Promo Code Check//
+				
+				String Promocode = driver.findElement(By.xpath("")).getText();
+				System.out.println(Promocode);
+				String actualpromocode ="SUBS20";
+				Assert.assertEquals(Promocode,actualpromocode);
+				 Thread.sleep(3000);
+			
+				
+		//Step 13 : Click Proceed Button//
+
+				btncli(m.getProceed());
+				driver.findElement(By.xpath("//input[@value='45']")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//input[@value='30']")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//input[@value='60']")).click();
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully Proceed button  was clicked");
+				
+				
+				
+		//Step 14 : Click Next Button//
+				
+				btncli(m.getNextbutton());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully Next button was clicked");
+
 				
 
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-
-			Thread.sleep(3000);
-			driver.navigate().back();
-
-			Thread.sleep(3000);
-		}
-
-//Step 8 : Click view Cart//	
-
-		btncli(m.getViewcart());
-		Thread.sleep(2000);
-		logger.log(Status.PASS, "Successfully navigate to cartpage");
-
-//Step 9 : Click Proceed Button//
-
-		btncli(m.getProceed());
-		driver.findElement(By.xpath("//input[@value='45']")).click();
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully Proceed button  was clicked");
-		
-//Step 10 : Click Next Button//
-		
-		btncli(m.getNextbutton());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully Next button was clicked");
-
-//Step 10 : Click Subscribe//
-		
-		btncli(m.getSubscribe());
-		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
-		Thread.sleep(3000);
-		
-// Step 11 : Ensure order is placed successfully//
-		
-		String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]")).getText();
-		
-		String	orderid = driver.findElement(By.xpath("//span[contains(@class,'order-number')]")).getText();
-		
-		System.out.println(confirmation+"and the id is "+orderid);
-		
+		//Step 15: Click Subscribe//
+				
+				btncli(m.getSubscribe());
+				logger.log(Status.PASS, "Successfully Subscribe button was clicked");
+				Thread.sleep(3000);
+				
+		// Step 16 : Ensure order is placed successfully//
+				
+				String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]")).getText();
+				
+				String	orderid = driver.findElement(By.xpath("//span[contains(@class,'order-number')]")).getText();
+				
+				String orderconfirmation = "Order Placed Successfully!";
+				
+				Assert.assertEquals(orderconfirmation,confirmation);
+				
+				System.out.println(confirmation+"and the id is "+orderid);
 	}
 	//**************M3 -Doctor consultation *******************//
 		@Test
@@ -389,21 +428,26 @@ public class M3_Subscription extends BaseClass {
 			btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
 			Thread.sleep(3000);
 
-	//Step 14 : Click Subscribe//
+	//Step 18 : Click Subscribe//
 
 			btncli(m.getSubscribe());
 			logger.log(Status.PASS, "Successfully Subscribe button was clicked");
 			Thread.sleep(3000);
 
-	// Step 15 : Ensure order is placed successfully//
+	// Step 19 : Ensure order is placed successfully//
 
 			String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]"))
 					.getText();
 			Thread.sleep(3000);
 			String orderid = driver.findElement(By.xpath("//div[ contains(@class,'customer-orderid')]")).getText();
 			Thread.sleep(3000);
-			System.out.println(confirmation + "and the id is " + orderid);
-			Thread.sleep(3000);
+			
+			String orderconfirmation = "Order Placed Successfully!";
+			
+			Assert.assertEquals(orderconfirmation,confirmation);
+			
+			System.out.println(confirmation+"and the id is "+orderid);
+			
 		}
 //**************M3 Non Rx & OTC flow*******************//
 		@Test
@@ -529,9 +573,15 @@ public class M3_Subscription extends BaseClass {
 		
 	//Step 14 : Ensure order is placed successfully//
 		
-		String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]")).getText();
+		String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]"))
+				.getText();
+		Thread.sleep(3000);
+		String orderid = driver.findElement(By.xpath("//div[ contains(@class,'customer-orderid')]")).getText();
+		Thread.sleep(3000);
 		
-		String	orderid = driver.findElement(By.xpath("//div[ contains(@class,'customer-orderid')]")).getText();
+		String orderconfirmation = "Order Placed Successfully!";
+		
+		Assert.assertEquals(orderconfirmation,confirmation);
 		
 		System.out.println(confirmation+"and the id is "+orderid);
 		
@@ -662,9 +712,15 @@ public class M3_Subscription extends BaseClass {
 			
 	// Step 13 : Ensure order is placed successfully//
 			
-			String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]")).getText();
+			String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]"))
+					.getText();
+			Thread.sleep(3000);
+			String orderid = driver.findElement(By.xpath("//div[ contains(@class,'customer-orderid')]")).getText();
+			Thread.sleep(3000);
 			
-			String	orderid = driver.findElement(By.xpath("//span[contains(@class,'order-number')]")).getText();
+			String orderconfirmation = "Order Placed Successfully!";
+			
+			Assert.assertEquals(orderconfirmation,confirmation);
 			
 			System.out.println(confirmation+"and the id is "+orderid);
 			
