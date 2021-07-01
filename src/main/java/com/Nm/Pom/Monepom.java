@@ -1,5 +1,7 @@
 package com.Nm.Pom;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -236,5 +238,172 @@ public class Monepom extends BaseClass {
 	public WebElement getDeleteaddress() {
 		return Deleteaddress;
 	}
+	
+	
+	
+	
+	
+	
+	
+	// m2 Flow
+	@FindBy(xpath = "//a[contains(text(),'Upload')]")
+	private WebElement Upload_cta;
+	public WebElement getUpload_cta() {
+		return Upload_cta;
+	}
+	
+	
+	@FindBy(xpath = "//*[@id=\"app\"]/main/app-m2/div[1]/div/div[1]/div[1]/div[2]/div/form/div[1]/ul/li[1]/label/input")
+	private WebElement Upload_Rx;
+	public WebElement getUpload_Rx() {
+		return Upload_Rx;
+	}
+	
+	
+	@FindBy(xpath = "//*[@id=\"app\"]/main/app-m2/div[1]/div/div[1]/div[1]/div[2]/div/form/div[1]/ul/li[2]/span[1]")
+	private WebElement Past_Rx;
+	public WebElement getPast_Rx() {
+		return Past_Rx;
+	}
+	
+	
+	@FindBy(xpath = "(//input[@name='m2optlist'])[1]")
+	private WebElement Search_Medicines;
+	public WebElement getSearch_Medicines() {
+		return Search_Medicines;
+	}
+	
+	@FindBy(xpath = "(//input[@name='m2optlist'])[2]")
+	private WebElement get_call;
+	public WebElement getGet_call() {
+		return get_call;
+	}
+	
+	
+	@FindBy(xpath = "//a[contains(text(),'Valid Prescription?')]")
+	private WebElement Valid_Prescription_Link;
+	public WebElement getValid_Prescription_Link() {
+		return Valid_Prescription_Link;
+	}
+
+	@FindBy(xpath = "(//button[@class='close'])[3]")
+	private WebElement Valid_Prescription_Link_Close;
+	public WebElement getValid_Prescription_Link_Close() {
+		return Valid_Prescription_Link_Close;
+	}
+
+
+	@FindBy(xpath = "//a[@title='Remove']")
+	private WebElement Remove_Prescription;
+	public WebElement getRemove_Prescription() {
+		return Remove_Prescription;
+	}
+	
+	
+	@FindBy(xpath = "//button[contains(text(),'Continue')]")
+	private WebElement Continue_cta;
+	public WebElement getContinue_cta() {
+		return Continue_cta;
+	}
+	
+	@FindBy(xpath = "//button[contains(text(),'Confirm Order')]")
+	private WebElement Confirm_Order_cta;
+	public WebElement getConfirm_Order_cta() {
+		return Confirm_Order_cta;
+	}
+	
+	@FindBy(xpath = "//h2[contains(text(),'Order Placed Successfully!')]")
+	private WebElement Order_Placed_text;
+	public WebElement getOrder_Placed_text() {
+		return Order_Placed_text;
+	}
+	
+	
+	@FindBy(xpath = "(//button[contains(text(),'Track Order')])[2]")
+	private WebElement Track_Order;
+	public WebElement getTrack_Order() {
+		return Track_Order;
+	}
+	
+	@FindBy(xpath = "//div[@class='ordcusinfomain']")
+	private WebElement Order_Info;
+	public WebElement getOrder_Info() {
+		return Order_Info;
+	}
+	
+	
+	@FindBy(xpath = "//button[contains(text(),' View Details ')]")
+	private WebElement View_Details;
+	public WebElement getView_Details() {
+		return View_Details;
+	}
+	
+	@FindBy(xpath = "//button[contains(text(),'Cancel Order')]")
+	private WebElement Cancel_Order;
+	public WebElement getCancel_Order() {
+		return Cancel_Order;
+	}
+	
+	
+	@FindBy(xpath = "(//input[@name='reasonselect'])[4]")
+	private WebElement Cancel_reason;
+	public WebElement getCancel_reason() {
+		return Cancel_reason;
+	}
+	
+	
+	@FindBy(xpath = "//button[contains(text(),'SUBMIT & CANCEL')]")
+	private WebElement Submit_Cancel;
+	public WebElement getSubmit_Cancel() {
+		return Submit_Cancel;
+	}
+	
+	@FindBy(xpath="//div[@class='info']")
+	private WebElement product_List;
+	public WebElement getProduct_List() {
+		return product_List;
+	}
+	
+	
+	@FindBy(xpath="//div[@class='info']")
+	private List<WebElement> productList;
+	public List<WebElement> getProductList() {
+		return productList;
+	}
+	
+	@FindBy(xpath="//span[@class='best-price']//following::span[@class='final-price']")
+	private List<WebElement> productList_Price;
+	public List<WebElement> getProductList_Price() {
+		return productList_Price;
+	}
+	
+	@FindBy(xpath="//span[@class='drug-manu']")
+	private List<WebElement> manufacture_detailsList;
+	public List<WebElement> getManufacture_detailsList() {
+		return manufacture_detailsList;
+	}
+	
+	
+	@FindBy(xpath="//span[@class='gen_drug ellipsis']")
+	private List<WebElement> drug_categoryList;
+	public List<WebElement> getDrug_categoryList() {
+		return drug_categoryList;
+	}
+	
+	@FindBy(xpath="//span[@class='gen_drug ellipsis']")
+	private List<WebElement> rx_requiredList;
+	public List<WebElement> getRx_requiredList() {
+		return rx_requiredList;
+	}
+	
+	@FindBy(id="product_page_cart_count")
+	private WebElement cart_details;
+	public WebElement getCart_details() {
+		return cart_details;
+	}
+	
+	
+	
+	
 	
 }
