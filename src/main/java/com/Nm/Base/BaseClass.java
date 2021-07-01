@@ -65,6 +65,10 @@ public class BaseClass {
 	public void type(WebElement element ,String name) {
 		element.sendKeys(name);
 	}
+	public void clrtxt(WebElement element) {
+		element.clear();
+			
+	}
 	
 	public void btncli(WebElement element) {
 	element.click();	
