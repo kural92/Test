@@ -202,6 +202,21 @@ public class M3_Subscription extends BaseClass {
 		Assert.assertEquals(orderconfirmation, confirmation);
 
 		System.out.println(confirmation + "and the id is " + orderid);
+		//Tracking order//
+		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
+		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
 
 	}
 
@@ -447,6 +462,22 @@ public class M3_Subscription extends BaseClass {
 		Assert.assertEquals(orderconfirmation, confirmation);
 
 		System.out.println(confirmation + "and the id is " + orderid);
+		
+		//Tracking order//
+		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
+		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
 
 	}
 
@@ -584,6 +615,22 @@ public class M3_Subscription extends BaseClass {
 		Assert.assertEquals(orderconfirmation, confirmation);
 
 		System.out.println(confirmation + "and the id is " + orderid);
+		
+		//Tracking order//
+		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
+		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
 
 	}
 
@@ -724,6 +771,22 @@ public class M3_Subscription extends BaseClass {
 		Assert.assertEquals(orderconfirmation, confirmation);
 
 		System.out.println(confirmation + "and the id is " + orderid);
+		
+		//Tracking order//
+		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
+		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
 
 	}
 
