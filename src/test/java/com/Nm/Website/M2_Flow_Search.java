@@ -1,5 +1,6 @@
 package com.Nm.Website;
 
+import java.awt.Robot;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
@@ -21,6 +22,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.thoughtworks.selenium.webdriven.commands.KeyEvent;
 
 public class M2_Flow_Search extends BaseClass {
 
@@ -71,11 +73,15 @@ public class M2_Flow_Search extends BaseClass {
 			} catch (Exception e) {
 				System.out.println("Already Logged In");
 			}
+			
+			try {
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
 			logger.log(Status.PASS, "Successfully navigated to home page" );
 			Thread.sleep(3000);
-			
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
@@ -139,7 +145,7 @@ public class M2_Flow_Search extends BaseClass {
 			 Thread.sleep(3000);
 			 
 			 type(driver.findElement(By.xpath("(//input[@type='text'])[3]")), "telma");
-			 Thread.sleep(3000);
+			 Thread.sleep(6000);
 			 
 			 btncli(driver.findElement(By.xpath("//span[contains(text(),'Add to Cart')]")));
 			 Thread.sleep(3000);
@@ -149,13 +155,14 @@ public class M2_Flow_Search extends BaseClass {
 			 btncli(driver.findElement(By.xpath("//button[contains(text(),'Proceed')]")));
 			 Thread.sleep(10000);
 			
-		//////////////////////////////
+		////////////////////////////// Promo code Check
 			 Thread.sleep(3000);
 			 String Pcode = m.getM2_CoupCode_text().getText();
-			 System.out.println(Pcode);
+			 System.out.println(Pcode); 
 			 
 			 
-			
+			 
+			 
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
 			
@@ -165,6 +172,8 @@ public class M2_Flow_Search extends BaseClass {
 			System.err.println(Order_message);
 			Thread.sleep(3000);
 			*/
+				
+				
 			btncli(m.getTrack_Order());
 			Thread.sleep(10000);
 			
@@ -181,12 +190,8 @@ public class M2_Flow_Search extends BaseClass {
 			Thread.sleep(3000);
 			 logger.log(Status.PASS, "Successfully Order was Cancelled" );
 			
-			
-			
-			
-			
-			
-
+				
+				
 		}
 		
 		
@@ -212,12 +217,14 @@ public class M2_Flow_Search extends BaseClass {
 				} catch (Exception e) {
 					System.out.println("Already Logged In");
 				}
-			
+			try {
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
 			logger.log(Status.PASS, "Successfully navigated to home page" );
 			Thread.sleep(3000);
-			
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to Add Prescription page" );
@@ -265,7 +272,81 @@ public class M2_Flow_Search extends BaseClass {
 			 Thread.sleep(3000);
 			 String Pcode = m.getM2_CoupCode_text().getText();
 			 System.out.println(Pcode);
-			
+			 logger.log(Status.PASS, Pcode );
+			 
+			 
+			 ////   Change Address
+			 // Add NEw Address
+			 Thread.sleep(3000);
+			 btncli(m.getM2_ChangeAdress_btn());
+			 logger.log(Status.PASS, "Successfully Clicked on Change Address" );
+				
+				Thread.sleep(5000);
+				//(//a[contains(text(),'+ ADD NEW ADDRESS')])[1]
+				btncli(m.getM2_AddNewAddresss_btn());
+				Thread.sleep(5000);
+				type(m.getM2_Address_Pin(), "311003");
+				Thread.sleep(5000);
+				
+				m.getM2_Address_FirstName().clear(); 
+				Thread.sleep(1000);
+				m.getM2_Address_FirstName().sendKeys("Testing");
+				Thread.sleep(3000);
+				m.getM2_Address_Lastname().clear(); 
+				Thread.sleep(1000);
+				m.getM2_Address_Lastname().sendKeys("Testing"); 
+				Thread.sleep(3000);
+				m.getM2_Address_Street().sendKeys("Testing") ; 
+				Thread.sleep(3000);
+				m.getM2_Address_landMark().sendKeys("Testing"); 
+				Thread.sleep(5000);
+			btncli(m.getM2_SaveAddress_btn()); 
+			logger.log(Status.PASS, "Successfully Saved the New Address" );
+				
+			 
+			 
+				// Modify Address 
+				try {
+				 Thread.sleep(3000);
+				 btncli(m.getM2_ChangeAdress_btn());
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				 Thread.sleep(3000);
+				 btncli(m.getM2_Addres_Modify());
+					Thread.sleep(5000);
+					m.getM2_Address_FirstName().clear(); 
+					Thread.sleep(1000);
+					m.getM2_Address_FirstName().sendKeys("TestBook"); 
+					
+					Thread.sleep(5000);
+					m.getM2_Address_Lastname().clear(); 
+					
+					Thread.sleep(1000);
+					m.getM2_Address_Lastname().sendKeys("Testing"); 
+					Thread.sleep(3000);
+					m.getM2_Address_Street().clear();
+					Thread.sleep(000);
+					m.getM2_Address_Street().sendKeys("Test Street") ; 
+					
+					Thread.sleep(3000);
+					m.getM2_Address_landMark().clear();
+					Thread.sleep(1000);
+					m.getM2_Address_landMark().sendKeys("Test Land");
+					Thread.sleep(5000);
+			    	btncli(m.getM2_SaveAddress_btn()); //driver.findElement(By.xpath("//button[contains(text(),'Save Address')]")).click();
+				 
+			    	logger.log(Status.PASS, "Successfully Modified the Address" );
+					
+					// Delete Address
+					 Thread.sleep(3000);
+					 btncli(m.getM2_Address_Delete());//driver.findElement(By.xpath("//button[contains(text(),'Delete')]")));
+					 logger.log(Status.PASS, "Successfully Deleted the Address" );
+			 
+					 Thread.sleep(3000);
+						btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
+			 
+						Thread.sleep(3000);
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
 			
@@ -323,11 +404,15 @@ public class M2_Flow_Search extends BaseClass {
 					System.out.println("Already Logged In");
 				}
 			
+			try {
+			
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
 			logger.log(Status.PASS, "Successfully navigated to home page" );
 			Thread.sleep(3000);
-			
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to Add Prescription page" );
@@ -425,11 +510,14 @@ public class M2_Flow_Search extends BaseClass {
 					System.out.println("Already Logged In");
 				}
 			
+			try {
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
 			logger.log(Status.PASS, "Successfully navigated to home page" );
 			Thread.sleep(3000);
-			
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);

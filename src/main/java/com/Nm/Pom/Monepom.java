@@ -409,5 +409,67 @@ public class Monepom extends BaseClass {
 		return M2_CoupCode_text;
 	}
 	
+	@FindBy(xpath = "(//a[contains(text(),'Change')])[1]")
+	private WebElement M2_ChangeAdress_btn;
+	public WebElement getM2_ChangeAdress_btn() {
+		return M2_ChangeAdress_btn;
+	}
+	
+	
+	@FindBy(xpath  ="(//a[contains(text(),'+ ADD NEW ADDRESS')])[1]")
+	private WebElement M2_AddNewAddresss_btn;
+	public WebElement getM2_AddNewAddresss_btn() {
+		return M2_AddNewAddresss_btn;
+	}
+	
+	
+	@FindBy(id="pin")
+	private WebElement M2_Address_Pin;
+	public WebElement getM2_Address_Pin() {
+		return M2_Address_Pin;
+	}
+	
+	@FindBy(id="firstname")
+	private WebElement M2_Address_FirstName;
+	public WebElement getM2_Address_FirstName() {
+		return M2_Address_FirstName;
+	}
+	
+	@FindBy(id="lastname")
+	private WebElement M2_Address_Lastname;
+	public WebElement getM2_Address_Lastname() {
+		return M2_Address_Lastname;
+	}
+	
+	@FindBy(id="street")
+	private WebElement M2_Address_Street;
+	public WebElement getM2_Address_Street() {
+		return M2_Address_Street;
+	}
+	
+	@FindBy(id="landmark")
+	private WebElement M2_Address_landMark;
+	public WebElement getM2_Address_landMark() {
+		return M2_Address_landMark;
+	}
+	
+	@FindBy(xpath="//button[contains(text(),'Save Address')]")
+	private WebElement M2_SaveAddress_btn;
+	public WebElement getM2_SaveAddress_btn() {
+		return M2_SaveAddress_btn;
+	}
+	
+	@FindBy(xpath="//button[contains(text(),'Modify')]")
+	private WebElement M2_Addres_Modify;
+	public WebElement getM2_Addres_Modify() {
+		return M2_Addres_Modify;
+	}
+	
+	@FindBy(xpath="//button[contains(text(),'Delete')]")
+	private WebElement M2_Address_Delete;
+	public WebElement getM2_Address_Delete() {
+		return M2_Address_Delete;
+	}
+	
 	
 }
