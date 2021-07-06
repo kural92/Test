@@ -190,7 +190,7 @@ public class Monepom extends BaseClass {
 		return changeaddbtn;
 	}
 	
-		@FindBy(xpath ="//input[contains(@id,'customeraddress_9458992')]")
+		@FindBy(xpath ="//input[@class =\"radio rdbtn\"])[2]")
 		private WebElement Selectaddress;
 		
 		public WebElement getSelectaddress() {
