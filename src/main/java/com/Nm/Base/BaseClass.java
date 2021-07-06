@@ -53,7 +53,7 @@ public class BaseClass {
 	public static WebDriver driver=null;
 	@BeforeClass
 	public WebDriver launchbrowser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//input//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Driver//chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.get("https://www.netmeds.com");
 		return driver;
@@ -164,7 +164,7 @@ wb.close();
 
 
 public static String getExcelData(String sheetName, int rowNum, int colNum) throws Throwable{
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Testdata//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
