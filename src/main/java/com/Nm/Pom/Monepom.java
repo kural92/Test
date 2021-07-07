@@ -471,5 +471,97 @@ public class Monepom extends BaseClass {
 		return M2_Address_Delete;
 	}
 	
-	
+	@FindBy(xpath="//a[@class='explore-plans']")
+	private WebElement Home_exploreplans;
+	public WebElement getHome_exploreplans() {
+		return Home_exploreplans;
+	}
+	@FindBy(xpath="//div[@class='left-block']/h2[1]")
+	private WebElement Home_getmostfrom;
+	public WebElement getHome_getmostfrom() {
+		return Home_getmostfrom;
+	}
+	@FindBy(xpath="//span[text()='Netmeds First']")
+	private WebElement gethome_netmedsfirst;
+	public WebElement getGethome_netmedsfirst() {
+		return gethome_netmedsfirst;
+	}
+	@FindBy(xpath="//small[text()='Get special discounts and offers on Netmeds services.']")
+	private WebElement gethome_Getspecialdiscount;
+	public WebElement getGethome_Getspecialdiscount() {
+		return gethome_Getspecialdiscount;
+	}
+	@FindBy(xpath="//h2[text()='Save more with Netmeds First membership']")
+	private WebElement home_savemore;
+	@FindBy(xpath="//li[text()='Get 2.5% NMS Cash on all orders.']")
+	private WebElement  home_getnms_cash;
+	@FindBy(xpath="//div[text()='Starting at Rs.299']")
+	private WebElement home_stating_price;
+	@FindBy(xpath="//h5[text()='2.5% NMS Cash']")
+	private WebElement home_nmscash_section;
+	@FindBy(xpath="//h5[text()='Free Delivery']")
+	private WebElement home_FreeDelivery;
+	@FindBy(xpath="//h5[text()='Priority Processing']")
+	private WebElement home_PriorityProcessing;
+	@FindBy(xpath="//h5[text()='Basic Health Checkup']")
+	private WebElement home_BasicHealthCheckup;
+	@FindBy(xpath="//p[text()='only with 12 month plan']")
+	private WebElement home_only_with_12_month_plan;
+	@FindBy(xpath="//h5[text()='Additional 5% off on Pathology Lab Tests']")
+	private WebElement home_Additional_5_off_on_Pathology_Lab_Tests;
+	@FindBy(xpath="//h5[text()='Free Unlimited Consultation']")
+	private WebElement home_Free_Unlimited_Consultation;
+	public WebElement getHome_FreeDelivery() {
+		return home_FreeDelivery;
+	}
+
+
+	public WebElement getHome_PriorityProcessing() {
+		return home_PriorityProcessing;
+	}
+
+
+	public WebElement getHome_BasicHealthCheckup() {
+		return home_BasicHealthCheckup;
+	}
+
+
+	public WebElement getHome_only_with_12_month_plan() {
+		return home_only_with_12_month_plan;
+	}
+
+
+	public WebElement getHome_Additional_5_off_on_Pathology_Lab_Tests() {
+		return home_Additional_5_off_on_Pathology_Lab_Tests;
+	}
+
+
+	public WebElement getHome_Free_Unlimited_Consultation() {
+		return home_Free_Unlimited_Consultation;
+	}
+	@FindBy(xpath="//p[text()='(Max 100) on all prepaid orders']")
+	private WebElement home_allprepaid_orders;
+	public WebElement getHome_savemore() {
+		return home_savemore;
+	}
+
+
+	public WebElement getHome_getnms_cash() {
+		return home_getnms_cash;
+	}
+
+
+	public WebElement getHome_stating_price() {
+		return home_stating_price;
+	}
+
+
+	public WebElement getHome_nmscash_section() {
+		return home_nmscash_section;
+	}
+
+
+	public WebElement getHome_allprepaid_orders() {
+		return home_allprepaid_orders;
+	}
 }
