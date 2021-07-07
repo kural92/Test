@@ -345,13 +345,29 @@ public class Monepom extends BaseClass {
 	}
 	
 	
-	@FindBy(xpath = "(//input[@name='reasonselect'])[4]")
+	@FindBy(xpath = "(//input[@name='reasonselect'])[1]")
 	private WebElement Cancel_reason;
 	public WebElement getCancel_reason() {
 		return Cancel_reason;
 	}
 	
+	@FindBy(xpath = "(//input[@name='reasonselect'])[2]")
+	private WebElement Cancel_reason1;
+	public WebElement getCancel_reason1() {
+		return Cancel_reason1;
+	}
 	
+	@FindBy(xpath = "(//input[@name='reasonselect'])[3]")
+	private WebElement Cancel_reason2;
+	public WebElement getCancel_reason2() {
+		return Cancel_reason2;
+	}
+	
+	@FindBy(xpath = "(//input[@name='reasonselect'])[4]")
+	private WebElement Cancel_reason3;
+	public WebElement getCancel_reason3() {
+		return Cancel_reason3;
+	}
 	@FindBy(xpath = "//button[contains(text(),'SUBMIT & CANCEL')]")
 	private WebElement Submit_Cancel;
 	public WebElement getSubmit_Cancel() {

@@ -53,7 +53,7 @@ public class BaseClass {
 	public static WebDriver driver=null;
 	@BeforeClass
 	public WebDriver launchbrowser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//input//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Driver//chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.get("https://www.netmeds.com");
 		return driver;
