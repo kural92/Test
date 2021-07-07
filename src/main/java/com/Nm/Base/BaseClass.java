@@ -30,6 +30,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -286,7 +287,12 @@ public static void writeexcel(String Result,int RowNum ,int ColNum) throws Throw
 
 }
 
-
+public static void scrolldown(String Size) throws InterruptedException  {
+	Thread.sleep(1500);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	//js.executeScript("arguments[0].scrollIntoView();", Element);
+	js.executeScript("window.scrollBy(0,"+Size+")");
+}
 //////  Mail Code
 
 public static void mail_report() {

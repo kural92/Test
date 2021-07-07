@@ -119,13 +119,13 @@ public class Monepom extends BaseClass {
 	public WebElement getPass() {
 		return pass;
 	}
-	public WebElement getUserprofile() {
-		return userprofile;
-		
-	}
+	//*********************************************************M3 Flow starts********************************************************************************
 	
 	@FindBy(id = "logged_user")
 	private WebElement userprofile;
+	public WebElement getUserprofile() {
+		return userprofile;
+	}
 	
 	@FindBy(xpath ="//a[normalize-space()='My Subscriptions']")
 	private WebElement mysubscriptionpage;
@@ -205,14 +205,12 @@ public class Monepom extends BaseClass {
 		}
 	@FindBy(xpath = "//input[@id='pin']\"")
 	private WebElement changepincode;
-	
 	public WebElement getChangepincode() {
 		return changepincode;
 	}
 	
 	@FindBy(xpath = "//input[@id='pin']\"")
 	private WebElement pinclear;
-	
 	public WebElement getPinclear() {
 		return pinclear;
 	}
@@ -225,19 +223,109 @@ public class Monepom extends BaseClass {
 	}
 	
 	@FindBy(xpath ="//button[contains(.,'Save Address')]")
-	
 	private WebElement saveaddress;
-	
 	public WebElement getSaveaddress() {
 		return saveaddress;
 	}
 	
 	@FindBy(xpath =("//button[.='Delete']"))
 	private WebElement Deleteaddress;
-	
 	public WebElement getDeleteaddress() {
 		return Deleteaddress;
 	}
+	
+	@FindBy(xpath ="(//button[contains(.,'My Subscription')])[2]")
+	private WebElement mysubscription;
+	public WebElement getMysubscription() {
+		return mysubscription;
+	}
+	
+	@FindBy(xpath = ("//a[@class='orders-link']"))
+	private WebElement medicineorders;
+	public WebElement getMedicineorders() {
+		return medicineorders;
+	}
+	
+	@FindBy(xpath = ("//button[@class=\"btn btn-help ng-star-inserted\"]"))
+	private WebElement cancelorder;
+	public WebElement getCancelorder() {
+		return cancelorder;
+	}
+	
+	@FindBy(xpath = ("//button[contains(text(),\"YES\")]"))
+	private WebElement cancelyes;
+	public WebElement getCancelyes() {
+		return cancelyes;
+	}
+	
+	
+	@FindBy(xpath = ("//button[contains(text(),\"SUBMIT & CANCEL\")]"))
+	private WebElement cancelsubmit;
+	public WebElement getCancelsubmit() {
+		return cancelsubmit;
+	}
+	
+	@FindBy(xpath = "(//div[@class=\"pro-qty qty-upt-evt ng-star-inserted\"]//select[@name='quantity'])[1]")
+	private WebElement Qty_Incr_Decr;
+	public WebElement getQty_Incr_Decr() {
+		return Qty_Incr_Decr;
+	}
+	
+	@FindBy(xpath = "(//a[@class = \"action action-delete removeitem\"])[2]")
+	private WebElement removeitem;
+	public WebElement getRemoveitem() {
+		return removeitem;
+	}
+	
+	@FindBy(xpath = "(//div[@class=\"applypromo appliedpromocpn ng-star-inserted\"])[2]")
+	private WebElement Subs20_promo;
+	public WebElement getSubs20_promo() {
+		return Subs20_promo;
+	}
+	
+	@FindBy(xpath = "//input[@value='45']")
+	private WebElement Selectduration45;
+	public WebElement getSelectduration45() {
+		return Selectduration45;
+	}
+
+	@FindBy(xpath = "//input[@value='30']")
+	private WebElement Selectduration30;
+	public WebElement getSelectduration30() {
+		return Selectduration30;
+	}
+
+	@FindBy(xpath = "//input[@value='60']")
+	private WebElement Selectduration60;
+	public WebElement getSelectduration60() {
+		return Selectduration60;
+	}
+	
+	@FindBy(xpath = "//h2[contains( text(),'Order Placed Successfully!')]")
+	private WebElement orderplaced;
+	public WebElement getOrderplaced() {
+		return orderplaced;
+	}
+	
+	@FindBy(xpath = "//span[contains(@class,'order-number')]")
+	private WebElement orderid;
+	public WebElement getOrderid() {
+		return orderid;
+	}
+	@FindBy(xpath = "//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]")
+	private WebElement backto_Addrspage;
+	public WebElement getBackto_Addrspage() {
+		return backto_Addrspage;
+	}
+	
+	@FindBy(xpath = "//img[@alt='Netmeds.com, India ki Online Pharmacy']")
+	private WebElement netmedshome;
+	public WebElement getNetmedshome() {
+		return netmedshome;
+	}
+	
+	
+	//*****************************************************M3 Flow Ends**********************************************************************************
 	
 	
 	
@@ -487,5 +575,97 @@ public class Monepom extends BaseClass {
 		return M2_Address_Delete;
 	}
 	
-	
+	@FindBy(xpath="//a[@class='explore-plans']")
+	private WebElement Home_exploreplans;
+	public WebElement getHome_exploreplans() {
+		return Home_exploreplans;
+	}
+	@FindBy(xpath="//div[@class='left-block']/h2[1]")
+	private WebElement Home_getmostfrom;
+	public WebElement getHome_getmostfrom() {
+		return Home_getmostfrom;
+	}
+	@FindBy(xpath="//span[text()='Netmeds First']")
+	private WebElement gethome_netmedsfirst;
+	public WebElement getGethome_netmedsfirst() {
+		return gethome_netmedsfirst;
+	}
+	@FindBy(xpath="//small[text()='Get special discounts and offers on Netmeds services.']")
+	private WebElement gethome_Getspecialdiscount;
+	public WebElement getGethome_Getspecialdiscount() {
+		return gethome_Getspecialdiscount;
+	}
+	@FindBy(xpath="//h2[text()='Save more with Netmeds First membership']")
+	private WebElement home_savemore;
+	@FindBy(xpath="//li[text()='Get 2.5% NMS Cash on all orders.']")
+	private WebElement  home_getnms_cash;
+	@FindBy(xpath="//div[text()='Starting at Rs.299']")
+	private WebElement home_stating_price;
+	@FindBy(xpath="//h5[text()='2.5% NMS Cash']")
+	private WebElement home_nmscash_section;
+	@FindBy(xpath="//h5[text()='Free Delivery']")
+	private WebElement home_FreeDelivery;
+	@FindBy(xpath="//h5[text()='Priority Processing']")
+	private WebElement home_PriorityProcessing;
+	@FindBy(xpath="//h5[text()='Basic Health Checkup']")
+	private WebElement home_BasicHealthCheckup;
+	@FindBy(xpath="//p[text()='only with 12 month plan']")
+	private WebElement home_only_with_12_month_plan;
+	@FindBy(xpath="//h5[text()='Additional 5% off on Pathology Lab Tests']")
+	private WebElement home_Additional_5_off_on_Pathology_Lab_Tests;
+	@FindBy(xpath="//h5[text()='Free Unlimited Consultation']")
+	private WebElement home_Free_Unlimited_Consultation;
+	public WebElement getHome_FreeDelivery() {
+		return home_FreeDelivery;
+	}
+
+
+	public WebElement getHome_PriorityProcessing() {
+		return home_PriorityProcessing;
+	}
+
+
+	public WebElement getHome_BasicHealthCheckup() {
+		return home_BasicHealthCheckup;
+	}
+
+
+	public WebElement getHome_only_with_12_month_plan() {
+		return home_only_with_12_month_plan;
+	}
+
+
+	public WebElement getHome_Additional_5_off_on_Pathology_Lab_Tests() {
+		return home_Additional_5_off_on_Pathology_Lab_Tests;
+	}
+
+
+	public WebElement getHome_Free_Unlimited_Consultation() {
+		return home_Free_Unlimited_Consultation;
+	}
+	@FindBy(xpath="//p[text()='(Max 100) on all prepaid orders']")
+	private WebElement home_allprepaid_orders;
+	public WebElement getHome_savemore() {
+		return home_savemore;
+	}
+
+
+	public WebElement getHome_getnms_cash() {
+		return home_getnms_cash;
+	}
+
+
+	public WebElement getHome_stating_price() {
+		return home_stating_price;
+	}
+
+
+	public WebElement getHome_nmscash_section() {
+		return home_nmscash_section;
+	}
+
+
+	public WebElement getHome_allprepaid_orders() {
+		return home_allprepaid_orders;
+	}
 }

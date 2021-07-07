@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
@@ -28,7 +30,7 @@ public class NeetmedsFirst extends BaseClass{
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
-      htmlReporter = new ExtentHtmlReporter(".//report//Take_Action.html");
+      htmlReporter = new ExtentHtmlReporter(".//Report//NeetmedsFirst.html");
        
        //initialize ExtentReports and attach the HtmlReporter
        report = new ExtentReports();
@@ -48,23 +50,26 @@ public class NeetmedsFirst extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled = true)
-	public  void takeAction() throws Throwable  {
+	//@Test(enabled = true)
+	public  void NetmedsError() throws Throwable  {
 		logger =  report.createTest(" All Categories");
 		logger.log(Status.PASS, "*************Take Action Fail Alert********************" );
 		Monepom m=new Monepom();
-		driver.manage().window().maximize();
-		btncli(m.getSignin());
-		Thread.sleep(5000);
-		type(m.getMobileno(),"9677159095");
-		Thread.sleep(3000);
-		btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
-		Thread.sleep(3000);
-		type(m.getPassword(),"test4nm");
-		btncli(m.getSignInpage());
-		Thread.sleep(10000);
-		logger.log(Status.PASS, "Successfully navigate to home page" );
 
+		try {
+		 driver.manage().window().maximize();
+		 btncli(m.getSignin());
+		  Thread.sleep(5000);
+		  type(m.getMobileno(),"7010752043");
+		  Thread.sleep(3000);
+		  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+		  Thread.sleep(3000);
+		  type(m.getPassword(),"Change@92"); 
+		  btncli(m.getSignInpage());
+		} catch (Exception e) {
+			System.out.println("Already Logged In");
+		}
+		
 		driver.navigate().to("https://www.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
@@ -173,6 +178,59 @@ public class NeetmedsFirst extends BaseClass{
 	
 }
 	
+	@Test(enabled = true)
+	public  void netmedsfirstcustomer() throws Throwable  {
+		logger =  report.createTest("netmeds first customer");
+		logger.log(Status.PASS, "*************netmedsfirstcustomer********************" );
+		Monepom m=new Monepom();
+
+		try {
+		 driver.manage().window().maximize();
+		 btncli(m.getSignin());
+		  Thread.sleep(5000);
+		  type(m.getMobileno(),"9677159095");
+		  Thread.sleep(3000);
+		  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+		  Thread.sleep(3000);
+		  type(m.getPassword(),"test4nmm"); 
+		  btncli(m.getSignInpage());
+		} catch (Exception e) {
+			System.out.println("Already Logged In");
+			driver.navigate().to("https://www.netmeds.com/");
+		}
+		
+		//Netmeds First availability in MyAccount, Home Page and Cart Page.
+		Thread.sleep(1500);
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,900)");*/
+		scrolldown("2900");
+		SoftAssert SoftAssert=new SoftAssert();
+		SoftAssert.assertEquals(gettext(m.getHome_getmostfrom()), "GET MOST FROM");
+		
+		SoftAssert.assertEquals(gettext(m.getGethome_netmedsfirst()), "Netmeds First");
+		SoftAssert.assertEquals(gettext(m.getGethome_Getspecialdiscount()), "Get special discounts and offers on Netmeds services.");
+		SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
+		SoftAssert.assertEquals(gettext(m.getHome_getnms_cash()), "Get 2.5% NMS Cash on all orders.");
+		SoftAssert.assertEquals(gettext(m.getHome_stating_price()), "Starting at Rs.299");
+		SoftAssert.assertEquals(gettext(m.getHome_exploreplans()), "EXPLORE PLANS");
+		SoftAssert.assertEquals(gettext(m.getHome_nmscash_section()), "2.5% NMS Cash");
+		SoftAssert.assertEquals(gettext(m.getHome_allprepaid_orders()), "(Max 100) on all prepaid orders");
+		SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
+		SoftAssert.assertEquals(gettext(m.getHome_FreeDelivery()), "Free Delivery");
+		SoftAssert.assertEquals(gettext(m.getHome_PriorityProcessing()), "Priority Processing");
+		SoftAssert.assertEquals(gettext(m.getHome_BasicHealthCheckup()), "Basic Health Checkup");
+		SoftAssert.assertEquals(gettext(m.getHome_only_with_12_month_plan()), "only with 12 month plan");
+		SoftAssert.assertEquals(gettext(m.getHome_Additional_5_off_on_Pathology_Lab_Tests()), "Additional 5% off on Pathology Lab Tests");
+		SoftAssert.assertEquals(gettext(m.getHome_Free_Unlimited_Consultation()), "Free Unlimited Consultation");
+        btncli( m.getHome_exploreplans());
+        SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/customer/netmeds-first");
+        
+		logger.log(Status.PASS, "verfied home page netmeds first customer section" );
+		driver.navigate().to("https://www.netmeds.com");
+
+		SoftAssert.assertAll();
+		
+	}
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
@@ -215,7 +273,7 @@ public class NeetmedsFirst extends BaseClass{
 	//	BaseClass.mail_report();
 	
 		
-		BaseClass.mail_report();
+		//BaseClass.mail_report();
 	}
 	
 	
@@ -227,7 +285,7 @@ public class NeetmedsFirst extends BaseClass{
 	private void quitbrowser() {
 		report.flush();
 		
-      driver.quit();
+    //  driver.quit();
 	}
 
 
