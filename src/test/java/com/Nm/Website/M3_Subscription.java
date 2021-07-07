@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -56,7 +57,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test
+	@Test(enabled = false)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -66,28 +67,36 @@ public class M3_Subscription extends BaseClass {
 		Monepom m = new Monepom();
 		driver.manage().window().maximize();
 
-		// Step 2 :Login with user name and password//
-		btncli(m.getSignin());
-		Thread.sleep(5000);
+		try {
 
-		type(m.getMobileno(), "8072281468");
-		Thread.sleep(3000);
+			// Step 2 :Login with user name and password//
+			btncli(m.getSignin());
+			Thread.sleep(5000);
+			type(m.getMobileno(), "8072281468");
+			Thread.sleep(3000);
+			btncli(m.getUsepwdbtn());
+			Thread.sleep(3000);
+			type(m.getPassword(), "test@123");
+			btncli(m.getSignInpage());
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			System.out.println("Already Logged In");
+		}
 
-		// btncli(driver.findElement(By.xpath("//button[contains(text(),'USE
-		// PASSWORD')]")));
-		btncli(m.getUsepwdbtn());
-		Thread.sleep(3000);
-		type(m.getPassword(), "test@123");
+		try {
+			btncli(m.getNetmedshome());
+		} catch (Exception e) {
 
-		btncli(m.getSignInpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to home page");
+		}
 
 		// Step 3 : Navigate to user profile//
 
 		btncli(m.getUserprofile());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		
+		
 
 		// Step 4 : Navigate to Mysubscription page//
 
@@ -100,6 +109,22 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getCreatenewfill());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
+		
+		try {
+			driver.switchTo().frame("haptik-xdk");
+			Actions acc = new Actions(driver);
+			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+					.perform();
+
+			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+
+			driver.switchTo().defaultContent();
+
+		} catch (Exception e) {
+
+		}
+		
+		
 
 		// Step 6:Search Product//
 
@@ -141,40 +166,37 @@ public class M3_Subscription extends BaseClass {
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 
 		// Step 9 :Increase qty//
-		Select qtyincrease = new Select(
-				driver.findElement(By.xpath("//div[@id='itemid-918948']//select[@name='quantity']")));
-		qtyincrease.selectByIndex(2);
+
+		Select qtyincrease = new Select(m.getQty_Incr_Decr());
+		qtyincrease.selectByIndex(3);
 		Thread.sleep(3000);
 
 		// Step 10 :Remove qty//
-
-		driver.findElement(By.xpath("//div[@id='itemid-913279']//a[@title='Remove item'][normalize-space()='Remove']"))
-				.click();
+		btncli(m.getRemoveitem());
 		Thread.sleep(3000);
 
 		// Step 11: Decrease qty//
 
-		Select qtydecrease = new Select(
-				driver.findElement(By.xpath("//div[@id='itemid-918948']//select[@name='quantity']")));
+		Select qtydecrease = new Select(m.getQty_Incr_Decr());
 		qtydecrease.selectByIndex(1);
 		Thread.sleep(3000);
 
 		// Step 12:Promo Code Check//
 
-		String Promocode = driver.findElement(By.xpath("(//div[@class=\"applypromo appliedpromocpn ng-star-inserted\"])[2]")).getText();
-		System.out.println(Promocode);
+		String Promocode = m.getSubs20_promo().getText();
 		String actualpromocode = "SUBS20";
 		Assert.assertEquals(Promocode, actualpromocode);
+		System.out.println(Promocode);
 		Thread.sleep(3000);
 
 		// Step 13 : Click Proceed Button//
 
 		btncli(m.getProceed());
-		driver.findElement(By.xpath("//input[@value='45']")).click();
+		btncli(m.getSelectduration45());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@value='30']")).click();
+		btncli(m.getSelectduration30());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@value='60']")).click();
+		btncli(m.getSelectduration60());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully Proceed button  was clicked");
 
@@ -192,68 +214,544 @@ public class M3_Subscription extends BaseClass {
 
 		// Step 16 : Ensure order is placed successfully//
 
-		String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]"))
-				.getText();
+		String confirmation = m.getOrder_Placed_text().getText();
 
-		String orderid = driver.findElement(By.xpath("//span[contains(@class,'order-number')]")).getText();
+		String orderid = m.getOrderid().getText();
 
 		String orderconfirmation = "Order Placed Successfully!";
 
 		Assert.assertEquals(orderconfirmation, confirmation);
 
 		System.out.println(confirmation + "and the id is " + orderid);
-		//Tracking order//
-		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
+
+		// Tracking order//
+
+		btncli(m.getMysubscription());
+		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
+
+		btncli(m.getMedicineorders());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
+
+		btncli(m.getView_Details());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
+
+		btncli(m.getCancel_Order());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[4]")).click();
+
+		btncli(m.getCancelyes());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
-		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
+
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
+		Thread.sleep(3000);
+		btncli(m.getSubmit_Cancel());
+
+		logger.log(Status.PASS, "Successfully Order was Cancelled");
 
 	}
 
-	// *********************************************M3 -Doctor consultation **********************************************************************************************//
-	@Test
+	// *********************************************M3 -Doctor consultation
+	// **********************************************************************************************//
+	
+	@Test(enabled = true)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
 		logger.log(Status.PASS, "*************M3Doctorconsultation********************");
 
-		// Step1 :Launch Browser//
 		Monepom m = new Monepom();
 		driver.manage().window().maximize();
-		// driver.manage().window().setSize(new Dimension(1024,768));
 
-		// Step 2 :Login with user name and password//
-		btncli(m.getSignin());
-		Thread.sleep(5000);
+		// Step1 :Launch Browser//
 
-		type(m.getMobileno(), "8072281468");
-		Thread.sleep(3000);
+		try {
 
-		// btncli(driver.findElement(By.xpath("//button[contains(text(),'USE
-		// PASSWORD')]")));
-		btncli(m.getUsepwdbtn());
-		Thread.sleep(3000);
-		type(m.getPassword(), "test@123");
+			// Step 2 :Login with user name and password//
+			btncli(m.getSignin());
+			Thread.sleep(5000);
+			type(m.getMobileno(), "8072281468");
+			Thread.sleep(3000);
+			btncli(m.getUsepwdbtn());
+			Thread.sleep(3000);
+			type(m.getPassword(), "test@123");
+			btncli(m.getSignInpage());
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			System.out.println("Already Logged In");
+		}
 
-		btncli(m.getSignInpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to home page");
+		try {
+			btncli(m.getNetmedshome());
+		} catch (Exception e) {
+
+		}
 
 		// Step 3 : Navigate to user profile//
 
 		btncli(m.getUserprofile());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
+
+		// Step 4 : Navigate to Mysubscription page//
+
+		btncli(m.getMysubscriptionpage());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
+
+		// Step 5 :Click create new fill button//
+
+		btncli(m.getCreatenewfill());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully button was clicked");
+
+		try {
+			driver.switchTo().frame("haptik-xdk");
+			Actions acc = new Actions(driver);
+			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+					.perform();
+
+			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+
+			driver.switchTo().defaultContent();
+
+		} catch (Exception e) {
+
+		}
+
+		// Step 6:Search Product//
+
+		for (int i = 0; i < 2; i++) {
+
+			type(m.getM3productsearch(), BaseClass.getExcelData("Rx", i, 0));
+
+			// btncli(m.getSearchIcon());
+			logger.log(Status.PASS, "Successfully navigate to search result page");
+
+			String Cart_Excel = BaseClass.getExcelData("Rx", i, 1);
+
+			// Step 7 : Add product to the cart//
+			try {
+				Thread.sleep(3000);
+
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement Cart_btn = wait.until(
+						ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),\"Add to Cart\")]")));
+
+				Thread.sleep(3000);
+
+				btncli(Cart_btn);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			Thread.sleep(3000);
+			driver.navigate().back();
+
+			Thread.sleep(3000);
+		}
+
+		// Step 8 : Click view Cart//
+
+		btncli(m.getViewcart());
+		Thread.sleep(2000);
+		logger.log(Status.PASS, "Successfully navigate to cartpage");
+
+		// Step 09 : Click Proceed Button//
+
+		btncli(m.getProceed());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully Proceed button  was clicked");
+		Thread.sleep(3000);
+		// Step 10: Doctor Consultation//
+
+		btncli(m.getConsultdoctorcheck());
+
+		logger.log(Status.PASS, "Doctor Consultation is sucessfully schedulded");
+
+		// Step 11 : select duration//
+		btncli(m.getSelectDuration());
+		btncli(m.getSelectduration45());
+		Thread.sleep(2000);
+
+		// Step 12 : Click Next Button//
+
+		btncli(m.getNextbutton());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully Next button was clicked");
+
+		// Step 13 :Doctor confirmation Message//
+
+		String doctorconfirmation = driver
+				.findElement(By.xpath("//div[@class =\"info\"]")).getText();
+
+		System.out.println(doctorconfirmation);
+
+		Thread.sleep(3000);
+
+		// Step 14:Select address
+
+		btncli(m.getChangeaddbtn());
+		Thread.sleep(6000);
+
+		btncli(m.getSelectaddress());
+		Thread.sleep(3000);
+
+		m.getBackto_Addrspage().isEnabled();
+
+		System.out.println("yes enabled");
+		Thread.sleep(3000);
+
+		// Step 15 : modify Address
+
+		btncli(m.getChangeaddbtn());
+		Thread.sleep(3000);
+
+		btncli(m.getModifyaddressbtn());
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//input[@id='pin']")).clear();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//input[@id='pin']")).sendKeys("600100");
+		Thread.sleep(3000);
+
+		driver.findElement(By.id("street")).clear();
+		Thread.sleep(3000);
+
+		type(m.getAddress(), "Modifyadd");
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//button[contains(text(),'Save Address')]")).click();
+
+		Thread.sleep(3000);
+
+		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
+		Thread.sleep(3000);
+
+		// Step 16 : Delete address
+
+		//driver.findElement(By.xpath("//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]")).isEnabled();
+		
+		m.getBackto_Addrspage().isEnabled();
+
+		System.out.println("yes enabled");
+
+		btncli(m.getChangeaddbtn());
+
+		Thread.sleep(3000);
+
+		btncli(m.getDeleteaddress());
+
+		Thread.sleep(3000);
+
+		//btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
+		
+		btncli(m.getBackto_Addrspage());
+		
+		Thread.sleep(3000);
+
+		// Step 17 : Add New address
+
+		btncli(m.getChangeaddbtn());
+		Thread.sleep(3000);
+
+		btncli(m.getM2_AddNewAddresss_btn());
+		Thread.sleep(3000);
+		type(m.getM2_Address_Pin(), "311003");
+
+		Thread.sleep(3000);
+		m.getM2_Address_FirstName().clear();
+		Thread.sleep(1000);
+
+		m.getM2_Address_FirstName().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		m.getM2_Address_Lastname().clear();
+		Thread.sleep(1000);
+
+		m.getM2_Address_Lastname().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		m.getM2_Address_Street().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		m.getM2_Address_landMark().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		btncli(m.getM2_SaveAddress_btn());
+
+		Thread.sleep(3000);
+		btncli(m.getBackto_Addrspage());
+		Thread.sleep(3000);
+
+		// Step 18 : Click Subscribe//
+
+		btncli(m.getSubscribe());
+		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
+		Thread.sleep(3000);
+
+		// Step 19 : Ensure order is placed successfully//
+
+		String confirmation = m.getOrder_Placed_text().getText();
+
+		
+		String orderid = m.getOrderid().getText();
+
+		String orderconfirmation = "Order Placed Successfully!";
+
+		Assert.assertEquals(orderconfirmation, confirmation);
+
+		System.out.println(confirmation + "and the id is " + orderid);
+
+//Tracking order//
+
+		btncli(m.getMysubscription());
+
+		Thread.sleep(3000);
+
+		btncli(m.getMedicineorders());
+		Thread.sleep(3000);
+
+		btncli(m.getView_Details());
+		Thread.sleep(3000);
+
+		btncli(m.getCancel_Order());
+		Thread.sleep(3000);
+
+		btncli(m.getCancelyes());
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
+		Thread.sleep(3000);
+		
+		btncli(m.getSubmit_Cancel());
+
+		logger.log(Status.PASS, "Successfully Order was Cancelled");
+
+	}
+
+//*******************************************************************M3  Rx  flow******************************************************************//
+	@Test(enabled = false)
+	public void M3RXflow() throws Throwable {
+
+		logger = report.createTest(" M3RXflow");
+		logger.log(Status.PASS, "*************M3RXflow********************");
+
+		// Step1 :Launch Browser//
+		Monepom m = new Monepom();
+		driver.manage().window().maximize();
+
+		try {
+
+			// Step 2 :Login with user name and password//
+			btncli(m.getSignin());
+			Thread.sleep(5000);
+			type(m.getMobileno(), "8072281468");
+			Thread.sleep(3000);
+			btncli(m.getUsepwdbtn());
+			Thread.sleep(3000);
+			type(m.getPassword(), "test@123");
+			btncli(m.getSignInpage());
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			System.out.println("Already Logged In");
+		}
+
+		try {
+			btncli(m.getNetmedshome());
+		} catch (Exception e) {
+
+		}
+		// Step 3 : Navigate to user profile//
+
+		btncli(m.getUserprofile());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to userprofile");
+
+		
+		// Step 4 : Navigate to Mysubscription page//
+
+		btncli(m.getMysubscriptionpage());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
+
+		// Step 5 :Click create new fill button//
+
+		btncli(m.getCreatenewfill());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully button was clicked");
+		
+		try {
+			driver.switchTo().frame("haptik-xdk");
+			Actions acc = new Actions(driver);
+			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+					.perform();
+
+			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+
+			driver.switchTo().defaultContent();
+
+		} catch (Exception e) {
+
+		}
+
+		// Step 6:Search Product//
+
+		for (int i = 0; i < 2; i++) {
+
+			type(m.getM3productsearch(), BaseClass.getExcelData("Rx", i, 0));
+
+			// btncli(m.getSearchIcon());
+			logger.log(Status.PASS, "Successfully navigate to search result page");
+
+			String Cart_Excel = BaseClass.getExcelData("Rx", i, 1);
+
+			// Step 7 : Add product to the cart//
+			try {
+				Thread.sleep(3000);
+
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement Cart_btn = wait.until(
+						ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),\"Add to Cart\")]")));
+
+				Thread.sleep(3000);
+
+				btncli(Cart_btn);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			Thread.sleep(3000);
+			driver.navigate().back();
+
+			Thread.sleep(3000);
+		}
+
+		// Step 8 : Click view Cart//
+
+		btncli(m.getViewcart());
+		Thread.sleep(2000);
+		logger.log(Status.PASS, "Successfully navigate to cartpage");
+
+		// Step 09 : Click Proceed Button//
+
+		btncli(m.getProceed());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully Proceed button  was clicked");
+		Thread.sleep(6000);
+
+		// Step 10: Add RXprescription//
+
+		WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
+
+		upload.sendKeys("C:\\Users\\NMSLAP357\\Desktop\\Prescription.jpg");
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Prescription added successfully");
+
+		// Step 11 : select duration//
+		btncli(m.getSelectDuration());
+		btncli(m.getSelectduration60());
+		Thread.sleep(2000);
+		logger.log(Status.PASS, "Duration has been selected successfully");
+
+		// Step 12 : Click Next Button//
+
+		btncli(m.getNextbutton());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully Next button was clicked");
+
+		// Step 13 : Click Subscribe//
+
+		btncli(m.getSubscribe());
+		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
+		Thread.sleep(3000);
+
+		// Step 14 : Ensure order is placed successfully//
+
+String confirmation = m.getOrder_Placed_text().getText();
+
+		
+		String orderid = m.getOrderid().getText();
+
+		String orderconfirmation = "Order Placed Successfully!";
+
+		Assert.assertEquals(orderconfirmation, confirmation);
+
+		System.out.println(confirmation + "and the id is " + orderid);
+
+//Tracking order//
+
+		btncli(m.getMysubscription());
+
+		Thread.sleep(3000);
+
+		btncli(m.getMedicineorders());
+		Thread.sleep(3000);
+
+		btncli(m.getView_Details());
+		Thread.sleep(3000);
+
+		btncli(m.getCancel_Order());
+		Thread.sleep(3000);
+
+		btncli(m.getCancelyes());
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
+		Thread.sleep(3000);
+		
+		btncli(m.getSubmit_Cancel());
+
+		logger.log(Status.PASS, "Successfully Order was Cancelled");
+
+
+	}
+
+//****************************************************************M3 -Past Rx flow***********************************************************************//
+	@Test(enabled = false)
+	public void pastrx() throws Throwable {
+
+		logger = report.createTest(" Pastrx");
+		logger.log(Status.PASS, "*************PastRx********************");
+
+		// Step1 :Launch Browser//
+		Monepom m = new Monepom();
+		driver.manage().window().maximize();
+
+		try {
+
+			// Step 2 :Login with user name and password//
+			btncli(m.getSignin());
+			Thread.sleep(5000);
+			type(m.getMobileno(), "8072281468");
+			Thread.sleep(3000);
+			btncli(m.getUsepwdbtn());
+			Thread.sleep(3000);
+			type(m.getPassword(), "test@123");
+			btncli(m.getSignInpage());
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			System.out.println("Already Logged In");
+		}
+
+		try {
+			btncli(m.getNetmedshome());
+		} catch (Exception e) {
+
+		}
+
+		// Step 3 : Navigate to user profile//
+
+		btncli(m.getUserprofile());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		
+		
 
 		// Step 4 : Navigate to Mysubscription page//
 
@@ -326,409 +824,6 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully Proceed button  was clicked");
 		Thread.sleep(3000);
-		// Step 10: Doctor Consultation//
-
-		btncli(m.getConsultdoctorcheck());
-
-		logger.log(Status.PASS, "Doctor Consultation is sucessfully schedulded");
-
-		// Step 11 : select duration//
-		btncli(m.getSelectDuration());
-		driver.findElement(By.xpath("//input[@value='45']")).click();
-		Thread.sleep(2000);
-
-		// Step 12 : Click Next Button//
-
-		btncli(m.getNextbutton());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully Next button was clicked");
-
-		// Step 13 :Doctor confirmation Message//
-
-		String doctorconfirmation = driver
-				.findElement(By.xpath(
-						"//div[contains(text(),\"Our Pharmacist/Doctor will call you to confirm the medicines.\")]"))
-				.getText();
-
-		System.out.println(doctorconfirmation);
-
-		Thread.sleep(3000);
-
-		// Step 14:Change address
-
-		btncli(m.getChangeaddbtn());
-		Thread.sleep(6000);
-
-		btncli(m.getSelectaddress());
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]"))
-				.isEnabled();
-
-		System.out.println("yes enabled");
-		Thread.sleep(3000);
-
-		
-
-		// Step 15 : modify Address
-
-		driver.findElement(By.xpath("//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]"))
-				.isEnabled();
-
-		System.out.println("yes enabled");
-		Thread.sleep(3000);
-
-		btncli(m.getChangeaddbtn());
-		Thread.sleep(3000);
-
-		btncli(m.getModifyaddressbtn());
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("//input[@id='pin']")).clear();
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("//input[@id='pin']")).sendKeys("630204");
-		Thread.sleep(3000);
-
-		driver.findElement(By.id("street")).clear();
-		Thread.sleep(3000);
-
-		type(m.getAddress(), "Modifyadd");
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("//button[contains(text(),'Save Address')]")).click();
-
-		Thread.sleep(3000);
-
-		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
-		Thread.sleep(3000);
-
-		// Step 16 : Delete address
-		
-		driver.findElement(By.xpath("//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]"))
-				.isEnabled();
-
-		System.out.println("yes enabled");
-
-		btncli(m.getChangeaddbtn());
-
-		Thread.sleep(3000);
-
-		btncli(m.getDeleteaddress());
-
-		Thread.sleep(3000);
-
-		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
-		Thread.sleep(3000);
-
-		// Step 17 : Add New address
-
-		btncli(m.getChangeaddbtn());
-		Thread.sleep(3000);
-		btncli(driver.findElement(By.xpath("(//a[contains(text(),'+ ADD NEW ADDRESS')])[1]")));
-		Thread.sleep(5000);
-		type(driver.findElement(By.id("pin")), "311003");
-		Thread.sleep(5000);
-		driver.findElement(By.id("firstname")).clear();
-		Thread.sleep(5000);
-		driver.findElement(By.id("firstname")).sendKeys("Testing");
-		Thread.sleep(5000);
-		driver.findElement(By.id("lastname")).clear();
-		Thread.sleep(5000);
-		driver.findElement(By.id("lastname")).sendKeys("Testing");
-		Thread.sleep(5000);
-		driver.findElement(By.id("street")).sendKeys("Testing");
-		Thread.sleep(5000);
-		driver.findElement(By.id("landmark")).sendKeys("Testing");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//button[contains(text(),'Save Address')]")).click();
-		Thread.sleep(3000);
-		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
-		Thread.sleep(3000);
-
-		// Step 18 : Click Subscribe//
-
-		btncli(m.getSubscribe());
-		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
-		Thread.sleep(3000);
-
-		// Step 19 : Ensure order is placed successfully//
-
-		String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]"))
-				.getText();
-		Thread.sleep(3000);
-		String orderid = driver.findElement(By.xpath("//div[ contains(@class,'customer-orderid')]")).getText();
-		Thread.sleep(3000);
-
-		String orderconfirmation = "Order Placed Successfully!";
-
-		Assert.assertEquals(orderconfirmation, confirmation);
-
-		System.out.println(confirmation + "and the id is " + orderid);
-		
-		//Tracking order//
-		
-		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[5]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
-		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
-
-	}
-
-//*******************************************************************M3 Non Rx & OTC flow******************************************************************//
-	@Test
-	public void M3NonRxOTCflow() throws Throwable {
-
-		logger = report.createTest(" M3NonRxOTCflow");
-		logger.log(Status.PASS, "*************M3NonRxOTCflow********************");
-
-		// Step1 :Launch Browser//
-		Monepom m = new Monepom();
-		driver.manage().window().maximize();
-
-		// Step 2 :Login with user name and password//
-		btncli(m.getSignin());
-		Thread.sleep(5000);
-
-		type(m.getMobileno(), "8072281468");
-		Thread.sleep(3000);
-
-		// btncli(driver.findElement(By.xpath("//button[contains(text(),'USE
-		// PASSWORD')]")));
-		btncli(m.getUsepwdbtn());
-		Thread.sleep(3000);
-		type(m.getPassword(), "test@123");
-
-		btncli(m.getSignInpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to home page");
-
-		// Step 3 : Navigate to user profile//
-
-		btncli(m.getUserprofile());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to userprofile");
-
-		// Step 4 : Navigate to Mysubscription page//
-
-		btncli(m.getMysubscriptionpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
-
-		// Step 5 :Click create new fill button//
-
-		btncli(m.getCreatenewfill());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully button was clicked");
-
-		// Step 6:Search Product//
-
-		for (int i = 0; i < 2; i++) {
-
-			type(m.getM3productsearch(), BaseClass.getExcelData("Rx", i, 0));
-
-			// btncli(m.getSearchIcon());
-			logger.log(Status.PASS, "Successfully navigate to search result page");
-
-			String Cart_Excel = BaseClass.getExcelData("Rx", i, 1);
-
-			// Step 7 : Add product to the cart//
-			try {
-				Thread.sleep(3000);
-
-				WebDriverWait wait = new WebDriverWait(driver, 30);
-				WebElement Cart_btn = wait.until(
-						ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),\"Add to Cart\")]")));
-
-				Thread.sleep(3000);
-
-				btncli(Cart_btn);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-
-			Thread.sleep(3000);
-			driver.navigate().back();
-
-			Thread.sleep(3000);
-		}
-
-		// Step 8 : Click view Cart//
-
-		btncli(m.getViewcart());
-		Thread.sleep(2000);
-		logger.log(Status.PASS, "Successfully navigate to cartpage");
-
-		// Step 09 : Click Proceed Button//
-
-		btncli(m.getProceed());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully Proceed button  was clicked");
-		Thread.sleep(6000);
-		// Step 10: Add pastRXprescription//
-
-		// WebElement upload = driver.findElement(By.xpath("//li[contains(.,'Upload
-		// Rx')]"));
-		// input[@accept='image/png,image/gif,image/jpeg']
-
-		WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
-
-		upload.sendKeys("C:\\Users\\NMSLAP357\\Desktop\\Prescription.jpg");
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Prescription added successfully");
-
-		// Step 11 : select duration//
-		btncli(m.getSelectDuration());
-		driver.findElement(By.xpath("//input[@value='45']")).click();
-		Thread.sleep(2000);
-		logger.log(Status.PASS, "Duration has been selected successfully");
-
-		// Step 12 : Click Next Button//
-
-		btncli(m.getNextbutton());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully Next button was clicked");
-
-		// Step 13 : Click Subscribe//
-
-		btncli(m.getSubscribe());
-		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
-		Thread.sleep(3000);
-
-		// Step 14 : Ensure order is placed successfully//
-
-		String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]"))
-				.getText();
-		Thread.sleep(3000);
-		String orderid = driver.findElement(By.xpath("//div[ contains(@class,'customer-orderid')]")).getText();
-		Thread.sleep(3000);
-
-		String orderconfirmation = "Order Placed Successfully!";
-
-		Assert.assertEquals(orderconfirmation, confirmation);
-
-		System.out.println(confirmation + "and the id is " + orderid);
-		
-		//Tracking order//
-		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
-		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
-
-	}
-
-//****************************************************************M3 -Past Rx flow***********************************************************************//
-	@Test
-	public void takeAction() throws Throwable {
-
-		logger = report.createTest(" All Categories");
-		logger.log(Status.PASS, "*************Take Action Fail Alert********************");
-
-		// Step1 :Launch Browser//
-		Monepom m = new Monepom();
-		driver.manage().window().maximize();
-
-		// Step 2 :Login with user name and password//
-		btncli(m.getSignin());
-		Thread.sleep(5000);
-
-		type(m.getMobileno(), "8072281468");
-		Thread.sleep(3000);
-
-		// btncli(driver.findElement(By.xpath("//button[contains(text(),'USE
-		// PASSWORD')]")));
-		btncli(m.getUsepwdbtn());
-		Thread.sleep(3000);
-		type(m.getPassword(), "test@123");
-
-		btncli(m.getSignInpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to home page");
-
-		// Step 3 : Navigate to user profile//
-
-		btncli(m.getUserprofile());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to userprofile");
-
-		// Step 4 : Navigate to Mysubscription page//
-
-		btncli(m.getMysubscriptionpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
-
-		// Step 5 :Click create new fill button//
-
-		btncli(m.getCreatenewfill());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully button was clicked");
-
-		// Step 6:Search Product//
-
-		for (int i = 0; i < 2; i++) {
-
-			type(m.getM3productsearch(), BaseClass.getExcelData("Rx", i, 0));
-
-			// btncli(m.getSearchIcon());
-			logger.log(Status.PASS, "Successfully navigate to search result page");
-
-			String Cart_Excel = BaseClass.getExcelData("Rx", i, 1);
-
-			// Step 7 : Add product to the cart//
-			try {
-				Thread.sleep(3000);
-
-				WebDriverWait wait = new WebDriverWait(driver, 30);
-				WebElement Cart_btn = wait.until(
-						ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),\"Add to Cart\")]")));
-
-				Thread.sleep(3000);
-
-				btncli(Cart_btn);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-
-			Thread.sleep(3000);
-			driver.navigate().back();
-
-			Thread.sleep(3000);
-		}
-
-		// Step 8 : Click view Cart//
-
-		btncli(m.getViewcart());
-		Thread.sleep(2000);
-		logger.log(Status.PASS, "Successfully navigate to cartpage");
-
-		// Step 09 : Click Proceed Button//
-
-		btncli(m.getProceed());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully Proceed button  was clicked");
-		Thread.sleep(3000);
 		// Step 10: Add past Rx Prescription//
 
 		WebElement Uploadrx = driver
@@ -738,7 +833,7 @@ public class M3_Subscription extends BaseClass {
 
 		Thread.sleep(3000);
 
-		WebElement Selectrx = driver.findElement(By.xpath("//input[@value='dbc73b7b7f376d5898b4686ee67f301d']"));
+		WebElement Selectrx = driver.findElement(By.xpath("(//input[@class=\"rx_image\"])[2]"));
 
 		Selectrx.click();
 
@@ -747,7 +842,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 10 : select duration//
 
 		btncli(m.getSelectDuration());
-		driver.findElement(By.xpath("//input[@value='45']")).click();
+		btncli(m.getSelectduration45());
 		Thread.sleep(2000);
 
 		// Step 11 : Click Next Button//
@@ -764,39 +859,41 @@ public class M3_Subscription extends BaseClass {
 
 		// Step 13 : Ensure order is placed successfully//
 
-		String confirmation = driver.findElement(By.xpath("//h2[contains( text(),'Order Placed Successfully!')]"))
-				.getText();
-		Thread.sleep(3000);
-		String orderid = driver.findElement(By.xpath("//div[ contains(@class,'customer-orderid')]")).getText();
-		Thread.sleep(3000);
+		String confirmation = m.getOrder_Placed_text().getText();
+
+		String orderid = m.getOrderid().getText();
 
 		String orderconfirmation = "Order Placed Successfully!";
 
 		Assert.assertEquals(orderconfirmation, confirmation);
 
 		System.out.println(confirmation + "and the id is " + orderid);
+
+//Tracking order//
+
+		btncli(m.getMysubscription());
+
+		Thread.sleep(3000);
+
+		btncli(m.getMedicineorders());
+		Thread.sleep(3000);
+
+		btncli(m.getView_Details());
+		Thread.sleep(3000);
+
+		btncli(m.getCancel_Order());
+		Thread.sleep(3000);
+
+		btncli(m.getCancelyes());
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
+		Thread.sleep(3000);
 		
-		//Tracking order//
-		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@class=\"btn-view ord-btn\"]")).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//button[@class=\"btn btn-help ng-star-inserted\"]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[6]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
-		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
+		btncli(m.getSubmit_Cancel());
 
-	}
+		logger.log(Status.PASS, "Successfully Order was Cancelled");
 
-	private Predicate<WebDriver> ExpectedConditions(By xpath) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@AfterMethod()
@@ -833,7 +930,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			//BaseClass.mail_report();
+			// BaseClass.mail_report();
 		}
 
 	}
@@ -842,7 +939,7 @@ public class M3_Subscription extends BaseClass {
 	private void quitbrowser() {
 		report.flush();
 
-		//driver.quit();
+		// driver.quit();
 	}
 
 }
