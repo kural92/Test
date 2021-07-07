@@ -15,6 +15,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
@@ -145,7 +146,7 @@ public class M2_Flow_Search extends BaseClass {
 			 btncli(driver.findElement(By.xpath("(//input[@type='text'])[3]")));
 			 Thread.sleep(3000);
 			 
-			 type(driver.findElement(By.xpath("(//input[@type='text'])[3]")), "telma");
+			 type(driver.findElement(By.xpath("(//input[@type='text'])[3]")), "Gemer");
 			 Thread.sleep(6000);
 			 
 			 btncli(driver.findElement(By.xpath("//span[contains(text(),'Add to Cart')]")));
@@ -160,6 +161,7 @@ public class M2_Flow_Search extends BaseClass {
 			 Thread.sleep(3000);
 			 String Pcode = m.getM2_CoupCode_text().getText();
 			 System.out.println(Pcode); 
+			
 			 
 			 
 			 
