@@ -119,13 +119,13 @@ public class Monepom extends BaseClass {
 	public WebElement getPass() {
 		return pass;
 	}
-	public WebElement getUserprofile() {
-		return userprofile;
-		
-	}
+	//*********************************************************M3 Flow starts********************************************************************************
 	
 	@FindBy(id = "logged_user")
 	private WebElement userprofile;
+	public WebElement getUserprofile() {
+		return userprofile;
+	}
 	
 	@FindBy(xpath ="//a[normalize-space()='My Subscriptions']")
 	private WebElement mysubscriptionpage;
@@ -190,7 +190,7 @@ public class Monepom extends BaseClass {
 		return changeaddbtn;
 	}
 	
-		@FindBy(xpath ="//input[contains(@id,'customeraddress_9458992')]")
+		@FindBy(xpath ="(//input[@class =\"radio rdbtn\"])[2]")
 		private WebElement Selectaddress;
 		
 		public WebElement getSelectaddress() {
@@ -205,14 +205,12 @@ public class Monepom extends BaseClass {
 		}
 	@FindBy(xpath = "//input[@id='pin']\"")
 	private WebElement changepincode;
-	
 	public WebElement getChangepincode() {
 		return changepincode;
 	}
 	
 	@FindBy(xpath = "//input[@id='pin']\"")
 	private WebElement pinclear;
-	
 	public WebElement getPinclear() {
 		return pinclear;
 	}
@@ -225,19 +223,109 @@ public class Monepom extends BaseClass {
 	}
 	
 	@FindBy(xpath ="//button[contains(.,'Save Address')]")
-	
 	private WebElement saveaddress;
-	
 	public WebElement getSaveaddress() {
 		return saveaddress;
 	}
 	
 	@FindBy(xpath =("//button[.='Delete']"))
 	private WebElement Deleteaddress;
-	
 	public WebElement getDeleteaddress() {
 		return Deleteaddress;
 	}
+	
+	@FindBy(xpath ="(//button[contains(.,'My Subscription')])[2]")
+	private WebElement mysubscription;
+	public WebElement getMysubscription() {
+		return mysubscription;
+	}
+	
+	@FindBy(xpath = ("//a[@class='orders-link']"))
+	private WebElement medicineorders;
+	public WebElement getMedicineorders() {
+		return medicineorders;
+	}
+	
+	@FindBy(xpath = ("//button[@class=\"btn btn-help ng-star-inserted\"]"))
+	private WebElement cancelorder;
+	public WebElement getCancelorder() {
+		return cancelorder;
+	}
+	
+	@FindBy(xpath = ("//button[contains(text(),\"YES\")]"))
+	private WebElement cancelyes;
+	public WebElement getCancelyes() {
+		return cancelyes;
+	}
+	
+	
+	@FindBy(xpath = ("//button[contains(text(),\"SUBMIT & CANCEL\")]"))
+	private WebElement cancelsubmit;
+	public WebElement getCancelsubmit() {
+		return cancelsubmit;
+	}
+	
+	@FindBy(xpath = "(//div[@class=\"pro-qty qty-upt-evt ng-star-inserted\"]//select[@name='quantity'])[1]")
+	private WebElement Qty_Incr_Decr;
+	public WebElement getQty_Incr_Decr() {
+		return Qty_Incr_Decr;
+	}
+	
+	@FindBy(xpath = "(//a[@class = \"action action-delete removeitem\"])[2]")
+	private WebElement removeitem;
+	public WebElement getRemoveitem() {
+		return removeitem;
+	}
+	
+	@FindBy(xpath = "(//div[@class=\"applypromo appliedpromocpn ng-star-inserted\"])[2]")
+	private WebElement Subs20_promo;
+	public WebElement getSubs20_promo() {
+		return Subs20_promo;
+	}
+	
+	@FindBy(xpath = "//input[@value='45']")
+	private WebElement Selectduration45;
+	public WebElement getSelectduration45() {
+		return Selectduration45;
+	}
+
+	@FindBy(xpath = "//input[@value='30']")
+	private WebElement Selectduration30;
+	public WebElement getSelectduration30() {
+		return Selectduration30;
+	}
+
+	@FindBy(xpath = "//input[@value='60']")
+	private WebElement Selectduration60;
+	public WebElement getSelectduration60() {
+		return Selectduration60;
+	}
+	
+	@FindBy(xpath = "//h2[contains( text(),'Order Placed Successfully!')]")
+	private WebElement orderplaced;
+	public WebElement getOrderplaced() {
+		return orderplaced;
+	}
+	
+	@FindBy(xpath = "//span[contains(@class,'order-number')]")
+	private WebElement orderid;
+	public WebElement getOrderid() {
+		return orderid;
+	}
+	@FindBy(xpath = "//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]")
+	private WebElement backto_Addrspage;
+	public WebElement getBackto_Addrspage() {
+		return backto_Addrspage;
+	}
+	
+	@FindBy(xpath = "//img[@alt='Netmeds.com, India ki Online Pharmacy']")
+	private WebElement netmedshome;
+	public WebElement getNetmedshome() {
+		return netmedshome;
+	}
+	
+	
+	//*****************************************************M3 Flow Ends**********************************************************************************
 	
 	
 	
@@ -345,13 +433,29 @@ public class Monepom extends BaseClass {
 	}
 	
 	
-	@FindBy(xpath = "(//input[@name='reasonselect'])[4]")
+	@FindBy(xpath = "(//input[@name='reasonselect'])[1]")
 	private WebElement Cancel_reason;
 	public WebElement getCancel_reason() {
 		return Cancel_reason;
 	}
 	
+	@FindBy(xpath = "(//input[@name='reasonselect'])[2]")
+	private WebElement Cancel_reason1;
+	public WebElement getCancel_reason1() {
+		return Cancel_reason1;
+	}
 	
+	@FindBy(xpath = "(//input[@name='reasonselect'])[3]")
+	private WebElement Cancel_reason2;
+	public WebElement getCancel_reason2() {
+		return Cancel_reason2;
+	}
+	
+	@FindBy(xpath = "(//input[@name='reasonselect'])[4]")
+	private WebElement Cancel_reason3;
+	public WebElement getCancel_reason3() {
+		return Cancel_reason3;
+	}
 	@FindBy(xpath = "//button[contains(text(),'SUBMIT & CANCEL')]")
 	private WebElement Submit_Cancel;
 	public WebElement getSubmit_Cancel() {

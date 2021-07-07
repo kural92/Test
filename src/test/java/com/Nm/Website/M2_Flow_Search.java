@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -29,7 +30,7 @@ public class M2_Flow_Search extends BaseClass {
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
 	   public void startReport() {
 	   	
-	      htmlReporter = new ExtentHtmlReporter(".//report//M2_Flow.html");
+	      htmlReporter = new ExtentHtmlReporter(".//Report//M2_Flow.html");
 	       
 	       //initialize ExtentReports and attach the HtmlReporter
 	       report = new ExtentReports();
@@ -273,6 +274,22 @@ public class M2_Flow_Search extends BaseClass {
 			 System.out.println(Pcode);
 			 logger.log(Status.PASS, Pcode );
 			 
+			 try {
+				// Handling Lets Chat Window
+					driver.switchTo().frame("haptik-xdk");
+					Actions acc = new Actions(driver);
+					
+					acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build().perform();
+					
+					driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+					
+					 Thread.sleep(2000);
+					driver.switchTo().defaultContent();
+					
+			 } catch (Exception e) {
+				
+			}
+			 
 			 
 			 ////   Change Address
 			 // Add NEw Address
@@ -365,7 +382,7 @@ public class M2_Flow_Search extends BaseClass {
 			
 			btncli(m.getCancel_Order());
 			Thread.sleep(3000);
-			btncli(m.getCancel_reason());
+			btncli(m.getCancel_reason1());
 			Thread.sleep(3000);
 			btncli(m.getSubmit_Cancel());
 			Thread.sleep(3000);
@@ -471,7 +488,7 @@ public class M2_Flow_Search extends BaseClass {
 			
 			btncli(m.getCancel_Order());
 			Thread.sleep(3000);
-			btncli(m.getCancel_reason());
+			btncli(m.getCancel_reason2());
 			Thread.sleep(3000);
 			btncli(m.getSubmit_Cancel());
 			Thread.sleep(3000);
@@ -589,7 +606,7 @@ public class M2_Flow_Search extends BaseClass {
 			
 			btncli(m.getCancel_Order());
 			Thread.sleep(3000);
-			btncli(m.getCancel_reason());
+			btncli(m.getCancel_reason3());
 			Thread.sleep(3000);
 			btncli(m.getSubmit_Cancel());
 			Thread.sleep(3000);
