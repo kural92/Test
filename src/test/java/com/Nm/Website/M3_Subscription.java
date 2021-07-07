@@ -34,7 +34,7 @@ public class M3_Subscription extends BaseClass {
 	@BeforeTest(groups = { "forgetPassword", "sanity", "reg" })
 	public void startReport() {
 
-		htmlReporter = new ExtentHtmlReporter(".//report//sample.html");
+		htmlReporter = new ExtentHtmlReporter(".//Report//sample.html");
 
 		// initialize ExtentReports and attach the HtmlReporter
 		report = new ExtentReports();
@@ -213,7 +213,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[4]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
 		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
@@ -266,6 +266,20 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getCreatenewfill());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
+		
+		try {
+			driver.switchTo().frame("haptik-xdk");
+			Actions acc = new Actions(driver);
+			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+					.perform();
+
+			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+
+			driver.switchTo().defaultContent();
+
+		} catch (Exception e) {
+
+		}
 
 		// Step 6:Search Product//
 
@@ -343,7 +357,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 14:Change address
 
 		btncli(m.getChangeaddbtn());
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 
 		btncli(m.getSelectaddress());
 		Thread.sleep(3000);
@@ -354,19 +368,7 @@ public class M3_Subscription extends BaseClass {
 		System.out.println("yes enabled");
 		Thread.sleep(3000);
 
-		try {
-			driver.switchTo().frame("haptik-xdk");
-			Actions acc = new Actions(driver);
-			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
-					.perform();
-
-			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
-
-			driver.switchTo().defaultContent();
-
-		} catch (Exception e) {
-
-		}
+		
 
 		// Step 15 : modify Address
 
@@ -402,6 +404,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 
 		// Step 16 : Delete address
+		
 		driver.findElement(By.xpath("//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]"))
 				.isEnabled();
 
@@ -413,7 +416,7 @@ public class M3_Subscription extends BaseClass {
 
 		btncli(m.getDeleteaddress());
 
-		Thread.sleep(30000);
+		Thread.sleep(3000);
 
 		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
 		Thread.sleep(3000);
@@ -464,6 +467,7 @@ public class M3_Subscription extends BaseClass {
 		System.out.println(confirmation + "and the id is " + orderid);
 		
 		//Tracking order//
+		
 		driver.findElement(By.xpath("(//button[contains(.,'My Subscription')])[2]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[@class='orders-link']")).click();
@@ -474,7 +478,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[5]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
 		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
@@ -783,7 +787,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[contains(text(),\"YES\")]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[7]")).click();
+		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[6]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[contains(text(),\"SUBMIT & CANCEL\")]")).click();
 		 logger.log(Status.PASS, "Successfully Order was Cancelled" );
@@ -829,7 +833,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+			//BaseClass.mail_report();
 		}
 
 	}
@@ -838,7 +842,7 @@ public class M3_Subscription extends BaseClass {
 	private void quitbrowser() {
 		report.flush();
 
-		driver.quit();
+		//driver.quit();
 	}
 
 }
