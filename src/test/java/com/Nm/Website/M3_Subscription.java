@@ -369,6 +369,41 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getConsultdoctorcheck());
 
 		logger.log(Status.PASS, "Doctor Consultation is sucessfully schedulded");
+		
+		// Step 10 : Add New address
+
+				btncli(m.getChangeaddbtn());
+				Thread.sleep(3000);
+
+				btncli(m.getM2_AddNewAddresss_btn());
+				Thread.sleep(3000);
+				type(m.getM2_Address_Pin(), "311003");
+
+				Thread.sleep(3000);
+				m.getM2_Address_FirstName().clear();
+				Thread.sleep(1000);
+
+				m.getM2_Address_FirstName().sendKeys("Testing");
+				Thread.sleep(3000);
+
+				m.getM2_Address_Lastname().clear();
+				Thread.sleep(1000);
+
+				m.getM2_Address_Lastname().sendKeys("Testing");
+				Thread.sleep(3000);
+
+				m.getM2_Address_Street().sendKeys("Testing");
+				Thread.sleep(3000);
+
+				m.getM2_Address_landMark().sendKeys("Testing");
+				Thread.sleep(3000);
+
+				btncli(m.getM2_SaveAddress_btn());
+
+				Thread.sleep(3000);
+				btncli(m.getBackto_Addrspage());
+				Thread.sleep(3000);
+
 
 		// Step 11 : select duration//
 		btncli(m.getSelectDuration());
@@ -429,6 +464,7 @@ public class M3_Subscription extends BaseClass {
 
 		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
 		Thread.sleep(3000);
+		
 
 		// Step 16 : Delete address
 
@@ -452,40 +488,7 @@ public class M3_Subscription extends BaseClass {
 		
 		Thread.sleep(3000);
 
-		// Step 17 : Add New address
-
-		btncli(m.getChangeaddbtn());
-		Thread.sleep(3000);
-
-		btncli(m.getM2_AddNewAddresss_btn());
-		Thread.sleep(3000);
-		type(m.getM2_Address_Pin(), "311003");
-
-		Thread.sleep(3000);
-		m.getM2_Address_FirstName().clear();
-		Thread.sleep(1000);
-
-		m.getM2_Address_FirstName().sendKeys("Testing");
-		Thread.sleep(3000);
-
-		m.getM2_Address_Lastname().clear();
-		Thread.sleep(1000);
-
-		m.getM2_Address_Lastname().sendKeys("Testing");
-		Thread.sleep(3000);
-
-		m.getM2_Address_Street().sendKeys("Testing");
-		Thread.sleep(3000);
-
-		m.getM2_Address_landMark().sendKeys("Testing");
-		Thread.sleep(3000);
-
-		btncli(m.getM2_SaveAddress_btn());
-
-		Thread.sleep(3000);
-		btncli(m.getBackto_Addrspage());
-		Thread.sleep(3000);
-
+		
 		// Step 18 : Click Subscribe//
 
 		btncli(m.getSubscribe());
