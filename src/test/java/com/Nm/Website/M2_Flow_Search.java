@@ -1,21 +1,18 @@
 package com.Nm.Website;
 
-import java.awt.Robot;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
@@ -401,7 +398,7 @@ public class M2_Flow_Search extends BaseClass {
 		
 		
 		@Test(enabled = true)
-		public void autoIt_Upload() throws Throwable {
+		public void call_Upload() throws Throwable {
 			
 			logger =  report.createTest("M2 Get Call From netmeds - Upload Prescription");
 			logger.log(Status.PASS, "************* Get Call Flow********************" );
@@ -436,12 +433,26 @@ public class M2_Flow_Search extends BaseClass {
 			logger.log(Status.PASS, "Successfully navigated to Add Prescription page" );
 			
 			
-			Thread.sleep(5000);
-			btncli(driver.findElement(By.xpath("//label[@class='up-fileupload']")));
 			
-			// Auto IT Script
 			Thread.sleep(5000);
-			Runtime.getRuntime().exec("D:\\AutoIT\\FileUpload.exe");
+			//btncli(driver.findElement(By.xpath("//label[@class='up-fileupload']")));
+			
+			WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
+			Thread.sleep(3000);
+			upload.sendKeys("D:\\Eclipse_WorkSpace\\Automation\\Prescription\\M2 Pay.png");
+
+			
+			
+			Thread.sleep(5000);
+			
+			
+			/*
+			 * Thread.sleep(5000);
+			 * btncli(driver.findElement(By.xpath("//label[@class='up-fileupload']")));
+			 * 
+			 * // Auto IT Script Thread.sleep(5000);
+			 * Runtime.getRuntime().exec("D:\\AutoIT\\FileUpload.exe");
+			 */
 			
 			
 			Thread.sleep(3000);
@@ -543,11 +554,24 @@ public class M2_Flow_Search extends BaseClass {
 			
 			
 			Thread.sleep(5000);
-			btncli(driver.findElement(By.xpath("//label[@class='up-fileupload']")));
+			//btncli(driver.findElement(By.xpath("//label[@class='up-fileupload']")));
 			
-			// Auto IT Script
+			WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
+			Thread.sleep(3000);
+			upload.sendKeys("D:\\Eclipse_WorkSpace\\Automation\\Prescription\\M2 Pay.png");
+
+			
+			
 			Thread.sleep(5000);
-			Runtime.getRuntime().exec("D:\\AutoIT\\FileUpload.exe");
+			
+			
+			/*
+			 * Thread.sleep(5000);
+			 * btncli(driver.findElement(By.xpath("//label[@class='up-fileupload']")));
+			 * 
+			 * // Auto IT Script Thread.sleep(5000);
+			 * Runtime.getRuntime().exec("D:\\AutoIT\\FileUpload.exe");
+			 */
 			
 			
 			Thread.sleep(3000);

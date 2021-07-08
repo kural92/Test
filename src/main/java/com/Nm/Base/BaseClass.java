@@ -153,7 +153,7 @@ public static void select_deselectAll(WebElement element) {
 
 //////////   Excel    COde   ///////////////////////
 public static String getExcelDataUrl(String sheetName, int rowNum, int colNum) throws Throwable{
-	FileInputStream fis = new FileInputStream("//Excel//LoginTestData_Mohan2222.xlsx");
+	FileInputStream fis = new FileInputStream("//Excel//LoginTestData.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
@@ -165,7 +165,7 @@ wb.close();
 
 
 public static String getExcelData(String sheetName, int rowNum, int colNum) throws Throwable{
-	FileInputStream fis = new FileInputStream(".//Testdata//SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
@@ -176,7 +176,7 @@ wb.close();
 
 
 public static int getExcelRandomRowNum(String sheetName) throws Throwable{
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream("\\SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Random rand = new Random();
