@@ -57,7 +57,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -536,7 +536,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void M3RXflow() throws Throwable {
 
 		logger = report.createTest(" M3RXflow");
@@ -578,7 +578,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 4 : Navigate to Mysubscription page//
 
 		btncli(m.getMysubscriptionpage());
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
 
 		// Step 5 :Click create new fill button//
@@ -604,10 +604,14 @@ public class M3_Subscription extends BaseClass {
 		// Step 6:Search Product//
 
 		for (int i = 0; i < 2; i++) {
-
+			//Thread.sleep(5000);
+			//btncli(m.getM3productsearch());
+			
+			
+			//Thread.sleep(1500);
 			type(m.getM3productsearch(), BaseClass.getExcelData("Rx", i, 0));
 
-			// btncli(m.getSearchIcon());
+			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
 
 			String Cart_Excel = BaseClass.getExcelData("Rx", i, 1);
@@ -715,7 +719,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void pastrx() throws Throwable {
 
 		logger = report.createTest(" Pastrx");
