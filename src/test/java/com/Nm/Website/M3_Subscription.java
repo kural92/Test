@@ -40,7 +40,7 @@ public class M3_Subscription extends BaseClass {
 		// initialize ExtentReports and attach the HtmlReporter
 		report = new ExtentReports();
 
-		// htmlReporter.setAppendExisting(true); 
+		// htmlReporter.setAppendExisting(false); 
 		report.attachReporter(htmlReporter);
 		report.setSystemInfo("Host name", "localhost");
 		report.setSystemInfo("Environemnt", "QA");
@@ -57,7 +57,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -130,12 +130,12 @@ public class M3_Subscription extends BaseClass {
 
 		for (int i = 0; i < 3; i++) {
 
-			type(m.getM3productsearch(), BaseClass.getExcelData("Subs", i, 0));
+			type(m.getM3productsearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
 
-			String Cart_Excel = BaseClass.getExcelData("Subs", i, 1);
+			String Cart_Excel = BaseClass.getExcelData("Otcandnonrx", i, 1);
 
 			// Step 7 : Add product to the cart//
 			try {
@@ -253,7 +253,7 @@ public class M3_Subscription extends BaseClass {
 	// *********************************************M3 -Doctor consultation
 	// **********************************************************************************************//
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
@@ -370,40 +370,7 @@ public class M3_Subscription extends BaseClass {
 
 		logger.log(Status.PASS, "Doctor Consultation is sucessfully schedulded");
 		
-		// Step 10 : Add New address
-
-				btncli(m.getChangeaddbtn());
-				Thread.sleep(3000);
-
-				btncli(m.getM2_AddNewAddresss_btn());
-				Thread.sleep(3000);
-				type(m.getM2_Address_Pin(), "311003");
-
-				Thread.sleep(3000);
-				m.getM2_Address_FirstName().clear();
-				Thread.sleep(1000);
-
-				m.getM2_Address_FirstName().sendKeys("Testing");
-				Thread.sleep(3000);
-
-				m.getM2_Address_Lastname().clear();
-				Thread.sleep(1000);
-
-				m.getM2_Address_Lastname().sendKeys("Testing");
-				Thread.sleep(3000);
-
-				m.getM2_Address_Street().sendKeys("Testing");
-				Thread.sleep(3000);
-
-				m.getM2_Address_landMark().sendKeys("Testing");
-				Thread.sleep(3000);
-
-				btncli(m.getM2_SaveAddress_btn());
-
-				Thread.sleep(3000);
-				btncli(m.getBackto_Addrspage());
-				Thread.sleep(3000);
-
+		
 
 		// Step 11 : select duration//
 		btncli(m.getSelectDuration());
@@ -424,6 +391,46 @@ public class M3_Subscription extends BaseClass {
 		System.out.println(doctorconfirmation);
 
 		Thread.sleep(3000);
+		
+		// Step 10 : Add New address
+
+		btncli(m.getChangeaddbtn());
+		Thread.sleep(3000);
+
+		btncli(m.getM2_AddNewAddresss_btn());
+		Thread.sleep(3000);
+		type(m.getM2_Address_Pin(), "600100");
+
+		Thread.sleep(3000);
+		m.getM2_Address_FirstName().clear();
+		Thread.sleep(1000);
+
+		m.getM2_Address_FirstName().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		m.getM2_Address_Lastname().clear();
+		Thread.sleep(1000);
+
+		m.getM2_Address_Lastname().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		m.getM2_Address_Street().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		m.getM2_Address_landMark().sendKeys("Testing");
+		Thread.sleep(3000);
+
+		btncli(m.getM2_SaveAddress_btn());
+
+		Thread.sleep(3000);
+		btncli(m.getBackto_Addrspage());
+		Thread.sleep(3000);
+		
+		btncli(m.getBackto_Addrspage());
+		
+		m.getBackto_Addrspage().isEnabled();
+
+		System.out.println("yes enabled");
 
 		// Step 14:Select address
 
@@ -432,7 +439,8 @@ public class M3_Subscription extends BaseClass {
 
 		btncli(m.getSelectaddress());
 		Thread.sleep(3000);
-
+		
+		btncli(m.getBackto_Addrspage());
 		m.getBackto_Addrspage().isEnabled();
 
 		System.out.println("yes enabled");
@@ -462,13 +470,15 @@ public class M3_Subscription extends BaseClass {
 
 		Thread.sleep(3000);
 
-		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
-		Thread.sleep(3000);
+		//btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
+		//Thread.sleep(3000);
 		
 
 		// Step 16 : Delete address
 
 		//driver.findElement(By.xpath("//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]")).isEnabled();
+		
+		btncli(m.getBackto_Addrspage());
 		
 		m.getBackto_Addrspage().isEnabled();
 
@@ -719,7 +729,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void pastrx() throws Throwable {
 
 		logger = report.createTest(" Pastrx");
@@ -790,12 +800,12 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 		for (int i = 0; i < 2; i++) {
 
-			type(m.getM3productsearch(), BaseClass.getExcelData("Rx", i, 0));
+			type(m.getM3productsearch(), BaseClass.getExcelData("Pastrx", i, 0));
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
 
-			String Cart_Excel = BaseClass.getExcelData("Rx", i, 1);
+			String Cart_Excel = BaseClass.getExcelData("Pastrx", i, 1);
 
 			// Step 7 : Add product to the cart//
 			try {
@@ -844,7 +854,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 		Selectrx.click();
 
-		driver.findElement(By.xpath("//div[@class='modal-dialog pastrxpopupmain']//span[@aria-hidden='true']")).click();
+		driver.findElement(By.xpath("//div[@class='modal-dialog pastrxpopupmain']//span[@aria-hidden='false']")).click();
 
 		// Step 10 : select duration//
 
