@@ -159,7 +159,7 @@ public class LoginTest extends BaseClass {
 			btncli(m.getMinicart());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to cart page" );
-			btncli(m.getProceedbutton());
+			btncli(m.getProceedbutton()); 
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to search order review page" );
 

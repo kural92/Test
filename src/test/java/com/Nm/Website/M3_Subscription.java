@@ -40,7 +40,7 @@ public class M3_Subscription extends BaseClass {
 		// initialize ExtentReports and attach the HtmlReporter
 		report = new ExtentReports();
 
-		// htmlReporter.setAppendExisting(true);
+		// htmlReporter.setAppendExisting(true); 
 		report.attachReporter(htmlReporter);
 		report.setSystemInfo("Host name", "localhost");
 		report.setSystemInfo("Environemnt", "QA");
