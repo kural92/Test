@@ -95,6 +95,7 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getUserprofile());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		System.out.println("Successfully navigate to userprofile");
 		
 		
 
@@ -103,12 +104,13 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getMysubscriptionpage());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
-
+		System.out.println("Successfully navigate to mysubscriptionpage");
 		// Step 5 :Click create new fill button//
 
 		btncli(m.getCreatenewfill());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
+		
 		
 		try {
 			driver.switchTo().frame("haptik-xdk");
@@ -170,16 +172,24 @@ public class M3_Subscription extends BaseClass {
 		Select qtyincrease = new Select(m.getQty_Incr_Decr());
 		qtyincrease.selectByIndex(3);
 		Thread.sleep(3000);
+		
+		logger.log(Status.PASS, " quantity increased Successfully");
+		System.out.println(" quantity increased Successfully");
 
 		// Step 10 :Remove qty//
 		btncli(m.getRemoveitem());
 		Thread.sleep(3000);
-
+		logger.log(Status.PASS, " item removed Successfully");
+		System.out.println(" quantity increased Successfully");
+		
 		// Step 11: Decrease qty//
 
 		Select qtydecrease = new Select(m.getQty_Incr_Decr());
 		qtydecrease.selectByIndex(1);
 		Thread.sleep(3000);
+		
+		logger.log(Status.PASS, " quantity decreased Successfully");
+		System.out.println(" quantity decareased Successfully");
 
 		// Step 12:Promo Code Check//
 
@@ -376,7 +386,7 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSelectDuration());
 		btncli(m.getSelectduration45());
 		Thread.sleep(2000);
-
+		logger.log(Status.PASS, "Sucessfully duration selected");
 		// Step 12 : Click Next Button//
 
 		btncli(m.getNextbutton());
@@ -423,10 +433,19 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getM2_SaveAddress_btn());
 
 		Thread.sleep(3000);
-		btncli(m.getBackto_Addrspage());
+		
+		logger.log(Status.PASS, "Address was added successfully");
+		
+		System.out.println("Address was added successfully");
+		
+		//btncli(m.getBackto_Addrspage());
+		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
 		Thread.sleep(3000);
 		
-		btncli(m.getBackto_Addrspage());
+		
+		
+		
+		//btncli(m.getBackto_Addrspage());
 		
 		m.getBackto_Addrspage().isEnabled();
 
@@ -440,7 +459,14 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSelectaddress());
 		Thread.sleep(3000);
 		
-		btncli(m.getBackto_Addrspage());
+		//btncli(m.getBackto_Addrspage());
+		
+		//btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
+		
+		logger.log(Status.PASS, "Address was selected successfully");
+		
+		System.out.println("Address was selected successfully");
+		
 		m.getBackto_Addrspage().isEnabled();
 
 		System.out.println("yes enabled");
@@ -478,12 +504,23 @@ public class M3_Subscription extends BaseClass {
 
 		//driver.findElement(By.xpath("//a[contains(@class,'addchangeweb col-md-4 text-right p-0 ng-star-inserted')]")).isEnabled();
 		
-		btncli(m.getBackto_Addrspage());
+		//btncli(m.getBackto_Addrspage());
+		
+		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
+		Thread.sleep(3000);
+		
+		logger.log(Status.PASS, "Address was modified successfully");
+		
+		System.out.println("Address was modified successfully");
 		
 		m.getBackto_Addrspage().isEnabled();
+		Thread.sleep(3000);
 
 		System.out.println("yes enabled");
 
+		
+		//Delete Address
+		
 		btncli(m.getChangeaddbtn());
 
 		Thread.sleep(3000);
@@ -494,10 +531,14 @@ public class M3_Subscription extends BaseClass {
 
 		//btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
 		
-		btncli(m.getBackto_Addrspage());
+		//btncli(m.getBackto_Addrspage());
+		btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
 		
 		Thread.sleep(3000);
 
+		logger.log(Status.PASS, "Address was deleted successfully");
+		
+		System.out.println("Address was deleted successfully");
 		
 		// Step 18 : Click Subscribe//
 
@@ -546,7 +587,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void M3RXflow() throws Throwable {
 
 		logger = report.createTest(" M3RXflow");
@@ -729,7 +770,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void pastrx() throws Throwable {
 
 		logger = report.createTest(" Pastrx");
@@ -853,8 +894,10 @@ String confirmation = m.getOrder_Placed_text().getText();
 		WebElement Selectrx = driver.findElement(By.xpath("(//input[@class=\"rx_image\"])[2]"));
 
 		Selectrx.click();
+		
+		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//div[@class='modal-dialog pastrxpopupmain']//span[@aria-hidden='false']")).click();
+		driver.findElement(By.xpath("(//button[@class='close'])[2]")).click();
 
 		// Step 10 : select duration//
 
