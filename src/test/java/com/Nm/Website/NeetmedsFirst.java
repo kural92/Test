@@ -54,7 +54,7 @@ public class NeetmedsFirst extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	//@Test(enabled = true)
+	@Test(enabled = false)
 	public  void NetmedsError() throws Throwable  {
 		logger =  report.createTest(" All Categories");
 		logger.log(Status.PASS, "*************Take Action Fail Alert********************" );

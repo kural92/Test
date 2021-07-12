@@ -34,6 +34,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -55,7 +56,11 @@ public class BaseClass {
 	@BeforeClass
 	public WebDriver launchbrowser() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Driver//chromedriver.exe");
-		driver=new ChromeDriver();
+		
+		ChromeOptions options = new ChromeOptions();
+	//	options.addArguments("--headless", "--window-size=1920,1200");
+		driver=new ChromeDriver(options);
+		driver.manage().window().maximize();
 		driver.get("https://www.netmeds.com");
 		return driver;
 	}
@@ -63,29 +68,54 @@ public class BaseClass {
 	driver.get(url);
 	}
 	
-	public void type(WebElement element ,String name) {
+	public void type(WebElement element ,String name) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(1000);
 		element.sendKeys(name);
 	}
-	public void clrtxt(WebElement element) {
+	public void clrtxt(WebElement element) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(1000);
 		element.clear();
 			
 	}
 	
-	public void btncli(WebElement element) {
-	element.click();	
+	public void btncli(WebElement element) throws Throwable {
+		/*
+		 * WebDriverWait wait = new WebDriverWait(driver, 30);
+		 * wait.until(ExpectedConditions.elementToBeClickable(element));
+		 * Thread.sleep(1000);
+		 */
+	    element.click();	
 	}
-	public void selectbyvalue(WebElement element,String name) {
+	
+	public void selectbyvalue(WebElement element,String name) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(1000);
 		new Select (element).selectByValue(name);
 	}
-	public void selectbyindex(WebElement element,int index) {
+	
+	public void selectbyindex(WebElement element,int index) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(1000);
 		new Select (element).selectByIndex(index);
 	}
-	public void selectbytext(WebElement element,String text) {
+	
+	public void selectbytext(WebElement element,String text) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(1000);
 		new Select (element).selectByValue(text);
 	}
-	public void mouse(WebElement element) {
+	
+	public void mouse(WebElement element) throws Throwable {
 	new Actions(driver).moveToElement(element).perform();
 	}
+	
 	public void right(WebElement element) {
 		new Actions(driver).contextClick(element).perform();
 		}
@@ -103,11 +133,17 @@ public class BaseClass {
 		driver.close();
 
 	}
-	public String gettext(WebElement element ) {
+	public String gettext(WebElement element ) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(1000);
 	String text = element.getText();
 return text;
 	}
-	public String getattribute(WebElement element,String value ) {
+	public String getattribute(WebElement element,String value ) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(1000);
 		String attribute = element.getAttribute(value);
 		return attribute;
 	}
@@ -153,7 +189,7 @@ public static void select_deselectAll(WebElement element) {
 
 //////////   Excel    COde   ///////////////////////
 public static String getExcelDataUrl(String sheetName, int rowNum, int colNum) throws Throwable{
-	FileInputStream fis = new FileInputStream("//Excel//LoginTestData_Mohan2222.xlsx");
+	FileInputStream fis = new FileInputStream("//Excel//LoginTestData.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
@@ -165,7 +201,7 @@ wb.close();
 
 
 public static String getExcelData(String sheetName, int rowNum, int colNum) throws Throwable{
-	FileInputStream fis = new FileInputStream(".//Testdata//SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
@@ -176,7 +212,7 @@ wb.close();
 
 
 public static int getExcelRandomRowNum(String sheetName) throws Throwable{
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream("\\SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Random rand = new Random();

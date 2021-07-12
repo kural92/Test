@@ -4,9 +4,11 @@ import java.io.File;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -48,15 +50,17 @@ public class LoginTest extends BaseClass {
 	}
 
 //********************************************** Testcase1-Login with username and password ********************************************************************//
-	@Test
-	public void takeAction() throws Throwable {
+	@Test(enabled = true, priority = 0 )
+	public void loginwithpwd() throws Throwable {
 
 		logger = report.createTest("Loginwith username and password");
 		logger.log(Status.PASS, "*************Loginwith username and password********************");
 
-//Step1 :Launch Browser//		
-		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+//Step1 :Launch Browser//
+		
+			Monepom m = new Monepom();
+	
+			driver.manage().window().maximize();
 		
 		//Step 2 :Login with user name and password//
 				btncli(m.getSignin());
@@ -74,11 +78,17 @@ public class LoginTest extends BaseClass {
 				btncli(m.getSignInpage());
 				Thread.sleep(3000);
 				logger.log(Status.PASS, "Successfully navigate to home page");
+				
+				btncli(m.getUserprofile());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully navigate to userprofile");
+				
+				driver.findElement(By.xpath("//a[@class=\"logout-link ng-star-inserted\"]")).click();
 	}			
 				
-				
+			
 //****************************************** Testcase2-Login using  upload Prescription***************************************************************************************//
-	@Test
+	@Test(enabled = true , priority = 1)
 	public void Loginwithupload() throws Throwable {
 
 		logger = report.createTest(" Loginwithupload");
@@ -86,11 +96,11 @@ public class LoginTest extends BaseClass {
 
 		// Step1 :Launch Browser//
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		// Step 2 :Click Upload//
-
-		driver.findElement(By.xpath("//a[.='Upload']")).click();
+		btncli(m.getNetmedshome());
+		driver.findElement(By.xpath("//a[.='Upload Rx']")).click();
 		logger.log(Status.PASS, "Successfully navigate to Login Page");
 		Thread.sleep(3000);
 
@@ -99,8 +109,7 @@ public class LoginTest extends BaseClass {
 		type(m.getMobileno(), "8072281468");
 		Thread.sleep(3000);
 
-		// btncli(driver.findElement(By.xpath("//button[contains(text(),'USE
-		// PASSWORD')]")));
+		
 		btncli(m.getUsepwdbtn());
 		Thread.sleep(3000);
 		type(m.getPassword(), "test@123");
@@ -109,10 +118,21 @@ public class LoginTest extends BaseClass {
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to home page");
 		
+		btncli(m.getNetmedshome());
+		
+		btncli(m.getUserprofile());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		
+		driver.findElement(By.xpath("//a[@class=\"logout-link ng-star-inserted\"]")).click();
+		
+		
 	}
+	
+	
 
 //************** Testcase3-Login through cart  *******************//
-		@Test
+		@Test (enabled = true , priority = 2)
 		public void Loginthroughcart() throws Throwable {
 
 			logger = report.createTest("Loginthroughcart");
@@ -121,11 +141,16 @@ public class LoginTest extends BaseClass {
 
 	//Step1 :Launch Browser//		
 			Monepom m = new Monepom();
-			driver.manage().window().maximize();
+			//driver.manage().window().maximize();
+			
+			btncli(m.getNetmedshome());
 			
 			driver.findElement(By.xpath("//input[@id='search']")).sendKeys("Telmikind 40mg Tablet 10'S");
 			
-			driver.findElement(By.xpath("//button[contains(@class,\"iconSearch\")]")).click();
+			driver.findElement(By.xpath("//input[@id='search']")).sendKeys(Keys.ENTER);
+		
+			Thread.sleep(3000);
+			//driver.findElement(By.xpath("//button[contains(@class,\"iconSearch\")]")).click();
 			
 			//driver.findElement(By.id("//button[contains(@id,\"product-addtocart-button\")] ")).click();
 			
@@ -134,7 +159,7 @@ public class LoginTest extends BaseClass {
 			btncli(m.getMinicart());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to cart page" );
-			btncli(m.getProceedbutton());
+			btncli(m.getProceedbutton()); 
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to search order review page" );
 
@@ -153,11 +178,19 @@ public class LoginTest extends BaseClass {
 					btncli(m.getSignInpage());
 					Thread.sleep(3000);
 					logger.log(Status.PASS, "Successfully navigate to home page");	
+					
+					btncli(m.getNetmedshome());
+					
+					btncli(m.getUserprofile());
+					Thread.sleep(3000);
+					logger.log(Status.PASS, "Successfully navigate to userprofile");
+					
+					driver.findElement(By.xpath("//a[@class=\"logout-link ng-star-inserted\"]")).click();
+							
 	}
 		
 		
 		
-
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
 
@@ -197,11 +230,12 @@ public class LoginTest extends BaseClass {
 
 	}
 
-	@AfterTest
-	private void quitbrowser() {
-		report.flush();
-
-		driver.quit();
+	//@AfterTest
+	//private void quitbrowser() {
+	//report.flush();
+	//	driver.quit();
+		
+		
 	}
 
-}
+

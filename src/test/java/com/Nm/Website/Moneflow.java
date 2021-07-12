@@ -58,7 +58,7 @@ public class Moneflow extends BaseClass {
     	
     }
 	@Test
-	public  void test1() throws InterruptedException  {
+	public  void test1() throws Throwable  {
 		logger =  report.createTest(" All Categories");
 		logger.log(Status.PASS, "*************m1 flow********************" );
 		Monepom m=new Monepom();
