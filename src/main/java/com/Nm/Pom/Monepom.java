@@ -580,7 +580,7 @@ public class Monepom extends BaseClass {
 	public WebElement getHome_exploreplans() {
 		return Home_exploreplans;
 	}
-	@FindBy(xpath="//div[@class='left-block']/h2[1]")
+	@FindBy(xpath="//div[@class='membershipoffer']/h4")
 	private WebElement Home_getmostfrom;
 	public WebElement getHome_getmostfrom() {
 		return Home_getmostfrom;
@@ -590,16 +590,21 @@ public class Monepom extends BaseClass {
 	public WebElement getGethome_netmedsfirst() {
 		return gethome_netmedsfirst;
 	}
-	@FindBy(xpath="//small[text()='Get special discounts and offers on Netmeds services.']")
+	@FindBy(xpath="//li[text()='Get special discounts and offers on Netmeds services.']")
 	private WebElement gethome_Getspecialdiscount;
 	public WebElement getGethome_Getspecialdiscount() {
 		return gethome_Getspecialdiscount;
 	}
 	@FindBy(xpath="//h2[text()='Save more with Netmeds First membership']")
 	private WebElement home_savemore;
+	@FindBy(xpath="//h2[text()='Netmeds First Membership']")
+	private WebElement home_NetmedsFirst;
+	public WebElement getHome_NetmedsFirst() {
+		return home_NetmedsFirst;
+	}
 	@FindBy(xpath="//li[text()='Get 2.5% NMS Cash on all orders.']")
 	private WebElement  home_getnms_cash;
-	@FindBy(xpath="//div[text()='Starting at Rs.299']")
+	@FindBy(xpath="//div[text()='Starting at ₹299']")
 	private WebElement home_stating_price;
 	@FindBy(xpath="//h5[text()='2.5% NMS Cash']")
 	private WebElement home_nmscash_section;
@@ -668,4 +673,71 @@ public class Monepom extends BaseClass {
 	public WebElement getHome_allprepaid_orders() {
 		return home_allprepaid_orders;
 	}
+	
+	@FindBy(xpath="//a[@id='logged_user']")
+	private WebElement home_logged_user;
+	
+	@FindBy(xpath="//a[text()='Netmeds First ']")
+	private WebElement yourAccount_Netmeds_First;
+	public WebElement getHome_logged_user() {
+		return home_logged_user;
+	}
+
+
+	public WebElement getYourAccount_Netmeds_First() {
+		return yourAccount_Netmeds_First;
+	}
+	@FindBy(xpath="//h4[text()='Save more with exclusive membership']")
+	private WebElement youraccount_savemore;
+	public WebElement getYouraccount_savemore() {
+		return youraccount_savemore;
+	}
+	@FindBy(xpath="//h3[text()='Netmeds Membership']")
+	private WebElement youraccount_NetmedsMembership;
+	public WebElement getYouraccount_NetmedsMembership() {
+		return youraccount_NetmedsMembership;
+	}
+	
+	@FindBy(xpath="//div[@class='cart-rightside col-md-4']/div/h4")
+	private WebElement cart_NetmedsMembership;
+	@FindBy(xpath="//div[@class='cart-rightside col-md-4']/div/p")
+	private WebElement cart_Netmedscontent;
+	@FindBy(xpath="//div[@class='cart-rightside col-md-4']/div/a")
+	private WebElement cart_NetmedsMembershiplink;
+	public WebElement getCart_NetmedsMembershiplink() {
+		return cart_NetmedsMembershiplink;
+	}
+
+
+	public WebElement getCart_NetmedsMembership() {
+		return cart_NetmedsMembership;
+	}
+	@FindBy(xpath="//div[@class='cart-rightside col-md-4']/div/a")
+	private WebElement cart_netmedsfirsticon;
+
+	public WebElement getCart_netmedsfirsticon() {
+		return cart_netmedsfirsticon;
+	}
+
+
+	public WebElement getCart_Netmedscontent() {
+		return cart_Netmedscontent;
+	}
+	@FindBy(xpath="//div[@class='discountcol mobicpnmain d-none d-sm-block']/div/div/span")
+	private WebElement Cart_promo_code;
+	public WebElement getCart_promo_code() {
+		return Cart_promo_code;
+	}
+	
+	@FindBy(xpath="//span[@id='cart_netpay_amt1']")
+	private WebElement Cart_TotalPay;
+	public WebElement getCart_TotalPay() {
+		return Cart_TotalPay;
+	}
+	public List<WebElement> getPromocode() {
+		return promocode;
+	}
+	@FindBy(xpath="//form[@class='ng-untouched ng-pristine ng-invalid ng-star-inserted']/following-sibling::div/ul/li/div/input[starts-with(@id,'webcoupon')]")
+	private List<WebElement> promocode;
+	
 }
