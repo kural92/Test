@@ -1,5 +1,7 @@
 package com.Nm.Website;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
@@ -56,6 +58,7 @@ public class Take_Action extends BaseClass{
 		logger =  report.createTest(" All Categories");
 		logger.log(Status.PASS, "*************Take Action Fail Alert********************" );
 		Monepom m=new Monepom();
+		Robot r = new Robot();
 		driver.manage().window().maximize();
 		btncli(m.getSignin());
 		Thread.sleep(5000);
@@ -98,12 +101,14 @@ public class Take_Action extends BaseClass{
 		//////////////////////////
 		
 		Thread.sleep(3000);
-		for (int i = 0; i <3; i++) {
+		for (int i = 1; i <5; i++) {
 			Thread.sleep(5000);
 		type(m.getSearch(), BaseClass.getExcelData("TakeAction", i, 0));
-		btncli(m.getSearchIcon());
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		//btncli(m.getSearchIcon());
 		logger.log(Status.PASS, "Successfully Added  " +  BaseClass.getExcelData("TakeAction", i, 0));
-		
+		System.err.println("Successfully Added  " +  BaseClass.getExcelData("TakeAction", i, 0));
 		String Cart_Excel = BaseClass.getExcelData("TakeAction", i, 1);
 		try {
 		Thread.sleep(3000);
@@ -309,7 +314,7 @@ public class Take_Action extends BaseClass{
 	//	BaseClass.mail_report();
 	
 		
-		BaseClass.mail_report();
+	//	BaseClass.mail_report();
 	}
 	
 	

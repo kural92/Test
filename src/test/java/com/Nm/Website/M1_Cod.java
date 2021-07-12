@@ -2,6 +2,8 @@ package com.Nm.Website;
 
 import static org.testng.Assert.assertEquals;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.List;
 
@@ -61,6 +63,7 @@ public class M1_Cod extends BaseClass {
 		logger = report.createTest("M1 Flow To Check Payment Method");
 		logger.log(Status.PASS, "************* Cash On Delivery ********************");
 		Monepom m = new Monepom();
+		Robot r = new Robot();
 
 		// Login
 		
@@ -110,7 +113,9 @@ public class M1_Cod extends BaseClass {
 		for (int i = 1; i < 6; i++) {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
-			btncli(m.getSearchIcon());
+			r.keyPress(KeyEvent.VK_ENTER);
+			r.keyRelease(KeyEvent.VK_ENTER);
+			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully Added  " + BaseClass.getExcelData("COD_Check", i, 0));
 
 			String Cart_Excel = BaseClass.getExcelData("COD_Check", i, 1);
@@ -141,12 +146,9 @@ public class M1_Cod extends BaseClass {
 		try {
 			driver.switchTo().frame("haptik-xdk");
 			Actions acc = new Actions(driver);
-
 			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
 					.perform();
-
 			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
-
 			driver.switchTo().defaultContent();
 		} catch (Exception e) {
 
@@ -179,23 +181,23 @@ public class M1_Cod extends BaseClass {
 		
 		Thread.sleep(5000);
 			String Net = driver.findElement(By.id("cart_netpay_amt1")).getText();
+			System.out.println(Net);
 			logger.log(Status.PASS, "Ordered Product price was "+Net);
-			String[] Net_P = Net.split("Rs.");
+			String[] Net_P = Net.split("Rs.");  //String a = element.getText();  String[] id = a.split(" : ");  String ab = id[1].toString();
 			
+			// Conditon to check the payment amount
 			if (Net_P[1].contains(",")) {
 				
 				 amt = Net_P[1].replace(",", "");
 				
+			} else {
+				
+			amt = Net_P[1].toString();
+				
 			}
 			
 			String Net_Pa =amt.toString();
-			/*
-			 * String[] Net_pa = Net_Pa.split("."); 
-			 * String Net_pay = Net_pa[0].toString();
-			 */
-			
-			
-			//String Net_P = Net.substring(3, 6);	
+				
 			System.out.println(Net_Pa);
 			
 			Float Net_Pay = Float.parseFloat(Net_Pa);
@@ -328,7 +330,7 @@ public class M1_Cod extends BaseClass {
 	private void quitbrowser() {
 		report.flush();
 		
-      driver.quit();
+ //     driver.quit();
 	}
 
 
