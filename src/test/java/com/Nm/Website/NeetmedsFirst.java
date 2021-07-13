@@ -1,11 +1,15 @@
 package com.Nm.Website;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -192,28 +196,49 @@ public class NeetmedsFirst extends BaseClass{
 		  Thread.sleep(3000);
 		  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 		  Thread.sleep(3000);
-		  type(m.getPassword(),"test4nmm"); 
+		  type(m.getPassword(),"test4nm"); 
 		  btncli(m.getSignInpage());
+		  System.out.println("Logged In");
 		} catch (Exception e) {
 			System.out.println("Already Logged In");
 			driver.navigate().to("https://www.netmeds.com/");
 		}
-		
+		Thread.sleep(3000);
+		btncli(m.getMinicart());
+		Thread.sleep(3000);
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size()==0)) {
+				
+				try {
+					btncli(m.getRemovebutton());
+					}catch (Exception e) {
+						// TODO: handle exception
+					}
+				
+			} else {
+				 break;
+
+			}
+			
+			
+		}
+		driver.navigate().to("https://www.netmeds.com/");
 		//Netmeds First availability in MyAccount, Home Page and Cart Page.
 		Thread.sleep(1500);
 		/*JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,900)");*/
-		scrolldown("2900");
+		scrolldown("2000");
 		SoftAssert SoftAssert=new SoftAssert();
-		SoftAssert.assertEquals(gettext(m.getHome_getmostfrom()), "GET MOST FROM");
+		//SoftAssert.assertEquals(gettext(m.getHome_getmostfrom()), "GET MOST FROM");
 		
-		SoftAssert.assertEquals(gettext(m.getGethome_netmedsfirst()), "Netmeds First");
+		SoftAssert.assertEquals(gettext(m.getHome_NetmedsFirst()), "Netmeds First Membership");
 		SoftAssert.assertEquals(gettext(m.getGethome_Getspecialdiscount()), "Get special discounts and offers on Netmeds services.");
-		SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
+		//SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
 		SoftAssert.assertEquals(gettext(m.getHome_getnms_cash()), "Get 2.5% NMS Cash on all orders.");
 		SoftAssert.assertEquals(gettext(m.getHome_stating_price()), "Starting at Rs.299");
-		SoftAssert.assertEquals(gettext(m.getHome_exploreplans()), "EXPLORE PLANS");
-		SoftAssert.assertEquals(gettext(m.getHome_nmscash_section()), "2.5% NMS Cash");
+		SoftAssert.assertEquals(gettext(m.getHome_exploreplans()), "Explore Plans");
+		/*SoftAssert.assertEquals(gettext(m.getHome_nmscash_section()), "2.5% NMS Cash");
 		SoftAssert.assertEquals(gettext(m.getHome_allprepaid_orders()), "(Max 100) on all prepaid orders");
 		SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
 		SoftAssert.assertEquals(gettext(m.getHome_FreeDelivery()), "Free Delivery");
@@ -222,15 +247,126 @@ public class NeetmedsFirst extends BaseClass{
 		SoftAssert.assertEquals(gettext(m.getHome_only_with_12_month_plan()), "only with 12 month plan");
 		SoftAssert.assertEquals(gettext(m.getHome_Additional_5_off_on_Pathology_Lab_Tests()), "Additional 5% off on Pathology Lab Tests");
 		SoftAssert.assertEquals(gettext(m.getHome_Free_Unlimited_Consultation()), "Free Unlimited Consultation");
-        btncli( m.getHome_exploreplans());
-        SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/customer/netmeds-first");
+       */
+		
+		btncli( m.getHome_exploreplans());
         
+        SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/customer/netmeds-first");
+        btncli(m.getSix_months());
+        try {
+        	Thread.sleep(3000);
+			btncli(m.getRemovebutton());
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
 		logger.log(Status.PASS, "verfied home page netmeds first customer section" );
 		driver.navigate().to("https://www.netmeds.com");
+        btncli(m.getHome_logged_user());
+        btncli(m.getYourAccount_Netmeds_First());
+        Thread.sleep(3000);
+		scrolldown("500");
 
-		SoftAssert.assertAll();
+        SoftAssert.assertEquals(gettext(m.getHome_getmostfrom()), "GET MOST FROM");
+		//SoftAssert.assertEquals(gettext(m.getGethome_Getspecialdiscount()), "Get special discounts and offers on Netmeds services.");
+		SoftAssert.assertEquals(gettext(m.getYouraccount_savemore()), "Save more with exclusive membership");
+		SoftAssert.assertEquals(gettext(m.getYouraccount_NetmedsMembership()), "Netmeds Membership");
+		//SoftAssert.assertEquals(gettext(m.getHome_getnms_cash()), "Get 2.5% NMS Cash on all orders.");
+		SoftAssert.assertEquals(gettext(m.getHome_nmscash_section()), "2.5% NMS Cash");
+		SoftAssert.assertEquals(gettext(m.getHome_allprepaid_orders()), "(Max 100) on all prepaid orders");
+		//SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
+		SoftAssert.assertEquals(gettext(m.getHome_FreeDelivery()), "Free Delivery");
+		SoftAssert.assertEquals(gettext(m.getHome_PriorityProcessing()), "Priority Processing");
+		SoftAssert.assertEquals(gettext(m.getHome_BasicHealthCheckup()), "Basic Health Checkup");
+		SoftAssert.assertEquals(gettext(m.getHome_only_with_12_month_plan()), "only with 12 month plan");
+		SoftAssert.assertEquals(gettext(m.getHome_Additional_5_off_on_Pathology_Lab_Tests()), "Additional 5% off on Pathology Lab Tests");
+		SoftAssert.assertEquals(gettext(m.getHome_Free_Unlimited_Consultation()), "Free Unlimited Consultation");
+		
+	
+		logger.log(Status.PASS, "verfied home page netmeds first customer section" );
+		driver.navigate().to("https://www.netmeds.com");
+		type(m.getSearch(), "Patanjali Lauh Bhasm Powder 5 gm");
+		m.getSearch().sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
+		logger.log(Status.PASS, "Successfully navigate to search result page" );
+
+		Thread.sleep(3000);
+		btncli(m.getAddtocart());
+		btncli(m.getMinicart());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to cart page");
+		SoftAssert.assertEquals(gettext(m.getCart_NetmedsMembership()), "Become Netmeds First Member");
+		SoftAssert.assertEquals(gettext(m.getCart_Netmedscontent()), "Join membership to save much more! Exclusive offers designed for you");
+		Thread.sleep(3000);
+		btncli(m.getCart_NetmedsMembershiplink());
+		Thread.sleep(3000);
+		btncli(m.getSix_months());
+				for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size()==0)) {
+				
+				try {
+					btncli(m.getRemovebutton());
+					}catch (Exception e) {
+						// TODO: handle exception
+					}
+				
+			} else {
+				 break;
+
+			}
+			
+			
+		}
+		driver.navigate().to("https://www.netmeds.com/customer/netmeds-first");
+		
+		Thread.sleep(3000);
+btncli(m.getTwelve_months());
+if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size()==0)) {
+	
+	System.out.println("delevery charge is not displayed");
+} else {
+	
+	System.out.println("delevery charge is displayed");
+}
+
+Thread.sleep(3000);
+btncli(m.getCart_promo_code());
+Thread.sleep(3000);
+//List<WebElement> applypromocode = driver.findElements(By.xpath("//form[@class='ng-untouched ng-pristine ng-invalid ng-star-inserted']/following-sibling::div/ul/li/div/input[starts-with(@id,'webcoupon')]"));
+int size = m.getPromocode().size();
+System.out.println(size);
+String gt = gettext(m.getCart_TotalPay());
+try {
+	for (int i = 0; i < size; i++) {
+		Thread.sleep(3000);
+		m.getPromocode().get(i).click();
+		Thread.sleep(2000);
+		String text = gettext(m.getCart_TotalPay());
+		assertEquals(text, gt);
+	}
+} catch (Exception e) {
+System.out.println("apply promo code is noot working");
+}
+
+Thread.sleep(3000);
+btncli(m.getProceedbutton());
+Thread.sleep(2000);
+btncli(m.getPaybutton());
+Thread.sleep(1500);
+scrolldown("2000");
+if ((driver.findElements(By.xpath("//div[contains(text(),'Cash on Delivery')]")).size()==0)) {
+	
+	System.out.println("delevery charge is not displayed");
+} else {
+	
+	System.out.println("delevery charge is displayed");
+}
+driver.navigate().to("https://www.netmeds.com/customer/account");
+
+       		SoftAssert.assertAll();
 		
 	}
+	
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
