@@ -675,7 +675,7 @@ public class Monepom extends BaseClass {
 	public WebElement getHome_allprepaid_orders() {
 		return home_allprepaid_orders;
 	}
-<<<<<<< HEAD
+
 
 //****************************Your Account************************************************************************
 
@@ -1203,7 +1203,7 @@ public class Monepom extends BaseClass {
 	private WebElement Star4;
 	public WebElement getStar4() {
 		return Star4;	
-=======
+	}
 	
 	@FindBy(xpath="//a[@id='logged_user']")
 	private WebElement home_logged_user;
@@ -1271,8 +1271,8 @@ public class Monepom extends BaseClass {
 	@FindBy(xpath="//form[@class='ng-untouched ng-pristine ng-invalid ng-star-inserted']/following-sibling::div/ul/li/div/input[starts-with(@id,'webcoupon')]")
 	private List<WebElement> promocode;
 	
->>>>>>> 44fc33a03ef32c12af5f5fe5f15099bccefb869b
-}
+
+
 	
 	
 	@FindBy (xpath = "//label[@class=\"star star-5 ng-star-inserted\"]")
