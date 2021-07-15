@@ -2,6 +2,7 @@ package com.Nm.Pom;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -1313,7 +1314,53 @@ public class Monepom extends BaseClass {
 		return csnetmeds;
 	}
 	
+	//***************************************Cart Page***************************************************************//
 	
+	@FindBy (xpath = "//div[@class=\"swiper-button-next\"]")
+	private WebElement swipe_right;
+	public WebElement getSwipe_right() {
+		return swipe_right;
+	}
+	
+
+	@FindBy (xpath = "//div[@class=\"swiper-button-prev\"]")
+	private WebElement swipe_prev;
+	public WebElement getSwipe_prev() {
+		return swipe_prev;
+	}
+	
+	
+	@FindBy(xpath ="//a[.=\"Continue Shopping\"]")
+	private WebElement continue_shopping;
+	public WebElement getContinue_shopping() {
+		return continue_shopping;
+	}
+	
+	@FindBy(xpath ="//span[.=\"Most Selling Products\"]")
+	private WebElement Most_Selling_products;
+	public WebElement getMost_Selling_products() {
+		return Most_Selling_products;
+	}
+	
+	@FindBy (xpath = "(//div[@class=\"add ng-star-inserted\"])[4]")
+	private WebElement Most_selling_Addtocart;
+	public WebElement getMost_selling_Addtocart() {
+		return Most_selling_Addtocart;
+	}
+	
+	@FindBy(id ="cart_sub_total")
+	private WebElement totalmrp;
+	public WebElement getTotalmrp() {
+		return totalmrp;
+	}
+	
+	@FindBy(id ="cart_netpay_amt1")
+	private WebElement Total_amount;
+	public WebElement getTotal_amount() {
+		return Total_amount;
+	}
+	
+
 	
 }
 
