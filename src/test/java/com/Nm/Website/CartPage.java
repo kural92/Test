@@ -233,6 +233,15 @@ public class CartPage extends BaseClass {
 		Thread.sleep(3000);
 		
 		
+//	WebElement product=	driver.findElement(By.xpath("(//div[@class=\"list swiper-slide ng-star-inserted\"]//div[@class=\"productname\"])[17]"));
+//	
+//	product.click();
+//		
+//		
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("(//button[@class=\"toCart cartbag addtocartbtnpdp prodbtn\"])[1]")).click();
+		
+		Thread.sleep(3000);
 //Delivery Charge//
 		
 		if (!(driver.findElements(By.id("cart_del_charge")).size()==0))
