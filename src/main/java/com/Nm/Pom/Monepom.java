@@ -268,7 +268,7 @@ public class Monepom extends BaseClass {
 		return cancelsubmit;
 	}
 	
-	@FindBy(xpath = "(//div[@class=\"pro-qty qty-upt-evt ng-star-inserted\"]//select[@name='quantity'])[1]")
+	@FindBy(xpath = "(//div[@class=\"pro-qty qty-upt-evt ng-star-inserted\"]//select[@name='quantity'])[2]")
 	private WebElement Qty_Incr_Decr;
 	public WebElement getQty_Incr_Decr() {
 		return Qty_Incr_Decr;
@@ -1360,7 +1360,11 @@ public class Monepom extends BaseClass {
 		return Total_amount;
 	}
 	
-
+	@FindBy(xpath= "//input[@class='rdbtn auto_apply_coupon_popup']")
+	private List<WebElement> Promo;
+	public List<WebElement> getPromo() {
+		return Promo;
+	}
 	
 }
 

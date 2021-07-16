@@ -1,7 +1,9 @@
 package com.Nm.Website;
 
 
+
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -36,6 +38,11 @@ public class CartPage extends BaseClass {
 	
 	Float delcharge;
 	Float 	Netcharge;
+	String discount;
+	
+	
+	Float total_discount;
+	
 	@BeforeTest(groups = { "forgetPassword", "sanity", "reg" })
 	public void startReport() {
 
@@ -95,6 +102,10 @@ public class CartPage extends BaseClass {
 
 				try {
 					btncli(m.getRemovebutton());
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//button[.=\"Remove\"]")).click();
 				} catch (Exception e) {
 					System.out.println("Items are removed from the cart");
 				}
@@ -161,13 +172,34 @@ public class CartPage extends BaseClass {
 //qty increase//
 		
 		Select qtyincrease = new Select(m.getQty_Incr_Decr());
-		qtyincrease.selectByIndex(3);
+		qtyincrease.selectByIndex(15);
 		Thread.sleep(5000);
 		
 		
 		logger.log(Status.PASS, " quantity increased Successfully");
 		System.out.println(" quantity increased Successfully");
+		
+		driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+		
+		Thread.sleep(3000);
+		
+		List<WebElement> radiobtn = m.getPromo();//driver.findElements(By.xpath("//input[@class='rdbtn auto_apply_coupon_popup']"));
+		System.out.println("Total element size is  "+ radiobtn.size());
+		
+		for (int i = 0; (i< radiobtn.size()/2); i++)
+		
+		{
 
+					
+			Thread.sleep(2000);
+			radiobtn.get(i).click();
+			Thread.sleep(3000);
+		
+	} 
+		
+//qty increase//
+
+		Thread.sleep(3000);
 // Step  :Remove item//
 		
 		btncli(m.getRemoveitem());
@@ -179,7 +211,7 @@ public class CartPage extends BaseClass {
 // Step : Decrease qty//
 
 		Select qtydecrease = new Select(m.getQty_Incr_Decr());
-		qtydecrease.selectByIndex(1);
+		qtydecrease.selectByIndex(11);
 		Thread.sleep(3000);
 		
 		logger.log(Status.PASS, " quantity decreased Successfully");
@@ -233,15 +265,17 @@ public class CartPage extends BaseClass {
 		Thread.sleep(3000);
 		
 		
-//	WebElement product=	driver.findElement(By.xpath("(//div[@class=\"list swiper-slide ng-star-inserted\"]//div[@class=\"productname\"])[17]"));
-//	
-//	product.click();
-//		
-//		
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("(//button[@class=\"toCart cartbag addtocartbtnpdp prodbtn\"])[1]")).click();
-		
+		driver.findElement(By.xpath("(//a[@class=\"productname\"])[3]")).click();
 		Thread.sleep(3000);
+		m.getAddtocart();
+		Thread.sleep(3000);
+		m.getNetmedshome();
+		Thread.sleep(3000);
+		btncli(m.getMinicart());
+		Thread.sleep(3000);
+		
+		
+
 //Delivery Charge//
 		
 		if (!(driver.findElements(By.id("cart_del_charge")).size()==0))
@@ -263,6 +297,36 @@ public class CartPage extends BaseClass {
 		
 		System.out.println("Total amount is more the Rs.500");
 	}
+		
+		
+//Netmeds Discount
+		
+
+		
+		if (!(driver.findElements(By.id("cart_total_disc1")).size()==0))
+		{
+			discount = driver.findElement(By.id("cart_total_disc1")).getText();
+			System.out.println(discount);
+			logger.log(Status.PASS, "Discount is "+ discount);
+			
+			String[] discount_amt = discount.split("- Rs."); 	
+			System.out.println(discount_amt);
+			
+			discount = discount_amt[1].toString();
+			System.out.println(discount);
+			
+			 total_discount = Float.parseFloat(discount);
+			System.out.println("total discount amount is ===" +discount);
+		
+	} else {
+		
+		System.out.println("No discount amount");
+	}	
+		
+		
+		
+		
+		
 		
 			
 //Total Mrp//
@@ -341,14 +405,33 @@ public class CartPage extends BaseClass {
 		System.out.println("netcharge==="+Netcharge);
 		System.out.println("total_amt==="+total_amt);
 		
+		if (!discount.isEmpty())
+		
+		{
+			Netcharge = Netcharge -total_discount;
+		}
+			
+		
 		if (Float.compare(Netcharge, total_amt) == 0) 
 		{
 		   System.out.println("Total amount matches with total mrp");
 	   }else {
 		   System.out.println("Total amount mismatch");
 	   }
-		  
-	}
+		 
+	
+	//driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+	
+		//driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+		
+		
+			
+			 
+		 }
+		
+		
+
+
 	
 	
 	
