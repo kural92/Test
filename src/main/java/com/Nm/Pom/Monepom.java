@@ -739,7 +739,11 @@ public class Monepom extends BaseClass {
 	public List<WebElement> getPromocode() {
 		return promocode;
 	}
-	@FindBy(xpath="//form[@class='ng-untouched ng-pristine ng-invalid ng-star-inserted']/following-sibling::div/ul/li/div/input[starts-with(@id,'webcoupon')]")
+	@FindBy(xpath="//li[@id='coupon_popup_1']/div/input[@class='rdbtn auto_apply_coupon_popup']")
 	private List<WebElement> promocode;
-	
+	@FindBy(xpath="//a[@class='logout-link ng-star-inserted']")
+	private WebElement logout;
+	public WebElement getLogout() {
+		return logout;
+	}
 }
