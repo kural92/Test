@@ -2,6 +2,7 @@ package com.Nm.Pom;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -267,7 +268,7 @@ public class Monepom extends BaseClass {
 		return cancelsubmit;
 	}
 	
-	@FindBy(xpath = "(//div[@class=\"pro-qty qty-upt-evt ng-star-inserted\"]//select[@name='quantity'])[1]")
+	@FindBy(xpath = "(//div[@class=\"pro-qty qty-upt-evt ng-star-inserted\"]//select[@name='quantity'])[2]")
 	private WebElement Qty_Incr_Decr;
 	public WebElement getQty_Incr_Decr() {
 		return Qty_Incr_Decr;
@@ -1268,8 +1269,15 @@ public class Monepom extends BaseClass {
 	public List<WebElement> getPromocode() {
 		return promocode;
 	}
-	@FindBy(xpath="//form[@class='ng-untouched ng-pristine ng-invalid ng-star-inserted']/following-sibling::div/ul/li/div/input[starts-with(@id,'webcoupon')]")
+	@FindBy(xpath="//li[@id='coupon_popup_1']/div/input[@class='rdbtn auto_apply_coupon_popup']")
 	private List<WebElement> promocode;
+
+	@FindBy(xpath="//a[@class='logout-link ng-star-inserted']")
+	private WebElement logout;
+	public WebElement getLogout() {
+		return logout;
+	}
+
 	
 
 
@@ -1313,8 +1321,59 @@ public class Monepom extends BaseClass {
 		return csnetmeds;
 	}
 	
+	//***************************************Cart Page***************************************************************//
+	
+	@FindBy (xpath = "//div[@class=\"swiper-button-next\"]")
+	private WebElement swipe_right;
+	public WebElement getSwipe_right() {
+		return swipe_right;
+	}
+	
+
+	@FindBy (xpath = "//div[@class=\"swiper-button-prev\"]")
+	private WebElement swipe_prev;
+	public WebElement getSwipe_prev() {
+		return swipe_prev;
+	}
 	
 	
+	@FindBy(xpath ="//a[.=\"Continue Shopping\"]")
+	private WebElement continue_shopping;
+	public WebElement getContinue_shopping() {
+		return continue_shopping;
+	}
+	
+	@FindBy(xpath ="//span[.=\"Most Selling Products\"]")
+	private WebElement Most_Selling_products;
+	public WebElement getMost_Selling_products() {
+		return Most_Selling_products;
+	}
+	
+	@FindBy (xpath = "(//div[@class=\"add ng-star-inserted\"])[4]")
+	private WebElement Most_selling_Addtocart;
+	public WebElement getMost_selling_Addtocart() {
+		return Most_selling_Addtocart;
+	}
+	
+	@FindBy(id ="cart_sub_total")
+	private WebElement totalmrp;
+	public WebElement getTotalmrp() {
+		return totalmrp;
+	}
+	
+	@FindBy(id ="cart_netpay_amt1")
+	private WebElement Total_amount;
+	public WebElement getTotal_amount() {
+		return Total_amount;
+	}
+	
+	@FindBy(xpath= "//input[@class='rdbtn auto_apply_coupon_popup']")
+	private List<WebElement> Promo;
+	public List<WebElement> getPromo() {
+		return Promo;
+	}
+	
+
 }
 
 

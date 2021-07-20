@@ -224,30 +224,30 @@ public class NeetmedsFirst extends BaseClass{
 			
 		}
 		driver.navigate().to("https://www.netmeds.com/");
+		SoftAssert SoftAssert=new SoftAssert();
 		//Netmeds First availability in MyAccount, Home Page and Cart Page.
 		Thread.sleep(1500);
-		/*JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,900)");*/
+		
 		scrolldown("2000");
-		SoftAssert SoftAssert=new SoftAssert();
+		
 		//SoftAssert.assertEquals(gettext(m.getHome_getmostfrom()), "GET MOST FROM");
 		
 		SoftAssert.assertEquals(gettext(m.getHome_NetmedsFirst()), "Netmeds First Membership");
 		SoftAssert.assertEquals(gettext(m.getGethome_Getspecialdiscount()), "Get special discounts and offers on Netmeds services.");
 		//SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
 		SoftAssert.assertEquals(gettext(m.getHome_getnms_cash()), "Get 2.5% NMS Cash on all orders.");
-		SoftAssert.assertEquals(gettext(m.getHome_stating_price()), "Starting at Rs.299");
+		SoftAssert.assertEquals(gettext(m.getHome_stating_price()), "Starting at ?299");
 		SoftAssert.assertEquals(gettext(m.getHome_exploreplans()), "Explore Plans");
-		/*SoftAssert.assertEquals(gettext(m.getHome_nmscash_section()), "2.5% NMS Cash");
-		SoftAssert.assertEquals(gettext(m.getHome_allprepaid_orders()), "(Max 100) on all prepaid orders");
-		SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
-		SoftAssert.assertEquals(gettext(m.getHome_FreeDelivery()), "Free Delivery");
-		SoftAssert.assertEquals(gettext(m.getHome_PriorityProcessing()), "Priority Processing");
-		SoftAssert.assertEquals(gettext(m.getHome_BasicHealthCheckup()), "Basic Health Checkup");
-		SoftAssert.assertEquals(gettext(m.getHome_only_with_12_month_plan()), "only with 12 month plan");
-		SoftAssert.assertEquals(gettext(m.getHome_Additional_5_off_on_Pathology_Lab_Tests()), "Additional 5% off on Pathology Lab Tests");
-		SoftAssert.assertEquals(gettext(m.getHome_Free_Unlimited_Consultation()), "Free Unlimited Consultation");
-       */
+//		SoftAssert.assertEquals(gettext(m.getHome_nmscash_section()), "2.5% NMS Cash");
+//		SoftAssert.assertEquals(gettext(m.getHome_allprepaid_orders()), "(Max 100) on all prepaid orders");
+//		SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
+//		SoftAssert.assertEquals(gettext(m.getHome_FreeDelivery()), "Free Delivery");
+//		SoftAssert.assertEquals(gettext(m.getHome_PriorityProcessing()), "Priority Processing");
+//		SoftAssert.assertEquals(gettext(m.getHome_BasicHealthCheckup()), "Basic Health Checkup");
+//		SoftAssert.assertEquals(gettext(m.getHome_only_with_12_month_plan()), "only with 12 month plan");
+//		SoftAssert.assertEquals(gettext(m.getHome_Additional_5_off_on_Pathology_Lab_Tests()), "Additional 5% off on Pathology Lab Tests");
+//		SoftAssert.assertEquals(gettext(m.getHome_Free_Unlimited_Consultation()), "Free Unlimited Consultation");
+//       
 		
 		btncli( m.getHome_exploreplans());
         
@@ -262,6 +262,8 @@ public class NeetmedsFirst extends BaseClass{
 		logger.log(Status.PASS, "verfied home page netmeds first customer section" );
 		driver.navigate().to("https://www.netmeds.com");
         btncli(m.getHome_logged_user());
+        Thread.sleep(3000);
+
         btncli(m.getYourAccount_Netmeds_First());
         Thread.sleep(3000);
 		scrolldown("500");
@@ -317,6 +319,7 @@ public class NeetmedsFirst extends BaseClass{
 			
 			
 		}
+				
 		driver.navigate().to("https://www.netmeds.com/customer/netmeds-first");
 		
 		Thread.sleep(3000);
@@ -337,15 +340,16 @@ int size = m.getPromocode().size();
 System.out.println(size);
 String gt = gettext(m.getCart_TotalPay());
 try {
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size/2; i++) {
 		Thread.sleep(3000);
-		m.getPromocode().get(i).click();
+		btncli(m.getPromocode().get(i));
+		//m.getPromocode().get(i).click();
 		Thread.sleep(2000);
 		String text = gettext(m.getCart_TotalPay());
 		assertEquals(text, gt);
 	}
 } catch (Exception e) {
-System.out.println("apply promo code is noot working");
+System.out.println("apply promo code is not working");
 }
 
 Thread.sleep(3000);
@@ -356,15 +360,102 @@ Thread.sleep(1500);
 scrolldown("2000");
 if ((driver.findElements(By.xpath("//div[contains(text(),'Cash on Delivery')]")).size()==0)) {
 	
-	System.out.println("delevery charge is not displayed");
+	System.out.println("COD is not displayed");
 } else {
 	
-	System.out.println("delevery charge is displayed");
+	System.out.println("Cod charge is displayed");
 }
 driver.navigate().to("https://www.netmeds.com/customer/account");
+btncli(m.getLogout());
+//btncli(m.getSignin());
+ Thread.sleep(5000);
+ type(m.getMobileno(),"9841648775");
+ Thread.sleep(3000);
+ btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+ Thread.sleep(3000);
+ type(m.getPassword(),"netmeds2020"); 
+ btncli(m.getSignInpage());
+ System.out.println("Logged In");
+ driver.navigate().to("https://www.netmeds.com/checkout/cart");
+	Thread.sleep(3000);
+ for (int i = 0; i < 16; i++) {
+		Thread.sleep(3000);
+		if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size()==0)) {
+			
+			try {
+				btncli(m.getRemovebutton());
+				}catch (Exception e) {
+					
+				}
+			
+		} else {
+			 break;
+
+		}	
+	}
+	driver.navigate().to("https://www.netmeds.com");
+	Thread.sleep(3000);
+
+	String Cart_Excel = "Horlicks Health Drink Powder Classic Malt 500 gm (Refill Pack)";
+
+ type(m.getSearch(),Cart_Excel );
+	m.getSearch().sendKeys(Keys.ENTER);
+	try {
+		Thread.sleep(3000);
+		
+		WebElement Cart_btn = driver.findElement(By.xpath("//div[contains(text(),'"+Cart_Excel+"')]//following::span[contains(text(),'ADD TO CART')]"));
+		Thread.sleep(3000);
+		btncli(Cart_btn);
+		//btncli(m.getAddtocart());
+		} catch (Exception e) {
+			System.out.println("");
+		}
+	
+	String Cart_Excel1 = "Wepox 4000IU Injection(Pfs) 0.4ml";
+
+	 type(m.getSearch(),Cart_Excel1 );
+		m.getSearch().sendKeys(Keys.ENTER);
+		try {
+			Thread.sleep(3000);
+			
+			WebElement Cart_btn = driver.findElement(By.xpath("//div[contains(text(),'"+Cart_Excel1+"')]//following::span[contains(text(),'ADD TO CART')]"));
+			Thread.sleep(3000);
+			btncli(Cart_btn);
+			//btncli(m.getAddtocart());
+			} catch (Exception e) {
+				System.out.println("");
+			}
+	Thread.sleep(3000);
+	btncli(m.getMinicart());
+	Thread.sleep(2000);
+	btncli(m.getCart_promo_code());
+	String gt1 = gettext(m.getCart_TotalPay());
+	try {
+		for (int i = 0; i < size/2; i++) {
+			Thread.sleep(3000);
+			btncli(m.getPromocode().get(i));
+			//m.getPromocode().get(i).click();
+			Thread.sleep(2000);
+			String text = gettext(m.getCart_TotalPay());
+			//assertEquals(text, gt1);
+		}
+	} catch (Exception e) {
+	System.out.println("apply promo code is not working");
+	}
+       		
+       		if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size()==0)) {
+       			
+       			System.out.println("delevery charge is not displayed");
+       		} else {
+       			
+       			System.out.println("delevery charge is displayed");
+       		}
+
+       		Thread.sleep(3000);	
+    		//SoftAssert.assertEquals(m.getCart_Netmedscontent().get, false);
+    		//SoftAssert.assertEquals(m.getCart_Netmedscontent().isDisplayed(), false);
 
        		SoftAssert.assertAll();
-		
 	}
 	
 	
@@ -421,7 +512,7 @@ driver.navigate().to("https://www.netmeds.com/customer/account");
 	private void quitbrowser() {
 		report.flush();
 		
-    //  driver.quit();
+     driver.quit();
 	}
 
 

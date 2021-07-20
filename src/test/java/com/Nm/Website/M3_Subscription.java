@@ -57,7 +57,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -130,7 +130,7 @@ public class M3_Subscription extends BaseClass {
 
 		// Step 6:Search Product//
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 5; i++) {
 
 			type(m.getM3productsearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
 
@@ -180,7 +180,7 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getRemoveitem());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, " item removed Successfully");
-		System.out.println(" quantity increased Successfully");
+		System.out.println(" item removed Successfully");
 		
 		// Step 11: Decrease qty//
 
@@ -263,7 +263,7 @@ public class M3_Subscription extends BaseClass {
 	// *********************************************M3 -Doctor consultation
 	// **********************************************************************************************//
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
@@ -587,7 +587,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void M3RXflow() throws Throwable {
 
 		logger = report.createTest(" M3RXflow");
@@ -706,7 +706,7 @@ public class M3_Subscription extends BaseClass {
 
 		WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
 
-		upload.sendKeys("C:\\Users\\NMSLAP357\\Desktop\\Prescription.jpg");
+		upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.jpg");
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Prescription added successfully");
 
