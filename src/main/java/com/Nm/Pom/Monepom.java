@@ -1374,10 +1374,28 @@ public class Monepom extends BaseClass {
 	}
 	
 
+
+
+//***********************************************Upload\attach\past rx scenarios********************************************************************
+
+	@FindBy(xpath = "//input[@accept='image/png,image/gif,image/jpeg']")
+	private WebElement uploadpresc;
+	public WebElement getUploadpresc() {
+		return uploadpresc;
+	}
+	
+	@FindBy (xpath ="(//a[@class=\"cusup-delete\"])")
+	private WebElement deletepresc;
+	public WebElement getDeletepresc() {
+		return deletepresc;
+	}
+	
+
+	@FindBy(xpath ="//ul[@class='d-flex justify-content-center']//span[@class='pastrx-icon']")
+	private WebElement pastrx;
+	public WebElement getPastrx() {
+		return pastrx;
+	}
+	
+
 }
-
-
-
-
-
-
