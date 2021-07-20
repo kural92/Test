@@ -200,6 +200,7 @@ public class M1_Cod extends BaseClass {
 				
 			System.out.println(Net_Pa);
 			
+			 
 			Float Net_Pay = Float.parseFloat(Net_Pa);
 		//	int Net_Pay = Integer.parseInt(Net_Pa);
 			System.out.println(Net_Pay);
@@ -221,7 +222,7 @@ public class M1_Cod extends BaseClass {
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());
 						
-						Thread.sleep(3000);
+						Thread.sleep(6000);
 						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Track Order')])[2]")));
 						
 						Thread.sleep(10000);
