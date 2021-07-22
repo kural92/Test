@@ -1397,5 +1397,61 @@ public class Monepom extends BaseClass {
 		return pastrx;
 	}
 	
+//******************************************Search and Alternate Brands and Most Selling Product*********************************************************//
+	
+	
 
+	
+	//Search
+	 @FindBy(id="product-addtocart-button")
+	 private WebElement Search_AddtoCart_btn;
+	public WebElement getSearch_AddtoCart_btn() {
+		return Search_AddtoCart_btn;
+	}
+	
+	
+	@FindBy(xpath = "//button[@class='qtybtn qty_add qty_plus']")
+	private WebElement Search_IncreaseQuantity_btn;
+	public WebElement getSearch_IncreaseQuantity_btn() {
+		return Search_IncreaseQuantity_btn;
+	}
+	
+	@FindBy(xpath = "//button[@class='qtybtn qty_add qty_minus prodminus']")
+	private WebElement Search_DecreaseQuantity_btn;
+	public WebElement getSearch_DecreaseQuantity_btn() {
+		return Search_DecreaseQuantity_btn;
+	}
+	
+	
+	@FindBy(xpath = "//div[contains(text(),' Add to Cart ')]")
+	private List<WebElement> Most_Selling_AddToCart;
+	public List<WebElement> getMost_Selling_AddToCart() {
+		return Most_Selling_AddToCart;
+	}
+	
+	
+	@FindBy(xpath = "//a[@class='productname']")
+	private List<WebElement> Most_Selling_ProductName;
+	public List<WebElement> getMost_Selling_ProductName() {
+		return Most_Selling_ProductName;
+	}
+	
+	
+	@FindBy(xpath = "//div[@class='info']")
+	private WebElement Search_Product_Info;
+	public WebElement getSearch_Product_Info() {
+		return Search_Product_Info;
+	}
+	
+	
+	@FindBy(xpath = "//button[@title='Add to Cart']")
+	private WebElement Alternate_AddToCart;
+	public WebElement getAlternate_AddToCart() {
+		return Alternate_AddToCart;
+	}
+	
+	
+	
+	
+	
 }
