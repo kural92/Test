@@ -81,7 +81,7 @@ public class CartPage extends BaseClass {
 		*/
 
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void cartpagescenarioone() throws Throwable {
 
 		logger = report.createTest("cartpage scenario one ");
@@ -220,9 +220,9 @@ public class CartPage extends BaseClass {
 		{
 
 					
-			Thread.sleep(2000);
-			radiobtn.get(i).click();
 			Thread.sleep(3000);
+			radiobtn.get(i).click();
+			Thread.sleep(4000);
 		
 	} 
 		
@@ -832,7 +832,7 @@ public class CartPage extends BaseClass {
 
 			
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
