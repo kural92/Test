@@ -115,14 +115,20 @@ public class Uploadprescriptioncheck extends BaseClass {
 			{
 				WebElement upload = m.getUploadpresc();
 				
-				upload.sendKeys("C:\\Users\\NMSLAP357\\Desktop\\Prescription.jpg");
+				upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//img[@class=\"rxviewimg\"]")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("(//button[@class=\"close\"])[1]")).click();
 				Thread.sleep(3000);
 				logger.log(Status.PASS, "Prescription added successfully");
 			}
 				
 			WebElement upload =m.getUploadpresc();
 			
-			upload.sendKeys("C:\\Users\\NMSLAP357\\Desktop\\Prescription.jpg");
+			upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
+			
+			
 			
 			WebElement		error_message =	driver.findElement(By.id("upl_err_msg"));
 			
@@ -165,6 +171,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 						
 						Thread.sleep(3000);
 						upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
+						
 						Thread.sleep(3000);
 						System.out.println(error_message.getText());
 						
@@ -195,7 +202,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 			upload.sendKeys("D:\\Automation\\Prescription\\Prescription.pdf");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
-			System.out.println("file type is unsupported");
+			System.out.println("file pdf type is unsupported");
 			
 //Uploading different types of image//
 					
@@ -203,6 +210,10 @@ public class Uploadprescriptioncheck extends BaseClass {
 //jpg
 					
 			upload.sendKeys("D:\\Automation\\Prescription\\jpg.jpg");
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//img[@class=\"rxviewimg\"]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("(//button[@class=\"close\"])[1]")).click();
 			Thread.sleep(3000);
 			System.out.println("jpg file uploaded successfully");
 //bmp
@@ -223,6 +234,9 @@ public class Uploadprescriptioncheck extends BaseClass {
 					
 			upload.sendKeys("D:\\Automation\\Prescription\\gif.gif");
 			Thread.sleep(3000);
+			driver.findElement(By.xpath("//img[@class=\"rxviewimg\"]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("(//button[@class=\"close\"])[1]")).click();
 			System.out.println("gif file uploaded successfully");
 					
 					
