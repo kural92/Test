@@ -1451,7 +1451,154 @@ public class Monepom extends BaseClass {
 	}
 	
 	
-	
+	//************************************************Order Success Page*****************************************************************//
+
+		@FindBy (xpath = "//div[.=\"RATE YOUR EXPERIENCE\"]")
+		private WebElement Rate_your_exp;
+		public WebElement getRate_your_exp() {
+			return Rate_your_exp;
+		}
+		
+		
+		@FindBy(xpath = "//div[@class=\"ordstatus\"]")
+		private WebElement order_status;
+		public WebElement getOrder_status() {
+			return order_status;
+		}
+		
+		@FindBy(xpath = "//div[@class=\"orddesc\"]")
+		private WebElement pharmacists_verfication;
+		public WebElement getPharmacists_verfication() {
+			return pharmacists_verfication;
+		}
+		
+		@FindBy(xpath ="//div[@class=\"ng-star-inserted\"]")
+		private WebElement important_update;
+		public WebElement getImportant_update() {
+			return important_update;
+		}
+		
+		@FindBy(xpath ="//div[@class=\"deltitle\"]")
+		private WebElement Deliverby_text;
+		public WebElement getDeliverby_text() {
+			return Deliverby_text;
+		}
+		
+		@FindBy(xpath = "//div[@class=\"deldate\"]")
+		private WebElement delivery_date;
+		public WebElement getDelivery_date() {
+			return delivery_date;
+		}
+		
+		@FindBy(xpath ="//h5[.=\"GRAB YOUR\"]")
+		private WebElement Grab_text;
+		public WebElement getGrab_text() {
+			return Grab_text;
+		}
+		
+		@FindBy(xpath="//h3[.=\"Free Medicines\"]")
+		private WebElement Free_medicines;
+		public WebElement getFree_medicines() {
+			return Free_medicines;
+		}
+		
+		@FindBy(xpath ="//p[.=\"Invite your friends and get\"]")
+		private WebElement invite_friends;
+		public WebElement getInvite_friends() {
+			return invite_friends;
+		}
+		
+		@FindBy (xpath ="//div[.=\"TEST1932\"]")
+		private WebElement offer_code;
+		public WebElement getOffer_code() {
+			return offer_code;
+		}
+		
+		@FindBy (xpath ="//a[.=\"Tap to share Code with your friends\"]")
+		private WebElement share_with_friends;
+		public WebElement getShare_with_friends() {
+			return share_with_friends;
+		}
+		
+		@FindBy (xpath ="(//h3[.=\"Benefits\"])[2]")	
+		private WebElement Benefits;
+		public WebElement getBenefits() {
+			return Benefits;
+		}
+		
+		@FindBy(xpath ="(//div[.=\"Automatic monthly order\"])[2]")
+		private WebElement Auto_monthly_order;
+		public WebElement getAuto_monthly_order() {
+			return Auto_monthly_order;
+		}
+		
+		@FindBy(xpath ="(//div[.=\"1 month FREE*\"])[2]")
+		private WebElement monthfree;
+		public WebElement getMonthfree() {
+			return monthfree;
+		}
+		
+		@FindBy(xpath ="(//a[@class=\"subscribe\"])[3]")
+		private WebElement Subscription;
+		public WebElement getSubscription() {
+			return Subscription;
+		}
+		
+		@FindBy(xpath ="//h4[.=\"Never miss your Medicines\"]")
+		private WebElement Never_miss_your_Medicines;
+		public WebElement getNever_miss_your_Medicines() {
+			return Never_miss_your_Medicines;
+		}
+		
+		@FindBy(xpath ="//p[@class=\"deliver-cnt\"]")
+		private WebElement refill_msg;
+		public WebElement getRefill_msg() {
+			return refill_msg;
+		}
+		
+		@FindBy(xpath = "//span[.=\"Payment Mode\"]")
+		private WebElement paymentmode_text;
+		public WebElement getPaymentmode_text() {
+			return paymentmode_text;
+		}
+		
+		@FindBy(xpath ="//span[.=\"Online Payment / COD \"]")
+		private WebElement paymentmethod_text;
+		public WebElement getPaymentmethod_text() {
+			return paymentmethod_text;
+		}
+		
+		@FindBy(xpath ="//p[.=\"Payment link will be generated every month.\"]")
+		private WebElement paymentlink_text;
+		public WebElement getPaymentlink_text() {
+			return paymentlink_text;
+		}
+		
+		@FindBy(xpath ="//span[.=\"Promo Code\"]")
+		private WebElement promocode_text;
+		public WebElement getPromocode_text() {
+			return promocode_text;
+		}
+		
+		@FindBy(xpath ="//span[.=\"SUBS20\"]")
+		private WebElement promocode_subs20;
+		public WebElement getPromocode_subs20() {
+			return promocode_subs20;
+		}
+		
+		
+		@FindBy(xpath ="//p[@class=\"promo-txt\"]")
+		private WebElement Promo_percentage;
+		public WebElement getPromo_percentage() {
+			return Promo_percentage;
+		}
+		
+		@FindBy(xpath ="//p[@class=\"modify-txt\"]")
+		private WebElement modify_or_reschedule;
+		public WebElement getModify_or_reschedule() {
+			return modify_or_reschedule;
+		}
+		
 	
 	
 }
