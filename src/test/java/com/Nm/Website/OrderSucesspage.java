@@ -323,6 +323,14 @@ public class OrderSucesspage extends BaseClass {
 			System.out.println("Rating was given and Submitted");
 			
 			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("(//img[@src=\"../../../msassets/images/subscribe-your-order.jpg\"])[2]")).click();
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("(//button[@class=\"close\"])[1]")).click();
+			
+			Thread.sleep(3000);
 		
 			btncli(m.getSubscription());
 			
@@ -412,7 +420,7 @@ public class OrderSucesspage extends BaseClass {
 		//**************************************************Order Success Page M2****************************************************************************************
 		
 		
-		@Test(enabled = true)
+		@Test(enabled = false)
 		public  void OrderSuccessPageM2() throws Throwable  {
 			logger =  report.createTest("OrderSuccessPageM2");
 			logger.log(Status.PASS, "************* OrderSuccessPageM2********************" );
@@ -620,7 +628,7 @@ public class OrderSucesspage extends BaseClass {
 	}	
 	
 		//*******************************************************************OrderSucessPageM3******************************************************************//
-		@Test(enabled = true)
+		@Test(enabled = false)
 		public void OrderSucessPageM3() throws Throwable {
 
 			logger = report.createTest(" Order Sucess Page M3");
