@@ -1599,6 +1599,109 @@ public class Monepom extends BaseClass {
 			return modify_or_reschedule;
 		}
 		
-	
+		//************************************************My Orders Page****************************************************************//
+		
+				@FindBy(xpath = "(//h3[@class=\"title\"])[1]")
+				private WebElement OrderDetails_text;
+				public WebElement getOrderDetails_text() {
+					return OrderDetails_text;
+				}
+				
+				@FindBy(xpath ="(//h3[@class=\"title\"])[2]")
+				private WebElement Delivery_address_text;
+				public WebElement getDelivery_address_text() {
+					return Delivery_address_text;
+				}
+				
+				@FindBy(xpath ="(//div[@class=\"col-lg-5 col-5 pl-0\"])[1]")
+				private WebElement customer_name_text;
+				public WebElement getCustomer_name_text() {
+					return customer_name_text;
+				}
+				
+				@FindBy(xpath ="(//div[@class=\"col-lg-5 col-5 pl-0\"])[2]")
+				private WebElement OrderId_text;
+				public WebElement getOrderId_text() {
+					return OrderId_text;
+				}
+				
+				@FindBy(xpath ="(//div[@class=\"col-lg-5 col-5 pl-0\"])[3]")
+				private WebElement Order_placed_text;
+				public WebElement getOrder_placed_text() {
+					return Order_placed_text;
+				}
+				
+				@FindBy(xpath ="(//div[@class=\"col-lg-7 col-7 p-0 text-right\"])[1]")
+				private WebElement customer_name;
+				public WebElement getCustomer_name() {
+					return customer_name;
+				}
+				
+				
+				@FindBy(xpath ="(//div[@class=\"col-lg-7 col-7 p-0 text-right\"])[2]")
+				private WebElement order_number;
+				public WebElement getOrder_number() {
+					return order_number;
+				}
+				
+				
+				@FindBy(xpath = "(//div[@class=\"col-lg-7 col-7 p-0 text-right\"])[3]")
+				private WebElement order_placed_date;
+				public WebElement getOrder_placed_date() {
+					return order_placed_date;
+				}
+				
+				
+				@FindBy(xpath ="(//h4[@class=\"cusname\"])[1]")
+				private WebElement cusname;
+				public WebElement getCusname() {
+					return cusname;
+				}
+				
+				
+				@FindBy(xpath = "//div[.=\"Payment Mode\"]")
+				private WebElement Payment_mode_text;
+				public WebElement getPayment_mode_text() {
+					return Payment_mode_text;
+				}
+				
+				@FindBy(xpath ="(//div[@class=\"col-5 pr-0 text-right\"])[3]")
+				private WebElement Payment_mode;
+				public WebElement getPayment_mode() {
+					return Payment_mode;
+				}
+				
+				@FindBy(xpath="//img[@class=\"rxviewimg\"]")
+				private WebElement Prescription_open;
+				public WebElement getPrescription_open() {
+					return Prescription_open;
+				}
+				
+				@FindBy(xpath = "(//button[@class=\"close\"])[3]")
+				private WebElement Prescription_closed;
+				public WebElement getPrescription_closed() {
+					return Prescription_closed;
+				}
+				
+				@FindBy(xpath ="//a[.=\"Show Status Details\"]")
+				private WebElement Show_Status_Details;
+				public WebElement getShow_Status_Details() {
+					return Show_Status_Details;
+				}
+				
+				@FindBy(xpath ="//a[.=\"Need Help\"]")
+				private WebElement NeedHelp_page;
+				public WebElement getNeedHelp_page() {
+					return NeedHelp_page;
+				}
+				
+				@FindBy(xpath ="//a[.=\" Reorder \"]")
+				private WebElement Reorder;
+				public WebElement getReorder() {
+					return Reorder;
+				}
+				
+				
+
 	
 }
