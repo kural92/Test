@@ -1367,7 +1367,9 @@ public class Monepom extends BaseClass {
 		return Total_amount;
 	}
 	
-	@FindBy(xpath= "//input[@class='rdbtn auto_apply_coupon_popup']")
+	
+	//@FindBy(xpath= "//input[@class=\"rdbtn auto_apply_coupon_popup\"]")
+	@FindBy(xpath="//input[@id=\"webcoupon_1\"]")
 	private List<WebElement> Promo;
 	public List<WebElement> getPromo() {
 		return Promo;

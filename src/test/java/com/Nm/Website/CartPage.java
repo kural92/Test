@@ -215,7 +215,9 @@ public class CartPage extends BaseClass {
 		List<WebElement> radiobtn = m.getPromo();//driver.findElements(By.xpath("//input[@class='rdbtn auto_apply_coupon_popup']"));
 		System.out.println("Total element size is  "+ radiobtn.size());
 		
-		for (int i = 0; (i< radiobtn.size()/2); i++)
+		for (int i = 0; (i< radiobtn.size()); i++)
+		
+			
 		
 		{
 
@@ -511,7 +513,7 @@ public class CartPage extends BaseClass {
 
 		
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void carpagescenariotwo() throws Throwable {
 
 		logger = report.createTest("cartpage scenario two");
@@ -832,7 +834,7 @@ public class CartPage extends BaseClass {
 
 			
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
