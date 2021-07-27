@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -39,10 +40,10 @@ public class CartPage extends BaseClass {
 	Float delcharge;
 	Float 	Netcharge;
 	String discount;
-	
+	String savings;
 	
 	Float total_discount;
-	
+	Float total_savings;
 	@BeforeTest(groups = { "forgetPassword", "sanity", "reg" })
 	public void startReport() {
 
@@ -67,26 +68,50 @@ public class CartPage extends BaseClass {
 
 	}
 
+//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
 
-	@Test
-	public void cartpage() throws Throwable {
+	/*
+	 BELOW LISTED SCENARIOS ARE COEVRED//
+		Scenario 1: Quantity increased,Quantity decreased and quantity removed/
+		Scenario 2:	Item added though continue shopping/
+		Scenario 3:	Item added through most selling products(directly clicking the add to cart of an item)
+		Scenario 4: All the listed promo codes are able to applied
+		Scenario 5:	Item added through most selling products (open the item and added)
+	Note : Validation has been included for the delivery charge check,Mrp check, Discount amount check and the total amount)
+		*/
 
-		logger = report.createTest("cartpage");
-		logger.log(Status.PASS, "************* cartpage********************");
+
+	@Test(enabled = true)
+	public void cartpagescenarioone() throws Throwable {
+
+		logger = report.createTest("cartpage scenario one ");
+		logger.log(Status.PASS, "************* cartpage scenario 2********************");
 		Monepom m = new Monepom();
 		
 
 		// Login
 		
-			driver.manage().window().maximize();
+		try {
+
 			btncli(m.getSignin());
 			Thread.sleep(5000);
 			type(m.getMobileno(), "8072281468");
 			Thread.sleep(3000);
-			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
 			type(m.getPassword(), "test@123");
 			btncli(m.getSignInpage());
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			System.out.println("Already Logged In");
+		}
+
+		try {
+			btncli(m.getNetmedshome());
+		} catch (Exception e) {
+
+		}
 		
 
 		
@@ -147,6 +172,8 @@ public class CartPage extends BaseClass {
 			driver.navigate().back();
 
 			Thread.sleep(3000);
+			
+			System.out.println("Items are added to the cart");
 		}
 
 //Click mini cart//
@@ -154,6 +181,7 @@ public class CartPage extends BaseClass {
 		btncli(m.getMinicart());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigated to cart page");
+		System.out.println("Successfully navigated to cart page");
 
 // handle Lets chat button
 		try {
@@ -168,6 +196,7 @@ public class CartPage extends BaseClass {
 		}
 
 		Thread.sleep(5000);
+		System.out.println("Successfully closed the chat page");
 		
 //qty increase//
 		
@@ -186,19 +215,20 @@ public class CartPage extends BaseClass {
 		List<WebElement> radiobtn = m.getPromo();//driver.findElements(By.xpath("//input[@class='rdbtn auto_apply_coupon_popup']"));
 		System.out.println("Total element size is  "+ radiobtn.size());
 		
-		for (int i = 0; (i< radiobtn.size()/2); i++)
+		for (int i = 0; (i< radiobtn.size()); i++)
+		
+			
 		
 		{
 
 					
-			Thread.sleep(2000);
-			radiobtn.get(i).click();
 			Thread.sleep(3000);
+			radiobtn.get(i).click();
+			Thread.sleep(4000);
 		
 	} 
 		
-//qty increase//
-
+		System.out.println("promo code is successfully applied");
 		Thread.sleep(3000);
 // Step  :Remove item//
 		
@@ -215,7 +245,7 @@ public class CartPage extends BaseClass {
 		Thread.sleep(3000);
 		
 		logger.log(Status.PASS, " quantity decreased Successfully");
-		System.out.println(" quantity decareased Successfully");
+		System.out.println(" quantity decreased Successfully");
 		
 		
 //continue shopping//
@@ -228,19 +258,22 @@ public class CartPage extends BaseClass {
 		btncli(m.getContinue_shopping());
 		
 		Thread.sleep(000);
-			
+		System.out.println("successfully clicked continue shopping button");	
+		
 		type(m.getSearch(),"Flavedon MR 35mg Tablet 10'S");
 		Thread.sleep(3000);
 		m.getSearch().sendKeys(Keys.ENTER)	;
 		Thread.sleep(5000);
 		driver.findElement(By.id("product-addtocart-button")).click();
 		Thread.sleep(3000);
+		System.out.println("item added sucessfully to the cart");
 		btncli(m.getNetmedshome());
 		Thread.sleep(3000);
 		btncli(m.getMinicart());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigated to cart page");
 		
+//Most selling product//
 		
 		WebElement most_selling_product = m.getMost_Selling_products();
 
@@ -248,26 +281,35 @@ public class CartPage extends BaseClass {
 		
 		System.out.println(most_selling_product.getText());
 		
+		Thread.sleep(3000);
+		
+//click next/previous button to see the products in most selling page//
+		
+		btncli(m.getSwipe_right());
+		Thread.sleep(3000);
+		btncli(m.getSwipe_right());
+		Thread.sleep(3000);
+		
 		logger.log(Status.PASS, "Successfully navigated to next page in similar product");
 		System.out.println("Successfully navigated to next page in similar product");
-		
-		Thread.sleep(3000);
-		
-		btncli(m.getSwipe_right());
-		Thread.sleep(3000);
-		btncli(m.getSwipe_right());
-		Thread.sleep(3000);
 		
 		btncli(m.getSwipe_prev());
 		Thread.sleep(3000);
 		
+		logger.log(Status.PASS, "Successfully navigated to previous page in similar product");
+		System.out.println("Successfully navigated to previous page in similar product");
+		
 		btncli(m.getMost_selling_Addtocart());
 		Thread.sleep(3000);
+		System.out.println("Successfully item added to the cart");
 		
+//open the item from most selling product page and add the item to the cart though PDG page"
 		
 		driver.findElement(By.xpath("(//a[@class=\"productname\"])[3]")).click();
 		Thread.sleep(3000);
-		m.getAddtocart();
+		System.out.println("Successfully naviagted to PD page");
+		driver.findElement(By.xpath("(//button[@id=\"product-addtocart-button\"])[1]")).click();
+		System.out.println("Successfully item added to the cart");
 		Thread.sleep(3000);
 		m.getNetmedshome();
 		Thread.sleep(3000);
@@ -299,7 +341,7 @@ public class CartPage extends BaseClass {
 	}
 		
 		
-//Netmeds Discount
+//Netmeds Discount//
 		
 
 		
@@ -316,6 +358,7 @@ public class CartPage extends BaseClass {
 			System.out.println(discount);
 			
 			 total_discount = Float.parseFloat(discount);
+			 
 			System.out.println("total discount amount is ===" +discount);
 		
 	} else {
@@ -324,11 +367,7 @@ public class CartPage extends BaseClass {
 	}	
 		
 		
-		
-		
-		
-		
-			
+					
 //Total Mrp//
 			 
 			//String totalmrp = driver.findElement(By.id("cart_sub_total")).getText();
@@ -356,6 +395,8 @@ public class CartPage extends BaseClass {
 			Float mrpcharge = Float.parseFloat(total_mrp2);
 			
 			System.out.println("total mrp charge is ===" +mrpcharge);	
+			
+			
 			
 //Total Amount//	
 			
@@ -387,8 +428,7 @@ public class CartPage extends BaseClass {
 			
 			Thread.sleep(3000);
 			
-//System.out.println("mrpcharge==="+mrpcharge);
-//System.out.println("dlcharge==="+dlcharge);
+//Mrp charge(net charge) calculation//
 
 		if (mrpcharge<=150.00 && dlcharge.equals("50.00")) {
 	    	
@@ -405,35 +445,696 @@ public class CartPage extends BaseClass {
 		System.out.println("netcharge==="+Netcharge);
 		System.out.println("total_amt==="+total_amt);
 		
-		if (!discount.isEmpty())
+//discount calculation//		
+		
+		if (discount!= null && !discount.isEmpty())
 		
 		{
 			Netcharge = Netcharge -total_discount;
+			
+			System.out.println("Actual net charge after discount is =="+Netcharge);
 		}
 			
 		
 		if (Float.compare(Netcharge, total_amt) == 0) 
 		{
-		   System.out.println("Total amount matches with total mrp");
+		   System.out.println("Total amount matches with total netcharge");
+		   
 	   }else {
 		   System.out.println("Total amount mismatch");
 	   }
-		 
-	
-	//driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
-	
-		//driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+
+
 		
 		
+		
+//saving amount calculation//
+		
+		if (!(driver.findElements(By.xpath("//div[@class=\"save-amount cart-savings ng-star-inserted\"]")).size()==0))
+		{
+			savings = driver.findElement(By.xpath("//div[@class=\"save-amount cart-savings ng-star-inserted\"]")).getText();
+			System.out.println(savings);
+			logger.log(Status.PASS, "saving is "+ savings);
 			
+			String save = savings.replaceAll(" ","");
+			System.out.println("total==="+save);
+			
+			String[] savings_amt = save.split("RS."); 
+			
+			System.out.println(savings_amt);
+			
+			savings = savings_amt[1].toString();
+			System.out.println(savings);
+			
+			 total_savings = Float.parseFloat(savings);
 			 
+			System.out.println("total saving amount is ===" +savings);
+		
+	} else {
+		
+		System.out.println("No savings amount");
+	}
+		if (total_savings!= null && total_discount!= null) {
+		if (Float.compare(total_savings,total_discount) == 0) 
+		{
+		   System.out.println("Total savings is matched with discount amount");
+		   
+	   }else {
+		   System.out.println("Total savings amount is not matched with discounts");
+	   }
+		
+		
 		 }
 		
 		
+	}	
 
+	//******************************Test case 2: Verify Cart page when the Total amount is more than 150 and 500 
 
+		
+
+	@Test(enabled = false)
+	public void carpagescenariotwo() throws Throwable {
+
+		logger = report.createTest("cartpage scenario two");
+		logger.log(Status.PASS, "************* cartpage page scenario 2********************");
+		Monepom m = new Monepom();
 	
 	
+	try {
+
+		btncli(m.getSignin());
+		Thread.sleep(5000);
+		type(m.getMobileno(), "8072281468");
+		Thread.sleep(3000);
+		btncli(m.getUsepwdbtn());
+		Thread.sleep(3000);
+		type(m.getPassword(), "test@123");
+		btncli(m.getSignInpage());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to home page");
+	} catch (Exception e) {
+		System.out.println("Already Logged In");
+	}
+
+	try {
+		btncli(m.getNetmedshome());
+	} catch (Exception e) {
+
+	}
+	
+//  Remove existing items from the cart  //
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		Thread.sleep(3000);
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size() == 0)) {
+
+				try {
+					btncli(m.getRemovebutton());
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//button[.=\"Remove\"]")).click();
+				} catch (Exception e) {
+					System.out.println("Items are removed from the cart");
+				}
+
+			} else {
+				break;
+
+			}
+
+		}
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.netmeds.com/");
+
+		Thread.sleep(3000);
+		
+//Adding Product to the cart//
+		
+			
+			for (int i = 0; i < 2; i++) {
+				
+				type(m.getSearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
+				m.getSearch().sendKeys(Keys.ENTER);
+
+				// btncli(m.getSearchIcon());
+				logger.log(Status.PASS, "Successfully navigate to search result page");
+			
+			try {
+				Thread.sleep(3000);
+
+				WebElement Cart_btn = driver.findElement(By.id("product-addtocart-button"));
+				Thread.sleep(3000);
+				btncli(Cart_btn);
+				//btncli(m.getAddtocart());
+			} catch (Exception e) {
+
+			}
+			Thread.sleep(3000);
+			driver.navigate().back();
+
+			Thread.sleep(3000);
+			
+			System.out.println("Items are added to the cart");
+		}
+
+//Click mini cart//
+		
+		btncli(m.getMinicart());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigated to cart page");
+
+// handle Lets chat button
+		try {
+			driver.switchTo().frame("haptik-xdk");
+			Actions acc = new Actions(driver);
+			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+					.perform();
+			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+			driver.switchTo().defaultContent();
+		} catch (Exception e) {
+
+		}
+
+		Thread.sleep(5000);
+		System.out.println("successfully closed letschat");
+		
+//Delivery Charge//
+		
+				if (!(driver.findElements(By.id("cart_del_charge")).size()==0))
+				{
+					dlcharge = driver.findElement(By.id("cart_del_charge")).getText();
+					System.out.println(dlcharge);
+					logger.log(Status.PASS, "Ordered Product price was "+dlcharge);
+					
+					String[] total_dlcharge = dlcharge.split("Rs."); 	
+					System.out.println(total_dlcharge);
+					
+					dlcharge = total_dlcharge[1].toString();
+					System.out.println(dlcharge);
+					
+					 delcharge = Float.parseFloat(dlcharge);
+					System.out.println("total delivery charge is ===" +delcharge);
+				
+			} else {
+				
+				System.out.println("Total amount is more the Rs.500");
+			}
+		
+//Netmeds Discount
+		
+
+		
+				if (!(driver.findElements(By.id("cart_total_disc1")).size()==0))
+				{
+					discount = driver.findElement(By.id("cart_total_disc1")).getText();
+					System.out.println(discount);
+					logger.log(Status.PASS, "Discount is "+ discount);
+					
+					String[] discount_amt = discount.split("- Rs."); 	
+					System.out.println(discount_amt);
+					
+					discount = discount_amt[1].toString();
+					System.out.println(discount);
+					
+					 total_discount = Float.parseFloat(discount);
+					 
+					System.out.println("total discount amount is ===" +discount);
+				
+			} else {
+				
+				System.out.println("No discount amount");
+			}	
+				
+						
+//Total Mrp//
+					 
+					//String totalmrp = driver.findElement(By.id("cart_sub_total")).getText();
+					
+					String totalmrp = m.getTotalmrp().getText();
+					
+					logger.log(Status.PASS, "mrp is "+totalmrp);
+					
+					String[] total_mrp1 = totalmrp.split("Rs."); 
+					
+					if (total_mrp1[1].contains(",")) {
+						
+						 mrp = total_mrp1[1].replace(",", "");
+						 
+					} else 
+					
+					{
+						
+					mrp = total_mrp1[1].toString();
+						
+					}
+					
+					String total_mrp2 =mrp.toString();
+					
+					Float mrpcharge = Float.parseFloat(total_mrp2);
+					
+					System.out.println("total mrp charge is ===" +mrpcharge);	
+					
+//Total Amount//	
+					
+					//String totalamount = driver.findElement(By.id("cart_netpay_amt1")).getText();
+					
+					String totalamount = m.getTotal_amount().getText();
+					
+					logger.log(Status.PASS, "Ordered Product price was "+totalamount);
+					String[] total_amt1 = totalamount.split("Rs.");  //String a = element.getText();  String[] id = a.split(" : ");  String ab = id[1].toString();
+					
+				
+					if (total_amt1[1].contains(",")) {
+						
+						 totalamt = total_amt1[1].replace(",", "");
+						
+					} else {
+						
+					totalamt = total_amt1[1].toString();
+						
+					}
+					
+					String total_amt2 =totalamt.toString();
+						
+					System.out.println(total_amt2);
+					
+					Float total_amt = Float.parseFloat(total_amt2);
+			
+					System.out.println("Total amt is=== "+ total_amt);
+					
+					Thread.sleep(3000);
+					
+		//System.out.println("mrpcharge==="+mrpcharge);
+		//System.out.println("dlcharge==="+dlcharge);
+
+			
+//Mrp/net charge calculation//
+					
+				if (mrpcharge<=150.00 && dlcharge.equals("50.00")) {
+			    	
+			  	Netcharge = mrpcharge + delcharge;
+			   
+			    }else if  (mrpcharge>150.00 && mrpcharge<=500.00 && dlcharge.equals("25.00")) {
+			    	
+				  	Netcharge = mrpcharge + delcharge;
+			    }else if (mrpcharge>500.00) {
+			    	
+				  	Netcharge = mrpcharge ;
+			    }
+			    	
+				System.out.println("netcharge==="+Netcharge);
+				System.out.println("total_amt==="+total_amt);
+				
+				
+//Discount calculation//				
+				if (discount!= null && !discount.isEmpty())
+				
+				{
+					Netcharge = Netcharge -total_discount;
+					
+					System.out.println("Actual net charge after discount is =="+Netcharge);
+				}else {
+					System.out.println("there is no discount in this order");
+				}
+					
+				
+				if (Float.compare(Netcharge, total_amt) == 0) 
+				{
+				   System.out.println("Total amount matches with total netcharge");
+				   
+			   }else {
+				   System.out.println("Total amount mismatch");
+			   }
+				 		
+//savings amount calculation//
+				
+				if (!(driver.findElements(By.xpath("//div[@class=\"save-amount cart-savings ng-star-inserted\"]")).size()==0))
+				{
+					savings = driver.findElement(By.xpath("//div[@class=\"save-amount cart-savings ng-star-inserted\"]")).getText();
+					System.out.println(savings);
+					logger.log(Status.PASS, "saving is "+ savings);
+					
+					String save = savings.replaceAll(" ","");
+					System.out.println("total==="+save);
+					
+					String[] savings_amt = save.split("RS."); 
+					
+					System.out.println(savings_amt);
+					
+					savings = savings_amt[1].toString();
+					System.out.println(savings);
+					
+					 total_savings = Float.parseFloat(savings);
+					 
+					System.out.println("total saving amount is ===" +savings);
+				
+			} else {
+				
+				System.out.println("No savings amount");
+			}
+				
+				
+				if (total_savings!= null && total_discount!= null)
+				{
+				if (Float.compare(total_savings,total_discount) == 0) 
+				{
+				   System.out.println("Total savings is matched with discount amount");
+				   
+			   }else {
+				   System.out.println("Total savings amount is not matched with discounts");
+			   }
+				
+				
+				 }
+//header Menu validation//
+
+				btncli(m.getNetmedshome());
+				Thread.sleep(3000);
+				btncli(m.getMinicart());
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//a[@class=\"ng-star-inserted\"]")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//span[@class='counter-number']")).click();
+				Thread.sleep(3000);
+				btncli(m.getUpload_cta());
+				Thread.sleep(3000);
+				btncli(m.getNetmedshome());
+				Thread.sleep(3000);
+				btncli(m.getMinicart());
+	}
+	
+	
+	//******************************Test case 3: Verify Cart page when the Total amount is less than 150
+
+			
+
+	@Test(enabled = false)
+	public void carpagescenariothree() throws Throwable {
+
+		logger = report.createTest("cartpage scenario three");
+		logger.log(Status.PASS, "************* cartpage page scenario 3********************");
+		Monepom m = new Monepom();
+	
+	
+	try {
+
+		btncli(m.getSignin());
+		Thread.sleep(5000);
+		type(m.getMobileno(), "8072281468");
+		Thread.sleep(3000);
+		btncli(m.getUsepwdbtn());
+		Thread.sleep(3000);
+		type(m.getPassword(), "test@123");
+		btncli(m.getSignInpage());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to home page");
+	} catch (Exception e) {
+		System.out.println("Already Logged In");
+	}
+
+	try {
+		btncli(m.getNetmedshome());
+	} catch (Exception e) {
+
+	}
+	
+//  Remove existing items from the cart  //
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		Thread.sleep(3000);
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size() == 0)) {
+
+				try {
+					btncli(m.getRemovebutton());
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//button[.=\"Remove\"]")).click();
+				} catch (Exception e) {
+					System.out.println("Items are removed from the cart");
+				}
+
+			} else {
+				break;
+
+			}
+
+		}
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.netmeds.com/");
+
+		Thread.sleep(3000);
+		
+//Adding Product to the cart//
+		
+			
+			for (int i = 0; i < 1; i++) {
+				
+				type(m.getSearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
+				m.getSearch().sendKeys(Keys.ENTER);
+
+				// btncli(m.getSearchIcon());
+				logger.log(Status.PASS, "Successfully navigate to search result page");
+			
+			try {
+				Thread.sleep(3000);
+
+				WebElement Cart_btn = driver.findElement(By.id("product-addtocart-button"));
+				Thread.sleep(3000);
+				btncli(Cart_btn);
+				//btncli(m.getAddtocart());
+			} catch (Exception e) {
+
+			}
+			Thread.sleep(3000);
+			driver.navigate().back();
+
+			Thread.sleep(3000);
+			
+			System.out.println("Items are added to the cart");
+		}
+
+//Click mini cart//
+		
+		btncli(m.getMinicart());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigated to cart page");
+
+// handle Lets chat button
+		try {
+			driver.switchTo().frame("haptik-xdk");
+			Actions acc = new Actions(driver);
+			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+					.perform();
+			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+			driver.switchTo().defaultContent();
+		} catch (Exception e) {
+
+		}
+
+		Thread.sleep(5000);
+		System.out.println("successfully closed letschat");
+		
+//Delivery Charge//
+		
+				if (!(driver.findElements(By.id("cart_del_charge")).size()==0))
+				{
+					dlcharge = driver.findElement(By.id("cart_del_charge")).getText();
+					System.out.println(dlcharge);
+					logger.log(Status.PASS, "Ordered Product price was "+dlcharge);
+					
+					String[] total_dlcharge = dlcharge.split("Rs."); 	
+					System.out.println(total_dlcharge);
+					
+					dlcharge = total_dlcharge[1].toString();
+					System.out.println(dlcharge);
+					
+					 delcharge = Float.parseFloat(dlcharge);
+					System.out.println("total delivery charge is ===" +delcharge);
+				
+			} else {
+				
+				System.out.println("Total amount is more the Rs.500");
+			}
+		
+//Netmeds Discount
+		
+
+		
+				if (!(driver.findElements(By.id("cart_total_disc1")).size()==0))
+				{
+					discount = driver.findElement(By.id("cart_total_disc1")).getText();
+					System.out.println(discount);
+					logger.log(Status.PASS, "Discount is "+ discount);
+					
+					String[] discount_amt = discount.split("- Rs."); 	
+					System.out.println(discount_amt);
+					
+					discount = discount_amt[1].toString();
+					System.out.println(discount);
+					
+					 total_discount = Float.parseFloat(discount);
+					 
+					System.out.println("total discount amount is ===" +discount);
+				
+			} else {
+				
+				System.out.println("No discount amount");
+			}	
+				
+						
+//Total Mrp//
+					 
+					//String totalmrp = driver.findElement(By.id("cart_sub_total")).getText();
+					
+					String totalmrp = m.getTotalmrp().getText();
+					
+					logger.log(Status.PASS, "mrp is "+totalmrp);
+					
+					String[] total_mrp1 = totalmrp.split("Rs."); 
+					
+					if (total_mrp1[1].contains(",")) {
+						
+						 mrp = total_mrp1[1].replace(",", "");
+						 
+					} else 
+					
+					{
+						
+					mrp = total_mrp1[1].toString();
+						
+					}
+					
+					String total_mrp2 =mrp.toString();
+					
+					Float mrpcharge = Float.parseFloat(total_mrp2);
+					
+					System.out.println("total mrp charge is ===" +mrpcharge);	
+					
+//Total Amount//	
+					
+					//String totalamount = driver.findElement(By.id("cart_netpay_amt1")).getText();
+					
+					String totalamount = m.getTotal_amount().getText();
+					
+					logger.log(Status.PASS, "Ordered Product price was "+totalamount);
+					String[] total_amt1 = totalamount.split("Rs.");  //String a = element.getText();  String[] id = a.split(" : ");  String ab = id[1].toString();
+					
+				
+					if (total_amt1[1].contains(",")) {
+						
+						 totalamt = total_amt1[1].replace(",", "");
+						
+					} else {
+						
+					totalamt = total_amt1[1].toString();
+						
+					}
+					
+					String total_amt2 =totalamt.toString();
+						
+					System.out.println(total_amt2);
+					
+					Float total_amt = Float.parseFloat(total_amt2);
+			
+					System.out.println("Total amt is=== "+ total_amt);
+					
+					Thread.sleep(3000);
+					
+		//System.out.println("mrpcharge==="+mrpcharge);
+		//System.out.println("dlcharge==="+dlcharge);
+
+			
+//Mrp/net charge calculation//
+					
+				if (mrpcharge<=150.00 && dlcharge.equals("50.00")) {
+			    	
+			  	Netcharge = mrpcharge + delcharge;
+			   
+			    }else if  (mrpcharge>150.00 && mrpcharge<=500.00 && dlcharge.equals("25.00")) {
+			    	
+				  	Netcharge = mrpcharge + delcharge;
+			    }else if (mrpcharge>500.00) {
+			    	
+				  	Netcharge = mrpcharge ;
+			    }
+			    	
+				System.out.println("netcharge==="+Netcharge);
+				System.out.println("total_amt==="+total_amt);
+				
+				
+//Discount calculation//				
+				if (discount!= null && !discount.isEmpty())
+				
+				{
+					Netcharge = Netcharge -total_discount;
+					
+					System.out.println("Actual net charge after discount is =="+Netcharge);
+				}else {
+					System.out.println("there is no discount in this order");
+				}
+					
+				
+				if (Float.compare(Netcharge, total_amt) == 0) 
+				{
+				   System.out.println("Total amount matches with total netcharge");
+				   
+			   }else {
+				   System.out.println("Total amount mismatch");
+			   }
+				 		
+//savings amount calculation//
+				
+				if (!(driver.findElements(By.xpath("//div[@class=\"save-amount cart-savings ng-star-inserted\"]")).size()==0))
+				{
+					savings = driver.findElement(By.xpath("//div[@class=\"save-amount cart-savings ng-star-inserted\"]")).getText();
+					System.out.println(savings);
+					logger.log(Status.PASS, "saving is "+ savings);
+					
+					String save = savings.replaceAll(" ","");
+					System.out.println("total==="+save);
+					
+					String[] savings_amt = save.split("RS."); 
+					
+					System.out.println(savings_amt);
+					
+					savings = savings_amt[1].toString();
+					System.out.println(savings);
+					
+					 total_savings = Float.parseFloat(savings);
+					 
+					System.out.println("total saving amount is ===" +savings);
+				
+			} else {
+				
+				System.out.println("No savings amount");
+			}
+				
+				
+				if (total_savings!= null && total_discount!= null)
+				{
+				if (Float.compare(total_savings,total_discount) == 0) 
+				{
+				   System.out.println("Total savings is matched with discount amount");
+				   
+			   }else {
+				   System.out.println("Total savings amount is not matched with discounts");
+			   }
+				
+				
+				 }
+
+	}
 	
 	
 	@AfterMethod()

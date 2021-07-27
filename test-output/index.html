@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,21 +24,26 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
+<<<<<<< HEAD
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+=======
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
               <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +54,42 @@
             <div class="suite-section-content">
               <ul>
                 <li>
+<<<<<<< HEAD
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
                     <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--934676416\testng-customsuite.xml</span>
+=======
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\NMSLAP357\AppData\Local\Temp\testng-eclipse--1133607600\testng-customsuite.xml</span>
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,7 +102,11 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
+<<<<<<< HEAD
                     <span class="method-stats">2 methods,   2 passed</span>
+=======
+                    <span class="method-stats">1 method,   1 passed</span>
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,6 +116,7 @@
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
+<<<<<<< HEAD
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Website.Paymentpage" hash-for-method="nmscash">nmscash</a> <!-- method navigator-link -->
                       </span>
@@ -108,6 +124,10 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Website.Paymentpage" hash-for-method="paymentpage">paymentpage</a> <!-- method navigator-link -->
+=======
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Website.CartPage" class="method navigator-link" hash-for-method="cartpagescenarioone">cartpagescenarioone</a> <!-- method navigator-link -->
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -125,11 +145,16 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+<<<<<<< HEAD
               <span class="class-name">com.Nm.Website.Paymentpage</span>
+=======
+              <span class="class-name">com.Nm.Website.CartPage</span>
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
                   <a name="nmscash">
                   </a> <!-- nmscash -->
                   <span class="method-name">nmscash</span>
@@ -140,6 +165,11 @@
                   <a name="paymentpage">
                   </a> <!-- paymentpage -->
                   <span class="method-name">paymentpage</span>
+=======
+                  <a name="cartpagescenarioone">
+                  </a> <!-- cartpagescenarioone -->
+                  <span class="method-name">cartpagescenarioone</span>
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -147,16 +177,24 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--934676416\testng-customsuite.xml</span>
+=======
+            <span class="header-content">C:\Users\NMSLAP357\AppData\Local\Temp\testng-eclipse--1133607600\testng-customsuite.xml</span>
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
+<<<<<<< HEAD
       &lt;class name=&quot;com.Nm.Website.Paymentpage&quot;/&gt;
+=======
+      &lt;class name=&quot;com.Nm.Website.CartPage&quot;/&gt;
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -198,6 +236,7 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
+<<<<<<< HEAD
 data.setCell(0, 1, 'paymentpage')
 data.setCell(0, 2, 'com.Nm.Website.Paymentpage')
 data.setCell(0, 3, 414839);
@@ -205,11 +244,20 @@ data.setCell(1, 0, 1)
 data.setCell(1, 1, 'nmscash')
 data.setCell(1, 2, 'com.Nm.Website.Paymentpage')
 data.setCell(1, 3, 129539);
+=======
+data.setCell(0, 1, 'cartpagescenarioone')
+data.setCell(0, 2, 'com.Nm.Website.CartPage')
+data.setCell(0, 3, 294569);
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 9 minutes</span>
+=======
+              <span class="suite-total-time">Total running time: 4 minutes</span>
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -224,9 +272,24 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+=======
+            <span class="header-content">2 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.Nm.Website.CartPage</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">carpagescenariotwo</span>
+                <br/>
+                <span class="ignored-method-name">carpagescenariothree</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -235,13 +298,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
               <div class="chronological-class-name">com.Nm.Website.Paymentpage</div> <!-- chronological-class-name -->
+=======
+              <div class="chronological-class-name">com.Nm.Website.CartPage</div> <!-- chronological-class-name -->
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
               <div class="configuration-test before">
                 <span class="method-name">startReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">launchbrowser</span>
+<<<<<<< HEAD
                 <span class="method-start">169 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
@@ -263,10 +331,26 @@ return data;
               <div class="configuration-test after">
                 <span class="method-name">quitbrowser</span>
                 <span class="method-start">567366 ms</span>
+=======
+                <span class="method-start">445 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">cartpagescenarioone</span>
+                <span class="method-start">15207 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">screenShot([TestResult name=cartpagescenarioone status=SUCCESS method=CartPage.cartpagescenarioone()[pri:0, ins...)</span>
+                <span class="method-start">309785 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">quitbrowser</span>
+                <span class="method-start">312805 ms</span>
+>>>>>>> 06ba9139fc1cee682cf9a5a06c46d136a35c7265
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

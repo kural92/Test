@@ -166,8 +166,9 @@ public class M2_Flow_Search extends BaseClass {
 			Thread.sleep(6000);
 			
 			 logger.log(Status.PASS, "Successfully Placed the Order" );
-			/*
-			String Order_message =  mm.getOrder_Placed_text().getText();
+			
+			 /*
+			String Order_message =  m.getOrder_Placed_text().getAttribute("innerText");
 			System.err.println(Order_message);
 			Thread.sleep(3000);
 			*/

@@ -130,7 +130,7 @@ public class M3_Subscription extends BaseClass {
 
 		// Step 6:Search Product//
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 4; i++) {
 
 			type(m.getM3productsearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
 
@@ -202,6 +202,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 13 : Click Proceed Button//
 
 		btncli(m.getProceed());
+		Thread.sleep(3000);
 		btncli(m.getSelectduration45());
 		Thread.sleep(3000);
 		btncli(m.getSelectduration30());
@@ -226,7 +227,7 @@ public class M3_Subscription extends BaseClass {
 
 		String confirmation = m.getOrder_Placed_text().getText();
 
-		String orderid = m.getOrderid().getText();
+		String orderid = m.getOrderid().getAttribute("innerText");
 
 		String orderconfirmation = "Order Placed Successfully!";
 
@@ -551,7 +552,7 @@ public class M3_Subscription extends BaseClass {
 		String confirmation = m.getOrder_Placed_text().getText();
 
 		
-		String orderid = m.getOrderid().getText();
+		String orderid = m.getOrderid().getAttribute("innerText");
 
 		String orderconfirmation = "Order Placed Successfully!";
 
@@ -706,7 +707,7 @@ public class M3_Subscription extends BaseClass {
 
 		WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
 
-		upload.sendKeys("C:\\Users\\NMSLAP357\\Desktop\\Prescription.jpg");
+		upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Prescription added successfully");
 
@@ -733,7 +734,7 @@ public class M3_Subscription extends BaseClass {
 String confirmation = m.getOrder_Placed_text().getText();
 
 		
-		String orderid = m.getOrderid().getText();
+		String orderid = m.getOrderid().getAttribute("innerText");
 
 		String orderconfirmation = "Order Placed Successfully!";
 
@@ -900,7 +901,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		driver.findElement(By.xpath("(//button[@class='close'])[2]")).click();
 
 		// Step 10 : select duration//
-
+		Thread.sleep(3000);
 		btncli(m.getSelectDuration());
 		btncli(m.getSelectduration45());
 		Thread.sleep(2000);
@@ -921,7 +922,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 		String confirmation = m.getOrder_Placed_text().getText();
 
-		String orderid = m.getOrderid().getText();
+		String orderid = m.getOrderid().getAttribute("innerText");
 
 		String orderconfirmation = "Order Placed Successfully!";
 

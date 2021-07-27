@@ -1,5 +1,6 @@
 package com.Nm.Website;
 
+import java.awt.Container;
 import java.io.File;
 import java.util.List;
 
@@ -54,7 +55,11 @@ public class Youraccount extends BaseClass {
 
 	}
 
-//*****************************************************Delivery Address in Your Account page******************************************************************//
+//*****************************************************Your Accountpage*************************
+
+//Menu : Delivery Address//
+	
+	
 	@Test(enabled = true)
 	public void DeliverAddressSection() throws Throwable {
 
@@ -249,16 +254,15 @@ public class Youraccount extends BaseClass {
 		System.out.println(m.getNMSCash().getText());
 		System.out.println(m.getNMSSupercash().getText());
 
-		//SoftAssert.assertEquals(gettext(m.getNMSCash()),"NMS Cash\r\n"
-				//+ "Rs. 0.00\r\n"
-				//+ "How to use?");
-		
-		 
-		//SoftAssert.assertEquals(gettext(m.getNMSSupercash()),"NMS Super Cash\r\n"
-			//	+ "Rs. 0.00\r\n"
-			//	+ "How to use?");
-
 		SoftAssert.assertAll();
+		
+		SoftAssert.assertTrue(gettext(m.getNMSCash()).contains("NMS Cash\r\n"
+				+ "Rs. 0.00\r\n"
+				+ "How to use?"));
+		
+		SoftAssert.assertTrue(gettext(m.getNMSSupercash()).contains("NMS Super Cash"
+				+ "Rs. 0.00"
+				+ "How to use?"));
 
 		logger.log(Status.PASS, "all the texts were asserted successfully");
 		System.out.println("all the texts are asserted successfully");
