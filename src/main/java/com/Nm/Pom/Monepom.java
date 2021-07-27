@@ -1701,7 +1701,60 @@ public class Monepom extends BaseClass {
 					return Reorder;
 				}
 				
+//***********************************************************Offers Page***************************************************************************
 				
+				@FindBy(xpath ="//a[@href=\"/offers\"]")
+				private WebElement offer_page;
+				public WebElement getOffer_page() {
+					return offer_page;
+				}
+				
+				@FindBy(xpath ="(//button[@class=\"copy_code_btn\"])[1]")
+				private WebElement copy_code;
+				public WebElement getCopy_code() {
+					return copy_code;
+				}
+				
+				@FindBy(xpath ="//span[@class=\"arricon downarrow\"]")
+				private WebElement Promo_apply;
+				public WebElement getPromo_apply() {
+					return Promo_apply;
+				}
+				
+				@FindBy(xpath = "(//input[@id=\"couponcode\"])[1]")
+				private WebElement coupon_code;
+				public WebElement getCoupon_code() {
+					return coupon_code;
+				}
+				
+				@FindBy(xpath ="(//button[@class=\"apply-coupon\"])[1]")
+				private WebElement apply_code;
+				public WebElement getApply_code() {
+					return apply_code;
+				}
+				
+				
+				@FindBy(xpath = "(//input[@class=\"offer-checkbox\"])[1]")
+				private WebElement medicine_checkbox;
+				public WebElement getMedicine_checkbox() {
+					return medicine_checkbox;
+				}
+				
+				
+				@FindBy(xpath = "(//input[@class=\"offer-checkbox\"])[2]")
+				private WebElement Diagnostics_checkbox;
+				public WebElement getDiagnostics_checkbox() {
+					return Diagnostics_checkbox;
+				}
+				
+				@FindBy(xpath = "(//input[@class=\"offer-checkbox\"])[3]")
+				private WebElement Consultation_checkbox;
+				public WebElement getConsultation_checkbox() {
+					return Consultation_checkbox;
+				}
+				
+				
+			
 
 	
 }
