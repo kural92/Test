@@ -1450,6 +1450,71 @@ public class Monepom extends BaseClass {
 		return Alternate_AddToCart;
 	}
 	
+
+	//PDP PAGE
+	@FindBy(xpath = "//div[@class='product-detail']")
+	private WebElement PDP_ProductDetail;
+	public WebElement getPDP_ProductDetail() {
+		return PDP_ProductDetail;
+	}
+	
+	
+	
+	@FindBy(xpath = "//h3[contains(text(),'OFFERS APPLICABLE')]")
+	private List<WebElement> PDP_OfferText;
+	public List<WebElement> getPDP_OfferText() {
+		return PDP_OfferText;
+	}
+	
+	@FindBy(xpath = "//span[@class='off_save']")
+	private WebElement PDP_OfferPercentage;
+	public WebElement getPDP_OfferPercentage() {
+		return PDP_OfferPercentage;
+	}
+	
+	
+	@FindBy(xpath = "//div[contains(text(),'Pack of 4')]")
+	private List<WebElement> PDP_Pack4_text;
+	public List<WebElement> getPDP_Pack4_text() {
+		return PDP_Pack4_text;
+	}
+	
+	
+	@FindBy(xpath = "(//div[contains(text(),'Pack of 4')]//following::button)[1]")
+	private WebElement PDP_Pack4_BuyBtn;
+	public WebElement getPDP_Pack4_BuyBtn() {
+		return PDP_Pack4_BuyBtn;
+	}
+	
+	@FindBy(xpath = "//div[contains(text(),'Pack of 4')]//following::span[@class='final_price']")
+	private WebElement PDP_ComboPack4_Price;
+	public WebElement getPDP_ComboPack4_Price() {
+		return PDP_ComboPack4_Price;
+	}
+	
+	
+	@FindBy(xpath = "//div[contains(text(),'Pack of 2')]")
+	private List<WebElement> PDP_Pack2_text;
+	public List<WebElement> getPDP_Pack2_text() {
+		return PDP_Pack2_text;
+	}
+	
+	
+	
+	@FindBy(xpath = "(//div[contains(text(),'Pack of 2')]//following::button)[1]")
+	private WebElement PDP_Pack2_BuyBtn;
+	public WebElement getPDP_Pack2_BuyBtn() {
+		return PDP_Pack2_BuyBtn;
+	}
+	
+	@FindBy(xpath = "//div[contains(text(),'Pack of 2')]//following::span[@class='final_price']")
+	private WebElement PDP_ComboPack2_Price;
+	public WebElement getPDP_ComboPack2_Price() {
+		return PDP_ComboPack2_Price;
+	}
+	
+	
+	
 	
 	//************************************************Order Success Page*****************************************************************//
 
