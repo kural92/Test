@@ -205,7 +205,7 @@ public class NeetmedsFirst extends BaseClass{
 		}
 		Thread.sleep(3000);
 		btncli(m.getMinicart());
-		Thread.sleep(3000);
+
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
 			if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size()==0)) {
@@ -456,6 +456,16 @@ btncli(m.getLogout());
     		//SoftAssert.assertEquals(m.getCart_Netmedscontent().isDisplayed(), false);
 
        		SoftAssert.assertAll();
+       		
+       		List<WebElement> filiter = driver.findElements(By.xpath("//div[@id='category_filter']/div/ul/li"));
+       		int sizes=filiter.size();
+       		//3
+       		String text = filiter.get(1).getText();
+       		for (int i = 0; i < sizes; i++) {
+       			
+       			filiter.get(i).click();
+			}
+       		driver.findElement(By.xpath("//div[@id='category_filter']/div/div/div/form/input")).sendKeys(text,Keys.ENTER);
 	}
 	
 	

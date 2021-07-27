@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jul 16, 2021 07:52:32 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jul 27, 2021 08:37:42 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,6 +72,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -122,10 +123,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -137,10 +138,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>16</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='85%'><span class='strong'>17</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='15%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -155,17 +156,17 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>cartpage</span>
-						<span class='test-time'>Jul 16, 2021 07:52:37 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>Payment page</span>
+						<span class='test-time'>Jul 27, 2021 08:37:59 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2021 07:52:37 PM</span>
-	<span class='label end-time'>Jul 16, 2021 07:56:38 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 1s+95ms</span>
+	<span class='label start-time'>Jul 27, 2021 08:37:59 PM</span>
+	<span class='label end-time'>Jul 27, 2021 08:47:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 9m 7s+403ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -179,83 +180,103 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:52:37 PM</td>
-					<td class='step-details'>************* cartpage********************</td>
+					<td class='timestamp'>8:37:59 PM</td>
+					<td class='step-details'>*************Decline case********************</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:53:28 PM</td>
+					<td class='timestamp'>8:38:20 PM</td>
+					<td class='step-details'>Successfully navigate to home page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:39:02 PM</td>
 					<td class='step-details'>Successfully navigate to search result page</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:53:43 PM</td>
+					<td class='timestamp'>8:39:10 PM</td>
+					<td class='step-details'>Successfully navigate to cart page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:39:13 PM</td>
+					<td class='step-details'>Successfully navigate to search order review page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:39:16 PM</td>
+					<td class='step-details'>Successfully navigate to search payment Details page</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:39:48 PM</td>
+					<td class='step-details'>paytm decline scenario is verified</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:40:51 PM</td>
+					<td class='step-details'>amazon pay decline scenario is verified</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:40:59 PM</td>
+					<td class='step-details'>simple decline scenario is verified</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:44:27 PM</td>
+					<td class='step-details'>Successfully Placed the Order</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:44:54 PM</td>
+					<td class='step-details'>Successfully Order was Cancelled</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:44:54 PM</td>
+					<td class='step-details'><span class='label white-text green'>paymentpage PASSED </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:45:02 PM</td>
+					<td class='step-details'>Successfully navigate to home page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:45:46 PM</td>
 					<td class='step-details'>Successfully navigate to search result page</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:53:59 PM</td>
-					<td class='step-details'>Successfully navigate to search result page</td>
+					<td class='timestamp'>8:46:25 PM</td>
+					<td class='step-details'>Successfully navigate to cart page</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:54:14 PM</td>
-					<td class='step-details'>Successfully navigate to search result page</td>
+					<td class='timestamp'>8:46:28 PM</td>
+					<td class='step-details'>Successfully navigate to search order review page</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:54:29 PM</td>
-					<td class='step-details'>Successfully navigate to search result page</td>
+					<td class='timestamp'>8:46:31 PM</td>
+					<td class='step-details'>Successfully navigate to search payment Details page</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:54:47 PM</td>
-					<td class='step-details'>Successfully navigated to cart page</td>
+					<td class='timestamp'>8:46:35 PM</td>
+					<td class='step-details'>verify the Nms cash</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:54:58 PM</td>
-					<td class='step-details'>quantity increased Successfully</td>
+					<td class='timestamp'>8:47:06 PM</td>
+					<td class='step-details'>Successfully Order was Cancelled</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:55:29 PM</td>
-					<td class='step-details'>item removed Successfully</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:55:33 PM</td>
-					<td class='step-details'>quantity decreased Successfully</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:56:01 PM</td>
-					<td class='step-details'>Successfully navigated to cart page</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:56:01 PM</td>
-					<td class='step-details'>Successfully navigated to next page in similar product</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:56:35 PM</td>
-					<td class='step-details'>Discount is - Rs.523.68</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:56:35 PM</td>
-					<td class='step-details'>mrp is Rs.2,819.43</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:56:35 PM</td>
-					<td class='step-details'>Ordered Product price was Rs.2,295.75</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>7:56:38 PM</td>
-					<td class='step-details'><span class='label white-text green'>cartpage PASSED </span></td>
+					<td class='timestamp'>8:47:06 PM</td>
+					<td class='step-details'><span class='label white-text green'>nmscash PASSED </span></td>
 				</tr>
 			</tbody>
 		</table>
@@ -303,25 +324,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>16</div>
+					<div class='panel-lead'>20</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 16, 2021 07:52:32 PM</div>
+					<div class='panel-lead'>Jul 27, 2021 08:37:42 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 16, 2021 07:56:41 PM</div>
+			 		<div class='panel-lead'>Jul 27, 2021 08:47:09 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 4m 8s+600ms</div>
+					<div class='panel-lead'>0h 9m 27s+275ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -358,22 +379,22 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
-				failParent: 0,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				
-				passChild: 16,
-				failChild: 0,
+				passChild: 17,
+				failChild: 3,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 3,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

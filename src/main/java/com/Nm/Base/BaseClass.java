@@ -125,6 +125,10 @@ public class BaseClass {
 	public void action(WebElement element,WebElement des) {
 		new Actions(driver).dragAndDrop(element,des ).perform();
 	}
+	public void actionClick(WebElement element) {
+		new Actions(driver).click(element).perform();
+	}
+
 	public void quit() {
 		driver.quit();
 
