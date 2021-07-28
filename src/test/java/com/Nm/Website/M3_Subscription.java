@@ -258,6 +258,7 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
+		Thread.sleep(3000);
 
 	}
 
@@ -573,7 +574,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 
 		btncli(m.getCancel_Order());
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		btncli(m.getCancelyes());
 		Thread.sleep(3000);
@@ -584,7 +585,8 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
-
+		
+		Thread.sleep(3000);
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
@@ -767,7 +769,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
 
-
+		Thread.sleep(3000);
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
@@ -954,7 +956,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
-
+		Thread.sleep(3000);
 	}
 
 	@AfterMethod()
