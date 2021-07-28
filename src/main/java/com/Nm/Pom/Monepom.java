@@ -47,7 +47,7 @@ public class Monepom extends BaseClass {
 	public WebElement getUsepwdbtn() {
 		return usepwdbtn;
 	}
-	@FindBy(xpath="(//button[@type='submit'])[5]")
+	@FindBy(xpath="//button[text()='USE PASSWORD']")
 	private WebElement pass ;
 	@FindBy(xpath="//input[@id='search']")
 	private WebElement Search;
@@ -66,7 +66,7 @@ public class Monepom extends BaseClass {
 	private WebElement minicart;
 	@FindBy(xpath="//div[@class='process-checkout']")
 	private WebElement proceedbutton;
-	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']")
+	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']/button")
 	private WebElement paybutton;
 	@FindBy(xpath="//span[@class='title col-md-4']")
 	private WebElement paydeatailText;
@@ -75,6 +75,21 @@ public class Monepom extends BaseClass {
 	public WebElement getRemovebutton() {
 		return Removebutton;
 	}
+	public WebElement getAMAZONPAY_paybutton() {
+		return AMAZONPAY_paybutton;
+	}
+
+
+	public WebElement getSIMPL_paybutton() {
+		return SIMPL_paybutton;
+	}
+
+
+	public WebElement getFREECHARGE_paybutton() {
+		return FREECHARGE_paybutton;
+	}
+
+
 	public WebElement getPaydeatailText() {
 		return paydeatailText;
 	}
@@ -1367,12 +1382,221 @@ public class Monepom extends BaseClass {
 		return Total_amount;
 	}
 	
-	@FindBy(xpath= "//input[@class='rdbtn auto_apply_coupon_popup']")
+	
+	//@FindBy(xpath= "//input[@class=\"rdbtn auto_apply_coupon_popup\"]")
+	@FindBy(xpath="//input[@id=\"webcoupon_1\"]")
 	private List<WebElement> Promo;
 	public List<WebElement> getPromo() {
 		return Promo;
 	}
 	
+	@FindBy(xpath= "//input[@id='nms_paytm']")
+	private WebElement paytm_payment;
+	@FindBy(xpath= "//input[@id='nms_mobikwik']")
+	private WebElement mobikwik_payment;
+	@FindBy(xpath= "//input[@id='nms_simpl']")
+	private WebElement simpl_payment;
+	@FindBy(xpath= "//input[@id='nms_amazonpay']")
+	private WebElement amazonpay_payment;
+	@FindBy(xpath= "//input[@id='nms_freecharge']")
+	private WebElement freecharge_payment;
+	@FindBy(xpath= "//input[@id='nms_phonepe']")
+	private WebElement phonepe_payment;
+	@FindBy(xpath= "//input[@id='nms_googlepay']")
+	private WebElement googlepay_payment;
+	@FindBy(xpath= "//input[@id='nmspay_card_0_555153']")
+	private WebElement cart_payment;
+	@FindBy(xpath= "//button[@class='float-right process-orderplace col-md-4 col-12']")
+	private WebElement pay_button;
+	@FindBy(xpath= "//div[@class='retry']")
+	private WebElement payment_retry;
+	public WebElement getPayment_retry() {
+		return payment_retry;
+	}
+
+
+	public WebElement getPay_button() {
+		return pay_button;
+	}
+
+
+	public WebElement  getPaytm_payment() {
+		return paytm_payment;
+	}
+
+
+	public WebElement  getMobikwik_payment() {
+		return mobikwik_payment;
+	}
+
+
+	public WebElement  getSimpl_payment() {
+		return simpl_payment;
+	}
+
+
+	public WebElement  getAmazonpay_payment() {
+		return amazonpay_payment;
+	}
+
+
+	public WebElement  getFreecharge_payment() {
+		return freecharge_payment;
+	}
+
+
+	public WebElement  getPhonepe_payment() {
+		return phonepe_payment;
+	}
+
+
+	public WebElement  getGooglepay_payment() {
+		return googlepay_payment;
+	}
+
+
+	public WebElement  getCart_payment() {
+		return cart_payment;
+	}
+	@FindBy(xpath= "//div[@id='title_PAYTM']/div/div/div[3]/div/button")
+	private WebElement paytm_paymentutton;
+	@FindBy(xpath= "//div[@id='title_MOBIKWIK']/div/div/div[3]/div/button")
+	private WebElement mobikiwik_paymentutton;
+	public WebElement getMobikiwik_paymentutton() {
+		return mobikiwik_paymentutton;
+	}
+
+
+	public WebElement getPaytm_paymentutton() {
+		return paytm_paymentutton;
+	}
+	@FindBy(xpath= "//input[@id='nms_simpl']")
+	private WebElement simply_pay;
+	@FindBy(xpath= "//input[@id='nms_amazonpay']")
+	private WebElement amazon_pay;
+	@FindBy(xpath= "//input[@id='nms_freecharge']")
+	private WebElement freecharge_pay;
+	@FindBy(xpath= "//input[@id='nms_phonepe']")
+	private WebElement phonepe_pay;
+	public WebElement getPHONEPE_paybutton() {
+		return PHONEPE_paybutton;
+	}
+
+
+	public WebElement getGOOGLEPAY_paybutton() {
+		return GOOGLEPAY_paybutton;
+	}
+	@FindBy(xpath= "//input[@id='nms_googlepay']")
+	private WebElement googlepay_pay;
+	@FindBy(xpath= "//input[contains(@id, 'nmspay_card')]")
+	private WebElement cart_pay;
+	@FindBy(xpath= "//*[@id='credit&debitcards']/div[2]/div/div[1]/div/div/div[2]/div[2]/button")
+	private WebElement cart_paymentutton;
+	@FindBy(xpath= "//a[@id='newcardlink']")
+	private WebElement Add_new_cart;
+	@FindBy(xpath= "//*[@id='title_AMAZONPAY']/div/div/div[3]/div/button")
+	private WebElement AMAZONPAY_paybutton;
+	@FindBy(xpath= "//*[@id='title_SIMPL']/div/div/div[3]/div/button")
+	private WebElement SIMPL_paybutton;
+	@FindBy(xpath= "//*[@id='title_FREECHARGE']/div/div/div[3]/div/button")
+	private WebElement FREECHARGE_paybutton;
+	@FindBy(xpath= "//*[@id='title_PHONEPE']/div/div/div[3]/div/button")
+	private WebElement PHONEPE_paybutton;
+	@FindBy(xpath= "//*[@id='title_GOOGLEPAY']/div/div/div[3]/div/button")
+	private WebElement GOOGLEPAY_paybutton;
+	@FindBy(xpath= "//label[@for='nms_nb_axis']/img")
+	private WebElement axis_bank;
+	@FindBy(xpath= "//label[@for='nms_nb_hdfc']/img")
+	private WebElement hdfc_bank;
+	@FindBy(xpath= "//label[@for='nms_nb_icici']/img")
+	private WebElement icici_bank;
+	@FindBy(xpath= "//label[@for='nms_nb_kotak']/img")
+	private WebElement kotak_bank;
+	@FindBy(xpath= "//label[@for='nms_nb_sbi']/img")
+	private WebElement SBI_bank;
+	@FindBy(xpath= "//input[@id='nmscash']")
+	private WebElement nmscash;
+	@FindBy(xpath= "//button[@class='action-cod']")
+	private WebElement cod_popoup;
+	public WebElement getCod_popoup() {
+		return cod_popoup;
+	}
+
+
+	public WebElement getNmscash() {
+		return nmscash;
+	}
+
+
+	public WebElement getHdfc_bank() {
+		return hdfc_bank;
+	}
+
+
+	public WebElement getIcici_bank() {
+		return icici_bank;
+	}
+
+
+	public WebElement getKotak_bank() {
+		return kotak_bank;
+	}
+
+
+	public WebElement getSBI_bank() {
+		return SBI_bank;
+	}
+
+
+	public WebElement getMore_banks() {
+		return More_banks;
+	}
+	@FindBy(xpath= "//*[@id='netbank_list']")
+	private WebElement More_banks;
+	public WebElement getAxis_bank() {
+		return axis_bank;
+	}
+
+
+	public WebElement getSimply_pay() {
+		return simply_pay;
+	}
+
+
+	public WebElement getAmazon_pay() {
+		return amazon_pay;
+	}
+
+
+	public WebElement getFreecharge_pay() {
+		return freecharge_pay;
+	}
+
+
+	public WebElement getPhonepe_pay() {
+		return phonepe_pay;
+	}
+
+
+	public WebElement getGooglepay_pay() {
+		return googlepay_pay;
+	}
+
+
+	public WebElement getCart_pay() {
+		return cart_pay;
+	}
+
+
+	public WebElement getCart_paymentutton() {
+		return cart_paymentutton;
+	}
+
+
+	public WebElement getAdd_new_cart() {
+		return Add_new_cart;
+	}
+
 
 
 
@@ -1780,7 +2004,60 @@ public class Monepom extends BaseClass {
 					return Reorder;
 				}
 				
+//***********************************************************Offers Page***************************************************************************
 				
+				@FindBy(xpath ="//a[@href=\"/offers\"]")
+				private WebElement offer_page;
+				public WebElement getOffer_page() {
+					return offer_page;
+				}
+				
+				@FindBy(xpath ="(//button[@class=\"copy_code_btn\"])[1]")
+				private WebElement copy_code;
+				public WebElement getCopy_code() {
+					return copy_code;
+				}
+				
+				@FindBy(xpath ="//span[@class=\"arricon downarrow\"]")
+				private WebElement Promo_apply;
+				public WebElement getPromo_apply() {
+					return Promo_apply;
+				}
+				
+				@FindBy(xpath = "(//input[@id=\"couponcode\"])[1]")
+				private WebElement coupon_code;
+				public WebElement getCoupon_code() {
+					return coupon_code;
+				}
+				
+				@FindBy(xpath ="(//button[@class=\"apply-coupon\"])[1]")
+				private WebElement apply_code;
+				public WebElement getApply_code() {
+					return apply_code;
+				}
+				
+				
+				@FindBy(xpath = "(//input[@class=\"offer-checkbox\"])[1]")
+				private WebElement medicine_checkbox;
+				public WebElement getMedicine_checkbox() {
+					return medicine_checkbox;
+				}
+				
+				
+				@FindBy(xpath = "(//input[@class=\"offer-checkbox\"])[2]")
+				private WebElement Diagnostics_checkbox;
+				public WebElement getDiagnostics_checkbox() {
+					return Diagnostics_checkbox;
+				}
+				
+				@FindBy(xpath = "(//input[@class=\"offer-checkbox\"])[3]")
+				private WebElement Consultation_checkbox;
+				public WebElement getConsultation_checkbox() {
+					return Consultation_checkbox;
+				}
+				
+				
+			
 
 	
 }
