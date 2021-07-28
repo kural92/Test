@@ -513,7 +513,7 @@ static String totalamt;
 		
 	}	
 
-	//******************************Test case 2: Verify Cart page when the Total amount is more than 150 and 500 
+	//******************************Test case 2: Verify Cart page when the Total amount is more than 150 and less than 500 
 
 		
 
