@@ -1514,6 +1514,20 @@ public class Monepom extends BaseClass {
 	}
 	
 	
+	@FindBy(xpath = "//*[@id=\"page-header\"]/div/div/div[5]/a")
+	private WebElement UserProfile_btn;
+	public WebElement getUserProfile_btn() {
+		return UserProfile_btn;
+	}
+	
+	
+	
+	@FindBy(xpath = "//*[@id=\"app\"]/main/app-account/div[1]/div[3]/div[1]/left-menu/div/div/a[13]")
+	private WebElement Logout_btn;
+	public WebElement getLogout_btn() {
+		return Logout_btn;
+	}
+	
 	
 	
 	//************************************************Order Success Page*****************************************************************//
