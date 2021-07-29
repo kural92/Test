@@ -216,7 +216,7 @@ wb.close();
 
 
 public static int getExcelRandomRowNum(String sheetName) throws Throwable{
-	FileInputStream fis = new FileInputStream("\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Random rand = new Random();
@@ -224,13 +224,13 @@ int rowNum = rand.nextInt(sh.getLastRowNum());
 return rowNum;
 }
 public static void setExcelData(String sheetName, int rowNum, int colNum,String data) throws Throwable{
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
 Cell cel = row.createCell(colNum);
 cel.setCellValue(data);
-FileOutputStream fos = new FileOutputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+FileOutputStream fos = new FileOutputStream(".//Test Data//SMSTEST.xlsx");
 	wb.write(fos);
 	wb.close();
 }
@@ -238,13 +238,13 @@ FileOutputStream fos = new FileOutputStream("C:\\Users\\Admin\\eclipse-workspace
 
 
 public static void setExcelDataUrl(String sheetName, int rowNum, int colNum,String data) throws Throwable{
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
 Cell cel = row.createCell(colNum);
 cel.setCellValue(data);
-FileOutputStream fos = new FileOutputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+FileOutputStream fos = new FileOutputStream(".//Test Data//SMSTEST.xlsx");
 	wb.write(fos);
 	wb.close();
 }
@@ -252,20 +252,20 @@ FileOutputStream fos = new FileOutputStream("C:\\Users\\Admin\\eclipse-workspace
 
 
 public static int getRowCount(String sheetName) throws Throwable {
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 int rowIndex = wb.getSheet(sheetName).getLastRowNum();
 return rowIndex;
 }
 
 public static void setExcelDataInteg(String sheetName, int rowNum, int colNum,String data) throws Throwable{
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(rowNum);
 Cell cel = row.createCell(colNum);
 cel.setCellValue(data);
-FileOutputStream fos = new FileOutputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+FileOutputStream fos = new FileOutputStream(".//Test Data//SMSTEST.xlsx");
 	wb.write(fos);
 	wb.close();
 
@@ -273,7 +273,7 @@ FileOutputStream fos = new FileOutputStream("C:\\Users\\Admin\\eclipse-workspace
 
 
 public static int getCellCount(String sheetName) throws Throwable {
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
 Workbook wb = WorkbookFactory.create(fis);
 Sheet sh = wb.getSheet(sheetName);
 Row row = sh.getRow(0);
@@ -285,7 +285,7 @@ return cell;
 
 public static void writeexcel(String Result,int RowNum ,int ColNum) throws Throwable
 {
-	FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx");
+	FileInputStream fis = new FileInputStream("  ");
    //Blank workbook
    XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
@@ -315,7 +315,7 @@ public static void writeexcel(String Result,int RowNum ,int ColNum) throws Throw
 
                }
 
-           FileOutputStream out = new FileOutputStream(new File("C:\\Users\\Admin\\eclipse-workspace\\nm.webFlow\\input\\SMSTEST.xlsx"));
+           FileOutputStream out = new FileOutputStream(new File("  "));
            workbook.write(out);
            out.close();
            System.out.println("  ");
@@ -373,7 +373,7 @@ Date date=new Date();
       MimeBodyPart attachmentBodyPart = new MimeBodyPart();
 
 
-     String file = "D:\\Eclipse_WorkSpace\\nm.webFlow\\report\\takeAction.png";  // File To Attach
+     String file = ".//Report//get";  // File To Attach
    //   String url=currentUrl;
 
       //String fileName = "CBS-AutomationReport-Desktop";
