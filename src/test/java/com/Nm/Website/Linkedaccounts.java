@@ -257,6 +257,8 @@ public class Linkedaccounts extends BaseClass {
 		btncli(m.getLogout());
 		Thread.sleep(3000);
 		btncli(m.getNetmedshome());
+		
+		System.out.println("Payment test case 1 has been completed successfully");
 	}
 	
 		 
@@ -346,6 +348,8 @@ public class Linkedaccounts extends BaseClass {
 					driver.findElement(By.xpath("//a[@class=\"delete-wallet delink_wallet\"]")).isDisplayed();
 					
 					System.out.println("Yes Delete button is available");
+					
+					System.out.println("Payment test case 2 has been completed successfully");
 					
 				}
 				
