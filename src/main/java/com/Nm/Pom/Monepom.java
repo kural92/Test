@@ -1753,7 +1753,11 @@ public class Monepom extends BaseClass {
 	}
 	
 	
-	
+	@FindBy(xpath = "//button[contains(text(),' View Details ')]")
+	private List<WebElement> View_DetailsList;
+	public List<WebElement> getView_DetailsList() {
+		return View_DetailsList;
+	}
 	//************************************************Order Success Page*****************************************************************//
 
 		@FindBy (xpath = "//div[.=\"RATE YOUR EXPERIENCE\"]")
