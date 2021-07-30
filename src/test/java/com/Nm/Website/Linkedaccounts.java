@@ -126,24 +126,6 @@ public class Linkedaccounts extends BaseClass {
 			System.out.println(m.getLinked_wallet_text().getAttribute("innerText"));
 			
 			SoftAssert.assertAll();
-			
-			//WebElement Saved_card_text = driver.findElement(By.xpath("//h4[.=\"SAVED CARDS\"]"));
-		
-		
-		
-		//System.out.println(Saved_card_text.getText());
-			
-		//WebElement card_details_text = driver.findElement(By.xpath("//div[@class=\"empty ng-star-inserted\"]"));
-		
-		//System.out.println(card_details_text.getAttribute("innerText"));
-			
-		//WebElement Linked_wallets_details_text = driver.findElement(By.xpath("//h4[.=\"LINKED WALLETS\"]"));
-		
-		//System.out.println(Linked_wallets_details_text.getText());
-		
-		//WebElement Linked_wallet_text = driver.findElement(By.xpath("//div[@class=\"empty nowallets ng-star-inserted\"]"));
-		
-		//System.out.println(Linked_wallet_text.getAttribute("innerText"));
 		
 		Thread.sleep(3000);
 		
