@@ -15,6 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
@@ -23,6 +24,24 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+
+
+
+/*
+
+ 1.Login
+ 2.Remove Product
+ 3.Search and Added "Boostrix Injection" Cold STorage Product
+ 4.From Cart clicked Proceed Button
+ 5.The Prescription screen choosed schedule doctor consultation
+ 6.Click on Change Address- change pincode from 600100 to 180001 and 600055
+ 7.Check the Take Action message for Cold Storage
+ 8.Check COLD STORAGE Text if the Pin Undeliverable
+ 9.Again changed the address pincode into 600100
+ 
+ 
+ */
 
 public class ColdStorage extends BaseClass {
 
@@ -184,6 +203,21 @@ public class ColdStorage extends BaseClass {
 		System.out.println(Text);
 		logger.log(Status.PASS, Text);
 		*/
+		
+		
+		
+		////////////
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//Change Address
 		 Thread.sleep(3000);
 		 btncli(m.getM2_ChangeAdress_btn());
@@ -219,10 +253,18 @@ public class ColdStorage extends BaseClass {
 					btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
 				
 					try {
+						Thread.sleep(3000);
+						SoftAssert asser = new SoftAssert();
+						asser.assertEquals(gettext(driver.findElement(By.xpath("//span[contains(text(),'COLD STORAGE')]"))), "COLD STORAGE");
+						System.out.println(gettext(driver.findElement(By.xpath("//span[contains(text(),'COLD STORAGE')]"))));
+						logger.log(Status.PASS, gettext(driver.findElement(By.xpath("//span[contains(text(),'COLD STORAGE')]"))));
+						
 					Thread.sleep(5000);
 					String Text1 = gettext(driver.findElement(By.xpath("(//div[@class='info ng-star-inserted'])[2]")));
 					System.out.println(Text1 +" : "+BaseClass.getExcelData("ColdStorage", i, 2));
 					logger.log(Status.PASS, Text1+" : "+BaseClass.getExcelData("ColdStorage", i, 2));
+					
+					
 					
 					} catch (Exception e) {
 						
