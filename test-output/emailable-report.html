@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="https://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>TestNG Report</title>
@@ -7,12 +7,51 @@
 </head>
 <body>
 <table>
+<<<<<<< HEAD
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">127,107</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.Nm.Website.OrderReview</td><td><a href="#m0">cash_On_delivery_Check</a></td><td rowspan="1">1627574110120</td><td rowspan="1">99709</td></tr></tbody>
+</table>
+<h2>Default test</h2><h3 id="m0">com.Nm.Website.OrderReview#cash_On_delivery_Check</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	expected [ Our Pharmacist/Doctor will call you to confirm the medicines. ] but found [Our Pharmacist/Doctor will call you to confirm the medicines.]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)
+	at com.Nm.Website.OrderReview.cash_On_delivery_Check(OrderReview.java:224)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+=======
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
 <tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">368,523</td><td></td><td></td></tr>
 </table>
 <table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.Nm.Website.Cod_ProcessingCheck</td><td><a href="#m0">cod_process3</a></td><td rowspan="1">1627618538357</td><td rowspan="1">350536</td></tr></tbody>
 </table>
+<<<<<<< HEAD
 <h2>Default test</h2><h3 id="m0">com.Nm.Website.Cod_ProcessingCheck#cod_process3</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: element click intercepted: Element &lt;a _ngcontent-tyf-c21=&quot;&quot; class=&quot;historyback d-none d-sm-block&quot; href=&quot;javascript:void(0)&quot;&gt;&lt;/a&gt; is not clickable at point (273, 138). Other element would receive the click: &lt;div _ngcontent-tyf-c1=&quot;&quot; class=&quot;overlay ng-tns-c1-0 ng-trigger ng-trigger-fadeIn ng-star-inserted&quot; style=&quot;background-color:rgba(51, 51, 51, 0.8);position:fixed;z-index:99999;opacity:1;0:background-color;1:position;2:z-index;3:opacity;background-color:rgba(51, 51, 51, 0.8);opacity:1;position:fixed;webkit-opacity:1;z-index:99999;&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=92.0.4515.107)
   (Driver info: chromedriver=91.0.4472.19 (1bf021f248676a0b2ab3ee0561d83a59e424c23e-refs/branch-heads/4472@{#288}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
@@ -63,5 +102,9 @@ Session ID: 486a18c7c664cb51548acf3d18616668
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+=======
+<h2>Default test</h2><h3 id="m0">com.Nm.Website.ColdStorage#coldStorage_DeliveryCheck</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+>>>>>>> 012f0fef3bf5ddd85e35fa6a3c68b47caa1653d1
+>>>>>>> 680de8be4254dd3b7358bd7657db07f13a57e818
 </body>
 </html>
