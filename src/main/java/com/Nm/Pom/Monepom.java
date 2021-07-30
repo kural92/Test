@@ -2205,5 +2205,58 @@ public class Monepom extends BaseClass {
 				public WebElement getOrderreview_TotalAmoutprices() {
 					return orderreview_TotalAmoutprices;
 				}
-	
+				//*****************************************Cards and wallets*************************************
+				
+				@FindBy(xpath ="//a[@class=\"payment-link\"]")
+				private WebElement Payment_method;
+				public WebElement getPayment_method() {
+					return Payment_method;
+				}
+				
+				@FindBy(xpath ="//h4[.=\"SAVED CARDS\"]")
+				private WebElement Saved_card_text;
+				public WebElement getSaved_card_text() {
+					return Saved_card_text;
+				}
+				
+				
+				@FindBy(xpath = "//div[@class=\"empty ng-star-inserted\"]")
+				private WebElement card_details_text;
+				public WebElement getCard_details_text() {
+					return card_details_text;
+				}
+				
+				@FindBy(xpath = "//h4[.=\"LINKED WALLETS\"]")
+				private WebElement Linked_wallets_details_text;
+				public WebElement getLinked_wallets_details_text() {
+					return Linked_wallets_details_text;
+				}
+
+				@FindBy(xpath ="//div[@class=\"empty nowallets ng-star-inserted\"]")
+				private WebElement Linked_wallet_text;
+				public WebElement getLinked_wallet_text() {
+					return Linked_wallet_text;
+				}
+				
+				@FindBy(xpath ="//ul[@class=\"savedcards ng-star-inserted\"]")
+				private WebElement saved_card;
+				public WebElement getSaved_card() {
+					return saved_card;
+				}
+				
+				@FindBy(xpath = "//div[@class=\"linkedlist ng-star-inserted\"]")
+				private List<WebElement> Linked_wallets;
+				public List<WebElement> getLinked_wallets() {
+					return Linked_wallets;
+				}
+				
+				
+				@FindBy(xpath ="//span[@class=\"link ng-star-inserted\"]")
+				private List<WebElement> Links;
+				public List<WebElement> getLinks() {
+					return Links;
+				}
+				
+				
+
 }
