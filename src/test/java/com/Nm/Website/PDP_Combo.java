@@ -1,11 +1,9 @@
 package com.Nm.Website;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 
-import org.apache.bcel.generic.Select;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -244,8 +242,8 @@ public class PDP_Combo extends BaseClass{
 	public void screenShot(ITestResult result) throws Throwable {
 		
 	    if(result.getStatus() == ITestResult.FAILURE) {
-	    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
-	    	logger.fail(result.getThrowable());
+	//    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
+	//    	logger.fail(result.getThrowable());
 	    	try {
 				
 
@@ -254,7 +252,7 @@ public class PDP_Combo extends BaseClass{
 				FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
 				System.out.println("Successfully captured a screenshot");
 				//logger.log(Status.FAIL, result.getThrowable());
-				logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
+	//			logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
 			
 		
 				
@@ -265,14 +263,14 @@ public class PDP_Combo extends BaseClass{
 	      }
 	 
 	    else if(result.getStatus() == ITestResult.SUCCESS) {
-	    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
+	 //   	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
 	    
 	    }
 	    else {
 	    
 	    	 // onFinish(context);
-	    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
-	    	logger.skip(result.getThrowable());
+	 //   	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
+	  //  	logger.skip(result.getThrowable());
 	    	report.removeTest(logger);
 	    }
 	    

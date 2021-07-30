@@ -111,6 +111,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
 		
+//Let's chat handle//
 		
 		try {
 			driver.switchTo().frame("haptik-xdk");
@@ -122,11 +123,12 @@ public class M3_Subscription extends BaseClass {
 
 			driver.switchTo().defaultContent();
 
+			System.out.println("Successfully closed let's chat");
 		} catch (Exception e) {
 
 		}
 		
-		
+		System.out.println("Successfully closed let's chat");
 
 		// Step 6:Search Product//
 
@@ -150,7 +152,8 @@ public class M3_Subscription extends BaseClass {
 				Thread.sleep(3000);
 
 				btncli(Cart_btn);
-
+				
+				System.out.println("successfully Items are added");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -258,6 +261,7 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
+		Thread.sleep(3000);
 
 	}
 
@@ -316,6 +320,8 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
 
+		
+//handle let's chat//
 		try {
 			driver.switchTo().frame("haptik-xdk");
 			Actions acc = new Actions(driver);
@@ -325,7 +331,7 @@ public class M3_Subscription extends BaseClass {
 			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
 
 			driver.switchTo().defaultContent();
-
+			System.out.println("Successfully closed let's chat");
 		} catch (Exception e) {
 
 		}
@@ -353,6 +359,7 @@ public class M3_Subscription extends BaseClass {
 
 				btncli(Cart_btn);
 
+				System.out.println("successfully Items are added");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -573,7 +580,7 @@ public class M3_Subscription extends BaseClass {
 		Thread.sleep(3000);
 
 		btncli(m.getCancel_Order());
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		btncli(m.getCancelyes());
 		Thread.sleep(3000);
@@ -584,7 +591,8 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
-
+		
+		Thread.sleep(3000);
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
@@ -638,7 +646,8 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getCreatenewfill());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
-		
+
+//handle let's chat//		
 		try {
 			driver.switchTo().frame("haptik-xdk");
 			Actions acc = new Actions(driver);
@@ -648,7 +657,7 @@ public class M3_Subscription extends BaseClass {
 			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
 
 			driver.switchTo().defaultContent();
-
+			System.out.println("Successfully closed let's chat");
 		} catch (Exception e) {
 
 		}
@@ -680,6 +689,7 @@ public class M3_Subscription extends BaseClass {
 
 				btncli(Cart_btn);
 
+				System.out.println("successfully Items are added");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -767,7 +777,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
 
-
+		Thread.sleep(3000);
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
@@ -823,7 +833,8 @@ String confirmation = m.getOrder_Placed_text().getText();
 		btncli(m.getCreatenewfill());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
-		
+
+//handle let's chat//
 		try {
 			driver.switchTo().frame("haptik-xdk");
 			Actions acc = new Actions(driver);
@@ -833,11 +844,14 @@ String confirmation = m.getOrder_Placed_text().getText();
 			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
 
 			driver.switchTo().defaultContent();
+			
+			System.out.println("Successfully closed let's chat");
 
 		} catch (Exception e) {
 
 		}
 
+		
 		// Step 6:Search Product//
 
 		for (int i = 0; i < 2; i++) {
@@ -860,7 +874,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 				Thread.sleep(3000);
 
 				btncli(Cart_btn);
-
+				System.out.println("successfully Items are added");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -937,7 +951,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		Thread.sleep(3000);
 
 		btncli(m.getMedicineorders());
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		btncli(m.getView_Details());
 		Thread.sleep(3000);
@@ -954,7 +968,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
-
+		Thread.sleep(3000);
 	}
 
 	@AfterMethod()
