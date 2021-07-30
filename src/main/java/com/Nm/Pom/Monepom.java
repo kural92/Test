@@ -2041,9 +2041,151 @@ public class Monepom extends BaseClass {
 				public WebElement getConsultation_checkbox() {
 					return Consultation_checkbox;
 				}
-				
-				
 			
+				@FindBy(xpath="//div[@class='prodname']")
+				private List<WebElement> orderreview_productList;
+				@FindBy(xpath="//p[@class='form m-0']")
+				private List<WebElement> orderreview_mfr;
+				@FindBy(xpath="//span[@class='sellerinfo']")
+				private List<WebElement> orderreview_sellerinfo;
+				@FindBy(xpath="//div[@class='row m-0 qtydelinfomain ng-star-inserted']/div[1]")
+				private List<WebElement> orderreview_quantity;
+				@FindBy(xpath="//div[@class='row m-0 qtydelinfomain ng-star-inserted']/div[1]/span")
+				private List<WebElement> orderreview_quantitycount;
+				@FindBy(xpath="//div[@class='discount-val']/span")
+				private List<WebElement> orderreview_price;
+				@FindBy(xpath="//div[@class='deldateinfo col-4 p-0 text-right']/span")
+				private List<WebElement> orderreview_exprity_date;
+				@FindBy(xpath="//div[@class='addressinfomain']/h5")
+				private WebElement orderreview_customerNotes;
+				@FindBy(xpath="//textarea[@name='customerNotesByOrder']")
+				private WebElement orderreview_textArea;
+				@FindBy(xpath="//h4[@class='paymentdetails-title']")
+				private WebElement orderreview_paymentdetails;
+				@FindBy(xpath="//div[@class='subtoal']/label")
+				private WebElement orderreview_mrpTotal;
+				@FindBy(xpath="//div[@class='subtoal']/span")
+				private WebElement orderreview_mrpTotalprice;
+				@FindBy(xpath="//div[@class='shipping-charges ng-star-inserted']/label")
+				private WebElement orderreview_Delivery_Charges;
+				@FindBy(xpath="//div[@class='shipping-charges ng-star-inserted']/span")
+				private WebElement orderreview_Delivery_Chargesprice;
+				@FindBy(xpath="//div[@class='net-amount']/label")
+				private WebElement orderreview_TotalAmout;
+				@FindBy(xpath="//div[@class='net-amount']/span")
+				private WebElement orderreview_TotalAmoutprice;
+				@FindBy(xpath="//div[@class='totalamt col-5 pr-0']/span[1]")
+				private WebElement orderreview_TotalAmoutcontent;
+				@FindBy(xpath="//div[@class='totalamt col-5 pr-0']/span[2]")
+				private WebElement orderreview_TotalAmoutprices;
+				@FindBy(xpath="//button[text()='Review Order']")
+				private WebElement orderreview_revieworder;
+				@FindBy(xpath="//img[@class='rxviewimg']")
+				private WebElement orderreview_rxviewimg;
+				@FindBy(xpath="//div[@id='frameModalTop']/div/div/div/button")
+				private WebElement orderreview_close;
+				public WebElement getOrderreview_close() {
+					return orderreview_close;
+				}
 
+
+				public WebElement getOrderreview_rxviewimg() {
+					return orderreview_rxviewimg;
+				}
+
+
+				public WebElement getOrderreview_revieworder() {
+					return orderreview_revieworder;
+				}
+
+
+				public List<WebElement> getOrderreview_productList() {
+					return orderreview_productList;
+				}
+
+
+				public List<WebElement> getOrderreview_mfr() {
+					return orderreview_mfr;
+				}
+
+
+				public List<WebElement> getOrderreview_sellerinfo() {
+					return orderreview_sellerinfo;
+				}
+
+
+				public List<WebElement> getOrderreview_quantity() {
+					return orderreview_quantity;
+				}
+
+
+				public List<WebElement> getOrderreview_quantitycount() {
+					return orderreview_quantitycount;
+				}
+
+
+				public List<WebElement> getOrderreview_price() {
+					return orderreview_price;
+				}
+
+
+				public List<WebElement> getOrderreview_exprity_date() {
+					return orderreview_exprity_date;
+				}
+
+
+				public WebElement getOrderreview_customerNotes() {
+					return orderreview_customerNotes;
+				}
+
+
+				public WebElement getOrderreview_textArea() {
+					return orderreview_textArea;
+				}
+
+
+				public WebElement getOrderreview_paymentdetails() {
+					return orderreview_paymentdetails;
+				}
+
+
+				public WebElement getOrderreview_mrpTotal() {
+					return orderreview_mrpTotal;
+				}
+
+
+				public WebElement getOrderreview_mrpTotalprice() {
+					return orderreview_mrpTotalprice;
+				}
+
+
+				public WebElement getOrderreview_Delivery_Charges() {
+					return orderreview_Delivery_Charges;
+				}
+
+
+				public WebElement getOrderreview_Delivery_Chargesprice() {
+					return orderreview_Delivery_Chargesprice;
+				}
+
+
+				public WebElement getOrderreview_TotalAmout() {
+					return orderreview_TotalAmout;
+				}
+
+
+				public WebElement getOrderreview_TotalAmoutprice() {
+					return orderreview_TotalAmoutprice;
+				}
+
+
+				public WebElement getOrderreview_TotalAmoutcontent() {
+					return orderreview_TotalAmoutcontent;
+				}
+
+
+				public WebElement getOrderreview_TotalAmoutprices() {
+					return orderreview_TotalAmoutprices;
+				}
 	
 }
