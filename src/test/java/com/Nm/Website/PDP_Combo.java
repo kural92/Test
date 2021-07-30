@@ -238,6 +238,102 @@ public class PDP_Combo extends BaseClass{
 	}
 	
 	
+	
+	
+
+	@Test
+	public void ferquentlyBought() throws Throwable {
+
+	Monepom m = new Monepom();
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		Actions acc =  new Actions(driver);
+		Robot r = new Robot();
+				  
+try {
+			driver.manage().window().maximize();
+			btncli(m.getSignin());
+			Thread.sleep(5000);
+			type(m.getMobileno(), "8098882244");
+			Thread.sleep(3000);
+			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+			Thread.sleep(3000);
+			type(m.getPassword(), "Netmeds123");
+			btncli(m.getSignInpage());
+} catch (Exception e) {
+	
+}
+
+		//////////////
+
+/////////////  Remove Product //
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		Thread.sleep(3000);
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size() == 0)) {
+
+				try {
+					btncli(m.getRemovebutton());
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			} else {
+				break;
+
+			}
+
+		}
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.netmeds.com/");
+		  
+		  
+		  
+		
+		// search
+		btncli(m.getSearch());
+		type(m.getSearch(),"Horlicks Health Drink Powder Classic Malt 500 gm");  //Pro360 //Horlicks
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		//btncli(m.getSearchIcon());
+		
+		Thread.sleep(5000);
+		btncli(m.getProduct_List());
+		
+		Thread.sleep(3000);
+		String fre = driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]")).getText();
+		
+		if (fre.contains("FREQUENTLY BOUGHT TOGETHER")) {
+			
+			
+			Thread.sleep(3000);
+			btncli(driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::button[contains(text(),'ADD TO CART')]")));
+			
+			Thread.sleep(3000);
+			btncli(driver.findElement(By.xpath("(//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::span[@class='clsgetname'])[2]")));
+			
+			Thread.sleep(3000);
+			btncli(driver.findElement(By.id("product-addtocart-button")));
+			
+		} else {
+			
+			System.out.println("There is no Frequently Brought Link");
+			
+			
+		}
+		
+		
+		/////
+		
+		
+		
+	}
+	
+	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
 		
