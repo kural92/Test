@@ -22,6 +22,42 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+
+
+/*
+ 
+ 1.Login
+ 2.Click on Upload
+ Scenario 1:
+ 1.Click on Upload RX and choose the Prescrption.
+ 2.Click on search medicine 
+ 3.Search and Added the product
+ 4.Click on Proceed and Order the Product 
+ 5.Click on track order--> View details--> Cancel order with reason
+ 
+  Scenario 2:
+ 1.Click on Upload RX and choose the Prescrption.
+ 2.Click on Get call from Netmeds
+ 3.Click on Proceed and Order the Product 
+ 4.Click on track order--> View details--> Cancel order with reason
+
+ Scenario 3:
+ 1.Click on Past RX and choose the Prescrption.
+ 2.Click on search medicine 
+ 3.Search and Added the product
+ 4.Click on Proceed and Order the Product 
+ 5.Click on track order--> View details--> Cancel order with reason
+ 
+  Scenario 2:
+ 1.Click on Past RX and choose the Prescrption.
+ 2.Click on Get call from Netmeds
+ 3.Click on Proceed and Order the Product 
+ 4.Click on track order--> View details--> Cancel order with reason
+ 
+
+ 
+ 
+ */
 public class M2_Flow_Search extends BaseClass {
 
 	

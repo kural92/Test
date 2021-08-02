@@ -27,6 +27,26 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+
+/*
+
+1.Login
+2.Remove the Product from Cart
+3.Search the Product and Open PDP page
+4.From PDP page Added the Product to the Cart
+5.Check for Alternate brand . if present click on the Add to cart Symbol
+6.In cart Page. Click and Add Most Selling Product to cart
+7.Click on Most Selling Product and landed into the PDP page 
+8.From PDP page product was added to cart.
+9.Click on Proceed and choose the Schedule Doctor consulatation if RX product
+10.Click on pay and landed into payment page
+
+
+
+*/
+
+
+
 public class AlterNate_MSProduct extends BaseClass{
 	
 	static String amt;

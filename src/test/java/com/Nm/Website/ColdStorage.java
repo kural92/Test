@@ -34,7 +34,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
  2.Remove Product
  3.Search and Added "Boostrix Injection" Cold STorage Product
  4.From Cart clicked Proceed Button
- 5.The Prescription screen choosed schedule doctor consultation
+ 5.From Prescription screen choosed schedule doctor consultation
  6.Click on Change Address- change pincode from 600100 to 180001 and 600055
  7.Check the Take Action message for Cold Storage
  8.Check COLD STORAGE Text if the Pin Undeliverable

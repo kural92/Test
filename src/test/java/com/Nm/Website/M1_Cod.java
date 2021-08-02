@@ -29,6 +29,35 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+
+
+/*
+
+Scenario 1 : Order Total was Above Rs.60 and below Rs.5000
+1.login
+2.Remove Product
+3.Search and Added the product to cart
+4.Click on Cart and and click on proceed .
+5.Check and choose Schedule Doctor consultation if RX required
+6.Click on pay and landed into payment page.
+7.Check the total amount if it was above 60 and below 5000 .
+8.Check for the condition and verify the COD was available and order the Product 
+8.Click on track order--> View Details--> Cancel the order with reason.
+
+Scenario 2 : Order Total was Above  Rs.5000
+1.login
+2.Remove Product
+3.Search and Added the product to cart
+4.Click on Cart and and click on proceed .
+5.Check and choose Schedule Doctor consultation if RX required
+6.Click on pay and landed into payment page.
+7.Check the total amount if it was above 5000 .
+8.Check for the condition and verify the COD was not available.
+
+
+
+
+ */
 public class M1_Cod extends BaseClass {
 
 	static String amt;

@@ -25,6 +25,25 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+
+
+
+/*
+ 
+ 1.Login
+ 2.Removed Product from cart
+ 3.Search the product and add to the cart
+ 4.From cart proceed the order and Choose Schedule Doctor consultation if RX required
+ 5.From Payment page check the COD option and choosed the COD option and the order was placed.
+ 6.From step 3 to 5 again repeat for 2 more time/
+ 7.Again step 3 to 5 was repeated and in payment page it was check for COD . Verify the condition
+ 8.From your account section landed into Medicine order
+ 9.Check for processing order, then click on view details and cancel the order with reason .
+
+ 
+ 
+ */
+
 public class Cod_ProcessingCheck extends BaseClass {
 
 	@BeforeTest(groups = { "forgetPassword", "sanity", "reg" })

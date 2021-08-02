@@ -29,6 +29,51 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+
+
+
+/*
+ * Scenario : 1
+ 
+1.Landed into Main Page
+2.Search the Product and added to cart
+3.From cart page click on Proceed button.
+4.Login SCreen was dispalyed from that given username , password and Login was Successfully
+5.Check Landed into Order Review Page
+6.Logout
+
+* Scenario : 2
+1.Landed into Main Page
+2.Search the Product and added to cart
+3.Search the Product in search result page .
+4.Print the first 10 Product name with the below details
+  i.Best Price, Final Price
+  ii.Manufacture details
+  iii.Drug Category
+  iv. RX required text
+5.From the search list click on Add to cart
+6.Increase the  quantity for 10 times for search result page
+7.Decrease the quantity for 10 times for search result page
+8.Again decrease 1 quantity and check for Add to cart visible.
+9.From Cart click on proceed and Login screen landed
+10.Enter the username and passowrd check for the landing page.
+11.Logout
+
+* Scenario : 3
+1.Landed into main page
+2.Search the Product and Open PDP page
+3.From PDP page Added the Product to the Cart
+4.Check for Alternate brand . if present click on the Add to cart Symbol
+5.In cart Page. Click and Add Most Selling Product to cart
+6.Click on Most Selling Product and landed into the PDP page 
+7.From PDP page product was added to cart.
+8.From cart Click on proceed and Login screen landed
+9.Enter the username and passowrd check for the landing page.
+10.Logout
+
+
+
+ */
 public class GuestCartLogin extends BaseClass{
 	
 	@BeforeTest(groups = { "forgetPassword", "sanity", "reg" })

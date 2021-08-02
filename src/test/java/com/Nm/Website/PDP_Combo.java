@@ -26,6 +26,28 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+
+
+
+/*
+ Scenario 1: Combo Pack
+ 1.Login
+ 2.Remove Product
+ 3.Search the Product and landed into PDP page
+ 4.From PDP page check the Pack 4 and Pack 2.
+ 5.Choose those Pack 4 or Pack 2 and landed into cart
+ 6.In cart page verify for the Quantity and the Price was matches with PDP page
+ 
+ Scenario 2:Frequently Bought Together
+ 1.Login
+ 2.Remove Product
+ 3.Search the Product and landed into PDP page
+ 4.From PDP page check the Individual Bought pack
+ 5.Click on Add to cart from individual pack and click on another product landed into PDP page
+ 6.From PDP page Click on Add to cart.
+ 
+ 
+ */
 public class PDP_Combo extends BaseClass{
 	
 	static String price;
@@ -68,7 +90,7 @@ public class PDP_Combo extends BaseClass{
 		Actions acc =  new Actions(driver);
 		Robot r = new Robot();
 				  
-
+try {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
@@ -79,7 +101,9 @@ public class PDP_Combo extends BaseClass{
 			type(m.getPassword(), "Netmeds123");
 			btncli(m.getSignInpage());
 		
-
+} catch (Exception e) {
+	// TODO: handle exception
+}
 		//////////////
 
 /////////////  Remove Product //
