@@ -261,6 +261,7 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
+		System.out.println("Successfully Order was Cancelled");
 		Thread.sleep(3000);
 
 	}
@@ -591,6 +592,7 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
+		System.out.println("Successfully Order was Cancelled");
 		
 		Thread.sleep(3000);
 	}
@@ -776,6 +778,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
+		System.out.println("Successfully Order was Cancelled");
 
 		Thread.sleep(3000);
 	}
@@ -968,6 +971,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		btncli(m.getSubmit_Cancel());
 
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
+		System.out.println("Successfully Order was Cancelled");
 		Thread.sleep(3000);
 	}
 

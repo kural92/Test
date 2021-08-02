@@ -1036,7 +1036,7 @@ public class Youraccount extends BaseClass {
 
 //Step 6 :Do Assertion on contact information
 
-		WebElement contactinfo = m.getContact_info();
+	/*	WebElement contactinfo = m.getContact_info();
 		js.executeScript("arguments[0].scrollIntoView(true);", contactinfo);
 
 		SoftAssert SoftAssert = new SoftAssert();
@@ -1060,7 +1060,7 @@ public class Youraccount extends BaseClass {
 		m.getContactus_link().isEnabled();
 		Thread.sleep(3000);
 		m.getCsnetmeds().isDisplayed();
-		m.getCsnetmeds().isEnabled();
+		m.getCsnetmeds().isEnabled();*/
 //String contacustext = driver.findElement(By.xpath("//a[contains(text(),\" for any questions or comments regarding these Terms and Conditions. \")]")).getText();
 
 //System.out.println(contacustext);
