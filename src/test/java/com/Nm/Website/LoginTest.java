@@ -49,6 +49,18 @@ public class LoginTest extends BaseClass {
 
 	}
 
+	
+	
+	
+	
+	
+	/*,
+	 BELOW LISTED SCENARIOS ARE COEVRED// 
+		Test case 1: Login Netemeds application with username and password
+		Test case 2: As a guest user after uploading Prescription,Check the Login functionality .
+		Test Case 3 : As a guest do search the product, add the product to the cart,Check the Login functionality .
+		*/
+
 //********************************************** Testcase1-Login with username and password ********************************************************************//
 	@Test(enabled = true, priority = 0 )
 	public void loginwithpwd() throws Throwable {

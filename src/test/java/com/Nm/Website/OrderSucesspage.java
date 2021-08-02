@@ -54,6 +54,21 @@ public class OrderSucesspage extends BaseClass {
 
 	}
 
+	/*
+	 Test case 1 :Verify Order success page for M1 Flow(Assert all the text in the order sucess page).
+	 			Also, Validated 
+	 				1.Subscription functionality	 			
+	 				2.Feedback Functionality
+	 				3.track and Cancel the order
+	 				
+	 Test case 2 :Verify Order success page for M2 Flow(Assert all the text in the order sucess page) and cancel the order.
+	 
+	  Test case 3 :Verify Order success page for M3 Flow(Assert all the text in the order sucess page).
+	 			Also, Validated 
+	 					 			
+	 				1.Feedback Functionality
+	 				2.Cancel the order
+	 */
 		
 //*******************************************************************Order Sucess Page M1******************************************************************//
 	@Test(enabled = true)
@@ -428,28 +443,56 @@ public class OrderSucesspage extends BaseClass {
 			
 		
 			try {
-			 driver.manage().window().maximize();
-			 btncli(m.getSignin());
-			  Thread.sleep(5000);
-			  type(m.getMobileno(),"8072281468");
-			  Thread.sleep(3000);
-			  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
-			  Thread.sleep(3000);
-			  type(m.getPassword(),"test@123"); 
-			  btncli(m.getSignInpage());
+
+				// Step 2 :Login with user name and password//
+				btncli(m.getSignin());
+				Thread.sleep(5000);
+				type(m.getMobileno(), "8072281468");
+				Thread.sleep(3000);
+				btncli(m.getUsepwdbtn());
+				Thread.sleep(3000);
+				type(m.getPassword(), "test@123");
+				btncli(m.getSignInpage());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully navigate to home page");
 			} catch (Exception e) {
 				System.out.println("Already Logged In");
 			}
-			
+
 			try {
-			Thread.sleep(3000);
-			btncli(driver.findElement(By.xpath("//img[@alt='Netmeds.com, India ki Online Pharmacy']")));//img[@alt='Netmeds.com, India ki Online Pharmacy']
-			logger.log(Status.PASS, "Successfully navigated to home page" );
-			Thread.sleep(3000);
+				btncli(m.getNetmedshome());
 			} catch (Exception e) {
-				// TODO: handle exception
+
 			}
 			
+			Thread.sleep(3000);
+			driver.navigate().to("https://www.netmeds.com/checkout/cart");
+			Thread.sleep(3000);
+			for (int i = 0; i < 16; i++) {
+				Thread.sleep(3000);
+				if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size() == 0)) {
+
+					try {
+						btncli(m.getRemovebutton());
+						Thread.sleep(3000);
+						driver.findElement(By.xpath("//span[@class=\"arricon downarrow\"]")).click();
+						Thread.sleep(3000);
+						driver.findElement(By.xpath("//button[.=\"Remove\"]")).click();
+					} catch (Exception e) {
+						System.out.println("Items are removed from the cart");
+					}
+
+				} else {
+					break;
+
+				}
+
+			}
+
+			Thread.sleep(3000);
+			driver.navigate().to("https://www.netmeds.com/");
+
+			Thread.sleep(3000);
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to Add Prescription page" );

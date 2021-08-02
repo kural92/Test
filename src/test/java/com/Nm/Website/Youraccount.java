@@ -54,6 +54,21 @@ public class Youraccount extends BaseClass {
 		// htmlReporter.config().setTheme(Theme.STANDARD);
 
 	}
+	
+	/* Under your account page
+	 	Test Case 1 : Verify the functionalities of Delivery address Page (Add, Edit, Select and Delete Address).
+	  	Test Case 2 : Verify the functionalities under my wallet page (Assertion of all the texts,NMS Cash, NMS super Cash And how to use it).
+	  	Test Case 3 : Verify the functionalities of Edit profile Page.
+	  	Test Case 4	: Verify the functionalities of Contact us  Page.(Assertion of all the texts).
+	  	Test Case 5 : Verify the functionalities of My Prescription Page.(Assertion of all the texts).
+	  	Test Case 6 : Verify the functionalities of refer and earn.(Assertion of all the texts).
+	  	Test Case 7 :Verify the functionalities of Help Page.
+	  	Test Case 8 :Verify the functionalities of Rate us page.
+	  	Test Case 9 :Verify the functionalities of Legal Information Page.
+	  :
+	 */
+	
+	
 
 //*****************************************************Your Accountpage*************************
 
@@ -1036,7 +1051,7 @@ public class Youraccount extends BaseClass {
 
 //Step 6 :Do Assertion on contact information
 
-		WebElement contactinfo = m.getContact_info();
+	/*	WebElement contactinfo = m.getContact_info();
 		js.executeScript("arguments[0].scrollIntoView(true);", contactinfo);
 
 		SoftAssert SoftAssert = new SoftAssert();
@@ -1060,7 +1075,7 @@ public class Youraccount extends BaseClass {
 		m.getContactus_link().isEnabled();
 		Thread.sleep(3000);
 		m.getCsnetmeds().isDisplayed();
-		m.getCsnetmeds().isEnabled();
+		m.getCsnetmeds().isEnabled();*/
 //String contacustext = driver.findElement(By.xpath("//a[contains(text(),\" for any questions or comments regarding these Terms and Conditions. \")]")).getText();
 
 //System.out.println(contacustext);
