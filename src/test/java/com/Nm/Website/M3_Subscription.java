@@ -56,6 +56,29 @@ public class M3_Subscription extends BaseClass {
 
 	}
 
+	/*
+	 Test Case 1 :Verify Subscription flow for NonRx and OTC products
+	 
+	 			Scenarios Covered other than the flow:
+	 			
+	 			
+	 				1.Increasing quantity, Decreasing quantity and removing item.
+	 				2.Select duration (different duration level)
+	 				3.SUBS20 promo code validation.
+	 				4.Cancel the order.
+	 				
+	 Test case 2 : Verify Subscription flow with Doctor consultation
+	 
+	 	Scenarios Covered other than the flow :
+	 		1. In Order review page, Validated Add,Edit,Delete and select Address scenarios.
+	 		2.Cancel the order
+	 Test Case 3 :Verify Subscription flow through Rx Flow(Upload New prescription).
+	 
+	 Test Case 4 :Verify Subscription flow through Rx Flow(Upload Past Rx).
+	 */
+	
+	
+	
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
 	@Test(enabled = true)
 	public void M3OTCandnonrxSubscription() throws Throwable {

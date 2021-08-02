@@ -54,6 +54,21 @@ public class OrderSucesspage extends BaseClass {
 
 	}
 
+	/*
+	 Test case 1 :Verify Order success page for M1 Flow(Assert all the text in the order sucess page).
+	 			Also, Validated 
+	 				1.Subscription functionality	 			
+	 				2.Feedback Functionality
+	 				3.track and Cancel the order
+	 				
+	 Test case 2 :Verify Order success page for M2 Flow(Assert all the text in the order sucess page) and cancel the order.
+	 
+	  Test case 3 :Verify Order success page for M3 Flow(Assert all the text in the order sucess page).
+	 			Also, Validated 
+	 					 			
+	 				1.Feedback Functionality
+	 				2.Cancel the order
+	 */
 		
 //*******************************************************************Order Sucess Page M1******************************************************************//
 	@Test(enabled = true)

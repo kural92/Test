@@ -63,7 +63,33 @@ static String totalamt;
 
 	}
 
-//**************************************************Order Success Page M2****************************************************************************************
+	
+	/*,
+	 BELOW LISTED SCENARIOS ARE COEVRED// 
+	
+		
+		 1.Canceling the order if the order status is other than cancelled.
+		
+	 	2.Asserting all the details in View details page (Address,Medicine details)
+		
+	 	3.Validation done for  delivery charge, netmeds discount and total amount calculations.
+		
+		4. Check the reorder functionality inside view details page.
+		
+		5.Check the reorder functionality in the medicine order page.
+		
+		6.uploaded prescription (whenever applicable).
+		
+		7.Show status details.
+		
+		8.Different status of order(track order page)
+		
+		9.Help Page navigation.
+		
+		10. View button functionality.
+		
+				*/
+//**************************************************My Orders page****************************************************************************************
 	
 	@Test
 	public void MyOrdersPage() throws Throwable {

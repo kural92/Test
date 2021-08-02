@@ -81,7 +81,7 @@ static String totalamt;
 		Scenario 4: All the listed promo codes are able to applied
 		Scenario 5:	Item added through most selling products (open the item and added)
 		
-	Note : Validation has been included for the delivery charge check,Mrp check, Discount amount,NMS Wallet check and the total amount)
+	Note : In the below test cases, Validation has been included for the delivery charge check,Mrp check, Discount amount,NMS Wallet check and the total amount)
 		*/
 
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied

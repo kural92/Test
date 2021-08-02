@@ -53,6 +53,13 @@ public class Linkedaccounts extends BaseClass {
 
 	}
 
+	
+	/*
+	 Test Case 1 : Verify the Payment Method page when there is no Card or wallet is Linked
+	 			   Also,Verified user is able to link wallet.(Till clicking Link )
+	 			   
+	 Test case 2 : Verify the Payment Method page when the Card and  wallet is Linked
+	 */
 		
 //*******************************************************************Payment Method Test Case 1 ******************************************************************//
 	@Test(enabled = true) 
