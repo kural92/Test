@@ -1567,7 +1567,7 @@ static String totalamt;
 	private void quitbrowser() {
 		report.flush();
 		
- //     driver.quit();
+  driver.quit();
 	}
 
 
