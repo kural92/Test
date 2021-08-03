@@ -742,7 +742,7 @@ public class M3_Subscription extends BaseClass {
 
 		WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
 
-		upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
+		upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Prescription added successfully");
 
