@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -271,12 +272,13 @@ public class OffersPage extends BaseClass {
 
 		}	
 
-		//@AfterTest
-		//private void quitbrowser() {
-		//report.flush();
-		//	driver.quit();
+	@AfterTest
+		private void quitbrowser() {
+		report.flush();
+			driver.quit();
 			
 	}			
-		
+	
+}
 
 

@@ -10,6 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -115,7 +116,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 			{
 				WebElement upload = m.getUploadpresc();
 				
-				upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
+				upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
 				Thread.sleep(3000);
 				driver.findElement(By.xpath("//img[@class=\"rxviewimg\"]")).click();
 				Thread.sleep(3000);
@@ -126,7 +127,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 				
 			WebElement upload =m.getUploadpresc();
 			
-			upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
 			
 			
 			
@@ -170,7 +171,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 						driver.findElement(By.xpath("(//button[@class='close'])[2]")).click();
 						
 						Thread.sleep(3000);
-						upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
+						upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
 						
 						Thread.sleep(3000);
 						System.out.println(error_message.getText());
@@ -191,7 +192,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 					
 //uploading high resolution image//
 					
-					upload.sendKeys("D:\\Automation\\Prescription\\10Mb.jpg");
+					upload.sendKeys(System.getProperty("user.dir")+"//Prescription//10Mb.jpg");
 					Thread.sleep(3000);
 			WebElement image = driver.findElement(By.id("upl_err_msg"));
 			System.out.println(image.getText());
@@ -199,7 +200,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 					
 //Uploading unsupported files//
 					
-			upload.sendKeys("D:\\Automation\\Prescription\\Prescription.pdf");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription.pdf");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
 			System.out.println("file pdf type is unsupported");
@@ -209,7 +210,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 
 //jpg
 					
-			upload.sendKeys("D:\\Automation\\Prescription\\jpg.jpg");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//jpg.jpg");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//img[@class=\"rxviewimg\"]")).click();
 			Thread.sleep(3000);
@@ -218,21 +219,21 @@ public class Uploadprescriptioncheck extends BaseClass {
 			System.out.println("jpg file uploaded successfully");
 //bmp
 					
-			upload.sendKeys("D:\\Automation\\Prescription\\bmp.bmp");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//bmp.bmp");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
 			System.out.println("bmp file type is unsupported");
 			
 //Excel file
 
-			upload.sendKeys("D:\\Automation\\Prescription\\Prescription.xlsx");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription.xlsx");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
 			System.out.println("Excel file type is unsupported");
 			
 //gif
 					
-			upload.sendKeys("D:\\Automation\\Prescription\\gif.gif");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//gif.gif");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//img[@class=\"rxviewimg\"]")).click();
 			Thread.sleep(3000);
@@ -284,11 +285,11 @@ public void screenShot(ITestResult result) throws Throwable {
 
 }
 
-// @AfterTest
-// private void quitbrowser() {
-// report.flush();
+ @AfterTest
+ 	private void quitbrowser() {
+	 report.flush();
 
-// driver.quit();
-// }
+	 driver.quit();
+}
 
 }

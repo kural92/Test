@@ -1041,7 +1041,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 	private void quitbrowser() {
 		report.flush();
 
-		// driver.quit();
+		 driver.quit();
 	}
 
 }
