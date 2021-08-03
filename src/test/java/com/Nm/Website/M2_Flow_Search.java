@@ -476,7 +476,7 @@ public class M2_Flow_Search extends BaseClass {
 			
 			WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
 			Thread.sleep(3000);
-			upload.sendKeys("D:\\Eclipse_WorkSpace\\Automation\\Prescription\\M2 Pay.png");
+			upload.sendKeys(".//Prescription//M2 Pay.png");
 
 			
 			
@@ -595,7 +595,7 @@ public class M2_Flow_Search extends BaseClass {
 			
 			WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
 			Thread.sleep(3000);
-			upload.sendKeys("D:\\Eclipse_WorkSpace\\Automation\\Prescription\\M2 Pay.png");
+			upload.sendKeys(".//Prescription//M2 Pay.png");
 
 			
 			
