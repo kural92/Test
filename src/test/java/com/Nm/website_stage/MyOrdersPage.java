@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 
 import java.io.File;
@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -381,7 +382,7 @@ static String totalamt;
 //Need Help page//
 		 btncli(m.getNeedHelp_page());
 		 Thread.sleep(3000);
-		 SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/help-support/");
+		 SoftAssert.assertEquals(driver.getCurrentUrl(), "https://s1-meds.netmeds.com/help-support/");
 		 System.out.println(driver.getCurrentUrl());
 		 Thread.sleep(3000);
 		 driver.navigate().back();
@@ -393,7 +394,7 @@ static String totalamt;
 		 
 		 btncli(m.getReorder());
 		 Thread.sleep(3000);
-		 SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/checkout/cart");
+		 SoftAssert.assertEquals(driver.getCurrentUrl(), "https://s1-meds.netmeds.com/checkout/cart");
 		 System.out.println(driver.getCurrentUrl());
 		 Thread.sleep(3000);
 		 
@@ -432,7 +433,7 @@ static String totalamt;
 //Need Help page//
 					 btncli(m.getNeedHelp_page());
 					 Thread.sleep(3000);
-					 SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/help-support/");
+					 SoftAssert.assertEquals(driver.getCurrentUrl(), "https://s1-meds.netmeds.com/help-support/");
 					 System.out.println(driver.getCurrentUrl());
 					 Thread.sleep(3000);
 					 driver.navigate().back();
@@ -470,7 +471,7 @@ static String totalamt;
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//a[@class=\"viewbtn\"]")).click();
 			
-			driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+			driver.navigate().to("https://s1-meds.netmeds.com/customer/orderhistory");
 			
 			Thread.sleep(5000);
 		
@@ -509,7 +510,7 @@ static String totalamt;
 				driver.findElement(By.xpath("//button[@class=\"btn-checkout btn btn_to_checkout m-0\"]")).click();
 				Thread.sleep(3000);
 				
-				SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/checkout/review");
+				SoftAssert.assertEquals(driver.getCurrentUrl(), "https://s1-meds.netmeds.com/checkout/review");
 				
 				System.out.println("Order review page is opened");
 				logger.log(Status.PASS, " Order review page is opened" );
@@ -519,7 +520,7 @@ static String totalamt;
 				System.out.println("OTC or Non-Rx Product is added");
 				
 				
-				SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/checkout/review");
+				SoftAssert.assertEquals(driver.getCurrentUrl(), "https://s1-meds.netmeds.com/checkout/review");
 				
 				System.out.println("Order review page is opened");
 				
@@ -527,7 +528,7 @@ static String totalamt;
 			}
 			
 			
-			driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+			driver.navigate().to("https://s1-meds.netmeds.com/customer/orderhistory");
 			System.out.println("My Order page is working fine");
 			
 }
@@ -574,11 +575,11 @@ public void screenShot(ITestResult result) throws Throwable {
 
 }
 
-//@AfterTest
-//private void quitbrowser() {
-//	report.flush();
+@AfterTest
+private void quitbrowser() {
+	report.flush();
 
-	// driver.quit();
+	 driver.quit();
 }
 
-
+}

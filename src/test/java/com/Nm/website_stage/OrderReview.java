@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -90,7 +90,7 @@ public class OrderReview extends BaseClass {
 		btncli(m.getSignInpage());
 		}catch (Exception e) {
 			System.out.println("alredy logged in");
-			driver.navigate().to("https://www.netmeds.com");
+			driver.navigate().to("https://s1-meds.netmeds.com");
 
 		}
 		Thread.sleep(3000);
@@ -115,7 +115,7 @@ public class OrderReview extends BaseClass {
 			
 			
 		}
-		driver.navigate().to("https://www.netmeds.com/");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 		Thread.sleep(3000);
 		m.getSearch().sendKeys( "Patanjali Lauh Bhasm Powder 5 gm",Keys.ENTER);
 		
@@ -165,7 +165,7 @@ public class OrderReview extends BaseClass {
 		SoftAssert.assertNotNull(m.getOrderreview_TotalAmoutprice());
 		SoftAssert.assertNotNull(m.getOrderreview_TotalAmoutcontent());
 		SoftAssert.assertNotNull(m.getOrderreview_TotalAmoutprices());
-driver.navigate().to("https://www.netmeds.com/");
+driver.navigate().to("https://s1-meds.netmeds.com/");
 		
 Thread.sleep(3000);
 m.getSearch().sendKeys( "Rxtor 10mg Tablet 10'S",Keys.ENTER);

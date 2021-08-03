@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 import java.io.File;
 import java.util.List;
@@ -98,7 +98,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 /////////////  Remove Product //
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
@@ -118,7 +118,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 		}
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 
 //////////////////////////
 
@@ -238,7 +238,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 			}
 
 			Thread.sleep(3000);
-			driver.navigate().to("https://www.netmeds.com");
+			driver.navigate().to("https://s1-meds.netmeds.com/");
 
 			Thread.sleep(3000);
 		}

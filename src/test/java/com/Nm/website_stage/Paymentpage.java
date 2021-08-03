@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 import java.io.File;
 import java.util.List;
@@ -93,7 +93,7 @@ public class Paymentpage extends BaseClass{
 		
 		
 	}
-	driver.navigate().to("https://www.netmeds.com/");
+	driver.navigate().to("https://s1-meds.netmeds.com/");
 	Thread.sleep(3000);
 	m.getSearch().sendKeys( "Patanjali Lauh Bhasm Powder 5 gm",Keys.ENTER);
 	
@@ -148,7 +148,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	Thread.sleep(3000);
 	btncli(m.getAMAZONPAY_paybutton());
 	Thread.sleep(15000);
-	driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
+	driver.navigate().to("https://s1-meds.netmeds.com/checkout/payment-information");
 	Thread.sleep(5000);
 	btncli(m.getPayment_retry());
 	logger.log(Status.FAIL, "amazon pay decline scenario is verified " );
@@ -233,7 +233,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 				Thread.sleep(3000);
 				btncli(m.getKotak_bank());
 				Thread.sleep(10000);
-				driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
+				driver.navigate().to("https://s1-meds.netmeds.com/checkout/payment-information");
 				Thread.sleep(3000);
 					btncli(m.getPayment_retry());
 					scrolldown("800");
@@ -247,7 +247,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 						scrolldown("900");
 						select_text(m.getMore_banks(), "Bank of India");
 						Thread.sleep(10000);
-						driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
+						driver.navigate().to("https://s1-meds.netmeds.com/checkout/payment-information");
 						Thread.sleep(3000);
 							btncli(m.getCod_popoup());
 							Thread.sleep(6000);
@@ -294,7 +294,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	btncli(m.getSignInpage());
 	}catch (Exception e) {
 		System.out.println("alredy logged in");
-		driver.navigate().to("https://www.netmeds.com");
+		driver.navigate().to("https://s1-meds.netmeds.com");
 
 	}
 	Thread.sleep(3000);
@@ -319,7 +319,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 		
 		
 	}
-	driver.navigate().to("https://www.netmeds.com/");
+	driver.navigate().to("https://s1-meds.netmeds.com/");
 	Thread.sleep(3000);
 	m.getSearch().sendKeys( "Patanjali Lauh Bhasm Powder 5 gm",Keys.ENTER);
 	

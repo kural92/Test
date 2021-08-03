@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 import java.awt.Container;
 import java.io.File;
@@ -867,7 +867,7 @@ public class Youraccount extends BaseClass {
 
 		String Actualcontactusurl = driver.getCurrentUrl();
 
-		String Originalcontacturl = "https://www.netmeds.com/contact-us";
+		String Originalcontacturl = "https://s1-meds.netmeds.com/contact-us";
 
 		Assert.assertEquals(Actualcontactusurl, Originalcontacturl);
 

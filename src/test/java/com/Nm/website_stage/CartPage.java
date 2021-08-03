@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 
 
@@ -123,7 +123,7 @@ static String totalamt;
 //  Remove existing items from the cart  //
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
@@ -147,7 +147,7 @@ static String totalamt;
 		}
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 
 		Thread.sleep(3000);
 		
@@ -550,7 +550,7 @@ static String totalamt;
 //  Remove existing items from the cart  //
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
@@ -574,7 +574,7 @@ static String totalamt;
 		}
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 
 		Thread.sleep(3000);
 		
@@ -871,7 +871,7 @@ static String totalamt;
 //  Remove existing items from the cart  //
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
@@ -895,7 +895,7 @@ static String totalamt;
 		}
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 
 		Thread.sleep(3000);
 		
@@ -1175,7 +1175,7 @@ static String totalamt;
 			//  Remove existing items from the cart  //
 
 					Thread.sleep(3000);
-					driver.navigate().to("https://www.netmeds.com/checkout/cart");
+					driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 					Thread.sleep(3000);
 					for (int i = 0; i < 16; i++) {
 						Thread.sleep(3000);
@@ -1199,7 +1199,7 @@ static String totalamt;
 					}
 
 					Thread.sleep(3000);
-					driver.navigate().to("https://www.netmeds.com/");
+					driver.navigate().to("https://s1-meds.netmeds.com/");
 
 					Thread.sleep(3000);
 					
@@ -1567,7 +1567,7 @@ static String totalamt;
 	private void quitbrowser() {
 		report.flush();
 		
- //     driver.quit();
+  driver.quit();
 	}
 
 

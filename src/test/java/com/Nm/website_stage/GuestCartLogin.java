@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -174,7 +174,7 @@ public class GuestCartLogin extends BaseClass{
 		Robot r = new Robot();
 		
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 		 driver.manage().window().maximize();
 		 
 

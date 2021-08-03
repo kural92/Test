@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 
 import java.io.File;
@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -1059,11 +1060,11 @@ public class OrderSucesspage extends BaseClass {
 
 	}
 
-	//@AfterTest
-	//private void quitbrowser() {
-	//	report.flush();
+@AfterTest
+	private void quitbrowser() {
+		report.flush();
 
-		// driver.quit();
+		 driver.quit();
 	}
 
-
+}

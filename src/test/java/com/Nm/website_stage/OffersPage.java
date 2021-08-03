@@ -1,4 +1,4 @@
-package com.Nm.Website;
+package com.Nm.website_stage;
 
 
 import java.io.File;
@@ -92,7 +92,7 @@ public class OffersPage extends BaseClass {
 //  Remove existing items from the cart  //
 
 			Thread.sleep(3000);
-			driver.navigate().to("https://www.netmeds.com/checkout/cart");
+			driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 			Thread.sleep(3000);
 			for (int i = 0; i < 16; i++) {
 				Thread.sleep(3000);
@@ -116,7 +116,7 @@ public class OffersPage extends BaseClass {
 			}
 
 			Thread.sleep(3000);
-			driver.navigate().to("https://www.netmeds.com/");
+			driver.navigate().to("https://s1-meds.netmeds.com/");
 
 			Thread.sleep(3000);
 			
@@ -195,7 +195,7 @@ public class OffersPage extends BaseClass {
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
 			Thread.sleep(3000);
-			driver.navigate().to("https://www.netmeds.com/offers");
+			driver.navigate().to("https://s1-meds.netmeds.com/offers");
 			Thread.sleep(3000);
 		
 			
@@ -212,7 +212,7 @@ public class OffersPage extends BaseClass {
 			System.out.println("Coupon related to consultation offer was sucessfully opened");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
-			driver.navigate().to("https://www.netmeds.com/offers");
+			driver.navigate().to("https://s1-meds.netmeds.com/offers");
 			Thread.sleep(3000);
 			
 			btncli(m.getDiagnostics_checkbox());
