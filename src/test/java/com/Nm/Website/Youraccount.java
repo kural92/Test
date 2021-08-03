@@ -1127,7 +1127,7 @@ public class Youraccount extends BaseClass {
 	private void quitbrowser() {
 		report.flush();
 
-		// driver.quit();
+		driver.quit();
 	}
 
 }
