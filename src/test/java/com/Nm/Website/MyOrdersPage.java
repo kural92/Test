@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -574,11 +575,11 @@ public void screenShot(ITestResult result) throws Throwable {
 
 }
 
-//@AfterTest
-//private void quitbrowser() {
-//	report.flush();
+@AfterTest
+private void quitbrowser() {
+	report.flush();
 
-	// driver.quit();
+	 driver.quit();
 }
 
-
+}
