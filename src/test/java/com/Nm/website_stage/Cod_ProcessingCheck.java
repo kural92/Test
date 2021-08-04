@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,6 +25,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 
 
 
@@ -76,6 +78,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 		logger = report.createTest("Cash on Delivery Check for More than 3 Processing Order ");
 		logger.log(Status.PASS, "************* Cash On Delivery - Processing Orders ********************");
 		Monepom m = new Monepom();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
 
 // Login
 
@@ -83,11 +86,11 @@ public class Cod_ProcessingCheck extends BaseClass {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), "8072281468");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), "test@123");
 			btncli(m.getSignInpage());
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -217,6 +220,9 @@ public class Cod_ProcessingCheck extends BaseClass {
 					try {
 						btncli(driver.findElement(By.id("nms_cod")));
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
+						
+						Thread.sleep(1000);
+						js.executeScript("window.scrollTo(0,100)");
 
 						Thread.sleep(5000);
 						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
@@ -251,6 +257,13 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 		Thread.sleep(3000);
 		List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),'PROCESSING')]"));
+		List<WebElement> pres_review = driver.findElements(By.xpath("//span[contains(text(),'PRESCRIPTION UNDER REVIEW')]"));
+		
+		
+		
+		if (!(process.size()==0)) {
+			
+		
 
 		Thread.sleep(3000);
 		for (int i = 0; i < process.size(); i++) {
@@ -273,6 +286,34 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 			Thread.sleep(3000);
 
+		}
+		
+		} else if (!(pres_review.size()==0)) {
+			
+			Thread.sleep(3000);
+			for (int i = 0; i < pres_review.size(); i++) {
+
+				Thread.sleep(3000);
+
+				btncli(m.getView_DetailsList().get(i));
+				Thread.sleep(6000);
+
+				btncli(m.getCancel_Order());
+				Thread.sleep(3000);
+				btncli(m.getCancel_reason());
+				Thread.sleep(3000);
+				btncli(m.getSubmit_Cancel());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully Order was Cancelled");
+
+				Thread.sleep(5000);
+				btncli(driver.findElement(By.xpath("//*[@id=\"app\"]/main/app-order-detail/div[1]/div[1]/a")));
+
+				Thread.sleep(3000);
+
+			}
+			
+			
 		}
 
 	}

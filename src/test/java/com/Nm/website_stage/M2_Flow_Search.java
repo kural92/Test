@@ -100,7 +100,8 @@ public class M2_Flow_Search extends BaseClass {
 			  Thread.sleep(5000);
 			  type(m.getMobileno(),"7010752043");
 			  Thread.sleep(3000);
-			  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+			  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")
+					  ));
 			  Thread.sleep(3000);
 			  type(m.getPassword(),"Change@92"); 
 			  btncli(m.getSignInpage());
@@ -127,10 +128,10 @@ public class M2_Flow_Search extends BaseClass {
 			btncli(m.getPast_Rx());
 			Thread.sleep(3000);
 			
-			if (driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")).isSelected()) {
+			if (driver.findElement(By.xpath("//input[@class='rx_image']")).isSelected()) {
 				 System.out.println("Prescription already Selected with Past RX");
 			} else {
-				btncli(driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")));
+				btncli(driver.findElement(By.xpath("//input[@class='rx_image']")));
 			
 			}
 		//	btncli(driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")));
@@ -271,10 +272,10 @@ public class M2_Flow_Search extends BaseClass {
 			btncli(m.getPast_Rx());
 			Thread.sleep(3000);
 			
-			if (driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")).isSelected()) {
+			if (driver.findElement(By.xpath("//input[@class='rx_image']")).isSelected()) {
 				 System.out.println("Prescription already Selected with Past RX");
 			} else {
-				btncli(driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")));
+				btncli(driver.findElement(By.xpath("//input[@class='rx_image']")));
 			
 			}
 		//	btncli(driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")));

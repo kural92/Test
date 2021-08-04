@@ -50,7 +50,7 @@ public class BaseClass {
 	public static ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
-		public static  String production_homeurl="https://www.netmeds.com";
+		public static  String production_homeurl="https://s1-meds.netmeds.com";
 
 	public static WebDriver driver=null;
 	@BeforeClass
@@ -62,6 +62,7 @@ public class BaseClass {
 		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(production_homeurl);
+		
 		return driver;
 	}
 	public void loadurl(String url) {

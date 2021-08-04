@@ -99,11 +99,11 @@ public class M1_Cod extends BaseClass {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), "8072281468");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), "test@123");
 			btncli(m.getSignInpage());
 		
 
@@ -318,11 +318,11 @@ public class M1_Cod extends BaseClass {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), "8072281468");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), "test@123");
 			btncli(m.getSignInpage());
 		
 		} catch (Exception e) {
@@ -364,6 +364,7 @@ public class M1_Cod extends BaseClass {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
 			r.keyPress(KeyEvent.VK_ENTER);
+			
 			r.keyRelease(KeyEvent.VK_ENTER);
 			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully Added  " + BaseClass.getExcelData("COD_Check", i, 0));
