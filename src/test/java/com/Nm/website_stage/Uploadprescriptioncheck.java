@@ -73,7 +73,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8939818205");
+			type(m.getMobileno(), "7200016627");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
@@ -114,6 +114,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 		for (int i = 0; i < 12; i++) 
 			
 			{
+				Thread.sleep(3000);
 				WebElement upload = m.getUploadpresc();
 				
 				upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
@@ -166,9 +167,21 @@ public class Uploadprescriptioncheck extends BaseClass {
 					
 					Thread.sleep(2000);
 					logger.log(Status.PASS, "Past RxPrescription added successfully");
+					
 				}
-				
+						
 						driver.findElement(By.xpath("(//button[@class='close'])[2]")).click();
+						Thread.sleep(3000);
+						for (int i = 0; i < 6; i++) 
+							
+						{
+							
+							
+							upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
+							Thread.sleep(3000);
+						}
+				
+						
 						
 						Thread.sleep(3000);
 						upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
@@ -200,7 +213,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 					
 //Uploading unsupported files//
 					
-			upload.sendKeys(System.getProperty("user.dir")+"//Prescription.pdf");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//Prescription.pdf");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
 			System.out.println("file pdf type is unsupported");
@@ -226,7 +239,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 			
 //Excel file
 
-			upload.sendKeys(System.getProperty("user.dir")+"//Prescription.xlsx");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//Prescription.xlsx");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
 			System.out.println("Excel file type is unsupported");

@@ -725,7 +725,7 @@ public class Monepom extends BaseClass {
 	public WebElement getSimplerway_txt() {
 		return simplerway_txt;
 	}
-	@FindBy (xpath = "//h4[.=\"Invite your friends and family\"]")
+	@FindBy (xpath = "//h4[.=\"Invite your friends and family\"]|//h4[.=\"Invite your friends and families\"]")
 	private WebElement invite;
 	public WebElement getInvite() {
 		return invite;
@@ -767,7 +767,7 @@ public class Monepom extends BaseClass {
 		return yourreferralcode;
 	}
 	
-	@FindBy(xpath = "//div[.=\"TEST1932\"]")
+	@FindBy(xpath = "//div[.=\"TEST1932\"]|//div[.=\"Infinite\"]")
 	private WebElement yourreferralcodenumber;
 	public WebElement getYourreferralcodenumber() {
 		return yourreferralcodenumber;
