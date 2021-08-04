@@ -50,7 +50,11 @@ public class BaseClass {
 	public static ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
+<<<<<<< HEAD
 		public static  String production_homeurl="https://s1-meds.netmeds.com";
+=======
+		public static  String production_homeurl="https://s1-meds.netmeds.com/";
+>>>>>>> c4d0e286ce14f36913905b3284f6383ce99f729b
 
 	public static WebDriver driver=null;
 	@BeforeClass

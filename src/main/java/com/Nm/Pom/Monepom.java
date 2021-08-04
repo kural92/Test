@@ -66,7 +66,7 @@ public class Monepom extends BaseClass {
 	private WebElement minicart;
 	@FindBy(xpath="//div[@class='process-checkout']")
 	private WebElement proceedbutton;
-	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']/button")
+	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']/button|//button[@class=\"btn-checkout btn btn_to_checkout m-0 ng-star-inserted\"]")
 	private WebElement paybutton;
 	@FindBy(xpath="//span[@class='title col-md-4']")
 	private WebElement paydeatailText;
@@ -151,7 +151,7 @@ public class Monepom extends BaseClass {
 		return mysubscriptionpage;
 	}
 	
-	@FindBy(xpath="//button[contains(text(),\"CREATE NEW REFILL\")]")
+	@FindBy(xpath="//button[contains(text(),\"CREATE NEW REFILL\")]|//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")
 	private WebElement createnewfill;
 	
 	public WebElement getCreatenewfill() {
@@ -164,7 +164,7 @@ public class Monepom extends BaseClass {
 	public WebElement getM3productsearch() {
 		return m3productsearch;
 	}
-	@FindBy(xpath ="//a[normalize-space()='View cart']")
+	@FindBy(xpath ="//a[normalize-space()='View cart']|//a[@class =\"view-subscription\"]")
 	private WebElement viewcart;
 	
 	public WebElement getViewcart() {
@@ -189,7 +189,7 @@ public class Monepom extends BaseClass {
 		return subscribe;
 	}
 	
-	@FindBy(xpath = "//button[contains(text(),\"Select Duration\")]")
+	@FindBy(xpath = "//button[contains(text(),\"Select Duration\")]|//button[.=\"Schedule Delivery\"]")
 	private WebElement SelectDuration;
 	public WebElement getSelectDuration() {
 		return SelectDuration;
@@ -252,7 +252,7 @@ public class Monepom extends BaseClass {
 		return Deleteaddress;
 	}
 	
-	@FindBy(xpath ="(//button[contains(.,'My Subscription')])[2]")
+	@FindBy(xpath ="(//button[contains(.,'My Subscription')])[2]|(//button[.=\"My Subscription\"])[2]")
 	private WebElement mysubscription;
 	public WebElement getMysubscription() {
 		return mysubscription;
@@ -725,7 +725,7 @@ public class Monepom extends BaseClass {
 	public WebElement getSimplerway_txt() {
 		return simplerway_txt;
 	}
-	@FindBy (xpath = "//h4[.=\"Invite your friends and family\"]")
+	@FindBy (xpath = "//h4[.=\"Invite your friends and family\"]|//h4[.=\"Invite your friends and families\"]")
 	private WebElement invite;
 	public WebElement getInvite() {
 		return invite;
@@ -767,7 +767,7 @@ public class Monepom extends BaseClass {
 		return yourreferralcode;
 	}
 	
-	@FindBy(xpath = "//div[.=\"TEST1932\"]")
+	@FindBy(xpath = "//div[.=\"TEST1932\"]|//div[.=\"Infinite\"]")
 	private WebElement yourreferralcodenumber;
 	public WebElement getYourreferralcodenumber() {
 		return yourreferralcodenumber;
