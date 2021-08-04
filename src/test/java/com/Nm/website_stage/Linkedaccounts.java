@@ -62,7 +62,7 @@ public class Linkedaccounts extends BaseClass {
 	 */
 		
 //*******************************************************************Payment Method Test Case 1 ******************************************************************//
-	@Test(enabled = true) 
+	@Test(enabled = false) 
 	public void LinkedAccountsScenario1() throws Throwable {
 
 		logger = report.createTest(" Linked Accounts Scenario1");
@@ -139,7 +139,7 @@ public class Linkedaccounts extends BaseClass {
 		btncli(m.getNetmedshome());
 		
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
@@ -163,7 +163,7 @@ public class Linkedaccounts extends BaseClass {
 		}
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 
 		Thread.sleep(3000);
 		
@@ -267,11 +267,11 @@ public class Linkedaccounts extends BaseClass {
 
 					btncli(m.getSignin());
 					Thread.sleep(5000);
-					type(m.getMobileno(), "9677159095");
+					type(m.getMobileno(), "8939818205");
 					Thread.sleep(3000);
 					btncli(m.getUsepwdbtn());
 					Thread.sleep(3000);
-					type(m.getPassword(), "test4nm");
+					type(m.getPassword(), "test@123");
 					btncli(m.getSignInpage());
 					Thread.sleep(3000);
 					logger.log(Status.PASS, "Successfully navigate to home page");
