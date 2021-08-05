@@ -222,10 +222,10 @@ public class Cod_ProcessingCheck extends BaseClass {
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 						
 						Thread.sleep(1000);
-						js.executeScript("window.scrollTo(0,100)");
+					//	js.executeScript("window.scrollTo(0,100)");
 
 						Thread.sleep(5000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[11]")));
 					} catch (Exception e) {
 						Thread.sleep(3000);
 						btncli(driver.findElement(By.xpath("//button[contains(text(),'PAY WITH CASH')]")));
