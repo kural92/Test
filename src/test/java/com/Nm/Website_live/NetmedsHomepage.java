@@ -1,4 +1,4 @@
-package com.Nm.website_stage;
+package com.Nm.Website_live;
 
 import java.util.Set;
 
@@ -35,8 +35,24 @@ public void homePage() throws Throwable {
 		
 		//Homepage_GuestUser
 		thread(3000);
+		try {
+			driver.switchTo().frame("webklipper-publisher-widget-container-notification-frame");
+			driver.findElement(By.id("closeButton")).click();
+			driver.switchTo().defaultContent();
+			
+		}  catch (Exception e) {
+			// TODO: handle exception
+		}
 		//Medicine
 		moveElement(driver.findElement(By.xpath("//a[text()=' Medicine']")));
+		try {
+			driver.switchTo().frame("webklipper-publisher-widget-container-notification-frame");
+			driver.findElement(By.id("closeButton")).click();
+			driver.switchTo().defaultContent();
+			
+		}  catch (Exception e) {
+			// TODO: handle exception
+		}
 		clk(hp.getAllmedi());
 		thread(3000);
 		pageUrl();
@@ -102,7 +118,7 @@ public void homePage() throws Throwable {
 			}
 		}
 			Thread.sleep(2000);
-		driver.navigate().to("https://s1-meds.netmeds.com")	;	
+		driver.navigate().to("https://www.netmeds.com")	;	
 		
 		Thread.sleep(2000);
 		//UserLogin
