@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -194,6 +195,81 @@ public static void select_deselectAll(WebElement element) {
 	Select s = new Select(element);
 	s.deselectAll();
 }
+
+
+
+/////////////////////////////   
+/////////////////////////////////////
+
+public static void sendkeys(WebElement ele, String name) {
+ele.sendKeys(name);
+}
+
+public static void clk(WebElement ele) {
+ele.click();
+
+}
+
+public static void moveElement(WebElement url) {
+Actions    a = new Actions (driver);
+a.moveToElement(url).perform();
+}
+public static void pageTitle() {
+String titleName = driver.getTitle();
+System.out.println(titleName);
+}
+public static void pageUrl() {
+String url = driver.getCurrentUrl();
+System.out.println(url);
+}
+public static void clickDouble(WebElement eleme) {
+Actions    a = new Actions (driver);
+a.doubleClick(eleme).perform();
+}
+public static void clickRight(WebElement elemen) {
+Actions    a = new Actions (driver);
+a.contextClick(elemen).perform();
+}
+
+public static void thread(long Value) throws InterruptedException {
+Thread.sleep(Value);
+
+}
+public static void back() {
+driver.navigate().back();
+
+}
+public static void handleWindows(String Url, String parent) throws Throwable 
+{
+Set<String> child = driver.getWindowHandles();
+for (String handle : child) {
+if (!(parent.contains(handle))) {
+
+Thread.sleep(2000);
+driver.switchTo().window(handle);
+}
+
+}
+
+
+driver.switchTo().window(Url);
+}
+
+////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //////////   Excel    COde   ///////////////////////

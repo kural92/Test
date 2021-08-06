@@ -2258,5 +2258,266 @@ public class Monepom extends BaseClass {
 				}
 				
 				
+				
+				//////////////////////////////////////////////////////////////////////////
+				////////////////  HOME PAGE ELEMEMT   /////////////////////////////
+				
+				
+				
+
+				 @FindBy(xpath="(//a[text()=' Sign in / Sign up '])")
+				    private WebElement login;
+					
+					@FindBy(xpath="//button[contains(text(),'USE PASSWORD')]")
+					private WebElement click;
+					
+					@FindBy(id = "loginfirst_mobileno")
+					private WebElement Mobilenos;  
+					
+					@FindBy(id="login_received_pwd" )
+					private WebElement pwd;
+					
+					@FindBy(xpath = "(//button[contains(text(),'Sign in')])")
+					private WebElement sign;
+					
+					@FindBy(xpath="//a[text()=' Medicine']")
+					private WebElement medi;
+					
+					@FindBy(xpath = "(//a[@href='/prescriptions'][1])")
+					private WebElement allmedi;
+					
+					@FindBy(xpath ="(//a[@href='/customer/buyagain'])" )
+					private WebElement buyagain;
+					
+					@FindBy(xpath = "//a[@class='logo']")
+					private WebElement logo;
+					
+					@FindBy(xpath = "(//a[@class='h-pro'])")
+					private WebElement wellness;
+					
+					@FindBy(xpath = "(//a[text()='Lab Tests'][1])")
+					private WebElement labtest;
+					
+					@FindBy(xpath = "(//a[text()='Beauty'][1])")
+					private WebElement beauty;
+					
+					@FindBy(xpath = "(//a[text()='Body Care'])")
+					private WebElement bodycare;
+					
+					@FindBy(xpath ="(//a[text()='Face Care'])")
+					private WebElement facecare;
+					
+					@FindBy(xpath = "(//a[text()='Fragrances'])")
+					private WebElement fragnance;
+					
+					@FindBy(xpath = "(//a[text()='Hands and Feet'])")
+					private WebElement handfeet;
+					
+					@FindBy(xpath = "(//a[text()='Home Care'])")
+					private WebElement homecare;
+					
+					@FindBy(xpath = "(//a[text()='Eye Care'])")
+					private WebElement eyecare;
+					
+					@FindBy(linkText = "Men's Care")
+					private WebElement menscare;
+					
+					@FindBy(xpath = "(//a[text()='Senior Care'])")
+					private WebElement seniorcare;
+					
+					@FindBy(xpath = "//a[text()=' Health Corner']")
+					private WebElement healthcorner;
+					
+					@FindBy(xpath = "//a[contains(text(),'Health Library')]")
+					private WebElement healthlib;
+					
+					@FindBy(xpath = "//a[contains(text(),'PatientsAlike')]")
+					private WebElement patients;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][1]")
+					private WebElement catordermed;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][2]")
+					private WebElement catbeaut;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][3]")
+					private WebElement catwellness;
+					
+					@FindBy(xpath = "(//div[@class='slide-section'])[1]")
+					private WebElement paytm;
+					
+					@FindBy(xpath = "(//div[@class='slide-section'])[2]")
+					private WebElement mobiqwik;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][3]")
+					private WebElement simpl;
+					
+					@FindBy(xpath = "//a[text()=' View All '][1]")
+					private WebElement payviewll;
+					
+					@FindBy(xpath = "//input[@value='medicine']")
+					private WebElement chkmed;
+					
+					@FindBy(xpath = "//input[@value='diagnostics']")
+					private WebElement chkdiag;
+					
+					@FindBy(xpath = "//input[@value='consultation']")
+					private WebElement chckconsult;
+					
+					@FindBy(xpath = "//span[text()=' Deliver to ']")
+					private WebElement deliver;
+					
+					@FindBy(xpath = "//input[@placeholder='Enter Pincode']")
+					private WebElement pincode;
+
+					public WebElement getLogin() {
+						return login;
+					}
+
+					public WebElement getClick() {
+						return click;
+					}
+
+					public WebElement getPwd() {
+						return pwd;
+					}
+
+					public WebElement getSign() {
+						return sign;
+					}
+
+					public WebElement getMedi() {
+						return medi;
+					}
+
+					public WebElement getAllmedi() {
+						return allmedi;
+					}
+
+					public WebElement getBuyagain() {
+						return buyagain;
+					}
+
+					public WebElement getLogo() {
+						return logo;
+					}
+
+					public WebElement getWellness() {
+						return wellness;
+					}
+
+					public WebElement getLabtest() {
+						return labtest;
+					}
+
+					public WebElement getBeauty() {
+						return beauty;
+					}
+
+					public WebElement getBodycare() {
+						return bodycare;
+					}
+
+					public WebElement getFacecare() {
+						return facecare;
+					}
+
+					public WebElement getFragnance() {
+						return fragnance;
+					}
+
+					public WebElement getHandfeet() {
+						return handfeet;
+					}
+
+					public WebElement getHomecare() {
+						return homecare;
+					}
+
+					public WebElement getEyecare() {
+						return eyecare;
+					}
+
+					public WebElement getMenscare() {
+						return menscare;
+					}
+
+					public WebElement getSeniorcare() {
+						return seniorcare;
+					}
+
+					public WebElement getHealthcorner() {
+						return healthcorner;
+					}
+
+					public WebElement getHealthlib() {
+						return healthlib;
+					}
+
+					public WebElement getPatients() {
+						return patients;
+					}
+
+					public WebElement getCatordermed() {
+						return catordermed;
+					}
+
+					public WebElement getCatbeaut() {
+						return catbeaut;
+					}
+
+					public WebElement getCatwellness() {
+						return catwellness;
+					}
+
+					public WebElement getPaytm() {
+						return paytm;
+					}
+
+					public WebElement getMobiqwik() {
+						return mobiqwik;
+					}
+
+					public WebElement getSimpl() {
+						return simpl;
+					}
+
+					public WebElement getPayviewll() {
+						return payviewll;
+					}
+
+					public WebElement getChkmed() {
+						return chkmed;
+					}
+
+					public WebElement getChkdiag() {
+						return chkdiag;
+					}
+
+					public WebElement getChckconsult() {
+						return chckconsult;
+					}
+
+					public WebElement getDeliver() {
+						return deliver;
+					}
+
+					public WebElement getPincode() {
+						return pincode;
+					}
+
+
+					public WebElement getMobilenos() {
+						return Mobilenos;
+					}
+
+					
+
+					
+					
+////////////////////////////////////////////////////
+				
+				
+				
 
 }
