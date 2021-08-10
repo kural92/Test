@@ -267,11 +267,12 @@ public class Linkedaccounts extends BaseClass {
 
 					btncli(m.getSignin());
 					Thread.sleep(5000);
-					type(m.getMobileno(), "8939818205");
+					type(m.getMobileno(), "9841648772");
 					Thread.sleep(3000);
 					btncli(m.getUsepwdbtn());
 					Thread.sleep(3000);
-					type(m.getPassword(), "test@123");
+					type(m.getPassword(), "netmeds2020");
+					Thread.sleep(3000);
 					btncli(m.getSignInpage());
 					Thread.sleep(3000);
 					logger.log(Status.PASS, "Successfully navigate to home page");

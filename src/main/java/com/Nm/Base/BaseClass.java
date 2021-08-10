@@ -52,7 +52,11 @@ public class BaseClass {
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
 
+<<<<<<< HEAD
 		public static  String production_homeurl="https://www.netmeds.com";
+=======
+		public static  String production_homeurl="https://www.netmeds.com/";
+>>>>>>> 166946fb92ca1e6eeaef94e0038daf97c67f4ba3
 
 	//	public static  String production_homeurl="https://s1-meds.netmeds.com/";
 
