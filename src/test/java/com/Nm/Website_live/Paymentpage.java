@@ -63,7 +63,9 @@ public class Paymentpage extends BaseClass{
 		logger =  report.createTest("Payment page");
 	logger.log(Status.PASS, "*************Decline case********************" );
 	Monepom m=new Monepom();
-	driver.manage().window().maximize();
+	try {
+		driver.manage().window().maximize();
+
 	btncli(m.getSignin());
 	Thread.sleep(5000);
 	type(m.getMobileno(),"9677159095");
@@ -71,6 +73,11 @@ public class Paymentpage extends BaseClass{
 	Thread.sleep(3000);
 	type(m.getPassword(),"test4nm");
 	btncli(m.getSignInpage());
+	}catch (Exception e) {
+		System.out.println("alredy logged in");
+		driver.navigate().to("https://www.netmeds.com");
+
+	}
 	Thread.sleep(3000);
 	logger.log(Status.PASS, "Successfully navigate to home page" );
 	Thread.sleep(3000);
@@ -208,36 +215,36 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	} catch (Exception e) {
 		// TODO: handle exception
 	}
-	scrolldown("800");
+	scrolldown("900");
 	Thread.sleep(3000);
 	btncli(m.getAxis_bank());
 	Thread.sleep(10000);
 	driver.navigate().back();
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 		btncli(m.getPayment_retry());
-		scrolldown("800");
-		Thread.sleep(3000);
+		scrolldown("900");
+		Thread.sleep(5000);
 		btncli(m.getHdfc_bank());
 		Thread.sleep(10000);
 		driver.navigate().back();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 			btncli(m.getPayment_retry());
-			scrolldown("800");
-			Thread.sleep(3000);
+			scrolldown("900");
+			Thread.sleep(5000);
 			btncli(m.getIcici_bank());
 			Thread.sleep(10000);
 			driver.navigate().back();
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 				btncli(m.getPayment_retry());
-				scrolldown("800");
-				Thread.sleep(3000);
+				scrolldown("900");
+				Thread.sleep(5000);
 				btncli(m.getKotak_bank());
 				Thread.sleep(10000);
 				driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
 				Thread.sleep(3000);
 					btncli(m.getPayment_retry());
-					scrolldown("800");
-					Thread.sleep(3000);
+					scrolldown("900");
+					Thread.sleep(5000);
 					btncli(m.getSBI_bank());
 					Thread.sleep(10000);
 					driver.navigate().back();
@@ -283,8 +290,9 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 
 		
 	Monepom m=new Monepom();
-	driver.manage().window().maximize();
 	try {
+		driver.manage().window().maximize();
+
 	btncli(m.getSignin());
 	Thread.sleep(5000);
 	type(m.getMobileno(),"9677159095");
@@ -355,7 +363,8 @@ w.click();
 	}
 								
 	Thread.sleep(5000);
-		
+		scrolldown("400");
+		Thread.sleep(5000);
 							btncli(m.getTrack_Order());
 							Thread.sleep(10000);
 							
@@ -420,7 +429,7 @@ w.click();
 	private void quitbrowser() {
 		report.flush();
 
-		//driver.quit();
+		driver.quit();
 	}
 
 

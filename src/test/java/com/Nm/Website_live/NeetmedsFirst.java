@@ -56,8 +56,8 @@ public class NeetmedsFirst extends BaseClass{
    }
 	@Test(enabled = false)
 	public  void NetmedsError() throws Throwable  {
-		logger =  report.createTest(" All Categories");
-		logger.log(Status.PASS, "*************Take Action Fail Alert********************" );
+		logger =  report.createTest("NeetmedsFirst");
+		logger.log(Status.PASS, "*************Netmeds First flow********************" );
 		Monepom m=new Monepom();
 
 		try {
@@ -184,8 +184,8 @@ public class NeetmedsFirst extends BaseClass{
 	
 	@Test(enabled = true)
 	public  void netmedsfirstcustomer() throws Throwable  {
-		logger =  report.createTest("netmeds first customer");
-		logger.log(Status.PASS, "*************netmedsfirstcustomer********************" );
+		logger =  report.createTest(" Already netmeds first customer");
+		logger.log(Status.PASS, "************* Already netmeds first customer********************" );
 		Monepom m=new Monepom();
 
 		try {
@@ -236,7 +236,7 @@ public class NeetmedsFirst extends BaseClass{
 		SoftAssert.assertEquals(gettext(m.getGethome_Getspecialdiscount()), "Get special discounts and offers on Netmeds services.");
 		//SoftAssert.assertEquals(gettext(m.getHome_savemore()), "Save more with Netmeds First membership");
 		SoftAssert.assertEquals(gettext(m.getHome_getnms_cash()), "Get 2.5% NMS Cash on all orders.");
-		SoftAssert.assertEquals(gettext(m.getHome_stating_price()), "Starting at ?299");
+		//SoftAssert.assertEquals(gettext(m.getHome_stating_price()), "Starting at ?299");
 		SoftAssert.assertEquals(gettext(m.getHome_exploreplans()), "Explore Plans");
 //		SoftAssert.assertEquals(gettext(m.getHome_nmscash_section()), "2.5% NMS Cash");
 //		SoftAssert.assertEquals(gettext(m.getHome_allprepaid_orders()), "(Max 100) on all prepaid orders");
@@ -247,10 +247,13 @@ public class NeetmedsFirst extends BaseClass{
 //		SoftAssert.assertEquals(gettext(m.getHome_only_with_12_month_plan()), "only with 12 month plan");
 //		SoftAssert.assertEquals(gettext(m.getHome_Additional_5_off_on_Pathology_Lab_Tests()), "Additional 5% off on Pathology Lab Tests");
 //		SoftAssert.assertEquals(gettext(m.getHome_Free_Unlimited_Consultation()), "Free Unlimited Consultation");
-//       
-		
+//         Thread.sleep(3000);
+
+		  Thread.sleep(3000);
+
 		btncli( m.getHome_exploreplans());
-        
+		  Thread.sleep(5000);
+
         SoftAssert.assertEquals(driver.getCurrentUrl(), "https://www.netmeds.com/customer/netmeds-first");
         btncli(m.getSix_months());
         try {
@@ -457,15 +460,6 @@ btncli(m.getLogout());
 
        		SoftAssert.assertAll();
        		
-       		List<WebElement> filiter = driver.findElements(By.xpath("//div[@id='category_filter']/div/ul/li"));
-       		int sizes=filiter.size();
-       		//3
-       		String text = filiter.get(1).getText();
-       		for (int i = 0; i < sizes; i++) {
-       			
-       			filiter.get(i).click();
-			}
-       		driver.findElement(By.xpath("//div[@id='category_filter']/div/div/div/form/input")).sendKeys(text,Keys.ENTER);
 	}
 	
 	
