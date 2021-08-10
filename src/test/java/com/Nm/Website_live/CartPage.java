@@ -205,7 +205,7 @@ static String totalamt;
 //qty increase//
 		
 		Select qtyincrease = new Select(m.getQty_Incr_Decr());
-		qtyincrease.selectByIndex(15);
+		qtyincrease.selectByIndex(17);
 		Thread.sleep(5000);
 		
 		
@@ -517,7 +517,7 @@ static String totalamt;
 
 		
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void carpagescenariotwo() throws Throwable {
 
 		logger = report.createTest("cartpage scenario two");
@@ -838,7 +838,7 @@ static String totalamt;
 
 			
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
@@ -1142,7 +1142,7 @@ static String totalamt;
 //******************************Test case 4: Verify Cart page when NMS wallet cash used*****************************************************************
 				
 				
-				@Test(enabled = true)
+				@Test(enabled = false)
 				public void carpagescenariofour() throws Throwable {
 
 					logger = report.createTest("cartpage scenario four");

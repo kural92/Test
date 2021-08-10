@@ -200,7 +200,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 					
 //Uploading unsupported files//
 					
-			upload.sendKeys(System.getProperty("user.dir")+"//Prescription.pdf");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//Prescription.pdf");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
 			System.out.println("file pdf type is unsupported");
@@ -226,7 +226,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 			
 //Excel file
 
-			upload.sendKeys(System.getProperty("user.dir")+"//Prescription.xlsx");
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//Prescription.xlsx");
 			Thread.sleep(3000);
 			System.out.println(image.getText());
 			System.out.println("Excel file type is unsupported");
