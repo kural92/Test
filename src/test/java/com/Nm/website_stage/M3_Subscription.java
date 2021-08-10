@@ -95,11 +95,12 @@ public class M3_Subscription extends BaseClass {
 			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8072281468");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
-			type(m.getPassword(), "test@123");
+			type(m.getPassword(), "Change@92");
+			Thread.sleep(3000);
 			btncli(m.getSignInpage());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
@@ -131,6 +132,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 5 :Click create new fill button//
 
 		btncli(m.getCreatenewfill());
+		//driver.findElement(By.xpath("//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
 		
@@ -157,12 +159,12 @@ public class M3_Subscription extends BaseClass {
 
 		for (int i = 0; i < 4; i++) {
 
-			type(m.getM3productsearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
+			type(m.getM3productsearch(), BaseClass.getExcelData("OCT&NonRX_Stage", i, 0));
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
 
-			String Cart_Excel = BaseClass.getExcelData("Otcandnonrx", i, 1);
+			String Cart_Excel = BaseClass.getExcelData("OCT&NonRX_Stage", i, 1);
 
 			// Step 7 : Add product to the cart//
 			try {
@@ -190,6 +192,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 8 : Click view Cart//
 
 		btncli(m.getViewcart());
+		//driver.findElement(By.xpath("//a[@class =\"view-subscription\"]")).click();
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 
@@ -263,6 +266,8 @@ public class M3_Subscription extends BaseClass {
 
 		// Tracking order//
 
+		Thread.sleep(3000);
+		
 		btncli(m.getMysubscription());
 		
 		Thread.sleep(3000);
@@ -308,11 +313,12 @@ public class M3_Subscription extends BaseClass {
 			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8072281468");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
-			type(m.getPassword(), "test@123");
+			type(m.getPassword(), "Change@92");
+			Thread.sleep(3000);
 			btncli(m.getSignInpage());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
@@ -340,7 +346,8 @@ public class M3_Subscription extends BaseClass {
 
 		// Step 5 :Click create new fill button//
 
-		btncli(m.getCreatenewfill());
+		//btncli(m.getCreatenewfill());
+		driver.findElement(By.xpath("//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
 
@@ -397,6 +404,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 8 : Click view Cart//
 
 		btncli(m.getViewcart());
+		//driver.findElement(By.xpath("//a[@class =\"view-subscription\"]")).click();
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 
@@ -636,11 +644,12 @@ public class M3_Subscription extends BaseClass {
 			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8072281468");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
-			type(m.getPassword(), "test@123");
+			type(m.getPassword(), "Change@92");
+			Thread.sleep(3000);
 			btncli(m.getSignInpage());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
@@ -669,6 +678,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 5 :Click create new fill button//
 
 		btncli(m.getCreatenewfill());
+		//driver.findElement(By.xpath("//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
 
@@ -728,6 +738,7 @@ public class M3_Subscription extends BaseClass {
 		// Step 8 : Click view Cart//
 
 		btncli(m.getViewcart());
+		//driver.findElement(By.xpath("//a[@class =\"view-subscription\"]")).click();
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 
@@ -822,11 +833,12 @@ String confirmation = m.getOrder_Placed_text().getText();
 			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8072281468");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
-			type(m.getPassword(), "test@123");
+			type(m.getPassword(), "Change@92");
+			Thread.sleep(3000);
 			btncli(m.getSignInpage());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
@@ -846,7 +858,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		
-		
+		Thread.sleep(10000);
 
 		// Step 4 : Navigate to Mysubscription page//
 
@@ -857,6 +869,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		// Step 5 :Click create new fill button//
 
 		btncli(m.getCreatenewfill());
+		//driver.findElement(By.xpath("//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
 
@@ -914,6 +927,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 		// Step 8 : Click view Cart//
 
 		btncli(m.getViewcart());
+		//driver.findElement(By.xpath("//a[@class =\"view-subscription\"]")).click();
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 
@@ -1037,11 +1051,11 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 	}
 
-	@AfterTest
-	private void quitbrowser() {
-		report.flush();
+//	@AfterTest
+//	private void quitbrowser() {
+//		report.flush();
 
-		 driver.quit();
+//		 driver.quit();
 	}
 
-}
+

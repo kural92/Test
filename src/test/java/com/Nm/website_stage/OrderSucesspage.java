@@ -83,11 +83,12 @@ public class OrderSucesspage extends BaseClass {
 			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8072281468");
+			type(m.getMobileno(), "7200016627");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
 			type(m.getPassword(), "test@123");
+			Thread.sleep(3000);
 			btncli(m.getSignInpage());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
@@ -102,7 +103,7 @@ public class OrderSucesspage extends BaseClass {
 		}
 		
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
@@ -126,7 +127,7 @@ public class OrderSucesspage extends BaseClass {
 		}
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://www.netmeds.com/");
+		driver.navigate().to("https://s1-meds.netmeds.com/");
 
 		Thread.sleep(3000);
 		
@@ -165,7 +166,7 @@ public class OrderSucesspage extends BaseClass {
 
 		}
 
-		
+		Thread.sleep(5000);
 		btncli(m.getProceedbutton());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to search order review page" );
@@ -181,9 +182,9 @@ public class OrderSucesspage extends BaseClass {
 			logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 			
 			Thread.sleep(3000);
-			btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
+			btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[11]")));
 			
-			Thread.sleep(6000);
+			Thread.sleep(8000);
 		
 		// Step 14 : Ensure order is placed successfully//
 
@@ -249,7 +250,7 @@ public class OrderSucesspage extends BaseClass {
 			
 			SoftAssert  SoftAssert = new SoftAssert();
 			
-			SoftAssert.assertEquals(gettext(m.getGrab_text()),"GRAB YOUR");
+			/*SoftAssert.assertEquals(gettext(m.getGrab_text()),"GRAB YOUR");
 			
 			System.out.println(m.getGrab_text().getText());
 			
@@ -267,7 +268,7 @@ public class OrderSucesspage extends BaseClass {
 			
 			SoftAssert.assertEquals(gettext(m.getShare_with_friends()),"Tap to share Code with your friends");
 			
-			System.out.println(m.getShare_with_friends().getText());
+			System.out.println(m.getShare_with_friends().getText());*/
 			
 			SoftAssert.assertEquals(gettext(m.getBenefits()),"Benefits");
 			
@@ -277,9 +278,9 @@ public class OrderSucesspage extends BaseClass {
 			
 			System.out.println(m.getAuto_monthly_order().getText());
 			
-			SoftAssert.assertEquals(gettext(m.getMonthfree()),"1 month FREE*");
+			//SoftAssert.assertEquals(gettext(m.getMonthfree()),"1 month FREE*");
 			
-			System.out.println(m.getMonthfree().getText());
+			//System.out.println(m.getMonthfree().getText());
 			
 			
 			SoftAssert.assertAll();
@@ -299,13 +300,13 @@ public class OrderSucesspage extends BaseClass {
 			
 			Thread.sleep(3000);
 			
-			m.getShare_with_friends().click();
+			//m.getShare_with_friends().click();
 			
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			
-			driver.findElement(By.xpath("(//button[@class='close pull-right'])[2]")).click();
+			//driver.findElement(By.xpath("(//button[@class='close pull-right'])[2]")).click();
 			
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			
 			driver.findElement(By.xpath("//div[@class=\"rating cursor-pointer d-none d-sm-block ng-star-inserted\"]")).click();
 			
@@ -340,7 +341,7 @@ public class OrderSucesspage extends BaseClass {
 			
 			Thread.sleep(3000);
 			
-			driver.findElement(By.xpath("(//img[@src=\"../../../msassets/images/subscribe-your-order.jpg\"])[2]")).click();
+			driver.findElement(By.xpath("(//img[@src=\"../../../msassets/images/subscribe-order-success.jpg\"])[2]")).click();
 			
 			Thread.sleep(3000);
 			
@@ -448,7 +449,7 @@ public class OrderSucesspage extends BaseClass {
 				// Step 2 :Login with user name and password//
 				btncli(m.getSignin());
 				Thread.sleep(5000);
-				type(m.getMobileno(), "8072281468");
+				type(m.getMobileno(), "7200016627");
 				Thread.sleep(3000);
 				btncli(m.getUsepwdbtn());
 				Thread.sleep(3000);
@@ -467,7 +468,7 @@ public class OrderSucesspage extends BaseClass {
 			}
 			
 			Thread.sleep(3000);
-			driver.navigate().to("https://www.netmeds.com/checkout/cart");
+			driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 			Thread.sleep(3000);
 			for (int i = 0; i < 16; i++) {
 				Thread.sleep(3000);
@@ -491,7 +492,7 @@ public class OrderSucesspage extends BaseClass {
 			}
 
 			Thread.sleep(3000);
-			driver.navigate().to("https://www.netmeds.com/");
+			driver.navigate().to("https://s1-meds.netmeds.com/");
 
 			Thread.sleep(3000);
 			btncli(m.getUpload_cta());
@@ -501,22 +502,11 @@ public class OrderSucesspage extends BaseClass {
 			type(mm.getUpload_Rx(), "C:\\Users\\NMSLAP356\\Desktop\\Screen-Net\\M2 Pay");
 			Thread.sleep(3000);
 			*/
-			btncli(m.getPast_Rx());
+			WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
+
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
 			Thread.sleep(3000);
-			
-			if (driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")).isSelected()) {
-				 System.out.println("Prescription already Selected with Past RX");
-			} else {
-				btncli(driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")));
-			
-			}
-		//	btncli(driver.findElement(By.xpath("//input[@name='m2pastVerifiedRx']")));
-			Thread.sleep(3000);
-			
-			
-			btncli(driver.findElement(By.xpath("(//button[@class='close'])[2]")));
-			Thread.sleep(3000);
-			logger.log(Status.PASS, "Added the Past RX Prescription" );
+			logger.log(Status.PASS, "Prescription added successfully");
 			
 			
 		
@@ -558,7 +548,7 @@ public class OrderSucesspage extends BaseClass {
 		////////////////////////////// Promo code Check
 			 Thread.sleep(3000);
 			 String Pcode = m.getM2_CoupCode_text().getText();
-			 System.out.println(Pcode); 
+			 System.out.println(Pcode); 	
 			
 			 
 			btncli(m.getConfirm_Order_cta());
@@ -626,9 +616,9 @@ public class OrderSucesspage extends BaseClass {
 					
 					System.out.println(m.getInvite_friends().getText());
 					
-					SoftAssert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
+				//	SoftAssert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 					
-					System.out.println(m.getOffer_code().getText());
+					//System.out.println(m.getOffer_code().getText());
 					
 					SoftAssert.assertEquals(gettext(m.getShare_with_friends()),"Tap to share Code with your friends");
 					
@@ -687,7 +677,7 @@ public class OrderSucesspage extends BaseClass {
 				// Step 2 :Login with user name and password//
 				btncli(m.getSignin());
 				Thread.sleep(5000);
-				type(m.getMobileno(), "8072281468");
+				type(m.getMobileno(), "7200016627");
 				Thread.sleep(3000);
 				btncli(m.getUsepwdbtn());
 				Thread.sleep(3000);
@@ -791,12 +781,15 @@ public class OrderSucesspage extends BaseClass {
 
 			WebElement upload = driver.findElement(By.xpath("//input[@accept='image/png,image/gif,image/jpeg']"));
 
-			upload.sendKeys("D:\\Automation\\Prescription\\M3Subscription.png");
-			Thread.sleep(3000);
+			upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
+			Thread.sleep(5000);
 			logger.log(Status.PASS, "Prescription added successfully");
 
 			// Step 11 : select duration//
+			
+			
 			btncli(m.getSelectDuration());
+			Thread.sleep(3000);
 			btncli(m.getSelectduration60());
 			Thread.sleep(2000);
 			logger.log(Status.PASS, "Duration has been selected successfully");
@@ -849,8 +842,7 @@ public class OrderSucesspage extends BaseClass {
 			String Actual_pharmacists_verfication = m.getPharmacists_verfication().getAttribute("innerText");
 				
 			
-			String Original__pharmacists_verfication ="Our pharmacists are verifying your prescription(s).IMPORTANT UPDATE : Due to the current Covid 19 situation, we cannot commit to our mentioned delivery dates. We are working hard to meet the unprecedented demand and we thank you for your patience.";
-		
+			String Original__pharmacists_verfication ="Our pharmacists are verifying your prescription(s).";
 			Assert.assertTrue(Actual_pharmacists_verfication.contains(Original__pharmacists_verfication));
 			
 			System.out.println(Actual_pharmacists_verfication);
@@ -875,7 +867,7 @@ public class OrderSucesspage extends BaseClass {
 				
 				Thread.sleep(3000);
 				
-				SoftAssert  SoftAssert = new SoftAssert();
+				/*SoftAssert  SoftAssert = new SoftAssert();
 				
 				SoftAssert.assertEquals(gettext(m.getGrab_text()),"GRAB YOUR");
 				
@@ -897,7 +889,7 @@ public class OrderSucesspage extends BaseClass {
 				
 				System.out.println(m.getShare_with_friends().getText());
 				
-				SoftAssert.assertAll();
+				SoftAssert.assertAll();*/
 				
 				WebElement rateexp = m.getRate_your_exp();// driver.findElement(By.xpath("//div[.=\"RATE YOUR EXPERIENCE\"]"));
 				
@@ -937,7 +929,7 @@ public class OrderSucesspage extends BaseClass {
 				
 				System.out.println(share.getText());*/
 				
-				m.getShare_with_friends().click();
+				/*m.getShare_with_friends().click();
 				
 				Thread.sleep(3000);
 				
@@ -947,7 +939,7 @@ public class OrderSucesspage extends BaseClass {
 				
 				driver.findElement(By.xpath("//div[@class=\"rating cursor-pointer d-none d-sm-block ng-star-inserted\"]")).click();
 				
-				//List <WebElement> Star = driver.findElements(By.xpath("//input[@name=\"star\"]"));
+				//List <WebElement> Star = driver.findElements(By.xpath("//input[@name=\"star\"]"));*/
 				
 				/*int star_rating = Star.size();
 				System.out.println(star_rating);
@@ -957,6 +949,9 @@ public class OrderSucesspage extends BaseClass {
 					Star.get(i).click();
 					
 				}*/
+				
+				
+				driver.findElement(By.xpath("//div[@class=\"rating cursor-pointer d-none d-sm-block ng-star-inserted\"]")).click();
 				Thread.sleep(3000);
 				btncli(m.getStar1());
 				Thread.sleep(2000);
@@ -1060,11 +1055,11 @@ public class OrderSucesspage extends BaseClass {
 
 	}
 
-@AfterTest
-	private void quitbrowser() {
-		report.flush();
+//@AfterTest
+	//private void quitbrowser() {
+		//report.flush();
 
-		 driver.quit();
+		// driver.quit();
 	}
 
-}
+

@@ -66,7 +66,7 @@ public class Monepom extends BaseClass {
 	private WebElement minicart;
 	@FindBy(xpath="//div[@class='process-checkout']")
 	private WebElement proceedbutton;
-	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']/button")
+	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']/button|//button[@class=\"btn-checkout btn btn_to_checkout m-0 ng-star-inserted\"]")
 	private WebElement paybutton;
 	@FindBy(xpath="//span[@class='title col-md-4']")
 	private WebElement paydeatailText;
@@ -151,7 +151,7 @@ public class Monepom extends BaseClass {
 		return mysubscriptionpage;
 	}
 	
-	@FindBy(xpath="//button[contains(text(),\"CREATE NEW REFILL\")]")
+	@FindBy(xpath="//button[contains(text(),\"CREATE NEW REFILL\")]|//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")
 	private WebElement createnewfill;
 	
 	public WebElement getCreatenewfill() {
@@ -164,7 +164,7 @@ public class Monepom extends BaseClass {
 	public WebElement getM3productsearch() {
 		return m3productsearch;
 	}
-	@FindBy(xpath ="//a[normalize-space()='View cart']")
+	@FindBy(xpath ="//a[normalize-space()='View cart']|//a[@class =\"view-subscription\"]")
 	private WebElement viewcart;
 	
 	public WebElement getViewcart() {
@@ -189,7 +189,7 @@ public class Monepom extends BaseClass {
 		return subscribe;
 	}
 	
-	@FindBy(xpath = "//button[contains(text(),\"Select Duration\")]")
+	@FindBy(xpath = "//button[contains(text(),\"Select Duration\")]|//button[.=\"Schedule Delivery\"]")
 	private WebElement SelectDuration;
 	public WebElement getSelectDuration() {
 		return SelectDuration;
@@ -252,7 +252,7 @@ public class Monepom extends BaseClass {
 		return Deleteaddress;
 	}
 	
-	@FindBy(xpath ="(//button[contains(.,'My Subscription')])[2]")
+	@FindBy(xpath ="(//button[contains(.,'My Subscription')])[2]|(//button[.=\"My Subscription\"])[2]")
 	private WebElement mysubscription;
 	public WebElement getMysubscription() {
 		return mysubscription;
@@ -725,7 +725,7 @@ public class Monepom extends BaseClass {
 	public WebElement getSimplerway_txt() {
 		return simplerway_txt;
 	}
-	@FindBy (xpath = "//h4[.=\"Invite your friends and family\"]")
+	@FindBy (xpath = "//h4[.=\"Invite your friends and family\"]|//h4[.=\"Invite your friends and families\"]")
 	private WebElement invite;
 	public WebElement getInvite() {
 		return invite;
@@ -767,7 +767,7 @@ public class Monepom extends BaseClass {
 		return yourreferralcode;
 	}
 	
-	@FindBy(xpath = "//div[.=\"TEST1932\"]")
+	@FindBy(xpath = "//div[.=\"TEST1932\"]|//div[.=\"Infinite\"]")
 	private WebElement yourreferralcodenumber;
 	public WebElement getYourreferralcodenumber() {
 		return yourreferralcodenumber;
@@ -2256,6 +2256,267 @@ public class Monepom extends BaseClass {
 				public List<WebElement> getLinks() {
 					return Links;
 				}
+				
+				
+				
+				//////////////////////////////////////////////////////////////////////////
+				////////////////  HOME PAGE ELEMEMT   /////////////////////////////
+				
+				
+				
+
+				 @FindBy(xpath="(//a[text()=' Sign in / Sign up '])")
+				    private WebElement login;
+					
+					@FindBy(xpath="//button[contains(text(),'USE PASSWORD')]")
+					private WebElement click;
+					
+					@FindBy(id = "loginfirst_mobileno")
+					private WebElement Mobilenos;  
+					
+					@FindBy(id="login_received_pwd" )
+					private WebElement pwd;
+					
+					@FindBy(xpath = "(//button[contains(text(),'Sign in')])")
+					private WebElement sign;
+					
+					@FindBy(xpath="//a[text()=' Medicine']")
+					private WebElement medi;
+					
+					@FindBy(xpath = "(//a[@href='/prescriptions'][1])")
+					private WebElement allmedi;
+					
+					@FindBy(xpath ="(//a[@href='/customer/buyagain'])" )
+					private WebElement buyagain;
+					
+					@FindBy(xpath = "//a[@class='logo']")
+					private WebElement logo;
+					
+					@FindBy(xpath = "(//a[@class='h-pro'])")
+					private WebElement wellness;
+					
+					@FindBy(xpath = "(//a[text()='Lab Tests'][1])")
+					private WebElement labtest;
+					
+					@FindBy(xpath = "(//a[text()='Beauty'][1])")
+					private WebElement beauty;
+					
+					@FindBy(xpath = "(//a[text()='Body Care'])")
+					private WebElement bodycare;
+					
+					@FindBy(xpath ="(//a[text()='Face Care'])")
+					private WebElement facecare;
+					
+					@FindBy(xpath = "(//a[text()='Fragrances'])")
+					private WebElement fragnance;
+					
+					@FindBy(xpath = "(//a[text()='Hands and Feet'])")
+					private WebElement handfeet;
+					
+					@FindBy(xpath = "(//a[text()='Home Care'])")
+					private WebElement homecare;
+					
+					@FindBy(xpath = "(//a[text()='Eye Care'])")
+					private WebElement eyecare;
+					
+					@FindBy(linkText = "Men's Care")
+					private WebElement menscare;
+					
+					@FindBy(xpath = "(//a[text()='Senior Care'])")
+					private WebElement seniorcare;
+					
+					@FindBy(xpath = "//a[text()=' Health Corner']")
+					private WebElement healthcorner;
+					
+					@FindBy(xpath = "//a[contains(text(),'Health Library')]")
+					private WebElement healthlib;
+					
+					@FindBy(xpath = "//a[contains(text(),'PatientsAlike')]")
+					private WebElement patients;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][1]")
+					private WebElement catordermed;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][2]")
+					private WebElement catbeaut;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][3]")
+					private WebElement catwellness;
+					
+					@FindBy(xpath = "(//div[@class='slide-section'])[1]")
+					private WebElement paytm;
+					
+					@FindBy(xpath = "(//div[@class='slide-section'])[2]")
+					private WebElement mobiqwik;
+					
+					@FindBy(xpath = "//div[@class='cat-list'][3]")
+					private WebElement simpl;
+					
+					@FindBy(xpath = "//a[text()=' View All '][1]")
+					private WebElement payviewll;
+					
+					@FindBy(xpath = "//input[@value='medicine']")
+					private WebElement chkmed;
+					
+					@FindBy(xpath = "//input[@value='diagnostics']")
+					private WebElement chkdiag;
+					
+					@FindBy(xpath = "//input[@value='consultation']")
+					private WebElement chckconsult;
+					
+					@FindBy(xpath = "//span[text()=' Deliver to ']")
+					private WebElement deliver;
+					
+					@FindBy(xpath = "//input[@placeholder='Enter Pincode']")
+					private WebElement pincode;
+
+					public WebElement getLogin() {
+						return login;
+					}
+
+					public WebElement getClick() {
+						return click;
+					}
+
+					public WebElement getPwd() {
+						return pwd;
+					}
+
+					public WebElement getSign() {
+						return sign;
+					}
+
+					public WebElement getMedi() {
+						return medi;
+					}
+
+					public WebElement getAllmedi() {
+						return allmedi;
+					}
+
+					public WebElement getBuyagain() {
+						return buyagain;
+					}
+
+					public WebElement getLogo() {
+						return logo;
+					}
+
+					public WebElement getWellness() {
+						return wellness;
+					}
+
+					public WebElement getLabtest() {
+						return labtest;
+					}
+
+					public WebElement getBeauty() {
+						return beauty;
+					}
+
+					public WebElement getBodycare() {
+						return bodycare;
+					}
+
+					public WebElement getFacecare() {
+						return facecare;
+					}
+
+					public WebElement getFragnance() {
+						return fragnance;
+					}
+
+					public WebElement getHandfeet() {
+						return handfeet;
+					}
+
+					public WebElement getHomecare() {
+						return homecare;
+					}
+
+					public WebElement getEyecare() {
+						return eyecare;
+					}
+
+					public WebElement getMenscare() {
+						return menscare;
+					}
+
+					public WebElement getSeniorcare() {
+						return seniorcare;
+					}
+
+					public WebElement getHealthcorner() {
+						return healthcorner;
+					}
+
+					public WebElement getHealthlib() {
+						return healthlib;
+					}
+
+					public WebElement getPatients() {
+						return patients;
+					}
+
+					public WebElement getCatordermed() {
+						return catordermed;
+					}
+
+					public WebElement getCatbeaut() {
+						return catbeaut;
+					}
+
+					public WebElement getCatwellness() {
+						return catwellness;
+					}
+
+					public WebElement getPaytm() {
+						return paytm;
+					}
+
+					public WebElement getMobiqwik() {
+						return mobiqwik;
+					}
+
+					public WebElement getSimpl() {
+						return simpl;
+					}
+
+					public WebElement getPayviewll() {
+						return payviewll;
+					}
+
+					public WebElement getChkmed() {
+						return chkmed;
+					}
+
+					public WebElement getChkdiag() {
+						return chkdiag;
+					}
+
+					public WebElement getChckconsult() {
+						return chckconsult;
+					}
+
+					public WebElement getDeliver() {
+						return deliver;
+					}
+
+					public WebElement getPincode() {
+						return pincode;
+					}
+
+
+					public WebElement getMobilenos() {
+						return Mobilenos;
+					}
+
+					
+
+					
+					
+////////////////////////////////////////////////////
+				
 				
 				
 

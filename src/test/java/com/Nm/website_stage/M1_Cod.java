@@ -99,11 +99,11 @@ public class M1_Cod extends BaseClass {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), "8072281468");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), "test@123");
 			btncli(m.getSignInpage());
 		
 
@@ -139,7 +139,7 @@ public class M1_Cod extends BaseClass {
 		//////////////////////////
 
 		Thread.sleep(3000);
-		for (int i = 0; i < 3; i++) {
+		for (int i = 9; i < 13; i++) {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
 			r.keyPress(KeyEvent.VK_ENTER);
@@ -246,7 +246,7 @@ public class M1_Cod extends BaseClass {
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 						
 						Thread.sleep(3000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[11]")));
 						
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());
@@ -318,11 +318,11 @@ public class M1_Cod extends BaseClass {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), "8072281468");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), "test@123");
 			btncli(m.getSignInpage());
 		
 		} catch (Exception e) {
@@ -360,10 +360,11 @@ public class M1_Cod extends BaseClass {
 		//////////////////////////
 
 		Thread.sleep(3000);
-		for (int i = 3; i < 6; i++) {
+		for (int i = 7; i < 13; i++) {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
 			r.keyPress(KeyEvent.VK_ENTER);
+			
 			r.keyRelease(KeyEvent.VK_ENTER);
 			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully Added  " + BaseClass.getExcelData("COD_Check", i, 0));
@@ -467,7 +468,7 @@ public class M1_Cod extends BaseClass {
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 						
 						Thread.sleep(3000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[11]")));
 						
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());

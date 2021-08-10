@@ -90,11 +90,11 @@ public class Youraccount extends BaseClass {
 
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8072281468");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
-			type(m.getPassword(), "test@123");
+			type(m.getPassword(), "Change@92");
 			btncli(m.getSignInpage());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
@@ -661,11 +661,11 @@ public class Youraccount extends BaseClass {
 			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8072281468");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(m.getUsepwdbtn());
 			Thread.sleep(3000);
-			type(m.getPassword(), "test@123");
+			type(m.getPassword(), "Change@92");
 			btncli(m.getSignInpage());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
@@ -708,14 +708,14 @@ public class Youraccount extends BaseClass {
 
 		SoftAssert.assertEquals(gettext(m.getSimplerway_txt()), "A simpler way to earn and get discounts");
 
-		SoftAssert.assertEquals(gettext(m.getInvite()), "Invite your friends and family");
+		SoftAssert.assertEquals(gettext(m.getInvite()), "Invite your friends and families");
 
 		SoftAssert.assertEquals(gettext(m.getShare_netemed_app_txt()),
 				"share the Netmeds app download link & Referral code with your friends and family");
 
 		SoftAssert.assertEquals(gettext(m.getYouget_txt()), "You get");
 
-		SoftAssert.assertEquals(gettext(m.getNMSSupercash_txt()), "NMS SuperCash");
+		//SoftAssert.assertEquals(gettext(m.getNMSSupercash_txt()), "NMS SuperCash");
 
 		SoftAssert.assertEquals(gettext(m.getYourfrndsget_txt()), "Your Friends Get");
 
@@ -732,7 +732,7 @@ public class Youraccount extends BaseClass {
 
 		String Actualreferralcodenumber = m.getYourreferralcodenumber().getText();
 
-		String Originalreferralcodenumber = "TEST1932";
+		String Originalreferralcodenumber = "Infinite";
 
 		Assert.assertEquals(Actualreferralcodenumber, Originalreferralcodenumber);
 
@@ -1123,11 +1123,11 @@ public class Youraccount extends BaseClass {
 
 	}
 
-	@AfterTest
-	private void quitbrowser() {
-		report.flush();
+//	@AfterTest
+//	private void quitbrowser() {
+//		report.flush();
 
-		driver.quit();
+//		driver.quit();
 	}
 
-}
+

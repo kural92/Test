@@ -62,7 +62,7 @@ public class Linkedaccounts extends BaseClass {
 	 */
 		
 //*******************************************************************Payment Method Test Case 1 ******************************************************************//
-	@Test(enabled = true) 
+	@Test(enabled = false) 
 	public void LinkedAccountsScenario1() throws Throwable {
 
 		logger = report.createTest(" Linked Accounts Scenario1");
@@ -267,11 +267,12 @@ public class Linkedaccounts extends BaseClass {
 
 					btncli(m.getSignin());
 					Thread.sleep(5000);
-					type(m.getMobileno(), "9677159095");
+					type(m.getMobileno(), "9841648772");
 					Thread.sleep(3000);
 					btncli(m.getUsepwdbtn());
 					Thread.sleep(3000);
-					type(m.getPassword(), "test4nm");
+					type(m.getPassword(), "netmeds2020");
+					Thread.sleep(3000);
 					btncli(m.getSignInpage());
 					Thread.sleep(3000);
 					logger.log(Status.PASS, "Successfully navigate to home page");

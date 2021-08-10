@@ -94,11 +94,11 @@ try {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), "Change@92");
 			btncli(m.getSignInpage());
 		
 } catch (Exception e) {
@@ -278,11 +278,11 @@ try {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), "7010752043");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), "Change@92");
 			btncli(m.getSignInpage());
 } catch (Exception e) {
 	

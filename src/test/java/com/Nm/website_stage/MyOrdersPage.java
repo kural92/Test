@@ -107,13 +107,13 @@ static String totalamt;
 		btncli(m.getSignin());
 		Thread.sleep(5000);
 
-		type(m.getMobileno(), "8072281468");
+		type(m.getMobileno(), "7010752043");
 		Thread.sleep(3000);
 
 		//btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 		btncli(m.getUsepwdbtn());
 		Thread.sleep(3000);
-		type(m.getPassword(), "test@123");
+		type(m.getPassword(), "Change@92");
 
 		btncli(m.getSignInpage());
 		Thread.sleep(3000);

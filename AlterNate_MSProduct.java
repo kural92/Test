@@ -1,4 +1,4 @@
-package com.Nm.website_stage;
+package com.Nm.Website;
 
 import java.awt.Robot;
 import java.io.File;
@@ -10,15 +10,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -51,6 +47,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 
 
+
 public class AlterNate_MSProduct extends BaseClass{
 	
 	static String amt;
@@ -58,7 +55,6 @@ public class AlterNate_MSProduct extends BaseClass{
 	ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
-		
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
@@ -96,11 +92,11 @@ public class AlterNate_MSProduct extends BaseClass{
 		 driver.manage().window().maximize();
 		 btncli(m.getSignin());
 		  Thread.sleep(5000);
-		  type(m.getMobileno(),"7010752043");
+		  type(m.getMobileno(),"8098882244");
 		  Thread.sleep(3000);
 		  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 		  Thread.sleep(3000);
-		  type(m.getPassword(),"Change@92"); 
+		  type(m.getPassword(),"Netmeds123"); 
 		  btncli(m.getSignInpage());
 		  
 		  //////////////////////
@@ -109,7 +105,7 @@ public class AlterNate_MSProduct extends BaseClass{
 /////////////  Remove Product //
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
+		driver.navigate().to("https://www.netmeds.com/checkout/cart");
 		Thread.sleep(3000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
@@ -131,7 +127,7 @@ public class AlterNate_MSProduct extends BaseClass{
 		
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://s1-meds.netmeds.com/");
+		driver.navigate().to("https://www.netmeds.com/");
 
 		//////////////////////////
 		  
@@ -359,7 +355,7 @@ public class AlterNate_MSProduct extends BaseClass{
 	private void quitbrowser() {
 		report.flush();
 		
-    //  driver.quit();
+      driver.quit();
 	}
 
 }

@@ -85,7 +85,7 @@ static String totalamt;
 		*/
 
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void cartpagescenarioone() throws Throwable {
 
 		logger = report.createTest("cartpage scenario one ");
@@ -517,7 +517,7 @@ static String totalamt;
 
 		
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void carpagescenariotwo() throws Throwable {
 
 		logger = report.createTest("cartpage scenario two");
@@ -838,7 +838,7 @@ static String totalamt;
 
 			
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
@@ -1142,7 +1142,7 @@ static String totalamt;
 //******************************Test case 4: Verify Cart page when NMS wallet cash used*****************************************************************
 				
 				
-				@Test(enabled = true)
+				@Test(enabled = true,priority = 1)
 				public void carpagescenariofour() throws Throwable {
 
 					logger = report.createTest("cartpage scenario four");
@@ -1154,11 +1154,11 @@ static String totalamt;
 
 					btncli(m.getSignin());
 					Thread.sleep(5000);
-					type(m.getMobileno(), "8072281468");
+					type(m.getMobileno(), "9841648772");
 					Thread.sleep(3000);
 					btncli(m.getUsepwdbtn());
 					Thread.sleep(3000);
-					type(m.getPassword(), "test@123");
+					type(m.getPassword(), "netmeds2020");
 					btncli(m.getSignInpage());
 					Thread.sleep(3000);
 					logger.log(Status.PASS, "Successfully navigate to home page");

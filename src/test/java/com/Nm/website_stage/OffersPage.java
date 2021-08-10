@@ -191,7 +191,7 @@ public class OffersPage extends BaseClass {
 			System.out.println("Coupon code was sucessfully applied");
 			driver.navigate().back();
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[5]")).click();
+			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[1]")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
 			Thread.sleep(3000);
@@ -207,7 +207,7 @@ public class OffersPage extends BaseClass {
 			
 			btncli(m.getConsultation_checkbox());
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[5]")).click();
+			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[4]")).click();
 			
 			System.out.println("Coupon related to consultation offer was sucessfully opened");
 			Thread.sleep(3000);
@@ -218,7 +218,7 @@ public class OffersPage extends BaseClass {
 			btncli(m.getDiagnostics_checkbox());
 			Thread.sleep(3000);
 	
-			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[5]")).click();
+			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[4]")).click();
 			Thread.sleep(3000);
 			
 			Thread.sleep(3000);
@@ -272,13 +272,13 @@ public class OffersPage extends BaseClass {
 
 		}	
 
-	@AfterTest
-		private void quitbrowser() {
-		report.flush();
-			driver.quit();
+//	@AfterTest
+//		private void quitbrowser() {
+//		report.flush();
+//			driver.quit();
 			
 	}			
 	
-}
+
 
 
