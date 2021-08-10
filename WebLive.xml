@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.Nm.Website_live.NetmedsHomepage"/>
+      <class name="com.Nm.Website_live.Uploadprescriptioncheck"/>
+      <class name="com.Nm.Website_live.CartPage"/>
+  
+      <class name="com.Nm.Website_live.OrderSucesspage"/>
+      <class name="com.Nm.Website_live.AlterNate_MSProduct"/>
+      <class name="com.Nm.Website_live.Linkedaccounts"/>
+      <class name="com.Nm.Website_live.M3_Subscription"/>
+      <class name="com.Nm.Website_live.M1_Cod"/>
+      <class name="com.Nm.Website_live.ColdStorage"/>
+      <class name="com.Nm.Website_live.PDP_Combo"/>
+      
+      <class name="com.Nm.Website_live.Cod_ProcessingCheck"/>
+      <class name="com.Nm.Website_live.LoginTest"/>
+      <class name="com.Nm.Website_live.Youraccount"/>
+      <class name="com.Nm.Website_live.M2_Flow_Search"/>
+      <class name="com.Nm.Website_live.NeetmedsFirst"/>
+      <class name="com.Nm.Website_live.Paymentpage"/>
+      <class name="com.Nm.Website_live.GuestCartLogin"/>
+      <class name="com.Nm.Website_live.OrderReview"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

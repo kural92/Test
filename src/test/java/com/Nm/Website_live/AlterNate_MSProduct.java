@@ -1,3 +1,4 @@
+
 package com.Nm.Website_live;
 
 import java.awt.Robot;
@@ -204,6 +205,8 @@ public class AlterNate_MSProduct extends BaseClass{
 		}
 
 		//////////////////////////////////
+		Thread.sleep(5000);
+		js.executeScript("window.scrollTo(600,0)");
 		
 		//Adding most Selling Product from cart page
 		Thread.sleep(3000);
@@ -354,7 +357,7 @@ public class AlterNate_MSProduct extends BaseClass{
 	private void quitbrowser() {
 		report.flush();
 		
-      driver.quit();
+  //    driver.quit();
 	}
 
 }
