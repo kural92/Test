@@ -634,7 +634,7 @@ public class Monepom extends BaseClass {
 	private WebElement home_BasicHealthCheckup;
 	@FindBy(xpath="//p[text()='only with 12 month plan']")
 	private WebElement home_only_with_12_month_plan;
-	@FindBy(xpath="//h5[text()='Additional 5% off on Pathology Lab Tests']")
+	@FindBy(xpath="//h5[text()='Additional 5% off on Pathology Lab Tests']|//h5[text()='Additional 5% off on Lab Tests']")
 	private WebElement home_Additional_5_off_on_Pathology_Lab_Tests;
 	@FindBy(xpath="//h5[text()='Free Unlimited Consultation']")
 	private WebElement home_Free_Unlimited_Consultation;

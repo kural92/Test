@@ -69,7 +69,7 @@ public class Paymentpage extends BaseClass{
 	type(m.getMobileno(),"9677159095");
 	btncli(m.getPass());
 	Thread.sleep(3000);
-	type(m.getPassword(),"test4nm");
+	type(m.getPassword(),"test4nmm");
 	btncli(m.getSignInpage());
 	Thread.sleep(3000);
 	logger.log(Status.PASS, "Successfully navigate to home page" );
@@ -154,7 +154,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	logger.log(Status.FAIL, "amazon pay decline scenario is verified " );
 
 	Thread.sleep(3000);
-	scrolldown("400");
+	scrolldown("500");
 	btncli(m.getFreecharge_pay());
 	/*Thread.sleep(3000);
 	btncli(m.getFREECHARGE_paybutton());
@@ -175,7 +175,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	} catch (Exception e) {
 		// TODO: handle exception
 	}
-	scrolldown("600");
+	//scrolldown("600");
 	Thread.sleep(3000);
 	btncli(m.getPhonepe_pay());
 	Thread.sleep(3000);
@@ -287,10 +287,10 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	try {
 	btncli(m.getSignin());
 	Thread.sleep(5000);
-	type(m.getMobileno(),"9677159095");
+	type(m.getMobileno(),"9841648772");
 	btncli(m.getPass());
 	Thread.sleep(3000);
-	type(m.getPassword(),"test4nm");
+	type(m.getPassword(),"netmeds2020");
 	btncli(m.getSignInpage());
 	}catch (Exception e) {
 		System.out.println("alredy logged in");

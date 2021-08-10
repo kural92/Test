@@ -83,10 +83,10 @@ public class OrderReview extends BaseClass {
 		try {
 		btncli(m.getSignin());
 		Thread.sleep(5000);
-		type(m.getMobileno(),"9677159095");
+		type(m.getMobileno(),"9841648772");
 		btncli(m.getPass());
 		Thread.sleep(3000);
-		type(m.getPassword(),"test4nm");
+		type(m.getPassword(),"netmeds2020");
 		btncli(m.getSignInpage());
 		}catch (Exception e) {
 			System.out.println("alredy logged in");
