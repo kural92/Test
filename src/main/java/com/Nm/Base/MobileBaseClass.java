@@ -46,38 +46,26 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-public class BaseClass {
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class MobileBaseClass {
+
 	
 	public static ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
 
 
-<<<<<<< HEAD
-		public static  String production_homeurl="https://www.netmeds.com";
-
-	//	public static  String production_homeurl="https://www.netmeds.com/";
-=======
 		public static  String production_homeurl="https://www.netmeds.com/";
->>>>>>> 8c763ac315449dc4a565821488bc49b90dacd6ba
 
 	//	public static  String production_homeurl="https://s1-meds.netmeds.com/";
 
 
 
-	public static WebDriver driver=null;
-	@BeforeClass
-	public WebDriver launchbrowser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Driver//chromedriver.exe");
-		
-		ChromeOptions options = new ChromeOptions();
-	//	options.addArguments("--headless", "--window-size=1920,1200");
-		driver=new ChromeDriver(options);
-		driver.manage().window().maximize();
-		driver.get(production_homeurl);
-		
-		return driver;
-	}
+	public static AndroidDriver driver = null;
+	
 	public void loadurl(String url) {
 	driver.get(url);
 	}
@@ -491,6 +479,6 @@ Date date=new Date();
 
 }
 
+ 
 
 }
-

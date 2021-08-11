@@ -309,9 +309,10 @@ static String totalamt;
 		
 //open the item from most selling product page and add the item to the cart though PDG page"
 		
-		driver.findElement(By.xpath("(//a[@class=\"productname\"])[3]")).click();
+		driver.findElement(By.xpath("(//a[@class=\"productname\"])[2]")).click();
 		Thread.sleep(3000);
 		System.out.println("Successfully naviagted to PD page");
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//button[@id=\"product-addtocart-button\"])[1]")).click();
 		System.out.println("Successfully item added to the cart");
 		Thread.sleep(3000);
