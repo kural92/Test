@@ -68,7 +68,7 @@ public class BaseClass {
 	public static WebDriver driver=null;
 	@BeforeClass
 	public WebDriver launchbrowser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Driver//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
 		
 		ChromeOptions options = new ChromeOptions();
 	//	options.addArguments("--headless", "--window-size=1920,1200");
