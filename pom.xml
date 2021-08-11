@@ -24,7 +24,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<!-- TestNG suite XML files -->
-						<suiteXmlFile>D:\Automation\M3subscription.xml</suiteXmlFile>
+						<suiteXmlFile>D:\Eclipse\Automation\testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
