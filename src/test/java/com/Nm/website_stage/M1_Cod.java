@@ -23,6 +23,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -86,7 +87,7 @@ public class M1_Cod extends BaseClass {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 		logger = report.createTest("M1 Flow To Check Payment Method");
@@ -305,7 +306,7 @@ public class M1_Cod extends BaseClass {
 	
 	
 
-	@Test(priority = 2)
+	@Test(priority = 2,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check_5000() throws Throwable {
 		
 		logger = report.createTest("M1 Flow To Check Payment Method");

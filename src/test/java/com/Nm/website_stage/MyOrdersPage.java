@@ -19,6 +19,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -92,7 +93,7 @@ static String totalamt;
 				*/
 //**************************************************My Orders page****************************************************************************************
 	
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void MyOrdersPage() throws Throwable {
 		
 		

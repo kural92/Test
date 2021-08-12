@@ -72,7 +72,7 @@ public class OrderSucesspage extends BaseClass {
 	 */
 		
 //*******************************************************************Order Sucess Page M1******************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public  void OrderSucessPageM1() throws Throwable  {
 		logger =  report.createTest(" OrderSucessPageM1");
 		logger.log(Status.PASS, "*************OrderSucessPageM1********************" );
@@ -436,7 +436,7 @@ public class OrderSucesspage extends BaseClass {
 		//**************************************************Order Success Page M2****************************************************************************************
 		
 		
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public  void OrderSuccessPageM2() throws Throwable  {
 			logger =  report.createTest("OrderSuccessPageM2");
 			logger.log(Status.PASS, "************* OrderSuccessPageM2********************" );
@@ -672,7 +672,7 @@ public class OrderSucesspage extends BaseClass {
 	}	
 	
 		//*******************************************************************OrderSucessPageM3******************************************************************//
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void OrderSucessPageM3() throws Throwable {
 
 			logger = report.createTest(" Order Sucess Page M3");

@@ -92,7 +92,7 @@ static String totalamt;
 				*/
 //**************************************************My Orders page****************************************************************************************
 	
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void MyOrdersPage() throws Throwable {
 		
 		

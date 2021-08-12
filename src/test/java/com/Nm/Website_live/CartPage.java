@@ -85,7 +85,7 @@ static String totalamt;
 		*/
 
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void cartpagescenarioone() throws Throwable {
 
 		logger = report.createTest("cartpage scenario one ");
@@ -205,7 +205,7 @@ static String totalamt;
 //qty increase//
 		
 		Select qtyincrease = new Select(m.getQty_Incr_Decr());
-		qtyincrease.selectByIndex(17);
+		qtyincrease.selectByVisibleText("10");
 		Thread.sleep(5000);
 		
 		
@@ -245,7 +245,7 @@ static String totalamt;
 // Step : Decrease qty//
 
 		Select qtydecrease = new Select(m.getQty_Incr_Decr());
-		qtydecrease.selectByIndex(11);
+		qtydecrease.selectByVisibleText("8");
 		Thread.sleep(3000);
 		
 		logger.log(Status.PASS, " quantity decreased Successfully");
@@ -518,7 +518,7 @@ static String totalamt;
 
 		
 
-	@Test(enabled = false)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariotwo() throws Throwable {
 
 		logger = report.createTest("cartpage scenario two");
@@ -819,7 +819,7 @@ static String totalamt;
 				 }
 //header Menu validation//
 
-				btncli(m.getNetmedshome());
+				driver.navigate().to("https://www.netmeds.com");
 				Thread.sleep(3000);
 				btncli(m.getMinicart());
 				Thread.sleep(3000);
@@ -839,7 +839,7 @@ static String totalamt;
 
 			
 
-	@Test(enabled = false)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
@@ -1143,7 +1143,7 @@ static String totalamt;
 //******************************Test case 4: Verify Cart page when NMS wallet cash used*****************************************************************
 				
 				
-				@Test(enabled = false)
+				@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 				public void carpagescenariofour() throws Throwable {
 
 					logger = report.createTest("cartpage scenario four");

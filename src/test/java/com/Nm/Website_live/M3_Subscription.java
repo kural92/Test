@@ -80,7 +80,7 @@ public class M3_Subscription extends BaseClass {
 	
 	
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -292,7 +292,7 @@ public class M3_Subscription extends BaseClass {
 	// *********************************************M3 -Doctor consultation
 	// **********************************************************************************************//
 	
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
@@ -621,7 +621,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3RXflow() throws Throwable {
 
 		logger = report.createTest(" M3RXflow");
@@ -807,7 +807,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void pastrx() throws Throwable {
 
 		logger = report.createTest(" Pastrx");

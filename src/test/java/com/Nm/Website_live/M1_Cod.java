@@ -1,7 +1,5 @@
 package com.Nm.Website_live;
 
-import static org.testng.Assert.assertEquals;
-
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -10,6 +8,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -86,7 +85,7 @@ public class M1_Cod extends BaseClass {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 		logger = report.createTest("M1 Flow To Check Payment Method");
@@ -142,8 +141,11 @@ public class M1_Cod extends BaseClass {
 		for (int i = 0; i < 3; i++) {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
-			r.keyPress(KeyEvent.VK_ENTER);
-			r.keyRelease(KeyEvent.VK_ENTER);
+			
+			Thread.sleep(3000);
+			m.getSearch().sendKeys(Keys.ENTER);
+			//r.keyPress(KeyEvent.VK_ENTER);
+			//r.keyRelease(KeyEvent.VK_ENTER);
 			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully Added  " + BaseClass.getExcelData("COD_Check", i, 0));
 
@@ -305,7 +307,7 @@ public class M1_Cod extends BaseClass {
 	
 	
 
-	@Test(priority = 2)
+	@Test(priority = 2,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check_5000() throws Throwable {
 		
 		logger = report.createTest("M1 Flow To Check Payment Method");
@@ -363,8 +365,12 @@ public class M1_Cod extends BaseClass {
 		for (int i = 3; i < 6; i++) {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
-			r.keyPress(KeyEvent.VK_ENTER);
-			r.keyRelease(KeyEvent.VK_ENTER);
+			
+			Thread.sleep(3000);
+			m.getSearch().sendKeys(Keys.ENTER);
+			
+			//r.keyPress(KeyEvent.VK_ENTER);
+		//	r.keyRelease(KeyEvent.VK_ENTER);
 			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully Added  " + BaseClass.getExcelData("COD_Check", i, 0));
 
@@ -569,6 +575,7 @@ public class M1_Cod extends BaseClass {
 	    
 	    
 	Thread.sleep(3000);
+	
 	if (result.getStatus() == ITestResult.FAILURE) {
 		Thread.sleep(3000);
 	//	BaseClass.mail_report();
@@ -589,7 +596,7 @@ public class M1_Cod extends BaseClass {
 	private void quitbrowser() {
 		report.flush();
 		
- //     driver.quit();
+     driver.quit();
 	}
 
 

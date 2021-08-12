@@ -19,6 +19,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -80,7 +81,7 @@ public class PDP_Combo extends BaseClass{
 	
 	
 	
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void offersAvail() throws Throwable {
 		
 		
@@ -265,7 +266,7 @@ try {
 	
 	
 
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void ferquentlyBought() throws Throwable {
 
 	Monepom m = new Monepom();

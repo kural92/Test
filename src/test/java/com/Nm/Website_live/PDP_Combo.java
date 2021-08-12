@@ -7,6 +7,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -57,7 +58,7 @@ public class PDP_Combo extends BaseClass{
 	@BeforeTest(groups = { "forgetPassword", "sanity", "reg" })
 	public void startReport() {
 
-		htmlReporter = new ExtentHtmlReporter(".//report//GuestLogin.html");
+		htmlReporter = new ExtentHtmlReporter(".//Report//PDP_Combo.html");
 
 		// initialize ExtentReports and attach the HtmlReporter
 		report = new ExtentReports();
@@ -80,10 +81,12 @@ public class PDP_Combo extends BaseClass{
 	
 	
 	
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void offersAvail() throws Throwable {
 		
-		
+		logger = report.createTest("PDP COMBO and OFFERS ");
+		logger.log(Status.PASS, "************* PDP COMBO ********************");
+	
 		Monepom m = new Monepom();
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -135,11 +138,17 @@ try {
 		  
 		
 		// search
+		Thread.sleep(3000);
 		btncli(m.getSearch());
+		Thread.sleep(1000);
 		type(m.getSearch(),"Pro360");  //Pro360 //Horlicks
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		/*
+		 * r.keyPress(KeyEvent.VK_ENTER); r.keyRelease(KeyEvent.VK_ENTER);
+		 */
 		//btncli(m.getSearchIcon());
+		Thread.sleep(3000);
+	//	m.getSearch().sendKeys(Keys.ENTER);
+		
 		
 		Thread.sleep(5000);
 		btncli(m.getProduct_List());
@@ -265,8 +274,12 @@ try {
 	
 	
 
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void ferquentlyBought() throws Throwable {
+		
+		logger = report.createTest("PDP COMBO and OFFERS ");
+		logger.log(Status.PASS, "************* INDIVIDUAL BOUGHT TOGETHER ********************");
+	
 
 	Monepom m = new Monepom();
 		
@@ -333,15 +346,36 @@ try {
 		
 		if (fre.contains("FREQUENTLY BOUGHT TOGETHER")) {
 			
+			Thread.sleep(3000);
+			js.executeScript("arguments[0].scrollIntoView(true);", fre);
 			
 			Thread.sleep(3000);
+		//	acc.moveToElement(driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::button[contains(text(),'ADD TO CART')]"))).build().perform();
+			
+			
+			
+			
+			Thread.sleep(2000);
+			js.executeScript("window.scrollTo(0,200)");
+			Thread.sleep(1000);
 			btncli(driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::button[contains(text(),'ADD TO CART')]")));
+			
+			
 			
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("(//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::span[@class='clsgetname'])[2]")));
 			
-			Thread.sleep(3000);
-			btncli(driver.findElement(By.id("product-addtocart-button")));
+		
+			if (driver.findElements(By.id("product-addtocart-button")).size()==1) {
+				
+				Thread.sleep(3000);
+				btncli(driver.findElement(By.id("product-addtocart-button")));
+			} else {
+				
+				System.out.println("The Product is Out of Stock");
+
+			}
+			
 			
 		} else {
 			
@@ -362,8 +396,8 @@ try {
 	public void screenShot(ITestResult result) throws Throwable {
 		
 	    if(result.getStatus() == ITestResult.FAILURE) {
-	//    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
-	//    	logger.fail(result.getThrowable());
+	   	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
+	    	logger.fail(result.getThrowable());
 	    	try {
 				
 
@@ -371,8 +405,8 @@ try {
 				File src = screenshot.getScreenshotAs(OutputType.FILE);
 				FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
 				System.out.println("Successfully captured a screenshot");
-				//logger.log(Status.FAIL, result.getThrowable());
-	//			logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
+				logger.log(Status.FAIL, result.getThrowable());
+				logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
 			
 		
 				
@@ -383,14 +417,14 @@ try {
 	      }
 	 
 	    else if(result.getStatus() == ITestResult.SUCCESS) {
-	 //   	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
+	    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
 	    
 	    }
 	    else {
 	    
 	    	 // onFinish(context);
-	 //   	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
-	  //  	logger.skip(result.getThrowable());
+	    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
+	    	logger.skip(result.getThrowable());
 	    	report.removeTest(logger);
 	    }
 	    
@@ -412,7 +446,8 @@ try {
 
 	@AfterTest
 	private void quitbrowser() {
-	//	report.flush();
+	
+		report.flush();
 		
       driver.quit();
       

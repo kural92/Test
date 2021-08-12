@@ -14,7 +14,7 @@ public class NetmedsHomepage extends BaseClass {
 	
 	
 	
-@Test
+@Test(retryAnalyzer=RetryAnalyzer.class)
 public void homePage() throws Throwable {
 	// TODO Auto-generated method stub
 

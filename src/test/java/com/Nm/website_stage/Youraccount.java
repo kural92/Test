@@ -22,6 +22,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -75,7 +76,7 @@ public class Youraccount extends BaseClass {
 //Menu : Delivery Address//
 	
 	
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void DeliverAddressSection() throws Throwable {
 
 		logger = report.createTest("DeliverAddressSection");
@@ -194,7 +195,7 @@ public class Youraccount extends BaseClass {
 	// **************************************************************MY
 	// Wallet*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Mywallet() throws Throwable {
 
 		logger = report.createTest("Mywallet");
@@ -311,7 +312,7 @@ public class Youraccount extends BaseClass {
 	// **************************************************************Edit
 	// Profile*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Editprofile() throws Throwable {
 
 		logger = report.createTest("Editprofile");
@@ -442,7 +443,7 @@ public class Youraccount extends BaseClass {
 	// **************************************************************Contact
 	// Us*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void contactus() throws Throwable {
 
 		logger = report.createTest("contact");
@@ -550,7 +551,7 @@ public class Youraccount extends BaseClass {
 	}
 
 //********************************************* My prescription***************************************************************************************
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Myprescription() throws Throwable {
 
 		logger = report.createTest("Myprescription");
@@ -645,7 +646,7 @@ public class Youraccount extends BaseClass {
 	// **************************************************************refer and
 	// earn*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Referearn() throws Throwable {
 
 		logger = report.createTest("contact");
@@ -774,7 +775,7 @@ public class Youraccount extends BaseClass {
 	// **************************************************************Help
 	// Page*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Helppage() throws Throwable {
 
 		logger = report.createTest("Helppage");
@@ -878,7 +879,7 @@ public class Youraccount extends BaseClass {
 	// **************************************************************Rate
 	// Us*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void rateus() throws Throwable {
 
 		logger = report.createTest("Rateus");
@@ -986,7 +987,7 @@ public class Youraccount extends BaseClass {
 	// **************************************************************Legal
 	// Information*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Legalinformation() throws Throwable {
 
 		logger = report.createTest("Legalinformation");

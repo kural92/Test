@@ -62,7 +62,7 @@ public class Linkedaccounts extends BaseClass {
 	 */
 		
 //*******************************************************************Payment Method Test Case 1 ******************************************************************//
-	@Test(enabled = true) 
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class) 
 	public void LinkedAccountsScenario1() throws Throwable {
 
 		logger = report.createTest(" Linked Accounts Scenario1");
@@ -252,7 +252,7 @@ public class Linkedaccounts extends BaseClass {
 	
 		 
 //***********************************Payment Method Test Case 2************************************
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void LinkedAccountsScenario2() throws Throwable {
 
 			logger = report.createTest(" Linked AccountsScenario 2");

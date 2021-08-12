@@ -20,6 +20,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -62,7 +63,7 @@ public class Linkedaccounts extends BaseClass {
 	 */
 		
 //*******************************************************************Payment Method Test Case 1 ******************************************************************//
-	@Test(enabled = false) 
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class) 
 	public void LinkedAccountsScenario1() throws Throwable {
 
 		logger = report.createTest(" Linked Accounts Scenario1");
@@ -252,7 +253,7 @@ public class Linkedaccounts extends BaseClass {
 	
 		 
 //***********************************Payment Method Test Case 2************************************
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void LinkedAccountsScenario2() throws Throwable {
 
 			logger = report.createTest(" Linked AccountsScenario 2");

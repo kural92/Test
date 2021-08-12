@@ -69,7 +69,7 @@ public class OrderReview extends BaseClass {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 		logger = report.createTest("Order review ");

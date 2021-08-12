@@ -100,7 +100,7 @@ public class GuestCartLogin extends BaseClass{
 
 	}
 	
-	@Test(enabled = true,priority = 1)
+	@Test(enabled = true,priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void search_guestLogin() throws Throwable {
 		// TODO Auto-generated method stub
 
@@ -164,7 +164,7 @@ public class GuestCartLogin extends BaseClass{
 	}
 	
 	
-	@Test(enabled = true, priority = 2)
+	@Test(enabled = true, priority = 2,retryAnalyzer=RetryAnalyzer.class)
 	public void pdp_guestLogin() throws Throwable {
 		
 		
@@ -305,7 +305,7 @@ public class GuestCartLogin extends BaseClass{
 
 	}
 	
-	@Test(enabled=true,priority = 3)
+	@Test(enabled=true,priority = 3,retryAnalyzer=RetryAnalyzer.class)
 	public void cartPage_Guestlogin() throws Throwable {
 		
 		
