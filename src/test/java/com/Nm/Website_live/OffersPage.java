@@ -60,12 +60,13 @@ public class OffersPage extends BaseClass {
 
 // Step1 :Launch Browser//
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		
 
 		
 
 			try {
 
+				driver.manage().window().maximize();
 				btncli(m.getSignin());
 				Thread.sleep(5000);
 				type(m.getMobileno(), "8072281468");
@@ -156,7 +157,7 @@ public class OffersPage extends BaseClass {
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 			System.out.println("Successfully navigated to cart page");
 			
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 			Thread.sleep(3000);
 
 // Step 3 : Navigate to user profile//
@@ -206,9 +207,9 @@ public class OffersPage extends BaseClass {
 		
 			
 			btncli(m.getConsultation_checkbox());
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[5]")).click();
-			
+			Thread.sleep(5000);
+			WebElement consultation = driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[7]"));
+			actionClick(consultation);
 			System.out.println("Coupon related to consultation offer was sucessfully opened");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
@@ -216,9 +217,11 @@ public class OffersPage extends BaseClass {
 			Thread.sleep(3000);
 			
 			btncli(m.getDiagnostics_checkbox());
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 	
-			driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[5]")).click();
+			//driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[8]")).click();
+			WebElement dignostics = driver.findElement(By.xpath("(//img[@class=\\\"offer_sub_img\\\"])[8]"));
+			actionClick(dignostics);
 			Thread.sleep(3000);
 			
 			Thread.sleep(3000);
