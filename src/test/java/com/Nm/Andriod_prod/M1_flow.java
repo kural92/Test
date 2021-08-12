@@ -104,6 +104,16 @@ public class M1_flow extends MobileBaseClass {
 		AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(10000);
+		try {
+			driver.hideKeyboard();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		try {
+			driver.findElement(By.xpath("//android.widget.TextView[contains(@text, '.')]")).click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		m.getMobilenumber().sendKeys("9677159095");
 	
 	
