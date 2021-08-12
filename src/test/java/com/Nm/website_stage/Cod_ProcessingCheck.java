@@ -20,6 +20,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -72,7 +73,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void cod_process3() throws Throwable {
 
 		logger = report.createTest("Cash on Delivery Check for More than 3 Processing Order ");

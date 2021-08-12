@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -57,7 +58,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 	  2.Uploading unsupported file and ensuring proper error message is getting displayed.
 	  3.Uploading jpg,gif,png file and ensuring files are supported and uploaded successfully.
 	 */
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void uploadprescription() throws Throwable {
 		
 		

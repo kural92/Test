@@ -53,7 +53,7 @@ public class Take_Action extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public  void takeAction() throws Throwable  {
 		logger =  report.createTest(" All Categories");
 		logger.log(Status.PASS, "*************Take Action Fail Alert********************" );

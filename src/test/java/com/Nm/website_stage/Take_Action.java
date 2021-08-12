@@ -19,6 +19,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -53,7 +54,7 @@ public class Take_Action extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public  void takeAction() throws Throwable  {
 		logger =  report.createTest(" All Categories");
 		logger.log(Status.PASS, "*************Take Action Fail Alert********************" );

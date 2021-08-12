@@ -78,7 +78,7 @@ public class AlterNate_MSProduct extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void alterNate_Product() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");

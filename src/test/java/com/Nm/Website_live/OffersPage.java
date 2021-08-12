@@ -52,7 +52,7 @@ public class OffersPage extends BaseClass {
 
 		
 //*******************************************************************Offer Page ******************************************************************//
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void OffersPage() throws Throwable {
 
 		logger = report.createTest(" Offers Page");

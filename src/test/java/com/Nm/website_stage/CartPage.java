@@ -23,6 +23,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -85,7 +86,7 @@ static String totalamt;
 		*/
 
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
-	@Test(enabled = false)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void cartpagescenarioone() throws Throwable {
 
 		logger = report.createTest("cartpage scenario one ");
@@ -517,7 +518,7 @@ static String totalamt;
 
 		
 
-	@Test(enabled = false)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariotwo() throws Throwable {
 
 		logger = report.createTest("cartpage scenario two");
@@ -838,7 +839,7 @@ static String totalamt;
 
 			
 
-	@Test(enabled = false)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
@@ -1142,7 +1143,7 @@ static String totalamt;
 //******************************Test case 4: Verify Cart page when NMS wallet cash used*****************************************************************
 				
 				
-				@Test(enabled = true,priority = 1)
+				@Test(enabled = true,priority = 1,retryAnalyzer=RetryAnalyzer.class)
 				public void carpagescenariofour() throws Throwable {
 
 					logger = report.createTest("cartpage scenario four");

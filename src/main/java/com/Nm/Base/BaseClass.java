@@ -53,13 +53,13 @@ public class BaseClass {
 		public static  ExtentTest logger;
 
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		public static  String production_homeurl="https://www.netmeds.com";
 
 	//	public static  String production_homeurl="https://www.netmeds.com/";
-=======
-		public static  String production_homeurl="https://www.netmeds.com/";
->>>>>>> 8c763ac315449dc4a565821488bc49b90dacd6ba
+//=======
+//		public static  String production_homeurl="https://www.netmeds.com/";
+//>>>>>>> 8c763ac315449dc4a565821488bc49b90dacd6ba
 
 	//	public static  String production_homeurl="https://s1-meds.netmeds.com/";
 
@@ -68,7 +68,7 @@ public class BaseClass {
 	public static WebDriver driver=null;
 	@BeforeClass
 	public WebDriver launchbrowser() {
-		System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".//Driver//chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
 		
 		ChromeOptions options = new ChromeOptions();
 	//	options.addArguments("--headless", "--window-size=1920,1200");

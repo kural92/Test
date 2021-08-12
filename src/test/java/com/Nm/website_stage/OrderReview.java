@@ -22,6 +22,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -69,7 +70,7 @@ public class OrderReview extends BaseClass {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 		logger = report.createTest("Order review ");

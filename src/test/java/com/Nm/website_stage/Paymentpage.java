@@ -24,6 +24,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -58,7 +59,7 @@ public class Paymentpage extends BaseClass{
 	}
 
 
-	@Test(priority=1)
+	@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
 	public void paymentpage() throws Throwable {
 		logger =  report.createTest("Payment page");
 	logger.log(Status.PASS, "*************Decline case********************" );
@@ -278,7 +279,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 							
 								
 	}
-	@Test(priority=2)
+	@Test(priority=2,retryAnalyzer=RetryAnalyzer.class)
 	public void nmscash() throws Throwable {
 
 		

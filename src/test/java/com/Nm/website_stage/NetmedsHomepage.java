@@ -8,13 +8,14 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 
 
 public class NetmedsHomepage extends BaseClass {
 	
 	
 	
-@Test
+@Test(retryAnalyzer=RetryAnalyzer.class)
 public void homePage() throws Throwable {
 	// TODO Auto-generated method stub
 

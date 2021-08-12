@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -87,7 +88,7 @@ public class M2_Flow_Search extends BaseClass {
 	
 	
 	
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public  void m2_searchMedicine() throws Throwable  {
 			logger =  report.createTest("M2 Search and Add Medicine - Past RX");
 			logger.log(Status.PASS, "************* Search Medicine Flow********************" );
@@ -234,7 +235,7 @@ public class M2_Flow_Search extends BaseClass {
 		
 		
 		
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void m2_getCall() throws Throwable {
 			
 			logger =  report.createTest("M2 Get Call From netmeds Past RX");
@@ -435,7 +436,7 @@ public class M2_Flow_Search extends BaseClass {
 		
 		
 		
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void call_Upload() throws Throwable {
 			
 			logger =  report.createTest("M2 Get Call From netmeds - Upload Prescription");
@@ -555,7 +556,7 @@ public class M2_Flow_Search extends BaseClass {
 			
 		}
 		
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void autoIt_Upload_SearchMedicine() throws Throwable {
 			
 			logger =  report.createTest("M2 Search and Add Medicine - Upload Prescription");

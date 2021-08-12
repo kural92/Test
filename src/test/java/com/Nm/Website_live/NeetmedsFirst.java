@@ -54,7 +54,7 @@ public class NeetmedsFirst extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled = false)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public  void NetmedsError() throws Throwable  {
 		logger =  report.createTest("NeetmedsFirst");
 		logger.log(Status.PASS, "*************Netmeds First flow********************" );
@@ -182,7 +182,7 @@ public class NeetmedsFirst extends BaseClass{
 	
 }
 	
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public  void netmedsfirstcustomer() throws Throwable  {
 		logger =  report.createTest(" Already netmeds first customer");
 		logger.log(Status.PASS, "************* Already netmeds first customer********************" );

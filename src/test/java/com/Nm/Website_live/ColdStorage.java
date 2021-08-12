@@ -69,7 +69,7 @@ public class ColdStorage extends BaseClass {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void coldStorage_DeliveryCheck() throws Throwable {
 		
 		

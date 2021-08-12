@@ -23,6 +23,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -54,7 +55,7 @@ public class NeetmedsFirst extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled = false)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public  void NetmedsError() throws Throwable  {
 		logger =  report.createTest(" All Categories");
 		logger.log(Status.PASS, "*************Take Action Fail Alert********************" );
@@ -182,7 +183,7 @@ public class NeetmedsFirst extends BaseClass{
 	
 }
 	
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public  void netmedsfirstcustomer() throws Throwable  {
 		logger =  report.createTest("netmeds first customer");
 		logger.log(Status.PASS, "*************netmedsfirstcustomer********************" );

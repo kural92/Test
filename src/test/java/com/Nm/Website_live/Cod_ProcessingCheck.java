@@ -70,7 +70,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void cod_process3() throws Throwable {
 
 		logger = report.createTest("Cash on Delivery Check for More than 3 Processing Order ");

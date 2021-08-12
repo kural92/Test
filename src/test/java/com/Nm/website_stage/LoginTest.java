@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Pom.Monepom;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -62,7 +63,7 @@ public class LoginTest extends BaseClass {
 		*/
 
 //********************************************** Testcase1-Login with username and password ********************************************************************//
-	@Test(enabled = true, priority = 0 )
+	@Test(enabled = true, priority = 0 ,retryAnalyzer=RetryAnalyzer.class)
 	public void loginwithpwd() throws Throwable {
 
 		logger = report.createTest("Loginwith username and password");
@@ -100,7 +101,7 @@ public class LoginTest extends BaseClass {
 				
 			
 //****************************************** Testcase2-Login using  upload Prescription***************************************************************************************//
-	@Test(enabled = true , priority = 1)
+	@Test(enabled = true , priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void Loginwithupload() throws Throwable {
 
 		logger = report.createTest(" Loginwithupload");
@@ -144,7 +145,7 @@ public class LoginTest extends BaseClass {
 	
 
 //************** Testcase3-Login through cart  *******************//
-		@Test (enabled = true , priority = 2)
+		@Test (enabled = true , priority = 2,retryAnalyzer=RetryAnalyzer.class)
 		public void Loginthroughcart() throws Throwable {
 
 			logger = report.createTest("Loginthroughcart");
