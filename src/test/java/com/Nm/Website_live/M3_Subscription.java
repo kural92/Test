@@ -1,6 +1,7 @@
 package com.Nm.Website_live;
 
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -262,6 +263,8 @@ public class M3_Subscription extends BaseClass {
 		System.out.println(confirmation + "and the id is " + orderid);
 
 		// Tracking order//
+		
+		
 
 		btncli(m.getMysubscription());
 		
@@ -269,8 +272,16 @@ public class M3_Subscription extends BaseClass {
 
 		btncli(m.getMedicineorders());
 		Thread.sleep(3000);
+		
+List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),'PROCESSING')]|//span[contains(text(),'PRESCRIPTION UNDER REVIEW')]|//span[contains(text(),'CONSULTATION SCHEDULED')]"));
+		
+		
+		Thread.sleep(3000);
+		for (int i = 0; i < process.size(); i++) {
+			
+		Thread.sleep(3000);
 
-		btncli(m.getView_Details());
+		btncli(m.getView_DetailsList().get(i));
 		Thread.sleep(3000);
 
 		btncli(m.getCancel_Order());
@@ -282,10 +293,14 @@ public class M3_Subscription extends BaseClass {
 		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
 		Thread.sleep(3000);
 		btncli(m.getSubmit_Cancel());
-
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
 		System.out.println("Successfully Order was Cancelled");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+		
+		}
+		
+
 
 	}
 
@@ -600,24 +615,36 @@ public class M3_Subscription extends BaseClass {
 		btncli(m.getMedicineorders());
 		Thread.sleep(3000);
 
-		btncli(m.getView_Details());
+List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),'PROCESSING')]|//span[contains(text(),'PRESCRIPTION UNDER REVIEW')]|//span[contains(text(),'CONSULTATION SCHEDULED')]"));
+		
+		
+		Thread.sleep(3000);
+		for (int i = 0; i < process.size(); i++) {
+			
+		Thread.sleep(3000);
+
+		btncli(m.getView_DetailsList().get(i));
 		Thread.sleep(3000);
 
 		btncli(m.getCancel_Order());
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 
 		btncli(m.getCancelyes());
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
 		Thread.sleep(3000);
-		
 		btncli(m.getSubmit_Cancel());
-
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
 		System.out.println("Successfully Order was Cancelled");
+		Thread.sleep(2000);
+		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 		
-		Thread.sleep(3000);
+		
+		
+
+		}
+		
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
@@ -786,7 +813,15 @@ String confirmation = m.getOrder_Placed_text().getText();
 		btncli(m.getMedicineorders());
 		Thread.sleep(3000);
 
-		btncli(m.getView_Details());
+List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),'PROCESSING')]|//span[contains(text(),'PRESCRIPTION UNDER REVIEW')]|//span[contains(text(),'CONSULTATION SCHEDULED')]"));
+		
+		
+		Thread.sleep(3000);
+		for (int i = 0; i < process.size(); i++) {
+			
+		Thread.sleep(3000);
+
+		btncli(m.getView_DetailsList().get(i));
 		Thread.sleep(3000);
 
 		btncli(m.getCancel_Order());
@@ -797,13 +832,18 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
 		Thread.sleep(3000);
-		
 		btncli(m.getSubmit_Cancel());
-
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
 		System.out.println("Successfully Order was Cancelled");
+		Thread.sleep(2000);
+		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+		
+		
+		
 
-		Thread.sleep(3000);
+		}
+
+		
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
@@ -979,7 +1019,15 @@ String confirmation = m.getOrder_Placed_text().getText();
 		btncli(m.getMedicineorders());
 		Thread.sleep(4000);
 
-		btncli(m.getView_Details());
+List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),'PROCESSING')]|//span[contains(text(),'PRESCRIPTION UNDER REVIEW')]|//span[contains(text(),'CONSULTATION SCHEDULED')]"));
+		
+		
+		Thread.sleep(3000);
+		for (int i = 0; i < process.size(); i++) {
+			
+		Thread.sleep(3000);
+
+		btncli(m.getView_DetailsList().get(i));
 		Thread.sleep(3000);
 
 		btncli(m.getCancel_Order());
@@ -990,12 +1038,19 @@ String confirmation = m.getOrder_Placed_text().getText();
 
 		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[3]")).click();
 		Thread.sleep(3000);
-		
 		btncli(m.getSubmit_Cancel());
-
 		logger.log(Status.PASS, "Successfully Order was Cancelled");
 		System.out.println("Successfully Order was Cancelled");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+		
+		
+		
+
+		
+		}
+
+		
 	}
 
 	@AfterMethod()
