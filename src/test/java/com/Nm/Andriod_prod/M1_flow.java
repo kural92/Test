@@ -105,15 +105,26 @@ public class M1_flow extends MobileBaseClass {
 		
 		Thread.sleep(10000);
 		try {
+			driver.findElement(By.xpath("//*[@resource-id='com.NetmedsMarketplace.Netmeds:id/lets_start']")).click();
+			Thread.sleep(10000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		
+		
 		try {
-			driver.findElement(By.xpath("//android.widget.TextView[contains(@text, '.')]")).click();
+			Thread.sleep(10000);
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			System.out.println("click is working");
+			Thread.sleep(10000);
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			System.out.println("click2 is working");
+			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("click is not working");
 		}
+		Thread.sleep(10000);
 		m.getMobilenumber().sendKeys("9677159095");
 	
 	
