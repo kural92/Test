@@ -1,22 +1,17 @@
 package com.Nm.Andriod_prod;
 
-import java.awt.Robot;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -24,9 +19,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
-import com.Nm.Pom.Monepom;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -34,13 +29,12 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class M1_flow extends MobileBaseClass {
+public class M3_flow extends MobileBaseClass {
 
 	
 	
@@ -51,10 +45,10 @@ public class M1_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");
+			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
 			capabilities.setCapability("platformName", "Android");
-			capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability("platformVersion","10.0.0" );
+			//capabilities.setCapability("deviceName", "vivo 1819");
+			//capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
 			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
 			//for install Apk file
@@ -62,7 +56,10 @@ public class M1_flow extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
+			
+					
+			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -96,37 +93,117 @@ public class M1_flow extends MobileBaseClass {
    	
    }
 	@Test
-	public void alterNate_Product() throws Throwable {
+	public void M3Subscriptionflow() throws Throwable {
 		
-		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
-		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
+		logger =  report.createTest("M3 - Subscription Flow");
+		logger.log(Status.PASS, "*************M3 - Subscription Flow********************" );
 		
 		AndriodPom m = new AndriodPom();
 		
-		Thread.sleep(10000);
+		
+		
+		
+		Thread.sleep(1000);
+		
+	try {
+		btncli(m.getLetsstarted());
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		Thread.sleep(3000);
+		btncli(m.getUsepwd());
+		Thread.sleep(5000);
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
 		try {
-			driver.findElement(By.xpath("//*[@resource-id='com.NetmedsMarketplace.Netmeds:id/lets_start']")).click();
-			Thread.sleep(10000);
-			driver.hideKeyboard();
+			WebElement close_add = 	driver.findElement(By.xpath("android.widget.TextView[@package= 'com.NetmedsMarketplace.Netmeds']"));
+			actionClick(close_add);
+			
+			//driver.findElement(By.xpath("android.widget.TextView[@index= '0']")).click();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("click is working");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("click2 is working");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("click is not working");
-		}
-		Thread.sleep(10000);
-		m.getMobilenumber().sendKeys("9677159095");
+		Thread.sleep(5000);
+		btncli(m.getLogin());
+	}
 	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	
+	
+		Thread.sleep(5000);
+		btncli(m.getSubscription());
+		Thread.sleep(6000);
+		btncli(m.getCreatenew_subscription());
+		Thread.sleep(6000);
+		btncli(m.getM3productsearch());
+		Thread.sleep(3000);
+		
+		//type(m.getM3productsearch(),"Folvite Tablet 45'S");
+		//driver.findElement(By.xpath("//android.widget.TextView[@resourceid='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")).click();
+		
+		
+		for (int i = 0; i < 4; i++) {
+
+			type(m.getM3productsearch(), MobileBaseClass.getExcelData("Otcandnonrx", i, 0));
+
+			// btncli(m.getSearchIcon());
+			logger.log(Status.PASS, "Successfully navigate to search result page");
+
+			//String Cart_Excel = MobileBaseClass.getExcelData("Otcandnonrx", i, 1);
+
+			// Step 7 : Add product to the cart//
+			try {
+				Thread.sleep(3000);
+
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement Cart_btn = wait.until(
+						ExpectedConditions.elementToBeClickable(By.id("com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")));
+
+				Thread.sleep(3000);
+
+				btncli(Cart_btn);
+				
+				System.out.println("successfully Items are added");
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			Thread.sleep(3000);
+			
+
+			Thread.sleep(3000);
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton")).click();
+			driver.navigate().back();
+		}
+
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton")).click();
+
+Thread.sleep(2000);
+
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn")).click();
+Thread.sleep(2000);
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_nterval_no_delivers_three")).click();
+Thread.sleep(2000);
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_nterval_no_delivers_two")).click();
+Thread.sleep(2000);
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_nterval_no_delivers_one")).click();
+Thread.sleep(2000);
+
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/first_checkbox")).click();
+Thread.sleep(2000);
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/second_checkbox")).click();	
+Thread.sleep(2000);
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/third_checkbox")).click();
+Thread.sleep(2000);
+
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/proceed_btn")).click();
+Thread.sleep(2000);
+
+driver.findElement(By.xpath("//android.widget.Button[@text ='MY ORDERS']")).click();
 	
 	}
 	@AfterMethod()
