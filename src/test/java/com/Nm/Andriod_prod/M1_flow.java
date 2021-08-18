@@ -124,10 +124,32 @@ public class M1_flow extends MobileBaseClass {
 		} catch (Exception e) {
 			System.out.println("click is not working");
 		}
+		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("9677159095");
+			Thread.sleep(3000);
+			btnclick(m.getUsepwd());
+			Thread.sleep(5000);
+		
+			m.getPassword().sendKeys("test4nm");
+			
+			btnclick(m.getLogin());
+			Thread.sleep(2000);
+		}catch(Exception e) {
+				System.out.println("Already logged in");
+			}
 		Thread.sleep(10000);
-		m.getMobilenumber().sendKeys("9677159095");
-	
-	
+		m.getSearchbar().click();
+		Thread.sleep(2000);
+	m.getSearchbarone().sendKeys("Patanjali Lauh Bhasm Powder 5 gm");
+		 
+		 Thread.sleep(2000);
+			btnclick(m.getProductselect()); 
+	Thread.sleep(2000);
+			btnclick(m.getAddtoCartButton());
+			Thread.sleep(2000);
+			btnclick(m.getGotocart()); 
 	}
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
