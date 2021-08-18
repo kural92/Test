@@ -66,7 +66,7 @@ public class AndriodPom extends MobileBaseClass{
 			return M3productsearch;
 		}
 		
-<<<<<<< HEAD
+
 		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton")
 		private WebElement Proceedtocheckout;
 		public WebElement getProceedtocheckout() {
@@ -223,7 +223,7 @@ public class AndriodPom extends MobileBaseClass{
 		
 	
 		
-=======
+
 		public WebElement getSearchbar() {
 			return Searchbar;
 		}
@@ -253,7 +253,7 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement addtoCartButton;
 		@FindBy(xpath="//*[@id='cart']")
 		private WebElement gotocart;
->>>>>>> 0621de67b0c930b00e2391daa429b7b1a55f6146
+
 }
 
 
