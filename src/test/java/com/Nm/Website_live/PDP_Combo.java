@@ -81,7 +81,7 @@ public class PDP_Combo extends BaseClass{
 	
 	
 	
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority = 1,enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void offersAvail() throws Throwable {
 		
 		logger = report.createTest("PDP COMBO and OFFERS ");
@@ -105,7 +105,7 @@ try {
 			btncli(m.getSignInpage());
 		
 } catch (Exception e) {
-	// TODO: handle exception
+	
 }
 		//////////////
 
@@ -256,18 +256,10 @@ try {
 			
 		} else {
 		
-				System.out.println("There is No Combo Offer Available");
-				
-				
-		
+				System.out.println("There is No Combo Offer Available");	
 			
 		}
 		
-		
-		
-		
-		
-
 	}
 	
 	
