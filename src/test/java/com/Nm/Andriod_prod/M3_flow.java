@@ -112,7 +112,7 @@ public class M3_flow extends MobileBaseClass {
 		Thread.sleep(1000);
 		
 	try {
-		btncli(m.getLetsstarted());
+		btnclick(m.getLetsstarted());
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
 		try {
@@ -127,7 +127,7 @@ public class M3_flow extends MobileBaseClass {
 			System.out.println("No Popup available to close");
 		}
 		Thread.sleep(3000);
-		btncli(m.getUsepwd());
+		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
 		m.getPassword().sendKeys("test@123");
@@ -519,7 +519,7 @@ System.out.println("Order was cancelled successfully");
 	
 		
 		Thread.sleep(5000);
-		btncli(m.getLogin());
+		btnclick(m.getLogin());
 	}
 	
 	catch(Exception e) {
@@ -528,11 +528,11 @@ System.out.println("Order was cancelled successfully");
 	
 	
 		Thread.sleep(5000);
-		btncli(m.getSubscription());
+		btnclick(m.getSubscription());
 		Thread.sleep(6000);
-		btncli(m.getCreatenew_subscription());
+		btnclick(m.getCreatenew_subscription());
 		Thread.sleep(6000);
-		btncli(m.getM3productsearch());
+		btnclick(m.getM3productsearch());
 		Thread.sleep(3000);
 		
 		//type(m.getM3productsearch(),"Folvite Tablet 45'S");
@@ -558,7 +558,7 @@ System.out.println("Order was cancelled successfully");
 
 				Thread.sleep(3000);
 
-				btncli(Cart_btn);
+				btnclick(Cart_btn);
 				
 				System.out.println("successfully Items are added");
 			} catch (Exception e) {

@@ -84,7 +84,7 @@ public class MobileBaseClass {
 			
 	}
 	
-	public void btncli(WebElement element) throws Throwable {
+	public void btnclick(WebElement element) throws Throwable {
 		/*
 		 * WebDriverWait wait = new WebDriverWait(driver, 30);
 		 * wait.until(ExpectedConditions.elementToBeClickable(element));

@@ -21,7 +21,8 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getLetsstarted() {
 			return Letsstarted;
 		}
-
+		
+		
 		@FindBy(xpath="//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/name']")
 		private WebElement mobilenumber;
 		public WebElement getMobilenumber() {
@@ -34,7 +35,7 @@ public class AndriodPom extends MobileBaseClass{
 			return usepwd;
 		}
 		
-		@FindBy(xpath ="//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/edt_password']")
+		@FindBy(xpath ="//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/edt_password'or @resource-id='com.NetmedsMarketplace.Netmeds:id/password_edit']")
 		private WebElement password;
 		public WebElement getPassword() {
 			return password;
@@ -65,6 +66,7 @@ public class AndriodPom extends MobileBaseClass{
 			return M3productsearch;
 		}
 		
+<<<<<<< HEAD
 		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton")
 		private WebElement Proceedtocheckout;
 		public WebElement getProceedtocheckout() {
@@ -221,6 +223,37 @@ public class AndriodPom extends MobileBaseClass{
 		
 	
 		
+=======
+		public WebElement getSearchbar() {
+			return Searchbar;
+		}
+		public WebElement getProductselect() {
+			return productselect;
+		}
+		public WebElement getAddtoCartButton() {
+			return addtoCartButton;
+		}
+		public WebElement getGotocart() {
+			return gotocart;
+		}
+
+
+		@FindBy(xpath="//android.widget.TextView[@text='Search for medicine & wellness products…']")
+		private WebElement Searchbar;
+		@FindBy(xpath="//android.widget.EditText[@text='Search here…']")
+		private WebElement Searchbarone;
+		public WebElement getSearchbarone() {
+			return Searchbarone;
+		}
+
+
+		@FindBy(xpath="//*[@id='alternateBrain_product_view']")
+		private WebElement productselect;
+		@FindBy(xpath="//*[@text='ADD TO CART']")
+		private WebElement addtoCartButton;
+		@FindBy(xpath="//*[@id='cart']")
+		private WebElement gotocart;
+>>>>>>> 0621de67b0c930b00e2391daa429b7b1a55f6146
 }
 
 
