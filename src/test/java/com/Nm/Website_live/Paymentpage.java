@@ -115,6 +115,9 @@ public class Paymentpage extends BaseClass{
 	}
 	btncli(m.getMinicart());
 	Thread.sleep(3000);
+	driver.findElement(By.xpath("//a[@title='Save For Later']")).click();
+	 String text = driver.findElement(By.xpath("//span[text()='Saved For Later']")).getText();
+	System.out.println(text);
 	logger.log(Status.PASS, "Successfully navigate to cart page" );
 	btncli(m.getProceedbutton());
 	Thread.sleep(3000);

@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Aug 16, 2021 08:17:08 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Aug 17, 2021 02:27:42 PM</span>
 				</a>
 			</li>
 			<li>
@@ -160,14 +160,14 @@
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Adding Alternate Brands and Most Selling Products to Cart</span>
-						<span class='test-time'>Aug 16, 2021 08:17:30 PM</span>
+						<span class='test-time'>Aug 17, 2021 02:28:02 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Aug 16, 2021 08:17:30 PM</span>
-	<span class='label end-time'>Aug 16, 2021 08:18:41 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 10s+645ms</span>
+	<span class='label start-time'>Aug 17, 2021 02:28:02 PM</span>
+	<span class='label end-time'>Aug 17, 2021 02:29:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 5s+208ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -181,26 +181,26 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>8:17:30 PM</td>
+					<td class='timestamp'>2:28:02 PM</td>
 					<td class='step-details'>*************AlterNate and Most Selling Product********************</td>
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>8:18:40 PM</td>
+					<td class='timestamp'>2:29:05 PM</td>
 					<td class='step-details'><span class='label white-text red'>alterNate_Product FAILED </span></td>
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>8:18:40 PM</td>
-					<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 639 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+					<td class='timestamp'>2:29:05 PM</td>
+					<td class='step-details'><pre>org.openqa.selenium.InvalidSelectorException: java.lang.IllegalArgumentException: Unable to compile '//android.widget.TextView[@text=Patanjali Lauh Bhasm Powder 5 gm'. See Cause. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 85 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'NMSLAP093', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, deviceScreenSize=1080x2340, networkConnectionEnabled=true, statBarHeight=84, warnings={}, viewportRect={top=84, left=0, width=1080, height=2130}, databaseEnabled=false, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, platformVersion=10.0.0, udid=NBBY79GM5LTCJBJR, platformName=Android, deviceName=vivo 1819}, platformVersion=10, pixelRatio=3, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=480, deviceModel=vivo 1819, udid=NBBY79GM5LTCJBJR, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo}]
-Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
-*** Element info: {Using=xpath, value=//*[@id='alternateBrain_product_view']}
+Session ID: ecbfd92a-f284-4a40-8a4b-2d6823008df7
+*** Element info: {Using=xpath, value=//android.widget.TextView[@text=Patanjali Lauh Bhasm Powder 5 gm}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -224,11 +224,7 @@ Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:93)
-	at com.Nm.Andriod_prod.M1_flow.alterNate_Product(M1_flow.java:148)
+	at com.Nm.Andriod_prod.M1_flow.alterNate_Product(M1_flow.java:149)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -258,8 +254,8 @@ Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>8:18:41 PM</td>
-					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@11f0a5a1</td>
+					<td class='timestamp'>2:29:07 PM</td>
+					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@73a8da0f</td>
 				</tr>
 			</tbody>
 		</table>
@@ -322,7 +318,7 @@ Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+                                <span class='exception-name'>org.openqa.selenium.InvalidSelectorException</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -337,17 +333,17 @@ Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Aug 16, 2021 08:17:30 PM</td>
+                                                        <td>Aug 17, 2021 02:28:02 PM</td>
                                                         <td class='linked' test-id='1'>Adding Alternate Brands and Most Selling Products to Cart</td>
-                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 639 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+                                                        <td><pre><pre>org.openqa.selenium.InvalidSelectorException: java.lang.IllegalArgumentException: Unable to compile '//android.widget.TextView[@text=Patanjali Lauh Bhasm Powder 5 gm'. See Cause. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 85 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'NMSLAP093', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, deviceScreenSize=1080x2340, networkConnectionEnabled=true, statBarHeight=84, warnings={}, viewportRect={top=84, left=0, width=1080, height=2130}, databaseEnabled=false, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, platformVersion=10.0.0, udid=NBBY79GM5LTCJBJR, platformName=Android, deviceName=vivo 1819}, platformVersion=10, pixelRatio=3, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=480, deviceModel=vivo 1819, udid=NBBY79GM5LTCJBJR, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo}]
-Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
-*** Element info: {Using=xpath, value=//*[@id='alternateBrain_product_view']}
+Session ID: ecbfd92a-f284-4a40-8a4b-2d6823008df7
+*** Element info: {Using=xpath, value=//android.widget.TextView[@text=Patanjali Lauh Bhasm Powder 5 gm}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -371,11 +367,7 @@ Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:93)
-	at com.Nm.Andriod_prod.M1_flow.alterNate_Product(M1_flow.java:148)
+	at com.Nm.Andriod_prod.M1_flow.alterNate_Product(M1_flow.java:149)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -439,19 +431,19 @@ Session ID: 12ded9c3-1738-41e4-83bf-e59472c6c8bd
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Aug 16, 2021 08:17:08 PM</div>
+					<div class='panel-lead'>Aug 17, 2021 02:27:42 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Aug 16, 2021 08:18:47 PM</div>
+			 		<div class='panel-lead'>Aug 17, 2021 02:29:13 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 1m 39s+487ms</div>
+					<div class='panel-lead'>0h 1m 30s+872ms</div>
 				</div>
 			</div>
 			<div class='col s4'>

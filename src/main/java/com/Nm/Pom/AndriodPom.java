@@ -91,8 +91,8 @@ public class AndriodPom extends MobileBaseClass{
 
 		@FindBy(xpath="//*[@id='alternateBrain_product_view']")
 		private WebElement productselect;
-		@FindBy(xpath="//*[@text='ADD TO CART']")
+		@FindBy(xpath="//android.widget.TextView[@text='ADD TO CART']")
 		private WebElement addtoCartButton;
-		@FindBy(xpath="//*[@id='cart']")
+		@FindBy(xpath="//*[@resource-id='cart']")
 		private WebElement gotocart;
 }
