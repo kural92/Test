@@ -108,13 +108,19 @@ public class M3_flow extends MobileBaseClass {
 		
 		AndriodPom m = new AndriodPom();
 		
+		try {
+			Thread.sleep(5000);
+		btnclick(m.getLetsstarted());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		
 		
 		Thread.sleep(1000);
 		
 	try {
-		btnclick(m.getLetsstarted());
+		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
 		try {
@@ -337,13 +343,19 @@ System.out.println("Order was cancelled successfully");
 		
 		AndriodPom m = new AndriodPom();
 		
+		try {
+			Thread.sleep(5000);
+		btnclick(m.getLetsstarted());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		
 		
 		Thread.sleep(1000);
 		
 	try {
-		btnclick(m.getLetsstarted());
+	
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
 		try {
@@ -545,10 +557,16 @@ System.out.println("Order was cancelled successfully");
 		
 		AndriodPom m = new AndriodPom();
 		
-		Thread.sleep(1000);
+		
+		try {
+			Thread.sleep(5000);
+		btnclick(m.getLetsstarted());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 	try {
-		btnclick(m.getLetsstarted());
+		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
 		try {
@@ -761,13 +779,19 @@ System.out.println("Order was cancelled successfully");
 		
 		AndriodPom m = new AndriodPom();
 		
+		try {
+			Thread.sleep(5000);
+		btnclick(m.getLetsstarted());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		
 		
 		Thread.sleep(1000);
 		
 	try {
-		btnclick(m.getLetsstarted());
+		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
 		try {
