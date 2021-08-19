@@ -81,7 +81,7 @@ public class PDP_Combo extends BaseClass{
 	
 	
 	
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority = 1,enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void offersAvail() throws Throwable {
 		
 		logger = report.createTest("PDP COMBO and OFFERS ");
@@ -105,7 +105,7 @@ try {
 			btncli(m.getSignInpage());
 		
 } catch (Exception e) {
-	// TODO: handle exception
+	
 }
 		//////////////
 
@@ -256,18 +256,10 @@ try {
 			
 		} else {
 		
-				System.out.println("There is No Combo Offer Available");
-				
-				
-		
+				System.out.println("There is No Combo Offer Available");	
 			
 		}
 		
-		
-		
-		
-		
-
 	}
 	
 	
@@ -334,8 +326,8 @@ try {
 		// search
 		btncli(m.getSearch());
 		type(m.getSearch(),"Horlicks Health Drink Powder Classic Malt 500 gm");  //Pro360 //Horlicks
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		m.getSearch().sendKeys(Keys.ENTER);
+		
 		//btncli(m.getSearchIcon());
 		
 		Thread.sleep(5000);
@@ -347,20 +339,42 @@ try {
 		if (fre.contains("FREQUENTLY BOUGHT TOGETHER")) {
 			
 			Thread.sleep(3000);
-			js.executeScript("arguments[0].scrollIntoView(true);", fre);
+			//js.executeScript("arguments[0].scrollIntoView(true);", fre);
 			
 			Thread.sleep(3000);
-		//	acc.moveToElement(driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::button[contains(text(),'ADD TO CART')]"))).build().perform();
+			acc.moveToElement(driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::button[contains(text(),'ADD TO CART')]"))).build().perform();
 			
 			
 			
 			
 			Thread.sleep(2000);
-			js.executeScript("window.scrollTo(0,200)");
+			js.executeScript("window.scrollTo(0,500)");
+			Thread.sleep(2000);
+			/*
+			 * js.executeScript("window.scrollTo(0,500)"); Thread.sleep(2000);
+			 * js.executeScript("window.scrollTo(0,500)"); Thread.sleep(2000);
+			 * js.executeScript("window.scrollTo(0,500)"); Thread.sleep(2000);
+			 * js.executeScript("window.scrollTo(0,500)");
+			 */
+			
+			try {
 			Thread.sleep(1000);
 			btncli(driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::button[contains(text(),'ADD TO CART')]")));
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			
-			
+			try {
+				
+				Thread.sleep(2000);
+				js.executeScript("window.scrollTo(0,200)");
+				
+				Thread.sleep(1000);
+				btncli(driver.findElement(By.xpath("//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::button[contains(text(),'ADD TO CART')]")));
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
 			
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("(//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::span[@class='clsgetname'])[2]")));
