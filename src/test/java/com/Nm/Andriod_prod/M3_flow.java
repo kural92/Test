@@ -112,7 +112,9 @@ public class M3_flow extends MobileBaseClass {
 			Thread.sleep(5000);
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			// TODO: handle exception
+			driver.resetApp();
+			
+			
 		}
 		
 		
@@ -347,9 +349,10 @@ System.out.println("Order was cancelled successfully");
 			Thread.sleep(5000);
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			// TODO: handle exception
+			driver.resetApp();
+			
+			
 		}
-		
 		
 		
 		Thread.sleep(1000);
@@ -562,7 +565,9 @@ System.out.println("Order was cancelled successfully");
 			Thread.sleep(5000);
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			// TODO: handle exception
+			driver.resetApp();
+			
+			
 		}
 		
 	try {
@@ -783,7 +788,9 @@ System.out.println("Order was cancelled successfully");
 			Thread.sleep(5000);
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			// TODO: handle exception
+			driver.resetApp();
+			
+			
 		}
 		
 		
