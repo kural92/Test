@@ -219,7 +219,18 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getSave_address() {
 			return save_address;
 		}
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cart_tv_promo_code")
+		private WebElement Subs20_promo;
+		public WebElement getSubs20_promo() {
+			return Subs20_promo;
+		}
 		
+		
+		@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_remove_product'])[2]")
+		private WebElement removeitem;
+		public WebElement getRemoveitem() {
+			return removeitem;
+		}
 		
 	
 		

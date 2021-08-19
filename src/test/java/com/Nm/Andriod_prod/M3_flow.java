@@ -10,9 +10,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -20,6 +23,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.aventstack.extentreports.ExtentReports;
@@ -58,7 +62,7 @@ public class M3_flow extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			capabilities.setCapability("noReset", true);
+			//capabilities.setCapability("noReset", true);
 			
 					
 			capabilities.setCapability("autoDismissAlerts", true);  
@@ -154,7 +158,7 @@ public class M3_flow extends MobileBaseClass {
 		//driver.findElement(By.xpath("//android.widget.TextView[@resourceid='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")).click();
 		
 		
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 2; i++) {
 
 			type(m.getM3productsearch(), MobileBaseClass.getExcelData("Otcandnonrx", i, 0));
 
@@ -194,6 +198,51 @@ btnclick(m.getProceedtocheckout());
 Thread.sleep(3000);
 logger.log(Status.PASS, "Successfully proceed to checkout");
 System.out.println("Successfully proceed to checkout");
+
+//Subs20 -promo code
+
+String Promocode = m.getSubs20_promo().getText();
+String actualpromocode = "SUBS20";
+Assert.assertEquals(Promocode, actualpromocode);
+System.out.println(Promocode);
+Thread.sleep(3000);
+
+
+
+		// Step 10 :Remove qty//
+		btnclick(m.getRemoveitem());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, " item removed Successfully");
+		System.out.println(" item removed Successfully");
+		
+		// Step 11: Decrease qty//
+		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
+		WebElement qty_dec = 	driver.findElement(By.xpath("//android.widget.TextView[@text='3']"));
+		qty_dec.click();
+		//Select qtydecrease = new Select(m.getQty_Incr_Decr());
+		//qtydecrease.selectByIndex(1);
+	
+		Thread.sleep(3000);
+		
+		logger.log(Status.PASS, " quantity decreased Successfully");
+		System.out.println(" quantity decareased Successfully");
+
+		//Step 9 :Increase qty//
+
+				driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
+				//Select qtyincrease = new Select(m.getQty_Incr_Decr());
+				//qtyincrease.selectByIndex(3);
+		WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='5']"));
+			
+		qty_increase.click();
+				//driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])"));
+				Thread.sleep(3000);
+				
+				logger.log(Status.PASS, " quantity increased Successfully");
+				System.out.println(" quantity increased Successfully");
+
+
+
 //Proceed
 btnclick(m.getProceed_btn());
 Thread.sleep(2000);
@@ -232,11 +281,14 @@ btnclick(m.getPlaceorder());
 
 Thread.sleep(3000);
 
-String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-		
-		
-logger.log(Status.PASS, "Order was placed successfully" );
-System.out.println("Order was placed successfully and the "   + Order_id);
+logger.log(Status.PASS, "Order was placed successfully");
+System.out.println("Order was placed successfully");
+
+
+//Order success page
+
+
+
 //my orders
 
 
@@ -277,7 +329,7 @@ System.out.println("Order was cancelled successfully");
 	
 //******************************************************M3 Rx Flow*****************************************************
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void M3Subscriptionrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -444,11 +496,8 @@ Thread.sleep(4000);
 btnclick(m.getPlaceorder());
 
 Thread.sleep(3000);
-String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-
-
-logger.log(Status.PASS, "Order was placed successfully" );
-System.out.println("Order was placed successfully and the    " + Order_id);
+logger.log(Status.PASS, "Order was placed successfully");
+System.out.println("Order was placed successfully");
 //my orders
 
 
@@ -488,7 +537,7 @@ System.out.println("Order was cancelled successfully");
 	}
 //**************************************************M3 Past rx*********************************************
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void M3Subscriptionpastrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -662,11 +711,8 @@ Thread.sleep(4000);
 btnclick(m.getPlaceorder());
 
 Thread.sleep(3000);
-String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-
-
-logger.log(Status.PASS, "Order was placed successfully " );
-System.out.println("Order was placed successfully and the   "   + Order_id);
+logger.log(Status.PASS, "Order was placed successfully");
+System.out.println("Order was placed successfully");
 //my orders
 
 
@@ -707,7 +753,7 @@ System.out.println("Order was cancelled successfully");
 	
 //**************************************************M3 -Doctor consultation***************************************************
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void M3Subscription_DoctorConsultationflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - DoctorConsultation Flow");
@@ -939,11 +985,8 @@ Thread.sleep(4000);
 btnclick(m.getPlaceorder());
 
 Thread.sleep(3000);
-String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-
-
-logger.log(Status.PASS, "Order was placed successfully" );
-System.out.println("Order was placed successfully and the   " + Order_id);
+logger.log(Status.PASS, "Order was placed successfully");
+System.out.println("Order was placed successfully");
 
 //my orders
 
