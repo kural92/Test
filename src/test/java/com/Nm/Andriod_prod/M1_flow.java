@@ -141,11 +141,12 @@ public class M1_flow extends MobileBaseClass {
 			}
 		Thread.sleep(10000);
 		m.getSearchbar().click();
+		String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
-	m.getSearchbarone().sendKeys("Patanjali Lauh Bhasm Powder 5 gm");
+	m.getSearchbarone().sendKeys(s);
 		 
 		 Thread.sleep(2000);
-			btnclick(m.getProductselect()); 
+			driver.findElement(By.xpath("//android.widget.TextView[@text="+s+""));
 	Thread.sleep(2000);
 			btnclick(m.getAddtoCartButton());
 			Thread.sleep(2000);
