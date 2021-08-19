@@ -253,6 +253,238 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement addtoCartButton;
 		@FindBy(xpath="//*[@resource-id='cart']")
 		private WebElement gotocart;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		///////////////////////////////////////////////   M2 FLOW  ////////////////////////////////////////////////////////////////
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/order_medicine_button']")
+		private WebElement m2_OrderNow;
+		public WebElement getM2_OrderNow() {
+			return m2_OrderNow;
+		}
+		
+		
+		@FindBy(id = "Gallery")
+		private WebElement m2_Upload_Gallery;
+		public WebElement getM2_Upload_Gallery() {
+			return m2_Upload_Gallery;
+		}
+		
+		@FindBy(id = "Gallery")
+		private WebElement m2_Upload_PDF;
+		public WebElement getM2_Upload_PDF() {
+			return m2_Upload_PDF;
+		}
+		
+		@FindBy(id = "Gallery")
+		private WebElement m2_PastRX;
+		public WebElement getM2_PastRX() {
+			return m2_PastRX;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/continueButton']")
+		private WebElement m2_Upload_ContinueBtn;
+		public WebElement getM2_Upload_ContinueBtn() {
+			return m2_Upload_ContinueBtn;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/searchAddCheckBox']")
+		private WebElement m2_SearchMedicine;
+		public WebElement getM2_SearchMedicine() {
+			return m2_SearchMedicine;
+		}
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/continueButton']" )
+		private WebElement m2_Search_CAll_ContinueBtn;
+		public WebElement getM2_Search_CAll_ContinueBtn() {
+			return m2_Search_CAll_ContinueBtn;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/search_bar']" )
+		private WebElement m2_SearchBar;
+		public WebElement getM2_SearchBar() {
+			return m2_SearchBar;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']" )
+		private WebElement m2_Search_AddToCart;
+		public WebElement getM2_Search_AddToCart() {
+			return m2_Search_AddToCart;
+		}
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_proceed_to_checkout']" )
+		private WebElement m2_ProceedToCart;
+		public WebElement getM2_ProceedToCart() {
+			return m2_ProceedToCart;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']" )
+		private WebElement m2_ProceedBtn;
+		public WebElement getM2_ProceedBtn() {
+			return m2_ProceedBtn;
+		}
+		
+		
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/place_order']" )
+		private WebElement m2_Place_Order;
+		public WebElement getM2_Place_Order() {
+			return m2_Place_Order;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.Button[@text='TRACK ORDER']" )
+		private WebElement Track_Order;
+		public WebElement getTrack_Order() {
+			return Track_Order;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.Button[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_view_order']" )
+		private WebElement View_Order_details;
+		public WebElement getView_Order_details() {
+			return View_Order_details;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.Button[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_cancel_order']")
+		private WebElement Cancel_Order;
+		public WebElement getCancel_Order() {
+			return Cancel_Order;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/cb_drug_selected']")
+		private WebElement Cancel_Order_reason;
+		public WebElement getCancel_Order_reason() {
+			return Cancel_Order_reason;
+		}
+		
+		@FindBy(xpath = "//android.widget.Button[@text='SUBMIT & CANCEL']")
+		private WebElement Submit_cancelBtn;
+		public WebElement getSubmit_cancelBtn() {
+			return Submit_cancelBtn;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/callCheckBox']")
+		private WebElement m2_GetCallBtn;
+		public WebElement getM2_GetCallBtn() {
+			return m2_GetCallBtn;
+		}
+
+		@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox']")
+		private WebElement m2_RX_Checkbox;
+		public WebElement getM2_RX_Checkbox() {
+			return m2_RX_Checkbox;
+		}
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/doneButton']")
+		private WebElement m2_RX_DoneBtn;
+		public WebElement getM2_RX_DoneBtn() {
+			return m2_RX_DoneBtn;
+		}
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_change_address']")
+		private WebElement m2_ChangeAddress;
+		public WebElement getM2_ChangeAddress() {
+			return m2_ChangeAddress;
+		}
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/addAddress']")
+		private WebElement m2_AddNewAddress;
+		public WebElement getM2_AddNewAddress() {
+			return m2_AddNewAddress;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/pinCode']")
+		private WebElement m2_PinCode;
+		public WebElement getM2_PinCode() {
+			return m2_PinCode;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/firstName']")
+		private WebElement m2_FirstName;
+		public WebElement getM2_FirstName() {
+			return m2_FirstName;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/lastName']")
+		private WebElement m2_Lastname;
+		public WebElement getM2_Lastname() {
+			return m2_Lastname;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/houseNumber']")
+		private WebElement m2_Adress;
+		public WebElement getM2_Adress() {
+			return m2_Adress;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/landMark']")
+		private WebElement m2_LandMark;
+		public WebElement getM2_LandMark() {
+			return m2_LandMark;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/saveAddressButton']")
+		private WebElement m2_SaveAddress;
+		public WebElement getM2_SaveAddress() {
+			return m2_SaveAddress;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/modify']")
+		private WebElement m2_ModifyAddress;
+		public WebElement getM2_ModifyAddress() {
+			return m2_ModifyAddress;
+		}
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/delete']")
+		private WebElement m2_DeleteAddress;
+		public WebElement getM2_DeleteAddress() {
+			return m2_DeleteAddress;
+		}
+		
+		
+		@FindBy(xpath = "//android.widget.ImageButton[@content-desc='Navigate up']")
+		private WebElement m2_BackToCart;
+		public WebElement getM2_BackToCart() {
+			return m2_BackToCart;
+		}
+		
+		
+		//////////////////////////////////////////////  M2 POM END ////////////////////////////////////////////////////////////////////////////
+		
+		
+		
+		
+		
+		
 
 }
 
