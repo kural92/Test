@@ -140,17 +140,102 @@ public class M1_flow extends MobileBaseClass {
 				System.out.println("Already logged in");
 			}
 		Thread.sleep(10000);
-		m.getSearchbar().click();
-		String s="Patanjali Lauh Bhasm Powder 5 gm";
+				String s="Patanjali Lauh Bhasm Powder 5 gm";
+		Thread.sleep(2000);
+		btnclick(m.getGotocart()); 
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
+
+				try {
+					btnclick(m.getRemoveButton());
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			} else {
+				logger.log(Status.PASS, "Successfully Product Removed from Cart");
+				break;
+
+			}
+		}
+		btnclick(m.getCart_search());
 		Thread.sleep(2000);
 	m.getSearchbarone().sendKeys(s);
 		 
-		 Thread.sleep(2000);
-			driver.findElement(By.xpath("//android.widget.TextView[@text="+s+""));
+		 
+		
 	Thread.sleep(2000);
+			btnclick(m.getSearch_drugname());
+			Thread.sleep(5000);
+			try {
 			btnclick(m.getAddtoCartButton());
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
 			Thread.sleep(2000);
 			btnclick(m.getGotocart()); 
+			Thread.sleep(2000);
+			btnclick(m.getProceed_btn());
+			Thread.sleep(3000);
+
+			btnclick(m.getPlaceorder());
+
+			Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 btnclick(m.getPayment_cod());
+			 Thread.sleep(3000);
+			 btnclick(m.getPayment_paybutton());
+			 Thread.sleep(3000);
+			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
+					
+					
+			logger.log(Status.PASS, "Order was placed successfully" );
+			System.out.println("Order was placed successfully and the "   + Order_id);
+ 			//my orders
+
+
+			btnclick(m.getMyorders());
+
+			Thread.sleep(3000);
+				
+			//View details
+
+
+			btnclick(m.getViewdetails());
+			Thread.sleep(3000);
+
+			//cancel order
+
+
+			btnclick(m.getCancelorder());
+			Thread.sleep(3000);
+			//yes
+
+			//btnclick(m.getYesbutton());
+			Thread.sleep(2000);
+
+
+			//Cancel reason
+
+			btnclick(m.getCancel_reason());
+
+			Thread.sleep(2000);
+
+			//Submit and cancel
+
+			btnclick(m.getSubmit_cancel());
+			logger.log(Status.PASS, "Order was cancelled successfully");
+			System.out.println("Order was cancelled successfully");
+
+
 	}
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {

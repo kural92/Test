@@ -249,10 +249,50 @@ public class AndriodPom extends MobileBaseClass{
 
 		@FindBy(xpath="//*[@id='alternateBrain_product_view']")
 		private WebElement productselect;
-		@FindBy(xpath="//android.widget.TextView[@text='ADD TO CART']")
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
 		private WebElement addtoCartButton;
-		@FindBy(xpath="//*[@resource-id='cart']")
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart']")
 		private WebElement gotocart;
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_remove_product']")
+		private WebElement RemoveButton;
+		public WebElement getRemoveButton() {
+			return RemoveButton;
+		}
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/search']")
+		private WebElement cart_search;
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")
+		private WebElement search_drugname;
+		@FindBy(xpath="//android.widget.TextView[@text='COD']")
+		private WebElement Payment_cod;
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_pay']")
+		private WebElement Payment_paybutton;
+		public WebElement getPayment_paybutton() {
+			return Payment_paybutton;
+		}
+
+
+
+
+
+		public WebElement getPayment_cod() {
+			return Payment_cod;
+		}
+
+
+
+
+
+		public WebElement getCart_search() {
+			return cart_search;
+		}
+
+
+
+
+
+		public WebElement getSearch_drugname() {
+			return search_drugname;
+		}
 
 }
 
