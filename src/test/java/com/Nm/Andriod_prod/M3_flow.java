@@ -100,7 +100,7 @@ public class M3_flow extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3SubscriptionOTCflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Subscription OTC Flow");
@@ -108,16 +108,12 @@ public class M3_flow extends MobileBaseClass {
 		
 		AndriodPom m = new AndriodPom();
 		
-		try {
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-		} catch (Exception e) {
-			System.out.println("No Popup available to close");
-		}
+		
 		
 		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
@@ -133,18 +129,10 @@ public class M3_flow extends MobileBaseClass {
 		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup closed Successfully");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup closed Successfully\"");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup available to close");
-		}
-		Thread.sleep(3000);
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
 		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
@@ -160,8 +148,8 @@ public class M3_flow extends MobileBaseClass {
 	catch(Exception e) {
 		System.out.println("Already logged in");
 	}
-	
-	
+	 
+		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -345,7 +333,7 @@ System.out.println("Order was cancelled successfully");
 	
 //******************************************************M3 Rx Flow*****************************************************
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscriptionrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -356,16 +344,9 @@ System.out.println("Order was cancelled successfully");
 		
 		
 		try {
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-		} catch (Exception e) {
-			System.out.println("No Popup available to close");
-		}
-		
-		try {
-			Thread.sleep(2000);
-			
+			popupclose();
+			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
@@ -374,24 +355,17 @@ System.out.println("Order was cancelled successfully");
 		}
 		
 		
+		
 		Thread.sleep(1000);
 		
 	try {
-	
+		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup is available to close");
-		}
-		Thread.sleep(3000);
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
 		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
@@ -407,8 +381,8 @@ System.out.println("Order was cancelled successfully");
 	catch(Exception e) {
 		System.out.println("Already logged in");
 	}
-	
-	
+	 
+		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -595,15 +569,9 @@ System.out.println("Order was cancelled successfully");
 		
 		AndriodPom m = new AndriodPom();
 		try {
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-		} catch (Exception e) {
-			System.out.println("No Popup available to close");
-		}
-		
-		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
@@ -611,22 +579,18 @@ System.out.println("Order was cancelled successfully");
 			
 		}
 		
+		
+		
+		Thread.sleep(1000);
+		
 	try {
 		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("click is working");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("popup closed successfully");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("no popup available to close ");
-		}
-		Thread.sleep(3000);
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
 		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
@@ -642,8 +606,8 @@ System.out.println("Order was cancelled successfully");
 	catch(Exception e) {
 		System.out.println("Already logged in");
 	}
-	
-	
+	 
+		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -826,15 +790,9 @@ System.out.println("Order was cancelled successfully");
 		AndriodPom m = new AndriodPom();
 		
 		try {
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-		} catch (Exception e) {
-			System.out.println("No Popup available to close");
-		}
-		
-		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
@@ -850,18 +808,10 @@ System.out.println("Order was cancelled successfully");
 		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup is available to close");
-		}
-		Thread.sleep(3000);
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
 		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
@@ -877,8 +827,8 @@ System.out.println("Order was cancelled successfully");
 	catch(Exception e) {
 		System.out.println("Already logged in");
 	}
-	
-	
+	 
+		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
