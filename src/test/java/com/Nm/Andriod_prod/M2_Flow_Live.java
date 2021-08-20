@@ -1,16 +1,11 @@
 package com.Nm.Andriod_prod;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -20,9 +15,6 @@ import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
@@ -106,22 +98,11 @@ public class M2_Flow_Live extends MobileBaseClass{
 			driver.resetApp();
 		}
 		
+
 		
-		
-		
-		
-		
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("click is working");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("click2 is working");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("click is not working");
-		}
+	popupclose();
+	popupclose();
+	
 		Thread.sleep(10000);
 		
 		Thread.sleep(2000);
@@ -192,7 +173,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		btnclick(m.getM2_SearchBar());
 		
 		Thread.sleep(2000);
-		type(m.getM2_SearchBar(), "Telma");
+		type(m.getM2_SearchBar(), MobileBaseClass.getExcelData("AndM2", 0, 0));
 		
 		Thread.sleep(5000);
 		btnclick(m.getM2_Search_AddToCart());
@@ -200,10 +181,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(5000);
 	//	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")));
 		
-		Thread.sleep(5000);
-		btnclick(m.getM2_ProceedToCart());
-		
-	
+
 		
 		Thread.sleep(5000);
 //		btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_proceed_to_checkout']")));
@@ -214,12 +192,22 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(5000);
 //		btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']")));
 		
+		if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']"))).contains("AO40")) {
+			
+			System.out.println("AO40 - Promo Code Matches");
+			
+		} else {
+			
+			System.err.println("AO40 - Promo not Code Matches");
+
+		}
+		
+		
 		Thread.sleep(5000);
 		btnclick(m.getM2_Place_Order());
 		
 		Thread.sleep(5000);
 		btnclick(m.getTrack_Order());
-		
 		
 		
 		Thread.sleep(5000);
@@ -236,10 +224,14 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
 		
-		
+		try {
 		Thread.sleep(5000);
 		btnclick(driver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']")));
-		
+		} catch (Exception e) {
+			Thread.sleep(5000);
+			btnclick(driver.findElementByAccessibilityId("Navigate up"));
+			
+		}
 		
 		
 		
@@ -267,32 +259,23 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 			
 			
-			
-			
 			try {
 				Thread.sleep(5000);
-			btnclick(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/lets_start']")));
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				driver.resetApp();
+			}
+			
+			
+			
+			popupclose();
+			popupclose();
+			Thread.sleep(5000);
+			try {
+				btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			
-			
-			
-			
-			
-			
-			try {
-				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-				System.out.println("click is working");
-				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-				System.out.println("click2 is working");
-				//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-			} catch (Exception e) {
-				System.out.println("click is not working");
-			}
-			Thread.sleep(10000);
 			
 			Thread.sleep(2000);
 			driver.hideKeyboard();
@@ -341,28 +324,41 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		
 		Thread.sleep(5000);
-		btnclick(driver.findElement(By.xpath("//android.view.View[@index='0']")));
+		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
 		
 		
 		Thread.sleep(5000);
 		btnclick(m.getM2_Upload_ContinueBtn());
 		
 		
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		
-		
-		if (m.getM2_GetCallBtn().isSelected()) {
+		/*
+		if (m.getM2_GetCallBtn().isSelected()==true) {
 			
 			System.out.println("Get Call From NetMeds Checkbox was Already Selected");
 			
+
 		} else {
 
-			btnclick(m.getM2_GetCallBtn());
+			btncli(m.getM2_GetCallBtn());
 		}
 		
-		
-		Thread.sleep(25000);
+		*/
+		Thread.sleep(10000);
 		btnclick(m.getM2_Search_CAll_ContinueBtn());
+		
+		
+		Thread.sleep(5000);
+if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']"))).contains("AO40")) {
+			
+			System.out.println("AO40 - Promo Code Matches");
+			
+		} else {
+			
+			System.err.println("AO40 - Promo not Code Matches");
+
+		}
 		
 		
 		Thread.sleep(5000);
@@ -387,18 +383,21 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
 		
-		
-		Thread.sleep(5000);
-		btnclick(driver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']")));
-		
-		
+		try {
+			Thread.sleep(5000);
+			btnclick(driver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']")));
+			} catch (Exception e) {
+				Thread.sleep(5000);
+				btnclick(driver.findElementByAccessibilityId("Navigate up"));
+				
+			}
 		
 		
 
 	}
 	
 	
-	@Test(priority = 3)
+	@Test(priority = 3,enabled = true)
 	public void pastRX_search() throws Throwable {
 		
 		
@@ -411,31 +410,24 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 			
 			
-			
 			try {
 				Thread.sleep(5000);
-			btnclick(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/lets_start']")));
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				driver.resetApp();
+			}
+			
+			
+			
+			popupclose();
+			popupclose();
+			
+			Thread.sleep(5000);
+			try {
+				btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			
-			
-			
-			
-			
-			
-			try {
-				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-				System.out.println("click is working");
-				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-				System.out.println("click2 is working");
-				//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-			} catch (Exception e) {
-				System.out.println("click is not working");
-			}
-			Thread.sleep(10000);
 			
 			Thread.sleep(2000);
 			driver.hideKeyboard();
@@ -487,7 +479,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		
 		Thread.sleep(2000);
-		btnclick(m.getM2_RX_Checkbox());
+		btnclick(driver.findElement(By.xpath("(//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox'])[2]")));
 		
 		
 		Thread.sleep(2000);
@@ -518,21 +510,23 @@ public class M2_Flow_Live extends MobileBaseClass{
 		btnclick(m.getM2_Search_AddToCart());
 		
 		Thread.sleep(5000);
-	//	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")));
-		
-		Thread.sleep(5000);
 		btnclick(m.getM2_ProceedToCart());
-		
 	
-		
-		Thread.sleep(5000);
-//		btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_proceed_to_checkout']")));
-		
 		Thread.sleep(5000);
 		btnclick(m.getM2_ProceedBtn());
 		
 		Thread.sleep(5000);
 //		btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']")));
+		
+if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']"))).contains("AO40")) {
+			
+			System.out.println("AO40 - Promo Code Matches");
+			
+		} else {
+			
+			System.err.println("AO40 - Promo not Code Matches");
+
+		}
 		
 		Thread.sleep(5000);
 		btnclick(m.getM2_Place_Order());
@@ -555,16 +549,20 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
 		
-		
-		Thread.sleep(5000);
-		btnclick(driver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']")));
-		
+		try {
+			Thread.sleep(5000);
+			btnclick(driver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']")));
+			} catch (Exception e) {
+				Thread.sleep(5000);
+				btnclick(driver.findElementByAccessibilityId("Navigate up"));
+				
+			}
 		
 		
 	}
 	
 	
-	@Test(priority = 4)
+	@Test(priority = 4,enabled = true)
 	public void pastRX_getCall() throws Throwable {
 		
 
@@ -579,32 +577,26 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 			
 			
-			
 			try {
 				Thread.sleep(5000);
-			btnclick(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/lets_start']")));
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				driver.resetApp();
+				
+				
+			}
+			
+			
+			
+			
+			popupclose();
+			popupclose();
+			Thread.sleep(5000);
+			try {
+				btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			
-			
-			
-			
-			
-			
-			try {
-				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-				System.out.println("click is working");
-				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-				System.out.println("click2 is working");
-				//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-			} catch (Exception e) {
-				System.out.println("click is not working");
-			}
-			Thread.sleep(10000);
-			
 			Thread.sleep(2000);
 			driver.hideKeyboard();
 			
@@ -654,7 +646,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		
 		Thread.sleep(2000);
-		btnclick(m.getM2_RX_Checkbox());
+		btnclick(driver.findElement(By.xpath("(//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox'])[3]")));
 		
 		
 		Thread.sleep(2000);
@@ -667,7 +659,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		
 		Thread.sleep(2000);
-		
+	/*	
 		
 		if (m.getM2_GetCallBtn().isSelected()) {
 			
@@ -675,10 +667,10 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 		} else {
 
-			btnclick(m.getM2_GetCallBtn());
+			btncli(m.getM2_GetCallBtn());
 		}
 		
-		
+		*/
 		Thread.sleep(25000);
 		btnclick(m.getM2_Search_CAll_ContinueBtn());
 		
@@ -790,7 +782,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		//Click on Change
 		
 		Thread.sleep(5000);
-		btnclick(m.getM2_ChangeAddress());
+	//	btncli(m.getM2_ChangeAddress());
 				
 		////////////////////////////////
 		Thread.sleep(3000);
@@ -800,6 +792,16 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(3000);
 		btnclick(m.getM2_BackToCart());
 		
+		Thread.sleep(3000);
+if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']"))).contains("AO40")) {
+			
+			System.out.println("AO40 - Promo Code Matches");
+			
+		} else {
+			
+			System.err.println("AO40 - Promo not Code Matches");
+
+		}
 		
 		
 		
@@ -826,65 +828,17 @@ public class M2_Flow_Live extends MobileBaseClass{
 		btnclick(m.getSubmit_cancelBtn());
 		
 		
-		Thread.sleep(5000);
-		btnclick(driver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']")));
-		
-		
-		
-
-	}
-	
-	
-
-	@AfterMethod()
-	public void screenShot(ITestResult result) throws Throwable {
-		
-	    if(result.getStatus() == ITestResult.FAILURE) {
-	    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
-	    	logger.fail(result.getThrowable());
-	    	try {
+		try {
+			Thread.sleep(5000);
+			btnclick(driver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']")));
+			} catch (Exception e) {
+				Thread.sleep(5000);
+				btnclick(driver.findElementByAccessibilityId("Navigate up"));
 				
-
-				TakesScreenshot screenshot = (TakesScreenshot) driver;
-				File src = screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
-				System.out.println("Successfully captured a screenshot");
-				//logger.log(Status.FAIL, result.getThrowable());
-				logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
-			
-		
-				
-				
-			}catch (Exception e) {
-				e.printStackTrace();
 			}
-	      }
-	 
-	    else if(result.getStatus() == ITestResult.SUCCESS) {
-	    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
-	    
-	    }
-	    else {
-	    
-	    	 // onFinish(context);
-	    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
-	    	logger.skip(result.getThrowable());
-	    	report.removeTest(logger);
-	    }
-	    
-	    
-	    
-	Thread.sleep(3000);
-	if (result.getStatus() == ITestResult.FAILURE) {
-		Thread.sleep(3000);
-	//	BaseClass.mail_report();
-	
 		
-	//	BaseClass.mail_report();
+
 	}
-	
-	
-	}	
 	
 	
 	
