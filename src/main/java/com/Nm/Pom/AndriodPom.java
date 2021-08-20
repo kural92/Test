@@ -264,7 +264,7 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement addtoCartButton;
 		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart']")
 		private WebElement gotocart;
-<<<<<<< HEAD
+
 		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_remove_product']")
 		private WebElement RemoveButton;
 		public WebElement getRemoveButton() {
@@ -305,7 +305,6 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getSearch_drugname() {
 			return search_drugname;
 		}
-=======
 		
 		
 		
@@ -531,14 +530,7 @@ public class AndriodPom extends MobileBaseClass{
 		}
 		
 		
-		//////////////////////////////////////////////  M2 POM END ////////////////////////////////////////////////////////////////////////////
 		
-		
-		
-		
-		
-		
->>>>>>> ab95865a87bd1ecf3b6d6fab948a3c76b049bcc9
 
 }
 

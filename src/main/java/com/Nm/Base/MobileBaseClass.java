@@ -31,6 +31,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -154,7 +155,19 @@ return text;
 		return attribute;
 	}
 
-	
+	public static void popupclose() {
+		try {
+			Thread.sleep(10000);
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			System.out.println("pop is closed");
+			
+			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
+		} catch (Exception e) {
+			System.out.println("pop is not available");
+		}
+
+
+	}
 	
 	 ////////////////////////////
 	 

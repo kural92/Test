@@ -103,7 +103,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 			Thread.sleep(5000);
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			// TODO: handle exception
+			driver.resetApp();
 		}
 		
 		
@@ -219,6 +219,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		Thread.sleep(5000);
 		btnclick(m.getTrack_Order());
+		
 		
 		
 		Thread.sleep(5000);

@@ -75,7 +75,7 @@ public class M1_flow extends MobileBaseClass {
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
-      htmlReporter = new ExtentHtmlReporter(".//Report//AlternateBrand.html");
+      htmlReporter = new ExtentHtmlReporter(".//Report//Moneflow.html");
        
        //initialize ExtentReports and attach the HtmlReporter
        report = new ExtentReports();
@@ -96,7 +96,7 @@ public class M1_flow extends MobileBaseClass {
    	
    }
 	@Test
-	public void alterNate_Product() throws Throwable {
+	public void Mone_otc() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
 		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
@@ -104,8 +104,9 @@ public class M1_flow extends MobileBaseClass {
 		AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(10000);
+		popupclose();
 		try {
-			driver.findElement(By.xpath("//*[@resource-id='com.NetmedsMarketplace.Netmeds:id/lets_start']")).click();
+			btnclick(m.getLetsstarted());
 			Thread.sleep(10000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
@@ -113,17 +114,8 @@ public class M1_flow extends MobileBaseClass {
 		}
 		
 		
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("click is working");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("click2 is working");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("click is not working");
-		}
+		popupclose();
+		popupclose();
 		try {
 			
 			Thread.sleep(2000);
@@ -236,7 +228,145 @@ public class M1_flow extends MobileBaseClass {
 			System.out.println("Order was cancelled successfully");
 
 
+
 	}
+	@Test
+	public void mone_precrption() throws Throwable {
+		
+		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
+		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
+		
+		AndriodPom m = new AndriodPom();
+		popupclose();
+		Thread.sleep(10000);
+		try {
+			btnclick(m.getLetsstarted());
+			Thread.sleep(10000);
+			driver.hideKeyboard();
+		} catch (Exception e) {
+			driver.resetApp();
+		}
+		
+		popupclose();
+		popupclose();
+		
+		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("9677159095");
+			Thread.sleep(3000);
+			btnclick(m.getUsepwd());
+			Thread.sleep(5000);
+		
+			m.getPassword().sendKeys("test4nm");
+			
+			btnclick(m.getLogin());
+			Thread.sleep(2000);
+		}catch(Exception e) {
+				System.out.println("Already logged in");
+			}
+		Thread.sleep(10000);
+				String s="Patanjali Lauh Bhasm Powder 5 gm";
+		Thread.sleep(2000);
+		btnclick(m.getGotocart()); 
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
+
+				try {
+					btnclick(m.getRemoveButton());
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			} else {
+				logger.log(Status.PASS, "Successfully Product Removed from Cart");
+				break;
+
+			}
+		}
+		btnclick(m.getCart_search());
+		Thread.sleep(2000);
+	m.getSearchbarone().sendKeys(s);
+		 
+		 
+		
+	Thread.sleep(2000);
+			btnclick(m.getSearch_drugname());
+			Thread.sleep(5000);
+			try {
+			btnclick(m.getAddtoCartButton());
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(2000);
+			btnclick(m.getGotocart()); 
+			Thread.sleep(2000);
+			btnclick(m.getProceed_btn());
+			Thread.sleep(3000);
+
+			btnclick(m.getPlaceorder());
+
+			Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
+			 btnclick(m.getPayment_cod());
+			 Thread.sleep(3000);
+			 btnclick(m.getPayment_paybutton());
+			 Thread.sleep(3000);
+			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
+					
+					
+			logger.log(Status.PASS, "Order was placed successfully" );
+			System.out.println("Order was placed successfully and the "   + Order_id);
+ 			//my orders
+
+
+			btnclick(m.getMyorders());
+
+			Thread.sleep(3000);
+				
+			//View details
+
+
+			btnclick(m.getViewdetails());
+			Thread.sleep(3000);
+
+			//cancel order
+
+
+			btnclick(m.getCancelorder());
+			Thread.sleep(3000);
+			//yes
+
+			//btnclick(m.getYesbutton());
+			Thread.sleep(2000);
+
+
+			//Cancel reason
+
+			btnclick(m.getCancel_reason());
+
+			Thread.sleep(2000);
+
+			//Submit and cancel
+
+			btnclick(m.getSubmit_cancel());
+			logger.log(Status.PASS, "Order was cancelled successfully");
+			System.out.println("Order was cancelled successfully");
+
+
+
+	
+		
+	}
+	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
 		
