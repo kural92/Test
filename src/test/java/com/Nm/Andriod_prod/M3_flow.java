@@ -100,13 +100,21 @@ public class M3_flow extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
-	@Test(enabled = true)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3SubscriptionOTCflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Subscription OTC Flow");
 		logger.log(Status.PASS, "*************M3 - Subscription OTCFlow********************" );
 		
 		AndriodPom m = new AndriodPom();
+		
+		try {
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			System.out.println("Popup is closed successfully");
+		} catch (Exception e) {
+			System.out.println("No Popup available to close");
+		}
 		
 		try {
 			Thread.sleep(5000);
@@ -337,7 +345,7 @@ System.out.println("Order was cancelled successfully");
 	
 //******************************************************M3 Rx Flow*****************************************************
 	
-	@Test(enabled = false)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscriptionrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -345,8 +353,19 @@ System.out.println("Order was cancelled successfully");
 		
 		AndriodPom m = new AndriodPom();
 		
+		
+		
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			System.out.println("Popup is closed successfully");
+		} catch (Exception e) {
+			System.out.println("No Popup available to close");
+		}
+		
+		try {
+			Thread.sleep(2000);
+			
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
@@ -425,7 +444,7 @@ System.out.println("Order was cancelled successfully");
 				
 				System.out.println("successfully Items are added");
 			} catch (Exception e) {
-				// TODO: handle exception
+				System.out.println("No Popup available to close");
 			}
 
 			Thread.sleep(3000);
@@ -480,6 +499,22 @@ Thread.sleep(3000);
 	driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[4]")).click();
 //touchAction.tap(970, 1431).perform();
 	
+	
+//Upload via camera
+	
+	Thread.sleep(3000);
+	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/continueUpload")).click();
+	Thread.sleep(2000);
+	driver.findElementByAccessibilityId("Camera").click();
+	Thread.sleep(3000);
+	
+	driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_button")).click();
+	Thread.sleep(3000);
+	driver.findElementByAccessibilityId("Shutter button").click();
+	
+	Thread.sleep(3000);
+	
+	driver.findElementByAccessibilityId("Done").click();
  Thread.sleep(3000);
  //Schedule delivery
  
@@ -559,7 +594,13 @@ System.out.println("Order was cancelled successfully");
 		logger.log(Status.PASS, "*************M3 - Rx Flow********************" );
 		
 		AndriodPom m = new AndriodPom();
-		
+		try {
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			System.out.println("Popup is closed successfully");
+		} catch (Exception e) {
+			System.out.println("No Popup available to close");
+		}
 		
 		try {
 			Thread.sleep(5000);
@@ -783,6 +824,14 @@ System.out.println("Order was cancelled successfully");
 		logger.log(Status.PASS, "*************M3 - DoctorConsultation Flow********************" );
 		
 		AndriodPom m = new AndriodPom();
+		
+		try {
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			System.out.println("Popup is closed successfully");
+		} catch (Exception e) {
+			System.out.println("No Popup available to close");
+		}
 		
 		try {
 			Thread.sleep(5000);
