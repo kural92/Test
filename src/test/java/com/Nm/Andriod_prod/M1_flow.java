@@ -266,7 +266,7 @@ public class M1_flow extends MobileBaseClass {
 				System.out.println("Already logged in");
 			}
 		Thread.sleep(10000);
-				String s="Patanjali Lauh Bhasm Powder 5 gm";
+				String s="Rxtor 10mg Tablet 10'S";
 		Thread.sleep(2000);
 		btnclick(m.getGotocart()); 
 		for (int i = 0; i < 16; i++) {
@@ -304,6 +304,8 @@ public class M1_flow extends MobileBaseClass {
 			Thread.sleep(2000);
 			btnclick(m.getProceed_btn());
 			Thread.sleep(3000);
+btnclick(m.getUploadPrescription());
+Thread.sleep(3000);
 
 			btnclick(m.getPlaceorder());
 

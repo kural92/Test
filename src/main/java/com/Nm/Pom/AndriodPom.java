@@ -176,11 +176,19 @@ public class AndriodPom extends MobileBaseClass{
 			return done;
 		}
 		
+		public WebElement getAllow() {
+			return Allow;
+		}
+
+
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/setAddressButton")
 		private WebElement Schedule_delivery;
 		public WebElement getSchedule_delivery() {
 			return Schedule_delivery;
 		}
+		@FindBy(xpath = "//android.widget.Button[@text='ALLOW']")
+		private WebElement Allow;
+		
 		
 		
 		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/pinCode")
