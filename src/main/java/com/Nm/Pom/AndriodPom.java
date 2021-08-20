@@ -305,7 +305,7 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getSearch_drugname() {
 			return search_drugname;
 		}
-		
+
 		
 		
 		
@@ -531,6 +531,7 @@ public class AndriodPom extends MobileBaseClass{
 		
 		
 		
+
 
 }
 
