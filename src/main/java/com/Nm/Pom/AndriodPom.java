@@ -538,9 +538,59 @@ public class AndriodPom extends MobileBaseClass{
 		}
 		
 		
-		
+		@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.android.camera:id/shutter_button']")
+		private WebElement camera_clickbutton;
+		@FindBy(xpath = "//android.widget.TextView[@text='Camera']")
+		private WebElement camera_button;
+		@FindBy(xpath = "//android.widget.Button[@text='OK']")
+		private WebElement camera_okbutton;
+		public WebElement getCamera_clickbutton() {
+			return camera_clickbutton;
+		}
 
+		public WebElement getCamera_button() {
+			return camera_button;
+		}
 
+		public WebElement getCamera_okbutton() {
+			return camera_okbutton;
+		}
+
+		@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/continueUpload']")
+		private WebElement continueUpload;
+		@FindBy(xpath = "//android.widget.TextView[@text='Gallery']")
+		private WebElement Gallery_button;
+		@FindBy(xpath = "//android.widget.TextView[@text='Past Rx']")
+		private WebElement PastRx_button;
+		@FindBy(xpath = "//android.widget.TextView[@text='PDF']")
+		private WebElement PDF_button;
+		@FindBy(xpath = "(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionImage'])[1]")
+		private WebElement prescriptionImage;
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='android:id/title']")
+		private WebElement Pdf_Click;
+		public WebElement getPdf_Click() {
+			return Pdf_Click;
+		}
+
+		public WebElement getPrescriptionImage() {
+			return prescriptionImage;
+		}
+
+		public WebElement getContinueUpload() {
+			return continueUpload;
+		}
+
+		public WebElement getGallery_button() {
+			return Gallery_button;
+		}
+
+		public WebElement getPastRx_button() {
+			return PastRx_button;
+		}
+
+		public WebElement getPDF_button() {
+			return PDF_button;
+		}
 }
 
 
