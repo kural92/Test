@@ -51,9 +51,9 @@ public class M1_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");
+			capabilities.setCapability(MobileCapabilityType.UDID, "GBT4C19326001968");
 			capabilities.setCapability("platformName", "Android");
-			capabilities.setCapability("deviceName", "vivo 1819");
+			//capabilities.setCapability("deviceName", "vivo 1819");
 			capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
 			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
@@ -95,7 +95,7 @@ public class M1_flow extends MobileBaseClass {
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test
+	@Test(enabled=false)
 	public void Mone_otc() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
@@ -230,36 +230,40 @@ public class M1_flow extends MobileBaseClass {
 
 
 	}
-	@Test
+	@Test(enabled=true)
 	public void mone_precrption() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
 		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
 		
 		AndriodPom m = new AndriodPom();
-		popupclose();
+		
 		Thread.sleep(10000);
-		try {
+		/*try {
 			btnclick(m.getLetsstarted());
 			Thread.sleep(10000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
 			driver.resetApp();
-		}
-		
+			Thread.sleep(5000);
+			driver.hideKeyboard();
+		}*/
+		driver.hideKeyboard();
+		Thread.sleep(15000);
 		popupclose();
+		Thread.sleep(15000);
 		popupclose();
 		
 		try {
 			
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			m.getMobilenumber().sendKeys("9677159095");
 			Thread.sleep(3000);
 			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
 		
 			m.getPassword().sendKeys("test4nm");
-			
+			driver.hideKeyboard();
 			btnclick(m.getLogin());
 			Thread.sleep(2000);
 		}catch(Exception e) {
@@ -294,18 +298,53 @@ public class M1_flow extends MobileBaseClass {
 	Thread.sleep(2000);
 			btnclick(m.getSearch_drugname());
 			Thread.sleep(5000);
+			
+			 driver.swipe(0, 500, 0, 0, 1000);
 			try {
+				Thread.sleep(3000);
 			btnclick(m.getAddtoCartButton());
 			}catch (Exception e) {
 				// TODO: handle exception
 			}
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			btnclick(m.getGotocart()); 
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			btnclick(m.getProceed_btn());
 			Thread.sleep(3000);
 btnclick(m.getUploadPrescription());
 Thread.sleep(3000);
+btnclick(m.getCamera_button());
+Thread.sleep(3000);
+btnclick(m.getAllow());
+Thread.sleep(3000);
+btnclick(m.getCamera_clickbutton());
+Thread.sleep(3000);
+try {
+	btnclick(m.getM2_RX_DoneBtn());	
+} catch (Exception e) {
+	// TODO: handle exception
+}
+Thread.sleep(3000);
+btnclick(m.getContinueUpload());
+
+Thread.sleep(3000);
+btnclick(m.getGallery_button());
+Thread.sleep(3000);
+btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
+Thread.sleep(3000);
+btnclick(m.getPastRx_button());
+Thread.sleep(3000);
+
+btnclick(m.getPrescriptionImage());
+Thread.sleep(3000);
+btnclick(m.getM2_RX_DoneBtn());
+Thread.sleep(3000);
+
+btnclick(m.getContinueUpload());
+Thread.sleep(3000);
+btnclick(m.getPDF_button());
+Thread.sleep(3000);
+btnclick(m.getPdf_Click());
 
 			btnclick(m.getPlaceorder());
 

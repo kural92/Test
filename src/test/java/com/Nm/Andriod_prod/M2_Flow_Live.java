@@ -239,6 +239,24 @@ public class M2_Flow_Live extends MobileBaseClass{
 	}
 	
 	
+	public ExtentHtmlReporter getHtmlReporter() {
+		return htmlReporter;
+	}
+
+
+
+	public static ExtentReports getReport() {
+		return report;
+	}
+
+
+
+	public static ExtentTest getLogger() {
+		return logger;
+	}
+
+
+
 	@Test(priority = 2, enabled = true)
 	public void m2_getCall() throws Throwable {
 	
