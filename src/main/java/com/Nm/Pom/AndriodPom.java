@@ -326,6 +326,7 @@ public class AndriodPom extends MobileBaseClass{
 		
 		
 
+
 		
 		
 		///////////////////////////////////////////////   M2 FLOW  ////////////////////////////////////////////////////////////////
@@ -389,7 +390,7 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_Search_AddToCart;
 		}
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_proceed_to_checkout']" )
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton']" )
 		private WebElement m2_ProceedToCart;
 		public WebElement getM2_ProceedToCart() {
 			return m2_ProceedToCart;
@@ -450,6 +451,8 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getM2_GetCallBtn() {
 			return m2_GetCallBtn;
 		}
+		
+
 
 		@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox']")
 		private WebElement m2_RX_Checkbox;
@@ -518,7 +521,7 @@ public class AndriodPom extends MobileBaseClass{
 		}
 		
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/modify']")
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/edit']")
 		private WebElement m2_ModifyAddress;
 		public WebElement getM2_ModifyAddress() {
 			return m2_ModifyAddress;
@@ -538,6 +541,7 @@ public class AndriodPom extends MobileBaseClass{
 		}
 		
 		
+<<<<<<< HEAD
 		@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.android.camera:id/shutter_button']")
 		private WebElement camera_clickbutton;
 		@FindBy(xpath = "//android.widget.TextView[@text='Camera']")
@@ -571,6 +575,11 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getPdf_Click() {
 			return Pdf_Click;
 		}
+=======
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+>>>>>>> 41287097572f508104549fdec947186c9fac26e1
 
 		public WebElement getPrescriptionImage() {
 			return prescriptionImage;

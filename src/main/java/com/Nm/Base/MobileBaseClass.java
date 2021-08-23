@@ -159,11 +159,11 @@ return text;
 		try {
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("pop is closed");
+			System.out.println("popup is closed");
 			
 			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
 		} catch (Exception e) {
-			System.out.println("pop is not available");
+			System.out.println("popup is not available");
 		}
 
 
