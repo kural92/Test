@@ -540,8 +540,12 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_BackToCart;
 		}
 		
+<<<<<<< HEAD
 		
 
+=======
+	
+>>>>>>> e046ee8bb13af87cc8904c0db0777d04f4307d10
 		@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.android.camera:id/shutter_button']")
 		private WebElement camera_clickbutton;
 		@FindBy(xpath = "//android.widget.TextView[@text='Camera']")
@@ -576,10 +580,13 @@ public class AndriodPom extends MobileBaseClass{
 			return Pdf_Click;
 		}
 
+<<<<<<< HEAD
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 
+=======
+>>>>>>> e046ee8bb13af87cc8904c0db0777d04f4307d10
 
 		public WebElement getPrescriptionImage() {
 			return prescriptionImage;
