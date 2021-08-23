@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-skipped">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\NMSLAP357\AppData\Local\Temp\testng-eclipse--1207170962\testng-customsuite.xml</span>
+                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--856135020\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +93,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,  1 skipped,  1 passed</span>
+                    <span class="method-stats">4 methods, 3 failed,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Retried methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M3_flow" class="method navigator-link" hash-for-method="M3SubscriptionOTCflow">M3SubscriptionOTCflow</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M2_Flow_Live" class="method navigator-link" hash-for-method="m2_getCall">m2_getCall</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M2_Flow_Live" class="method navigator-link" hash-for-method="m2_getSearchMedicine">m2_getSearchMedicine</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M2_Flow_Live" class="method navigator-link" hash-for-method="pastRX_getCall">pastRX_getCall</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,7 +128,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M3_flow" class="method navigator-link" hash-for-method="M3SubscriptionOTCflow">M3SubscriptionOTCflow</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M2_Flow_Live" class="method navigator-link" hash-for-method="pastRX_search">pastRX_search</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -133,31 +143,96 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-skipped">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.Nm.Andriod_prod.M3_flow</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.Nm.Andriod_prod.M2_Flow_Live</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="M3SubscriptionOTCflow">
-                  </a> <!-- M3SubscriptionOTCflow -->
-                  <span class="method-name">M3SubscriptionOTCflow</span>
+                  <a name="m2_getCall">
+                  </a> <!-- m2_getCall -->
+                  <span class="method-name">m2_getCall</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 163 milliseconds
+Command duration or timeout: 108 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;LAPTOP-AD2BG20M&apos;, ip: &apos;192.168.1.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=100, viewportRect={top=100, left=0, width=1080, height=2010}, deviceName=07c55fe10406, platform=LINUX, deviceUDID=07c55fe10406, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, autoDismissAlerts=true, udid=07c55fe10406, platformName=Android}, platformVersion=10, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=07c55fe10406, platformName=Android, deviceApiLevel=29, deviceManufacturer=Xiaomi, deviceScreenSize=1080x2340, networkConnectionEnabled=true, warnings={}, autoDismissAlerts=true, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=2.75, locationContextEnabled=false, deviceScreenDensity=440, deviceModel=M2003J15SC}]
-Session ID: 65bd1e1a-9c4a-49b2-bf00-ffe09f76cfe1
-*** Element info: {Using=xpath, value=//android.widget.ImageView[@resource-id=&apos;com.NetmedsMarketplace.Netmeds:id/subscription_image&apos;]}
+Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, deviceScreenSize=720x1600, networkConnectionEnabled=true, statBarHeight=45, warnings={}, viewportRect={top=45, left=0, width=720, height=1420}, databaseEnabled=false, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, pixelRatio=1.875, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=300, deviceModel=SM-A125F, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung}]
+Session ID: c8714836-df11-442a-a855-2f55051103c2
+*** Element info: {Using=accessibility id, value=Navigate up}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByAccessibilityId(DefaultGenericMobileDriver.java:145)
+	at io.appium.java_client.AppiumDriver.findElementByAccessibilityId(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByAccessibilityId(AndroidDriver.java:1)
+	at com.Nm.Andriod_prod.M2_Flow_Live.m2_getCall(M2_Flow_Live.java:391)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="m2_getSearchMedicine">
+                  </a> <!-- m2_getSearchMedicine -->
+                  <span class="method-name">m2_getSearchMedicine</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 106 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, deviceScreenSize=720x1600, networkConnectionEnabled=true, statBarHeight=45, warnings={}, viewportRect={top=45, left=0, width=720, height=1420}, databaseEnabled=false, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, pixelRatio=1.875, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=300, deviceModel=SM-A125F, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung}]
+Session ID: c8714836-df11-442a-a855-2f55051103c2
+*** Element info: {Using=xpath, value=//android.widget.TextView[@resource-id=&apos;com.NetmedsMarketplace.Netmeds:id/continueButton&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
@@ -179,13 +254,88 @@ Session ID: 65bd1e1a-9c4a-49b2-bf00-ffe09f76cfe1
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
 	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:94)
-	at com.Nm.Andriod_prod.M3_flow.M3SubscriptionOTCflow(M3_flow.java:154)
+	at com.Nm.Andriod_prod.M2_Flow_Live.m2_getSearchMedicine(M2_Flow_Live.java:164)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="pastRX_getCall">
+                  </a> <!-- pastRX_getCall -->
+                  <span class="method-name">pastRX_getCall</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 366 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, deviceScreenSize=720x1600, networkConnectionEnabled=true, statBarHeight=45, warnings={}, viewportRect={top=45, left=0, width=720, height=1420}, databaseEnabled=false, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, pixelRatio=1.875, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=300, deviceModel=SM-A125F, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung}]
+Session ID: c8714836-df11-442a-a855-2f55051103c2
+*** Element info: {Using=xpath, value=//android.widget.TextView[@resource-id=&apos;com.NetmedsMarketplace.Netmeds:id/order_medicine_button&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:94)
+	at com.Nm.Andriod_prod.M2_Flow_Live.pastRX_getCall(M2_Flow_Live.java:640)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
 	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
@@ -215,18 +365,18 @@ Session ID: 65bd1e1a-9c4a-49b2-bf00-ffe09f76cfe1
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-skipped -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.Nm.Andriod_prod.M3_flow</span>
+              <span class="class-name">com.Nm.Andriod_prod.M2_Flow_Live</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="M3SubscriptionOTCflow">
-                  </a> <!-- M3SubscriptionOTCflow -->
-                  <span class="method-name">M3SubscriptionOTCflow</span>
+                  <a name="pastRX_search">
+                  </a> <!-- pastRX_search -->
+                  <span class="method-name">pastRX_search</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -234,7 +384,7 @@ Session ID: 65bd1e1a-9c4a-49b2-bf00-ffe09f76cfe1
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\NMSLAP357\AppData\Local\Temp\testng-eclipse--1207170962\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--856135020\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -243,7 +393,7 @@ Session ID: 65bd1e1a-9c4a-49b2-bf00-ffe09f76cfe1
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.Nm.Andriod_prod.M3_flow&quot;/&gt;
+      &lt;class name=&quot;com.Nm.Andriod_prod.M2_Flow_Live&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -283,20 +433,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'M3SubscriptionOTCflow')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.M3_flow')
-data.setCell(0, 3, 196223);
+data.setCell(0, 1, 'pastRX_search')
+data.setCell(0, 2, 'com.Nm.Andriod_prod.M2_Flow_Live')
+data.setCell(0, 3, 258514);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'M3SubscriptionOTCflow')
-data.setCell(1, 2, 'com.Nm.Andriod_prod.M3_flow')
-data.setCell(1, 3, 47013);
+data.setCell(1, 1, 'm2_getCall')
+data.setCell(1, 2, 'com.Nm.Andriod_prod.M2_Flow_Live')
+data.setCell(1, 3, 184524);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'm2_getSearchMedicine')
+data.setCell(2, 2, 'com.Nm.Andriod_prod.M2_Flow_Live')
+data.setCell(2, 3, 152568);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'pastRX_getCall')
+data.setCell(3, 2, 'com.Nm.Andriod_prod.M2_Flow_Live')
+data.setCell(3, 3, 69454);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 11 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -311,20 +469,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.Nm.Andriod_prod.M3_flow</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">M3Subscription_DoctorConsultationflow</span>
-                <br/>
-                <span class="ignored-method-name">M3Subscriptionrxflow</span>
-                <br/>
-                <span class="ignored-method-name">M3Subscriptionpastrxflow</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -333,34 +480,40 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.Nm.Andriod_prod.M3_flow</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.Nm.Andriod_prod.M2_Flow_Live</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">startReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">launchbrowser</span>
-                <span class="method-start">197 ms</span>
+                <span class="method-start">180 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">M3SubscriptionOTCflow</span>
-                <span class="method-start">13637 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">m2_getSearchMedicine</span>
+                <span class="method-start">14062 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=M3SubscriptionOTCflow status=SKIP method=M3_flow.M3SubscriptionOTCflow()[pri:0, ins...)</span>
-                <span class="method-start">60689 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">M3SubscriptionOTCflow</span>
-                <span class="method-start">63715 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">m2_getCall</span>
+                <span class="method-start">166648 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=M3SubscriptionOTCflow status=SUCCESS method=M3_flow.M3SubscriptionOTCflow()[pri:0, ...)</span>
-                <span class="method-start">259941 ms</span>
-              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">pastRX_search</span>
+                <span class="method-start">351184 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">pastRX_getCall</span>
+                <span class="method-start">609700 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">quitbrowser</span>
-                <span class="method-start">262953 ms</span>
+                <span class="method-name">tearDown</span>
+                <span class="method-start">679164 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
