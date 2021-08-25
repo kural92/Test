@@ -158,7 +158,7 @@ return text;
 	public static void popupclose() {
 		try {
 			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.view.View")).click();
 			System.out.println("popup is closed");
 			
 			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
