@@ -567,9 +567,9 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement PastRx_button;
 		@FindBy(xpath = "//android.widget.TextView[@text='PDF']")
 		private WebElement PDF_button;
-		@FindBy(xpath = "(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox'])[1]")
+		@FindBy(xpath = "(//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox'])[1]")
 		private WebElement prescriptionImage;
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='android:id/title']")
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.android.documentsui:id/file_type']")
 		private WebElement Pdf_Click;
 		public WebElement getPdf_Click() {
 			return Pdf_Click;

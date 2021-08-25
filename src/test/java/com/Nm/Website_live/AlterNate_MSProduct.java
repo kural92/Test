@@ -98,9 +98,9 @@ public class AlterNate_MSProduct extends BaseClass{
 		  Thread.sleep(3000);
 		  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 		  Thread.sleep(3000);
-		  type(m.getPassword(),FileAndEnv.envAndFile().get("password")); 
+		  type(m.getPassword(),FileAndEnv.envAndFile().get("url")); 
 		  btncli(m.getSignInpage());
-		  
+		
 		  //////////////////////
 		  
 		  

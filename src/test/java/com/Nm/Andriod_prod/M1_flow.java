@@ -246,7 +246,7 @@ public class M1_flow extends MobileBaseClass {
 		Thread.sleep(10000);
 		try {
 			btnclick(m.getLetsstarted());
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
 			driver.resetApp();
@@ -319,8 +319,22 @@ public class M1_flow extends MobileBaseClass {
 			Thread.sleep(5000);
 			btnclick(m.getProceed_btn());
 			Thread.sleep(10000);
-btnclick(m.getUploadPrescription());
-Thread.sleep(3000);
+			try {
+				try {
+					btnclick(m.getUploadPrescription());
+				} catch (Exception e) {
+					// TODO: handle exception
+				}try {
+					btnclick(m.getContinueUpload());
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+
+
+/*Thread.sleep(3000);
 btnclick(m.getCamera_button());
 Thread.sleep(3000);
 btnclick(m.getAllow());
@@ -334,24 +348,29 @@ Thread.sleep(3000);
 btnclick(m.getContinueUpload());
 
 Thread.sleep(3000);
-/*btnclick(m.getGallery_button());
+btnclick(m.getGallery_button());
 Thread.sleep(3000);
-btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
-Thread.sleep(3000);*/
+btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb'])[1]")));
+Thread.sleep(3000);
+
+btnclick(m.getContinueUpload());*/
+Thread.sleep(3000);
 btnclick(m.getPastRx_button());
 Thread.sleep(3000);
 
 btnclick(m.getPrescriptionImage());
 Thread.sleep(3000);
-btnclick(m.getM2_RX_DoneBtn());
+driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/doneButton")).click();
 Thread.sleep(3000);
 
-btnclick(m.getContinueUpload());
+/*btnclick(m.getContinueUpload());
 Thread.sleep(3000);
 btnclick(m.getPDF_button());
 Thread.sleep(3000);
-btnclick(m.getPdf_Click());
-
+btnclick(m.getPdf_Click());*/
+Thread.sleep(15000);
+btnclick(m.getSchedule_delivery());
+Thread.sleep(5000);
 			btnclick(m.getPlaceorder());
 
 			Thread.sleep(3000);
