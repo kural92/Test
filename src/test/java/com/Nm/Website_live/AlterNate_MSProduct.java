@@ -80,6 +80,8 @@ public class AlterNate_MSProduct extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
+	
+	
 	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void alterNate_Product() throws Throwable {
 		
