@@ -28,6 +28,8 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import utils.FileAndEnv;
+
 
 /*
 
@@ -92,11 +94,11 @@ public class AlterNate_MSProduct extends BaseClass{
 		 driver.manage().window().maximize();
 		 btncli(m.getSignin());
 		  Thread.sleep(5000);
-		  type(m.getMobileno(),"8098882244");
+		  type(m.getMobileno(),FileAndEnv.envAndFile().get("mobilenumber"));
 		  Thread.sleep(3000);
 		  btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 		  Thread.sleep(3000);
-		  type(m.getPassword(),"Netmeds123"); 
+		  type(m.getPassword(),FileAndEnv.envAndFile().get("password")); 
 		  btncli(m.getSignInpage());
 		  
 		  //////////////////////

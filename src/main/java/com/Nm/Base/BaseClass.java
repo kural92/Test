@@ -3,6 +3,7 @@ package com.Nm.Base;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
@@ -46,6 +47,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import utils.FileAndEnv;
+
 public class BaseClass {
 	
 	public static ExtentHtmlReporter htmlReporter;
@@ -67,15 +70,15 @@ public class BaseClass {
 
 	public static WebDriver driver=null;
 	@BeforeClass
-	public WebDriver launchbrowser() {
+	public WebDriver launchbrowser() throws IOException {
 		System.setProperty("webdriver.chrome.driver", ".//Driver//chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
 		
 		ChromeOptions options = new ChromeOptions();
 	//	options.addArguments("--headless", "--window-size=1920,1200");
 		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
-		driver.get(production_homeurl);
-		
+		driver.get(FileAndEnv.envAndFile().get("url"));
+		System.out.println(FileAndEnv.envAndFile().get("url"));
 		return driver;
 	}
 	public void loadurl(String url) {

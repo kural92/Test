@@ -51,10 +51,10 @@ public class M1_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "GBT4C19326001968");
+			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
 			capabilities.setCapability("platformName", "Android");
-			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability("platformVersion","10.0.0" );
+		//	capabilities.setCapability("deviceName", "vivo 1819");
+		//	capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
 			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
 			//for install Apk file
@@ -63,6 +63,11 @@ public class M1_flow extends MobileBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			//capabilities.setCapability("noReset", true);
+			
+			
+			
+			//capabilities.setCapability("autoDismissAlerts", true);  
+			
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -119,12 +124,12 @@ public class M1_flow extends MobileBaseClass {
 		try {
 			
 			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("9677159095");
+			m.getMobilenumber().sendKeys("8012222872");
 			Thread.sleep(3000);
 			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
 		
-			m.getPassword().sendKeys("test4nm");
+			m.getPassword().sendKeys("test4nmm");
 			
 			btnclick(m.getLogin());
 			Thread.sleep(2000);
@@ -135,7 +140,7 @@ public class M1_flow extends MobileBaseClass {
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
 		btnclick(m.getGotocart()); 
-		for (int i = 0; i < 16; i++) {
+		for (int i = 0; i < 2; i++) {
 			Thread.sleep(3000);
 			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
 
@@ -239,19 +244,22 @@ public class M1_flow extends MobileBaseClass {
 		AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(10000);
-		/*try {
+		try {
 			btnclick(m.getLetsstarted());
 			Thread.sleep(10000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
 			driver.resetApp();
 			Thread.sleep(5000);
+			btnclick(m.getLetsstarted());
+
+			Thread.sleep(5000);
 			driver.hideKeyboard();
-		}*/
-		driver.hideKeyboard();
-		Thread.sleep(15000);
+		}
+		//driver.hideKeyboard();
+		Thread.sleep(10000);
 		popupclose();
-		Thread.sleep(15000);
+		Thread.sleep(10000);
 		popupclose();
 		
 		try {
@@ -310,7 +318,7 @@ public class M1_flow extends MobileBaseClass {
 			btnclick(m.getGotocart()); 
 			Thread.sleep(5000);
 			btnclick(m.getProceed_btn());
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 btnclick(m.getUploadPrescription());
 Thread.sleep(3000);
 btnclick(m.getCamera_button());
@@ -319,19 +327,17 @@ btnclick(m.getAllow());
 Thread.sleep(3000);
 btnclick(m.getCamera_clickbutton());
 Thread.sleep(3000);
-try {
+
 	btnclick(m.getM2_RX_DoneBtn());	
-} catch (Exception e) {
-	// TODO: handle exception
-}
+
 Thread.sleep(3000);
 btnclick(m.getContinueUpload());
 
 Thread.sleep(3000);
-btnclick(m.getGallery_button());
+/*btnclick(m.getGallery_button());
 Thread.sleep(3000);
 btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
-Thread.sleep(3000);
+Thread.sleep(3000);*/
 btnclick(m.getPastRx_button());
 Thread.sleep(3000);
 
