@@ -427,8 +427,8 @@ public static void scrolldown(String Size) throws InterruptedException  {
 public static void mail_report() {
 	
 	 report.flush();
-  final String username = "cbsautomationreport@gmail.com";
-  final String password = "cbstest123"; 
+  final String username = "netmedsautomationreport@gmail.com";
+  final String password = "test@123"; 
   
   
  /* final String username = "cbsautomationreport@gmail.com";
