@@ -107,6 +107,7 @@ public class M1_flow extends MobileBaseClass {
 		popupclose();
 		popupclose();
 		try {
+			Thread.sleep(2000);
 			btnclick(m.getLetsstarted());
 			Thread.sleep(10000);
 			driver.hideKeyboard();
@@ -231,7 +232,7 @@ public class M1_flow extends MobileBaseClass {
 
 
 	}
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void mone_precrption() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
