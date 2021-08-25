@@ -460,7 +460,7 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_RX_Checkbox;
 		}
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/doneButton']")
+		@FindBy(id = "com.android.camera:id/done_button")
 		private WebElement m2_RX_DoneBtn;
 		public WebElement getM2_RX_DoneBtn() {
 			return m2_RX_DoneBtn;
@@ -562,7 +562,7 @@ public class AndriodPom extends MobileBaseClass{
 			return camera_okbutton;
 		}
 
-		@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/continueUpload']")
+		@FindBy(xpath = "//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/continueUpload']")
 		private WebElement continueUpload;
 		@FindBy(xpath = "//android.widget.TextView[@text='Gallery']")
 		private WebElement Gallery_button;
@@ -570,7 +570,7 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement PastRx_button;
 		@FindBy(xpath = "//android.widget.TextView[@text='PDF']")
 		private WebElement PDF_button;
-		@FindBy(xpath = "(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionImage'])[1]")
+		@FindBy(xpath = "(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox'])[1]")
 		private WebElement prescriptionImage;
 		@FindBy(xpath = "//android.widget.TextView[@resource-id='android:id/title']")
 		private WebElement Pdf_Click;
