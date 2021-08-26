@@ -595,6 +595,128 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getPDF_button() {
 			return PDF_button;
 		}
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/netmeds_first_title")
+		private WebElement Homepage_netmeds_first_title;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/netmeds_first_sub_title")
+		private WebElement homepage_netmeds_first_sub_title;
+		public WebElement getHomepage_netmeds_first_title() {
+			return Homepage_netmeds_first_title;
+		}
+
+		public WebElement getHomepage_netmeds_first_sub_title() {
+			return homepage_netmeds_first_sub_title;
+		}
+
+		public WebElement getHomepage_netmeds_first_discount() {
+			return homepage_netmeds_first_discount;
+		}
+
+		public WebElement getHomepage_netmeds_first_action_button() {
+			return homepage_netmeds_first_action_button;
+		}
+
+
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/netmeds_first_discount")
+		private WebElement homepage_netmeds_first_discount;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/netmeds_first_action_button")
+		private WebElement homepage_netmeds_first_action_button;
+		public WebElement getNetmedsFirstPage_imageView() {
+			return NetmedsFirstPage_imageView;
+		}
+
+		public WebElement getNetmedsFirstPage_header_text() {
+			return NetmedsFirstPage_header_text;
+		}
+
+		public WebElement getNetmedsFirstPage_6month() {
+			return NetmedsFirstPage_6month;
+		}
+
+		public WebElement getNetmedsFirstPage_12month() {
+			return NetmedsFirstPage_12month;
+		}
+
+		public WebElement getNetmedsFirstPage_benefits_header_text() {
+			return NetmedsFirstPage_benefits_header_text;
+		}
+
+		public WebElement getNetmedsFirstPage_benefits_sub_header_text() {
+			return NetmedsFirstPage_benefits_sub_header_text;
+		}
+
+		public WebElement getNetmedsFirstPage_benefits_linkPage() {
+			return NetmedsFirstPage_benefits_linkPage;
+		}
+
+		public WebElement getNetmedsFirstPage_benefits_linkType() {
+			return NetmedsFirstPage_benefits_linkType;
+		}
+
+		public WebElement getNetmedsFirstPage_benefits_tip_text() {
+			return NetmedsFirstPage_benefits_tip_text;
+		}
+
+
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/imageView")
+		private WebElement NetmedsFirstPage_imageView;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/header_text")
+		private WebElement NetmedsFirstPage_header_text;
+		@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_add_to_cart'])[1]")
+		private WebElement NetmedsFirstPage_6month;
+		@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_add_to_cart'])[2]")
+		private WebElement NetmedsFirstPage_12month;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/benefits_header_text")
+		private WebElement NetmedsFirstPage_benefits_header_text;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/benefits_sub_header_text")
+		private WebElement NetmedsFirstPage_benefits_sub_header_text;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/linkPage")
+		private WebElement NetmedsFirstPage_benefits_linkPage;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/linkType")
+		private WebElement NetmedsFirstPage_benefits_linkType;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/benefits_tip_text")
+		private WebElement NetmedsFirstPage_benefits_tip_text;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cart_prime_header_text")
+		private WebElement cart_prime_header_text;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cart_prime_sub_header_text")
+		private WebElement cart_prime_sub_header_text;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cart_img_circle_arrow")
+		private WebElement cart_img_circle_arrow;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cart_deliveryCharges")
+		private WebElement cart_deliveryCharges;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/account_text")
+		private WebElement Home_accountPage;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cl_elite")
+		private WebElement acountPage_NetmedsFirstmember;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cl_log_out")
+		private WebElement acountPage_logout;
+		public WebElement getAcountPage_logout() {
+			return acountPage_logout;
+		}
+
+		public WebElement getAcountPage_NetmedsFirstmember() {
+			return acountPage_NetmedsFirstmember;
+		}
+
+		public WebElement getCart_deliveryCharges() {
+			return cart_deliveryCharges;
+		}
+
+		public WebElement getHome_accountPage() {
+			return Home_accountPage;
+		}
+
+		public WebElement getCart_prime_header_text() {
+			return cart_prime_header_text;
+		}
+
+		public WebElement getCart_prime_sub_header_text() {
+			return cart_prime_sub_header_text;
+		}
+
+		public WebElement getCart_img_circle_arrow() {
+			return cart_img_circle_arrow;
+		}
+		
 }
 
 
