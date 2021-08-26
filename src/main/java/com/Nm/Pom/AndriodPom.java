@@ -689,6 +689,129 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement acountPage_NetmedsFirstmember;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cl_log_out")
 		private WebElement acountPage_logout;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/product_title")
+		private WebElement OrP_product_title;
+		public WebElement getOrP_product_title() {
+			return OrP_product_title;
+		}
+
+
+		@FindBy(xpath = "//android.widget.TextView[@text='Delivery Estimate']")
+		private WebElement OrP_Delivery_Estimate;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/txt_estimate_date")
+		private WebElement OrP_txt_estimate_date;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/drug_name")
+		private WebElement OrP_drug_name;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/algoliaPrice")
+		private WebElement Orp_algoliaPrice;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/manufacturer_name")
+		private WebElement Orp_manufacturer_name;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_item_seller")
+		private WebElement Orp_tv_item_seller;	
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/qtyLabel")
+		private WebElement Orp_qtyLabel;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/quantity")
+		private WebElement Orp_quantity;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_item_expiry")
+		private WebElement Orp_tv_item_expiry;
+		@FindBy(xpath = "//android.widget.TextView[@text='PAYMENT DETAILS']")
+		private WebElement Orp_PAYMENT_DETAIls;
+		@FindBy(xpath = "//android.widget.TextView[@text='MRP Total']")
+		private WebElement Orp_MRP_Total;
+		@FindBy(xpath = "//android.widget.TextView[@text='Delivery Charges']")
+		private WebElement Orp_Delivery_Charges;
+		@FindBy(xpath = "//android.widget.TextView[@text='Total Amount']")
+		private WebElement Orp_Total_Amount;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/mrpTotal")
+		private WebElement Orp_mrpTotal_value;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_delivery_Charges")
+		private WebElement Orp_tv_delivery_Charges_value;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_order_amount")
+		private WebElement Orp_tv_order_amount_value;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/disclaimer_text")
+		private WebElement Orp_disclaimer_text;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/prescriptionImage")
+		private WebElement Orp_prescriptionImage;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/preview_close")
+		private WebElement Orp_preview_close;
+		public WebElement getOrp_preview_close() {
+			return Orp_preview_close;
+		}
+
+		public WebElement getOrp_prescriptionImage() {
+			return Orp_prescriptionImage;
+		}
+
+
+		
+		public WebElement getOrp_disclaimer_text() {
+			return Orp_disclaimer_text;
+		}
+
+		public WebElement getOrP_Delivery_Estimate() {
+			return OrP_Delivery_Estimate;
+		}
+
+		public WebElement getOrP_txt_estimate_date() {
+			return OrP_txt_estimate_date;
+		}
+
+		public WebElement getOrP_drug_name() {
+			return OrP_drug_name;
+		}
+
+		public WebElement getOrp_algoliaPrice() {
+			return Orp_algoliaPrice;
+		}
+
+		public WebElement getOrp_manufacturer_name() {
+			return Orp_manufacturer_name;
+		}
+
+		public WebElement getOrp_tv_item_seller() {
+			return Orp_tv_item_seller;
+		}
+
+		public WebElement getOrp_qtyLabel() {
+			return Orp_qtyLabel;
+		}
+
+		public WebElement getOrp_quantity() {
+			return Orp_quantity;
+		}
+
+		public WebElement getOrp_tv_item_expiry() {
+			return Orp_tv_item_expiry;
+		}
+
+		public WebElement getOrp_PAYMENT_DETAIls() {
+			return Orp_PAYMENT_DETAIls;
+		}
+
+		public WebElement getOrp_MRP_Total() {
+			return Orp_MRP_Total;
+		}
+
+		public WebElement getOrp_Delivery_Charges() {
+			return Orp_Delivery_Charges;
+		}
+
+		public WebElement getOrp_Total_Amount() {
+			return Orp_Total_Amount;
+		}
+
+		public WebElement getOrp_mrpTotal_value() {
+			return Orp_mrpTotal_value;
+		}
+
+		public WebElement getOrp_tv_delivery_Charges_value() {
+			return Orp_tv_delivery_Charges_value;
+		}
+
+		public WebElement getOrp_tv_order_amount_value() {
+			return Orp_tv_order_amount_value;
+		}
+
 		public WebElement getAcountPage_logout() {
 			return acountPage_logout;
 		}
