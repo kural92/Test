@@ -27,6 +27,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import utils.FileAndEnv;
 
@@ -77,12 +78,12 @@ public class AlterNate_MSProduct extends BaseClass{
        htmlReporter.config().setDocumentTitle("Extent Report ");
        htmlReporter.config().setReportName("NetMeds.com");
 
-       //htmlReporter.config().setTheme(Theme.STANDARD);
+      // htmlReporter.config().setTheme(Theme.DARK);
    	
    }
 	
 	
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test(retryAnalyzer=RetryAnalyzer.class,priority = 1)
 	public void alterNate_Product() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");

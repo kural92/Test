@@ -87,7 +87,7 @@ public class M2_Flow_Search extends BaseClass {
 	
 	
 	
-		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class, priority = 1)
 		public  void m2_searchMedicine() throws Throwable  {
 			logger =  report.createTest("M2 Search and Add Medicine - Past RX");
 			logger.log(Status.PASS, "************* Search Medicine Flow********************" );

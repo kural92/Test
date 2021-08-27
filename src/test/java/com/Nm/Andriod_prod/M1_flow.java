@@ -51,11 +51,11 @@ public class M1_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-<<<<<<< HEAD
+
 			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
-=======
+
 			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
->>>>>>> 51f887564895c85191e9916e995af3f2258f4116
+
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
@@ -255,11 +255,11 @@ public class M1_flow extends MobileBaseClass {
 		popupclose();
 		
 		Thread.sleep(10000);
-<<<<<<< HEAD
+
 	try {
-=======
+
 		try {
->>>>>>> 51f887564895c85191e9916e995af3f2258f4116
+
 			btnclick(m.getLetsstarted());
 			Thread.sleep(10000);
 			driver.hideKeyboard();
@@ -271,13 +271,13 @@ public class M1_flow extends MobileBaseClass {
 			Thread.sleep(5000);
 			driver.hideKeyboard();
 		}
-<<<<<<< HEAD
+
 		driver.hideKeyboard();
 		Thread.sleep(15000);
-=======
+
 		//driver.hideKeyboard();
 		Thread.sleep(10000);
->>>>>>> 51f887564895c85191e9916e995af3f2258f4116
+
 		popupclose();
 		Thread.sleep(10000);
 		popupclose();
@@ -429,9 +429,13 @@ btnclick(m.getPdf_Click());
 			System.out.println("Order was cancelled successfully");
 
 
-
+	
 	
 		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
 	}
 	
 	@AfterMethod()
