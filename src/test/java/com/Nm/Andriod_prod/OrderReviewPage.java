@@ -1,6 +1,5 @@
 package com.Nm.Andriod_prod;
 
-import java.awt.Robot;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -8,14 +7,9 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -23,10 +17,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
+import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
-import com.Nm.Pom.Monepom;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -34,13 +29,13 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class M1_flow extends MobileBaseClass {
+public class OrderReviewPage extends MobileBaseClass {
+
 
 	
 	
@@ -51,11 +46,7 @@ public class M1_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
-
 			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
-
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
@@ -84,7 +75,7 @@ public class M1_flow extends MobileBaseClass {
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
-      htmlReporter = new ExtentHtmlReporter(".//Report//Moneflow.html");
+      htmlReporter = new ExtentHtmlReporter(".//Report//OrderReview.html");
        
        //initialize ExtentReports and attach the HtmlReporter
        report = new ExtentReports();
@@ -105,20 +96,18 @@ public class M1_flow extends MobileBaseClass {
    	
    }
 	@Test(enabled=true)
-	public void Mone_otc() throws Throwable {
+	public void orderReview() throws Throwable {
 		
-		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
-		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
+		logger =  report.createTest("Order review page");
+		logger.log(Status.PASS, "*************Order review page ********************" );
 		
 		AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(10000);
 		popupclose();
-		popupclose();
 		try {
-			Thread.sleep(2000);
 			btnclick(m.getLetsstarted());
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -162,6 +151,7 @@ public class M1_flow extends MobileBaseClass {
 
 			}
 		}
+		Thread.sleep(2000);
 		btnclick(m.getCart_search());
 		Thread.sleep(2000);
 	m.getSearchbarone().sendKeys(s);
@@ -180,282 +170,144 @@ public class M1_flow extends MobileBaseClass {
 			btnclick(m.getGotocart()); 
 			Thread.sleep(2000);
 			btnclick(m.getProceed_btn());
-			Thread.sleep(3000);
+			SoftAssert Assert=new SoftAssert();
+			Thread.sleep(5000);
+			//Assert.assertEquals( m.getOrP_product_title().getText(),"PRODUCTS");
+			Assert.assertEquals( m.getOrP_Delivery_Estimate().getText(),"Delivery Estimate");
+			Assert.assertNotNull(m.getOrP_txt_estimate_date().getText());
+			Assert.assertNotNull(m.getOrP_drug_name().getText());
+			Assert.assertNotNull(m.getOrp_manufacturer_name().getText());
+			Assert.assertNotNull(m.getOrp_tv_item_seller().getText());
+			Assert.assertNotNull(m.getOrp_tv_item_expiry().getText());
+			Assert.assertEquals( m.getOrp_qtyLabel().getText(),"Quantity :");
+			Assert.assertNotNull(m.getOrp_tv_item_expiry().getText());
+			Assert.assertEquals( m.getOrp_PAYMENT_DETAIls().getText(),"PAYMENT DETAILS");
+			Assert.assertEquals( m.getOrp_MRP_Total().getText(),"MRP Total");
+			Assert.assertEquals( m.getOrp_Delivery_Charges().getText(),"Delivery Charges");
+			Assert.assertEquals( m.getOrp_Total_Amount().getText(),"Total Amount");
+			Assert.assertNotNull(m.getOrp_mrpTotal_value().getText());
+			Assert.assertNotNull(m.getOrp_tv_delivery_Charges_value().getText());
+			Assert.assertNotNull(m.getOrp_tv_order_amount_value().getText());
+			Assert.assertEquals( m.getOrp_disclaimer_text().getText(),"Netmeds is a technology platform to facilitate transaction of business. The products and services are offered for sale by the sellers. The user authorizes the delivery personnel to be his agent for delivery of the goods. For details read Terms and Conditions");
 
-			btnclick(m.getPlaceorder());
-
-			Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_cod());
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_paybutton());
-			 Thread.sleep(3000);
-			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-					
-					
-			logger.log(Status.PASS, "Order was placed successfully" );
-			System.out.println("Order was placed successfully and the "   + Order_id);
- 			//my orders
-
-
-			btnclick(m.getMyorders());
-
-			Thread.sleep(3000);
-				
-			//View details
-
-
-			btnclick(m.getViewdetails());
-			Thread.sleep(3000);
-
-			//cancel order
-
-
-			btnclick(m.getCancelorder());
-			Thread.sleep(3000);
-			//yes
-
-			//btnclick(m.getYesbutton());
+			Thread.sleep(4000);
+			driver.navigate().back();
 			Thread.sleep(2000);
-
-
-			//Cancel reason
-
-			btnclick(m.getCancel_reason());
-
+			String ss="Rxtor 10mg Tablet 10'S";
 			Thread.sleep(2000);
-
-			//Submit and cancel
-
-			btnclick(m.getSubmit_cancel());
-			logger.log(Status.PASS, "Order was cancelled successfully");
-			System.out.println("Order was cancelled successfully");
-
-
-
-	}
-	@Test(enabled=false)
-	public void mone_precrption() throws Throwable {
-		
-		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
-		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
-		
-		AndriodPom m = new AndriodPom();
-		
-		Thread.sleep(15000);
-		popupclose();
-		Thread.sleep(15000);
-		popupclose();
-		
-		Thread.sleep(10000);
-
-	try {
-
-		try {
-
-			btnclick(m.getLetsstarted());
-			Thread.sleep(5000);
-			driver.hideKeyboard();
-		} catch (Exception e) {
-			driver.resetApp();
-			Thread.sleep(5000);
-			btnclick(m.getLetsstarted());
-
-			Thread.sleep(5000);
-			driver.hideKeyboard();
-		}
-
-		driver.hideKeyboard();
-		Thread.sleep(15000);
-
-		//driver.hideKeyboard();
-		Thread.sleep(10000);
-
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		
-		try {
 			
-			Thread.sleep(5000);
-			m.getMobilenumber().sendKeys("9677159095");
-			Thread.sleep(3000);
-			btnclick(m.getUsepwd());
-			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test4nm");
-			driver.hideKeyboard();
-			btnclick(m.getLogin());
+			btnclick(m.getCart_search());
 			Thread.sleep(2000);
-		}catch(Exception e) {
-				System.out.println("Already logged in");
-			}
-		Thread.sleep(10000);
-				String s="Rxtor 10mg Tablet 10'S";
+		m.getSearchbarone().sendKeys(ss);
+			 
+			 
+			
 		Thread.sleep(2000);
-		btnclick(m.getGotocart()); 
-		for (int i = 0; i < 16; i++) {
-			Thread.sleep(3000);
-			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
-
+				btnclick(m.getSearch_drugname());
+				Thread.sleep(5000);
+				
+				 driver.swipe(0, 500, 0, 0, 1000);
 				try {
-					btnclick(m.getRemoveButton());
-				} catch (Exception e) {
+					Thread.sleep(3000);
+				btnclick(m.getAddtoCartButton());
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
+				Thread.sleep(5000);
+				btnclick(m.getGotocart()); 
+				Thread.sleep(5000);
+				btnclick(m.getProceed_btn());
+				Thread.sleep(10000);
+				try {
+					try {
+						btnclick(m.getUploadPrescription());
+					} catch (Exception e) {
+						// TODO: handle exception
+					}try {
+						btnclick(m.getContinueUpload());
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}catch (Exception e) {
 					// TODO: handle exception
 				}
 
-			} else {
-				logger.log(Status.PASS, "Successfully Product Removed from Cart");
-				break;
 
-			}
-		}
-		btnclick(m.getCart_search());
-		Thread.sleep(2000);
-	m.getSearchbarone().sendKeys(s);
-		 
-		 
-		
-	Thread.sleep(2000);
-			btnclick(m.getSearch_drugname());
-			Thread.sleep(5000);
-			
-			 driver.swipe(0, 500, 0, 0, 1000);
-			try {
 				Thread.sleep(3000);
-			btnclick(m.getAddtoCartButton());
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-			Thread.sleep(5000);
-			btnclick(m.getGotocart()); 
-			Thread.sleep(5000);
-			btnclick(m.getProceed_btn());
-			Thread.sleep(10000);
-			try {
-				try {
-					btnclick(m.getUploadPrescription());
-				} catch (Exception e) {
-					// TODO: handle exception
-				}try {
-					btnclick(m.getContinueUpload());
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
+				btnclick(m.getPastRx_button());
+				Thread.sleep(3000);
 
-
-/*Thread.sleep(3000);
-btnclick(m.getCamera_button());
-Thread.sleep(3000);
-btnclick(m.getAllow());
-Thread.sleep(3000);
-btnclick(m.getCamera_clickbutton());
-Thread.sleep(3000);
-
-	btnclick(m.getM2_RX_DoneBtn());	
-
-Thread.sleep(3000);
-btnclick(m.getContinueUpload());
-
-Thread.sleep(3000);
-btnclick(m.getGallery_button());
-Thread.sleep(3000);
-btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb'])[1]")));
-Thread.sleep(3000);
-
-btnclick(m.getContinueUpload());*/
-Thread.sleep(3000);
-btnclick(m.getPastRx_button());
-Thread.sleep(3000);
-
-btnclick(m.getPrescriptionImage());
-Thread.sleep(3000);
-driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/doneButton")).click();
-Thread.sleep(3000);
-
-/*btnclick(m.getContinueUpload());
-Thread.sleep(3000);
-btnclick(m.getPDF_button());
-Thread.sleep(3000);
-btnclick(m.getPdf_Click());*/
-Thread.sleep(15000);
-btnclick(m.getSchedule_delivery());
-Thread.sleep(5000);
-			btnclick(m.getPlaceorder());
-
-			Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_cod());
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_paybutton());
-			 Thread.sleep(3000);
-			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-					
-					
-			logger.log(Status.PASS, "Order was placed successfully" );
-			System.out.println("Order was placed successfully and the "   + Order_id);
- 			//my orders
-
-
-			btnclick(m.getMyorders());
-
-			Thread.sleep(3000);
-				
-			//View details
-
-
-			btnclick(m.getViewdetails());
-			Thread.sleep(3000);
-
-			//cancel order
-
-
-			btnclick(m.getCancelorder());
-			Thread.sleep(3000);
-			//yes
-
-			//btnclick(m.getYesbutton());
-			Thread.sleep(2000);
-
-
-			//Cancel reason
-
-			btnclick(m.getCancel_reason());
-
-			Thread.sleep(2000);
-
-			//Submit and cancel
-
-			btnclick(m.getSubmit_cancel());
-			logger.log(Status.PASS, "Order was cancelled successfully");
-			System.out.println("Order was cancelled successfully");
-
-
+				btnclick(m.getPrescriptionImage());
+				Thread.sleep(3000);
+				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/doneButton")).click();
+				Thread.sleep(3000);
+	Thread.sleep(6000);
 	
+	btnclick(m.getSchedule_delivery());
+	Thread.sleep(5000);
 	
-		
-	} catch (Exception e) {
-		// TODO: handle exception
+	 driver.swipe(0, 900, 0, 0, 1000);
+	Thread.sleep(3000);
+	btnclick(m.getOrp_prescriptionImage());
+	Thread.sleep(3000);
+	btnclick(m.getOrp_preview_close());
+	Thread.sleep(3000);
+			Thread.sleep(4000);
+
+			//Address change
+
+			btnclick(m.getAddress_change());
+			Thread.sleep(3000);
+
+			//Modify address
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edit")).click();
+			type(m.getPincode(), "600100");
+			Thread.sleep(2000);
+			type(m.getFirstname(),"Firstname");
+			Thread.sleep(2000);
+			type(m.getLastname(),"Test");
+			Thread.sleep(2000);
+			type(m.getAddress(),"Addressfirst");
+			Thread.sleep(2000);
+			type(m.getLandmark(),"nearplaza");
+			Thread.sleep(2000);
+			btnclick(m.getSave_address());
+			logger.log(Status.PASS, "Address was modified successfully");
+			System.out.println("Address was modified successfully");
+			Thread.sleep(3000);
+			List<WebElement> delete  = driver.findElements(By.xpath("(//android.widget.TextView[@text='DELETE'])"));
+
+			delete.get(1).click();
+
+
+
+
+			logger.log(Status.PASS, "Address was deleted successfully");
+			System.out.println("Address was deleted successfully");
+
+			//Add address
+
+			Thread.sleep(3000);
+
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/addAddress")).click();
+			Thread.sleep(3000);
+
+			type(m.getPincode(), "600097");
+			Thread.sleep(2000);
+			type(m.getFirstname(),"Firstaddress");
+			Thread.sleep(2000);
+			type(m.getLastname(),"Test");
+			Thread.sleep(2000);
+			type(m.getAddress(),"Addressfirst");
+			Thread.sleep(2000);
+			type(m.getLandmark(),"neartheatre");
+			Thread.sleep(2000);
+			btnclick(m.getSave_address());
+			logger.log(Status.PASS, "Address was addedd successfully");
+			System.out.println("Address was added successfully");
+
 	}
 	
-	}
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
@@ -515,6 +367,7 @@ Thread.sleep(5000);
 		
       //driver.quit();
 	}
+
 
 
 }

@@ -18,11 +18,11 @@ public class Monepom extends BaseClass {
 	}
 	@FindBy(xpath="//a[@class='text m-rgt']")
 	private WebElement cartformembership ;
+	
+	
 	public WebElement getCartformembership() {
 		return cartformembership;
 	}
-	
-	
 	@FindBy(xpath="(//button[@title='Add to Cart'])[1]")
 	private WebElement six_months ;
 	@FindBy(xpath="(//button[@title='Add to Cart'])[2]")

@@ -100,11 +100,11 @@ public class BaseClass {
 	}
 	
 	public void btncli(WebElement element) throws Throwable {
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, 30);
-		 * wait.until(ExpectedConditions.elementToBeClickable(element));
-		 * Thread.sleep(1000);
-		 */
+		
+		 WebDriverWait wait = new WebDriverWait(driver, 30);
+		 wait.until(ExpectedConditions.elementToBeClickable(element));
+		 Thread.sleep(1000);
+		 
 	    element.click();	
 	}
 	
