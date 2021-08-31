@@ -436,7 +436,7 @@ public class OrderSucesspage extends BaseClass {
 		//**************************************************Order Success Page M2****************************************************************************************
 		
 		
-		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+		@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 		public  void OrderSuccessPageM2() throws Throwable  {
 			logger =  report.createTest("OrderSuccessPageM2");
 			logger.log(Status.PASS, "************* OrderSuccessPageM2********************" );
@@ -658,7 +658,7 @@ public class OrderSucesspage extends BaseClass {
 					
 					
 					btncli(m.getCancel_Order());
-					Thread.sleep(3000);
+					Thread.sleep(3000); 
 					btncli(m.getCancel_reason());
 					Thread.sleep(3000);
 					btncli(m.getSubmit_Cancel());

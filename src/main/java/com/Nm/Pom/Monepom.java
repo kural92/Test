@@ -1863,7 +1863,7 @@ public class Monepom extends BaseClass {
 			return refill_msg;
 		}
 		
-		@FindBy(xpath = "//span[.=\"Payment Mode\"]")
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_online_payent")
 		private WebElement paymentmode_text;
 		public WebElement getPaymentmode_text() {
 			return paymentmode_text;
