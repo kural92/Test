@@ -126,39 +126,30 @@ public class Youraccount extends MobileBaseClass {
 		logger.log(Status.PASS, "*************DeliverAddressSection********************");
 
 	
-		AndriodPom m = new AndriodPom();
+	AndriodPom m = new AndriodPom();
+		
 		
 		
 		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
-			
-			
+		
 		}
 		
-
-//Step 2 :Login with user name and password//
-
 		Thread.sleep(1000);
 		
 	try {
-		btnclick(m.getLetsstarted());
+		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup is available to close");
-		}
-		Thread.sleep(3000);
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
 		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
@@ -174,6 +165,9 @@ public class Youraccount extends MobileBaseClass {
 	catch(Exception e) {
 		System.out.println("Already logged in");
 	}
+	 
+		popupclose();
+	
 	
 //Step 3 : Navigate to user profile//
 
@@ -265,52 +259,48 @@ public class Youraccount extends MobileBaseClass {
 		logger = report.createTest("Mywallet");
 		logger.log(Status.PASS, "*************Mywallet********************");
 
-		AndriodPom m = new AndriodPom();
+	AndriodPom m = new AndriodPom();
 		
-
-		//Step 2 :Login with user name and password//
-
+		
+		
 		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
-			
-			
+		
 		}
 		
-				
-			try {
-				btnclick(m.getLetsstarted());
-				Thread.sleep(2000);
-				m.getMobilenumber().sendKeys("8072281468");
-				try {
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-				} catch (Exception e) {
-					System.out.println("No Popup is available to close");
-				}
-				Thread.sleep(3000);
-				btnclick(m.getUsepwd());
-				Thread.sleep(5000);
-			
-				m.getPassword().sendKeys("test@123");
-				
-				Thread.sleep(2000);
-			
-				
-				Thread.sleep(5000);
-				btnclick(m.getLogin());
-			}
-			
-			catch(Exception e) {
-				System.out.println("Already logged in");
-			}
+		Thread.sleep(1000);
+		
+	try {
+		
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
+		btnclick(m.getUsepwd());
+		Thread.sleep(5000);
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
+	}
+	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
+	
 
 //Step 3 : Navigate to user profile//
 
@@ -390,53 +380,48 @@ public class Youraccount extends MobileBaseClass {
 		logger.log(Status.PASS, "*************Editprofile********************");
 
 		
-		AndriodPom m = new AndriodPom();
+	AndriodPom m = new AndriodPom();
 		
-
-		//Step 2 :Login with user name and password//
-
+		
+		
 		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
-			
-			
+		
 		}
 		
-				
-			try {
-				btnclick(m.getLetsstarted());
-				Thread.sleep(2000);
-				m.getMobilenumber().sendKeys("8072281468");
-				try {
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-				} catch (Exception e) {
-					System.out.println("No Popup is available to close");
-				}
-				Thread.sleep(3000);
-				btnclick(m.getUsepwd());
-				Thread.sleep(5000);
-			
-				m.getPassword().sendKeys("test@123");
-				
-				Thread.sleep(2000);
-			
-				
-				Thread.sleep(5000);
-				btnclick(m.getLogin());
-			}
-			
-			catch(Exception e) {
-				System.out.println("Already logged in");
-			}
-
+		Thread.sleep(1000);
+		
+	try {
+		
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
+		btnclick(m.getUsepwd());
+		Thread.sleep(5000);
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
+	}
+	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
+	
 //Step 3 : Navigate to user profile//
 
 		btnclick(m.getUserprofile());
@@ -490,52 +475,48 @@ public class Youraccount extends MobileBaseClass {
 		logger.log(Status.PASS, "*************Myprescription********************");
 
 //Step1 :Launch Browser//		
-AndriodPom m = new AndriodPom();
+	AndriodPom m = new AndriodPom();
 		
-
-		//Step 2 :Login with user name and password//
-
+		
+		
 		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
-			
-			
+		
 		}
 		
-				
-			try {
-				btnclick(m.getLetsstarted());
-				Thread.sleep(2000);
-				m.getMobilenumber().sendKeys("8072281468");
-				try {
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-				} catch (Exception e) {
-					System.out.println("No Popup is available to close");
-				}
-				Thread.sleep(3000);
-				btnclick(m.getUsepwd());
-				Thread.sleep(5000);
-			
-				m.getPassword().sendKeys("test@123");
-				
-				Thread.sleep(2000);
-			
-				
-				Thread.sleep(5000);
-				btnclick(m.getLogin());
-			}
-			
-			catch(Exception e) {
-				System.out.println("Already logged in");
-			}
+		Thread.sleep(1000);
+		
+	try {
+		
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
+		btnclick(m.getUsepwd());
+		Thread.sleep(5000);
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
+	}
+	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
+	
 //Step 3 : Navigate to user profile//
 
 		btnclick(m.getUserprofile());
@@ -616,53 +597,48 @@ AndriodPom m = new AndriodPom();
 		logger.log(Status.PASS, "*************contactus********************");
 
 //Step1 :Launch Browser//		
-		AndriodPom m = new AndriodPom();
+	AndriodPom m = new AndriodPom();
 		
-
-		//Step 2 :Login with user name and password//
-
+		
+		
 		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
-			
-			
+		
 		}
 		
-				
-			try {
-				btnclick(m.getLetsstarted());
-				Thread.sleep(2000);
-				m.getMobilenumber().sendKeys("8072281468");
-				try {
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-				} catch (Exception e) {
-					System.out.println("No Popup is available to close");
-				}
-				Thread.sleep(3000);
-				btnclick(m.getUsepwd());
-				Thread.sleep(5000);
-			
-				m.getPassword().sendKeys("test@123");
-				
-				Thread.sleep(2000);
-			
-				
-				Thread.sleep(5000);
-				btnclick(m.getLogin());
-			}
-			
-			catch(Exception e) {
-				System.out.println("Already logged in");
-			}
-
+		Thread.sleep(1000);
+		
+	try {
+		
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
+		btnclick(m.getUsepwd());
+		Thread.sleep(5000);
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
+	}
+	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
+	
 //Step 3 : Navigate to user profile//
 
 		btnclick(m.getUserprofile());
@@ -782,50 +758,46 @@ AndriodPom m = new AndriodPom();
 //Step1 :Launch Browser//		
 	AndriodPom m = new AndriodPom();
 		
-
-		//Step 2 :Login with user name and password//
-
+		
+		
 		try {
+			popupclose();
 			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			driver.resetApp();
-			
-			
+		
 		}
 		
-				
-			try {
-				btnclick(m.getLetsstarted());
-				Thread.sleep(2000);
-				m.getMobilenumber().sendKeys("8072281468");
-				try {
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					Thread.sleep(10000);
-					driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-					System.out.println("Popup is closed successfully");
-					//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-				} catch (Exception e) {
-					System.out.println("No Popup is available to close");
-				}
-				Thread.sleep(3000);
-				btnclick(m.getUsepwd());
-				Thread.sleep(5000);
-			
-				m.getPassword().sendKeys("test@123");
-				
-				Thread.sleep(2000);
-			
-				
-				Thread.sleep(5000);
-				btnclick(m.getLogin());
-			}
-			
-			catch(Exception e) {
-				System.out.println("Already logged in");
-			}
+		Thread.sleep(1000);
+		
+	try {
+		
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
+		btnclick(m.getUsepwd());
+		Thread.sleep(5000);
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
+	}
+	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
+	
 
 //Step 3 : Navigate to user profile//
 
@@ -885,53 +857,48 @@ AndriodPom m = new AndriodPom();
 		logger.log(Status.PASS, "*************Legalinformation********************");
 
 		//Step1 :Launch Browser//		
-		AndriodPom m = new AndriodPom();
-			
-
-			//Step 2 :Login with user name and password//
-
-			try {
-				Thread.sleep(5000);
-			btnclick(m.getLetsstarted());
-			} catch (Exception e) {
-				driver.resetApp();
-				
-				
-			}
-			
-					
-				try {
-					btnclick(m.getLetsstarted());
-					Thread.sleep(2000);
-					m.getMobilenumber().sendKeys("8072281468");
-					try {
-						Thread.sleep(10000);
-						driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-						System.out.println("Popup is closed successfully");
-						Thread.sleep(10000);
-						driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-						System.out.println("Popup is closed successfully");
-						//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-					} catch (Exception e) {
-						System.out.println("No popup is available to close ");
-					}
-					Thread.sleep(3000);
-					btnclick(m.getUsepwd());
-					Thread.sleep(5000);
-				
-					m.getPassword().sendKeys("test@123");
-					
-					Thread.sleep(2000);
-				
-					
-					Thread.sleep(5000);
-					btnclick(m.getLogin());
-				}
-				
-				catch(Exception e) {
-					System.out.println("Already logged in");
-				}
-
+	AndriodPom m = new AndriodPom();
+		
+		
+		
+		try {
+			popupclose();
+			Thread.sleep(5000);
+			popupclose();
+		btnclick(m.getLetsstarted());
+		} catch (Exception e) {
+			driver.resetApp();
+		
+		}
+		
+		Thread.sleep(1000);
+		
+	try {
+		
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
+		btnclick(m.getUsepwd());
+		Thread.sleep(5000);
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
+	}
+	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
+	
 	//Step 3 : Navigate to user profile//
 
 			btnclick(m.getUserprofile());
@@ -992,51 +959,47 @@ AndriodPom m = new AndriodPom();
 
 			//Step1 :Launch Browser//		
 			AndriodPom m = new AndriodPom();
-				
-
-				//Step 2 :Login with user name and password//
-
-				try {
-					Thread.sleep(5000);
-				btnclick(m.getLetsstarted());
-				} catch (Exception e) {
-					driver.resetApp();
-					
-					
-				}
-				
-						
-					try {
-						btnclick(m.getLetsstarted());
-						Thread.sleep(2000);
-						m.getMobilenumber().sendKeys("8072281468");
-						try {
-							Thread.sleep(10000);
-							driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-							System.out.println("Popup is closed successfully");
-							Thread.sleep(10000);
-							driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-							System.out.println("Popup is closed successfully");
-							//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-						} catch (Exception e) {
-							System.out.println("No popup is available to close ");
-						}
-						Thread.sleep(3000);
-						btnclick(m.getUsepwd());
-						Thread.sleep(5000);
-					
-						m.getPassword().sendKeys("test@123");
-						
-						Thread.sleep(2000);
-					
-						
-						Thread.sleep(5000);
-						btnclick(m.getLogin());
-					}
-					
-					catch(Exception e) {
-				
-					}
+			
+			
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				driver.resetApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
+		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
+			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
+			Thread.sleep(5000);
+		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
+		}
+		
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
+		
 
 					driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 					Thread.sleep(3000);

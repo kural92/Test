@@ -115,29 +115,30 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 		logger.log(Status.PASS, "*************uploadprescription********************");
 
 //Step1 :Launch Browser//		
-		AndriodPom m = new AndriodPom();
+	AndriodPom m = new AndriodPom();
 		
 		
 		
+		try {
+			popupclose();
+			Thread.sleep(5000);
+			popupclose();
+		btnclick(m.getLetsstarted());
+		} catch (Exception e) {
+			driver.resetApp();
+		
+		}
 		
 		Thread.sleep(1000);
 		
 	try {
-		btnclick(m.getLetsstarted());
+		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
-		try {
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
-			System.out.println("Popup is closed successfully");
-			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup is available to close");
-		}
-		Thread.sleep(3000);
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
 		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
@@ -151,8 +152,11 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 	}
 	
 	catch(Exception e) {
-		
+		System.out.println("Already logged in");
 	}
+	 
+		popupclose();
+	
 	
 	
 		Thread.sleep(5000);

@@ -1466,82 +1466,148 @@ public class AndriodPom extends MobileBaseClass{
 			
 
 
-		//*****************************************************Order Success Page*****************************************************
+			//*****************************************************Order Success Page*****************************************************
 
 
-		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/order_status")
-		private WebElement order_status;
-		public WebElement getOrder_status() {
-			return order_status;
-		}
+			@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/order_status")
+			private WebElement order_status;
+			public WebElement getOrder_status() {
+				return order_status;
+			}
 
-		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_m2_desc")
-		private WebElement pharmacists_verfication;
-		public WebElement getPharmacists_verfication() {
-			return pharmacists_verfication;
-		}
+			@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_m2_desc")
+			private WebElement pharmacists_verfication;
+			public WebElement getPharmacists_verfication() {
+				return pharmacists_verfication;
+			}
 
-		@FindBy(xpath ="//android.widget.TextView[@text='Expected delivery by']")
-		private WebElement Deliverby_text;
-		public WebElement getDeliverby_text() {
-			return Deliverby_text;
-		}
-
-
-		@FindBy(xpath ="(//android.widget.TextView[@index='1'])[4]")
-		private WebElement delivery_date;
-		public WebElement getDelivery_date() {
-			return delivery_date;
-		}
+			@FindBy(xpath ="//android.widget.TextView[@text='Expected delivery by']")
+			private WebElement Deliverby_text;
+			public WebElement getDeliverby_text() {
+				return Deliverby_text;
+			}
 
 
-		@FindBy(xpath ="//android.widget.TextView[@text='GRAB YOUR']")
-		private WebElement Grab_text;
-		public WebElement getGrab_text() {
-			return Grab_text;
-		}
-
-		@FindBy(xpath="//android.widget.TextView[@text='Free Medicines']")
-		private WebElement Free_medicines;
-		public WebElement getFree_medicines() {
-			return Free_medicines;
-		}
-
-		@FindBy(xpath ="//android.widget.TextView[@text='Invite your friends and get']")
-		private WebElement invite_friends;
-		public WebElement getInvite_friends() {
-			return invite_friends;
-		}
-
-		@FindBy (xpath ="//android.widget.TextView[@text='TEST1932']")
-		private WebElement offer_code;
-		public WebElement getOffer_code() {
-			return offer_code;
-		}
-
-		@FindBy (xpath ="//android.widget.TextView[@text='Tap to share code with your friends']")
-		private WebElement share_with_friends;
-		public WebElement getShare_with_friends() {
-			return share_with_friends;
-		}
+			@FindBy(xpath ="(//android.widget.TextView[@index='1'])[4]")
+			private WebElement delivery_date;
+			public WebElement getDelivery_date() {
+				return delivery_date;
+			}
 
 
-		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txt_scratch_card_message")
-		private WebElement congrats;
-		public WebElement getCongrats() {
-			return congrats;
-		}
+			@FindBy(xpath ="//android.widget.TextView[@text='GRAB YOUR']")
+			private WebElement Grab_text;
+			public WebElement getGrab_text() {
+				return Grab_text;
+			}
 
-		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txt_scratch_card_description")
-		private WebElement scratch_card;
-		public WebElement getScratch_card() {
-			return scratch_card;
-		}
-		}
+			@FindBy(xpath="//android.widget.TextView[@text='Free Medicines']")
+			private WebElement Free_medicines;
+			public WebElement getFree_medicines() {
+				return Free_medicines;
+			}
+
+			@FindBy(xpath ="//android.widget.TextView[@text='Invite your friends and get']")
+			private WebElement invite_friends;
+			public WebElement getInvite_friends() {
+				return invite_friends;
+			}
+
+			@FindBy (xpath ="//android.widget.TextView[@text='TEST1932']")
+			private WebElement offer_code;
+			public WebElement getOffer_code() {
+				return offer_code;
+			}
+
+			@FindBy (xpath ="//android.widget.TextView[@text='Tap to share code with your friends']")
+			private WebElement share_with_friends;
+			public WebElement getShare_with_friends() {
+				return share_with_friends;
+			}
 
 
-	
-		
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txt_scratch_card_message")
+			private WebElement congrats;
+			public WebElement getCongrats() {
+				return congrats;
+			}
+
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txt_scratch_card_description")
+			private WebElement scratch_card;
+			public WebElement getScratch_card() {
+				return scratch_card;
+			}
+			
+			
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_subscripe")
+			private WebElement subscribe_now;
+			public WebElement getSubscribe_now() {
+				return subscribe_now;
+			}
+			
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_sub_delivery_desc")
+			private WebElement refill_msg;
+			public WebElement getRefill_msg() {
+				return refill_msg;
+			}
+			
+			@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_payment_mode")
+			private WebElement paymentmode_text;
+			public WebElement getPaymentmode_text() {
+				return paymentmode_text;
+			}
+			
+			
+			@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_payment_mode_desc")
+			private WebElement paymentmode_desc;
+			public WebElement getPaymentmode_desc() {
+				return paymentmode_desc;
+			}
+			
+			
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_online_payent")
+			private WebElement paymentmethod_text;
+			public WebElement getPaymentmethod_text() {
+				return paymentmethod_text;
+			}
+			
+			
+			
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_promo_code")
+			private WebElement promocode_text;
+			public WebElement getPromocode_text() {
+				return promocode_text;
+			}
+			
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_sub_promo_code")
+			private WebElement promocode_subs20;
+			public WebElement getPromocode_subs20() {
+				return promocode_subs20;
+			}
+			
+			
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_promo_code_desc")
+			private WebElement Promo_percentage;
+			public WebElement getPromo_percentage() {
+				return Promo_percentage;
+			}
+			
+			@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_sub_note")
+			private WebElement modify_or_reschedule;
+			public WebElement getModify_or_reschedule() {
+				return modify_or_reschedule;
+			}
+			
+			@FindBy(xpath ="//android.widget.Button[@text='SUBSCRIBE']")
+			private WebElement Subscribe;
+			public WebElement getSubscribe() {
+				return Subscribe;
+			
+			}
+
+
+	}
+			
 
 
 
