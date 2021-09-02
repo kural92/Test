@@ -163,7 +163,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 		
 		Thread.sleep(2000);
 				btnclick(m.getSearch_drugname());
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 				
 				
 				String PDP_category_Name = m.getPDP_category_Name().getText();
@@ -246,7 +246,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 				Thread.sleep(2000);
 	btnclick(m.getPDP_Manufacture_name());
 	
-	Thread.sleep(10000);
+	Thread.sleep(15000);
 	String manufac = m.getPDP_manufacture_Page().getText();
 	
 	if (PDP_Manufacture_name.contains(manufac)) {
