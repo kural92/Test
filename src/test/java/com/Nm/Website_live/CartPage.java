@@ -860,14 +860,12 @@ static String totalamt;
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to home page");
 	} catch (Exception e) {
-		System.out.println("Already Logged In");
+		
+		driver.navigate().to("https://www.netmeds.com/");
+		
 	}
 
-	try {
-		btncli(m.getNetmedshome());
-	} catch (Exception e) {
-
-	}
+	
 	
 //  Remove existing items from the cart  //
 
