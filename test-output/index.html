@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,22 +24,31 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
+<<<<<<< HEAD
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+=======
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+<<<<<<< HEAD
               <span class="suite-name border-failed">Default suite</span>
+=======
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+              <span class="suite-name border-passed">Default suite</span>
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,37 +58,46 @@
             <div class="suite-section-content">
               <ul>
                 <li>
+<<<<<<< HEAD
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1064150527\testng-customsuite.xml</span>
+=======
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+<<<<<<< HEAD
                     <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--219177421\testng-customsuite.xml</span>
+=======
+                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--81716209\testng-customsuite.xml</span>
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -101,8 +120,18 @@
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
+<<<<<<< HEAD
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.PaymentPage" hash-for-method="orderReview">orderReview</a> <!-- method navigator-link -->
+=======
+<<<<<<< HEAD
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Website_live.AlterNate_MSProduct" class="method navigator-link" hash-for-method="alterNate_Product">alterNate_Product</a> <!-- method navigator-link -->
+=======
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.OrderReviewPage" hash-for-method="orderReview">orderReview</a> <!-- method navigator-link -->
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -119,15 +148,30 @@
         <div panel-name="suite-Default_suite" class="panel Default_suite">
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
               <img src="failed.png"/>
               <span class="class-name">com.Nm.Andriod_prod.PaymentPage</span>
+=======
+              <img src="passed.png"/>
+<<<<<<< HEAD
+              <span class="class-name">com.Nm.Website_live.AlterNate_MSProduct</span>
+=======
+              <span class="class-name">com.Nm.Andriod_prod.OrderReviewPage</span>
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
+                  <a name="alterNate_Product">
+                  </a> <!-- alterNate_Product -->
+                  <span class="method-name">alterNate_Product</span>
+=======
                   <a name="orderReview">
                   </a> <!-- orderReview -->
                   <span class="method-name">orderReview</span>
+<<<<<<< HEAD
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 112 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
@@ -192,6 +236,9 @@ Session ID: 84f9fb0e-06ba-42ef-b6f2-7f72c96c5a30
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 
 </div> <!-- stack-trace -->
+=======
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -199,14 +246,22 @@ Session ID: 84f9fb0e-06ba-42ef-b6f2-7f72c96c5a30
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--219177421\testng-customsuite.xml</span>
+=======
+<<<<<<< HEAD
+            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1064150527\testng-customsuite.xml</span>
+=======
+            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--81716209\testng-customsuite.xml</span>
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.Nm.Andriod_prod.PaymentPage&quot;/&gt;
     &lt;/classes&gt;
@@ -250,14 +305,33 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
+<<<<<<< HEAD
+data.setCell(0, 1, 'alterNate_Product')
+data.setCell(0, 2, 'com.Nm.Website_live.AlterNate_MSProduct')
+data.setCell(0, 3, 135640);
+=======
 data.setCell(0, 1, 'orderReview')
+<<<<<<< HEAD
 data.setCell(0, 2, 'com.Nm.Andriod_prod.PaymentPage')
 data.setCell(0, 3, 225039);
+=======
+data.setCell(0, 2, 'com.Nm.Andriod_prod.OrderReviewPage')
+data.setCell(0, 3, 250061);
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 3 minutes</span>
+=======
+<<<<<<< HEAD
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+=======
+              <span class="suite-total-time">Total running time: 4 minutes</span>
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -283,14 +357,41 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
               <div class="chronological-class-name">com.Nm.Andriod_prod.PaymentPage</div> <!-- chronological-class-name -->
+=======
+<<<<<<< HEAD
+              <div class="chronological-class-name">com.Nm.Website_live.AlterNate_MSProduct</div> <!-- chronological-class-name -->
+=======
+              <div class="chronological-class-name">com.Nm.Andriod_prod.OrderReviewPage</div> <!-- chronological-class-name -->
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
               <div class="configuration-test before">
                 <span class="method-name">startReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">launchbrowser</span>
+<<<<<<< HEAD
                 <span class="method-start">185 ms</span>
+=======
+<<<<<<< HEAD
+                <span class="method-start">224 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">alterNate_Product</span>
+                <span class="method-start">7172 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">screenShot([TestResult name=alterNate_Product status=SUCCESS method=AlterNate_MSProduct.alterNate_Product()[pri...)</span>
+                <span class="method-start">142816 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">quitbrowser</span>
+                <span class="method-start">145826 ms</span>
+=======
+                <span class="method-start">184 ms</span>
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
@@ -304,11 +405,17 @@ return data;
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">quitbrowser</span>
+<<<<<<< HEAD
                 <span class="method-start">244131 ms</span>
+=======
+                <span class="method-start">265016 ms</span>
+>>>>>>> 3623e953903fb502790711169d755b8d17bc5388
+>>>>>>> c1c28d04ef3c785032989be5638b7982acc37d33
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

@@ -51,7 +51,11 @@ public class M1_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
+
+			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
+
 			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
+
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
@@ -100,7 +104,7 @@ public class M1_flow extends MobileBaseClass {
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void Mone_otc() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
@@ -110,7 +114,9 @@ public class M1_flow extends MobileBaseClass {
 		
 		Thread.sleep(10000);
 		popupclose();
+		popupclose();
 		try {
+			Thread.sleep(2000);
 			btnclick(m.getLetsstarted());
 			Thread.sleep(10000);
 			driver.hideKeyboard();
@@ -235,7 +241,7 @@ public class M1_flow extends MobileBaseClass {
 
 
 	}
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void mone_precrption() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
@@ -243,8 +249,17 @@ public class M1_flow extends MobileBaseClass {
 		
 		AndriodPom m = new AndriodPom();
 		
+		Thread.sleep(15000);
+		popupclose();
+		Thread.sleep(15000);
+		popupclose();
+		
 		Thread.sleep(10000);
+
+	try {
+
 		try {
+
 			btnclick(m.getLetsstarted());
 			Thread.sleep(5000);
 			driver.hideKeyboard();
@@ -256,8 +271,13 @@ public class M1_flow extends MobileBaseClass {
 			Thread.sleep(5000);
 			driver.hideKeyboard();
 		}
+
+		driver.hideKeyboard();
+		Thread.sleep(15000);
+
 		//driver.hideKeyboard();
 		Thread.sleep(10000);
+
 		popupclose();
 		Thread.sleep(10000);
 		popupclose();
@@ -428,9 +448,13 @@ Thread.sleep(5000);
 			System.out.println("Order was cancelled successfully");
 
 
-
+	
 	
 		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
 	}
 	
 	@AfterMethod()

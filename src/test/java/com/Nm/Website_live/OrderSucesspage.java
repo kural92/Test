@@ -436,7 +436,7 @@ public class OrderSucesspage extends BaseClass {
 		//**************************************************Order Success Page M2****************************************************************************************
 		
 		
-		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+		@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 		public  void OrderSuccessPageM2() throws Throwable  {
 			logger =  report.createTest("OrderSuccessPageM2");
 			logger.log(Status.PASS, "************* OrderSuccessPageM2********************" );
@@ -658,7 +658,7 @@ public class OrderSucesspage extends BaseClass {
 					
 					
 					btncli(m.getCancel_Order());
-					Thread.sleep(3000);
+					Thread.sleep(3000); 
 					btncli(m.getCancel_reason());
 					Thread.sleep(3000);
 					btncli(m.getSubmit_Cancel());
@@ -941,22 +941,22 @@ public class OrderSucesspage extends BaseClass {
 				
 				Thread.sleep(3000);
 				
+				driver.findElement(By.id("android:id/button2")).click();
+				
+				Thread.sleep(3000);
+//View Rewards
+				
+				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_scratch")).click();
+				Thread.sleep(3000);
+				
 				driver.findElement(By.xpath("(//button[@class='close pull-right'])[2]")).click();
 				
 				Thread.sleep(3000);
 				
 				driver.findElement(By.xpath("//div[@class=\"rating cursor-pointer d-none d-sm-block ng-star-inserted\"]")).click();
 				
-				//List <WebElement> Star = driver.findElements(By.xpath("//input[@name=\"star\"]"));
+
 				
-				/*int star_rating = Star.size();
-				System.out.println(star_rating);
-				
-				for (int i=0; i<star_rating; i++) {
-					Thread.sleep(3000);
-					Star.get(i).click();
-					
-				}*/
 				Thread.sleep(3000);
 				btncli(m.getStar1());
 				Thread.sleep(2000);
@@ -986,7 +986,6 @@ public class OrderSucesspage extends BaseClass {
 				
 				Thread.sleep(3000);
 				//driver.findElement(By.xpath("(//button[@class='close'])[2]")).click();
-				
 	//Tracking order//
 
 					btncli(m.getMysubscription());
