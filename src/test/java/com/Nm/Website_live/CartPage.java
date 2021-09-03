@@ -254,14 +254,14 @@ static String totalamt;
 		
 //continue shopping//
 		
-		
+		Thread.sleep(3000);
 		WebElement Continueshopping = m.getContinue_shopping();
 
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", Continueshopping);
 		
 		btncli(m.getContinue_shopping());
 		
-		Thread.sleep(000);
+		Thread.sleep(3000);
 		System.out.println("successfully clicked continue shopping button");	
 		
 		type(m.getSearch(),"Flavedon MR 35mg Tablet 10'S");
@@ -518,7 +518,7 @@ static String totalamt;
 
 		
 
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariotwo() throws Throwable {
 
 		logger = report.createTest("cartpage scenario two");
@@ -839,7 +839,7 @@ static String totalamt;
 
 			
 
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
@@ -1141,7 +1141,7 @@ static String totalamt;
 //******************************Test case 4: Verify Cart page when NMS wallet cash used*****************************************************************
 				
 				
-				@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+				@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 				public void carpagescenariofour() throws Throwable {
 
 					logger = report.createTest("cartpage scenario four");

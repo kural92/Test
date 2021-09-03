@@ -169,10 +169,10 @@ public class Uploadprescriptioncheck extends BaseClass {
 				}
 				
 						driver.findElement(By.xpath("(//button[@class='close'])[2]")).click();
-						
+						for (int i=0 ;i<3;i++) {
 						Thread.sleep(3000);
 						upload.sendKeys(System.getProperty("user.dir")+"//Prescription//M3Subscription.png");
-						
+						}
 						Thread.sleep(3000);
 						System.out.println(error_message.getText());
 						
