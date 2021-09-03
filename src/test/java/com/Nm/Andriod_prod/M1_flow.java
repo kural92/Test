@@ -66,7 +66,7 @@ public class M1_flow extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 			
 			
@@ -115,18 +115,7 @@ public class M1_flow extends MobileBaseClass {
 		Thread.sleep(10000);
 		popupclose();
 		popupclose();
-		try {
-			Thread.sleep(2000);
-			btnclick(m.getLetsstarted());
-			Thread.sleep(10000);
-			driver.hideKeyboard();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		
-		popupclose();
-		popupclose();
+		/* */
 		try {
 			
 			Thread.sleep(2000);

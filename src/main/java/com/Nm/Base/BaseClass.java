@@ -78,7 +78,7 @@ public class BaseClass {
 		driver = new ChromeDriver(option);
 		driver.get("https://www.netmeds.com");
 		
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		
 		return driver;
 	}
