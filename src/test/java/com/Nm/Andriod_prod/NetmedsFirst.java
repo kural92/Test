@@ -166,6 +166,8 @@ driver.resetApp();		}
 
 			}
 		}
+		//hard 
+		
 		SoftAssert Assert=new SoftAssert();
 			Assert.assertEquals( m.getHomepage_netmeds_first_title().getText(),"Save more with Netmeds First Membership");
 			Assert.assertNotNull(m.getHomepage_netmeds_first_sub_title().getText());

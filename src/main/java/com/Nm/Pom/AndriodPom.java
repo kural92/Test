@@ -734,6 +734,91 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement Orp_prescriptionImage;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/preview_close")
 		private WebElement Orp_preview_close;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/retry")
+		private WebElement retry;
+		@FindBy(xpath = "//android.widget.TextView[@text='SIMPL Pay Later']/following-sibling::android.widget.CheckBox")
+		private WebElement Simplpay;
+		@FindBy(xpath = "//android.widget.TextView[@text='PhonePe']/following-sibling::android.widget.CheckBox")
+		private WebElement Phonepe;
+		@FindBy(xpath = "//android.widget.TextView[@text='ADD NEW CARD']")
+		private WebElement AddnewCard;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cardNumber")
+		private WebElement Cart_name;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cardValidity")
+		private WebElement cardValidity;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cardCvv")
+		private WebElement cardCvv;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cardHolderName")
+		private WebElement cardHolderName;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/chk_save_card")
+		private WebElement chk_save_card;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_pay")
+		private WebElement tv_pay;
+		public WebElement getCart_name() {
+			return Cart_name;
+		}
+
+		public WebElement getCardValidity() {
+			return cardValidity;
+		}
+
+		public WebElement getCardCvv() {
+			return cardCvv;
+		}
+
+		public WebElement getCardHolderName() {
+			return cardHolderName;
+		}
+
+		public WebElement getChk_save_card() {
+			return chk_save_card;
+		}
+
+		public WebElement getTv_pay() {
+			return tv_pay;
+		}
+
+		public WebElement getAddnewCard() {
+			return AddnewCard;
+		}
+
+		public WebElement getPhonepe() {
+			return Phonepe;
+		}
+
+		public WebElement getSimplpay() {
+			return Simplpay;
+		}
+
+		public WebElement getRetry() {
+			return retry;
+		}
+
+
+		@FindBy(xpath = "//android.widget.TextView[@text='Amazon Pay']/following-sibling::android.widget.TextView[@text='LINK']")
+		private WebElement Amazon_pay_withoutLink;
+		@FindBy(xpath = "//android.widget.TextView[@text='Mobikwik']/following-sibling::android.widget.TextView[@text='LINK']")
+		private WebElement Mobikwik_withoutLink;
+		@FindBy(xpath = "//android.widget.TextView[@text='Paytm']/following-sibling::android.widget.TextView[@text='LINK']")
+		private WebElement Paytm_withoutLink;
+		@FindBy(xpath = "//android.widget.TextView[@text='Freecharge PayLater | Wallet']/following-sibling::android.widget.TextView[@text='LINK']")
+		private WebElement Freecharge_PayLater_Wallet;
+		public WebElement getAmazon_pay_withoutLink() {
+			return Amazon_pay_withoutLink;
+		}
+
+		public WebElement getMobikwik_withoutLink() {
+			return Mobikwik_withoutLink;
+		}
+
+		public WebElement getPaytm_withoutLink() {
+			return Paytm_withoutLink;
+		}
+
+		public WebElement getFreecharge_PayLater_Wallet() {
+			return Freecharge_PayLater_Wallet;
+		}
+
 		public WebElement getOrp_preview_close() {
 			return Orp_preview_close;
 		}
