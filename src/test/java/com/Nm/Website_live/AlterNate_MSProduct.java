@@ -93,7 +93,7 @@ public class AlterNate_MSProduct extends BaseClass{
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		Robot r = new Robot();
-		
+		try {
 		 driver.manage().window().maximize();
 		 btncli(m.getSignin());
 		  Thread.sleep(5000);
@@ -103,7 +103,9 @@ public class AlterNate_MSProduct extends BaseClass{
 		  Thread.sleep(3000);
 		  type(m.getPassword(),FileAndEnv.envAndFile().get("url")); 
 		  btncli(m.getSignInpage());
-		
+		}catch(Exception e) {
+			driver.navigate().to("https://www.netmeds.com/checkout/cart");
+		}
 		  //////////////////////
 		  
 		  
