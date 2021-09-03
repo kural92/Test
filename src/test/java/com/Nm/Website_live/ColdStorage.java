@@ -86,7 +86,7 @@ public class ColdStorage extends BaseClass {
 		Thread.sleep(5000);
 		type(m.getMobileno(), "8098882244");
 		Thread.sleep(3000);
-		//btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+		//btncli(driver.findElement(By.xpath("//button[contains(text(),4'USE PASSWORD')]")));
 		btncli(driver.findElement(By.xpath("//a[@class='btn-social btn-google']")));
 		Thread.sleep(3000);
 	//	type(m.getPassword(), "Netmeds123");
