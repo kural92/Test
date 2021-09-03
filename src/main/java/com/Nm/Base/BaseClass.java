@@ -72,13 +72,14 @@ public class BaseClass {
 	@BeforeClass
 	public WebDriver launchbrowser() throws IOException {
 		System.setProperty("webdriver.chrome.driver", ".//Driver//chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
+	
+		ChromeOptions option = new ChromeOptions();
+		option.setExperimentalOption("debuggerAddress", "localhost:9222");
+		driver = new ChromeDriver(option);
+		driver.get("https://www.netmeds.com");
 		
-		ChromeOptions options = new ChromeOptions();
-	//	options.addArguments("--headless", "--window-size=1920,1200");
-		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
-		driver.get(FileAndEnv.envAndFile().get("url"));
-		System.out.println(FileAndEnv.envAndFile().get("url"));
+		
 		return driver;
 	}
 	public void loadurl(String url) {
