@@ -57,14 +57,14 @@ public class Paymentpage extends BaseClass{
 
 	}
 
-
-	@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority=1)
+	//@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
 	public void paymentpage() throws Throwable {
 		logger =  report.createTest("Payment page");
 	logger.log(Status.PASS, "*************Decline case********************" );
 	Monepom m=new Monepom();
 	try {
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 	btncli(m.getSignin());
 	Thread.sleep(5000);
@@ -115,9 +115,9 @@ public class Paymentpage extends BaseClass{
 	}
 	btncli(m.getMinicart());
 	Thread.sleep(3000);
-	driver.findElement(By.xpath("//a[@title='Save For Later']")).click();
+	/*driver.findElement(By.xpath("//a[@title='Save For Later']")).click();
 	 String text = driver.findElement(By.xpath("//span[text()='Saved For Later']")).getText();
-	System.out.println(text);
+	System.out.println(text);*/
 	logger.log(Status.PASS, "Successfully navigate to cart page" );
 	btncli(m.getProceedbutton());
 	Thread.sleep(3000);
@@ -288,13 +288,14 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 							
 								
 	}
-	@Test(priority=2,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority=2)
+	//@Test(priority=2,retryAnalyzer=RetryAnalyzer.class)
 	public void nmscash() throws Throwable {
-
+	//	logger =  report.createTest("Payment page");
 		
 	Monepom m=new Monepom();
 	try {
-		driver.manage().window().maximize();
+	//	driver.manage().window().maximize();
 
 	btncli(m.getSignin());
 	Thread.sleep(5000);
@@ -432,7 +433,7 @@ w.click();
 	private void quitbrowser() {
 		report.flush();
 
-		driver.quit();
+		//driver.quit();
 	}
 
 

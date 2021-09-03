@@ -208,11 +208,12 @@ public class OffersPage extends BaseClass {
 			
 			btncli(m.getConsultation_checkbox());
 			Thread.sleep(5000);
-			WebElement consultation = driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[7]"));
+			WebElement consultation = driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[6]"));
 			actionClick(consultation);
+			//consultation.click();
 			System.out.println("Coupon related to consultation offer was sucessfully opened");
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
+			driver.findElement(By.xpath("//h5[@class=\"terms\"]")).click();
 			driver.navigate().to("https://www.netmeds.com/offers");
 			Thread.sleep(3000);
 			
@@ -220,15 +221,15 @@ public class OffersPage extends BaseClass {
 			Thread.sleep(5000);
 	
 			//driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[8]")).click();
-			WebElement dignostics = driver.findElement(By.xpath("(//img[@class=\\\"offer_sub_img\\\"])[8]"));
+			WebElement dignostics = driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[5]"));
 			actionClick(dignostics);
 			Thread.sleep(3000);
 			
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
+			driver.findElement(By.xpath("//h5[@class=\"terms\"]")).click(); 
 			System.out.println("Coupon related to diagonstics offer was sucessfully opened");
 	
-			
+			Thread.sleep(3000);
 			driver.navigate().back();
 			
 			System.out.println("Offer page is working properly");

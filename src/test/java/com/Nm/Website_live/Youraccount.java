@@ -75,7 +75,7 @@ public class Youraccount extends BaseClass {
 //Menu : Delivery Address//
 	
 	
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void DeliverAddressSection() throws Throwable {
 
 		logger = report.createTest("DeliverAddressSection");

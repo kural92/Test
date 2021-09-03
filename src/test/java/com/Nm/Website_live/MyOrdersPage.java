@@ -103,22 +103,23 @@ static String totalamt;
 		Monepom m = new Monepom();
 		driver.manage().window().maximize();
 
-//Step 2 :Login with user name and password//
-		btncli(m.getSignin());
-		Thread.sleep(5000);
+		try {
 
-		type(m.getMobileno(), "8072281468");
-		Thread.sleep(3000);
-
-		//btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
-		btncli(m.getUsepwdbtn());
-		Thread.sleep(3000);
-		type(m.getPassword(), "test@123");
-
-		btncli(m.getSignInpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to home page");
-		System.out.println("Successully logged in");
+			btncli(m.getSignin());
+			Thread.sleep(5000);
+			type(m.getMobileno(), "8072281468");
+			Thread.sleep(3000);
+			btncli(m.getUsepwdbtn());
+			Thread.sleep(3000);
+			type(m.getPassword(), "test@123");
+			btncli(m.getSignInpage());
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			
+			driver.navigate().to("https://www.netmeds.com/");
+			
+		}
 
 //Step 3 : Navigate to user profile//
 
@@ -420,12 +421,14 @@ static String totalamt;
 					
 					m.getProceedbutton().isEnabled();
 					System.out.println("Proceed button is enabled");
-					driver.navigate().back();
+					driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+					
 					Thread.sleep(3000);
 					
 
 //show status details//
-					 
+					 btncli(m.getView_Details());
+					 Thread.sleep(3000);
 					btncli(m.getShow_Status_Details());
 					 Thread.sleep(3000);					
 					 System.out.println("Successfully Navigated to Show Details Page");
@@ -497,6 +500,7 @@ static String totalamt;
 //Ensure proceed button is enabled//
 			m.getProceedbutton().isEnabled();
 			System.out.println("Proceed button is enabled");
+			Thread.sleep(3000);
 			btncli(m.getProceedbutton());
 			
 	
@@ -504,7 +508,7 @@ static String totalamt;
 			try {
 			
 				//try Attach Prescription//
-				
+				Thread.sleep(3000);
 				btncli(m.getConsultdoctorcheck());
 				Thread.sleep(3000);
 				driver.findElement(By.xpath("//button[@class=\"btn-checkout btn btn_to_checkout m-0\"]")).click();

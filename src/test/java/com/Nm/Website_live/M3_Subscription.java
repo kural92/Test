@@ -81,7 +81,7 @@ public class M3_Subscription extends BaseClass {
 	
 	
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -93,7 +93,6 @@ public class M3_Subscription extends BaseClass {
 
 		try {
 
-			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
 			type(m.getMobileno(), "8072281468");
@@ -105,13 +104,9 @@ public class M3_Subscription extends BaseClass {
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
 		} catch (Exception e) {
-			System.out.println("Already Logged In");
-		}
-
-		try {
-			btncli(m.getNetmedshome());
-		} catch (Exception e) {
-
+			
+			driver.navigate().to("https://www.netmeds.com/");
+			
 		}
 
 		// Step 3 : Navigate to user profile//
@@ -307,7 +302,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 	// *********************************************M3 -Doctor consultation
 	// **********************************************************************************************//
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
@@ -648,7 +643,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3RXflow() throws Throwable {
 
 		logger = report.createTest(" M3RXflow");

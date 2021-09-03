@@ -68,8 +68,8 @@ public class OrderReview extends BaseClass {
 		// htmlReporter.config().setTheme(Theme.STANDARD);
 
 	}
-
-	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
+	@Test
+	//@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 		logger = report.createTest("Order review ");
@@ -217,10 +217,10 @@ btncli(m.getOrderreview_rxviewimg());
 Thread.sleep(2000);
 btncli(m.getOrderreview_close());
 
-String s=driver.findElement(By.xpath("//div[@class='review_extdocmain d-none d-sm-block ng-star-inserted']/div[2]/div[1]")).getText();
+/*String s=driver.findElement(By.xpath("//div[@class='review_extdocmain d-none d-sm-block ng-star-inserted']/div[2]/div[1]")).getText();
 SoftAssert.assertEquals(s, "ORDER CONFIRMATION");
 String ss=driver.findElement(By.xpath("//div[@class='review_extdocmain d-none d-sm-block ng-star-inserted']/div[2]/div[2]")).getText();
-SoftAssert.assertEquals(ss, "Our Pharmacist/Doctor will call you to confirm the medicines.");
+SoftAssert.assertEquals(ss, "Our Pharmacist/Doctor will call you to confirm the medicines.");*/
 SoftAssert.assertAll();
 	}
 	

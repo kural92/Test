@@ -151,7 +151,7 @@ public class Monepom extends BaseClass {
 		return mysubscriptionpage;
 	}
 	
-	@FindBy(xpath="//button[contains(text(),\"CREATE NEW REFILL\")]|//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")
+	@FindBy(xpath="//button[contains(text(),\"CREATE NEW REFILL\")]|//a[@class =\"refillbtn\"]|//a[.=\"CREATE NEW SUBSCRIPTION\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")
 	private WebElement createnewfill;
 	
 	public WebElement getCreatenewfill() {
@@ -1352,7 +1352,7 @@ public class Monepom extends BaseClass {
 	}
 	
 	
-	@FindBy(xpath ="//a[.=\"Continue Shopping\"]")
+	@FindBy(xpath ="//a[.=\"Continue Shopping\"]|//a[.=\"Add more items\"]")
 	private WebElement continue_shopping;
 	public WebElement getContinue_shopping() {
 		return continue_shopping;
@@ -1863,7 +1863,7 @@ public class Monepom extends BaseClass {
 			return refill_msg;
 		}
 		
-		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_online_payent")
+		@FindBy(xpath = "//span[.=\"Payment Mode\"]")
 		private WebElement paymentmode_text;
 		public WebElement getPaymentmode_text() {
 			return paymentmode_text;
