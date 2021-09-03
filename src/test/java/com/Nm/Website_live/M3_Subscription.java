@@ -93,7 +93,6 @@ public class M3_Subscription extends BaseClass {
 
 		try {
 
-			// Step 2 :Login with user name and password//
 			btncli(m.getSignin());
 			Thread.sleep(5000);
 			type(m.getMobileno(), "8072281468");
@@ -105,13 +104,9 @@ public class M3_Subscription extends BaseClass {
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
 		} catch (Exception e) {
-			System.out.println("Already Logged In");
-		}
-
-		try {
-			btncli(m.getNetmedshome());
-		} catch (Exception e) {
-
+			
+			driver.navigate().to("https://www.netmeds.com/");
+			
 		}
 
 		// Step 3 : Navigate to user profile//
