@@ -56,7 +56,6 @@ public class Paymentpage extends BaseClass{
 		// htmlReporter.config().setTheme(Theme.STANDARD);
 
 	}
-
 	@Test(priority=1)
 	//@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
 	public void paymentpage() throws Throwable {
@@ -244,14 +243,14 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 				btncli(m.getKotak_bank());
 				Thread.sleep(10000);
 				driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 					btncli(m.getPayment_retry());
 					scrolldown("900");
 					Thread.sleep(5000);
 					btncli(m.getSBI_bank());
 					Thread.sleep(10000);
 					driver.navigate().back();
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 						btncli(m.getPayment_retry());
 						Thread.sleep(3000);
 						scrolldown("900");
@@ -291,7 +290,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	@Test(priority=2)
 	//@Test(priority=2,retryAnalyzer=RetryAnalyzer.class)
 	public void nmscash() throws Throwable {
-	//	logger =  report.createTest("Payment page");
+		//logger =  report.createTest("Payment page");
 		
 	Monepom m=new Monepom();
 	try {
@@ -340,15 +339,17 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 
 	Thread.sleep(3000);
 	try {
+		Thread.sleep(3000);
 	btncli(m.getAddtocart());
 	}catch (Exception e) {
 		// TODO: handle exception
 	}
-	btncli(m.getMinicart());
 	Thread.sleep(3000);
+	btncli(m.getMinicart());
+	Thread.sleep(5000);
 	logger.log(Status.PASS, "Successfully navigate to cart page" );
 	btncli(m.getProceedbutton());
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	logger.log(Status.PASS, "Successfully navigate to search order review page" );
 	btncli(m.getPaybutton());
 	Thread.sleep(3000);

@@ -54,7 +54,7 @@ public class NeetmedsFirst extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	//@Test(priority = 1,enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public  void NetmedsError() throws Throwable  {
 		logger =  report.createTest("NeetmedsFirst");
 		logger.log(Status.PASS, "*************Netmeds First flow********************" );
@@ -182,7 +182,7 @@ public class NeetmedsFirst extends BaseClass{
 	
 }
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority = 2,enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public  void netmedsfirstcustomer() throws Throwable  {
 		logger =  report.createTest(" Already netmeds first customer");
 		logger.log(Status.PASS, "************* Already netmeds first customer********************" );
@@ -369,7 +369,7 @@ if ((driver.findElements(By.xpath("//div[contains(text(),'Cash on Delivery')]"))
 	System.out.println("Cod charge is displayed");
 }
 driver.navigate().to("https://www.netmeds.com/customer/account");
-btncli(m.getLogout());
+/*btncli(m.getLogout());
 //btncli(m.getSignin());
  Thread.sleep(5000);
  type(m.getMobileno(),"9841648775");
@@ -455,7 +455,7 @@ btncli(m.getLogout());
        		}
 
        		Thread.sleep(3000);	
-    		//SoftAssert.assertEquals(m.getCart_Netmedscontent().get, false);
+    	*/	//SoftAssert.assertEquals(m.getCart_Netmedscontent().get, false);
     		//SoftAssert.assertEquals(m.getCart_Netmedscontent().isDisplayed(), false);
 
        		SoftAssert.assertAll();
