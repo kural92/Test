@@ -94,7 +94,7 @@ public class M1_Cod extends BaseClass {
 		Robot r = new Robot();
 
 		// Login
-		
+		try {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
@@ -105,7 +105,9 @@ public class M1_Cod extends BaseClass {
 			type(m.getPassword(), "Netmeds123");
 			btncli(m.getSignInpage());
 		
-
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		//////////////
 
 /////////////  Remove Product //
