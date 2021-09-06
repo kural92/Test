@@ -1691,8 +1691,24 @@ public class AndriodPom extends MobileBaseClass{
 			}
 
 
-	}
+	
 			
+//************************************************************Cart Page**********************************************************
 
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/imgChecked")	
+	private List<WebElement> Promo;
+	public List<WebElement> getPromo() {
+		return Promo;
+	}
+	
+	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
+	private WebElement Most_Selling_products;
+	public WebElement getMost_Selling_products() {
+		return Most_Selling_products;
+	}
+		
+		
+
+}
 
 
