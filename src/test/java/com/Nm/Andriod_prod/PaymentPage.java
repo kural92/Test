@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -58,7 +59,7 @@ public class PaymentPage extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 			
 			
@@ -105,7 +106,7 @@ public class PaymentPage extends MobileBaseClass {
 		AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(10000);
-		popupclose();
+		/*popupclose();
 		try {
 			btnclick(m.getLetsstarted());
 			Thread.sleep(5000);
@@ -131,7 +132,7 @@ public class PaymentPage extends MobileBaseClass {
 			Thread.sleep(2000);
 		}catch(Exception e) {
 				System.out.println("Already logged in");
-			}
+			}*/
 		Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
@@ -177,16 +178,22 @@ public class PaymentPage extends MobileBaseClass {
 			btnclick(m.getAmazon_pay_withoutLink());
 			Thread.sleep(5000);
 			driver.pressKeyCode(AndroidKeyCode.BACK);
-			Thread.sleep(5000);
+			Thread.sleep(7000);
 			btnclick(m.getRetry());
-			Thread.sleep(5000);
+			/*Thread.sleep(5000);
 			btnclick(m.getMobikwik_withoutLink());
 			Thread.sleep(5000);
 			driver.pressKeyCode(AndroidKeyCode.BACK);
 			Thread.sleep(5000);
-			btnclick(m.getRetry());
+			btnclick(m.getRetry());*/
 			Thread.sleep(5000);
 			btnclick(m.getPaytm_withoutLink());
+			Thread.sleep(5000);
+			try {
+				btnclick(m.getPayment_paybutton());
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			Thread.sleep(5000);
 			driver.pressKeyCode(AndroidKeyCode.BACK);
 			Thread.sleep(5000);
@@ -194,7 +201,19 @@ public class PaymentPage extends MobileBaseClass {
 			Thread.sleep(5000);
 			btnclick(m.getFreecharge_PayLater_Wallet());
 			Thread.sleep(5000);
+			try {
+				btnclick(m.getPayment_paybutton());
+			
+			
+			} catch (Exception e) {
+			}
+			Thread.sleep(15000);
 			driver.pressKeyCode(AndroidKeyCode.BACK);
+			try {
+				//btnclick(m.getPayment_paybutton());
+				Thread.sleep(10000);
+				driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+			}
 			Thread.sleep(5000);
 			btnclick(m.getRetry());
 			Thread.sleep(5000);
@@ -205,7 +224,7 @@ public class PaymentPage extends MobileBaseClass {
 				btnclick(m.getPhonepe());
 				Thread.sleep(5000);
 				
-				// driver.swipe(0, 900, 0, 0, 1000);
+				driver.swipe(0, 400, 0, 0, 1000);
 					btnclick(m.getAddnewCard());
 type(m.getCart_name(), "4111 1111 1111 1111");
 type(m.getCardValidity(), "06/25");
@@ -213,11 +232,155 @@ type(m.getCardCvv(), "123");
 type(m.getCardHolderName(), "Netmeds testing");
 btnclick(m.getChk_save_card());	
 btnclick(m.getTv_pay());	
-Thread.sleep(5000);
+Thread.sleep(10000);
 driver.pressKeyCode(AndroidKeyCode.BACK);
-Thread.sleep(15000);
+
+try {
+	//btnclick(m.getPayment_paybutton());
+	Thread.sleep(15000);
+	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
 Thread.sleep(5000);
 btnclick(m.getRetry());
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(5000);
+btnclick(m.getAxis_Bank());
+Thread.sleep(10000);
+driver.pressKeyCode(AndroidKeyCode.BACK);
+
+try {
+	//btnclick(m.getPayment_paybutton());
+	Thread.sleep(15000);
+	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
+Thread.sleep(10000);
+btnclick(m.getRetry());
+Thread.sleep(5000);
+btnclick(m.getHDFC_Bank());
+Thread.sleep(20000);
+driver.pressKeyCode(AndroidKeyCode.BACK);
+
+try {
+	//btnclick(m.getPayment_paybutton());
+	Thread.sleep(10000);
+	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
+Thread.sleep(10000);
+btnclick(m.getRetry());
+Thread.sleep(5000);
+/*btnclick(m.getICICI_Netbanking());
+Thread.sleep(20000);
+driver.pressKeyCode(AndroidKeyCode.BACK);
+
+try {
+	//btnclick(m.getPayment_paybutton());
+	Thread.sleep(10000);
+	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
+Thread.sleep(5000);
+btnclick(m.getRetry());
+Thread.sleep(5000);
+btnclick(m.getKotak_Bank());
+Thread.sleep(20000);
+driver.pressKeyCode(AndroidKeyCode.BACK);
+
+try {
+	//btnclick(m.getPayment_paybutton());
+	Thread.sleep(10000);
+	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
+Thread.sleep(5000);
+btnclick(m.getRetry());
+Thread.sleep(5000);
+btnclick(m.getSBI_Bank());
+Thread.sleep(20000);
+driver.pressKeyCode(AndroidKeyCode.BACK);
+
+try {
+	//btnclick(m.getPayment_paybutton());
+	Thread.sleep(10000);
+	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
+Thread.sleep(5000);
+btnclick(m.getRetry());*/
+Thread.sleep(5000);
+btnclick(m.getMORE_BANKS());
+Thread.sleep(5000);
+type(m.getSearchBank(), "Allahabad Bank");
+Thread.sleep(5000);
+btnclick(m.getMainLayout());
+Thread.sleep(20000);
+driver.pressKeyCode(AndroidKeyCode.BACK);
+
+try {
+	//btnclick(m.getPayment_paybutton());
+	Thread.sleep(10000);
+	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
+Thread.sleep(10000);
+btnclick(m.getRetry());
+Thread.sleep(5000);
+
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(5000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(5000);
+btnclick(m.getNmsCashCheckBox());
+Thread.sleep(5000);
+btnclick(m.getTv_place_order());
+Thread.sleep(3000);
+String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
+		
+		
+logger.log(Status.PASS, "Order was placed successfully" );
+System.out.println("Order was placed successfully and the "   + Order_id);
+//my orders
+
+
+btnclick(m.getMyorders());
+
+Thread.sleep(3000);
+	
+//View details
+
+
+btnclick(m.getViewdetails());
+Thread.sleep(3000);
+
+//cancel order
+
+
+btnclick(m.getCancelorder());
+Thread.sleep(3000);
+//yes
+
+//btnclick(m.getYesbutton());
+Thread.sleep(2000);
+
+
+//Cancel reason
+
+btnclick(m.getCancel_reason());
+
+Thread.sleep(5000);
+
+//Submit and cancel
+
+
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(5000);
+btnclick(m.getSubmit_cancel());
+logger.log(Status.PASS, "Order was cancelled successfully");
+System.out.println("Order was cancelled successfully");
 
 	}
 	

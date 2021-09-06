@@ -1098,14 +1098,79 @@ public class AndriodPom extends MobileBaseClass{
 		}
 
 
-		@FindBy(xpath = "//android.widget.TextView[@text='Amazon Pay']/following-sibling::android.widget.TextView[@text='LINK']")
+		@FindBy(xpath = "//android.widget.TextView[@text='Amazon Pay']")
 		private WebElement Amazon_pay_withoutLink;
-		@FindBy(xpath = "//android.widget.TextView[@text='Mobikwik']/following-sibling::android.widget.TextView[@text='LINK']")
+		@FindBy(xpath = "//android.widget.TextView[@text='Mobikwik']")
 		private WebElement Mobikwik_withoutLink;
-		@FindBy(xpath = "//android.widget.TextView[@text='Paytm']/following-sibling::android.widget.TextView[@text='LINK']")
+		@FindBy(xpath = "//android.widget.TextView[@text='Paytm']")
 		private WebElement Paytm_withoutLink;
-		@FindBy(xpath = "//android.widget.TextView[@text='Freecharge PayLater | Wallet']/following-sibling::android.widget.TextView[@text='LINK']")
+		
+		@FindBy(xpath = "//android.widget.TextView[@text='Freecharge PayLater | Wallet']")
 		private WebElement Freecharge_PayLater_Wallet;
+		@FindBy(xpath = "//android.widget.TextView[@text='Axis Bank']")
+		private WebElement Axis_Bank;
+		@FindBy(xpath = "//android.widget.TextView[@text='HDFC Bank']")
+		private WebElement HDFC_Bank;
+		@FindBy(xpath = "//android.widget.TextView[@text='ICICI Netbanking']")
+		private WebElement ICICI_Netbanking;
+		@FindBy(xpath = "//android.widget.TextView[@text='Kotak Bank']")
+		private WebElement Kotak_Bank;
+		@FindBy(xpath = "//android.widget.TextView[@text='State Bank of India']")
+		private WebElement SBI_Bank;
+		@FindBy(xpath = "//android.widget.TextView[@text='MORE BANKS']")
+		private WebElement MORE_BANKS;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/searchBank")
+		private WebElement searchBank;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/mainLayout")
+		private WebElement mainLayout;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/nmsCashCheckBox")
+		private WebElement nmsCashCheckBox;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_place_order")
+		private WebElement tv_place_order;
+		public WebElement getNmsCashCheckBox() {
+			return nmsCashCheckBox;
+		}
+
+		public WebElement getTv_place_order() {
+			return tv_place_order;
+		}
+
+		public WebElement getMainLayout() {
+			return mainLayout;
+		}
+
+		public WebElement getMORE_BANKS() {
+			return MORE_BANKS;
+		}
+
+		public WebElement getSearchBank() {
+			return searchBank;
+		}
+
+		public WebElement getAxis_Bank() {
+			return Axis_Bank;
+		}
+
+		public WebElement getHDFC_Bank() {
+			return HDFC_Bank;
+		}
+
+		public WebElement getICICI_Netbanking() {
+			return ICICI_Netbanking;
+		}
+
+		public WebElement getKotak_Bank() {
+			return Kotak_Bank;
+		}
+
+		public WebElement getSBI_Bank() {
+			return SBI_Bank;
+		}
+
+		public WebElement getSharelink() {
+			return sharelink;
+		}
+
 		public WebElement getAmazon_pay_withoutLink() {
 			return Amazon_pay_withoutLink;
 		}
