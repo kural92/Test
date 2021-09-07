@@ -830,6 +830,68 @@ public class AndriodPom extends MobileBaseClass{
 			return Add_To_cart_List;
 		}
 		
+		
+		// Cold Storage
+		
+				@FindBy(xpath = "//android.widget.TextView[@text='Check Availability']")
+				private WebElement PDP_CheckAvailabilty_btn;
+				public WebElement getPDP_CheckAvailabilty_btn() {
+					return PDP_CheckAvailabilty_btn;
+				}
+				
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/btn_dismiss")
+				private WebElement PDP_CheckAvailabilty_Close_btn;
+				public WebElement getPDP_CheckAvailabilty_Close_btn() {
+					return PDP_CheckAvailabilty_Close_btn;
+				}
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/pincode")
+				private WebElement PDP_ColdStorage_PinCheck;
+				public WebElement getPDP_ColdStorage_PinCheck() {
+					return PDP_ColdStorage_PinCheck;
+				}
+
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/check_availability")
+				private WebElement PDP_CheckAvailabilty_CheckBtn;
+				public WebElement getPDP_CheckAvailabilty_CheckBtn() {
+					return PDP_CheckAvailabilty_CheckBtn;
+				}
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_error")
+				private WebElement PDP_Colstorage_DeliveryError;
+				public WebElement getPDP_Colstorage_DeliveryError() {
+					return PDP_Colstorage_DeliveryError;
+				}
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/closeView")
+				private WebElement DoctorConsultation_CloseBtn;
+				public WebElement getDoctorConsultation_CloseBtn() {
+					return DoctorConsultation_CloseBtn;
+				}
+				
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/setAddressButton")
+				private WebElement Order_review_btn;
+				public WebElement getOrder_review_btn() {
+					return Order_review_btn;
+				}
+				
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_error_message")
+				private WebElement Order_review_ColdStorage_text;
+				public WebElement getOrder_review_ColdStorage_text() {
+					return Order_review_ColdStorage_text;
+				}
+				 
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_split_post_error_description")
+				private WebElement Take_Action_Description;
+				public WebElement getTake_Action_Description() {
+					return Take_Action_Description;
+				}
+		
+		
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		
