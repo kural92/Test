@@ -80,17 +80,20 @@ public class ColdStorage extends BaseClass {
 		Monepom m = new Monepom();
 
 		// Login
-
+try {
 		driver.manage().window().maximize();
 		btncli(m.getSignin());
 		Thread.sleep(5000);
 		type(m.getMobileno(), "8098882244");
 		Thread.sleep(3000);
-		btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
+		//btncli(driver.findElement(By.xpath("//button[contains(text(),4'USE PASSWORD')]")));
+		btncli(driver.findElement(By.xpath("//a[@class='btn-social btn-google']")));
 		Thread.sleep(3000);
-		type(m.getPassword(), "Netmeds123");
-		btncli(m.getSignInpage());
-
+	//	type(m.getPassword(), "Netmeds123");
+	//	btncli(m.getSignInpage());
+} catch (Exception e) {
+	// TODO: handle exception
+}
 		//////////////
 
 /////////////  Remove Product //
@@ -182,7 +185,7 @@ public class ColdStorage extends BaseClass {
 		btncli(m.getProceedbutton());
 
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(15000);
 			btncli(driver.findElement(By.id("externaldoctr")));
 			logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
 			logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");

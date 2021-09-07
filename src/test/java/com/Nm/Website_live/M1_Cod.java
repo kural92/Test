@@ -94,7 +94,7 @@ public class M1_Cod extends BaseClass {
 		Robot r = new Robot();
 
 		// Login
-		
+		try {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
@@ -105,7 +105,9 @@ public class M1_Cod extends BaseClass {
 			type(m.getPassword(), "Netmeds123");
 			btncli(m.getSignInpage());
 		
-
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		//////////////
 
 /////////////  Remove Product //
@@ -192,9 +194,17 @@ public class M1_Cod extends BaseClass {
 
 		try {
 			Thread.sleep(3000);
-			btncli(driver.findElement(By.id("externaldoctr")));
-			logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
-			logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+			if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+				
+				btncli(driver.findElement(By.id("externaldoctr")));
+				logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
+				logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+				
+			} else {
+
+				System.out.println("Schedule Free Consulation was already Selected");
+			}
+			
 
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'Review Order')]")));
