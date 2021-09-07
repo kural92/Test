@@ -60,6 +60,8 @@ public class Take_Action extends BaseClass{
 		Monepom m=new Monepom();
 		Robot r = new Robot();
 		driver.manage().window().maximize();
+		
+		try {
 		btncli(m.getSignin());
 		Thread.sleep(5000);
 		type(m.getMobileno(),"7010752043");
@@ -68,6 +70,9 @@ public class Take_Action extends BaseClass{
 		Thread.sleep(3000);
 		type(m.getPassword(),"Change@92");
 		btncli(m.getSignInpage());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		Thread.sleep(10000);
 		logger.log(Status.PASS, "Successfully navigate to home page" );
 

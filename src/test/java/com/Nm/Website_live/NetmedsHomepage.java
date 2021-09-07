@@ -122,13 +122,16 @@ public void homePage() throws Throwable {
 		
 		Thread.sleep(2000);
 		//UserLogin
+		try {
 		clk(hp.getLogin());
 		sendkeys(hp.getMobileno(), "7010752043");
 		clk(hp.getClick());
 	    thread(1000);
 	    sendkeys(hp.getPwd(), "Change@92");
 	    clk(hp.getSign());
-		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}	
 		
 	    //category
 	    thread(3000);
