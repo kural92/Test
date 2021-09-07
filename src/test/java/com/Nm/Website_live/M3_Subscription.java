@@ -81,7 +81,7 @@ public class M3_Subscription extends BaseClass {
 	
 	
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled =true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -302,7 +302,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 	// *********************************************M3 -Doctor consultation
 	// **********************************************************************************************//
 	
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
@@ -643,7 +643,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3RXflow() throws Throwable {
 
 		logger = report.createTest(" M3RXflow");
