@@ -298,11 +298,17 @@ Thread.sleep(3000);
 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_scratch")).click();
 
 
-//System.out.println(congrats.getText());
+Thread.sleep(3000);
+
+driver.swipe(345, 1029, 900, 1105, 1000);
+
 
 Thread.sleep(3000);
 
-//System.out.println(scratch_cards_text.getText());
+driver.swipe(370, 1160, 700, 1160, 1000);
+//System.out.println(congrats.getText());
+
+Thread.sleep(3000);
 
 
 
