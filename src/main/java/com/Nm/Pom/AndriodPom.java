@@ -1834,8 +1834,109 @@ public class AndriodPom extends MobileBaseClass{
 		return Most_Selling_products;
 	}
 		
+	//************************************************My Orders Page****************************************************************//
+	
+		@FindBy(xpath = "//android.widget.TextView[@text='ORDER DETAILS']")
+		private WebElement OrderDetails_text;
+		public WebElement getOrderDetails_text() {
+			return OrderDetails_text;
+		}
+		
+		@FindBy(xpath ="//android.widget.TableRow[@index='4']")
+		private WebElement Delivery_address_text;
+		public WebElement getDelivery_address_text() {
+			return Delivery_address_text;
+		}
+		
+		@FindBy(xpath ="//android.widget.TextView[@text='Customer Name']")
+		private WebElement customer_name_text;
+		public WebElement getCustomer_name_text() {
+			return customer_name_text;
+		}
+		
+		@FindBy(xpath ="(//android.widget.TextView[@index='1'])[1]")
+		private WebElement customer_name;
+		public WebElement getCustomer_name() {
+			return customer_name;
+		}
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Order ID :']")
+		private WebElement OrderId_text;
+		public WebElement getOrderId_text() {
+			return OrderId_text;
+		}
+		
+		
+		@FindBy(xpath ="(//android.widget.TextView[@index='1'])[2]")
+		private WebElement OrderId;
+		public WebElement getOrderId() {
+			return OrderId;
+		}
+		
+		
+		@FindBy(xpath ="//android.widget.TextView[@text='Order Placed']")
+		private WebElement Order_placed_text;
+		public WebElement getOrder_placed_text() {
+			return Order_placed_text;
+		}
+		
+		
+		
+		@FindBy(xpath ="(//android.widget.TextView[@index='1'])[3]")
+		private WebElement Order_placed;
+		public WebElement getOrder_placed() {
+			return Order_placed;
+		}
+		
+		@FindBy(xpath = "//div[.=\"Payment Mode\"]")
+		private WebElement Payment_mode_text;
+		public WebElement getPayment_mode_text() {
+			return Payment_mode_text;
+		}
+		
+		@FindBy(xpath ="(//div[@class=\"col-5 pr-0 text-right\"])[3]")
+		private WebElement Payment_mode;
+		public WebElement getPayment_mode() {
+			return Payment_mode;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/prescriptionImage")
+		private WebElement Prescription_open;
+		public WebElement getPrescription_open() {
+			return Prescription_open;
+		}
+		
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/preview_close")
+		private WebElement Prescription_closed;
+		public WebElement getPrescription_closed() {
+			return Prescription_closed;
+		}
+		
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/tv_bottom_text")
+		private WebElement Show_Status_Details;
+		public WebElement getShow_Status_Details() {
+			return Show_Status_Details;
+		}
+		
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/btn_cancel_order")
+		private WebElement NeedHelp_page;
+		public WebElement getNeedHelp_page() {
+			return NeedHelp_page;
+		}
+		
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/btn_need_help")
+		private WebElement Reorder;
+		public WebElement getReorder() {
+			return Reorder;
+		}
 		
 
-}
+	}
+
+
+	
+
+
 
 
