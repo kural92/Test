@@ -1931,6 +1931,31 @@ public class AndriodPom extends MobileBaseClass{
 			return Reorder;
 		}
 		
+		//***********************************************Category Page**********************************************************
+
+
+		@FindBy(xpath="//android.view.ViewGroup[@resource-id='com.NetmedsMarketplace.Netmeds:id/constraint_layout']")
+		private List<WebElement> Category_list;
+
+		public List<WebElement> getCategory_list() {
+			return Category_list;
+		}
+
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/sub_category_name']")
+		private List<WebElement> SubCategory_list;
+
+		public List<WebElement> getSubCategory_list() {
+			return SubCategory_list;
+		}
+
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/name']")
+		private List<WebElement> Filterby;
+
+		public List<WebElement> getFilterby() {
+			return Filterby;
+
+
+		}
 
 	}
 
