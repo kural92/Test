@@ -191,7 +191,7 @@ Float total_Wallet_amt;
 	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 	
 		Thread.sleep(3000);
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 25; i++) {
 			Thread.sleep(3000);
 			if (!(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/cart_remove_product")).size() == 0)) {
 				
