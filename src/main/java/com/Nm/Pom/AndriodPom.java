@@ -55,7 +55,7 @@ public class AndriodPom extends MobileBaseClass{
 			return Subscription;
 		}
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_createSubscription']")
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_createSubscription']|//android.widget.TextView[@text='CREATE NEW SUBSCRIPTION']")
 		private WebElement createnew_subscription;
 		public WebElement getCreatenew_subscription() {
 			return createnew_subscription;

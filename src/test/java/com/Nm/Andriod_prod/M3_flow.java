@@ -49,7 +49,7 @@ public class M3_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //07c55fe10406
+			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14" //07c55fe10406//RZ8R20GLXTA
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -60,7 +60,7 @@ public class M3_flow extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 					
 			capabilities.setCapability("autoDismissAlerts", true);  
@@ -114,7 +114,7 @@ public class M3_flow extends MobileBaseClass {
 			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			driver.resetApp();
+			//driver.resetApp();
 			
 			
 		}
@@ -323,6 +323,12 @@ Thread.sleep(2000);
 
 //Submit and cancel
 
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
+
+
+
 btnclick(m.getSubmit_cancel());
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
@@ -331,7 +337,7 @@ System.out.println("Order was cancelled successfully");
 	
 //******************************************************M3 Rx Flow*****************************************************
 	
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscriptionrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -347,7 +353,7 @@ System.out.println("Order was cancelled successfully");
 			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			driver.resetApp();
+			//driver.resetApp();
 			
 			
 		}
@@ -551,6 +557,11 @@ btnclick(m.getCancel_reason());
 Thread.sleep(2000);
 
 //Submit and cancel
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
+
+
 
 btnclick(m.getSubmit_cancel());
 
@@ -559,7 +570,7 @@ System.out.println("Order was cancelled successfully");
 	}
 //**************************************************M3 Past rx*********************************************
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void M3Subscriptionpastrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -572,7 +583,7 @@ System.out.println("Order was cancelled successfully");
 			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			driver.resetApp();
+			//driver.resetApp();
 			
 			
 		}
@@ -771,6 +782,10 @@ Thread.sleep(2000);
 
 //Submit and cancel
 
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
+
 btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
@@ -779,7 +794,7 @@ System.out.println("Order was cancelled successfully");
 	
 //**************************************************M3 -Doctor consultation***************************************************
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void M3Subscription_DoctorConsultationflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - DoctorConsultation Flow");
@@ -793,7 +808,7 @@ System.out.println("Order was cancelled successfully");
 			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			driver.resetApp();
+			//driver.resetApp();
 			
 			
 		}
@@ -1047,7 +1062,9 @@ btnclick(m.getCancel_reason());
 Thread.sleep(2000);
 
 //Submit and cancel
-
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
 btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
