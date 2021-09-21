@@ -98,7 +98,7 @@ public class M3_flow extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3SubscriptionOTCflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Subscription OTC Flow");
@@ -115,7 +115,7 @@ public class M3_flow extends MobileBaseClass {
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			//driver.resetApp();
-			
+			driver.launchApp();
 			
 		}
 		
@@ -355,7 +355,7 @@ System.out.println("Order was cancelled successfully");
 		} catch (Exception e) {
 			//driver.resetApp();
 			
-			
+			driver.launchApp();
 		}
 		
 		
@@ -440,7 +440,7 @@ System.out.println("Order was cancelled successfully");
 		
 		//Proceed
 		btnclick(m.getProceed_btn());
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 //Upload Prescription
 		
@@ -451,7 +451,7 @@ System.out.println("Order was cancelled successfully");
 //Upload Image
  driver.findElementByAccessibilityId("Gallery").click();
  
-driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[3]")).click();
+driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
 
  Thread.sleep(3000);
  
@@ -485,14 +485,18 @@ Thread.sleep(3000);
 	Thread.sleep(2000);
 	driver.findElementByAccessibilityId("Camera").click();
 	Thread.sleep(3000);
+	try {
+		driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_button")).click();
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
 	
-	driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_button")).click();
 	Thread.sleep(3000);
 	driver.findElementByAccessibilityId("Shutter button").click();
 	
 	Thread.sleep(3000);
 	
-	driver.findElementByAccessibilityId("Done").click();
+	driver.findElement(By.id("com.android.camera:id/intent_done_apply")).click();
  Thread.sleep(3000);
  //Schedule delivery
  
@@ -505,10 +509,10 @@ Thread.sleep(3000);
 
 Thread.sleep(2000);
 	
-btnclick(m.getDelivery_45days());
+//btnclick(m.getDelivery_45days());
 Thread.sleep(2000);
 
-btnclick(m.getDelivery_60days());
+//btnclick(m.getDelivery_60days());
 Thread.sleep(2000);
 
 logger.log(Status.PASS, "Delievery intervalselected successfully");
@@ -570,7 +574,7 @@ System.out.println("Order was cancelled successfully");
 	}
 //**************************************************M3 Past rx*********************************************
 	
-	@Test(enabled = true)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscriptionpastrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -584,7 +588,7 @@ System.out.println("Order was cancelled successfully");
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			//driver.resetApp();
-			
+			driver.launchApp();
 			
 		}
 		
@@ -794,7 +798,7 @@ System.out.println("Order was cancelled successfully");
 	
 //**************************************************M3 -Doctor consultation***************************************************
 	
-	@Test(enabled = true)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscription_DoctorConsultationflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - DoctorConsultation Flow");
@@ -810,7 +814,7 @@ System.out.println("Order was cancelled successfully");
 		} catch (Exception e) {
 			//driver.resetApp();
 			
-			
+			driver.launchApp();
 		}
 		
 		

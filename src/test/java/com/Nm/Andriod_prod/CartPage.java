@@ -661,7 +661,7 @@ Float total_Wallet_amt;
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				//driver.resetApp();
-			
+			driver.launchApp();
 			}
 			
 			Thread.sleep(1000);
@@ -1017,7 +1017,7 @@ Float total_Wallet_amt;
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				//driver.resetApp();
-			
+				driver.launchApp();
 			}
 			
 			Thread.sleep(1000);
@@ -1374,7 +1374,7 @@ Float total_Wallet_amt;
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				//driver.resetApp();
-			
+				driver.launchApp();
 			}
 			
 			Thread.sleep(1000);
