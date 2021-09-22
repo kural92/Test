@@ -137,7 +137,7 @@ Float total_Wallet_amt;
 
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
 	
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void CartPageScenario1() throws Throwable {
 		
 		logger =  report.createTest("Cart Page Scenario1 ");
@@ -145,7 +145,7 @@ Float total_Wallet_amt;
 		
 		AndriodPom m = new AndriodPom();
 		
-		
+		driver.launchApp();
 		
 		try {
 			popupclose();
@@ -154,7 +154,7 @@ Float total_Wallet_amt;
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			//driver.resetApp();
-		
+			
 		}
 		
 		Thread.sleep(1000);
@@ -191,7 +191,7 @@ Float total_Wallet_amt;
 	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 	
 		Thread.sleep(3000);
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 25; i++) {
 			Thread.sleep(3000);
 			if (!(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/cart_remove_product")).size() == 0)) {
 				
@@ -644,7 +644,7 @@ Float total_Wallet_amt;
 		
 		
 		
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void CartPageScenario2() throws Throwable {
 			
 			logger =  report.createTest("Cart Page Scenario2 ");
@@ -652,7 +652,7 @@ Float total_Wallet_amt;
 			
 			AndriodPom m = new AndriodPom();
 			
-			
+			driver.launchApp();
 			
 			try {
 				popupclose();
@@ -1000,7 +1000,7 @@ Float total_Wallet_amt;
 			}	
 
 //Test Case 3 :Verify Cart page when the Total amount is more than greater than 150 and less than or equal to 500
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void CartPageScenario3() throws Throwable {
 			
 			logger =  report.createTest("Cart Page Scenario 3");
@@ -1008,7 +1008,7 @@ Float total_Wallet_amt;
 			
 			AndriodPom m = new AndriodPom();
 			
-			
+			driver.launchApp();
 			
 			try {
 				popupclose();
@@ -1017,7 +1017,7 @@ Float total_Wallet_amt;
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				//driver.resetApp();
-			
+				
 			}
 			
 			Thread.sleep(1000);
@@ -1357,7 +1357,7 @@ Float total_Wallet_amt;
 			}	
 //Test case 4: Verify Cart page when the Total amount when NMS wallet is applied
 		
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 		public void CartPageScenario4() throws Throwable {
 			
 			logger =  report.createTest("Cart Page Scenario 4");
@@ -1365,7 +1365,7 @@ Float total_Wallet_amt;
 			
 			AndriodPom m = new AndriodPom();
 			
-			
+			driver.launchApp();
 			
 			try {
 				popupclose();
@@ -1374,7 +1374,7 @@ Float total_Wallet_amt;
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
 				//driver.resetApp();
-			
+				
 			}
 			
 			Thread.sleep(1000);

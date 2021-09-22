@@ -111,8 +111,8 @@ static String totalamt;
    	
    }
 	
-//*****************************************************************M3 -Order success page	*********************************************************
-	@Test(enabled = true)
+//*****************************************************************MyOrdersPage	*********************************************************
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void MyOrdersPage() throws Throwable {
 		
 		logger =  report.createTest("My Orders Page");
@@ -120,44 +120,48 @@ static String totalamt;
 		
 		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			//driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-
 	//Step 3 : Navigate to user profile//
 
 			btnclick(m.getUserprofile());

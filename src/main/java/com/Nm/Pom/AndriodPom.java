@@ -55,7 +55,7 @@ public class AndriodPom extends MobileBaseClass{
 			return Subscription;
 		}
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_createSubscription']")
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_createSubscription']|//android.widget.TextView[@text='CREATE NEW SUBSCRIPTION']")
 		private WebElement createnew_subscription;
 		public WebElement getCreatenew_subscription() {
 			return createnew_subscription;
@@ -1700,7 +1700,7 @@ public class AndriodPom extends MobileBaseClass{
 			}
 
 
-			@FindBy(xpath ="(//android.widget.TextView[@index='1'])[4]")
+			@FindBy(xpath ="(//android.widget.TextView[@text='Expected delivery by']/parent::android.widget.LinearLayout/child::android.widget.TextView)[2]")
 			private WebElement delivery_date;
 			public WebElement getDelivery_date() {
 				return delivery_date;
@@ -1931,6 +1931,31 @@ public class AndriodPom extends MobileBaseClass{
 			return Reorder;
 		}
 		
+		//***********************************************Category Page**********************************************************
+
+
+		@FindBy(xpath="//android.view.ViewGroup[@resource-id='com.NetmedsMarketplace.Netmeds:id/constraint_layout']")
+		private List<WebElement> Category_list;
+
+		public List<WebElement> getCategory_list() {
+			return Category_list;
+		}
+
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/sub_category_name']")
+		private List<WebElement> SubCategory_list;
+
+		public List<WebElement> getSubCategory_list() {
+			return SubCategory_list;
+		}
+
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/name']")
+		private List<WebElement> Filterby;
+
+		public List<WebElement> getFilterby() {
+			return Filterby;
+
+
+		}
 
 	}
 

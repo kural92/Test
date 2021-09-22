@@ -60,7 +60,7 @@ public class OrderSuccessPage extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 					
 			capabilities.setCapability("autoDismissAlerts", true);  
@@ -106,45 +106,48 @@ public class OrderSuccessPage extends MobileBaseClass {
 		
 		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -282,7 +285,7 @@ WebElement delivery_btwn =m.getDelivery_date(); //driver.findElement(By.xpath("/
 System.out.println("delivery date is between  "+delivery_btwn.getText());
 
 Thread.sleep(3000);
-
+try {
 WebElement congrats = m.getCongrats();
 
 System.out.println(congrats.getText());
@@ -296,7 +299,9 @@ System.out.println(scratch_cards_text.getText());
 Thread.sleep(3000);
 
 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_scratch")).click();
-
+}catch (Exception e) {
+	// TODO: handle exception
+}
 
 Thread.sleep(3000);
 
@@ -312,7 +317,7 @@ Thread.sleep(3000);
 
 
 
-driver.findElement(By.xpath("(//android.widget.ImageView[@index='1'])[1]")).click();
+//driver.findElement(By.xpath("(//android.widget.ImageView[@index='1'])[1]")).click();
 
 Thread.sleep(3000);
 
@@ -320,13 +325,13 @@ Thread.sleep(3000);
 Assert.assertEquals(gettext(m.getGrab_text()),"GRAB YOUR");
 
 System.out.println(m.getGrab_text().getText());
-
+Thread.sleep(3000);
 Assert.assertEquals(gettext(m.getFree_medicines()),"Free Medicines");
 
 System.out.println(m.getFree_medicines().getText());
-
+Thread.sleep(3000);
 Assert.assertEquals(gettext(m.getInvite_friends()),"Invite your friends and get");
-
+Thread.sleep(3000);
 System.out.println(m.getInvite_friends().getText());
 
 Thread.sleep(3000);
@@ -337,13 +342,13 @@ Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 System.out.println(m.getOffer_code().getText());
 
 
-
+Thread.sleep(3000);
 
 Assert.assertEquals(gettext(m.getShare_with_friends()),"Tap to share code with your friends");
 
 System.out.println(m.getShare_with_friends().getText());
 
-
+Thread.sleep(3000);
 m.getOffer_code().click();
 
 Thread.sleep(3000);
@@ -404,7 +409,7 @@ System.out.println("Order was cancelled successfully");
 
 
 //***************************************Order Success page M1***************************************
-@Test(enabled=false)
+@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -412,36 +417,51 @@ public void OrderSuccesspageM1() throws Throwable {
 	
 	AndriodPom m = new AndriodPom();
 	
-	Thread.sleep(10000);
-	popupclose();
-	popupclose();
-	try {
-		Thread.sleep(2000);
+	driver.launchApp();
+		
+		try {
+			popupclose();
+			Thread.sleep(5000);
+			popupclose();
 		btnclick(m.getLetsstarted());
-		Thread.sleep(10000);
-		driver.hideKeyboard();
-	} catch (Exception e) {
-		// TODO: handle exception
-	}
-	
-	
-	popupclose();
-	popupclose();
+		} catch (Exception e) {
+			//driver.resetApp();
+			//driver.launchApp();
+		
+		}
+		
+		Thread.sleep(1000);
+		
 	try {
 		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
-		Thread.sleep(3000);
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
 		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
 	
 		m.getPassword().sendKeys("test@123");
 		
-		btnclick(m.getLogin());
 		Thread.sleep(2000);
-	}catch(Exception e) {
-			System.out.println("Already logged in");
-		}
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
+	}
+	
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
+	
+	
+
+
+ 
 	Thread.sleep(10000);
 			String s="Patanjali Lauh Bhasm Powder 5 gm";
 	Thread.sleep(2000);
@@ -692,48 +712,55 @@ Thread.sleep(2000);
 					
 //***********************************Order Success Page M2*****************************************************************
 
-@Test(priority = 1, enabled = false)
+@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM2() throws Throwable {
 	
 	
 	AndriodPom m = new AndriodPom();
 	
+	driver.launchApp();
+		
+		try {
+			popupclose();
+			Thread.sleep(5000);
+			popupclose();
+		btnclick(m.getLetsstarted());
+		} catch (Exception e) {
+			//driver.resetApp();
+			//driver.launchApp();
+		
+		}
+		
+		Thread.sleep(1000);
+		
 	try {
+		
+		Thread.sleep(2000);
+		m.getMobilenumber().sendKeys("8072281468");
+		popupclose();
+		Thread.sleep(10000);
+		popupclose();
+		Thread.sleep(10000);
+		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
-	btnclick(m.getLetsstarted());
-	} catch (Exception e) {
-		driver.resetApp();
+	
+		m.getPassword().sendKeys("test@123");
+		
+		Thread.sleep(2000);
+	
+		
+		Thread.sleep(5000);
+		btnclick(m.getLogin());
 	}
 	
-
-	
-popupclose();
-popupclose();
-
-	Thread.sleep(10000);
-	
-	Thread.sleep(2000);
-	driver.hideKeyboard();
-	
-	Thread.sleep(2000);
-	btnclick(m.getMobilenumber());
-	
-	Thread.sleep(2000);
-	type(m.getMobilenumber(), "8072281468");
+	catch(Exception e) {
+		System.out.println("Already logged in");
+	}
+	 
+		popupclose();
 	
 	
-	//com.NetmedsMarketplace.Netmeds:id/btn_use_password
-	
-	Thread.sleep(2000);
-	btnclick(m.getUsepwd());
-	
-	Thread.sleep(5000);
-	Thread.sleep(2000);
-	type(m.getPassword(), "test@123");
-	
-	Thread.sleep(2000);
-	btnclick(m.getLogin());
-	
+ 
 	
 	try {
 	Thread.sleep(10000);

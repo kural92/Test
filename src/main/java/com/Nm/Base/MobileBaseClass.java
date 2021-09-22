@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
@@ -43,6 +44,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 
+import com.Nm.Pom.AndriodPom;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -158,7 +160,7 @@ return text;
 	public static void popupclose() {
 		try {
 			Thread.sleep(10000);
-			driver.findElement(By.xpath("//android.view.View[@index='1']/android.view.View")).click();
+			driver.findElement(By.xpath("//android.view.View[@index='1']/android.widget.TextView")).click();
 			System.out.println("popup is closed");
 			
 			//driver.findElement(By.xpath("//*[@class='android.widget.TextView' and ./parent::*[@class='android.view.View']")).click();
@@ -169,6 +171,229 @@ return text;
 
 	}
 	
+	
+	//Navigating to category
+	
+	public static void Navigating_to_category() throws Throwable {
+		
+		
+		AndriodPom m = new AndriodPom();
+		
+		Thread.sleep(4000);
+		
+		List <WebElement> Category_list = m.getCategory_list();
+		
+		System.out.println("The element size is"+  Category_list.size());
+		
+		
+		
+		for (int i=0;i<Category_list.size();i++) {
+			
+			Thread.sleep(4000);
+			Category_list.get(i).click();
+			
+			System.out.println("Successfull navigated to  category page");
+			Thread.sleep(3000);
+			Navigating_to_subcategory();
+			
+			Navigating_to_Sortby();
+			Navigating_to_Filter();
+			
+		driver.navigate().back();
+		
+	}
+		
+	}
+	
+	
+	//Sub Category
+	
+	public static void Navigating_to_subcategory() throws Throwable {
+	
+		AndriodPom m = new AndriodPom();
+			List<WebElement> SubCategory_list = m.getSubCategory_list();
+			System.out.println("The element size is"+  SubCategory_list.size());
+			
+					for (int i1=0;i1<SubCategory_list.size();i1++) {
+						
+						Thread.sleep(5000);
+						 if (i1>2) {
+							 
+							 driver.swipe(950, 1050, 430, 1050, 1000);
+							// new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
+						 }
+						
+						Thread.sleep(5000);
+						SubCategory_list.get(i1).click();
+						System.out.println("Successfull navigated to sub category page");
+						 
+						Thread.sleep(5000);
+						try {
+						driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")).click();
+						System.out.println("Successfully item added to cart");
+						}catch (Exception e) {
+						System.out.println("Item is  "+ driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/stock_info']")).getText());
+						}
+						Thread.sleep(5000);
+						driver.navigate().back();
+						
+					
+				}
+	
+	
+	}
+	
+	
+	
+	
+	//Sort By		
+	
+	
+	public static void Navigating_to_Sortby() throws Throwable {
+		
+		
+		AndriodPom m = new AndriodPom();
+	
+	int n = 1;
+	Thread.sleep(5000);
+
+	
+	for (int i2 = 0;i2<5; i2++)
+	
+	{
+		
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Sort']")).click();
+		Thread.sleep(5000);
+		List<WebElement> Sortby = driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/sortTitle']"));
+		Thread.sleep(3000);
+		System.out.println("Total element size is  "+ Sortby.size());
+		n = Sortby.size();
+	
+	
+	
+	Thread.sleep(3000);
+	//if (i2>2) {
+	//	driver.swipe(950, 1050, 430, 1050, 1000);
+	//}
+	Sortby.get(i2).click();
+	 Thread.sleep(5000);
+	 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']")).click();
+	 Thread.sleep(5000);
+	 
+	 System.out.println ("drug name is "+ driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")).getText());
+	 
+	 Thread.sleep(5000);
+
+	System.out.println("Category name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_category_name']")).getText());
+		
+	Thread.sleep(5000);
+		
+	System.out.println("Sub Category name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/category_name_2']")).getText());
+	 
+	 
+	Thread.sleep(5000);
+		
+	System.out.println("Best Price is " + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/search_alternateBrainalgoliaPrice']")).getText());
+	 
+	
+	Thread.sleep(5000);
+	
+	System.out.println("Manufacturer name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_manufacturer_name']")).getText());
+	 
+	try {
+	Thread.sleep(5000);
+	
+	System.out.println("dsicount percentage is " + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_discount']")).getText());
+	
+	}catch (Exception e) {
+		System.out.println("No Discount");
+	}
+	
+	}		
+	}
+	
+	
+	//Filter By	
+	
+	public static void Navigating_to_Filter() throws Throwable {
+	
+		
+		AndriodPom m = new AndriodPom();
+			int p = 1;
+			Thread.sleep(5000);
+		
+
+	for (int i3 = 0;i3<6; i3++)
+			
+			{
+				
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//android.widget.TextView[@text='Filter']")).click();
+				Thread.sleep(5000);
+				List<WebElement> Filterby = m.getFilterby();
+				Thread.sleep(5000);
+				System.out.println("Total element size is  "+ Filterby.size());
+				p = Filterby.size();
+			
+			
+			
+			Thread.sleep(3000);
+			//if (i2>2) {
+			//	driver.swipe(950, 1050, 430, 1050, 1000);
+			//}
+			Filterby.get(i3).click();
+			
+			
+			 Thread.sleep(5000);
+			 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/checked")).click();
+			 Thread.sleep(5000);
+			 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']")).click();
+			 Thread.sleep(5000);
+			 System.out.println ("drug name is "+ driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")).getText());
+			 Thread.sleep(5000);
+			 
+			 Thread.sleep(5000);
+				
+				System.out.println("Category name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_category_name']")).getText());
+					
+				Thread.sleep(5000);
+					
+				System.out.println("Sub Category name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/category_name_2']")).getText());
+				 
+				 
+				Thread.sleep(5000);
+					
+				System.out.println("Best Price is " + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/search_alternateBrainalgoliaPrice']")).getText());
+				 
+				
+				Thread.sleep(5000);
+				
+				System.out.println("Manufacturer name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_manufacturer_name']")).getText());
+				 
+				try {
+				Thread.sleep(5000);
+				
+				System.out.println("dsicount percentage is " + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_discount']")).getText());
+				
+				}catch (Exception e) {
+					System.out.println("No Discount");
+				}
+				
+			 
+			 
+			driver.findElementByXPath("//android.widget.TextView[@text='Filter']").click();
+			 //driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/checked")).click();
+			 Thread.sleep(5000);
+			 driver.findElement(By.xpath("//android.widget.TextView[@text='CLEAR ALL']")).click();
+			// driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_dismiss")).click();
+			 Thread.sleep(5000);
+			}	
+			
+			
+			
+	}
+
 	 ////////////////////////////
 	 
 	 public  static void waits(WebElement element) {	
