@@ -1700,7 +1700,7 @@ public class AndriodPom extends MobileBaseClass{
 			}
 
 
-			@FindBy(xpath ="(//android.widget.TextView[@index='1'])[4]")
+			@FindBy(xpath ="(//android.widget.TextView[@text='Expected delivery by']/parent::android.widget.LinearLayout/child::android.widget.TextView)[2]")
 			private WebElement delivery_date;
 			public WebElement getDelivery_date() {
 				return delivery_date;

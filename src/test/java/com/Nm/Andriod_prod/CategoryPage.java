@@ -98,7 +98,7 @@ public class CategoryPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void CategoryPage() throws Throwable {
 		
 		logger =  report.createTest("Category Page");
@@ -106,7 +106,7 @@ public class CategoryPage extends MobileBaseClass {
 		
 		AndriodPom m = new AndriodPom();
 		
-		
+		driver.launchApp();
 		
 		try {
 			popupclose();
@@ -115,6 +115,7 @@ public class CategoryPage extends MobileBaseClass {
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			//driver.resetApp();
+			
 			
 			
 		}
