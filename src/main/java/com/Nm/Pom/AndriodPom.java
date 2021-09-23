@@ -673,10 +673,15 @@ public class AndriodPom extends MobileBaseClass{
 			return Samsung_AllowAlways;
 		}
 		
-		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/imgClearTest")
+		private WebElement imgClearTest;
 		// Combo Pack
 		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/bundle_buy_pack")
 		private List<WebElement> PDP_BuyPack_ComboList;
+		public WebElement getImgClearTest() {
+			return imgClearTest;
+		}
+
 		public List<WebElement> getPDP_BuyPack_ComboList() {
 			return PDP_BuyPack_ComboList;
 		} 
@@ -856,6 +861,13 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getCamera_okbutton() {
 			return camera_okbutton;
 		}
+
+		@FindBy(xpath = "//android.widget.ImageButton[@content-desc='Navigate up']")
+		private WebElement Navigate_up;
+		public WebElement getNavigate_up() {
+			return Navigate_up;
+		}
+
 
 		@FindBy(xpath = "//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/continueUpload']")
 		private WebElement continueUpload;
@@ -1039,7 +1051,7 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement Orp_preview_close;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/retry")
 		private WebElement retry;
-		@FindBy(xpath = "//android.widget.TextView[@text='SIMPL Pay Later']/following-sibling::android.widget.CheckBox")
+		@FindBy(xpath = "//android.widget.TextView[@text='SIMPL Pay Later']")
 		private WebElement Simplpay;
 		@FindBy(xpath = "//android.widget.TextView[@text='PhonePe']/following-sibling::android.widget.CheckBox")
 		private WebElement Phonepe;
@@ -1772,8 +1784,460 @@ public class AndriodPom extends MobileBaseClass{
 		return Most_Selling_products;
 	}
 		
-		
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diag_image")
+	private WebElement diag_image;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textPinCode")
+	private WebElement textPinCode;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/edtPinCode")
+	private WebElement edtPinCode;
+	@FindBy(xpath ="//android.widget.TextView[@text='CHECK']")
+	private WebElement CHECK;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/addressCheckbox")
+	private WebElement addressCheckbox;
+	@FindBy(xpath ="//android.widget.TextView[@text='SELECT CURRENT LOCATION']")
+	private WebElement SELECT_CURRENT_LOCATION;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/snackbar_text")
+	private WebElement snackbar_text;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewTitleRadio")
+	private WebElement txtViewTitleRadio;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewTitlePathology")
+	private WebElement txtViewTitlePathology;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/imgCheck")
+	private WebElement imgCheck;
+	@FindBy(id ="android:id/message")
+	private WebElement message;
+	@FindBy(id ="android:id/button1")
+	private WebElement digansticsyesbutton;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtFilterRadiology")
+	private WebElement txtFilterRadiology;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtFilterPathology")
+	private WebElement txtFilterPathology;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/btnNext")
+	private WebElement btnNext;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewChangeAddress")
+	private WebElement txtViewChangeAddress;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textTestCount")
+	private WebElement textTestCount;
+	
+	public WebElement getTextTestCount() {
+		return textTestCount;
+	}
 
+	public WebElement getTxtViewChangeAddress() {
+		return txtViewChangeAddress;
+	}
+
+	public WebElement getBtnNext() {
+		return btnNext;
+	}
+
+	public WebElement getTxtFilterPathology() {
+		return txtFilterPathology;
+	}
+
+	public WebElement getTxtFilterRadiology() {
+		return txtFilterRadiology;
+	}
+
+	public WebElement getMessage() {
+		return message;
+	}
+
+	public WebElement getDigansticsyesbutton() {
+		return digansticsyesbutton;
+	}
+
+	public WebElement getImgCheck() {
+		return imgCheck;
+	}
+
+	public WebElement getTxtViewTitleRadio() {
+		return txtViewTitleRadio;
+	}
+
+	public WebElement getTxtViewTitlePathology() {
+		return txtViewTitlePathology;
+	}
+
+	public WebElement getSnackbar_text() {
+		return snackbar_text;
+	}
+
+	public WebElement getDiag_image() {
+		return diag_image;
+	}
+
+	public WebElement getTextPinCode() {
+		return textPinCode;
+	}
+
+	public WebElement getEdtPinCode() {
+		return edtPinCode;
+	}
+
+	public WebElement getCHECK() {
+		return CHECK;
+	}
+
+	public WebElement getAddressCheckbox() {
+		return addressCheckbox;
+	}
+
+	public WebElement getSELECT_CURRENT_LOCATION() {
+		return SELECT_CURRENT_LOCATION;
+	}
+	
+
+	@FindBy(xpath = "//android.widget.TextView[@text='View Price Breakup']")
+	private List<WebElement> View_Price_Breakup;
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/imgFilterCheck")
+	private List<WebElement> imgFilterCheck;
+	public List<WebElement> getView_Price_Breakup() {
+		return View_Price_Breakup;
+	}
+
+	public List<WebElement> getImgFilterCheck() {
+		return imgFilterCheck;
+	}
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/imgFilterCheck")
+	private WebElement imgFilterCheck1;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewCatetories")
+	private WebElement txtViewCatetories;
+	public WebElement getTxtViewCatetories() {
+		return txtViewCatetories;
+	}
+
+
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/text_check_and_apply_coupon")
+	private WebElement text_check_and_apply_coupon;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewTodayDeal")
+	private WebElement txtViewTodayDeal;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtTestPackageDesc")
+	private WebElement txtTestPackageDesc;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewTimer")
+	private WebElement txtViewTimer;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewBuyNow")
+	private WebElement txtViewBuyNow;
+	@FindBy(xpath ="//android.widget.TextView[@text='OUR MOST']")
+	private WebElement OUR_MOST;
+	@FindBy(xpath ="//android.widget.TextView[@text='Popular Packages']")
+	private WebElement Popular_Packages;
+	@FindBy(xpath ="//android.widget.TextView[@text='View All']")
+	private WebElement View_All_Popular_Packages;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/packageImage")
+	private WebElement packageImage;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/viewAllTest")
+	private WebElement viewAllTest;
+	public WebElement getImgFilterCheck1() {
+		return imgFilterCheck1;
+	}
+
+
+	public WebElement getText_check_and_apply_coupon() {
+		return text_check_and_apply_coupon;
+	}
+
+	public WebElement getTxtViewTodayDeal() {
+		return txtViewTodayDeal;
+	}
+
+	public WebElement getTxtTestPackageDesc() {
+		return txtTestPackageDesc;
+	}
+
+	public WebElement getTxtViewTimer() {
+		return txtViewTimer;
+	}
+
+	public WebElement getTxtViewBuyNow() {
+		return txtViewBuyNow;
+	}
+
+	public WebElement getOUR_MOST() {
+		return OUR_MOST;
+	}
+
+	public WebElement getPopular_Packages() {
+		return Popular_Packages;
+	}
+
+	public WebElement getView_All_Popular_Packages() {
+		return View_All_Popular_Packages;
+	}
+
+	public WebElement getPackageImage() {
+		return packageImage;
+	}
+
+
+	@FindBy(xpath ="//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ImageView")
+	private WebElement popupclosebutton;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textDialogHeader")
+	private WebElement textDialogHeader;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/test_name")
+	private WebElement diganostic_test_name;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textPrice")
+	private WebElement diganostic_textPrice;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textStrikePrice")
+	private WebElement diganostic_textStrikePrice;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/savings")
+	private WebElement diganostic_savings;
+	@FindBy(xpath ="//android.widget.TextView[@text='TOTAL SAVINGS']")
+	private WebElement TOTAL_SAVINGS;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/collapsing_toolbar")
+	private WebElement collapsing_toolbar;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/infoText")
+	private WebElement infoText;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diagnosticPatientName")
+	private WebElement diagnosticPatientName;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diagnosticMobileNumber")
+	private WebElement diagnosticMobileNumber;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diagnosticAge")
+	private WebElement diagnosticAge;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textMale")
+	private WebElement textMale;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textFeMale")
+	private WebElement textFeMale;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diagnosticPatientEmail")
+	private WebElement diagnosticPatientEmail;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/imgSlotCheck")
+	private WebElement imgSlotCheck;
+	@FindBy(xpath ="//android.widget.TextView[@text='LAB SELECTED']")
+	private WebElement 	labselected;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textLabName")
+	private WebElement 	textLabName;
+	@FindBy(xpath ="//android.widget.TextView[@text='Change Lab']")
+	private WebElement Change_Lab;
+	@FindBy(xpath ="//android.widget.TextView[@text='Time Slot']")
+	private WebElement Time_Slot;
+	public WebElement getTime_Slot() {
+		return Time_Slot;
+	}
+
+
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textSlotTime")
+	private WebElement textSlotTime;
+	@FindBy(xpath ="//android.widget.TextView[@text='Change Slot']")
+	private WebElement Change_slot;
+	@FindBy(xpath ="//android.widget.TextView[@text='LAB TESTS']")
+	private WebElement LAB_TESTS;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textTestName")
+	private WebElement textTestName;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textPrice")
+	private WebElement textPrice;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textStrikePrice")
+	private WebElement textStrikePrice;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtSamplePickUpAddress")
+	private WebElement txtSamplePickUpAddress;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/patientName")
+	private WebElement patientName;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textName")
+	private WebElement textName;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtViewOfferApplied")
+	private WebElement txtViewOfferApplied;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtViewMyRewards")
+	private WebElement txtViewMyRewards;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/editTextCoupon")
+	private WebElement editTextCoupon;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtAppCoupon")
+	private WebElement txtAppCoupon;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/btnProceed")
+	private WebElement btnProceed;
+	@FindBy(xpath="//android.widget.HorizontalScrollView[@resource-id='com.NetmedsMarketplace.Netmeds:id/weekTab']/android.widget.LinearLayout/android.widget.LinearLayout[2]")
+	private WebElement dateslot;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtViewRequireFasting")
+	private WebElement txtViewRequireFasting;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/tvTimeSlotHint")
+	private WebElement tvTimeSlotHint;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textDesc_1")
+	private WebElement textDesc_1;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/tv_desc_2")
+	private WebElement tv_desc_2;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/tv_desc_3")
+	private WebElement tv_desc_3;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/viewAllPackage")
+	private WebElement viewAllPackage;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textPackageName")
+	private WebElement textPackageName;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/lytSelectedTest")
+	private WebElement lytSelectedTest;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/arrow_back")
+	private WebElement arrow_back;
+	public WebElement getArrow_back() {
+		return arrow_back;
+	}
+
+	public WebElement getLytSelectedTest() {
+		return lytSelectedTest;
+	}
+
+	public WebElement getViewAllPackage() {
+		return viewAllPackage;
+	}
+
+	public WebElement getTextPackageName() {
+		return textPackageName;
+	}
+
+	public WebElement getTextDesc_1() {
+		return textDesc_1;
+	}
+
+	public WebElement getTv_desc_2() {
+		return tv_desc_2;
+	}
+
+	public WebElement getTv_desc_3() {
+		return tv_desc_3;
+	}
+
+	public WebElement getTxtViewRequireFasting() {
+		return txtViewRequireFasting;
+	}
+
+	public WebElement getViewAllTest() {
+		return viewAllTest;
+	}
+
+	public WebElement getTvTimeSlotHint() {
+		return tvTimeSlotHint;
+	}
+
+	public WebElement getDateslot() {
+		return dateslot;
+	}
+
+	public WebElement getImgSlotCheck() {
+		return imgSlotCheck;
+	}
+
+	public WebElement getLabselected() {
+		return labselected;
+	}
+
+	public WebElement getTextLabName() {
+		return textLabName;
+	}
+
+	public WebElement getChange_Lab() {
+		return Change_Lab;
+	}
+
+	public WebElement getTextSlotTime() {
+		return textSlotTime;
+	}
+
+	public WebElement getChange_slot() {
+		return Change_slot;
+	}
+
+	public WebElement getLAB_TESTS() {
+		return LAB_TESTS;
+	}
+
+	public WebElement getTextTestName() {
+		return textTestName;
+	}
+
+	public WebElement getTextPrice() {
+		return textPrice;
+	}
+
+	public WebElement getTextStrikePrice() {
+		return textStrikePrice;
+	}
+
+	public WebElement getTxtSamplePickUpAddress() {
+		return txtSamplePickUpAddress;
+	}
+
+	public WebElement getPatientName() {
+		return patientName;
+	}
+
+	public WebElement getTextName() {
+		return textName;
+	}
+
+	public WebElement getTxtViewOfferApplied() {
+		return txtViewOfferApplied;
+	}
+
+	public WebElement getTxtViewMyRewards() {
+		return txtViewMyRewards;
+	}
+
+	public WebElement getEditTextCoupon() {
+		return editTextCoupon;
+	}
+
+	public WebElement getTxtAppCoupon() {
+		return txtAppCoupon;
+	}
+
+	public WebElement getBtnProceed() {
+		return btnProceed;
+	}
+
+	public WebElement getCollapsing_toolbar() {
+		return collapsing_toolbar;
+	}
+
+	public WebElement getInfoText() {
+		return infoText;
+	}
+
+	public WebElement getDiagnosticPatientName() {
+		return diagnosticPatientName;
+	}
+
+	public WebElement getDiagnosticMobileNumber() {
+		return diagnosticMobileNumber;
+	}
+
+	public WebElement getDiagnosticAge() {
+		return diagnosticAge;
+	}
+
+	public WebElement getTextMale() {
+		return textMale;
+	}
+
+	public WebElement getTextFeMale() {
+		return textFeMale;
+	}
+
+	public WebElement getDiagnosticPatientEmail() {
+		return diagnosticPatientEmail;
+	}
+
+	public WebElement getTextDialogHeader() {
+		return textDialogHeader;
+	}
+
+	public WebElement getDiganostic_test_name() {
+		return diganostic_test_name;
+	}
+
+	public WebElement getDiganostic_textPrice() {
+		return diganostic_textPrice;
+	}
+
+	public WebElement getDiganostic_textStrikePrice() {
+		return diganostic_textStrikePrice;
+	}
+
+	public WebElement getDiganostic_savings() {
+		return diganostic_savings;
+	}
+
+	public WebElement getTOTAL_SAVINGS() {
+		return TOTAL_SAVINGS;
+	}
+
+	public WebElement getPopupclosebutton() {
+		return popupclosebutton;
+	}
 }
 
 

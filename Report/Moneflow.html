@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Sep 3, 2021 12:07:28 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Sep 23, 2021 11:35:40 AM</span>
 				</a>
 			</li>
 			<li>
@@ -72,8 +72,7 @@
 					<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+											<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -139,10 +138,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='40%'><span class='strong'>2</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='60%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -160,14 +159,14 @@
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Adding Alternate Brands and Most Selling Products to Cart</span>
-						<span class='test-time'>Sep 3, 2021 12:07:39 PM</span>
+						<span class='test-time'>Sep 23, 2021 11:35:57 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 3, 2021 12:07:39 PM</span>
-	<span class='label end-time'>Sep 3, 2021 12:09:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 45s+656ms</span>
+	<span class='label start-time'>Sep 23, 2021 11:35:57 AM</span>
+	<span class='label end-time'>Sep 23, 2021 11:41:49 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 5m 51s+361ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -179,33 +178,23 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:07:39 PM</td>
-					<td class='step-details'>*************AlterNate and Most Selling Product********************</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:08:33 PM</td>
-					<td class='step-details'>Successfully Product Removed from Cart</td>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:41:48 AM</td>
+					<td class='step-details'><span class='label white-text red'>radiology FAILED </span></td>
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>12:09:23 PM</td>
-					<td class='step-details'><span class='label white-text red'>Mone_otc FAILED </span></td>
-				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>12:09:23 PM</td>
+					<td class='timestamp'>11:41:48 AM</td>
 					<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 84 milliseconds
+Command duration or timeout: 101 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'NMSLAP093', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=84, noReset=true, viewportRect={top=84, left=0, width=1080, height=2130}, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, udid=NBBY79GM5LTCJBJR, platformName=Android}, platformVersion=10, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=NBBY79GM5LTCJBJR, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo, deviceScreenSize=1080x2340, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=3, locationContextEnabled=false, deviceScreenDensity=480, deviceModel=vivo 1819}]
-Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
-*** Element info: {Using=id, value=com.NetmedsMarketplace.Netmeds:id/order_id}
+Session ID: f425cb59-e092-4238-a391-8463fb2b6be8
+*** Element info: {Using=xpath, value=//android.widget.TextView[@text='MORE BANKS']}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -220,16 +209,20 @@ Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:64)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.Nm.Andriod_prod.M1_flow.Mone_otc(M1_flow.java:189)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:94)
+	at com.Nm.Andriod_prod.Diagnostic.radiology(Diagnostic.java:697)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -259,14 +252,14 @@ Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>12:09:25 PM</td>
-					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@302f7971</td>
+					<td class='timestamp'>11:41:49 AM</td>
+					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@5b67bb7e</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 							<ul class='screenshots'>
-								<li><img data-featherlight='Mone_otc.png' width='10%' src='Mone_otc.png' data-src='Mone_otc.png'></li>
+								<li><img data-featherlight='radiology.png' width='10%' src='radiology.png' data-src='radiology.png'></li>
 							</ul>
 					</div>
 				</li>
@@ -338,17 +331,17 @@ Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Sep 3, 2021 12:07:39 PM</td>
+                                                        <td>Sep 23, 2021 11:35:57 AM</td>
                                                         <td class='linked' test-id='1'>Adding Alternate Brands and Most Selling Products to Cart</td>
                                                         <td><pre><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 84 milliseconds
+Command duration or timeout: 101 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'NMSLAP093', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=84, noReset=true, viewportRect={top=84, left=0, width=1080, height=2130}, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, udid=NBBY79GM5LTCJBJR, platformName=Android}, platformVersion=10, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=NBBY79GM5LTCJBJR, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo, deviceScreenSize=1080x2340, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=3, locationContextEnabled=false, deviceScreenDensity=480, deviceModel=vivo 1819}]
-Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
-*** Element info: {Using=id, value=com.NetmedsMarketplace.Netmeds:id/order_id}
+Session ID: f425cb59-e092-4238-a391-8463fb2b6be8
+*** Element info: {Using=xpath, value=//android.widget.TextView[@text='MORE BANKS']}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -363,16 +356,20 @@ Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:64)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.Nm.Andriod_prod.M1_flow.Mone_otc(M1_flow.java:189)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:94)
+	at com.Nm.Andriod_prod.Diagnostic.radiology(Diagnostic.java:697)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -430,25 +427,25 @@ Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>5</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 3, 2021 12:07:28 PM</div>
+					<div class='panel-lead'>Sep 23, 2021 11:35:40 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 3, 2021 12:09:31 PM</div>
+			 		<div class='panel-lead'>Sep 23, 2021 11:41:55 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 2m 3s+134ms</div>
+					<div class='panel-lead'>0h 6m 14s+558ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -493,7 +490,7 @@ Session ID: c5b6013e-1a47-426d-bcd5-ad7fce6da3c1
 				skipParent: 0,
 				exceptionsParent: 1,
 				
-				passChild: 2,
+				passChild: 0,
 				failChild: 3,
 				fatalChild: 0,
 				errorChild: 0,
