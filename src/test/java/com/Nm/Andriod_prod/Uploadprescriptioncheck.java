@@ -62,7 +62,7 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 					
 			capabilities.setCapability("autoDismissAlerts", true);  
@@ -115,47 +115,50 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 		logger.log(Status.PASS, "*************uploadprescription********************");
 
 //Step1 :Launch Browser//		
-	AndriodPom m = new AndriodPom();
+		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
 	
 	
 	
@@ -224,7 +227,7 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 		
 		driver.findElementByAccessibilityId("Gallery").click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[3]")).click();
+		driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
 		
 		Thread.sleep(2000);
 // Rx 

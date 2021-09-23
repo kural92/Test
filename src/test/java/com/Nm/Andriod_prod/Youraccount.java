@@ -62,7 +62,7 @@ public class Youraccount extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 					
 			capabilities.setCapability("autoDismissAlerts", true);  
@@ -119,7 +119,7 @@ public class Youraccount extends MobileBaseClass {
 //Menu : Delivery Address//
 	
 	
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void DeliverAddressSection() throws Throwable {
 
 		logger = report.createTest("DeliverAddressSection");
@@ -128,7 +128,7 @@ public class Youraccount extends MobileBaseClass {
 	
 	AndriodPom m = new AndriodPom();
 		
-		
+	driver.launchApp();
 		
 		try {
 			popupclose();
@@ -136,7 +136,8 @@ public class Youraccount extends MobileBaseClass {
 			popupclose();
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			driver.resetApp();
+			//driver.resetApp();
+			//driver.launchApp();
 		
 		}
 		
@@ -253,55 +254,56 @@ public class Youraccount extends MobileBaseClass {
 	// **************************************************************MY
 	// Wallet*************************************************************************************//
 
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Mywallet() throws Throwable {
 
 		logger = report.createTest("Mywallet");
 		logger.log(Status.PASS, "*************Mywallet********************");
 
-	AndriodPom m = new AndriodPom();
+		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
-	
-
 //Step 3 : Navigate to user profile//
 
 		btnclick(m.getUserprofile());
@@ -373,55 +375,57 @@ public class Youraccount extends MobileBaseClass {
 	// **************************************************************Edit
 	// Profile*************************************************************************************//
 
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Editprofile() throws Throwable {
 
 		logger = report.createTest("Editprofile");
 		logger.log(Status.PASS, "*************Editprofile********************");
 
 		
-	AndriodPom m = new AndriodPom();
+		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
-	
 //Step 3 : Navigate to user profile//
 
 		btnclick(m.getUserprofile());
@@ -468,55 +472,57 @@ public class Youraccount extends MobileBaseClass {
 	
 
 //********************************************* My prescription***************************************************************************************
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Myprescription() throws Throwable {
 
 		logger = report.createTest("Myprescription");
 		logger.log(Status.PASS, "*************Myprescription********************");
 
 //Step1 :Launch Browser//		
-	AndriodPom m = new AndriodPom();
+		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
-	
 //Step 3 : Navigate to user profile//
 
 		btnclick(m.getUserprofile());
@@ -590,54 +596,57 @@ public class Youraccount extends MobileBaseClass {
 	// **************************************************************refer and
 	// earn*************************************************************************************//
 
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Referearn() throws Throwable {
 
 		logger = report.createTest("contact");
 		logger.log(Status.PASS, "*************contactus********************");
 
 //Step1 :Launch Browser//		
-	AndriodPom m = new AndriodPom();
+		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
 	
 //Step 3 : Navigate to user profile//
 
@@ -749,55 +758,57 @@ public class Youraccount extends MobileBaseClass {
 	// **************************************************************Help
 	// Page*************************************************************************************//
 
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Helppage() throws Throwable {
 
 		logger = report.createTest("Helppage");
 		logger.log(Status.PASS, "*************Helppage********************");
 
 //Step1 :Launch Browser//		
-	AndriodPom m = new AndriodPom();
+		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
-	
 
 //Step 3 : Navigate to user profile//
 
@@ -850,55 +861,57 @@ public class Youraccount extends MobileBaseClass {
 	// **************************************************************Legal
 	// Information*************************************************************************************//
 
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Legalinformation() throws Throwable {
 
 		logger = report.createTest("Legalinformation");
 		logger.log(Status.PASS, "*************Legalinformation********************");
 
 		//Step1 :Launch Browser//		
-	AndriodPom m = new AndriodPom();
+		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
-	
 	//Step 3 : Navigate to user profile//
 
 			btnclick(m.getUserprofile());
@@ -960,45 +973,48 @@ public class Youraccount extends MobileBaseClass {
 			//Step1 :Launch Browser//		
 			AndriodPom m = new AndriodPom();
 			
-			
-			
+			driver.launchApp();
+				
+				try {
+					popupclose();
+					Thread.sleep(5000);
+					popupclose();
+				btnclick(m.getLetsstarted());
+				} catch (Exception e) {
+					//driver.resetApp();
+					//driver.launchApp();
+				
+				}
+				
+				Thread.sleep(1000);
+				
 			try {
+				
+				Thread.sleep(2000);
+				m.getMobilenumber().sendKeys("8072281468");
 				popupclose();
+				Thread.sleep(10000);
+				popupclose();
+				Thread.sleep(10000);
+				btnclick(m.getUsepwd());
 				Thread.sleep(5000);
-				popupclose();
-			btnclick(m.getLetsstarted());
-			} catch (Exception e) {
-				driver.resetApp();
 			
+				m.getPassword().sendKeys("test@123");
+				
+				Thread.sleep(2000);
+			
+				
+				Thread.sleep(5000);
+				btnclick(m.getLogin());
 			}
 			
-			Thread.sleep(1000);
+			catch(Exception e) {
+				System.out.println("Already logged in");
+			}
+			 
+				popupclose();
 			
-		try {
 			
-			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("8072281468");
-			popupclose();
-			Thread.sleep(10000);
-			popupclose();
-			Thread.sleep(10000);
-			btnclick(m.getUsepwd());
-			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test@123");
-			
-			Thread.sleep(2000);
-		
-			
-			Thread.sleep(5000);
-			btnclick(m.getLogin());
-		}
-		
-		catch(Exception e) {
-			System.out.println("Already logged in");
-		}
-		 
-			popupclose();
 		
 
 					driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();

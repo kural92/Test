@@ -49,7 +49,7 @@ public class M3_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //07c55fe10406
+			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14" //07c55fe10406//RZ8R20GLXTA
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -60,7 +60,7 @@ public class M3_flow extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 					
 			capabilities.setCapability("autoDismissAlerts", true);  
@@ -106,48 +106,48 @@ public class M3_flow extends MobileBaseClass {
 		
 		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
+		
+			m.getPassword().sendKeys("test@123");
 			
+			Thread.sleep(2000);
+		
 			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
 		
-		Thread.sleep(1000);
-		
-	try {
-		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -323,6 +323,12 @@ Thread.sleep(2000);
 
 //Submit and cancel
 
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
+
+
+
 btnclick(m.getSubmit_cancel());
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
@@ -331,7 +337,7 @@ System.out.println("Order was cancelled successfully");
 	
 //******************************************************M3 Rx Flow*****************************************************
 	
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscriptionrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -339,48 +345,48 @@ System.out.println("Order was cancelled successfully");
 		
 		AndriodPom m = new AndriodPom();
 		
-		
-		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
+		
+			m.getPassword().sendKeys("test@123");
 			
+			Thread.sleep(2000);
+		
 			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
 		
-		Thread.sleep(1000);
-		
-	try {
-		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -434,7 +440,7 @@ System.out.println("Order was cancelled successfully");
 		
 		//Proceed
 		btnclick(m.getProceed_btn());
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 //Upload Prescription
 		
@@ -445,7 +451,7 @@ System.out.println("Order was cancelled successfully");
 //Upload Image
  driver.findElementByAccessibilityId("Gallery").click();
  
-driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[3]")).click();
+driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
 
  Thread.sleep(3000);
  
@@ -479,14 +485,18 @@ Thread.sleep(3000);
 	Thread.sleep(2000);
 	driver.findElementByAccessibilityId("Camera").click();
 	Thread.sleep(3000);
+	try {
+		driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_button")).click();
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
 	
-	driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_button")).click();
 	Thread.sleep(3000);
 	driver.findElementByAccessibilityId("Shutter button").click();
 	
 	Thread.sleep(3000);
 	
-	driver.findElementByAccessibilityId("Done").click();
+	driver.findElement(By.id("com.android.camera:id/intent_done_apply")).click();
  Thread.sleep(3000);
  //Schedule delivery
  
@@ -499,10 +509,10 @@ Thread.sleep(3000);
 
 Thread.sleep(2000);
 	
-btnclick(m.getDelivery_45days());
+//btnclick(m.getDelivery_45days());
 Thread.sleep(2000);
 
-btnclick(m.getDelivery_60days());
+//btnclick(m.getDelivery_60days());
 Thread.sleep(2000);
 
 logger.log(Status.PASS, "Delievery intervalselected successfully");
@@ -551,6 +561,11 @@ btnclick(m.getCancel_reason());
 Thread.sleep(2000);
 
 //Submit and cancel
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
+
+
 
 btnclick(m.getSubmit_cancel());
 
@@ -559,53 +574,56 @@ System.out.println("Order was cancelled successfully");
 	}
 //**************************************************M3 Past rx*********************************************
 	
-	@Test(enabled = false)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscriptionpastrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
 		logger.log(Status.PASS, "*************M3 - Rx Flow********************" );
 		
 		AndriodPom m = new AndriodPom();
+		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
+		
+			m.getPassword().sendKeys("test@123");
 			
+			Thread.sleep(2000);
+		
 			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
 		
-		Thread.sleep(1000);
-		
-	try {
-		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -771,6 +789,10 @@ Thread.sleep(2000);
 
 //Submit and cancel
 
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
+
 btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
@@ -779,7 +801,7 @@ System.out.println("Order was cancelled successfully");
 	
 //**************************************************M3 -Doctor consultation***************************************************
 	
-	@Test(enabled = false)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscription_DoctorConsultationflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - DoctorConsultation Flow");
@@ -787,46 +809,48 @@ System.out.println("Order was cancelled successfully");
 		
 		AndriodPom m = new AndriodPom();
 		
+		driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			driver.resetApp();
+		
+			m.getPassword().sendKeys("test@123");
 			
+			Thread.sleep(2000);
+		
 			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
 		
-		Thread.sleep(1000);
-		
-	try {
-		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -1047,7 +1071,9 @@ btnclick(m.getCancel_reason());
 Thread.sleep(2000);
 
 //Submit and cancel
-
+Thread.sleep(2000);
+driver.swipe(790, 1100, 800, 70, 1000);
+Thread.sleep(2000);
 btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
