@@ -891,6 +891,216 @@ public class AndriodPom extends MobileBaseClass{
 					return Take_Action_Description;
 				}
 		
+				
+				
+				
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Footer
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/home_image")
+private WebElement Footer_HomePage;
+public WebElement getFooter_HomePage() {
+return Footer_HomePage;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/order_image")
+private WebElement Footer_Orders;
+public WebElement getFooter_Orders() {
+return Footer_Orders;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/subscription_image")
+private WebElement Footer_SubScription;
+public WebElement getFooter_SubScription() {
+return Footer_SubScription;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/diag_image")
+private WebElement Footer_Diagonistics;
+public WebElement getFooter_Diagonistics() {
+return Footer_Diagonistics;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/account_image")
+private WebElement Footer_Account;
+public WebElement getFooter_Account() {
+return Footer_Account;
+}
+
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search_container")
+private WebElement Header_SearchBar;
+public WebElement getHeader_SearchBar() {
+return Header_SearchBar;
+} 
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search_bar")
+private WebElement SearchBar;
+public WebElement getSearchBar() {
+return SearchBar;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/parent_view']")
+private WebElement Search_results_Detail;
+public WebElement getSearch_results_Detail() {
+return Search_results_Detail;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/parent_view']")
+private List<WebElement> Search_results_Detail_List;
+public List<WebElement> getSearch_results_Detail_List() {
+return Search_results_Detail_List;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")
+private List<WebElement> Search_results_Drug_List;
+public List<WebElement> getSearch_results_Drug_List() {
+return Search_results_Drug_List;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")
+private WebElement Search_results_Drug;
+public WebElement getSearch_results_Drug() {
+return Search_results_Drug;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
+private WebElement Search_results_AddTocart;
+public WebElement getSearch_results_AddTocart() {
+return Search_results_AddTocart;
+}
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
+private List<WebElement> Search_results_AddTocart_List;
+public List<WebElement> getSearch_results_AddTocart_List() {
+return Search_results_AddTocart_List;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/increment")
+private List<WebElement> Search_results_AddTocart_IncreaseQty_List;
+public List<WebElement> getSearch_results_AddTocart_IncreaseQty_List() {
+return Search_results_AddTocart_IncreaseQty_List;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/increment")
+private WebElement Search_results_AddTocart_IncreaseQty;
+public WebElement getSearch_results_AddTocart_IncreaseQty() {
+return Search_results_AddTocart_IncreaseQty;
+}
+
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/decrement")
+private List<WebElement> Search_results_AddTocart_DecreaseQty_List;
+public List<WebElement> getSearch_results_AddTocart_DecreaseQty_List() {
+return Search_results_AddTocart_DecreaseQty_List;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/decrement")
+private WebElement Search_results_AddTocart_DecreaseQty;
+public WebElement getSearch_results_AddTocart_DecreaseQty() {
+return Search_results_AddTocart_DecreaseQty;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_category_name']")
+private List<WebElement> Search_results_category_List;
+public List<WebElement> getSearch_results_category_List() {
+return Search_results_category_List;
+}
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_category_name']")
+private WebElement Search_results_Category;
+public WebElement getSearch_results_Category() {
+return Search_results_Category;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search")
+private WebElement PDP_Search_btnn;
+public WebElement getPDP_Search_btnn() {
+return PDP_Search_btnn;
+}
+
+
+//
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/total_amount")
+private WebElement OrderReview_TotalAmount;
+public WebElement getOrderReview_TotalAmount() {
+return OrderReview_TotalAmount;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/proceed_btn")
+private WebElement OrderReview_Proceed_Btn;
+public WebElement getOrderReview_Proceed_Btn() {
+return OrderReview_Proceed_Btn;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/tv_net_amount")
+private WebElement PaymenrtPage_NetAmount;
+public WebElement getPaymenrtPage_NetAmount() {
+return PaymenrtPage_NetAmount;
+}
+
+
+
+@FindBy(xpath = "//android.widget.TextView[@text='COD']")
+private WebElement COD_CheckBox;
+public WebElement getCOD_CheckBox() {
+return COD_CheckBox;
+}
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/proceed_btn")
+private WebElement order_Review_ProceedBtn;
+public WebElement getOrder_Review_ProceedBtn() {
+return order_Review_ProceedBtn;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/tv_pay")
+private WebElement COD_PayBtn;
+public WebElement getCOD_PayBtn() {
+return COD_PayBtn;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/snackbar_text")
+private WebElement COD_Not_Eligible_Text;
+public WebElement getCOD_Not_Eligible_Text() {
+return COD_Not_Eligible_Text;
+}
+
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/snackbar_text")
+private List<WebElement> COD_Not_Eligible_Text_List;
+public List<WebElement> getCOD_Not_Eligible_Text_List() {
+return COD_Not_Eligible_Text_List;
+}
+
+
+
+@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/btn_view_order")
+private List<WebElement> viewdetails_List;	
+public List<WebElement> getViewdetails_List() {
+	return viewdetails_List;
+}
 		
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
