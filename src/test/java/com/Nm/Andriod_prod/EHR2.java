@@ -107,7 +107,7 @@ public class EHR2 extends MobileBaseClass {
 
 	
 	
-	@Test
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void EHR() throws Throwable {
 
 		logger = report.createTest("EHR2");
