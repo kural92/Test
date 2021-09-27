@@ -403,6 +403,8 @@ logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
 
 
+
+System.out.println("M3 Order Success is working properly");
 	}
 
 
@@ -705,7 +707,7 @@ Thread.sleep(2000);
 		logger.log(Status.PASS, "Order was cancelled successfully");
 		System.out.println("Order was cancelled successfully");
 
-	
+		System.out.println("M1 Order Success is working properly");
 		
 		
 	}
@@ -951,6 +953,7 @@ Thread.sleep(3000);
 		System.out.println("Order was cancelled successfully");
 
 
+		System.out.println("M2 Order Success is working properly");
 }
 
 @AfterMethod()

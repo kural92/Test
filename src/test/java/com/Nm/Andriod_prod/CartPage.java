@@ -250,6 +250,8 @@ Float total_Wallet_amt;
 				btnclick(Cart_btn);
 				
 				System.out.println("successfully Items are added");
+				
+				logger.log(Status.PASS, "Items are added successfully");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -390,6 +392,7 @@ Float total_Wallet_amt;
 		btnclick(m.getMost_Selling_products());
 		Thread.sleep(3000);
 		System.out.println("Successfully item added to the cart");
+		logger.log(Status.PASS, "Items are added successfully");
 		
 /*//open the item from most selling product page and add the item to the cart though PDG page"
 		
@@ -636,7 +639,7 @@ Float total_Wallet_amt;
 			 }
 		
 			
-			
+		System.out.println("cartpage Scenario 1 is working properly");
 		}	
 	
 
@@ -995,7 +998,7 @@ Float total_Wallet_amt;
 				
 				 }
 			
-				
+			System.out.println("cartpage Scenario 2 is working properly");
 				
 			}	
 
@@ -1352,7 +1355,7 @@ Float total_Wallet_amt;
 				
 				 }
 			
-				
+			System.out.println("cartpage Scenario 3 is working properly");
 				
 			}	
 //Test case 4: Verify Cart page when the Total amount when NMS wallet is applied
@@ -1753,7 +1756,7 @@ Float total_Wallet_amt;
 				 }
 			
 				
-				
+			System.out.println("cartpage Scenario 4 is working properly");
 			}	
 		
 

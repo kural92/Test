@@ -224,6 +224,7 @@ static String totalamt;
 			//btnclick(m.getViewdetails());	
 			
 			System.out.println("Successfully Navigated to View details page");
+			logger.log(Status.PASS, " Successfully Navigated to View details page" );
 			Thread.sleep(3000);
 				
 				
@@ -260,7 +261,7 @@ static String totalamt;
 				
 				
 				
-				
+				logger.log(Status.PASS, "Assertions are successfully completed" );
 				
 			//System.out.println(m.getPayment_mode().getText());	
 				

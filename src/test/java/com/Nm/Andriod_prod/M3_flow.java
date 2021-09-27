@@ -333,6 +333,8 @@ btnclick(m.getSubmit_cancel());
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
 
+
+System.out.println("M3 Subscription OTC Flow is working properly");
 	}
 	
 //******************************************************M3 Rx Flow*****************************************************
@@ -571,6 +573,9 @@ btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
+
+
+System.out.println("M3  RX is working properly");
 	}
 //**************************************************M3 Past rx*********************************************
 	
@@ -797,6 +802,9 @@ btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
+
+
+System.out.println("M3  past RX is working properly");
 	}	
 	
 //**************************************************M3 -Doctor consultation***************************************************
@@ -1078,6 +1086,9 @@ btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
+
+
+System.out.println("M3  Doctor consultation  is working properly");
 	}
 
 	

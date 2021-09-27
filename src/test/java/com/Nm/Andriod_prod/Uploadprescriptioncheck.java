@@ -437,7 +437,9 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 					
 					
 			System.out.println("Prescription & Past Rx attachment validation is completed and its working fine");*/
-					
+				
+	
+	System.out.println("Upload Prescription page is working properly");
 	}
 
 @AfterMethod()
