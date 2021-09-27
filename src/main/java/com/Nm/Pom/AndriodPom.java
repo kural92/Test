@@ -112,7 +112,7 @@ public class AndriodPom extends MobileBaseClass{
 			return placeorder;
 		}
 		
-		@FindBy(xpath ="//android.widget.Button[@index ='1']")
+		@FindBy(xpath ="//android.widget.Button[@index ='1']|//android.widget.ImageView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/img_orders']")
 		private WebElement myorders;
 		public WebElement getMyorders() {
 			return myorders;

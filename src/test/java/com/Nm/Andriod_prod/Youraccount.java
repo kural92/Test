@@ -735,7 +735,7 @@ public class Youraccount extends MobileBaseClass {
 
 		
 		//Copy Code
-		
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Copy']")).click();
 		Thread.sleep(3000);
 		System.out.println("Code was succesfully copied");
