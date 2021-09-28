@@ -1106,6 +1106,130 @@ private List<WebElement> viewdetails_List;
 public List<WebElement> getViewdetails_List() {
 	return viewdetails_List;
 }
+
+
+////Consultation
+
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/online_consultation_button")
+	private WebElement Consultation_Btn;
+	public WebElement getConsultation_Btn() {
+		return Consultation_Btn;
+	}
+	
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/online_consultation_button")
+	private List<WebElement> Consultation_Btn_List;	
+	public List<WebElement> getConsultation_Btn_List() {
+		return Consultation_Btn_List;
+	}
+
+
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/btn_start_consultation")
+	private WebElement Start_Consultation_Btn;
+	public WebElement getStart_Consultation_Btn() {
+		return Start_Consultation_Btn;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself']")
+	private WebElement Consult_MySelf;  
+	public WebElement getConsult_MySelf() {
+		return Consult_MySelf;
+	}
+	
+	
+	
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[2]")
+	private WebElement Consult_Others;
+	public WebElement getConsult_Others() {
+		return Consult_Others;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/edit_symptoms")
+	private WebElement Consult_Symptons_TextBox;
+	public WebElement getConsult_Symptons_TextBox() {
+		return Consult_Symptons_TextBox;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_view_all_specialisation")
+	private WebElement Consult_Specialist_ViewAll;
+	public WebElement getConsult_Specialist_ViewAll() {
+		return Consult_Specialist_ViewAll;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='ENT']")
+	private WebElement Consult_ENT;
+	public WebElement getConsult_ENT() {
+		return Consult_ENT;
+	}
+	
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/btn_specialization_done")
+	private WebElement Consult_specilaisation_DoneBtn;
+	public WebElement getConsult_specilaisation_DoneBtn() {
+		return Consult_specilaisation_DoneBtn;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='START CONSULTATION']")
+	private WebElement START_CONSULTATION_BTN;
+	public WebElement getSTART_CONSULTATION_BTN() {
+		return START_CONSULTATION_BTN;
+	}
+	
+	@FindBy(id = "android.widget.TextView//[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']")
+	private WebElement Consult_Chat_Text;
+	public WebElement getConsult_Chat_Text() {
+		return Consult_Chat_Text;
+	}
+	
+	
+	
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txt_select']")
+	private WebElement Consult_Doctor_select_btn;
+	public WebElement getConsult_Doctor_select_btn() {
+		return Consult_Doctor_select_btn;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']")
+	private WebElement Consult_Chat;
+	public WebElement getConsult_Chat() {
+		return Consult_Chat;
+	}
+	
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_audio")
+	private WebElement Consult_Audio;
+	public WebElement getConsult_Audio() {
+		return Consult_Audio;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_video")
+	private WebElement Consult_Video;
+	public WebElement getConsult_Video() {
+		return Consult_Video;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_video")
+	private List<WebElement> Consult_Payment_Package_List;
+	public List<WebElement> getConsult_Payment_Package_List() {
+		return Consult_Payment_Package_List;
+	}
+	
+	
+	
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/btn_make_payment")
+	private WebElement Consult_Pay_Btn;
+	public WebElement getConsult_Pay_Btn() {
+		return Consult_Pay_Btn;
+	}
+	
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtViewGeneralPhy")
+	private WebElement Consult_general_Physician;
+	public WebElement getConsult_general_Physician() {
+		return Consult_general_Physician;
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+
 		
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
