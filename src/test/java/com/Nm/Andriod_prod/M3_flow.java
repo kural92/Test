@@ -288,7 +288,19 @@ System.out.println("Order was placed successfully");
 
 
 //Order success page
-
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
 
 
 //my orders
@@ -532,7 +544,24 @@ btnclick(m.getPlaceorder());
 Thread.sleep(3000);
 logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
+
+
+//Payment
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
 //my orders
+
 
 
 btnclick(m.getMyorders());
@@ -762,6 +791,21 @@ btnclick(m.getPlaceorder());
 Thread.sleep(3000);
 logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
+
+//Payment page
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
 //my orders
 
 
