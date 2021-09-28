@@ -354,19 +354,34 @@ AndriodPom m = new AndriodPom();
 		Thread.sleep(3000);
 		btnclick(m.getSTART_CONSULTATION_BTN());
 		
+		Thread.sleep(3000);
+		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/text_today_tom_slot")).click();
+		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_multi_choice']")).click();
+		
+		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("com.NetmedsMarketplace.Netmeds:id/txt_view_schedule_consultation")).click();
+		
+		
 		
 		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
 		
-		
+		/*
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Doctor_select_btn()));
 		Thread.sleep(3000);
 		btnclick(m.getConsult_Doctor_select_btn());
-		
+		*/
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
 		btnclick(m.getConsult_Chat());
 		
-		wait.until(ExpectedConditions.visibilityOfAllElements(m.getConsult_Payment_Package_List()));
-		m.getConsult_Payment_Package_List().get(1).click();
+		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment"))));
+		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment")).click();
+		
+	
+		
+		
 		
 		
 
