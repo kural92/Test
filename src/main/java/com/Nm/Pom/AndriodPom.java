@@ -2897,9 +2897,38 @@ public List<WebElement> getViewdetails_List() {
 			return Symptoms_progress_option4;
 		}
 
+		//********************************************Previous Consultation*************************************************************
 
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Go to Chat']")
+		private WebElement Gotochat;
+		public WebElement getGotochat() {
+			return Gotochat;
+		}
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Help']")
+		private WebElement Help_previous_consultation;
+		public WebElement getHelp_previous_consultation() {
+			return Help_previous_consultation;
+		}
+
+		@FindBy(xpath ="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txtConsultOrFollowUp']")
+		private WebElement Consult_again;
+		public WebElement getConsult_again() {
+			return Consult_again;
+		}
+
+
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txt_view_schedule_consultation")
+		private WebElement Schedule_button;
+		public WebElement getSchedule_button() {
+			return Schedule_button;
+		}
 
 		}
+
+		
 		
 		
 	
