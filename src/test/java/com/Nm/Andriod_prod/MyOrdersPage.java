@@ -355,6 +355,28 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 			 System.out.println("Successfully Navigated to reorder Page");
 			 logger.log(Status.PASS, " Successfully Navigated to reorder Page" );
 			 Thread.sleep(3000);
+			 
+			 try {
+				 
+				 btnclick(driver.findElementByAccessibilityId("Gallery"));
+				 
+				 Thread.sleep(3000);
+				 
+				 btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[2]")));
+				 Thread.sleep(3000);
+
+				 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/continueButton")).click();
+				 
+				 Thread.sleep(3000);
+				 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/continueButton")).click();
+				 
+				 Thread.sleep(3000);
+				 
+				
+				 
+			 }catch (Exception e) {
+				// TODO: handle exception
+			}
 			 try {
 				 
 				 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_dismiss")).click();
@@ -363,20 +385,43 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 				System.out.println("No Popup is there to close");
 			}
 //Ensure proceed button is enabled//
+			 try {
 				Thread.sleep(3000);
 			 m.getProceed_btn().isEnabled();
 				System.out.println("Proceed button is enabled");
 				
 				Thread.sleep(3000);
 				 driver.navigate().back();
+			 }catch (Exception e) {
+				// TODO: handle exception
+			}
+
+				
+				 
+				 if (!(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/place_order")).size()==0))
+				 {
+					 try {
+					 driver.navigate().back();
+					 
+					 driver.navigate().back();
+					 
+					 driver.navigate().back();
+					 } catch (Exception e) {
+					// TODO: handle exception
+					 	}
+						 }
 				 
 //show status details//
-				 Thread.sleep(3000);
+				try {
+					Thread.sleep(3000);
+				
 				btnclick(m.getShow_Status_Details());
 				 Thread.sleep(3000);					
 				 System.out.println("Successfully Navigated to Show Details Page");
 				 logger.log(Status.PASS, " Successfully Navigated to Show Details Page" );	
-				 
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
 
 	//Track Order
 					

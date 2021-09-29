@@ -103,7 +103,7 @@ public class PreviousConsultation extends MobileBaseClass {
 
 //*****************************************************Previous Consultation*************************
 
-	@Test
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void PreviousConsultation() throws Throwable {
 
 		logger = report.createTest("Previous Consultation");
@@ -111,7 +111,7 @@ public class PreviousConsultation extends MobileBaseClass {
 
 	
 	AndriodPom m = new AndriodPom();
-		
+	WebDriverWait wait= new WebDriverWait(driver, 60);
 		driver.launchApp();
 		
 		try {
@@ -258,6 +258,17 @@ List<WebElement>	list =  m.getLeftside_Link();
 	btnclick(m.getSchedule_button());
 	logger.log(Status.PASS, "Successfully  clicked schedule button");
 	System.out.println("Successfully  clicked schedule button");
+	
+	Thread.sleep(3000);
+	
+	//wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
+	
+	//btnclick(m.getConsult_Chat());
+	driver.findElement(By.xpath("//android.widget.TextView[@text='Chat']")).click();
+	
+	Thread.sleep(3000);
+	
+	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment")).click();
 	
 	System.out.println("Previous consultation screen is working fine");
 	}					
