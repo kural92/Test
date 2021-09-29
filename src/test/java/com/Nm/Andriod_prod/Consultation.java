@@ -220,6 +220,44 @@ public class Consultation extends MobileBaseClass {
 // Payment Decline
 		
 		
+		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"))));
+		List<WebElement> pay_Link = driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"));
+	
+		//Mobiwik
+		Thread.sleep(3000);
+		pay_Link.get(0);
+		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		
+		//PayTM 
+		Thread.sleep(3000);
+		pay_Link.get(1);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		
+	/*	
+		//FreeCharge
+		 	Thread.sleep(3000);
+		pay_Link.get(3);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		//Amazon Pay
+		Thread.sleep(3000);
+		pay_Link.get(2);
+		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		 
+		 
+		*/
+		
+		
+		
 	}
 	
 	
@@ -354,6 +392,7 @@ AndriodPom m = new AndriodPom();
 		Thread.sleep(3000);
 		btnclick(m.getSTART_CONSULTATION_BTN());
 		
+		try {
 		Thread.sleep(3000);
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/text_today_tom_slot")).click();
 		
@@ -363,7 +402,15 @@ AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("com.NetmedsMarketplace.Netmeds:id/txt_view_schedule_consultation")).click();
-		
+		} catch (Exception e) {
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_multi_choice']")).click();
+			
+			
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("com.NetmedsMarketplace.Netmeds:id/txt_view_schedule_consultation")).click();
+			
+		}
 		
 		
 		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
@@ -379,13 +426,52 @@ AndriodPom m = new AndriodPom();
 		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment"))));
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment")).click();
 		
+		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"))));
+		List<WebElement> pay_Link = driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"));
 	
+		//Mobiwik
+		Thread.sleep(3000);
+		pay_Link.get(0);
 		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		
+		//PayTM 
+		Thread.sleep(3000);
+		pay_Link.get(1);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		
+	/*	
+		//FreeCharge
+		 	Thread.sleep(3000);
+		pay_Link.get(3);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		//Amazon Pay
+		Thread.sleep(3000);
+		pay_Link.get(2);
+		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		driver.findElementByAccessibilityId("Navigate up").click();
+		 
+		 
+		*/
+		
+		
+		
+		
+		
+	}
 		
 		
 		
 
 		
-	}
+	
 	
 }
