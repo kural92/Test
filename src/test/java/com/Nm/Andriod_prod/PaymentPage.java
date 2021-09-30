@@ -63,7 +63,7 @@ public class PaymentPage extends MobileBaseClass {
 			
 			
 			
-			//capabilities.setCapability("autoDismissAlerts", true);  
+			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			
 			try {
@@ -174,7 +174,7 @@ public class PaymentPage extends MobileBaseClass {
 			btnclick(m.getProceed_btn());
 			Thread.sleep(5000);
 			btnclick(m.getPlaceorder());
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 			btnclick(m.getAmazon_pay_withoutLink());
 			Thread.sleep(5000);
 			driver.pressKeyCode(AndroidKeyCode.BACK);
@@ -199,6 +199,12 @@ public class PaymentPage extends MobileBaseClass {
 			Thread.sleep(5000);
 			btnclick(m.getRetry());
 			Thread.sleep(5000);
+			btnclick(m.getPhonepe());
+			Thread.sleep(5000);
+			
+			 driver.swipe(0, 900, 0, 0, 1000);
+				
+				Thread.sleep(5000);
 			btnclick(m.getFreecharge_PayLater_Wallet());
 			Thread.sleep(5000);
 			try {
@@ -207,12 +213,13 @@ public class PaymentPage extends MobileBaseClass {
 			
 			} catch (Exception e) {
 			}
-			Thread.sleep(15000);
+			Thread.sleep(17000);
 			driver.pressKeyCode(AndroidKeyCode.BACK);
 			try {
 				//btnclick(m.getPayment_paybutton());
 				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+				driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();		
+				} catch (Exception e) {
 			}
 			Thread.sleep(5000);
 			btnclick(m.getRetry());
@@ -221,10 +228,10 @@ public class PaymentPage extends MobileBaseClass {
 			Thread.sleep(5000);
 			
 			 driver.swipe(0, 900, 0, 0, 1000);
-				btnclick(m.getPhonepe());
+				//btnclick(m.getPhonepe());
 				Thread.sleep(5000);
 				
-				driver.swipe(0, 400, 0, 0, 1000);
+				driver.swipe(0, 200, 0, 0, 1000);
 					btnclick(m.getAddnewCard());
 type(m.getCart_name(), "4111 1111 1111 1111");
 type(m.getCardValidity(), "06/25");
