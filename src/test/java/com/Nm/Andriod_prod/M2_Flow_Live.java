@@ -85,7 +85,7 @@ public class M2_Flow_Live extends MobileBaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void m2_getSearchMedicine() throws Throwable {
 		
 		
@@ -104,7 +104,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 	popupclose();
 	
 		Thread.sleep(10000);
-		
+	try {	
 		Thread.sleep(2000);
 		driver.hideKeyboard();
 		
@@ -127,7 +127,11 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(2000);
 		btnclick(m.getLogin());
 		
-		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
+	
 		try {
 		Thread.sleep(10000);
 		btnclick(driver.findElement(By.xpath("//android.widget.TextView[index='0']")));
@@ -190,8 +194,9 @@ public class M2_Flow_Live extends MobileBaseClass{
 		btnclick(m.getM2_ProceedBtn());
 		
 		Thread.sleep(5000);
-//		btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']")));
+	//	btnclick(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']")));
 		
+		Thread.sleep(5000);
 		if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']"))).contains("AO40")) {
 			
 			System.out.println("AO40 - Promo Code Matches");
@@ -220,6 +225,9 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		Thread.sleep(5000);
 		btnclick(m.getCancel_Order_reason());
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 100, 0, 0, 1000);
 		
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
@@ -257,7 +265,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 
 
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void m2_getCall() throws Throwable {
 	
 		AndriodPom m = new AndriodPom();
@@ -295,6 +303,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 				// TODO: handle exception
 			}
 			
+			try {
 			Thread.sleep(2000);
 			driver.hideKeyboard();
 			
@@ -316,7 +325,9 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 			Thread.sleep(2000);
 			btnclick(m.getLogin());
-			
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			
 			try {
 			Thread.sleep(10000);
@@ -398,6 +409,9 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		Thread.sleep(5000);
 		btnclick(m.getCancel_Order_reason());
 		
+		Thread.sleep(3000);
+		driver.swipe(0, 100, 0, 0, 1000);
+		
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
 		
@@ -447,6 +461,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 				// TODO: handle exception
 			}
 			
+			try {
 			Thread.sleep(2000);
 			driver.hideKeyboard();
 			
@@ -468,7 +483,9 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 			
 			Thread.sleep(2000);
 			btnclick(m.getLogin());
-			
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
 			
 			try {
 			Thread.sleep(10000);
@@ -564,6 +581,10 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		Thread.sleep(5000);
 		btnclick(m.getCancel_Order_reason());
 		
+		Thread.sleep(3000);
+		driver.swipe(0, 100, 0 , 0, 1000);
+		
+		
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
 		
@@ -580,7 +601,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 	}
 	
 	
-	@Test(priority = 4,enabled = true)
+	@Test(priority = 4,enabled = false)
 	public void pastRX_getCall() throws Throwable {
 		
 
