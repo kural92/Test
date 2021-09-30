@@ -117,6 +117,8 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 //Step1 :Launch Browser//		
 		AndriodPom m = new AndriodPom();
 		
+		
+		
 		driver.launchApp();
 			
 			try {
@@ -435,7 +437,9 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 					
 					
 			System.out.println("Prescription & Past Rx attachment validation is completed and its working fine");*/
-					
+				
+	
+	System.out.println("Upload Prescription page is working properly");
 	}
 
 @AfterMethod()

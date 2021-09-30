@@ -98,7 +98,7 @@ public class OrderSuccessPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 -Order success page	*********************************************************
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void OrderSuccessPageM3() throws Throwable {
 		
 		logger =  report.createTest("Order Success Page ");
@@ -249,8 +249,21 @@ Thread.sleep(3000);
 
 logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
+//payment page
 
-
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
 //Order success page
 //Step 14 : Order status//
 
@@ -285,7 +298,7 @@ WebElement delivery_btwn =m.getDelivery_date(); //driver.findElement(By.xpath("/
 System.out.println("delivery date is between  "+delivery_btwn.getText());
 
 Thread.sleep(3000);
-try {
+
 WebElement congrats = m.getCongrats();
 
 System.out.println(congrats.getText());
@@ -299,9 +312,8 @@ System.out.println(scratch_cards_text.getText());
 Thread.sleep(3000);
 
 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_scratch")).click();
-}catch (Exception e) {
-	// TODO: handle exception
-}
+
+
 
 Thread.sleep(3000);
 
@@ -317,7 +329,7 @@ Thread.sleep(3000);
 
 
 
-//driver.findElement(By.xpath("(//android.widget.ImageView[@index='1'])[1]")).click();
+driver.findElement(By.xpath("(//android.widget.ImageView[@index='1'])[1]")).click();
 
 Thread.sleep(3000);
 
@@ -403,13 +415,15 @@ logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
 
 
+
+System.out.println("M3 Order Success is working properly");
 	}
 
 
 
 
 //***************************************Order Success page M1***************************************
-@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -504,7 +518,7 @@ Thread.sleep(2000);
 
 		btnclick(m.getPlaceorder());
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		 driver.swipe(0, 900, 0, 0, 1000);
 		 Thread.sleep(3000);
 		 driver.swipe(0, 900, 0, 0, 1000);
@@ -516,7 +530,7 @@ Thread.sleep(2000);
 		 btnclick(m.getPayment_cod());
 		 Thread.sleep(3000);
 		 btnclick(m.getPayment_paybutton());
-		 Thread.sleep(3000);
+		 Thread.sleep(5000);
 		String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
 				
 				
@@ -557,7 +571,7 @@ Thread.sleep(2000);
 		System.out.println("delivery date is between  "+delivery_btwn.getText());
 
 		Thread.sleep(3000);
-
+try {
 		WebElement congrats = m.getCongrats();
 
 		System.out.println(congrats.getText());
@@ -582,6 +596,10 @@ Thread.sleep(2000);
 
 
 		driver.findElement(By.xpath("(//android.widget.ImageView[@index='1'])[1]")).click();
+}catch (Exception e) {
+	// TODO: handle exception
+}
+
 
 		Thread.sleep(3000);
 
@@ -665,10 +683,13 @@ Thread.sleep(2000);
 		
 		System.out.println(m.getModify_or_reschedule().getText());
 		
+		Thread.sleep(3000);
+		
 		m.getSubscribe().click();
 	
-
-		driver.swipe(946, 1300, 980, 2300, 1000);
+		Thread.sleep(5000);
+		
+		driver.swipe(983, 1400, 1880, 2300, 1000);
 		
 		//My rewards
 		//driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_view_reward")).click();
@@ -676,7 +697,7 @@ Thread.sleep(2000);
 
 		//my orders
 
-
+		
 		btnclick(m.getMyorders());
 
 		Thread.sleep(3000);
@@ -705,7 +726,7 @@ Thread.sleep(2000);
 		logger.log(Status.PASS, "Order was cancelled successfully");
 		System.out.println("Order was cancelled successfully");
 
-	
+		System.out.println("M1 Order Success is working properly");
 		
 		
 	}
@@ -796,11 +817,17 @@ public void OrderSuccesspageM2() throws Throwable {
 
 	}
 	
-	driver.findElement(By.xpath("//android.widget.TextView[@text='GO TO SEARCH']")).click();
+	//driver.findElement(By.xpath("//android.widget.TextView[@text='GO TO SEARCH']")).click();
+	Thread.sleep(3000);
+	//driver.navigate().back();
+	Thread.sleep(5000);
+	driver.navigate().back();
+	//Thread.sleep(3000);
+	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_medicine_button")).click();
 	
 	
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//android.widget.TextView[@text='UPLOAD']")).click();
+	Thread.sleep(3000);
+	//driver.findElement(By.xpath("//android.widget.TextView[@text='UPLOAD']")).click();
 	
 	
 	Thread.sleep(3000);
@@ -909,7 +936,7 @@ Thread.sleep(3000);
 		Thread.sleep(3000);
 		driver.findElement(By.id("android:id/button2")).click();
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 
 
@@ -947,10 +974,12 @@ Thread.sleep(3000);
 		//Submit and cancel
 
 		btnclick(m.getSubmit_cancel());
+		//Thread.sleep(3000);
 		logger.log(Status.PASS, "Order was cancelled successfully");
 		System.out.println("Order was cancelled successfully");
 
 
+		System.out.println("M2 Order Success is working properly");
 }
 
 @AfterMethod()

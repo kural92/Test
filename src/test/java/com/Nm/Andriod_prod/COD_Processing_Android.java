@@ -99,7 +99,7 @@ public class COD_Processing_Android  extends MobileBaseClass{
 		Thread.sleep(10000);
 		driver.hideKeyboard();
 	} catch (Exception e) {
-		// TODO: handle exception
+		driver.launchApp();
 	}
 	
 	

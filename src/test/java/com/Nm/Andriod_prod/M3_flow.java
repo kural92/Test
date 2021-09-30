@@ -288,7 +288,19 @@ System.out.println("Order was placed successfully");
 
 
 //Order success page
-
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
 
 
 //my orders
@@ -333,6 +345,8 @@ btnclick(m.getSubmit_cancel());
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
 
+
+System.out.println("M3 Subscription OTC Flow is working properly");
 	}
 	
 //******************************************************M3 Rx Flow*****************************************************
@@ -387,7 +401,7 @@ System.out.println("Order was cancelled successfully");
 			popupclose();
 		
 		
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
 		btnclick(m.getCreatenew_subscription());
@@ -445,12 +459,12 @@ System.out.println("Order was cancelled successfully");
 //Upload Prescription
 		
 		btnclick(m.getUploadPrescription());
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		
 //Upload Image
  driver.findElementByAccessibilityId("Gallery").click();
- 
+ Thread.sleep(3000);
 driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
 
  Thread.sleep(3000);
@@ -496,24 +510,24 @@ Thread.sleep(3000);
 	
 	Thread.sleep(3000);
 	
-	driver.findElement(By.id("com.android.camera:id/intent_done_apply")).click();
- Thread.sleep(3000);
+	driver.findElement(By.id("com.android.camera:id/done_button")).click();
+ Thread.sleep(5000);
  //Schedule delivery
  
  //driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/setAddressButton")).click();
 		 
  btnclick(m.getSchedule_delivery());
  
- Thread.sleep(2000);
+ Thread.sleep(3000);
 //Delivery Interval
 
-Thread.sleep(2000);
+Thread.sleep(3000);
 	
 //btnclick(m.getDelivery_45days());
-Thread.sleep(2000);
+Thread.sleep(3000);
 
 //btnclick(m.getDelivery_60days());
-Thread.sleep(2000);
+Thread.sleep(3000);
 
 logger.log(Status.PASS, "Delievery intervalselected successfully");
 System.out.println("Delievery interval selected successfully");
@@ -530,7 +544,24 @@ btnclick(m.getPlaceorder());
 Thread.sleep(3000);
 logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
+
+
+//Payment
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
 //my orders
+
 
 
 btnclick(m.getMyorders());
@@ -571,6 +602,9 @@ btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
+
+
+System.out.println("M3  RX is working properly");
 	}
 //**************************************************M3 Past rx*********************************************
 	
@@ -757,6 +791,21 @@ btnclick(m.getPlaceorder());
 Thread.sleep(3000);
 logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
+
+//Payment page
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
 //my orders
 
 
@@ -797,6 +846,9 @@ btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
+
+
+System.out.println("M3  past RX is working properly");
 	}	
 	
 //**************************************************M3 -Doctor consultation***************************************************
@@ -1040,6 +1092,22 @@ Thread.sleep(3000);
 logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
 
+
+//Payment page
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+btnclick(m.getPayment_cod());
+Thread.sleep(3000);
+btnclick(m.getPayment_paybutton());
+Thread.sleep(3000);
+
 //my orders
 
 
@@ -1078,6 +1146,9 @@ btnclick(m.getSubmit_cancel());
 
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
+
+
+System.out.println("M3  Doctor consultation  is working properly");
 	}
 
 	

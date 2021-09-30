@@ -112,7 +112,7 @@ public class AndriodPom extends MobileBaseClass{
 			return placeorder;
 		}
 		
-		@FindBy(xpath ="//android.widget.Button[@index ='1']")
+		@FindBy(xpath ="//android.widget.Button[@index ='1']|//android.widget.ImageView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/img_orders']|//android.widget.Button[@text='TRACK ORDER']")
 		private WebElement myorders;
 		public WebElement getMyorders() {
 			return myorders;
@@ -1106,6 +1106,130 @@ private List<WebElement> viewdetails_List;
 public List<WebElement> getViewdetails_List() {
 	return viewdetails_List;
 }
+
+
+////Consultation
+
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/online_consultation_button")
+	private WebElement Consultation_Btn;
+	public WebElement getConsultation_Btn() {
+		return Consultation_Btn;
+	}
+	
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/online_consultation_button")
+	private List<WebElement> Consultation_Btn_List;	
+	public List<WebElement> getConsultation_Btn_List() {
+		return Consultation_Btn_List;
+	}
+
+
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/btn_start_consultation")
+	private WebElement Start_Consultation_Btn;
+	public WebElement getStart_Consultation_Btn() {
+		return Start_Consultation_Btn;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself']")
+	private WebElement Consult_MySelf;  
+	public WebElement getConsult_MySelf() {
+		return Consult_MySelf;
+	}
+	
+	
+	
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[2]")
+	private WebElement Consult_Others;
+	public WebElement getConsult_Others() {
+		return Consult_Others;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/edit_symptoms")
+	private WebElement Consult_Symptons_TextBox;
+	public WebElement getConsult_Symptons_TextBox() {
+		return Consult_Symptons_TextBox;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_view_all_specialisation")
+	private WebElement Consult_Specialist_ViewAll;
+	public WebElement getConsult_Specialist_ViewAll() {
+		return Consult_Specialist_ViewAll;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='ENT']")
+	private WebElement Consult_ENT;
+	public WebElement getConsult_ENT() {
+		return Consult_ENT;
+	}
+	
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/btn_specialization_done")
+	private WebElement Consult_specilaisation_DoneBtn;
+	public WebElement getConsult_specilaisation_DoneBtn() {
+		return Consult_specilaisation_DoneBtn;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='START CONSULTATION']")
+	private WebElement START_CONSULTATION_BTN;
+	public WebElement getSTART_CONSULTATION_BTN() {
+		return START_CONSULTATION_BTN;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']")
+	private WebElement Consult_Chat_Text;
+	public WebElement getConsult_Chat_Text() {
+		return Consult_Chat_Text;
+	}
+	
+	
+	
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txt_select']")
+	private WebElement Consult_Doctor_select_btn;
+	public WebElement getConsult_Doctor_select_btn() {
+		return Consult_Doctor_select_btn;
+	}
+	
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']|//android.widget.TextView[@text='Chat']")
+	private WebElement Consult_Chat;
+	public WebElement getConsult_Chat() {
+		return Consult_Chat;
+	}
+	
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_audio")
+	private WebElement Consult_Audio;
+	public WebElement getConsult_Audio() {
+		return Consult_Audio;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_video")
+	private WebElement Consult_Video;
+	public WebElement getConsult_Video() {
+		return Consult_Video;
+	}
+	
+	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_video")
+	private List<WebElement> Consult_Payment_Package_List;
+	public List<WebElement> getConsult_Payment_Package_List() {
+		return Consult_Payment_Package_List;
+	}
+	
+	
+	
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/btn_make_payment")
+	private WebElement Consult_Pay_Btn;
+	public WebElement getConsult_Pay_Btn() {
+		return Consult_Pay_Btn;
+	}
+	
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtViewGeneralPhy")
+	private WebElement Consult_general_Physician;
+	public WebElement getConsult_general_Physician() {
+		return Consult_general_Physician;
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+
 		
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2635,9 +2759,179 @@ public List<WebElement> getViewdetails_List() {
 
 
 		}
+		//***********************************************Covid Assesmenet **********************************************************
 
-	}
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/online_consultation_button")
+		private WebElement Consultnow;
+		public WebElement getConsultnow() {
+			return Consultnow;
+		}
 
+
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/btn_subscribe")
+		private WebElement Startassesment;
+		public WebElement getStaratassesment() {
+			return Startassesment;
+		}
+
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/edit_age")
+		private WebElement Addage;
+		public WebElement getAddage() {
+			return Addage;
+		}
+
+		@FindBy(xpath ="//android.widget.TextView[@text='How old are you?']")
+		private WebElement Howoldareyou_text;
+		public WebElement getHowoldareyou_text() {
+			return Howoldareyou_text;
+		}
+
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/text_done")
+		private WebElement Age_done;
+		public WebElement getAge_done() {
+			return Age_done;
+		}
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Please select your gender']")
+		private WebElement Gender_text;
+		public WebElement getGender_text() {
+			return Gender_text;
+		}
+
+		@FindBy(xpath="//android.widget.TextView[@text='Female']")
+		private WebElement Gender_selection_covid;
+		public WebElement getGender_selection_covid() {
+			return Gender_selection_covid;
+		}
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='What is your body temperature?']")
+		private WebElement Body_temp_text;
+		public WebElement getBody_temp_text() {
+			return Body_temp_text;
+		}
+
+		@FindBy(xpath ="(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/layout_option'])[1]")
+		private WebElement Body_temp_normal;
+		public WebElement getBody_temp_normal() {
+			return Body_temp_normal;
+		}
+
+		@FindBy(xpath ="(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/layout_option'])[2]")
+		private WebElement Body_temp_mild;
+		public WebElement getBody_temp_mild() {
+			return Body_temp_mild;
+		}
+
+		@FindBy(xpath ="(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/layout_option'])[3]")
+		private WebElement Body_temp_high;
+		public WebElement getBody_temp_high() {
+			return Body_temp_high;
+		}
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Are you having any of these symptoms?']")
+		private WebElement Other_symptoms_text;
+		public WebElement getOther_symptoms_text() {
+			return Other_symptoms_text;
+		}
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Sneezing']")
+		private WebElement Other_symptoms_sneezing;
+		public WebElement getOther_symptoms_sneezing() {
+			return Other_symptoms_sneezing;
+		}
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Confirm']")
+		private WebElement Confirm;
+		public WebElement getConfirm() {
+			return Confirm;
+		}
+
+		@FindBy(xpath ="(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_question_gender'])")
+		private WebElement Travelorcovid_contact_text;
+		public WebElement getTravelorcovid_contact_text() {
+			return Travelorcovid_contact_text;
+		}
+
+		@FindBy(xpath ="//android.widget.TextView[@text='No contact with anyone with Symptoms']")
+		private WebElement Travelorcovid_contact;
+		public WebElement getTravelorcovid_contact() {
+			return Travelorcovid_contact;
+		}
+
+
+
+
+		@FindBy(xpath ="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_question_gender']")
+		private WebElement Symptoms_progress_text;
+		public WebElement getSymptoms_progress_text() {
+			return Symptoms_progress_text;
+		}
+
+		@FindBy(xpath ="(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_option'])[1]")
+		private WebElement Symptoms_progress_option1;
+		public WebElement getSymptoms_progress_option1() {
+			return Symptoms_progress_option1;
+		}
+
+
+		@FindBy(xpath ="(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_option'])[2]")
+		private WebElement Symptoms_progress_option2;
+		public WebElement getSymptoms_progress_option2() {
+			return Symptoms_progress_option2;
+		}
+
+		@FindBy(xpath ="(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_option'])[3]")
+		private WebElement Symptoms_progress_option3;
+		public WebElement getSymptoms_progress_option3() {
+			return Symptoms_progress_option3;
+		}
+
+
+		@FindBy(xpath ="(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_option'])[4]")
+		private WebElement Symptoms_progress_option4;
+		public WebElement getSymptoms_progress_option4() {
+			return Symptoms_progress_option4;
+		}
+
+		//********************************************Previous Consultation*************************************************************
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Go to Chat']")
+		private WebElement Gotochat;
+		public WebElement getGotochat() {
+			return Gotochat;
+		}
+
+
+		@FindBy(xpath ="//android.widget.TextView[@text='Help']")
+		private WebElement Help_previous_consultation;
+		public WebElement getHelp_previous_consultation() {
+			return Help_previous_consultation;
+		}
+
+		@FindBy(xpath ="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txtConsultOrFollowUp']")
+		private WebElement Consult_again;
+		public WebElement getConsult_again() {
+			return Consult_again;
+		}
+
+
+		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txt_view_schedule_consultation")
+		private WebElement Schedule_button;
+		public WebElement getSchedule_button() {
+			return Schedule_button;
+		}
+
+		}
+
+		
+		
+		
+	
 
 	
 

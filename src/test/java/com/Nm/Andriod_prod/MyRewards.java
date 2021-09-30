@@ -230,9 +230,14 @@ public class MyRewards extends MobileBaseClass {
 			
 		}
 		
+		logger.log(Status.PASS, "Instruction details are displaying properly");
+		System.out.println("Instruction details are displaying properly");
 		driver.navigate().back();
 		
 		driver.navigate().back();
+		
+		logger.log(Status.PASS, "My rewards section is working properly");
+		System.out.println("My rewards section is working properly");
 		
 		
 		

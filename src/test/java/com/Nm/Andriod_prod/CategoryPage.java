@@ -187,6 +187,8 @@ public class CategoryPage extends MobileBaseClass {
 	
 	Thread.sleep(4000);
 	driver.findElement(By.xpath("//android.widget.TextView[@text='Wellness']")).click();
+	System.out.println("Successfully Naviagted to Wellness Page");
+	logger.log(Status.PASS, "Successfully Naviagted to Wellness Page");
 	//View all
 	Thread.sleep(4000);
 	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/wellness_viewAll")).click();
@@ -198,7 +200,7 @@ public class CategoryPage extends MobileBaseClass {
 	
 	
 		
-		
+	System.out.println("Category Page is working properly");
 		
 		
 		
