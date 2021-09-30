@@ -99,7 +99,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			Thread.sleep(10000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
-			// TODO: handle exception
+			driver.launchApp();
 		}
 		
 		
@@ -146,7 +146,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 		//btnclick(m.getFooter_HomePage());
 		
 		Thread.sleep(3000);
-		String aa = "Gemer 2mg,Ajmal Amber Wood;";
+		String aa = "Gemer 2mg,Ajmal Amber Wood";
 		String [] spl = aa.split(",");
 		System.out.println(spl.length);
 		

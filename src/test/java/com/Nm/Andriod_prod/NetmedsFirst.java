@@ -52,11 +52,11 @@ public class NetmedsFirst extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 			
 			
-			//capabilities.setCapability("autoDismissAlerts", true);  
+			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			
 			try {
@@ -99,7 +99,7 @@ public class NetmedsFirst extends MobileBaseClass {
 		AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(10000);
-		popupclose();
+		/*popupclose();
 		try {
 			btnclick(m.getLetsstarted());
 			Thread.sleep(10000);
@@ -125,7 +125,7 @@ driver.resetApp();		}
 		
 }catch(Exception e) {
 				System.out.println("Already logged in");
-			}
+			}*/
 		Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
@@ -187,7 +187,11 @@ driver.swipe(0, 900, 0, 0, 1000);
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkPage().getText());
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkType().getText());
 Thread.sleep(3000);
-driver.swipe(500, 500, 500, 1500, 1000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
 Thread.sleep(3000);
 btnclick(m.getNetmedsFirstPage_6month());
 try {
@@ -236,7 +240,7 @@ driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
 driver.swipe(0, 500, 0, 0, 1000);
 Thread.sleep(3000);
-driver.swipe(0, 500, 0, 0, 1000);
+//driver.swipe(0, 500, 0, 0, 1000);
 String text = m.getCart_deliveryCharges().getText();
 String ss = text.substring(1);
 System.out.println(ss);
@@ -299,7 +303,7 @@ for (int i = 0; i < 16; i++) {
 		 driver.swipe(0, 1600, 0, 1100, 1000);
 		 Thread.sleep(5000);
 		 driver.swipe(0, 1600, 0, 1100, 1000);
-		 btnclick(m.getAcountPage_logout());
+		/* btnclick(m.getAcountPage_logout());
 		 Thread.sleep(5000);
 		 btnclick(m.getLetsstarted());
 		 popupclose();
@@ -366,7 +370,7 @@ Thread.sleep(2000);
 		String text1 = m.getCart_deliveryCharges().getText();
 		String sss = text1.substring(1);
 		System.out.println(ss);
-		Assert.assertEquals("0.00", ss);
+		Assert.assertEquals("0.00", ss);*/
 		Thread.sleep(3000);
 	}
 

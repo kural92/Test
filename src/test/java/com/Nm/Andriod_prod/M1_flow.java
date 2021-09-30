@@ -70,7 +70,7 @@ public class M1_flow extends MobileBaseClass {
 			
 			
 			
-			//capabilities.setCapability("autoDismissAlerts", true);  
+			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			
 			try {
@@ -151,6 +151,7 @@ public class M1_flow extends MobileBaseClass {
 
 			}
 		}
+		Thread.sleep(2000);
 		btnclick(m.getCart_search());
 		Thread.sleep(2000);
 	m.getSearchbarone().sendKeys(s);
@@ -222,7 +223,9 @@ public class M1_flow extends MobileBaseClass {
 			Thread.sleep(2000);
 
 			//Submit and cancel
-
+			Thread.sleep(3000);
+			 driver.swipe(0, 900, 0, 0, 1000);
+			 Thread.sleep(3000);
 			btnclick(m.getSubmit_cancel());
 			logger.log(Status.PASS, "Order was cancelled successfully");
 			System.out.println("Order was cancelled successfully");

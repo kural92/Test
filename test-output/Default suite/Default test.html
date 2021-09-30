@@ -55,11 +55,19 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
+<<<<<<< HEAD
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Sep 30 13:37:51 IST 2021</td>
+</tr>
+<tr><td>Total time:</td><td>434 seconds (434534 ms)</td>
+=======
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Sep 28 18:03:11 IST 2021</td>
+<td>Started on:</td><td>Thu Sep 30 11:48:24 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>107 seconds (107332 ms)</td>
+<tr><td>Total time:</td><td>83 seconds (83430 ms)</td>
+>>>>>>> dcf0e27e6fb59d2d5cf0c6c1dcff3f5046623939
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,24 +75,30 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Nm.Andriod_prod.Consultation.premium_Consultation()'><b>premium_Consultation</b><br>Test class: com.Nm.Andriod_prod.Consultation</td>
+<<<<<<< HEAD
+<td title='com.Nm.Andriod_prod.Diagnostic.radiology()'><b>radiology</b><br>Test class: com.Nm.Andriod_prod.Diagnostic</td>
+<td></td>
+<td>420</td>
+<td>com.Nm.Andriod_prod.Diagnostic@1786f9d5</td></tr>
+=======
+<td title='com.Nm.Andriod_prod.M2_Flow_Live.pastRX_search()'><b>pastRX_search</b><br>Test class: com.Nm.Andriod_prod.M2_Flow_Live</td>
 <td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 110 milliseconds
+Command duration or timeout: 129 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=45, noReset=true, viewportRect={top=45, left=0, width=720, height=1420}, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, platformVersion=10.0.0, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung, deviceScreenSize=720x1600, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=1.875, locationContextEnabled=false, deviceScreenDensity=300, deviceModel=SM-A125F}]
-Session ID: 85e6dfa4-c257-4f5e-a92f-770706b8d240
-*** Element info: {Using=id, value=com.NetmedsMarketplace.Netmeds:id/txt_consult_now}
+Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=45, noReset=true, viewportRect={top=45, left=0, width=720, height=1420}, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung, deviceScreenSize=720x1600, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=1.875, locationContextEnabled=false, deviceScreenDensity=300, deviceModel=SM-A125F}]
+Session ID: e7eab408-d082-44b4-9f16-88271dfc78af
+*** Element info: {Using=id, value=com.android.camera:id/done_button}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -109,7 +123,11 @@ Session ID: 85e6dfa4-c257-4f5e-a92f-770706b8d240
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.Nm.Andriod_prod.Consultation.premium_Consultation(Consultation.java:304)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:96)
+	at com.Nm.Andriod_prod.M2_Flow_Live.pastRX_search(M2_Flow_Live.java:521)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -138,16 +156,16 @@ Session ID: 85e6dfa4-c257-4f5e-a92f-770706b8d240
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1232433403", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1232433403'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 110 milliseconds
+</pre></div><a href='#' onClick='toggleBox("stack-trace780526577", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace780526577'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 129 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=45, noReset=true, viewportRect={top=45, left=0, width=720, height=1420}, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, platformVersion=10.0.0, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung, deviceScreenSize=720x1600, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=1.875, locationContextEnabled=false, deviceScreenDensity=300, deviceModel=SM-A125F}]
-Session ID: 85e6dfa4-c257-4f5e-a92f-770706b8d240
-*** Element info: {Using=id, value=com.NetmedsMarketplace.Netmeds:id/txt_consult_now}
+Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=45, noReset=true, viewportRect={top=45, left=0, width=720, height=1420}, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung, deviceScreenSize=720x1600, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=1.875, locationContextEnabled=false, deviceScreenDensity=300, deviceModel=SM-A125F}]
+Session ID: e7eab408-d082-44b4-9f16-88271dfc78af
+*** Element info: {Using=id, value=com.android.camera:id/done_button}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -172,7 +190,11 @@ Session ID: 85e6dfa4-c257-4f5e-a92f-770706b8d240
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.Nm.Andriod_prod.Consultation.premium_Consultation(Consultation.java:304)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:96)
+	at com.Nm.Andriod_prod.M2_Flow_Live.pastRX_search(M2_Flow_Live.java:521)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -202,8 +224,9 @@ Session ID: 85e6dfa4-c257-4f5e-a92f-770706b8d240
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>89</td>
-<td>com.Nm.Andriod_prod.Consultation@79207381</td></tr>
+<td>68</td>
+<td>com.Nm.Andriod_prod.M2_Flow_Live@28fd3dc1</td></tr>
+>>>>>>> dcf0e27e6fb59d2d5cf0c6c1dcff3f5046623939
 </table><p>
 </body>
 </html>
