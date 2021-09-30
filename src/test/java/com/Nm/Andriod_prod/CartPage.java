@@ -228,7 +228,7 @@ Float total_Wallet_amt;
 		//driver.findElement(By.xpath("//android.widget.TextView[@resourceid='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")).click();
 		
 		
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 6; i++) {
 
 			type(m.getM3productsearch(), MobileBaseClass.getExcelData("Otcandnonrx", i, 0));
 

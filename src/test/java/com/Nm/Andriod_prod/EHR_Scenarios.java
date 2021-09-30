@@ -41,7 +41,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class EHR2 extends MobileBaseClass {
+public class EHR_Scenarios extends MobileBaseClass {
 
 	
 	
@@ -107,8 +107,8 @@ public class EHR2 extends MobileBaseClass {
 
 	
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
-	public void EHR() throws Throwable {
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class,priority = 1)
+	public void EHR1() throws Throwable {
 
 		logger = report.createTest("EHR2");
 		logger.log(Status.PASS, "*************EHR2********************");
@@ -329,9 +329,186 @@ public class EHR2 extends MobileBaseClass {
 		logger.log(Status.PASS, "Successfully deleted the Patient detail");
 		System.out.println("Successfully deleted the Patient detail");
 		
-		System.out.println("EHR Scenario 2 is working properly");
+		System.out.println("EHR Scenario 1 is working properly");
 	}					
 	
+	
+	//*****************************************************EHR 2*************************
+
+
+	
+	
+		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class,priority = 2)
+		public void EHR2() throws Throwable {
+
+			logger = report.createTest("EHR2");
+			logger.log(Status.PASS, "*************EHR2********************");
+
+		
+			AndriodPom m = new AndriodPom();
+			
+			driver.launchApp();
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
+		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
+			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
+			Thread.sleep(5000);
+		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
+		}
+		
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		
+	//Step 3 : Navigate to user profile//
+
+			btnclick(m.getUserprofile());
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to userprofile");
+			System.out.println("Successfully navigate to userprofile");
+			
+	//EHR
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_ehr")).click();
+			Thread.sleep(3000);
+			
+			logger.log(Status.PASS, "Successfully navigated to EHR page");
+			System.out.println("Successfully navigated to EHR page");
+	//Step 4 : Add User
+		
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_add_new_user")).click();
+			
+			Thread.sleep(3000);
+
+			logger.log(Status.PASS, "Successfully clicked add user button");
+			System.out.println("Successfully clicked add user button");
+			
+			//driver.swipe(812, 100, 812, 400, 1000);
+			
+			
+			
+	//Step 5: Image Upload
+			
+		//	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/imageViewProfile")).click();
+			Thread.sleep(3000);
+		//	driver.findElement(By.xpath("//android.widget.TextView[@text='Gallery']")).click();
+			Thread.sleep(3000);
+		//	driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
+		//	Thread.sleep(3000);
+	//Add Name
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_name")).sendKeys("Name1");
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_contact")).sendKeys("1234567890");
+			 
+			Thread.sleep(3000);
+			
+			
+			
+			btnclick(m.getGenderselect());
+			Thread.sleep(3000);
+
+			btnclick(m.getGenderselection());
+			Thread.sleep(3000);
+
+		
+			Thread.sleep(3000);
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_dob")).click();
+			Thread.sleep(3000);
+		//	driver.findElement(By.xpath("//android.widget.TextView[@index='3']")).click();
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("android:id/date_picker_header_year")).click();
+			Thread.sleep(2000);
+			
+			driver.swipe(752, 1586, 752, 2000, 1000);
+			
+			driver.swipe(752, 1586, 752, 2000, 1000);
+			
+			driver.swipe(752, 1586, 752, 2000, 1000);
+			
+			driver.swipe(752, 1586, 752, 2000, 1000);
+			driver.swipe(752, 1586, 752, 2000, 1000);
+			
+			driver.findElement(By.xpath("//android.widget.TextView[@text='2000']")).click();
+			
+			driver.findElement(By.id("android:id/button1")).click();
+			
+			//driver.findElement(By.xpath("//android.view.View[@index='24']")).click();
+			
+			//driver.findElement(By.id("android:id/button1")).click();
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("//android.widget.Spinner[@resource-id='com.NetmedsMarketplace.Netmeds:id/sp_relation']")).click();
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Daughter']")).click();
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_height")).sendKeys("150");
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_weight")).sendKeys("60");
+			Thread.sleep(3000);
+			driver.swipe(752, 1900, 752, 1100, 1000);
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_bp_systolic")).sendKeys("90");
+			
+			Thread.sleep(3000);
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_bp_diastolic")).sendKeys("100");
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_pulse_rate")).sendKeys("120");
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_temperature")).sendKeys("75");
+			
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_save_update_user")).click();
+			
+			logger.log(Status.PASS, "Successfully given the EHR patient details and saved");
+			System.out.println("Successfully given the EHR patient details and saved");
+			
+			
+			System.out.println("EHR Scenario 2 is working properly");
+			
+		}					
 	private WebElement findElement(By id) {
 		// TODO Auto-generated method stub
 		return null;

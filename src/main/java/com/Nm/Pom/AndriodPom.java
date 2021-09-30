@@ -112,7 +112,7 @@ public class AndriodPom extends MobileBaseClass{
 			return placeorder;
 		}
 		
-		@FindBy(xpath ="//android.widget.Button[@index ='1']|//android.widget.ImageView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/img_orders']")
+		@FindBy(xpath ="//android.widget.Button[@index ='1']|//android.widget.ImageView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/img_orders']|//android.widget.Button[@text='TRACK ORDER']")
 		private WebElement myorders;
 		public WebElement getMyorders() {
 			return myorders;
@@ -1174,7 +1174,7 @@ public List<WebElement> getViewdetails_List() {
 		return START_CONSULTATION_BTN;
 	}
 	
-	@FindBy(id = "android.widget.TextView//[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']")
 	private WebElement Consult_Chat_Text;
 	public WebElement getConsult_Chat_Text() {
 		return Consult_Chat_Text;
@@ -1188,7 +1188,7 @@ public List<WebElement> getViewdetails_List() {
 		return Consult_Doctor_select_btn;
 	}
 	
-	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']|//android.widget.TextView[@text='Chat']")
 	private WebElement Consult_Chat;
 	public WebElement getConsult_Chat() {
 		return Consult_Chat;
