@@ -126,7 +126,7 @@ public class ColdStorage_android_Live extends MobileBaseClass{
 				try {
 					btnclick(m.getRemoveButton());
 				} catch (Exception e) {
-					// TODO: handle exception
+					
 				}
 
 			} else {
