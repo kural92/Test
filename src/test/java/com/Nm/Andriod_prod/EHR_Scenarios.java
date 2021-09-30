@@ -193,7 +193,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 	
 		Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[3]")).click();
+		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[2]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_name")).sendKeys("Test");
 		Thread.sleep(3000);
@@ -316,7 +316,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 		logger.log(Status.PASS, "Successfully Listed the Patient names");
 		System.out.println("Successfully Listed the Patient names");
 		
-		WebElement Listofpatients = driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_hr_patient_name'])[3]"));
+		WebElement Listofpatients = driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_hr_patient_name'])[2]"));
 
 		TouchAction action = new TouchAction((MobileDriver)driver); 
 		action.longPress(Listofpatients).release().perform();
@@ -504,6 +504,22 @@ public class EHR_Scenarios extends MobileBaseClass {
 			
 			logger.log(Status.PASS, "Successfully given the EHR patient details and saved");
 			System.out.println("Successfully given the EHR patient details and saved");
+			
+			Thread.sleep(3000);
+			
+			WebElement Listofpatients = driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_hr_patient_name'])[2]"));
+
+			TouchAction action = new TouchAction((MobileDriver)driver); 
+			action.longPress(Listofpatients).release().perform();
+			
+			Thread.sleep(3000);
+		//Delete User
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/text_delete")).click();
+			
+
+			logger.log(Status.PASS, "Successfully deleted the Patient detail");
+			System.out.println("Successfully deleted the Patient detail");
+			
 			
 			
 			System.out.println("EHR Scenario 2 is working properly");

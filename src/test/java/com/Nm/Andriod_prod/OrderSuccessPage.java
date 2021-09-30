@@ -423,7 +423,7 @@ System.out.println("M3 Order Success is working properly");
 
 
 //***************************************Order Success page M1***************************************
-@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -733,7 +733,7 @@ try {
 					
 //***********************************Order Success Page M2*****************************************************************
 
-@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM2() throws Throwable {
 	
 	

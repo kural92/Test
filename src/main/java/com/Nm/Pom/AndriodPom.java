@@ -2704,7 +2704,7 @@ public List<WebElement> getViewdetails_List() {
 			return Payment_mode;
 		}
 		
-		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/prescriptionImage")
+		@FindBy(xpath="//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionImage']")
 		private WebElement Prescription_open;
 		public WebElement getPrescription_open() {
 			return Prescription_open;
