@@ -44,7 +44,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 			
 			
@@ -95,7 +95,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 			Thread.sleep(5000);
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
-			driver.resetApp();
+			driver.launchApp();
 		}
 		
 
@@ -281,7 +281,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 				Thread.sleep(5000);
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
-				driver.resetApp();
+				driver.launchApp();
 			}
 			
 			
@@ -432,7 +432,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 				Thread.sleep(5000);
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
-				driver.resetApp();
+				driver.launchApp();
 			}
 			
 			
@@ -599,7 +599,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 				Thread.sleep(5000);
 			btnclick(m.getLetsstarted());
 			} catch (Exception e) {
-				driver.resetApp();
+				driver.launchApp();
 				
 				
 			}
