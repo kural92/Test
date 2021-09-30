@@ -98,7 +98,7 @@ public class OrderSuccessPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 -Order success page	*********************************************************
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void OrderSuccessPageM3() throws Throwable {
 		
 		logger =  report.createTest("Order Success Page ");
@@ -423,7 +423,7 @@ System.out.println("M3 Order Success is working properly");
 
 
 //***************************************Order Success page M1***************************************
-@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");

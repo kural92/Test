@@ -363,21 +363,23 @@ Float total_Wallet_amt;
 			
 			System.out.println("promo code is successfully applied");*/
 		
-//save for later
+/*//save for later
 		
 		
 		
 		Thread.sleep(3000);
-		driver.swipe(790, 1100, 800, 70, 1000);
+		
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/move_to_cart_button']")).click();
 		
-		
+		*/
 			
 
 
 		
 //click next/previous button to see the products in most selling page//
+		
+		driver.swipe(790, 1100, 800, 70, 1000);
 		Thread.sleep(3000);
 		new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
 		Thread.sleep(3000);

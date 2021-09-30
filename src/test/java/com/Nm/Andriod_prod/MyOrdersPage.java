@@ -411,6 +411,8 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 					 	}
 						 }
 				 
+				 
+				 driver.swipe(790, 600, 800, 1200, 1000);
 //show status details//
 				try {
 					Thread.sleep(3000);
@@ -458,10 +460,11 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 				} catch (Exception e) {
 					System.out.println("Otc or Non rx product does not  have any prescription");
 				}
+			
 				
 	//Sub Total//
 				 
-				
+				driver.swipe(790, 1600, 800, 500, 1000);
 				
 				String total = driver.findElement(By.xpath("//android.widget.TextView[@text='Sub Total']/parent::android.widget.LinearLayout/parent::android.widget.TableRow/child::android.widget.TextView")).getText();
 				
