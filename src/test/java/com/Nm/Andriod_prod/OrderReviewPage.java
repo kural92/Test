@@ -57,11 +57,11 @@ public class OrderReviewPage extends MobileBaseClass {
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 			
 			
-			//capabilities.setCapability("autoDismissAlerts", true);  
+			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			
 			try {
@@ -104,7 +104,7 @@ public class OrderReviewPage extends MobileBaseClass {
 		AndriodPom m = new AndriodPom();
 		
 		Thread.sleep(10000);
-		popupclose();
+		/*popupclose();
 		try {
 			btnclick(m.getLetsstarted());
 			Thread.sleep(5000);
@@ -130,7 +130,7 @@ public class OrderReviewPage extends MobileBaseClass {
 			Thread.sleep(2000);
 		}catch(Exception e) {
 				System.out.println("Already logged in");
-			}
+			}*/
 		Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);

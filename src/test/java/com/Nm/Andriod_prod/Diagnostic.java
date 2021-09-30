@@ -160,6 +160,8 @@ public class Diagnostic extends MobileBaseClass {
 	Assert.assertEquals( m.getTxtViewTodayDeal().getText(),"Today's Deals");
 
 	Assert.assertNotNull(m.getTxtTestPackageDesc().getText());
+	Thread.sleep(3000);
+	driver.swipe(0, 400, 0, 0, 1000);
 	Assert.assertNotNull(m.getTxtViewTimer().getText());
 	btnclick(m.getTxtViewBuyNow());
 	Thread.sleep(3000);
@@ -378,8 +380,9 @@ btnclick(m.getBtnNext());
 Thread.sleep(5000);
 Assert.assertEquals(m.getTxtViewRequireFasting().getText(),"Note: Some tests/packages may require fasting");
 Assert.assertEquals(m.getTvTimeSlotHint().getText(),"Select interval when you want the person to collect the sample.");
-btnclick(m.getDateslot());
+btnclick(m.getDateslot());Thread.sleep(2000);
 btnclick(m.getImgSlotCheck());
+Thread.sleep(2000);
 btnclick(m.getBtnNext());
 Assert.assertEquals(m.getLabselected().getText(),"LAB SELECTED");
 Assert.assertNotNull(m.getTextLabName().getText());
