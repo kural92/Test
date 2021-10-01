@@ -103,7 +103,7 @@ public class Diagnostic extends MobileBaseClass {
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	//@Test(enabled=true,priority =1)
+	@Test(enabled=true,priority =1)
 	public void Mone_otc() throws Throwable {
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -530,7 +530,7 @@ Thread.sleep(5000);
 	
 	}
 	
-	@Test(enabled=true,priority =2)
+	//@Test(enabled=true,priority =2)
 	public void radiology() throws Throwable {
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
 

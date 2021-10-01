@@ -49,7 +49,7 @@ public class OrderSuccessPage extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14" //07c55fe10406
+			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");//"c195de14" //07c55fe10406
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -108,7 +108,7 @@ public class OrderSuccessPage extends MobileBaseClass {
 		
 		driver.launchApp();
 			
-			try {
+		/*	try {
 				popupclose();
 				Thread.sleep(5000);
 				popupclose();
@@ -143,9 +143,9 @@ public class OrderSuccessPage extends MobileBaseClass {
 		
 		catch(Exception e) {
 			System.out.println("Already logged in");
-		}
+		}*/
 		 
-			popupclose();
+			//popupclose();
 		
 		
 		Thread.sleep(5000);
@@ -423,7 +423,7 @@ System.out.println("M3 Order Success is working properly");
 
 
 //***************************************Order Success page M1***************************************
-@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+//@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -733,7 +733,7 @@ try {
 					
 //***********************************Order Success Page M2*****************************************************************
 
-@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+//@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM2() throws Throwable {
 	
 	
