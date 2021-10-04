@@ -351,7 +351,7 @@ System.out.println(m.getInvite_friends().getText());
 Thread.sleep(3000);
 
 driver.swipe(790, 1100, 800, 70, 1000);
-Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
+//Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 
 System.out.println(m.getOffer_code().getText());
 
@@ -923,7 +923,7 @@ Thread.sleep(3000);
 		Thread.sleep(3000);
 
 	
-		Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
+		//Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 
 		System.out.println(m.getOffer_code().getText());
 
