@@ -2071,7 +2071,8 @@ public List<WebElement> getViewdetails_List() {
 				return invite_friends;
 			}
 
-			@FindBy (xpath ="//android.widget.TextView[@text='TEST1932']")
+		//	@FindBy (xpath ="//android.widget.TextView[@text='TEST1932']")
+			@FindBy (xpath ="(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/referal_image']/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout/child::android.widget.TextView)[1]")
 			private WebElement offer_code;
 			public WebElement getOffer_code() {
 				return offer_code;
