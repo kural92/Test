@@ -48,7 +48,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 			// already installed app
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			//capabilities.setCapability("noReset", true);
+			capabilities.setCapability("noReset", true);
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -100,7 +100,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 			Thread.sleep(10000);
 			driver.hideKeyboard();
 		} catch (Exception e) {
-			// TODO: handle exception
+			driver.launchApp();
 		}
 		
 		
@@ -263,7 +263,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 	driver.findElementByAccessibilityId("Navigate up").click();
 	
 	
-	Thread.sleep(2000);
+	Thread.sleep(10000);
 	driver.findElementByAccessibilityId("Navigate up").click();
 	
 	
