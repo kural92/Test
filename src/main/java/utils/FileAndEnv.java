@@ -24,7 +24,7 @@ public class FileAndEnv {
 			fileanddev.put("testerName",propmain.getProperty("testerName"));
 			
 			fileanddev.put("password",propmain.getProperty("password"));
-		
+			fileanddev.put("UDID",propmain.getProperty("UDID"));
 	
 	return fileanddev;
 	 

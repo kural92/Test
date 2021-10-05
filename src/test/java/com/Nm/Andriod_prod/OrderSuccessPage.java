@@ -98,7 +98,7 @@ public class OrderSuccessPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 -Order success page	*********************************************************
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	//@Test(enabled = true)
 	public void OrderSuccessPageM3() throws Throwable {
 		
 		logger =  report.createTest("Order Success Page ");
@@ -263,7 +263,7 @@ Thread.sleep(3000);
 btnclick(m.getPayment_cod());
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
-Thread.sleep(3000);
+Thread.sleep(10000);
 //Order success page
 //Step 14 : Order status//
 
@@ -423,7 +423,7 @@ System.out.println("M3 Order Success is working properly");
 
 
 //***************************************Order Success page M1***************************************
-//@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+@Test(enabled = true)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -433,7 +433,7 @@ public void OrderSuccesspageM1() throws Throwable {
 	
 	driver.launchApp();
 		
-		try {
+		/*try {
 			popupclose();
 			Thread.sleep(5000);
 			popupclose();
@@ -473,7 +473,7 @@ public void OrderSuccesspageM1() throws Throwable {
 		popupclose();
 	
 	
-
+*/
 
  
 	Thread.sleep(10000);
@@ -622,14 +622,14 @@ try {
 		
 		Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 
-		System.out.println(m.getOffer_code().getText());
+		//System.out.println(m.getOffer_code().getText());
 
 
 		Assert.assertEquals(gettext(m.getShare_with_friends()),"Tap to share code with your friends");
 
 		System.out.println(m.getShare_with_friends().getText());
 
-
+		Thread.sleep(3000);
 		m.getOffer_code().click();
 
 		Thread.sleep(3000);
@@ -1016,7 +1016,7 @@ public void screenShot(ITestResult result) throws Throwable {
 	Thread.sleep(3000);
 	if (result.getStatus() == ITestResult.FAILURE) {
 		Thread.sleep(3000);
-		BaseClass.mail_report();
+	//	BaseClass.mail_report();
 	}
 
 }
