@@ -6,17 +6,23 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -37,7 +43,9 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import utils.FileAndEnv;
@@ -66,11 +74,13 @@ public class M1_flow extends MobileBaseClass {
 			//for install Apk file
 			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
 			// already installed app
-			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
+			/*capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-			
-			
+			*/
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
+			capabilities.setCapability("noReset", true);
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
 			
@@ -113,36 +123,19 @@ public class M1_flow extends MobileBaseClass {
 		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
 		
 		AndriodPom m = new AndriodPom();
+		driver.get("https://m.netmeds.com");
 		
-		Thread.sleep(10000);
-		popupclose();
-		popupclose();
-		/* */
-		try {
-			
-			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("8012222872");
-			Thread.sleep(3000);
-			btnclick(m.getUsepwd());
-			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test4nmm");
-			
-			btnclick(m.getLogin());
-			Thread.sleep(2000);
-		}catch(Exception e) {
-				System.out.println("Already logged in");
-			}
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
-		btnclick(m.getGotocart()); 
-		for (int i = 0; i < 2; i++) {
+		driver.navigate().to("https://m.netmeds.com/checkout/cart");
+		for (int i = 0; i < 10; i++) {
 			Thread.sleep(3000);
-			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
+			if ((driver.findElements(By.xpath("//android.view.View[@text='ADD PRODUCTS']")).size() == 0)) {
 
 				try {
-					btnclick(m.getRemoveButton());
+					driver.findElement(By.xpath("//android.view.View[@text='REMOVE']")).click();
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -152,304 +145,88 @@ public class M1_flow extends MobileBaseClass {
 				break;
 
 			}
-		}
-		Thread.sleep(2000);
-		btnclick(m.getCart_search());
-		Thread.sleep(2000);
-	m.getSearchbarone().sendKeys(s);
-		 
-		 
-		
-	Thread.sleep(2000);
-			btnclick(m.getSearch_drugname());
-			Thread.sleep(5000);
-			try {
-			btnclick(m.getAddtoCartButton());
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-			Thread.sleep(2000);
-			btnclick(m.getGotocart()); 
-			Thread.sleep(2000);
-			btnclick(m.getProceed_btn());
-			Thread.sleep(3000);
+		} 
+		MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+		netty.click();
 
-			btnclick(m.getPlaceorder());
+		driver.findElement(By.xpath("//android.view.View[@resource-id='page-header']/android.view.View[@index='1']/android.view.View/android.view.View")).click();
 
-			Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_cod());
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_paybutton());
-			 Thread.sleep(3000);
-			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-					
-					
-			logger.log(Status.PASS, "Order was placed successfully" );
-			System.out.println("Order was placed successfully and the "   + Order_id);
- 			//my orders
-
-
-			btnclick(m.getMyorders());
-
-			Thread.sleep(3000);
-				
-			//View details
-
-
-			btnclick(m.getViewdetails());
-			Thread.sleep(3000);
-
-			//cancel order
-
-
-			btnclick(m.getCancelorder());
-			Thread.sleep(3000);
-			//yes
-
-			//btnclick(m.getYesbutton());
-			Thread.sleep(2000);
-
-
-			//Cancel reason
-
-			btnclick(m.getCancel_reason());
-
-			Thread.sleep(2000);
-
-			//Submit and cancel
-			Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			btnclick(m.getSubmit_cancel());
-			logger.log(Status.PASS, "Order was cancelled successfully");
-			System.out.println("Order was cancelled successfully");
-
-
-
-	}
-	@Test(enabled=false)
-	public void mone_precrption() throws Throwable {
-		
-		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
-		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
-		
-		AndriodPom m = new AndriodPom();
-		
-		Thread.sleep(15000);
-		popupclose();
-		Thread.sleep(15000);
-		popupclose();
-		
+		driver.findElement(By.xpath("//android.widget.Button[@text='Submit']/preceding-sibling::android.widget.EditText")).sendKeys(s);
+	
+		driver.findElement(By.xpath("//android.view.View[@text='"+s+"']")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//android.widget.Button[@resource-id='product-addtocart-button']")).click();
+driver.findElement(By.xpath("//android.view.View[@resource-id='top_search_icon']/following-sibling::android.view.View[@index='3']")).click();	
 		Thread.sleep(10000);
+MobileElement netty1 = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
 
-	try {
-
-		try {
-
-			btnclick(m.getLetsstarted());
-			Thread.sleep(5000);
-			driver.hideKeyboard();
-		} catch (Exception e) {
-			driver.resetApp();
-			Thread.sleep(5000);
-			btnclick(m.getLetsstarted());
-
-			Thread.sleep(5000);
-			driver.hideKeyboard();
-		}
-
-		driver.hideKeyboard();
-		Thread.sleep(15000);
-
-		//driver.hideKeyboard();
-		Thread.sleep(10000);
-
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		
-		try {
-			
-			Thread.sleep(5000);
-			m.getMobilenumber().sendKeys("9677159095");
-			Thread.sleep(3000);
-			btnclick(m.getUsepwd());
-			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test4nm");
-			driver.hideKeyboard();
-			btnclick(m.getLogin());
-			Thread.sleep(2000);
-		}catch(Exception e) {
-				System.out.println("Already logged in");
-			}
-		Thread.sleep(10000);
-				String s="Rxtor 10mg Tablet 10'S";
-		Thread.sleep(2000);
-		btnclick(m.getGotocart()); 
-		for (int i = 0; i < 16; i++) {
-			Thread.sleep(3000);
-			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
-
-				try {
-					btnclick(m.getRemoveButton());
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-
-			} else {
-				logger.log(Status.PASS, "Successfully Product Removed from Cart");
-				break;
-
-			}
-		}
-		btnclick(m.getCart_search());
-		Thread.sleep(2000);
-	m.getSearchbarone().sendKeys(s);
-		 
-		 
-		
-	Thread.sleep(2000);
-			btnclick(m.getSearch_drugname());
-			Thread.sleep(5000);
-			
-			 driver.swipe(0, 500, 0, 0, 1000);
-			try {
-				Thread.sleep(3000);
-			btnclick(m.getAddtoCartButton());
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-			Thread.sleep(5000);
-			btnclick(m.getGotocart()); 
-			Thread.sleep(5000);
-			btnclick(m.getProceed_btn());
-			Thread.sleep(10000);
-			try {
-				try {
-					btnclick(m.getUploadPrescription());
-				} catch (Exception e) {
-					// TODO: handle exception
-				}try {
-					btnclick(m.getContinueUpload());
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-
-
-/*Thread.sleep(3000);
-btnclick(m.getCamera_button());
+netty1.click();
 Thread.sleep(3000);
-btnclick(m.getAllow());
+driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
-btnclick(m.getCamera_clickbutton());
+driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
 
-	btnclick(m.getM2_RX_DoneBtn());	
+Thread.sleep(4000);
+	
+Dimension location = driver.manage().window().getSize();
+String ss = location.toString();
+System.out.println(location);
+String replace = ss.replace("(", "").replace(")", "").replace(" ", "");
+String[] split = replace.split(",");
+
+System.out.println(split[0]);
+System.out.println(split[1]);
+int i=Integer.parseInt(split[0]);
+int i1=Integer.parseInt(split[1]);
+Thread.sleep(3000);
+TouchAction touchAction = new TouchAction(driver);
+
+touchAction.tap(i-100,i1-100).perform();
+
 
 Thread.sleep(3000);
-btnclick(m.getContinueUpload());
-
+driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
-btnclick(m.getGallery_button());
+touchAction.tap(i-100,i1-100).perform();
+//MobileElement PAY=(MobileElement)driver.findElement(By.xpath("//android.widget.Button[@text='PAY']"));PAY.click();
 Thread.sleep(3000);
-btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb'])[1]")));
+driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
-
-btnclick(m.getContinueUpload());*/
+MobileElement cod = (MobileElement) driver.findElement(By.xpath("//android.widget.RadioButton[@resource-id='nms_cod']"));cod.click();
 Thread.sleep(3000);
-btnclick(m.getPastRx_button());
-Thread.sleep(3000);
-
-btnclick(m.getPrescriptionImage());
-Thread.sleep(3000);
-driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/doneButton")).click();
-Thread.sleep(3000);
-
-/*btnclick(m.getContinueUpload());
-Thread.sleep(3000);
-btnclick(m.getPDF_button());
-Thread.sleep(3000);
-btnclick(m.getPdf_Click());*/
-Thread.sleep(15000);
-btnclick(m.getSchedule_delivery());
+driver.findElement(By.xpath("//android.view.View[@resource-id='title_COD']/android.widget.Button[@index='2']")).click();
 Thread.sleep(5000);
-			btnclick(m.getPlaceorder());
-
-			Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_cod());
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_paybutton());
-			 Thread.sleep(3000);
-			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
-					
-					
-			logger.log(Status.PASS, "Order was placed successfully" );
-			System.out.println("Order was placed successfully and the "   + Order_id);
- 			//my orders
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
 
 
-			btnclick(m.getMyorders());
+Thread.sleep(3000);
+driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']")).click();
+Thread.sleep(3000);
+MobileElement netty2 = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
 
-			Thread.sleep(3000);
-				
-			//View details
-
-
-			btnclick(m.getViewdetails());
-			Thread.sleep(3000);
-
-			//cancel order
-
-
-			btnclick(m.getCancelorder());
-			Thread.sleep(3000);
-			//yes
-
-			//btnclick(m.getYesbutton());
-			Thread.sleep(2000);
-
-
-			//Cancel reason
-
-			btnclick(m.getCancel_reason());
-
-			Thread.sleep(2000);
-
-			//Submit and cancel
-
-			btnclick(m.getSubmit_cancel());
-			logger.log(Status.PASS, "Order was cancelled successfully");
-			System.out.println("Order was cancelled successfully");
-
-
-	
-	
-		
-	} catch (Exception e) {
-		// TODO: handle exception
+netty2.click();
+Thread.sleep(5000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);
+Thread.sleep(3000);
+TouchAction touchAction1 = new TouchAction(driver);
+touchAction1.tap(250,i1-100).perform();
+//MobileElement co = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']"));co.click();
+//driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//android.widget.RadioButton[@text='Delay in delivery']")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
+//touchAction.tap(100,i1).perform();
 	}
 	
-	}
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
