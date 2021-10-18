@@ -973,7 +973,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 		
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("(//button[@class='close'])[2]")).click();
+		driver.findElement(By.xpath("(//close[@type='button'])")).click();
 
 		// Step 10 : select duration//
 		Thread.sleep(3000);
