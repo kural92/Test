@@ -64,7 +64,7 @@ public class M1_flow extends MobileBaseClass {
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-			capabilities.setCapability(MobileCapabilityType.UDID, FileAndEnv.envAndFile().get("UDID"));  //fc95d519 //RZ8R20GLXTA
+			capabilities.setCapability(MobileCapabilityType.UDID,"RZ8R20GLXTA" );  //fc95d519 // //FileAndEnv.envAndFile().get("UDID")
 
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
@@ -125,7 +125,7 @@ public class M1_flow extends MobileBaseClass {
 		AndriodPom m = new AndriodPom();
 		driver.get("https://m.netmeds.com");
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
@@ -146,9 +146,13 @@ public class M1_flow extends MobileBaseClass {
 
 			}
 		} 
+		
+		try {
 		MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
 		netty.click();
-
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		driver.findElement(By.xpath("//android.view.View[@resource-id='page-header']/android.view.View[@index='1']/android.view.View/android.view.View")).click();
 
 		driver.findElement(By.xpath("//android.widget.Button[@text='Submit']/preceding-sibling::android.widget.EditText")).sendKeys(s);
@@ -158,9 +162,13 @@ public class M1_flow extends MobileBaseClass {
 		driver.findElement(By.xpath("//android.widget.Button[@resource-id='product-addtocart-button']")).click();
 driver.findElement(By.xpath("//android.view.View[@resource-id='top_search_icon']/following-sibling::android.view.View[@index='3']")).click();	
 		Thread.sleep(10000);
-MobileElement netty1 = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+		try {
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 
-netty1.click();
 Thread.sleep(3000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
@@ -208,9 +216,12 @@ driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']")).cli
 Thread.sleep(3000);
 driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']")).click();
 Thread.sleep(3000);
-MobileElement netty2 = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-
-netty2.click();
+try {
+	MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+	netty.click();
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
 Thread.sleep(5000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
