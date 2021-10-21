@@ -26,5 +26,43 @@ public class MsitePOM  extends BaseClass{
     private WebElement Msite_OrderNow;
 	public WebElement getMsite_OrderNow() {
 		return Msite_OrderNow;
+		
+		
 	}
+	
+	@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+    private WebElement Msite_Upload_Prescription;
+	public WebElement getMsite_Upload_Prescription() {
+		return Msite_Upload_Prescription;
+	}	
+	
+	
+	@FindBy(xpath = "//android.widget.Button[@text='Choose Files']")
+    private WebElement Msite_Upload_Gallery;
+	public WebElement getMsite_Upload_Gallery() {
+		return Msite_Upload_Gallery;
+	}
+	
+	
+	@FindBy(xpath = "//android.widget.RadioButto[@text='Search and Add medicines']")
+    private WebElement Msite_M2_searchMedicine;
+	public WebElement getMsite_M2_searchMedicine() {
+		return Msite_M2_searchMedicine;
+	}
+	
+	
+	@FindBy(xpath = "//android.widget.RadioButto[@text='Get call from Netmeds']")
+    private WebElement Msite_M2_Getcall;
+	public WebElement getMsite_M2_Getcall() {
+		return Msite_M2_Getcall;
+	}
+	
+	@FindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+	private WebElement Msite_M2_SearcCall_ContinueButton;
+	public WebElement getMsite_M2_SearcCall_ContinueButton() {
+		return Msite_M2_SearcCall_ContinueButton;
+	}
+	
+	
+	
 }
