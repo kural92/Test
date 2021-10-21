@@ -339,9 +339,9 @@ public class M3PastRx extends MobileBaseClass {
 				Thread.sleep(3000);
 				driver.swipe(82, 1750, 82, 0, 1000);
 				Thread.sleep(5000);
-				driver.findElement(By.xpath("//android.widget.Button[@text='SCHEDULE DELIVERY']")).click();  
+				//driver.findElement(By.xpath("//android.widget.Button[@text='SCHEDULE DELIVERY']")).click();  
 				
-				
+				driver.navigate().to("https://m.netmeds.com/checkout/subscription");
 		//driver.findElement(By.xpath("//android.view.View[@text='Repeat every 60 days']/android.widget.RadioButton")).click();
 		
 	//	Thread.sleep(3000);
