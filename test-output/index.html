@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,22 +24,23 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,53 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-<<<<<<< HEAD
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1517418760\testng-customsuite.xml</span>
-=======
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1285122273\testng-customsuite.xml</span>
-=======
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-<<<<<<< HEAD
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1203468566\testng-customsuite.xml</span>
-=======
-<<<<<<< HEAD
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1949533674\testng-customsuite.xml</span>
-=======
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1904630160\testng-customsuite.xml</span>
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
+                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1434071710\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -107,42 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Msite_stage.M1_flow" hash-for-method="Mone_otc">Mone_otc</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.backend.NmBackendFlow" class="method navigator-link" hash-for-method="test">test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-<<<<<<< HEAD
-                    </div> <!-- method-list-content passed suite-Default_suite -->
-=======
                     </div> <!-- method-list-content failed suite-Default_suite -->
-=======
-                    <span class="method-stats">1 method,  1 skipped,  </span>
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
-                    </span>
-                    <div class="method-list-content skipped suite-Default_suite">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.Consultation" class="method navigator-link" hash-for-method="premium_Consultation">premium_Consultation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -154,156 +119,53 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.Nm.Msite_stage.M1_flow</span>
-<<<<<<< HEAD
-=======
-=======
-          <div class="suite-Default_suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-<<<<<<< HEAD
-              <span class="class-name">com.Nm.Andriod_prod.Consultation</span>
-=======
-              <span class="class-name">com.Nm.Andriod_prod.ColdStorage_android_Live</span>
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
+              <img src="failed.png"/>
+              <span class="class-name">com.Nm.backend.NmBackendFlow</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-<<<<<<< HEAD
-                  <a name="Mone_otc">
-                  </a> <!-- Mone_otc -->
-                  <span class="method-name">Mone_otc</span>
-=======
-<<<<<<< HEAD
-                  <a name="premium_Consultation">
-                  </a> <!-- premium_Consultation -->
-                  <span class="method-name">premium_Consultation</span>
-                  <div class="stack-trace">org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+                  <a name="test">
+                  </a> <!-- test -->
+                  <span class="method-name">test</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;mat-input-0&quot;}
+  (Session info: chrome=95.0.4638.54)
+  (Driver info: chromedriver=95.0.4638.17 (a9d0719444d4b035e284ed1fce73bf6ccd789df2-refs/branch-heads/4638@{#178}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 23 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
-=======
-<<<<<<< HEAD
-                  <a name="Mone_otc">
-                  </a> <!-- Mone_otc -->
-                  <span class="method-name">Mone_otc</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-<<<<<<< HEAD
-Command duration or timeout: 412 milliseconds
-=======
-Command duration or timeout: 100 milliseconds
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-=======
-                  <a name="coldStorage">
-                  </a> <!-- coldStorage -->
-                  <span class="method-name">coldStorage</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 8.74 seconds
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;NMSLAP093&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-<<<<<<< HEAD
-Capabilities [{appPackage=com.android.chrome, statBarHeight=45, noReset=true, viewportRect={top=45, left=0, width=720, height=1420}, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, autoDismissAlerts=true, udid=RZ8R20GLXTA, platformName=Android}, platformVersion=11, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=RZ8R20GLXTA, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung, deviceScreenSize=720x1600, networkConnectionEnabled=true, warnings={}, autoDismissAlerts=true, databaseEnabled=false, appActivity=com.google.android.apps.chrome.Main, pixelRatio=1.875, locationContextEnabled=false, deviceScreenDensity=300, deviceModel=SM-A125F}]
-Session ID: 83d14816-51bb-4bc6-b387-5888df3e907b
-*** Element info: {Using=xpath, value=//android.widget.RadioButton[@resource-id=&apos;nms_cod&apos;]}
-=======
-<<<<<<< HEAD
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=84, noReset=true, viewportRect={top=84, left=0, width=1080, height=2130}, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, autoDismissAlerts=true, udid=NBBY79GM5LTCJBJR, platformName=Android}, platformVersion=10, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, udid=NBBY79GM5LTCJBJR, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo, deviceScreenSize=1080x2340, networkConnectionEnabled=true, warnings={}, autoDismissAlerts=true, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=3, locationContextEnabled=false, deviceScreenDensity=480, deviceModel=vivo 1819}]
-Session ID: 082765df-48b2-4f6f-a42e-6202b3b6e860
-*** Element info: {Using=id, value=com.NetmedsMarketplace.Netmeds:id/proceed_btn}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-=======
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=ANY, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:9222}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=false, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, chrome={chromedriverVersion=95.0.4638.17 (a9d0719444d4b035e284ed1fce73bf6ccd789df2-refs/branch-heads/4638@{#178})}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=95.0.4638.54, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 0b9f7839d2870a8f6b2e8b199b99d630
+*** Element info: {Using=id, value=mat-input-0}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-<<<<<<< HEAD
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:64)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
 	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-<<<<<<< HEAD
-	at com.Nm.Msite_stage.M1_flow.Mone_otc(M1_flow.java:204)
-=======
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:96)
-	at com.Nm.Msite_stage.M1_flow.Mone_otc(M1_flow.java:177)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-=======
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
-	at io.appium.java_client.DefaultGenericMobileDriver.&lt;init&gt;(DefaultGenericMobileDriver.java:36)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:114)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:132)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:92)
-	at com.Nm.Andriod_prod.Consultation.launchbrowser(Consultation.java:53)
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
+	at com.Nm.backend.NmBackendFlow.test(NmBackendFlow.java:411)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
@@ -318,90 +180,27 @@ Session ID: 082765df-48b2-4f6f-a42e-6202b3b6e860
 	at org.testng.TestNG.runSuites(TestNG.java:1063)
 	at org.testng.TestNG.run(TestNG.java:1031)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.WebDriverException: org.apache.http.conn.HttpHostConnectException: Connect to 0.0.0.0:4723 [/0.0.0.0] failed: Connection refused: no further information
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:84)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
-	... 37 more
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 0.0.0.0:4723 [/0.0.0.0] failed: Connection refused: no further information
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:69)
-	... 38 more
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 51 more
 
 </div> <!-- stack-trace -->
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1203468566\testng-customsuite.xml</span>
-=======
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1517418760\testng-customsuite.xml</span>
-=======
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1949533674\testng-customsuite.xml</span>
-=======
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1285122273\testng-customsuite.xml</span>
-=======
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1904630160\testng-customsuite.xml</span>
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
+            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1434071710\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Msite_stage.M1_flow&quot;/&gt;
-=======
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Andriod_prod.Consultation&quot;/&gt;
-=======
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Msite_stage.M1_flow&quot;/&gt;
-=======
-      &lt;class name=&quot;com.Nm.Andriod_prod.ColdStorage_android_Live&quot;/&gt;
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
+      &lt;class name=&quot;com.Nm.backend.NmBackendFlow&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -443,35 +242,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-<<<<<<< HEAD
-data.setCell(0, 1, 'Mone_otc')
-data.setCell(0, 2, 'com.Nm.Msite_stage.M1_flow')
-data.setCell(0, 3, 127500);
-=======
-<<<<<<< HEAD
-data.setCell(0, 1, 'premium_Consultation')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.Consultation')
-=======
-<<<<<<< HEAD
-data.setCell(0, 1, 'Mone_otc')
-data.setCell(0, 2, 'com.Nm.Msite_stage.M1_flow')
-<<<<<<< HEAD
-data.setCell(0, 3, 152692);
-=======
-data.setCell(0, 3, 79066);
-=======
-data.setCell(0, 1, 'coldStorage')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.ColdStorage_android_Live')
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
-data.setCell(0, 3, 0);
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
+data.setCell(0, 1, 'test')
+data.setCell(0, 2, 'com.Nm.backend.NmBackendFlow')
+data.setCell(0, 3, 491732);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 8 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -486,41 +264,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-=======
-<<<<<<< HEAD
-            <span class="header-content">1 ignored method</span>
-          </div> <!-- main-panel-header rounded-window-top -->
-          <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.Nm.Andriod_prod.Consultation</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">Consult_Myself</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-=======
-<<<<<<< HEAD
-            <span class="header-content">1 ignored method</span>
-          </div> <!-- main-panel-header rounded-window-top -->
-          <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.Nm.Msite_stage.M1_flow</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">mone_precrption</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-=======
-            <span class="header-content">0 ignored methods</span>
-          </div> <!-- main-panel-header rounded-window-top -->
-          <div class="main-panel-content rounded-window-bottom">
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -529,78 +275,21 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Msite_stage.M1_flow</div> <!-- chronological-class-name -->
-=======
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Andriod_prod.Consultation</div> <!-- chronological-class-name -->
-=======
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Msite_stage.M1_flow</div> <!-- chronological-class-name -->
-=======
-              <div class="chronological-class-name">com.Nm.Andriod_prod.ColdStorage_android_Live</div> <!-- chronological-class-name -->
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
-              <div class="configuration-test before">
-                <span class="method-name">startReport</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
+              <div class="chronological-class-name">com.Nm.backend.NmBackendFlow</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">launchbrowser</span>
-<<<<<<< HEAD
-                <span class="method-start">244 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">154 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">366 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">164 ms</span>
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
+                <span class="method-name">browser</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">Mone_otc</span>
-<<<<<<< HEAD
-                <span class="method-start">14557 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test</span>
+                <span class="method-start">1575 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=Mone_otc status=FAILURE method=M1_flow.Mone_otc()[pri:0, instance:com.Nm.Msite_stag...)</span>
-                <span class="method-start">167276 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">quitbrowser</span>
-                <span class="method-start">174328 ms</span>
-=======
-                <span class="method-start">11312 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=Mone_otc status=SUCCESS method=M1_flow.Mone_otc()[pri:0, instance:com.Nm.Msite_stag...)</span>
-                <span class="method-start">138812 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">quitbrowser</span>
-                <span class="method-start">141835 ms</span>
->>>>>>> c7193f0ebf6edd9ef81f778a6917516992818544
-              </div> <!-- configuration-test after -->
-<<<<<<< HEAD
-=======
-=======
-                <span class="method-start">241 ms</span>
->>>>>>> 8ee6692031936e17dc64710b44d8c64b51c6934a
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">premium_Consultation</span>
-                <span class="method-start">3618 ms</span>
-              </div> <!-- test-method -->
->>>>>>> fe827b64744de7afe968c44b8397eb166706b296
->>>>>>> 07826f6a19b83bd73019083bc39268f5884796ae
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

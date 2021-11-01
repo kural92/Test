@@ -1,10 +1,13 @@
 
 package com.Nm.backend;
 
+import java.awt.RenderingHints.Key;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,21 +24,53 @@ public class NmBackendFlow extends BackendBaseClass{
 	
 	@BeforeClass
 	public  void browser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\NMSLAP369\\Downloads\\nm.webFlow\\input\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".//Driver//chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--disable-notifications");
 		options.setExperimentalOption("debuggerAddress", "localhost:9222");
 		driver=new ChromeDriver(options);
-		driver.get("https://s1-meds.netmeds.com/");
+	//	driver.get("https://s1-meds.netmeds.com/");
 		
 	}
+	/**
+	 * @throws Throwable
+	 */
 	@Test
 	public void test() throws Throwable {
 		backendPom s = new backendPom();
+		
+
+/////////////  Remove Product //
+
+	Thread.sleep(3000);
+	driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
+	Thread.sleep(3000);
+	for (int i = 0; i < 16; i++) {
+		Thread.sleep(3000);
+		if ((driver.findElements(By.xpath("//h3[contains(text(),'Your Cart is empty')]")).size() == 0)) {
+
+			try {
+				driver.findElement(By.xpath("//a[text()='Remove']")).click();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+		} else {
+			break;
+
+		}
+
+	}
+
+		thread(3000);
+		driver.get("https://s1-meds.netmeds.com/");
 		thread(3000);
 		try {
-			sendkeys(s.getSearch(), "Pan d");
-			buttonEnter();
+			//sendkeys(s.getSearch(), "Pan d").key
+			driver.findElement(By.xpath("//input[@id='search']")).sendKeys("pan d");
+			driver.findElement(By.xpath("//input[@id='search']")).sendKeys(Keys.ENTER);
+			Thread.sleep(2000);
+		//	buttonEnter();
 			
 		} catch (Exception e) {
 			
@@ -68,6 +103,7 @@ public class NmBackendFlow extends BackendBaseClass{
 			clk(s.getCOD_Radio());
 			clk(s.getPay_COD());
 		} catch (Exception e) {
+			clk(driver.findElement(By.xpath("//button[contains(text(),'PAY WITH CASH')]")));
 			
 		}
 		
@@ -118,7 +154,7 @@ public class NmBackendFlow extends BackendBaseClass{
 		clk(s.getLoginButton_View());
 		
 		sendkeys(s.getOrderCode_View(), AppID);
-		thread(1000);
+		thread(3000);
 		
 		clk(s.getChck1_View());
 		clk(s.getChck2_View());
@@ -264,7 +300,7 @@ public class NmBackendFlow extends BackendBaseClass{
 		WebElement FC = driver.findElement(By.xpath("//select[@id='drpfcvals']"));
 		
 		Select Sel = new Select (FC);
-		Sel.selectByValue("20008");
+		Sel.selectByVisibleText("769 - Madurai DC");
 		clk(s.getUpdate_FC());
 		thread(1000);
 		
@@ -275,6 +311,196 @@ public class NmBackendFlow extends BackendBaseClass{
 		String subOrID = Suborder.getText();
 		System.out.println("Sub Order ID:" + subOrID);
 		
-	}
+		
+		///  RWOS FLOW
+		
+		Thread.sleep(3000);
+		driver.navigate().to("https://sit-b2b-rwos.netmeds.com/rwos/#/web/sales/transactions");
+		thread(3000);
+		
+		///////
+		clk(s.getRwos_UserName());
+		sendkeys(s.getRwos_UserName(), "karthik.d");
+		sendkeys(s.getRwos_Password(), "karthik@nms");
+		clk(s.getRwos_signCheckBox());
+		clk(s.getRwos_SignIn());
+		
+		try {
+			Thread.sleep(3000);
+		clk(s.getRwos_FcPanel());
+			Thread.sleep(3000);
+		clk(s.getRwos_FcPanel_Proceed());
+			Thread.sleep(3000);
+		clk(s.getRwos_AlreadySignIn_YesBtn());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+		Thread.sleep(10000);
+		clk(s.getRwos_HamBurger_Menu());
+		clk(s.getRwos_SaleTransaction());
+		clk(s.getRwos_SaleTransaction_Search());
 
+		Thread.sleep(5000);
+		clk(s.getRwos_BillType());
+		Thread.sleep(5000);
+		clk(s.getRwos_BillType_CustomerOrder());
+		clk(s.getRwos_BillType_Search_btn());
+		
+		Thread.sleep(3000);
+		List<WebElement> Eye = s.getRwos_Order_View_btn();//driver.findElements(By.xpath("//i[@title='Click to View']"));
+		int Eye_size = Eye.size();
+		System.out.println(Eye_size);
+		
+		Thread.sleep(3000);
+		for (int i = 0; i < 1; i++) {
+			
+			Thread.sleep(2000);
+		    Eye.get(i).click();
+			Thread.sleep(2000);		
+			
+			String BillingAddress = s.getRwos_BillingAddress().getText();
+			String DeliverAddress = s.getRwos_ShippingAddress().getText();
+			
+			String Name = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[1]/table/tbody/tr[2]/td[4]/p")).getText();
+		    String Amt = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[3]/div[1]/div/div[2]/table/tbody/tr[1]/td[3]/p")).getText();
+			String qty = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[3]/div[1]/div/div[1]/table/tbody/tr[2]/td[1]/p")).getText();
+			String Medicine = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[2]/div[2]/p-datatable/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[3]/span/rw-item-search/p")).getText();
+			String PayMode = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[3]/div[1]/div/div[2]/table/tbody/tr[2]/td[5]/div/p")).getText();
+			String SubID = 	driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[1]/table/tbody/tr[1]/td[6]/input")).getAttribute("innerText");
+			String TxnID = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[1]/table/tbody/tr[1]/td[2]/input")).getAttribute("innerText");
+	
+		
+			//SoftAssert sof = new SoftAssert();
+			
+			sof.assertEquals(ViewName, Name);
+			System.out.println("Customer Name is true");
+			sof.assertEquals(IDView, TxnID);
+			System.out.println("ID is equal");
+			sof.assertEquals(ViewPayMode, PayMode);
+			System.out.println("Payment mode is cash on deivery");
+			sof.assertEquals(ViewPaymnt, Amt);
+			System.out.println("Price of the product is equal");
+			sof.assertEquals(ViewStatus, PayMode);
+			System.out.println("Mode of payment is equal");
+			sof.assertEquals(ViewAddress, DeliverAddress);
+			System.out.println("Order Address is Equal");
+			
+			
+			Thread.sleep(2000);
+			clk(s.getRwos_CloseBtn());
+		
+		
+		}
+		
+		
+		//
+		driver.switchTo().window(tabs.get(0));
+		
+		driver.get("https://sit-shipstation.netmeds.com/picking/login");
+		
+		Thread.sleep(5000);
+		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769picklist");
+		Thread.sleep(1000);
+		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
+		Thread.sleep(1000);
+		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
+		
+		Thread.sleep(3000);
+		WebElement pickListType = driver.findElement(By.id("mat-input-0"));
+		Select ss = new Select(pickListType);	
+		ss.selectByIndex(1);
+		
+		Thread.sleep(1000);
+		clk(driver.findElement(By.xpath("//button[contains(text(),'Generate Picklist')]")));
+		
+		Thread.sleep(2000);
+		String picklistOrder = driver.findElement(By.xpath("//span[contains(text(),'Picklist Generated Orders : ')]//following::span[1]")).getText();
+		System.out.println("Picklist Generated Orders : "+picklistOrder);
+		
+		clk(driver.findElement(By.xpath("//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+		clk(driver.findElement(By.xpath("//a[contains(text(),'Log out')]")));
+		
+		////
+		
+		Thread.sleep(5000);
+		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769pick_Admin");
+		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
+		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
+		
+		Thread.sleep(2000);
+		clk(driver.findElement(By.xpath("//button[contains(text(),'Print')]")));
+		Thread.sleep(1000);
+		clk(driver.findElement(By.xpath("//*[@id=\"cdk-overlay-0\"]/div/div/a[1]")));
+		
+		Thread.sleep(5000);
+		String txn_id = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-print-serialno/div[3]/table/tbody/tr[1]/td[2]")).getText();
+		System.err.println(txn_id);
+		
+		String PickOrder_id = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-print-serialno/div[3]/table/tbody/tr[1]/td[4]")).getText();
+		System.err.println(PickOrder_id);
+		
+		String PickAmt = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-print-serialno/div[3]/table/tbody/tr[1]/td[6]")).getText();
+		System.err.println(PickAmt);
+		
+		sof.assertEquals(ViewPaymnt, PickAmt);
+		System.out.println("Price of the product is equal");
+		sof.assertEquals(subOrID, PickOrder_id);
+		System.out.println("Sub Order ID was equal");
+		//sof.assertEquals(TxnID, txn_id);
+	//	System.out.println("Sub Order ID was equal");
+//subOrID
+		
+		Thread.sleep(1000);
+		clk(driver.findElement(By.xpath("//button[contains(text(),'Print SRNO ')]")));
+		
+		Thread.sleep(3000);
+		//driver.navigate().refresh();
+		Thread.sleep(3000);
+		clk(driver.findElement(By.xpath("//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+		clk(driver.findElement(By.xpath("//a[contains(text(),'Log out')]")));
+		
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		driver.get("https://sit-shipstation.netmeds.com/picking/login");
+		
+		Thread.sleep(5000);
+		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769test_pick_user");
+		Thread.sleep(2000);
+		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
+		Thread.sleep(2000);
+		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
+		
+		Thread.sleep(3000);
+		sendkeys(driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-picker/div[1]/div[2]/div/form/div/input")),txn_id ); //txn_id
+		
+		Thread.sleep(2000);
+		String Drug_Code = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-picker/div[1]/div[4]/form/div[2]/table/tr[2]/td[1]")).getText();
+		String Drug_Name = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-picker/div[1]/div[4]/form/div[2]/table/tr[2]/td[2]")).getText();
+
+	Thread.sleep(2000);
+	Select sss = new Select(driver.findElement(By.id("itemCode")));
+	sss.selectByValue(Drug_Code);
+	
+	Thread.sleep(5000);
+//	Select sss1 = new Select(driver.findElement(By.xpath("//select[@formcontrolname='batchList']")));
+//	sss.selectByIndex(1);
+	driver.findElement(By.id("mat-input-6")).click();
+	driver.findElement(By.xpath("//*[@id=\"mat-input-6\"]/option[2]")).click();
+	
+	Thread.sleep(2000);
+//	Select sss2 = new Select(driver.findElement(By.id("mat-input-7")));
+//	sss.selectByIndex(1);
+	driver.findElement(By.id("mat-input-7")).click();
+	driver.findElement(By.xpath("//*[@id=\"mat-input-7\"]/option[2]")).click();
+	
+	Thread.sleep(3000);
+	String pc = driver.findElement(By.xpath("/html/body/div/div")).getText();
+	System.out.println(pc);
+	
+	
+	
+	}
+	
 }
