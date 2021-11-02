@@ -1,6 +1,8 @@
 package com.Nm.Pom;
 
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -763,6 +765,147 @@ public class backendPom extends BackendBaseClass{
 			return movetocart_1;
 		}
 
+		
+		/////////////////////
+		// RWOS and PICKLIST 
+		
+
+		@FindBy(id="userName")
+		private WebElement Rwos_UserName;
+		public WebElement getRwos_UserName() {
+			return Rwos_UserName;
+		}
+		
+		
+		@FindBy(id="password")
+		private WebElement Rwos_Password;
+		public WebElement getRwos_Password() {
+			return Rwos_Password;
+		}
+		
+		@FindBy(xpath="/html/body/div/rw-root/rw-login/div/table/tbody/tr/td[2]/table/tbody/tr[8]/td/p-checkbox/div/div[2]/span")
+		private WebElement Rwos_signCheckBox;
+		public WebElement getRwos_signCheckBox() {
+			return Rwos_signCheckBox;
+		}
+		
+		
+		@FindBy(id="signIn")
+		private WebElement Rwos_SignIn;
+		public WebElement getRwos_SignIn() {
+			return Rwos_SignIn;
+		}
+		
+		
+		@FindBy(xpath ="//label[contains(text(),'769 - RRL MDU')]" )
+		private WebElement Rwos_FcPanel;
+		public WebElement getRwos_FcPanel() {
+			return Rwos_FcPanel;
+		}
+		
+		@FindBy(xpath ="//*[@id=\"ui-panel-2-content\"]/div/div/div" )
+		private List<WebElement> Rwos_FcPanelList;
+		public List<WebElement> getRwos_FcPanelList() {
+			return Rwos_FcPanelList;
+		}
+		
+		@FindBy(xpath ="//span[contains(text(),'Proceed')]" )
+		private WebElement Rwos_FcPanel_Proceed;
+		public WebElement getRwos_FcPanel_Proceed() {
+			return Rwos_FcPanel_Proceed;
+		}
+		
+		@FindBy(xpath ="(//span[contains(text(),'Yes')])[2]" )
+		private WebElement Rwos_AlreadySignIn_YesBtn;
+		public WebElement getRwos_AlreadySignIn_YesBtn() {
+			return Rwos_AlreadySignIn_YesBtn;
+		}
+		
+		@FindBy(xpath ="//*[@id=\"sidebar-wrapper\"]/div/a/span" )
+		private WebElement Rwos_HamBurger_Menu;
+		public WebElement getRwos_HamBurger_Menu() {
+			return Rwos_HamBurger_Menu;
+		}
+		
+		@FindBy(xpath ="(//a[@routerlinkactive='selectedMenu'])[3]" )
+		private WebElement Rwos_SaleTransaction;
+		public WebElement getRwos_SaleTransaction() {
+			return Rwos_SaleTransaction;
+		}
+		
+		@FindBy(xpath ="//a[contains(text(),'Search')]" )
+		private WebElement Rwos_SaleTransaction_Search;
+		public WebElement getRwos_SaleTransaction_Search() {
+			return Rwos_SaleTransaction_Search;
+		}
+		
+		@FindBy(xpath ="//label[contains(text(),'-Select-')]" )
+		private WebElement Rwos_BillType;
+		public WebElement getRwos_BillType() {
+			return Rwos_BillType;
+		}
+		
+		@FindBy(xpath ="//label[contains(text(),'Customer Order')]" )
+		private WebElement Rwos_BillType_CustomerOrder;
+		public WebElement getRwos_BillType_CustomerOrder() {
+			return Rwos_BillType_CustomerOrder;
+		}
+		
+		@FindBy(id ="searchTxn" )
+		private WebElement Rwos_BillType_Search_btn;
+		public WebElement getRwos_BillType_Search_btn() {
+			return Rwos_BillType_Search_btn;
+		}
+		
+		
+		@FindBy(xpath = "//i[@title='Click to View']")
+		private List<WebElement> Rwos_Order_View_btn;
+		public List<WebElement> getRwos_Order_View_btn() {
+			return Rwos_Order_View_btn;
+		}
+		
+		
+		@FindBy(xpath ="//input[@name='txnId']" )
+		private WebElement Rwos_TransactionID;
+		public WebElement getRwos_TransactionID() {
+			return Rwos_TransactionID;
+		}
+		
+		@FindBy(xpath ="(//div[@class='ui-panel-content ui-widget-content'])[2]" )
+		private WebElement Rwos_ShippingAddress;
+		public WebElement getRwos_ShippingAddress() {
+			return Rwos_ShippingAddress;
+		}
+		
+		@FindBy(xpath ="(//div[@class='ui-panel-content ui-widget-content'])[1]" )
+		private WebElement Rwos_BillingAddress;
+		public WebElement getRwos_BillingAddress() {
+			return Rwos_BillingAddress;
+		}
+		
+		
+		@FindBy(xpath ="(//table[@class='billTotalSection'])[1]" )
+		private WebElement Rwos_BillTable1;
+		public WebElement getRwos_BillTable1() {
+			return Rwos_BillTable1;
+		}
+		
+		@FindBy(xpath ="(//table[@class='billTotalSection'])[2]" )
+		private WebElement Rwos_BillTable2;
+		public WebElement getRwos_BillTable2() {
+			return Rwos_BillTable2;
+		}
+		
+		
+		@FindBy(xpath ="//span[contains(text(),'Close')]" )
+		private WebElement Rwos_CloseBtn;
+		public WebElement getRwos_CloseBtn() {
+			return Rwos_CloseBtn;
+		}
+		
+		
+		
+		
 		
 
 }
