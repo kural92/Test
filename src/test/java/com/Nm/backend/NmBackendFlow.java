@@ -2,6 +2,8 @@
 package com.Nm.backend;
 
 import java.awt.RenderingHints.Key;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class NmBackendFlow extends BackendBaseClass{
 		//options.addArguments("--disable-notifications");
 		options.setExperimentalOption("debuggerAddress", "localhost:9222");
 		driver=new ChromeDriver(options);
-	//	driver.get("https://s1-meds.netmeds.com/");
+		driver.get("https://s1-meds.netmeds.com/");
 		
 	}
 	/**
@@ -393,9 +395,9 @@ public class NmBackendFlow extends BackendBaseClass{
 			Thread.sleep(2000);
 			clk(s.getRwos_CloseBtn());
 		
-		
+	
 		}
-		
+	
 		
 		//
 		//driver.switchTo().window(tabs.get(0));
@@ -467,6 +469,9 @@ public void pickList() throws Throwable {
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Print SRNO ')]")));
 		
 		Thread.sleep(3000);
+		Robot r = new Robot();
+		r.keyPress(KeyEvent.VK_ESCAPE);
+		r.keyRelease(KeyEvent.VK_ESCAPE);
 		//driver.navigate().refresh();
 		Thread.sleep(3000);
 		clk(driver.findElement(By.xpath("//*[@id=\"app\"]/header/app-header/div/div/div/button")));
