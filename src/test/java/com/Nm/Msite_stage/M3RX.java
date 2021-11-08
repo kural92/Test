@@ -63,7 +63,7 @@ public class M3RX extends MobileBaseClass {
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
 
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
@@ -189,7 +189,6 @@ public class M3RX extends MobileBaseClass {
 			
 		}
 		
-		Thread.sleep(3000);
 		try {
 			driver.findElement(By.xpath("//span[@class='app_close']")).click();
 		} catch (Exception e) {
@@ -197,60 +196,57 @@ public class M3RX extends MobileBaseClass {
 		}
 
 
-		
-		//Let's chat handle//
-		Thread.sleep(3000);
+//Let's chat handle//
+		Thread.sleep(5000);
 		try {
-			driver.switchTo().frame("haptik-xdk");
-			Actions acc = new Actions(driver);
-			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
-					.perform();
-			driver.findElement(By.xpath("//*[@android.widget.Image='This image isn‘t labelled. Open the 'More options' menu at the top right to get image descriptions.']")).click();
-			driver.switchTo().defaultContent();
-		} catch (Exception e) {
-			System.out.println("Successfully closed let's chat");
-		}
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
 
-		Thread.sleep(3000);
+
+		Thread.sleep(5000);
 				
-	
-// Step 4 : Navigate to Mysubscription page//
+				//System.out.println("Successfully closed let's chat");
+
+		// Step 4 : Navigate to Mysubscription page//
 
 		//btnclick(m.getMysubscriptionpage());
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//android.view.View[@content-desc='Subscription']")).click();
-		Thread.sleep(3000);
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//android.view.View[@content-desc='Subscription']|//*[@text='Subscription']")).click();
+		Thread.sleep(5000);
 		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
 		System.out.println("Successfully navigate to mysubscriptionpage");
 		// Step 5 :Click create new fill button//
 
 		
 //Let's chat handle//
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
 			netty.click();
 			}catch (Exception e) {
 				// TODO: handle exception
 			}
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		
 		
 		
-		driver.findElement(By.xpath("//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")).click();
+		driver.findElement(By.xpath("//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")).click();
 
 		// Step 6:Search Product//
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		for (int i = 0; i < 2; i++) {
 
 			//type(m.getM3productsearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
 			
 			//m.getM3productsearch().click();
 			
-			type(driver.findElement(By.xpath("//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.widget.EditText")), MobileBaseClass.getExcelData("Rx", i, 0));
+			type(driver.findElement(By.xpath("//*[@class='ais-SearchBox-input']|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.widget.EditText")), MobileBaseClass.getExcelData("Rx", i, 0));
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
@@ -259,13 +255,13 @@ public class M3RX extends MobileBaseClass {
 
 			// Step 7 : Add product to the cart//
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 
 				WebDriverWait wait = new WebDriverWait(driver, 30);
 				WebElement Cart_btn = wait.until(
-						ExpectedConditions.elementToBeClickable(By.xpath("//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.view.View[4]/android.view.View/android.widget.Button")));
+						ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='btn btn_to_cart m-0'])[1]|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.view.View[4]/android.view.View/android.widget.Button")));
 
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 
 				btnclick(Cart_btn);
 				
@@ -274,10 +270,20 @@ public class M3RX extends MobileBaseClass {
 				// TODO: handle exception
 			}
 
+			
+			//Let's chat handle//
+			Thread.sleep(5000);
+			try {
+				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+				netty.click();
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
+
 			Thread.sleep(5000);
 			//driver.navigate().back();
 
-			driver.findElement(By.xpath("//android.widget.Button[@text='ADD TO CART']")).click();
+			driver.findElement(By.xpath("//*[@class='action addcart']|//android.widget.Button[@text='ADD TO CART']")).click();
 		}
 
 		try {
@@ -296,25 +302,48 @@ public class M3RX extends MobileBaseClass {
 		driver.swipe(530, 1500, 530, 0, 1000);
 		
 //driver.swipe(530, 1500, 530, 550, 1000);
-				
+		
+		//Let's chat handle//
+		Thread.sleep(5000);
+		try {
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
 
 		// Step 13 : Click Proceed Button//
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='PROCEED']")).click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@class='btn-checkout btn btn_to_checkout']|//android.widget.Button[@text='PROCEED']")).click();
+		Thread.sleep(5000);
 		
 		//driver.swipe(530, 1500, 530, 550, 1000);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
+
+		//Let's chat handle//
+				Thread.sleep(5000);
+				try {
+					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+					netty.click();
+					System.out.println("Successfully closed let's chat");
+					}catch (Exception e) {
+						System.out.println("No pop up available to close");
+					}
+
+
+	
+		
+
 
 		
 		//Upload Prescription
 				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']")).click();
+				driver.findElement(By.xpath("//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")).click();
 
 				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//android.widget.Button[@text='Choose files']")).click();
+				driver.findElement(By.xpath("//*[@class='ng-untouched ng-pristine ng-valid']|//android.widget.Button[@text='Choose files']")).click();
 				
 				Thread.sleep(3000);
 				//driver.findElement(By.xpath("//android.widget.TextView[@text='Browse']")).click();
@@ -322,13 +351,23 @@ public class M3RX extends MobileBaseClass {
 				Thread.sleep(3000);
 				
 				
-				driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click();
-				
-				//driver.findElement(By.xpath("(//android.widget.ImageView[resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")).click();
+		MobileElement image = (MobileElement) driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]"));
+		
+		image.click();
 				
 				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//android.widget.Button[@resource-id='com.android.chrome:id/done']")).click();
+			//driver.findElement(By.xpath("(//*[@resource-id='com.android.chrome:id/special_tile_icon'])[2]]")).click();
+				
+				//driver.findElement(By.xpath("(//*[@knownSuperClass='android.widget.FrameLayout'])[13]")).click();
+				
+				Thread.sleep(3000);//*[@class='android.widget.FrameLayout'][@index='3']
+				
+				
+			driver.findElement(By.xpath("//*[@id='done']|//android.widget.Button[@resource-id='com.android.chrome:id/done']")).click();
+				
+				
+			//driver.findElement(By.xpath("(//*[@resource-id='android:id/title'])[6]")).click();
 				
 				//Past Rx
 				
@@ -359,7 +398,7 @@ public class M3RX extends MobileBaseClass {
 
 	//	btnclick(m.getNextbutton());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='NEXT']")).click();
+		driver.findElement(By.xpath("//*[@class='action']|//android.widget.Button[@text='NEXT']")).click();
 		
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully Next button was clicked");
@@ -370,99 +409,99 @@ public class M3RX extends MobileBaseClass {
 		
 		driver.swipe(530, 1440, 530, 0, 1000);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='SUBSCRIBE']")).click();
-		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
+		driver.findElement(By.xpath("//*[@text='Subscribe']|//android.widget.Button[@text='SUBSCRIBE']")).click();
+		logger.log(Status.PASS, "Successfully Subscribe button was clicked");;
 		
 
 		// Step 16 : Ensure order is placed successfully//
 
-		Thread.sleep(3000);
+				Thread.sleep(5000);
 
-				String confirmation = driver.findElement(By.xpath("//android.view.View[@text='Order Placed Successfully!']")).getText(); 
+						String confirmation = driver.findElement(By.xpath("//*[@text='Order Placed Successfully!']|//android.view.View[@text='Order Placed Successfully!']")).getText(); 
+						
+						System.out.println(confirmation);
+
+						
+//			String	Status	=	driver.findElement(By.xpath("//android.view.View[@text='Order Placed Successfully!']/android.view.View[7]")).getText();
+						//m.getOrder_Placed_text().getText();
+						//
+							//System.out.println(Status);
+									String	Orderid	=	driver.findElement(By.xpath("//*[@text=' Order id - ']|//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[2]")).getText();
+
+										System.out.println(Orderid);
+
+										String order_status = driver.findElement(By.xpath("//*[@class='ordstatus']|//*[@text='CONSULTATION SCHEDULED']|//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[3]")).getText(); // m.getOrderid().getAttribute("innerText");
+
+						System.out.println(order_status);
+						
+						String orderconfirmation = "Order Placed Successfully!";
+
+						Assert.assertEquals(orderconfirmation, confirmation);
+
+						System.out.println(confirmation + "and the id is " + Orderid);
+
+				// Tracking order//
 				
-				System.out.println(confirmation);
-
 				
-//	String	Status	=	driver.findElement(By.xpath("//android.view.View[@text='Order Placed Successfully!']/android.view.View[7]")).getText();
-				//m.getOrder_Placed_text().getText();
-				//
-					//System.out.println(Status);
-							String	Orderid	=	driver.findElement(By.xpath("//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[2]")).getText();
 
-								System.out.println(Orderid);
-
-				String order_status = driver.findElement(By.xpath("//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[3]")).getText(); // m.getOrderid().getAttribute("innerText");
-
-				System.out.println(order_status);
+			//	btnclick(m.getMysubscription());
 				
-				String orderconfirmation = "Order Placed Successfully!";
-
-				Assert.assertEquals(orderconfirmation, confirmation);
-
-				System.out.println(confirmation + "and the id is " + Orderid);
-
-		// Tracking order//
-		
-		
-
-	//	btnclick(m.getMysubscription());
-		
-	
-
-	//	btnclick(m.getMedicineorders());
-	
-		
-		driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
-		
-
 			
-		
-		Thread.sleep(5000);
-		try {
-		MobileElement	 netty =  (MobileElement) driver.findElement(By.xpath("//android.widget.TextView[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-		} catch (Exception e) {
+
+			//	btnclick(m.getMedicineorders());
 			
+				
+				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
+				
+
+				
+				//Let's chat handle//
+				Thread.sleep(5000);
+				try {
+					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+					netty.click();
+					System.out.println("Successfully closed let's chat");
+					}catch (Exception e) {
+						System.out.println("No pop up available to close");
+					}
+				
+				Thread.sleep(5000);
+				driver.swipe(82, 1179, 82, 1160, 1000);
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@class='btn-view ord-btn']|//android.widget.Button[@text='VIEW DETAILS']")).click();
+				Thread.sleep(5000);
+			
+				driver.swipe(82, 1600, 82, 0, 1000);
+				Thread.sleep(5000);
+				//driver.swipe(82, 900, 82, 0, 1000);
+				Thread.sleep(5000);
+				
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
+
+//				btnclick(m.getCancel_Order());
+				Thread.sleep(5000);
+		//
+				driver.swipe(82, 939, 82, 6, 1000);
+				
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@text='YES']|//android.widget.Button[@text='YES']")).click();
+			//	btnclick(m.getCancelyes());
+				Thread.sleep(5000);
+
+				driver.findElement(By.xpath("(//*[@class='ng-untouched ng-pristine ng-valid'])[5]|(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[1]")).click();
+				Thread.sleep(5000);
+//				btnclick(m.getSubmit_Cancel());
+				
+				driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
+				
+				//logger.log(Status.PASS, "Successfully Order was Cancelled");
+				System.out.println("Successfully Order was Cancelled");
+				Thread.sleep(2000);
+				driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+
+
 		}
-		
-		Thread.sleep(5000);
-		driver.swipe(82, 1179, 82, 1160, 1000);
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']")).click();
-		Thread.sleep(5000);
-	
-		driver.swipe(82, 900, 82, 0, 1000);
-		Thread.sleep(3000);
-		driver.swipe(82, 900, 82, 0, 1000);
-		Thread.sleep(3000);
-		
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();
-
-//		btnclick(m.getCancel_Order());
-		Thread.sleep(5000);
-//
-		driver.swipe(82, 939, 82, 6, 1000);
-		
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='YES']")).click();
-	//	btnclick(m.getCancelyes());
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[1]")).click();
-		Thread.sleep(3000);
-//		btnclick(m.getSubmit_Cancel());
-		
-		driver.findElement(By.xpath("//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-		
-		//logger.log(Status.PASS, "Successfully Order was Cancelled");
-		System.out.println("Successfully Order was Cancelled");
-		Thread.sleep(2000);
-		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
-
-
-}
-
 
 	
 	

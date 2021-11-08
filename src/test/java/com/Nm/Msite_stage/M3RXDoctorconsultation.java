@@ -98,7 +98,7 @@ public class M3RXDoctorconsultation extends MobileBaseClass {
 
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
@@ -198,26 +198,16 @@ public class M3RXDoctorconsultation extends MobileBaseClass {
 			System.out.println("No Popup to close");
 		}
 
-	/*	// Step 3 : Navigate to user profile//
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.view.View[@content-desc='Account']")).click();
-		//btnclick(m.getUserprofile());
-		Thread.sleep(5000);
-		logger.log(Status.PASS, "Successfully navigate to userprofile");
-		System.out.println("Successfully navigate to userprofile");*/
-		
-		//Let's chat handle//
+
+//Let's chat handle//
 		Thread.sleep(5000);
 		try {
-			driver.switchTo().frame("haptik-xdk");
-			Actions acc = new Actions(driver);
-			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
-					.perform();
-			driver.findElement(By.xpath("//*[@android.widget.Image='This image isn‘t labelled. Open the 'More options' menu at the top right to get image descriptions.']")).click();
-			driver.switchTo().defaultContent();
-		} catch (Exception e) {
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
 
-		}
 
 		Thread.sleep(5000);
 				
@@ -497,8 +487,7 @@ driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-
 
 								System.out.println(Orderid);
 
-				String order_status = driver.findElement(By.xpath("//*[@text='CONSULTATION SCHEDULED']|//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[3]")).getText(); // m.getOrderid().getAttribute("innerText");
-
+								String order_status = driver.findElement(By.xpath("//*[@class='ordstatus']|//*[@text='CONSULTATION SCHEDULED']|//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[3]")).getText(); // m.getOrderid().getAttribute("innerText");
 				System.out.println(order_status);
 				
 				String orderconfirmation = "Order Placed Successfully!";
@@ -521,7 +510,6 @@ driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-
 		driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 		
 
-			
 		
 		//Let's chat handle//
 		Thread.sleep(5000);
