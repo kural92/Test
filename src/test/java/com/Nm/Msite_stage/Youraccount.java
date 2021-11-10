@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -28,12 +29,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -498,7 +501,7 @@ public class Youraccount extends MobileBaseClass {
 	// **************************************************************Edit
 	// Profile*************************************************************************************//
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void Editprofile() throws Throwable {
 
 		logger = report.createTest("Editprofile");
@@ -583,12 +586,12 @@ public class Youraccount extends MobileBaseClass {
 		driver.findElement(By.xpath("(//*[@class='mat-option-text' and @top='true'])[2]")).click();
 		Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("(//*[@id='date_of_birth'])[1]")).click();
+		driver.findElement(By.xpath("(//*[@id='date_of_birth'])")).click();
 		Thread.sleep(3000);
 
 		//driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_age")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.id("(//*[@class='mat-button-wrapper'])[1]")).click();
+		driver.findElement(By.xpath("//*[@class='mat-calendar-period-button mat-button mat-button-base']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[@class='mat-calendar-body-cell-content' and @top='true'])[10]")).click();
 		Thread.sleep(3000);
@@ -598,7 +601,7 @@ public class Youraccount extends MobileBaseClass {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[@class='mat-calendar-body-cell-content' and @top='true'])[11]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.id("//*[@text='Save Changes']")).click();
+		driver.findElement(By.xpath("//*[@text='Save Changes']")).click();
 
 		
 //		Thread.sleep(2000);
@@ -618,111 +621,106 @@ public class Youraccount extends MobileBaseClass {
 		logger.log(Status.PASS, "*************Myprescription********************");
 
 //Step1 :Launch Browser//		
-		AndriodPom m = new AndriodPom();
-		
-		driver.launchApp();
-			
-			try {
-				popupclose();
-				Thread.sleep(5000);
-				popupclose();
-			btnclick(m.getLetsstarted());
-			} catch (Exception e) {
-				//driver.resetApp();
-				//driver.launchApp();
-			
-			}
-			
-			Thread.sleep(1000);
-			
+		MsitePOM m = new MsitePOM();
+		//driver.manage().window().maximize();
+		driver.get("https://m.netmeds.com/");
 		try {
-			
-			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("8072281468");
-			popupclose();
-			Thread.sleep(10000);
-			popupclose();
-			Thread.sleep(10000);
-			btnclick(m.getUsepwd());
+
+		//	btnclick(m.getSignin());
 			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test@123");
-			
-			Thread.sleep(2000);
-		
-			
+		//	type(m.getMobileno(), "8072281468");
 			Thread.sleep(5000);
-			btnclick(m.getLogin());
+		//	btnclick(m.getUsepwdbtn());
+			Thread.sleep(5000);
+		//	type(m.getPassword(), "test@123");
+		//	btnclick(m.getSignInpage());
+		//	Thread.sleep(5000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			
+			System.out.println("Already Logged in");
+			
 		}
 		
-		catch(Exception e) {
-			System.out.println("Already logged in");
+		Thread.sleep(5000);
+		try {
+			driver.findElement(By.xpath("//span[@class='app_close']")).click();
+		} catch (Exception e) {
+			System.out.println("No Popup to close");
 		}
-		 
-			popupclose();
-		
-		
+
+
+//Let's chat handle//
+		Thread.sleep(5000);
+		try {
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+
+
+		Thread.sleep(5000);
+				
+	
 //Step 3 : Navigate to user profile//
 
-		btnclick(m.getUserprofile());
+		//btnclick(m.getUserprofile());
+		driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
-
 		System.out.println("Successfully navigate to userprofile");
+
 
 // Step 4 : Navigate to My prescription Page
 
-		btnclick(m.getMyprescription_page());
+		//btnclick(m.getMyprescription_page());
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@text='My Prescription ']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to My prescription Page");
 
 		System.out.println("Successfully navigate to My prescription Page");
 //Step 5 : Do assertion for all the text in refer and earn page//			
-
-		Assert.assertTrue(gettext(m.getOrder_ID()).contains("Order ID"));
-		System.out.println(m.getOrder_ID().getText());
+		Thread.sleep(3000);
+		Assert.assertTrue(gettext(driver.findElement(By.xpath("//*[@class='order-id']"))).contains("Order ID"));
+		Thread.sleep(3000);
+		System.out.println((driver.findElement(By.xpath("//*[@class='order-id']")).getText()));
+		Thread.sleep(3000);
+		Assert.assertTrue(gettext(driver.findElement(By.xpath("//*[@class='date']"))).contains("Date"));
+		Thread.sleep(3000);
+		System.out.println((driver.findElement(By.xpath("//*[@class='date']")).getText()));
+		
+		Thread.sleep(3000);
+		
+		Assert.assertTrue(gettext(driver.findElement(By.xpath("//*[@text='Prescription Status :']"))).contains("Prescription Status :"));
+		Thread.sleep(3000);
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@text='Prescription Status :']"))));
 	
-		Assert.assertEquals(gettext(m.getPrescriptionDate_text()), "Order Date");
-		
-		System.out.println(m.getPrescriptionDate_text().getText());
-		
-		System.out.println(m.getPrescriptionDate().getText());
-		
-		Assert.assertEquals(gettext(m.getPrescriptionStatus_text()), "Prescription Status");
-		
-		System.out.println(m.getPrescriptionStatus_text().getText());
-		
-		System.out.println(m.getPrescriptionStatus().getText());
-
-		System.out.println(m.getOrderStatus().getText());
-
-		
-
-		System.out.println(gettext(m.getOrder_ID()) + gettext(m.getPrescriptionDate())
-				+ gettext(m.getPrescriptionStatus()) + gettext(m.getOrderStatus()));
-
 		logger.log(Status.PASS, "all the texts were asserted successfully");
 		System.out.println("all the texts are asserted successfully");
 
 		// Click on prescription image//
 
-		btnclick(m.getPrescription_image());
+		btnclick(driver.findElement(By.xpath("//*[@class='rxviewimg']")));
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Prescription image opened successfully");
 
 		System.out.println("Prescription image opened successfully");
 		
 		
-		// Close image//
+		// Open & Close image//
+		
 
-		btnclick(m.getClose_image());
+
+		driver.findElement(By.xpath("//*[@nodeName='SPAN' and ./parent::*[@nodeName='BUTTON']]")).click();
 		
 		logger.log(Status.PASS, "Image closed successfully");
 
 		System.out.println(" image closed successfully");
 		// Click on Prescription Image//
-
-		btnclick(m.getPrescription_download());
+		Thread.sleep(3000);
+		btnclick(driver.findElement(By.xpath("(//*[@class='download-link'])[1]")));
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "image downloaded successfully");
 		System.out.println("image downloaded");
@@ -738,124 +736,137 @@ public class Youraccount extends MobileBaseClass {
 	@Test(enabled = false)
 	public void Referearn() throws Throwable {
 
-		logger = report.createTest("contact");
-		logger.log(Status.PASS, "*************contactus********************");
+		logger = report.createTest("refer&earn");
+		logger.log(Status.PASS, "*************refer&earn********************");
 
 //Step1 :Launch Browser//		
-		AndriodPom m = new AndriodPom();
-		
-		driver.launchApp();
-			
-			try {
-				popupclose();
-				Thread.sleep(5000);
-				popupclose();
-			btnclick(m.getLetsstarted());
-			} catch (Exception e) {
-				//driver.resetApp();
-				//driver.launchApp();
-			
-			}
-			
-			Thread.sleep(1000);
-			
+		MsitePOM m = new MsitePOM();
+		//driver.manage().window().maximize();
+		driver.get("https://m.netmeds.com/");
 		try {
-			
-			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("8072281468");
-			popupclose();
-			Thread.sleep(10000);
-			popupclose();
-			Thread.sleep(10000);
-			btnclick(m.getUsepwd());
+
+		//	btnclick(m.getSignin());
 			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test@123");
-			
-			Thread.sleep(2000);
-		
-			
+		//	type(m.getMobileno(), "8072281468");
 			Thread.sleep(5000);
-			btnclick(m.getLogin());
+		//	btnclick(m.getUsepwdbtn());
+			Thread.sleep(5000);
+		//	type(m.getPassword(), "test@123");
+		//	btnclick(m.getSignInpage());
+		//	Thread.sleep(5000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			
+			System.out.println("Already Logged in");
+			
 		}
 		
-		catch(Exception e) {
-			System.out.println("Already logged in");
+		Thread.sleep(5000);
+		try {
+			driver.findElement(By.xpath("//span[@class='app_close']")).click();
+		} catch (Exception e) {
+			System.out.println("No Popup to close");
 		}
-		 
-			popupclose();
-		
-		
+
+
+//Let's chat handle//
+		Thread.sleep(5000);
+		try {
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+
+
+		Thread.sleep(5000);
+				
 	
 //Step 3 : Navigate to user profile//
 
-		btnclick(m.getUserprofile());
+		//btnclick(m.getUserprofile());
+		driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
-
 		System.out.println("Successfully navigate to userprofile");
-
-// Step 4 : Navigate to Refer and earn
+		
+	// Step 4 : Navigate to Refer and earn
 
 		driver.swipe(790, 1100, 800, 70, 1000);
 		
 		Thread.sleep(3000);
 
-		btnclick(m.getReferearnpage());
+		btnclick(driver.findElement(By.xpath("//*[@text='INVITE NOW']")));
 		Thread.sleep(3000);
 		
 		logger.log(Status.PASS, "Successfully navigate to refer and earn page");
 
 		System.out.println("Successfully navigate to refer and earn page");
-
+		
+//Let's chat handle//
+				Thread.sleep(5000);
+				try {
+					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+					netty.click();
+					}catch (Exception e) {
+						// TODO: handle exception
+					}
+	
+	/*//Copy Code
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@class='code']")).click();
+				Thread.sleep(3000);
+			
+				System.out.println("Code was succesfully copied");
+*/
 //Step 5 : Do assertion for all the text in refer and earn page//			
 
-		Assert.assertEquals(gettext(m.getGrabyour()), "GRAB YOUR");
+		Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Grab your']"))), "GRAB YOUR");
 		
-		System.out.println(m.getGrabyour().getText());
-		Assert.assertEquals(gettext(m.getInstantrewards()), "Instant Rewards");
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@text='Grab your']"))));
 		
-		System.out.println(m.getInstantrewards().getText());
+		Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Instant Rewards']"))), "Instant Rewards");
+		
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@text='Instant Rewards']"))));
 
-		Assert.assertEquals(gettext(m.getSimplerway_txt()), "A simpler way to earn and get discounts");
+		Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@class='pcnt']"))), "A simpler way to earn and get discounts");
 		
-		System.out.println(m.getSimplerway_txt().getText());
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@class='pcnt']"))));
 
-		Assert.assertEquals(gettext(m.getInvite()), "Invite your friends and family");
+		Assert.assertEquals(gettext(driver.findElement(By.xpath("(//*[@text='Invite your friends and family'])"))), "Invite your friends and family");
 		
-		System.out.println(m.getInvite().getText());
+		System.out.println(driver.findElement(By.xpath("//*[@text='Invite your friends and family']")));
 
-		Assert.assertEquals(gettext(m.getShare_netemed_app_txt()),
+		Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='share the Netmeds app download link & Referral code with your friends and family']"))),
 				"share the Netmeds app download link & Referral code with your friends and family");
-
-			System.out.println(m.getShare_netemed_app_txt().getText());
-		Assert.assertEquals(gettext(m.getYouget_txt()), "You get");
+		 
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@text='share the Netmeds app download link & Referral code with your friends and family']"))));
 		
-		System.out.println(m.getYouget_txt().getText());
 
-		Assert.assertEquals(gettext(m.getNMSSupercash_txt()), "Rs.150 NMS SuperCash - after your Friend’s first order is delivered!");
+			
+		Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='You get']"))), "You get");
+		System.out.println(driver.findElement(By.xpath("//*[@text='You get']")).getText());
 		
-		System.out.println(m.getNMSSupercash_txt().getText());
 
-		Assert.assertEquals(gettext(m.getYourfrndsget_txt()), "Your Friends Get");
+		//Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Rs. 150  - after your Friend’s first order is delivered!']"))), "Rs. 150  - after your Friend’s first order is delivered!");
+		
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@text='Rs. 150  - after your Friend’s first order is delivered!']"))));
 
-		System.out.println(m.getYourfrndsget_txt().getText());
+		Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Your Friends Get']"))), "Your Friends Get");
+
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@text='Your Friends Get']"))));
 		
 	
-		Assert.assertTrue(gettext(m.getFlat20offer_txt()).contains("Flat 20% off"));
+		Assert.assertTrue(gettext(driver.findElement(By.xpath("//*[@text='Flat 20% off + 20% NMS SuperCash on their first order (minimum order value Rs.500)']"))).contains("Flat 20% off"));
 
-		System.out.println(m.getFlat20offer_txt().getText());
+		System.out.println(gettext(driver.findElement(By.xpath("//*[@text='Flat 20% off + 20% NMS SuperCash on their first order (minimum order value Rs.500)']"))));
 		
 
 		logger.log(Status.PASS, "all the texts were asserted successfully");
 		System.out.println("all the texts are asserted successfully");
 //Step 6: Referral code check//
 
-		String Actualreferralcodenumber = m.getYourreferralcode().getText();
-
-		String Originalreferralcodenumber = "TEST1932";
-
-		Assert.assertEquals(Actualreferralcodenumber, Originalreferralcodenumber);
+		String Actualreferralcodenumber = driver.findElement(By.xpath("//*[@class='code']")).getText();
 
 		System.out.println(Actualreferralcodenumber);
 
@@ -863,24 +874,15 @@ public class Youraccount extends MobileBaseClass {
 		
 		//Step 9 : Click share link
 
-		btnclick(m.getsharelink());
+		btnclick(driver.findElement(By.xpath("//*[@class='share-popup']")));
 		Thread.sleep(3000);
 
 		logger.log(Status.PASS, "Share link was opened successfully");
 		System.out.println("Share link was opened successfully");
 
 
-		driver.findElement(By.id("miui:id/buttonPanel")).click();
+		driver.findElement(By.xpath("//*[@class='close pull-right']")).click();
 
-		
-		//Copy Code
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Copy']")).click();
-		Thread.sleep(3000);
-		System.out.println("Code was succesfully copied");
-
-
-		
 
 		//btnclick(m.getTermscondition_link());
 
@@ -904,70 +906,73 @@ public class Youraccount extends MobileBaseClass {
 		logger.log(Status.PASS, "*************Helppage********************");
 
 //Step1 :Launch Browser//		
-		AndriodPom m = new AndriodPom();
-		
-		driver.launchApp();
-			
-			try {
-				popupclose();
+		//Step1 :Launch Browser//		
+				MsitePOM m = new MsitePOM();
+				//driver.manage().window().maximize();
+				driver.get("https://m.netmeds.com/");
+				try {
+
+				//	btnclick(m.getSignin());
+					Thread.sleep(5000);
+				//	type(m.getMobileno(), "8072281468");
+					Thread.sleep(5000);
+				//	btnclick(m.getUsepwdbtn());
+					Thread.sleep(5000);
+				//	type(m.getPassword(), "test@123");
+				//	btnclick(m.getSignInpage());
+				//	Thread.sleep(5000);
+					logger.log(Status.PASS, "Successfully navigate to home page");
+				} catch (Exception e) {
+					
+					System.out.println("Already Logged in");
+					
+				}
+				
 				Thread.sleep(5000);
-				popupclose();
-			btnclick(m.getLetsstarted());
-			} catch (Exception e) {
-				//driver.resetApp();
-				//driver.launchApp();
-			
-			}
-			
-			Thread.sleep(1000);
-			
-		try {
-			
-			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("8072281468");
-			popupclose();
-			Thread.sleep(10000);
-			popupclose();
-			Thread.sleep(10000);
-			btnclick(m.getUsepwd());
-			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test@123");
-			
-			Thread.sleep(2000);
-		
-			
-			Thread.sleep(5000);
-			btnclick(m.getLogin());
-		}
-		
-		catch(Exception e) {
-			System.out.println("Already logged in");
-		}
-		 
-			popupclose();
-		
-		
+				try {
+					driver.findElement(By.xpath("//span[@class='app_close']")).click();
+				} catch (Exception e) {
+					System.out.println("No Popup to close");
+				}
 
-//Step 3 : Navigate to user profile//
 
-		btnclick(m.getUserprofile());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		
+						
+			
+		//Step 3 : Navigate to user profile//
+
+				//btnclick(m.getUserprofile());
+				driver.findElement(By.xpath("//*[@text='Account']")).click();
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully navigate to userprofile");
+				System.out.println("Successfully navigate to userprofile");
 
 		System.out.println("Successfully navigate to userprofile");
+		
+//Let's chat handle//
+		Thread.sleep(5000);
+		try {
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
 
-// Step 4 : Navigate to Refer and earn
+
+		Thread.sleep(5000);
+
+// Step 4 : Navigate to help page
 
 		driver.swipe(790, 1100, 800, 70, 1000);
 		
-		 btnclick(m.getHelppage());
+		 btnclick(driver.findElement(By.xpath("//*[@class='help-link']")));
 		 
 		 Thread.sleep(3000);
 		 
-		 driver.swipe(800, 250, 800, 250, 3000);	 
+		// driver.swipe(800, 250, 800, 250, 3000);	 
 		 
-	List<WebElement>	list =  m.getLeftside_Link();
+	List<WebElement>	list =  driver.findElements(By.xpath("//*[@class='need_us ']"));
+	
 	
 	int help = list.size();
 	
@@ -978,15 +983,18 @@ public class Youraccount extends MobileBaseClass {
 			 
 		 {
 
-				Thread.sleep(3000);
-
+				Thread.sleep(5000);
+				
+				driver.swipe(82, 931, 82, 830, 1000);
 		
 				list.get(i).click();
-
-				 driver.navigate().back();
+				Thread.sleep(1500);
+				
+				
 				
 				Thread.sleep(1500);
-				driver.swipe(730, 330, 730, 240, 3000);
+				if (i>11) {
+				driver.swipe(730, 330, 730, 240, 3000);}
 
 				System.out.println(list.get(i).getText());
 				logger.log(Status.PASS, "Successfully all the topics are clicked");
@@ -1341,8 +1349,266 @@ public class Youraccount extends MobileBaseClass {
 		
 		}
 		
+		// **************************************************************Contact
+		// Us*************************************************************************************//
+
+		@Test(enabled = false)
+		public void contactus() throws Throwable {
+
+			logger = report.createTest("contact");
+			logger.log(Status.PASS, "*************contactus********************");
+
+			
+	//Step1 :Launch Browser//		
+			MsitePOM m = new MsitePOM();
+			//driver.manage().window().maximize();
+			driver.get("https://m.netmeds.com/");
+			try {
+
+			//	btnclick(m.getSignin());
+				Thread.sleep(5000);
+			//	type(m.getMobileno(), "8072281468");
+				Thread.sleep(5000);
+			//	btnclick(m.getUsepwdbtn());
+				Thread.sleep(5000);
+			//	type(m.getPassword(), "test@123");
+			//	btnclick(m.getSignInpage());
+			//	Thread.sleep(5000);
+				logger.log(Status.PASS, "Successfully navigate to home page");
+			} catch (Exception e) {
+				
+				System.out.println("Already Logged in");
+				
+			}
+			
+			Thread.sleep(5000);
+			try {
+				driver.findElement(By.xpath("//span[@class='app_close']")).click();
+			} catch (Exception e) {
+				System.out.println("No Popup to close");
+			}
+
+
+	
+
+			Thread.sleep(5000);
+					
+		
+	//Step 3 : Navigate to user profile//
+
+			//btnclick(m.getUserprofile());
+			driver.findElement(By.xpath("//*[@text='Account']")).click();
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to userprofile");
+			System.out.println("Successfully navigate to userprofile");
+			
+			
+			//Let's chat handle//
+			Thread.sleep(5000);
+			try {
+				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+				netty.click();
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			
+	// Step 4 : Navigate to contact us page
+	//Step 5 :get damged@netmeds text and Missing @ netmeds
+	//Step 6 :Purpose of contact
+			
 		
 
+			btnclick(driver.findElement(By.xpath("//*[@text='Contact us ']")));
+
+			// driver.findElement(By.xpath("//a[@class=\"contactus-link\"]")).click();
+			Thread.sleep(3000);
+
+			SoftAssert SoftAssert = new SoftAssert();
+
+			SoftAssert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='How would you like us to contact you?*']"))), "How would you like us to contact you?*");
+
+			SoftAssert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='E-mail ID']"))), "E-mail ID");
+
+			SoftAssert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Purpose of Contact*']"))), "Purpose of Contact*");
+
+			SoftAssert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Please state your message here*']"))), "Please state your message here*");
+
+			SoftAssert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Email me a copy of this message for my records.']"))), "Email me a copy of this message for my records.");
+
+			SoftAssert.assertAll();
+
+			Thread.sleep(3000);
+
+			logger.log(Status.PASS, "all the texts were asserted successfully");
+			System.out.println("all the texts are asserted successfully");
+
+			Select purpose = new Select(
+					driver.findElement(By.xpath("//*[@class='empty field-required Required-ddrpreason ']")));
+			purpose.selectByIndex(1);
+
+			Thread.sleep(3000);
+
+			logger.log(Status.PASS, "Successfully selected the purpose");
+
+			System.out.println("Successfully selected the purpose");
+
+	//Step 7 : State Your Message
+
+			type(driver.findElement(By.xpath("//*[@class='input-text Required-comments comtxt']")), "Testing Purpose");
+			Thread.sleep(3000);
+
+			logger.log(Status.PASS, "Successfully message has been entered");
+			System.out.println("Successfully message has been entered");
+
+	//Step 8 : Check email me a copy
+
+			btnclick(driver.findElement(By.xpath("//*[@nodeName='SPAN' and ./parent::*[@text='Email me a copy of this message for my records.']]")));
+
+			// driver.findElement(By.xpath("//*[@id=\"contact-form\"]/div[2]/div/div/label/span")).click();
+
+	//Step 9 : Click Submit
+			//btncli(m.getContactus_submit());
+
+			//driver.findElement(By.xpath("//button[@class=\"pink-btn contact-submit\"]")).click();
+
+			logger.log(Status.PASS, "Sucessfully Submitted the message");
+			System.out.println("Sucessfully Submitted the message");
+
+		}
+		
+		// **************************************************************Rate
+		// Us*************************************************************************************//
+
+		@Test(enabled = true)
+		public void rateus() throws Throwable {
+
+			logger = report.createTest("Rateus");
+			logger.log(Status.PASS, "*************Rateus********************");
+
+	//Step1 :Launch Browser//		
+			MsitePOM m = new MsitePOM();
+			//driver.manage().window().maximize();
+			driver.get("https://m.netmeds.com/");
+			try {
+
+			//	btnclick(m.getSignin());
+				Thread.sleep(5000);
+			//	type(m.getMobileno(), "8072281468");
+				Thread.sleep(5000);
+			//	btnclick(m.getUsepwdbtn());
+				Thread.sleep(5000);
+			//	type(m.getPassword(), "test@123");
+			//	btnclick(m.getSignInpage());
+			//	Thread.sleep(5000);
+				logger.log(Status.PASS, "Successfully navigate to home page");
+			} catch (Exception e) {
+				
+				System.out.println("Already Logged in");
+				
+			}
+			
+			Thread.sleep(5000);
+			try {
+				driver.findElement(By.xpath("//span[@class='app_close']")).click();
+			} catch (Exception e) {
+				System.out.println("No Popup to close");
+			}
+
+
+	
+
+			Thread.sleep(5000);
+					
+		
+	//Step 3 : Navigate to user profile//
+
+			//btnclick(m.getUserprofile());
+			driver.findElement(By.xpath("//*[@text='Account']")).click();
+			Thread.sleep(3000);
+			logger.log(Status.PASS, "Successfully navigate to userprofile");
+			System.out.println("Successfully navigate to userprofile");
+			
+			
+			//Let's chat handle//
+			Thread.sleep(5000);
+			try {
+				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+				netty.click();
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
+
+	// Step 4 : Navigate to Rate us page
+
+			driver.swipe(790, 1100, 800, 70, 1000);
+
+			btnclick(driver.findElement(By.xpath("//*[@text='Rate Us ']")));
+			Thread.sleep(3000);
+
+	//Step 5 : rate netmeds text
+
+			SoftAssert SoftAssert = new SoftAssert();
+			SoftAssert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='Rate Us']"))), "RATE NETMEDS");
+
+			SoftAssert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='ANY SUGGESTIONS']"))), "ANY SUGGESTIONS");
+
+			System.out.println(gettext(driver.findElement(By.xpath("//*[@text='Rate Us']"))));
+
+			System.out.println(gettext(driver.findElement(By.xpath("//*[@text='ANY SUGGESTIONS']"))));
+			
+	//Step 5 : Do different star ratings		
+
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-1 ng-star-inserted']")));
+			Thread.sleep(2000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-2 ng-star-inserted']")));
+			Thread.sleep(2000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-3 ng-star-inserted']")));
+			Thread.sleep(2000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-4 ng-star-inserted']")));
+			Thread.sleep(2000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-5 ng-star-inserted']")));
+			Thread.sleep(3000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-4 ng-star-inserted']")));
+			Thread.sleep(2000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-3 ng-star-inserted']")));
+			Thread.sleep(2000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-2 ng-star-inserted']")));
+			Thread.sleep(3000);
+			btnclick(driver.findElement(By.xpath("//*[@class='star star-1 ng-star-inserted']")));
+			Thread.sleep(3000);
+
+			logger.log(Status.PASS, "Successfully rating was given");
+
+			System.out.println("Successfully rating was given");
+			
+		
+	//Let's chat handle//
+				Thread.sleep(5000);
+				try {
+					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+					netty.click();
+					}catch (Exception e) {
+						// TODO: handle exception
+					}
+
+	//Step 6 : Write message//
+			Thread.sleep(3000);
+			type(driver.findElement(By.xpath("//*[@class='msg']")), "Testing purpose,please don't process");
+
+			logger.log(Status.PASS, "Successfully comments were added");
+
+			System.out.println("Successfully comments were added");
+	
+
+	//Step 7 : Submit Button
+
+		//	btncli(m.getSubmitmsg());
+
+			logger.log(Status.PASS, "Suggestion was submitted ");
+
+			System.out.println("Suggestion was submitted");
+		}
 				
 	
 	@AfterMethod()

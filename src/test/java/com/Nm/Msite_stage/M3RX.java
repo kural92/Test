@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -349,22 +350,39 @@ public class M3RX extends MobileBaseClass {
 				//driver.findElement(By.xpath("//android.widget.TextView[@text='Browse']")).click();
 				
 				Thread.sleep(3000);
+//Switch to Native_App
 				
 				
-		MobileElement image = (MobileElement) driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]"));
-		
-		image.click();
+		        Set<String> contextNames = driver.getContextHandles();
+		        for (String strContextName : contextNames) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }
+			  
+		        //
+		        Thread.sleep(3000);
+		        driver.findElement(By.xpath("(//*[@id='bitmap_view'])[3]|(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click(); //(//*[@knownSuperClass='android.widget.ImageView'])[5]")).click();
 				
-				Thread.sleep(3000);
+		        Thread.sleep(5000);
+				  driver.findElement(By.id("done")).click();
+				  
+		        
+		        //Switch to Chrome browser
+		        Set<String> contextNames1 = driver.getContextHandles();
+		        for (String strContextName : contextNames1) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		        }
+			  
+				/////			
 				
-			//driver.findElement(By.xpath("(//*[@resource-id='com.android.chrome:id/special_tile_icon'])[2]]")).click();
-				
-				//driver.findElement(By.xpath("(//*[@knownSuperClass='android.widget.FrameLayout'])[13]")).click();
-				
-				Thread.sleep(3000);//*[@class='android.widget.FrameLayout'][@index='3']
 				
 				
-			driver.findElement(By.xpath("//*[@id='done']|//android.widget.Button[@resource-id='com.android.chrome:id/done']")).click();
+				
 				
 				
 			//driver.findElement(By.xpath("(//*[@resource-id='android:id/title'])[6]")).click();
@@ -466,17 +484,17 @@ public class M3RX extends MobileBaseClass {
 					}
 				
 				Thread.sleep(5000);
-				driver.swipe(82, 1179, 82, 1160, 1000);
-				Thread.sleep(5000);
+				//driver.swipe(82, 1179, 82, 1160, 1000);
+			//	Thread.sleep(5000);
 				driver.findElement(By.xpath("//*[@class='btn-view ord-btn']|//android.widget.Button[@text='VIEW DETAILS']")).click();
 				Thread.sleep(5000);
 			
-				driver.swipe(82, 1600, 82, 0, 1000);
-				Thread.sleep(5000);
+				//driver.swipe(82, 1600, 82, 0, 1000);
+			//	Thread.sleep(5000);
 				//driver.swipe(82, 900, 82, 0, 1000);
-				Thread.sleep(5000);
+			//	Thread.sleep(5000);
 				
-				Thread.sleep(5000);
+				//Thread.sleep(5000);
 				driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
 
 //				btnclick(m.getCancel_Order());
