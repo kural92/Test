@@ -18,17 +18,20 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Nm.Base.MobileBaseClass;
+
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.TouchShortcuts;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class Msite_M2Flow {
+public class Msite_M2Flow extends MobileBaseClass {
 	
-	static WebDriver driver;
+	//static WebDriver driver;
 	
 	
 		  
@@ -38,7 +41,7 @@ public class Msite_M2Flow {
 
 		//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-		capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
+		capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
 
 		capabilities.setCapability("platformName", "Android");
 	//	capabilities.setCapability("deviceName", "vivo 1819");
@@ -76,15 +79,24 @@ public class Msite_M2Flow {
 		 // driver.manage().window().maximize();
 		  
 		  Thread.sleep(10000);
+		 // driver.findElement(By.xpath("//android.view.View[@text()='INTRODUCING NETMEDS LITE']/preceding-sibling::android.view.View[@index='0']")).click();
 		  try {
-		  driver.findElement(By.xpath("//span[@class='app_close']")).click();
+		  driver.findElement(By.xpath("//android.view.View[@text='✕']")).click();
 		  }catch (Exception e) {
 			// TODO: handle exception
 		}
 		  
 		  Thread.sleep(10000);
-		  driver.findElement(By.xpath("//android.view.View[@content-desc=\"Order Now\"]")).click();
-		  
+
+	
+		  driver.findElement(By.xpath("//android.view.View[@text='Order Now']")).click();
+		  try {
+			  Thread.sleep(10000);
+				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+				netty.click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 		  Thread.sleep(10000);
 		  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']")).click();
 		  
@@ -95,10 +107,10 @@ public class Msite_M2Flow {
 		  driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click();
 		  
 		  
-		  Thread.sleep(5000);
-		  driver.findElement(By.id("com.android.chrome:id/done")).click();
+		  Thread.sleep(10000);
+		  driver.findElement(By.xpath("//android.widget.Button[@text='Done']")).click();
 		  
-		  Thread.sleep(5000);
+		  Thread.sleep(15000);
 		  driver.findElement(By.xpath("//android.widget.RadioButton[@text='Search and Add medicines']")).click();
 		  
 		  

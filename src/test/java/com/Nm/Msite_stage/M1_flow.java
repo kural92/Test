@@ -64,7 +64,7 @@ public class M1_flow extends MobileBaseClass {
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-			capabilities.setCapability(MobileCapabilityType.UDID,"RZ8R20GLXTA" );  //fc95d519 // //FileAndEnv.envAndFile().get("UDID")
+			capabilities.setCapability(MobileCapabilityType.UDID,"NBBY79GM5LTCJBJR" );  //fc95d519 // //FileAndEnv.envAndFile().get("UDID")
 
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
@@ -153,10 +153,11 @@ public class M1_flow extends MobileBaseClass {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//android.view.View[@resource-id='page-header']/android.view.View[@index='1']/android.view.View/android.view.View")).click();
-
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//android.widget.Button[@text='Submit']/preceding-sibling::android.widget.EditText")).sendKeys(s);
-	
+		Thread.sleep(3000); 
 		driver.findElement(By.xpath("//android.view.View[@text='"+s+"']")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//android.widget.Button[@resource-id='product-addtocart-button']")).click();
@@ -170,11 +171,11 @@ driver.findElement(By.xpath("//android.view.View[@resource-id='top_search_icon']
 			}
 
 Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
+/*driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
+driver.swipe(0, 900, 0, 0, 1000);*/
 
 Thread.sleep(4000);
 	
@@ -191,14 +192,14 @@ int i1=Integer.parseInt(split[1]);
 Thread.sleep(3000);
 TouchAction touchAction = new TouchAction(driver);
 
-touchAction.tap(i-100,i1-100).perform();
-
+//touchAction.tap(i-100,i1-100).perform();
+driver.findElement(By.xpath("//android.widget.Button[@text='PROCEED']")).click();
 
 Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
+//driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
-touchAction.tap(i-100,i1-100).perform();
-//MobileElement PAY=(MobileElement)driver.findElement(By.xpath("//android.widget.Button[@text='PAY']"));PAY.click();
+//touchAction.tap(i-100,i1-100).perform();
+driver.findElement(By.xpath("//android.widget.Button[@text='PAY']")).click();
 Thread.sleep(3000);
 driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
