@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -33,6 +34,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
+import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
@@ -50,7 +52,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class Youraccount extends MobileBaseClass {
+public class Youraccount extends MsiteBaseClass {
 
 	
 	
@@ -988,11 +990,17 @@ public class Youraccount extends MobileBaseClass {
 				driver.swipe(82, 931, 82, 830, 1000);
 		
 				list.get(i).click();
+				Thread.sleep(3000);
+				
+				driver.navigate().to("https://m.netmeds.com/customer/account");
+				
+				driver.swipe(790, 1100, 800, 70, 1000);
+				Thread.sleep(3000);
+				
+				 btnclick(driver.findElement(By.xpath("//*[@class='help-link']")));
+				 Thread.sleep(3000);
 				Thread.sleep(1500);
 				
-				
-				
-				Thread.sleep(1500);
 				if (i>11) {
 				driver.swipe(730, 330, 730, 240, 3000);}
 
@@ -1015,92 +1023,64 @@ public class Youraccount extends MobileBaseClass {
 		logger.log(Status.PASS, "*************Legalinformation********************");
 
 		//Step1 :Launch Browser//		
-		AndriodPom m = new AndriodPom();
-		
-		driver.launchApp();
-			
-			try {
-				popupclose();
-				Thread.sleep(5000);
-				popupclose();
-			btnclick(m.getLetsstarted());
-			} catch (Exception e) {
-				//driver.resetApp();
-				//driver.launchApp();
-			
-			}
-			
-			Thread.sleep(1000);
-			
+		MsitePOM m = new MsitePOM();
+		//driver.manage().window().maximize();
+		driver.get("https://m.netmeds.com/");
 		try {
-			
-			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("8072281468");
-			popupclose();
-			Thread.sleep(10000);
-			popupclose();
-			Thread.sleep(10000);
-			btnclick(m.getUsepwd());
+
+		//	btnclick(m.getSignin());
 			Thread.sleep(5000);
-		
-			m.getPassword().sendKeys("test@123");
-			
-			Thread.sleep(2000);
-		
-			
+		//	type(m.getMobileno(), "8072281468");
 			Thread.sleep(5000);
-			btnclick(m.getLogin());
+		//	btnclick(m.getUsepwdbtn());
+			Thread.sleep(5000);
+		//	type(m.getPassword(), "test@123");
+		//	btnclick(m.getSignInpage());
+		//	Thread.sleep(5000);
+			logger.log(Status.PASS, "Successfully navigate to home page");
+		} catch (Exception e) {
+			
+			System.out.println("Already Logged in");
+			
 		}
 		
-		catch(Exception e) {
-			System.out.println("Already logged in");
+		Thread.sleep(5000);
+		try {
+			driver.findElement(By.xpath("//span[@class='app_close']")).click();
+		} catch (Exception e) {
+			System.out.println("No Popup to close");
 		}
-		 
-			popupclose();
-		
-		
-	//Step 3 : Navigate to user profile//
 
-			btnclick(m.getUserprofile());
-			Thread.sleep(3000);
-			logger.log(Status.PASS, "Successfully navigate to userprofile");
 
-			System.out.println("Successfully navigate to userprofile");
+
+				
+	
+//Step 3 : Navigate to user profile//
+
+		//btnclick(m.getUserprofile());
+		driver.findElement(By.xpath("//*[@text='Account']")).click();
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		System.out.println("Successfully navigate to userprofile");
+
+
+
+//Let's chat handle//
+Thread.sleep(5000);
+try {
+	MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+	netty.click();
+	}catch (Exception e) {
+		// TODO: handle exception
+	}
 
 	// Step 4 : Legal Information
 
 			driver.swipe(790, 1100, 800, 70, 1000);
-			btnclick(m.getLegalinfo());
-		Thread.sleep(3000);
-		List<WebElement>	list_tc =  m.getTC_Link();
-		
-		int help = list_tc.size();
-		
-		System.out.println("the element size is   "+help);
-		
-
-			 for (int i = 0; i<6; i++)
-				 
-			 {
-
-					Thread.sleep(3000);
-
+			Thread.sleep(3000);
+			btnclick(driver.findElement(By.xpath("//*[@href='/terms-and-conditions']")));
 			
-					list_tc.get(i).click();
-					
-					Thread.sleep(2000);
-
-					//driver.findElementByAccessibilityId("Navigate up").click();
-					
-				//driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"));
-				driver.navigate().back();
-					
-					Thread.sleep(1500);
-					
-					System.out.println(list_tc.get(i).getText());
-					logger.log(Status.PASS, "Successfully all the topics are clicked");
-				}
-		
+			Thread.sleep(3000);
 
 		logger.log(Status.PASS, "Terms and condition page is working properly");
 		System.out.println("Terms and condition page is working properly");
@@ -1118,66 +1098,75 @@ public class Youraccount extends MobileBaseClass {
 			logger.log(Status.PASS, "*************Offers Page********************");
 
 			//Step1 :Launch Browser//		
-			AndriodPom m = new AndriodPom();
-			
-			driver.launchApp();
-				
-				try {
-					popupclose();
-					Thread.sleep(5000);
-					popupclose();
-				btnclick(m.getLetsstarted());
-				} catch (Exception e) {
-					//driver.resetApp();
-					//driver.launchApp();
-				
-				}
-				
-				Thread.sleep(1000);
-				
+			MsitePOM m = new MsitePOM();
+			//driver.manage().window().maximize();
+			driver.get("https://m.netmeds.com/");
 			try {
-				
-				Thread.sleep(2000);
-				m.getMobilenumber().sendKeys("8072281468");
-				popupclose();
-				Thread.sleep(10000);
-				popupclose();
-				Thread.sleep(10000);
-				btnclick(m.getUsepwd());
+
+			//	btnclick(m.getSignin());
 				Thread.sleep(5000);
-			
-				m.getPassword().sendKeys("test@123");
-				
-				Thread.sleep(2000);
-			
-				
+			//	type(m.getMobileno(), "8072281468");
 				Thread.sleep(5000);
-				btnclick(m.getLogin());
+			//	btnclick(m.getUsepwdbtn());
+				Thread.sleep(5000);
+			//	type(m.getPassword(), "test@123");
+			//	btnclick(m.getSignInpage());
+			//	Thread.sleep(5000);
+				logger.log(Status.PASS, "Successfully navigate to home page");
+			} catch (Exception e) {
+				
+				System.out.println("Already Logged in");
+				
 			}
 			
-			catch(Exception e) {
-				System.out.println("Already logged in");
+			Thread.sleep(5000);
+			try {
+				driver.findElement(By.xpath("//span[@class='app_close']")).click();
+			} catch (Exception e) {
+				System.out.println("No Popup to close");
 			}
-			 
-				popupclose();
+
+
+
 			
 			
 		
 
-					driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
-					Thread.sleep(3000);
+					driver.findElement(By.xpath("//*[@class='counter']")).click();
+					Thread.sleep(5000);
 					
+					
+					//Let's chat handle//
+					Thread.sleep(5000);
+					try {
+						MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+						netty.click();
+						}catch (Exception e) {
+							// TODO: handle exception
+						}
+					Thread.sleep(3000);
+				//	driver.swipe(82, 1275, 82, 1152, 1000);
+					//Switch to Native_App
+					
+					
+			        Set<String> contextNames = driver.getContextHandles();
+			        for (String strContextName : contextNames) {
+			            if (strContextName.contains("NATIVE_APP")) {
+			                driver.context("NATIVE_APP");
+			                break;
+			            }
+			        }
 					for (int i = 0; i < 16; i++) {
 						Thread.sleep(3000);
-						if (!(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/cart_remove_product")).size() == 0)) {
+						if (!(driver.findElements(By.xpath("//*[@text='REMOVE']")).size() == 0)) {
 							
 
 							try {
 	
-									
-								btnclick(m.getRemovebutton());
+								Thread.sleep(3000);
+								driver.findElement(By.xpath("//*[@text='REMOVE']")).click();
 								
-								
+								Thread.sleep(3000);
 								logger.log(Status.PASS, "Items are removed successfully");
 								System.out.println("Items are removed from the cart");
 							} catch (Exception e) {
@@ -1190,29 +1179,48 @@ public class Youraccount extends MobileBaseClass {
 						}
 
 					}
-							
+					 //Switch to Chrome browser
+			        Set<String> contextNames1 = driver.getContextHandles();
+			        for (String strContextName : contextNames1) {
+			            if (strContextName.contains("CHROMIUM")) {
+			                driver.context("CHROMIUM");
+			                break;
+			            }
+			        }			
 					driver.navigate().back();
 					
-		//Step 3 : Navigate to user profile//
+					//Step 3 : Navigate to user profile//
 
-				btnclick(m.getUserprofile());
-				Thread.sleep(3000);
-				logger.log(Status.PASS, "Successfully navigate to userprofile");
+					//btnclick(m.getUserprofile());
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//*[@text='Account']")).click();
+					Thread.sleep(3000);
+					logger.log(Status.PASS, "Successfully navigate to userprofile");
+					System.out.println("Successfully navigate to userprofile");
 
-				System.out.println("Successfully navigate to userprofile");
+
+
+			//Let's chat handle//
+			Thread.sleep(5000);
+			try {
+				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+				netty.click();
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
 				
 	//Step 4 : Offers Page
 				Thread.sleep(3000);
-				btnclick(m.getOffers_page());
-				Thread.sleep(2000);
+				btnclick(driver.findElement(By.xpath("//*[@text='Offers ']")));
+				Thread.sleep(3000);
 				
 	//Medicine
 				
-				driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/img_offer_full_image'])[1]")).click();
+				driver.findElement(By.xpath("(//*[@class='offer_sub_img'])[1]")).click();
 				Thread.sleep(3000);
-		String couponcode =		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_offer_coupon")).getText();
+		String couponcode =		driver.findElement(By.xpath("(//*/*/*[@nodeName='P' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='H3'] and ./parent::*[@nodeName='DIV']])[1]")).getText();
 		
-			driver.findElement(By.xpath("//android.widget.Button[@text ='COPY CODE AND SHOP']")).click();
+			driver.findElement(By.xpath("//*[@text=' COPY CODE ']")).click();
 			
 			
 			
@@ -1220,54 +1228,77 @@ public class Youraccount extends MobileBaseClass {
 			
 			
 				Thread.sleep(3000);
-				try {
+				
 					
-					type(m.getM3productsearch(),"Flavedon MR 35mg Tablet 10'S");
-					
-					Thread.sleep(3000);
-			WebElement		Cart_btn = (driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")));
+					type(driver.findElement(By.xpath("//*[@class='input-text aa-input']")),"Duphaston 10mg Tablet 10'S" );
 
-					btnclick(Cart_btn);
-					
-					Thread.sleep(3000);
-					
-					System.out.println("successfully Items are added");
-					
-				} catch (Exception e) {
-					System.out.println("Items are available in the cart");
-				}
-				
-				
-				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
-				Thread.sleep(3000);
-				
-				
-				//Select qtyincrease = new Select(m.getQty_Incr_Decr());
-				//qtyincrease.selectByIndex(3);
-				
-			driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();	
+					// btncli(m.getSearchIcon());
+					logger.log(Status.PASS, "Successfully navigate to search result page");
+
+				//	String Cart_Excel = BaseClass.getExcelData("Otcandnonrx", i, 1);
+
+					// Step 7 : Add product to the cart//
+					try {
+						Thread.sleep(5000);
+
+						WebDriverWait wait = new WebDriverWait(driver, 30);
+						WebElement Cart_btn = wait.until(
+								ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='search-cartbtn toCart addtocartbtn prodbtn addtocartdirctbtn']")));
+
+						Thread.sleep(5000);
+
+						btnclick(Cart_btn);
+						
+						System.out.println("successfully Items are added");
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
 		
-			WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='11']"));
-			
-			Thread.sleep(2000);
-			qty_increase.click();
+		Thread.sleep(3000);	
+					
+		driver.navigate().to("https://m.netmeds.com/checkout/cart");
+		Thread.sleep(3000);
+		
+		//Let's chat handle//
+		Thread.sleep(5000);
+		try {
+			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+			netty.click();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}    
+		
+		driver.swipe(82, 1300, 82, 450, 1000);	
+		
+		driver.swipe(82, 1300, 82, 450, 1000);	
+		
 		
 		
 	//Apply Promo
-	if ((driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code"))).size()!=0) {
+	if ((driver.findElements(By.xpath("//*[@class='discountamt ng-star-inserted']"))).size()!=0) {
 				
-	//remove code
+	//remove code 
 			
 			try {
-				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
-				Thread.sleep(2000);
-				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/apply_remove_coupon_btn")).click();
-				//driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_dismiss")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@class='arricon']")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@class='apply-coupon']")).click();
+				Thread.sleep(5000);
+			driver.findElement(By.xpath("//*[@css='BUTTON.close']")).click();
+			
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@class='arricon']")).click();
+			
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//*[@class='cpninput' and @top='true']")).sendKeys(couponcode);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//*[@class='apply-coupon' and @top='true']")).click();
 			}catch (Exception e) {
 				
-				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
-				Thread.sleep(2000);
-				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_dismiss")).click();
+				//driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@css='BUTTON.close']")).click();
 				
 			}
 			
@@ -1275,35 +1306,35 @@ public class Youraccount extends MobileBaseClass {
 		}
 		else  {
 			
-		}
+		
 		
 		
 			Thread.sleep(2000);
-			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
+			driver.findElement(By.xpath("//*[@class='arricon']")).click();
 			
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/promo_code']")).sendKeys(couponcode);
+			driver.findElement(By.xpath("//*[@class='cpninput' and @top='true']")).sendKeys(couponcode);
 			Thread.sleep(3000);
-			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/apply_remove_coupon_btn")).click();
+			driver.findElement(By.xpath("//*[@class='apply-coupon' and @top='true']")).click();
 		
 		
 		Thread.sleep(3000);  
 		
-		driver.navigate().back();
 		
-		driver.navigate().back();
 		
-		driver.navigate().back();
+}	
+	
+	driver.navigate().to("https://m.netmeds.com/offers");
 //Diagonstics	
 		
-		driver.findElement(By.xpath("//android.widget.TextView[@text ='Diagnostics']")).click();
+		driver.findElement(By.xpath("//*[@href='#diagnostics']")).click();
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/img_offer_full_image'])[1]")).click();
+		driver.findElement(By.xpath("(//*[@class='offer_sub_img'])[1]")).click();
 		
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("//android.widget.Button[@text='BOOK NOW']")).click();
+		driver.findElement(By.xpath("//*[@text=' Book Now ']")).click();
 		
 		Thread.sleep(2000);
 		
@@ -1314,27 +1345,21 @@ public class Youraccount extends MobileBaseClass {
 		
 //Consultation
 		
-		//Step 3 : Navigate to user profile//
-
-		btnclick(m.getUserprofile());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to userprofile");
-
-		System.out.println("Successfully navigate to userprofile");
+	driver.navigate().to("https://m.netmeds.com/offers");
 		
 
 		Thread.sleep(3000);
-		btnclick(m.getOffers_page());
+	//	btnclick(m.getOffers_page());
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("//android.widget.TextView[@text ='Consultation']")).click();
+		driver.findElement(By.xpath("//*[@href='#consultation']")).click();
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/img_offer_full_image'])[1]")).click();
+		driver.findElement(By.xpath("(//*[@class='offer_sub_img'])[1]")).click();
 		
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("//android.widget.Button[@text='CONSULT NOW']")).click();
+		driver.findElement(By.xpath("//*[@text=' Consult Now ']")).click();
 		
 		Thread.sleep(2000);
 		
@@ -1345,9 +1370,12 @@ public class Youraccount extends MobileBaseClass {
 		
 		System.out.println("Offer Page is working properly");
 		
-	
+				
 		
-		}
+}
+
+				
+		
 		
 		// **************************************************************Contact
 		// Us*************************************************************************************//
@@ -1480,7 +1508,7 @@ public class Youraccount extends MobileBaseClass {
 		// **************************************************************Rate
 		// Us*************************************************************************************//
 
-		@Test(enabled = true)
+		@Test(enabled = false)
 		public void rateus() throws Throwable {
 
 			logger = report.createTest("Rateus");
@@ -1589,7 +1617,7 @@ public class Youraccount extends MobileBaseClass {
 					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
 					netty.click();
 					}catch (Exception e) {
-						// TODO: handle exception
+						System.out.println("No netty popup");
 					}
 
 	//Step 6 : Write message//
@@ -1609,6 +1637,147 @@ public class Youraccount extends MobileBaseClass {
 
 			System.out.println("Suggestion was submitted");
 		}
+	
+		
+		//*****************************************************My reward*************************
+
+//My Orders Filter Page
+			
+			
+			@Test(enabled = true)
+			public void Myrewards() throws Throwable {
+
+				logger = report.createTest("My rewards");
+				logger.log(Status.PASS, "*************Myrewards********************");
+
+			
+				//Step1 :Launch Browser//		
+				MsitePOM m = new MsitePOM();
+				//driver.manage().window().maximize();
+				driver.get("https://m.netmeds.com/");
+				try {
+
+				//	btnclick(m.getSignin());
+					Thread.sleep(5000);
+				//	type(m.getMobileno(), "8072281468");
+					Thread.sleep(5000);
+				//	btnclick(m.getUsepwdbtn());
+					Thread.sleep(5000);
+				//	type(m.getPassword(), "test@123");
+				//	btnclick(m.getSignInpage());
+				//	Thread.sleep(5000);
+					logger.log(Status.PASS, "Successfully navigate to home page");
+				} catch (Exception e) {
+					
+					System.out.println("Already Logged in");
+					
+				}
+				
+				Thread.sleep(5000);
+				try {
+					driver.findElement(By.xpath("//span[@class='app_close']")).click();
+				} catch (Exception e) {
+					System.out.println("No Popup to close");
+				}
+
+				Thread.sleep(5000);
+						
+			
+		//Step 3 : Navigate to user profile//
+
+				//btnclick(m.getUserprofile());
+				btnclick(m.getmyaccount());
+				Thread.sleep(3000);
+				logger.log(Status.PASS, "Successfully navigate to userprofile");
+				System.out.println("Successfully navigate to userprofile");
+
+		//Navigate to My rewards
+			
+				
+				
+				Thread.sleep(3000);
+				
+				btnclick(m.getMyrewards());
+				
+				Thread.sleep(3000);
+				
+				//Let's chat handle//
+				Thread.sleep(5000);
+				try {
+					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+					netty.click();
+					}catch (Exception e) {
+						System.out.println("No netty popup");
+						
+					
+					}
+				
+				
+				Thread.sleep(3000);
+				
+				driver.findElement(By.xpath("(//*[@class='scratchcard ng-star-inserted'])[1]")).click();
+				Thread.sleep(3000);
+				driver.swipe(345, 1029, 900, 1105, 1000);
+
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@nodeName='SPAN' and ./parent::*[@nodeName='BUTTON']]")).click();
+				
+				Thread.sleep(5000);
+				
+				
+				System.out.println("offer percentage " + driver.findElement(By.xpath("//*[@css='H3.subtitle']")).getAttribute("innerText"));
+				
+				Thread.sleep(3000);
+				
+				System.out.println("offer description is " + driver.findElement(By.xpath("//*[@css='P.content']")).getAttribute("innerText"));
+				
+				
+				Thread.sleep(3000);
+				 
+				System.out.println("offer expiry_date is " + driver.findElement(By.xpath("//*[@class='expiredate ng-star-inserted']")).getText());
+				
+				Thread.sleep(3000);
+				
+				System.out.println("offercode is  " + driver.findElement(By.xpath("//*[@css='INPUT.form-control' and @top='true']")).getAttribute("innerText"));
+				 
+				Thread.sleep(3000);
+				
+				try{
+					driver.findElement(By.xpath("//*[@class='primarybtn ng-star-inserted']")).isEnabled();
+					
+					System.out.println("Book Now button is enabled	");
+				}catch (Exception e) {
+					System.out.println("no Book Now button is enabled	");
+				}
+				
+				
+				Thread.sleep(3000);
+				
+				List <WebElement> instruction_details = driver.findElements(By.xpath("//*[@class='mat-expansion-panel-header-title' and @top='true']"));
+				
+				System.out.println("the element size is" + instruction_details.size());
+				
+				for (int i=0;i<instruction_details.size();i++) {
+					
+					Thread.sleep(3000);
+					
+					instruction_details.get(i).click();
+					
+					
+				}
+				
+				logger.log(Status.PASS, "Instruction details are displaying properly");
+				System.out.println("Instruction details are displaying properly");
+				driver.navigate().back();
+				
+				driver.navigate().back();
+				
+				logger.log(Status.PASS, "My rewards section is working properly");
+				System.out.println("My rewards section is working properly");
+				
+				
+				
+			}
 				
 	
 	@AfterMethod()
