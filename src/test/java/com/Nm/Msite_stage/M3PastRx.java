@@ -31,6 +31,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
+import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
@@ -47,7 +48,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class M3PastRx extends MobileBaseClass {
+public class M3PastRx extends MsiteBaseClass {
 
 	
 	
@@ -171,11 +172,11 @@ public class M3PastRx extends MobileBaseClass {
 		MsitePOM m = new MsitePOM();
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
-		try {
+	/*	try {
 
 		//	btnclick(m.getSignin());
 			Thread.sleep(5000);
-		//	type(m.getMobileno(), "8072281468");
+		
 			Thread.sleep(3000);
 		//	btnclick(m.getUsepwdbtn());
 			Thread.sleep(3000);
@@ -187,73 +188,41 @@ public class M3PastRx extends MobileBaseClass {
 			
 			System.out.println("Already Logged in");
 			
-		}
+		}*/
 		
-		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup to close");
-		}
+		Thread.sleep(6000);
+		
+		popupclose() ;
 
 
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-
-
+		letschat();
 		Thread.sleep(5000);
 				
-				//System.out.println("Successfully closed let's chat");
-
-		// Step 4 : Navigate to Mysubscription page//
-
-		//btnclick(m.getMysubscriptionpage());
-				Thread.sleep(5000);
-				driver.findElement(By.xpath("//android.view.View[@content-desc='Subscription']|//*[@text='Subscription']")).click();
+// Step 4 : Navigate to Mysubscription page//
+		Thread.sleep(5000);
+		btnclick(m.getMysubscriptionpage());
 		Thread.sleep(5000);
 		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
 		System.out.println("Successfully navigate to mysubscriptionpage");
-		// Step 5 :Click create new fill button//
-
 		
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
+		letschat();
+		Thread.sleep(5000);	
+//create NewSubscription
+		
+		btnclick(m.getNewSubscription());
+
+// Step 6:Search Product//
 
 		Thread.sleep(5000);
-		
-		
-		
-		
-		driver.findElement(By.xpath("//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")).click();
+		for (int i = 0; i < 3; i++) {
 
-		// Step 6:Search Product//
-
-		Thread.sleep(5000);
-		for (int i = 0; i < 2; i++) {
-
-			//type(m.getM3productsearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
+			type(m.getM3productsearch(), MobileBaseClass.getExcelData("Rx", i, 0));
 			
-			//m.getM3productsearch().click();
-			
-			type(driver.findElement(By.xpath("//*[@class='ais-SearchBox-input']|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.widget.EditText")), MobileBaseClass.getExcelData("Rx", i, 0));
-
-			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
 
-		//	String Cart_Excel = BaseClass.getExcelData("Otcandnonrx", i, 1);
-
-			// Step 7 : Add product to the cart//
+// Step 7 : Add product to the cart//
 			try {
 				Thread.sleep(5000);
 
@@ -271,19 +240,12 @@ public class M3PastRx extends MobileBaseClass {
 			}
 
 			
-			//Let's chat handle//
+	//Let's chat handle//
+			letschat();
+			
 			Thread.sleep(5000);
-			try {
-				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-				netty.click();
-				}catch (Exception e) {
-					// TODO: handle exception
-				}
-
-			Thread.sleep(5000);
-			//driver.navigate().back();
-
-			driver.findElement(By.xpath("//*[@class='action addcart']|//android.widget.Button[@text='ADD TO CART']")).click();
+//Add to cart	
+			btnclick(m.getAddtocart());
 		}
 
 		try {
@@ -304,36 +266,19 @@ public class M3PastRx extends MobileBaseClass {
 //driver.swipe(530, 1500, 530, 550, 1000);
 		
 		//Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
+		letschat();
 
 		// Step 13 : Click Proceed Button//
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@class='btn-checkout btn btn_to_checkout']|//android.widget.Button[@text='PROCEED']")).click();
+		//driver.findElement(By.xpath("//*[@class='btn-checkout btn btn_to_checkout']|//android.widget.Button[@text='PROCEED']")).click();
+		btnclick(m.getProceedtocheckout());
 		Thread.sleep(5000);
 		
 		//driver.swipe(530, 1500, 530, 550, 1000);
 		Thread.sleep(5000);
 
 		//Let's chat handle//
-				Thread.sleep(5000);
-				try {
-					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-					netty.click();
-					System.out.println("Successfully closed let's chat");
-					}catch (Exception e) {
-						System.out.println("No pop up available to close");
-					}
-
-
-	
-		
-
+				letschat();
 
 		
 		//Upload Prescription
@@ -360,10 +305,10 @@ public class M3PastRx extends MobileBaseClass {
 				
 				Thread.sleep(3000);
 				driver.swipe(82, 1750, 82, 0, 1000);
-				Thread.sleep(5000);
-				//driver.findElement(By.xpath("//android.widget.Button[@text='SCHEDULE DELIVERY']")).click();  
+				Thread.sleep(3000);
 				
-				driver.navigate().to("https://m.netmeds.com/checkout/subscription");
+				driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();
+				
 		//driver.findElement(By.xpath("//android.view.View[@text='Repeat every 60 days']/android.widget.RadioButton")).click();
 		
 	//	Thread.sleep(3000);
@@ -378,7 +323,7 @@ public class M3PastRx extends MobileBaseClass {
 
 	//	btnclick(m.getNextbutton());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@class='action']|//android.widget.Button[@text='NEXT']")).click();
+		btnclick(m.getNextbutton());
 		
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully Next button was clicked");
@@ -389,7 +334,7 @@ public class M3PastRx extends MobileBaseClass {
 		
 		driver.swipe(530, 1440, 530, 0, 1000);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@text='Subscribe']|//android.widget.Button[@text='SUBSCRIBE']")).click();
+		btnclick(m.getSubscribe());
 		logger.log(Status.PASS, "Successfully Subscribe button was clicked");;
 		
 
