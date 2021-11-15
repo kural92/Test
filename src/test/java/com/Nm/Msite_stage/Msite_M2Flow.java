@@ -10,22 +10,37 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+<<<<<<< HEAD
 import com.Nm.Pom.MsitePOM;
+=======
+import com.Nm.Base.MobileBaseClass;
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.TouchShortcuts;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class Msite_M2Flow {
+public class Msite_M2Flow extends MobileBaseClass {
 	
+<<<<<<< HEAD
 	 private String reportDirectory = "reports";
 	    private String reportFormat = "xml";
 	    private String testName = "Untitled";
 	    protected AndroidDriver<AndroidElement> driver = null;
+=======
+	//static WebDriver driver;
+	
+	
+		  
+	@BeforeClass
+	public void launchbrowser() throws IOException {
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 
 	    DesiredCapabilities dc = new DesiredCapabilities();
 	    
@@ -40,6 +55,44 @@ public class Msite_M2Flow {
 	        driver.setLogLevel(Level.INFO);
 	    }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
+
+=======
+		//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
+		
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+>>>>>>> fee5a5e5d6a6036abd930620544a2e22402e0248
+		capabilities.setCapability("platformName", "Android");
+	//	capabilities.setCapability("deviceName", "vivo 1819");
+	//	capabilities.setCapability("platformVersion","10.0.0" );
+		//for m-site
+		capabilities.setCapability("chromedriverExecutable", ".//input//chromedriver.exe");
+		//for install Apk file
+		//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
+		// already installed app
+		/*capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
+		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
+		capabilities.setCapability("noReset", true);
+		*/
+		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
+		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
+		capabilities.setCapability("noReset", true);
+		
+		capabilities.setCapability("autoDismissAlerts", true);  
+		
+		
+		try {
+			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+			
+		} catch (MalformedURLException e) {
+			System.out.println(e.getMessage());
+		}
+				
+	}
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 	  
 	  
 	  @Test(enabled = true)
@@ -49,16 +102,39 @@ public class Msite_M2Flow {
 		 // driver.manage().window().maximize();
 		  MsitePOM m = new MsitePOM();
 		  Thread.sleep(10000);
+		 // driver.findElement(By.xpath("//android.view.View[@text()='INTRODUCING NETMEDS LITE']/preceding-sibling::android.view.View[@index='0']")).click();
 		  try {
+<<<<<<< HEAD
 		  //driver.findElement(By.xpath("//span[@class='app_close']")).click();
 			  m.getMsite_HomeScreen_POP_UP().click();
+=======
+		  driver.findElement(By.xpath("//android.view.View[@text='✕']")).click();
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 		  }catch (Exception e) {
 			// TODO: handle exception
 		}
 		  
 		  Thread.sleep(10000);
+<<<<<<< HEAD
 		 // driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
 		  m.getMsite_OrderNow().click();
+=======
+<<<<<<< HEAD
+
+	
+		  driver.findElement(By.xpath("//android.view.View[@text='Order Now']")).click();
+		  try {
+			  Thread.sleep(10000);
+				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+				netty.click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+=======
+		  driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]")).click();
+		  
+>>>>>>> fee5a5e5d6a6036abd930620544a2e22402e0248
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 		  Thread.sleep(10000);
 		//  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
 		  m.getMsite_Upload_Prescription().click();
@@ -95,12 +171,21 @@ public class Msite_M2Flow {
 	            }
 	        }
 		  
+<<<<<<< HEAD
 			/////		
 		  
 		 
 		  Thread.sleep(5000);
 	//	  driver.findElement(By.xpath("(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButton[@text='Search and Add medicines']")).click();
 		m.getMsite_M2_searchMedicine().click();  
+=======
+		  Thread.sleep(10000);
+		  driver.findElement(By.xpath("//android.widget.Button[@text='Done']")).click();
+		  
+		  Thread.sleep(15000);
+		  driver.findElement(By.xpath("//android.widget.RadioButton[@text='Search and Add medicines']")).click();
+		  
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 		  
 		  Thread.sleep(5000);
 		//  driver.findElement(By.xpath("//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")).click();

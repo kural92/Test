@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -31,6 +32,7 @@ import org.testng.annotations.Test;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
+import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
@@ -47,7 +49,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class M3RX extends MobileBaseClass {
+public class M3RX extends MsiteBaseClass {
 
 	
 	
@@ -63,7 +65,7 @@ public class M3RX extends MobileBaseClass {
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
 
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
@@ -168,167 +170,167 @@ public class M3RX extends MobileBaseClass {
 		logger.log(Status.PASS, "*************M3RX*******************");
 
 		// Step1 :Launch Browser//
-		MsitePOM m = new MsitePOM();
-		//driver.manage().window().maximize();
-		driver.get("https://m.netmeds.com/");
-		try {
-
-		//	btnclick(m.getSignin());
-			Thread.sleep(5000);
-		//	type(m.getMobileno(), "8072281468");
-			Thread.sleep(3000);
-		//	btnclick(m.getUsepwdbtn());
-			Thread.sleep(3000);
-		//	type(m.getPassword(), "test@123");
-		//	btnclick(m.getSignInpage());
-		//	Thread.sleep(3000);
-			logger.log(Status.PASS, "Successfully navigate to home page");
-		} catch (Exception e) {
-			
-			System.out.println("Already Logged in");
-			
-		}
 		
-		Thread.sleep(3000);
-		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup to close");
-		}
+				MsitePOM m = new MsitePOM();
+				//driver.manage().window().maximize();
+				driver.get("https://m.netmeds.com/");
+			/*	try {
 
-
-		
-		//Let's chat handle//
-		Thread.sleep(3000);
-		try {
-			driver.switchTo().frame("haptik-xdk");
-			Actions acc = new Actions(driver);
-			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
-					.perform();
-			driver.findElement(By.xpath("//*[@android.widget.Image='This image isn‘t labelled. Open the 'More options' menu at the top right to get image descriptions.']")).click();
-			driver.switchTo().defaultContent();
-		} catch (Exception e) {
-			System.out.println("Successfully closed let's chat");
-		}
-
-		Thread.sleep(3000);
+				//	btnclick(m.getSignin());
+					Thread.sleep(5000);
 				
-	
-// Step 4 : Navigate to Mysubscription page//
+					Thread.sleep(3000);
+				//	btnclick(m.getUsepwdbtn());
+					Thread.sleep(3000);
+				//	type(m.getPassword(), "test@123");
+				//	btnclick(m.getSignInpage());
+				//	Thread.sleep(3000);
+					logger.log(Status.PASS, "Successfully navigate to home page");
+				} catch (Exception e) {
+					
+					System.out.println("Already Logged in");
+					
+				}*/
+				
+				Thread.sleep(6000);
+				
+				popupclose() ;
 
-		//btnclick(m.getMysubscriptionpage());
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//android.view.View[@content-desc='Subscription']")).click();
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
-		System.out.println("Successfully navigate to mysubscriptionpage");
-		// Step 5 :Click create new fill button//
 
-		
-//Let's chat handle//
-		Thread.sleep(3000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-
-		Thread.sleep(3000);
-		
-		
-		
-		
-		driver.findElement(By.xpath("//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")).click();
+		//Let's chat handle//
+				letschat();
+				Thread.sleep(5000);
+						
+		// Step 4 : Navigate to Mysubscription page//
+				Thread.sleep(5000);
+				btnclick(m.getMysubscriptionpage());
+				Thread.sleep(5000);
+				logger.log(Status.PASS, "Successfully navigate to mysubscriptionpage");
+				System.out.println("Successfully navigate to mysubscriptionpage");
+				
+		//Let's chat handle//
+				letschat();
+				Thread.sleep(5000);	
+		//create NewSubscription
+				
+				btnclick(m.getNewSubscription());
 
 		// Step 6:Search Product//
 
-		Thread.sleep(3000);
-		for (int i = 0; i < 2; i++) {
+				Thread.sleep(5000);
+				for (int i = 0; i < 3; i++) {
 
-			//type(m.getM3productsearch(), BaseClass.getExcelData("Otcandnonrx", i, 0));
-			
-			//m.getM3productsearch().click();
-			
-			type(driver.findElement(By.xpath("//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.widget.EditText")), MobileBaseClass.getExcelData("Rx", i, 0));
+					type(m.getM3productsearch(), MobileBaseClass.getExcelData("Rx", i, 0));
+					
+					logger.log(Status.PASS, "Successfully navigate to search result page");
 
-			// btncli(m.getSearchIcon());
-			logger.log(Status.PASS, "Successfully navigate to search result page");
+		// Step 7 : Add product to the cart//
+					try {
+						Thread.sleep(5000);
 
-		//	String Cart_Excel = BaseClass.getExcelData("Otcandnonrx", i, 1);
+						WebDriverWait wait = new WebDriverWait(driver, 30);
+						WebElement Cart_btn = wait.until(
+								ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='btn btn_to_cart m-0'])[1]|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.view.View[4]/android.view.View/android.widget.Button")));
 
-			// Step 7 : Add product to the cart//
-			try {
-				Thread.sleep(3000);
+						Thread.sleep(5000);
 
-				WebDriverWait wait = new WebDriverWait(driver, 30);
-				WebElement Cart_btn = wait.until(
-						ExpectedConditions.elementToBeClickable(By.xpath("//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.view.View[4]/android.view.View/android.widget.Button")));
+						btnclick(Cart_btn);
+						
+						System.out.println("successfully Items are added");
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
 
-				Thread.sleep(3000);
+					
+			//Let's chat handle//
+					letschat();
+					
+					Thread.sleep(5000);
+		//Add to cart	
+					btnclick(m.getAddtocart());
+				}
 
-				btnclick(Cart_btn);
+				try {
+				driver.findElement(By.xpath("//android.widget.TextView[@text='PROCEED']")).click();
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
 				
-				System.out.println("successfully Items are added");
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-
-			Thread.sleep(5000);
-			//driver.navigate().back();
-
-			driver.findElement(By.xpath("//android.widget.Button[@text='ADD TO CART']")).click();
-		}
-
-		try {
-		driver.findElement(By.xpath("//android.widget.TextView[@text='PROCEED']")).click();
-		}catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		
-		driver.navigate().to("https://m.netmeds.com/checkout/cart/subscription");
-		
-		
-		Thread.sleep(5000);
-		logger.log(Status.PASS, "Successfully navigate to cartpage");
-
-		driver.swipe(530, 1500, 530, 0, 1000);
-		
-//driver.swipe(530, 1500, 530, 550, 1000);
 				
+				driver.navigate().to("https://m.netmeds.com/checkout/cart/subscription");
+				
+				
+				Thread.sleep(5000);
+				logger.log(Status.PASS, "Successfully navigate to cartpage");
 
-		// Step 13 : Click Proceed Button//
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='PROCEED']")).click();
-		Thread.sleep(3000);
-		
+				driver.swipe(530, 1500, 530, 0, 1000);
+				
 		//driver.swipe(530, 1500, 530, 550, 1000);
-		Thread.sleep(3000);
+				
+				//Let's chat handle//
+				letschat();
 
-		
+				// Step 13 : Click Proceed Button//
+				Thread.sleep(5000);
+				//driver.findElement(By.xpath("//*[@class='btn-checkout btn btn_to_checkout']|//android.widget.Button[@text='PROCEED']")).click();
+				btnclick(m.getProceedtocheckout());
+				Thread.sleep(5000);
+				
+				//driver.swipe(530, 1500, 530, 550, 1000);
+				Thread.sleep(5000);
+
+				//Let's chat handle//
+						letschat();
+	
 		//Upload Prescription
 				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']")).click();
+				driver.findElement(By.xpath("//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")).click();
 
 				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//android.widget.Button[@text='Choose files']")).click();
+				driver.findElement(By.xpath("//*[@class='ng-untouched ng-pristine ng-valid']|//android.widget.Button[@text='Choose files']")).click();
 				
 				Thread.sleep(3000);
 				//driver.findElement(By.xpath("//android.widget.TextView[@text='Browse']")).click();
 				
 				Thread.sleep(3000);
+//Switch to Native_App
 				
 				
-				driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click();
+		        Set<String> contextNames = driver.getContextHandles();
+		        for (String strContextName : contextNames) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }
+			  
+		        //
+		        Thread.sleep(3000);
+		        driver.findElement(By.xpath("(//*[@id='bitmap_view'])[3]|(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click(); //(//*[@knownSuperClass='android.widget.ImageView'])[5]")).click();
 				
-				//driver.findElement(By.xpath("(//android.widget.ImageView[resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")).click();
+		        Thread.sleep(5000);
+				  driver.findElement(By.id("done")).click();
+				  
+		        
+		        //Switch to Chrome browser
+		        Set<String> contextNames1 = driver.getContextHandles();
+		        for (String strContextName : contextNames1) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		        }
+			  
+				/////			
 				
-				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//android.widget.Button[@resource-id='com.android.chrome:id/done']")).click();
+				
+				
+				
+				
+			//driver.findElement(By.xpath("(//*[@resource-id='android:id/title'])[6]")).click();
 				
 				//Past Rx
 				
@@ -343,7 +345,7 @@ public class M3RX extends MobileBaseClass {
 	
 	//action.moveToElement(Schedule).click();
 				
-				driver.navigate().to("https://m.netmeds.com/checkout/subscription");
+				driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();
 				
 				
 		//driver.findElement(By.xpath("//android.view.View[@text='Repeat every 60 days']/android.widget.RadioButton")).click();
@@ -355,11 +357,11 @@ public class M3RX extends MobileBaseClass {
 		Thread.sleep(3000);
 		//logger.log(Status.PASS, "Successfully Proceed button  was clicked");
 
-		// Step 14 : Click Next Button//
+// Step 14 : Click Next Button//
 
-	//	btnclick(m.getNextbutton());
+		btnclick(m.getNextbutton());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='NEXT']")).click();
+		//driver.findElement(By.xpath("//*[@class='action']|//android.widget.Button[@text='NEXT']")).click();
 		
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully Next button was clicked");
@@ -370,99 +372,138 @@ public class M3RX extends MobileBaseClass {
 		
 		driver.swipe(530, 1440, 530, 0, 1000);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='SUBSCRIBE']")).click();
-		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
+		btnclick(m.getSubscribe());
+		logger.log(Status.PASS, "Successfully Subscribe button was clicked");;
 		
 
 		// Step 16 : Ensure order is placed successfully//
 
-		Thread.sleep(3000);
+				Thread.sleep(5000);
 
-				String confirmation = driver.findElement(By.xpath("//android.view.View[@text='Order Placed Successfully!']")).getText(); 
+						String confirmation = driver.findElement(By.xpath("//*[@text='Order Placed Successfully!']|//android.view.View[@text='Order Placed Successfully!']")).getText(); 
+						
+						System.out.println(confirmation);
+
+						
+//			String	Status	=	driver.findElement(By.xpath("//android.view.View[@text='Order Placed Successfully!']/android.view.View[7]")).getText();
+						//m.getOrder_Placed_text().getText();
+						//
+							//System.out.println(Status);
+									String	Orderid	=	driver.findElement(By.xpath("//*[@text=' Order id - ']|//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[2]")).getText();
+
+										System.out.println(Orderid);
+
+										String order_status = driver.findElement(By.xpath("//*[@class='ordstatus']|//*[@text='CONSULTATION SCHEDULED']|//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[3]")).getText(); // m.getOrderid().getAttribute("innerText");
+
+						System.out.println(order_status);
+						
+						String orderconfirmation = "Order Placed Successfully!";
+
+						Assert.assertEquals(orderconfirmation, confirmation);
+
+						System.out.println(confirmation + "and the id is " + Orderid);
+						Thread.sleep(3000);
+						driver.swipe(82, 1500, 82, 1420, 1000);
+						
+						Thread.sleep(3000);
+						String	Deliverydate	=	driver.findElement(By.xpath("//*[@class='deldate']")).getText();
+
+						System.out.println(Deliverydate);	
+						
+
+				// Tracking order//
 				
-				System.out.println(confirmation);
-
 				
-//	String	Status	=	driver.findElement(By.xpath("//android.view.View[@text='Order Placed Successfully!']/android.view.View[7]")).getText();
-				//m.getOrder_Placed_text().getText();
-				//
-					//System.out.println(Status);
-							String	Orderid	=	driver.findElement(By.xpath("//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[2]")).getText();
 
-								System.out.println(Orderid);
-
-				String order_status = driver.findElement(By.xpath("//android.widget.Button[@text='VIEW REWARDS']/following-sibling::android.view.View[3]")).getText(); // m.getOrderid().getAttribute("innerText");
-
-				System.out.println(order_status);
+			//	btnclick(m.getMysubscription());
 				
-				String orderconfirmation = "Order Placed Successfully!";
-
-				Assert.assertEquals(orderconfirmation, confirmation);
-
-				System.out.println(confirmation + "and the id is " + Orderid);
-
-		// Tracking order//
-		
-		
-
-	//	btnclick(m.getMysubscription());
-		
-	
-
-	//	btnclick(m.getMedicineorders());
-	
-		
-		driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
-		
-
 			
-		
-		Thread.sleep(5000);
-		try {
-		MobileElement	 netty =  (MobileElement) driver.findElement(By.xpath("//android.widget.TextView[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-		} catch (Exception e) {
+
+			//	btnclick(m.getMedicineorders());
 			
+				
+				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
+				
+
+				
+				//Let's chat handle//
+				Thread.sleep(5000);
+				try {
+					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+					netty.click();
+					System.out.println("Successfully closed let's chat");
+					}catch (Exception e) {
+						System.out.println("No pop up available to close");
+					}
+				
+				Thread.sleep(5000);
+				
+			//	Thread.sleep(5000);
+				driver.findElement(By.xpath("(//*[@class='btn-view ord-btn'])[1]")).click();
+				Thread.sleep(5000);
+			
+				//driver.swipe(82, 1600, 82, 0, 1000);
+			//	Thread.sleep(5000);
+				//driver.swipe(82, 900, 82, 0, 1000);
+			//	Thread.sleep(5000);
+				
+				//Thread.sleep(5000);
+//Switch to Native_App
+				
+				
+		        Set<String> contextNames3 = driver.getContextHandles();
+		        for (String strContextName : contextNames) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }
+			  
+		        driver.swipe(82, 1081, 82, 0, 1000);
+				driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();////*[@text='Cancel Order']\"
+
+//				btnclick(m.getCancel_Order());
+				Thread.sleep(5000);
+		//
+				driver.swipe(82, 1081, 82, 0, 1000);
+				
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//android.widget.Button[@text='YES']")).click();//|//*[@text='YES']
+			//	btnclick(m.getCancelyes());
+				Thread.sleep(5000);
+
+		
+				
+				
+				
+				   //Switch to Chrome browser
+		        Set<String> contextNames4 = driver.getContextHandles();
+		        for (String strContextName : contextNames1) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		            
+		            driver.swipe(82, 1081, 82, 0, 1000);
+		            
+		            driver.swipe(82, 1081, 82, 0, 1000);
+		            
+		            driver.swipe(82, 1081, 82, 0, 1000);
+		            
+		        driver.findElement(By.xpath("(//*[@nodeName='LABEL'])[2]")).click();
+		        
+		        Thread.sleep(3000);
+		            
+		        driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']")).click();//|//android.widget.Button[@text='SUBMIT & CANCEL']    
+		        }
+			  
+				//logger.log(Status.PASS, "Successfully Order was Cancelled");
+				System.out.println("Successfully Order was Cancelled");
+				Thread.sleep(2000);
+				driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+
+
 		}
-		
-		Thread.sleep(5000);
-		driver.swipe(82, 1179, 82, 1160, 1000);
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']")).click();
-		Thread.sleep(5000);
-	
-		driver.swipe(82, 900, 82, 0, 1000);
-		Thread.sleep(3000);
-		driver.swipe(82, 900, 82, 0, 1000);
-		Thread.sleep(3000);
-		
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();
-
-//		btnclick(m.getCancel_Order());
-		Thread.sleep(5000);
-//
-		driver.swipe(82, 939, 82, 6, 1000);
-		
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='YES']")).click();
-	//	btnclick(m.getCancelyes());
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[1]")).click();
-		Thread.sleep(3000);
-//		btnclick(m.getSubmit_Cancel());
-		
-		driver.findElement(By.xpath("//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-		
-		//logger.log(Status.PASS, "Successfully Order was Cancelled");
-		System.out.println("Successfully Order was Cancelled");
-		Thread.sleep(2000);
-		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
-
-
-}
-
 
 	
 	
