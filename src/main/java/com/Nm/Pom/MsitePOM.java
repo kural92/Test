@@ -16,13 +16,13 @@ public class MsitePOM  extends BaseClass{
 	}
 
 	
-	@FindBy(xpath = "//span[@class='app_close']")
+	@FindBy(xpath = "//span[@class='app_close']|//*[@class='app_close']")
 	private WebElement Msite_HomeScreen_POP_UP;
     public WebElement getMsite_HomeScreen_POP_UP() {
 		return Msite_HomeScreen_POP_UP;
 	}
     
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Order Now\"]")
+    @FindBy(xpath = "//*[@css=concat('A.view_btn[href=', \\\"'\\\", '/upload_prescription', \\\"'\\\", ']')]|//*[@class='app_close']//android.view.View[@content-desc=\"Order Now\"]")
     private WebElement Msite_OrderNow;
 	public WebElement getMsite_OrderNow() {
 		return Msite_OrderNow;
@@ -30,7 +30,7 @@ public class MsitePOM  extends BaseClass{
 		
 	}
 	
-	@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+	@FindBy(xpath = "//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
     private WebElement Msite_Upload_Prescription;
 	public WebElement getMsite_Upload_Prescription() {
 		return Msite_Upload_Prescription;
@@ -44,7 +44,7 @@ public class MsitePOM  extends BaseClass{
 	}
 	
 	
-	@FindBy(xpath = "//android.widget.RadioButto[@text='Search and Add medicines']")
+	@FindBy(xpath = "(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButto[@text='Search and Add medicines']")
     private WebElement Msite_M2_searchMedicine;
 	public WebElement getMsite_M2_searchMedicine() {
 		return Msite_M2_searchMedicine;
@@ -57,7 +57,7 @@ public class MsitePOM  extends BaseClass{
 		return Msite_M2_Getcall;
 	}
 	
-	@FindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+	@FindBy(xpath = "//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")
 	private WebElement Msite_M2_SearcCall_ContinueButton;
 	public WebElement getMsite_M2_SearcCall_ContinueButton() {
 		return Msite_M2_SearcCall_ContinueButton;
