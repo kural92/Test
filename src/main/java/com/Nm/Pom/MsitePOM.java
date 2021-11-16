@@ -160,11 +160,59 @@ public class MsitePOM extends MsiteBaseClass{
 	public WebElement getRemoveButton() {
 		return RemoveButton;
 	}
-
 	@FindBy(xpath = "//*[@nodeName='SPAN' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV' and ./*[@nodeName='DIV']]]]")
 	private WebElement Cart_search;
+	@FindBy(xpath = "//*[@name='customerNotesByOrder']")
+	private WebElement Orderreview_textArea;
+	@FindBy(xpath = "//*[@text='CUSTOMER NOTES' and @nodeName='H5']")
+	private WebElement Orderreview_customerNotes;
+	public WebElement getOrderreview_customerNotes() {
+		return Orderreview_customerNotes;
+	}
+	public WebElement getOrderreview_textArea() {
+		return Orderreview_textArea;
+	}
 	public WebElement getCart_search() {
 		return Cart_search;
+	}
+	@FindBy(xpath = "//*[@class='prodname']")
+	private List<WebElement> 	Orderreview_productList;
+
+	@FindBy(xpath = "//*[contains(@id,'row_itmdiscprice')]")
+	private List<WebElement> Orderreview_price;
+	@FindBy(xpath = "//*[@text=' Qty: ']/span")
+	private List<WebElement> 	Orderreview_quantity;
+	@FindBy(xpath = "//*[@class='sellerinfo']")
+	private List<WebElement> 	Orderreview_sellerinfo;
+	@FindBy(xpath = "//*[@text=' Qty: ']")
+	private List<WebElement> 	getOrderreview_quantitycount;
+	@FindBy(xpath = "//*[@class='manfname']")
+	private List<WebElement> 	Orderreview_mfr;
+	@FindBy(xpath = "//*[@class='expinfo']")
+	private List<WebElement> 	Orderreview_exprity_date;
+	public List<WebElement> getOrderreview_price() {
+		return Orderreview_price;
+	}
+	public List<WebElement> getOrderreview_quantity() {
+		return Orderreview_quantity;
+	}
+	public List<WebElement> getOrderreview_sellerinfo() {
+		return Orderreview_sellerinfo;
+	}
+	public List<WebElement> getGetOrderreview_quantitycount() {
+		return getOrderreview_quantitycount;
+	}
+	public List<WebElement> getOrderreview_mfr() {
+		return Orderreview_mfr;
+	}
+	public List<WebElement> getOrderreview_exprity_date() {
+		return Orderreview_exprity_date;
+	}
+	public WebElement getMyaccount() {
+		return myaccount;
+	}
+	public List<WebElement> getOrderreview_productList() {
+		return Orderreview_productList;
 	}
 
 	@FindBy(xpath = "//*[@nodeName='INPUT']")

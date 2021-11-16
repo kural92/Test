@@ -9,6 +9,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -56,10 +57,33 @@ public class NetmedsFirst extends MobileBaseClass  {
 				System.out.println(e.getMessage());
 			}
 }
+		@BeforeTest(groups = { "forgetPassword", "sanity", "reg" })
+		public void startReport() {
+
+			htmlReporter = new ExtentHtmlReporter(".//report//NetmedsFirst.html");
+
+			// initialize ExtentReports and attach the HtmlReporter
+			report = new ExtentReports();
+
+			// htmlReporter.setAppendExisting(true);
+			report.attachReporter(htmlReporter);
+			report.setSystemInfo("Host name", "localhost");
+			report.setSystemInfo("Environemnt", "QA");
+			report.setSystemInfo("user", "Automation Team");
+
+			// configuration items to change the look and feel
+			// add content, manage tests etc
+
+			htmlReporter.config().setDocumentTitle("Extent Report ");
+			htmlReporter.config().setReportName("Netmeds.com");
+
+			// htmlReporter.config().setTheme(Theme.STANDARD);
+
+		}
 	@Test
 		public void laucnh() throws Throwable {
-		//logger = report.createTest("M3OTCandnonrxSubscription");
-		//logger.log(Status.PASS, "*************M3OTCandnonrxSubscription********************");
+		logger = report.createTest("Netmeds First");
+		logger.log(Status.PASS, "*************Netmeds First********************");
 		MsitePOM m = new MsitePOM();
 			  driver.get("https://m.netmeds.com/");
 			  
