@@ -56,15 +56,19 @@ public class Msite_M2Flow extends MobileBaseClass {
 	    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+
+>>>>>>> f64cae4db273c7c77d475e0e6470a52231e82c77
 		capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
 
-=======
+
 		//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
 		
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
->>>>>>> fee5a5e5d6a6036abd930620544a2e22402e0248
+
 		capabilities.setCapability("platformName", "Android");
 	//	capabilities.setCapability("deviceName", "vivo 1819");
 	//	capabilities.setCapability("platformVersion","10.0.0" );
@@ -116,10 +120,13 @@ public class Msite_M2Flow extends MobileBaseClass {
 		  
 		  Thread.sleep(10000);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 // driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
 		  m.getMsite_OrderNow().click();
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> f64cae4db273c7c77d475e0e6470a52231e82c77
 
 	
 		  driver.findElement(By.xpath("//android.view.View[@text='Order Now']")).click();
@@ -130,11 +137,15 @@ public class Msite_M2Flow extends MobileBaseClass {
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
-=======
+
 		  driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]")).click();
 		  
+<<<<<<< HEAD
 >>>>>>> fee5a5e5d6a6036abd930620544a2e22402e0248
 >>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
+=======
+
+>>>>>>> f64cae4db273c7c77d475e0e6470a52231e82c77
 		  Thread.sleep(10000);
 		//  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
 		  m.getMsite_Upload_Prescription().click();
