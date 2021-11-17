@@ -18,6 +18,18 @@ public class MsitePOM extends MsiteBaseClass{
 		
 	}
 	
+<<<<<<< HEAD
+	@FindBy(xpath = "//span[@class='app_close']|//*[@class='app_close']")
+	private WebElement Msite_HomeScreen_POP_UP;
+    public WebElement getMsite_HomeScreen_POP_UP() {
+		return Msite_HomeScreen_POP_UP;
+	}
+    
+    @FindBy(xpath = "//*[@css=concat('A.view_btn[href=', \\\"'\\\", '/upload_prescription', \\\"'\\\", ']')]|//*[@class='app_close']//android.view.View[@content-desc=\"Order Now\"]")
+    private WebElement Msite_OrderNow;
+	public WebElement getMsite_OrderNow() {
+		return Msite_OrderNow;
+=======
 	//******************	M2
 		@FindBy(xpath = "//span[@class='app_close']")
 		private WebElement Msite_HomeScreen_POP_UP;
@@ -69,6 +81,7 @@ public class MsitePOM extends MsiteBaseClass{
 	//*******************************	My rewards
 		
 		//my Account 
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 		
 		@FindBy(xpath = "//*[@text='Account']")
 		private WebElement myaccount;
@@ -93,11 +106,19 @@ public class MsitePOM extends MsiteBaseClass{
 		return Mysubscriptionpage;
 	}
 	
+<<<<<<< HEAD
+	@FindBy(xpath = "//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+    private WebElement Msite_Upload_Prescription;
+	public WebElement getMsite_Upload_Prescription() {
+		return Msite_Upload_Prescription;
+	}	
+=======
 	@FindBy(xpath = "//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")
 	private WebElement NewSubscription;
 	public WebElement getNewSubscription() {
 		return NewSubscription;
 	}
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 	
 	
 	@FindBy(xpath = "//*[@class='ais-SearchBox-input']|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.widget.EditText")
@@ -107,10 +128,17 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 	
+<<<<<<< HEAD
+	@FindBy(xpath = "(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButto[@text='Search and Add medicines']")
+    private WebElement Msite_M2_searchMedicine;
+	public WebElement getMsite_M2_searchMedicine() {
+		return Msite_M2_searchMedicine;
+=======
 	@FindBy(xpath = "//*[@class='action addcart']|//android.widget.Button[@text='ADD TO CART']")
 	private WebElement Addtocart;
 	public WebElement getAddtocart() {
 		return Addtocart;
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 	}
 		
 	
@@ -120,6 +148,13 @@ public class MsitePOM extends MsiteBaseClass{
 	public WebElement getProceedtocheckout() {
 		return Proceedtocheckout;
 	
+<<<<<<< HEAD
+	@FindBy(xpath = "//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")
+	private WebElement Msite_M2_SearcCall_ContinueButton;
+	public WebElement getMsite_M2_SearcCall_ContinueButton() {
+		return Msite_M2_SearcCall_ContinueButton;
+=======
+>>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 	}
 		
 		
