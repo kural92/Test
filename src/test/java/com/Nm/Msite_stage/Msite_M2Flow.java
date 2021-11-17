@@ -7,97 +7,40 @@ import java.util.logging.Level;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-<<<<<<< HEAD
+import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.MsitePOM;
-=======
-import com.Nm.Base.MobileBaseClass;
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.TouchShortcuts;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class Msite_M2Flow extends MobileBaseClass {
-	
-<<<<<<< HEAD
-	 private String reportDirectory = "reports";
+public class Msite_M2Flow extends MsiteBaseClass {
+	  private String reportDirectory = "reports";
 	    private String reportFormat = "xml";
 	    private String testName = "Untitled";
 	    protected AndroidDriver<AndroidElement> driver = null;
-=======
-	//static WebDriver driver;
-	
-	
-		  
-	@BeforeClass
-	public void launchbrowser() throws IOException {
-		DesiredCapabilities capabilities = new DesiredCapabilities();
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
 
 	    DesiredCapabilities dc = new DesiredCapabilities();
 	    
-	    @BeforeMethod
+	    @BeforeTest
 	    public void setUp() throws MalformedURLException {
 	        dc.setCapability("reportDirectory", reportDirectory);
 	        dc.setCapability("reportFormat", reportFormat);
 	        dc.setCapability("testName", testName);
 	        dc.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");
 	        dc.setBrowserName(MobileBrowserType.CHROMIUM);
+	        dc.setCapability("noReset", true);
 	        driver = new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"), dc);
 	        driver.setLogLevel(Level.INFO);
 	    }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> f64cae4db273c7c77d475e0e6470a52231e82c77
-		capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
-
-
-		//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
 		
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-
-		capabilities.setCapability("platformName", "Android");
-	//	capabilities.setCapability("deviceName", "vivo 1819");
-	//	capabilities.setCapability("platformVersion","10.0.0" );
-		//for m-site
-		capabilities.setCapability("chromedriverExecutable", ".//input//chromedriver.exe");
-		//for install Apk file
-		//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
-		// already installed app
-		/*capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
-		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-		capabilities.setCapability("noReset", true);
-		*/
-		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
-		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
-		capabilities.setCapability("noReset", true);
-		
-		capabilities.setCapability("autoDismissAlerts", true);  
-		
-		
-		try {
-			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-			
-		} catch (MalformedURLException e) {
-			System.out.println(e.getMessage());
-		}
-				
-	}
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
-	  
 	  
 	  @Test(enabled = true)
 	  public void laucnh() throws Throwable {
@@ -108,25 +51,20 @@ public class Msite_M2Flow extends MobileBaseClass {
 		  Thread.sleep(10000);
 		 // driver.findElement(By.xpath("//android.view.View[@text()='INTRODUCING NETMEDS LITE']/preceding-sibling::android.view.View[@index='0']")).click();
 		  try {
-<<<<<<< HEAD
+
 		  //driver.findElement(By.xpath("//span[@class='app_close']")).click();
 			  m.getMsite_HomeScreen_POP_UP().click();
-=======
+
 		  driver.findElement(By.xpath("//android.view.View[@text='✕']")).click();
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
+
 		  }catch (Exception e) {
 			// TODO: handle exception
 		}
 		  
 		  Thread.sleep(10000);
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		 // driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
 		  m.getMsite_OrderNow().click();
-=======
-<<<<<<< HEAD
-=======
->>>>>>> f64cae4db273c7c77d475e0e6470a52231e82c77
 
 	
 		  driver.findElement(By.xpath("//android.view.View[@text='Order Now']")).click();
@@ -139,13 +77,7 @@ public class Msite_M2Flow extends MobileBaseClass {
 				}
 
 		  driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]")).click();
-		  
-<<<<<<< HEAD
->>>>>>> fee5a5e5d6a6036abd930620544a2e22402e0248
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
-=======
 
->>>>>>> f64cae4db273c7c77d475e0e6470a52231e82c77
 		  Thread.sleep(10000);
 		//  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
 		  m.getMsite_Upload_Prescription().click();
@@ -182,21 +114,21 @@ public class Msite_M2Flow extends MobileBaseClass {
 	            }
 	        }
 		  
-<<<<<<< HEAD
+
 			/////		
 		  
 		 
 		  Thread.sleep(5000);
 	//	  driver.findElement(By.xpath("(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButton[@text='Search and Add medicines']")).click();
 		m.getMsite_M2_searchMedicine().click();  
-=======
+
 		  Thread.sleep(10000);
 		  driver.findElement(By.xpath("//android.widget.Button[@text='Done']")).click();
 		  
 		  Thread.sleep(15000);
 		  driver.findElement(By.xpath("//android.widget.RadioButton[@text='Search and Add medicines']")).click();
 		  
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
+
 		  
 		  Thread.sleep(5000);
 		//  driver.findElement(By.xpath("//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")).click();
@@ -228,42 +160,7 @@ public class Msite_M2Flow extends MobileBaseClass {
 		  
 		  Thread.sleep(10000);
 		//  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']"));
-/*		 
-		 Thread.sleep(10000);
-		 MobileElement CONFIRM =  (MobileElement) 
-	//	 JavascriptExecutor executor = (JavascriptExecutor)driver;
-	//	 executor.executeScript("arguments[0].click();", CONFIRM);
-		 TouchAction action = new TouchAction((MobileDriver) driver);
-		 action.tap(CONFIRM);
-		  CONFIRM.click();
-	
-		  
-		  Thread.sleep(4000);
-			
-		  Dimension location = driver.manage().window().getSize();
-		  String ss = location.toString();
-		  System.out.println(location);
-		  String replace = ss.replace("(", "").replace(")", "").replace(" ", "");
-		  String[] split = replace.split(",");
-
-		  System.out.println(split[0]);
-		  System.out.println(split[1]);
-		  int i=Integer.parseInt(split[0]);
-		  int i1=Integer.parseInt(split[1]);
-		  Thread.sleep(3000);
-		  TouchAction touchAction = new TouchAction((MobileDriver) driver);
-
-		  touchAction.tap(i-100,i1-100).perform();
-		 
-		 
-		 Thread.sleep(5000);
-		 // driver.findElement(By.xpath("//android.widget.Button[@text='Submit']")).click();
-		  
-		 
-		 
-		 Thread.sleep(5000);
-		 // driver.findElement(By.xpath("//android.widget.Button[@text='Submit']")).click();
-		  
+/*	
 	*/	 
 		 Thread.sleep(10000);
 		 driver.findElement(By.xpath("//*[@text='Track Order']|//android.widget.Button[@text='TRACK ORDER']")).click();
