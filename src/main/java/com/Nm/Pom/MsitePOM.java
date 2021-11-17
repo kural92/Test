@@ -328,7 +328,7 @@ public class MsitePOM extends MsiteBaseClass{
 	
 		}
 		
-		@FindBy(xpath = "(//*[@class='editbtn btn'])[1]|//android.widget.Button[@text='Modify']")
+		@FindBy(xpath = "(//*[@class='editbtn btn'])[1]|//android.widget.Button[@text='Modify']|(//*[@text='Modify'])[1]")
 		private WebElement Modifyaddressbtn;
 		public WebElement getModifyaddressbtn() {
 			return Modifyaddressbtn;
@@ -376,7 +376,7 @@ public class MsitePOM extends MsiteBaseClass{
 	
 		}
 		
-		@FindBy(xpath = "//*[@text='+ ADD NEW ADDRESS']|//android.widget.TextView[@text='+ ADD NEW ADDRESS']")
+		@FindBy(xpath = "//*[@text='+ ADD NEW ADDRESS']|//android.widget.TextView[@text='+ ADD NEW ADDRESS']|//*[@class='add-address ng-star-inserted']")
 		private WebElement addaddress;
 		public WebElement getAddaddress() {
 			return addaddress;
@@ -390,10 +390,67 @@ public class MsitePOM extends MsiteBaseClass{
 			return selectaddress;
 	
 		}
+		
+		
+//*********************************************Your Account
+		
+		
+//delivery address
+		
+		@FindBy(xpath = "//*[@text='Delivery Addresses ']")
+		private WebElement Deliveryaddress;
+		public WebElement getDeliveryaddress() {
+			return Deliveryaddress;
+	
+		}
+		
+		
+//My wallet		
+		@FindBy(xpath = "//*[@href='/customer/nmswallet']")
+		private WebElement Mywallet;
+		public WebElement getMywallet() {
+			return Mywallet;
 }	
 
+		@FindBy(xpath ="//*[@class='editinfo personalinfor d-block d-sm-none ng-star-inserted']")
+		private WebElement Editprofile;
+		public WebElement getEditprofile() {
+			return Editprofile;
+		
+		}
+			
+		@FindBy(xpath ="//*[@text='My Prescription ']")
+		private WebElement Myprescription_page;
+		public WebElement getMyprescription_page() {
+			return Myprescription_page;
+		
+}
+//****************************************Category
+		
+		@FindBy(css = "DIV.arrow_link")////*[@class='arrow_link']|
+		private List<WebElement> Category_list;
+
+		public List<WebElement> getCategory_list() {
+			return Category_list;
+		}
+
+		@FindBy(xpath="//*[@css='DIV.catitem']")
+		private List<WebElement> SubCategory_list;
+
+		public List<WebElement> getSubCategory_list() {
+			return SubCategory_list;
+		}
+
+		@FindBy(xpath="//*[@class='filter-options-title']")////*[@class='filter-options-item']
+		private List<WebElement> Filterby;
+
+		public List<WebElement> getFilterby() {
+			return Filterby;
 
 
+		}
+		
+}
 
 
 		
