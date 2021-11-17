@@ -237,110 +237,94 @@ public class Youraccount extends MsiteBaseClass {
 	
 //Step 3 : Navigate to user profile//
 
-		//btnclick(m.getUserprofile());
-		driver.findElement(By.xpath("//*[@text='Account']")).click();
+		btnclick(m.getmyaccount());
+		//driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
 		Thread.sleep(3000);
+		
+//Let's chat handle//
+		
+				letschat();
+				Thread.sleep(5000);
 //Step 4 : Navigate to Delivery Address//
 
-		//btnclick(m.getDeliveryaddress());
+		btnclick(m.getDeliveryaddress());
 		
-		driver.findElement(By.xpath("//*[@text='Delivery Addresses ']")).click();
+		//driver.findElement(By.xpath("//*[@text='Delivery Addresses ']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to Delivery Address");
 		System.out.println("Successfully navigate to Delivery Address");
 		
 		
-		//Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			System.out.println("Successfully closed let's chat");
-			}catch (Exception e) {
-				System.out.println("No pop up available to close");
-			}
+		
+		
+		
+//Delete Address
+		
+				driver.swipe(0, 1500, 0, 1300, 1000);
+				Thread.sleep(5000);
+					btnclick(m.getDeleteaddress());
+					System.out.println("Address was deleted successfully");
+					logger.log(Status.PASS, "Address was deleted successfully");
 
-//Step 5: Select Address//
-
-		//btnclick(m.getSlctaddress());
-		driver.findElement(By.xpath("(//*[@name='customeraddress'])[2]")).click();
-		Thread.sleep(5000);
-		logger.log(Status.PASS, "Address was selected successfully");
-		System.out.println("Address was selected successfully");
 		
 		//Add address
 
 				Thread.sleep(3000);
-
-			driver.findElement(By.xpath("//*[@class='add-address ng-star-inserted']")).click();
-	
-			
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//*[@id='pin']")).sendKeys("600093");
+				btnclick(m.getAddaddress());
 				
 				Thread.sleep(5000);
 				
-				driver.findElement(By.xpath("//*[@id='firstname']")).sendKeys("ram");
+				type(m.getPincode(),"600093");
 				Thread.sleep(5000);
-				
-				driver.findElement(By.xpath("//*[@id='lastname']")).sendKeys("kumar");
+				type(m.getFirstname(),"gmailnew");
 				Thread.sleep(5000);
-				
-				driver.findElement(By.xpath("//*[@id='street']")).sendKeys("firststreet");
+				type(m.getLastname(),"gmailnewtwo");
 				Thread.sleep(5000);
-				
-				driver.findElement(By.xpath("//*[@id='landmark']")).sendKeys("newyear");
+				type(m.getStreet(),"gmailnewstreet");
 				Thread.sleep(5000);
+				type(m.getLandmark(),"gmailnewlandmark");
+				Thread.sleep(5000);
+				btnclick(m.getSaveaddress());
 				
+				System.out.println("Address was Added successfully");
+				logger.log(Status.PASS, "Address was Added successfully");
 				
-				driver.findElement(By.xpath("//*[@text='Save Address']")).click();
-
-				
-
-				logger.log(Status.PASS, "Address was addedd successfully");
-				System.out.println("Address was added successfully");
+				Thread.sleep(5000);
 
 
 
 //Step 6: Modify Address//
 
 		//Modify address
-		Thread.sleep(5000);
-	MobileElement modify =	(MobileElement) driver.findElement(By.xpath("(//*[@text='Modify'])[1]"));
-
-		modify.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id='pin']")).sendKeys("600093");
 		
-		Thread.sleep(5000);
-		
-		driver.findElement(By.xpath("//*[@id='firstname']")).sendKeys("raj");
-		Thread.sleep(5000);
-		
-		driver.findElement(By.xpath("//*[@id='lastname']")).sendKeys("kumar");
-		Thread.sleep(5000);
-		
-		driver.findElement(By.xpath("//*[@id='street']")).sendKeys("newstreet");
-		Thread.sleep(5000);
-		
-		driver.findElement(By.xpath("//*[@id='landmark']")).sendKeys("nehrunagar");
-		Thread.sleep(5000);
-		
-		
-		driver.findElement(By.xpath("//*[@text='Save Address']")).click();
-
-
-		logger.log(Status.PASS, "Address was modified successfully");
-
-		System.out.println("Address was modified successfully");
-
-		//Delete address
-
-		Thread.sleep(3000);
-	driver.findElements(By.xpath("(//*[@text='Delete'])[1]"));
+				driver.swipe(0, 1500, 0, 1300,1000);
+				Thread.sleep(5000);
+				btnclick(m.getModifyaddressbtn());
+				Thread.sleep(5000);
+				type(m.getPincode(),"600093");
+				Thread.sleep(5000);
+				type(m.getFirstname(),"gmailone");
+				Thread.sleep(5000);
+				type(m.getLastname(),"gmailtwo");
+				Thread.sleep(5000);
+				type(m.getStreet(),"gmailstreet");
+				Thread.sleep(5000);
+				type(m.getLandmark(),"gmaillandmark");
+				Thread.sleep(5000);
+				btnclick(m.getSaveaddress());
+				System.out.println("Address was modified successfully");
+				logger.log(Status.PASS, "Address was modified successfully");
+				
+				Thread.sleep(4000);
+			
+				//Select Address
+				btnclick(m.getSelectaddress());
+				System.out.println("Address was selected successfully");
+				logger.log(Status.PASS, "Address was selected successfully");
+				Thread.sleep(5000);	
 
 		
 
@@ -382,69 +366,41 @@ public class Youraccount extends MsiteBaseClass {
 		}
 		
 		Thread.sleep(5000);
-		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup to close");
-		}
+		popupclose();
 
 
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-
-
+		letschat();
 		Thread.sleep(5000);
 				
 	
 //Step 3 : Navigate to user profile//
 
-		//btnclick(m.getUserprofile());
-		driver.findElement(By.xpath("//*[@text='Account']")).click();
+		btnclick(m.getmyaccount());
+		//driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
 		Thread.sleep(4000);
 
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			System.out.println("Successfully closed let's chat");
-			}catch (Exception e) {
-				System.out.println("No pop up available to close");
-			}
+		letschat();
+		
 //		Step 4 : Navigate to wallet Page
-
 	
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//*[@href='/customer/nmswallet']")).click();
+		//driver.findElement(By.xpath("//*[@href='/customer/nmswallet']")).click();
+		
+		btnclick(m.getMywallet());
 		Thread.sleep(3000);
-		
-		
 
-		
-
-//		Step 5 : get Available balance text and do assertion
+//	Step 5 : get Available balance text and do assertion
 		// Step 7 :Get NMS Cash text and do assertion
 //		Step 10 :Get NMS super Cash text and do assertion
 
 		//SoftAssert SoftAssert = new SoftAssert();
 		//Let's chat handle//
-				Thread.sleep(5000);
-				try {
-					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-					netty.click();
-					System.out.println("Successfully closed let's chat");
-					}catch (Exception e) {
-						System.out.println("No pop up available to close");
-					}
+				letschat();
 		
 		Assert.assertEquals(gettext(driver.findElement(By.xpath("//*[@text='AVAILABLE BALANCE']"))), "AVAILABLE BALANCE");
 		
@@ -503,7 +459,7 @@ public class Youraccount extends MsiteBaseClass {
 	// **************************************************************Edit
 	// Profile*************************************************************************************//
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void Editprofile() throws Throwable {
 
 		logger = report.createTest("Editprofile");
@@ -532,21 +488,11 @@ public class Youraccount extends MsiteBaseClass {
 		}
 		
 		Thread.sleep(5000);
-		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup to close");
-		}
+		popupclose();
 
 
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
+		letschat();
 
 
 		Thread.sleep(5000);
@@ -554,31 +500,26 @@ public class Youraccount extends MsiteBaseClass {
 	
 //Step 3 : Navigate to user profile//
 
-		//btnclick(m.getUserprofile());
-		driver.findElement(By.xpath("//*[@text='Account']")).click();
+		btnclick(m.getmyaccount());
+	//driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
+		
 //click Modify button
-
-		//btnclick(m.getEditprofile());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@class='editinfo personalinfor d-block d-sm-none ng-star-inserted']")).click();
+		btnclick(m.getEditprofile());
+		
+	
+		//driver.findElement(By.xpath("//*[@class='editinfo personalinfor d-block d-sm-none ng-star-inserted']")).click();
 		
 		//Let's chat handle//
-				Thread.sleep(5000);
-				try {
-					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-					netty.click();
-					}catch (Exception e) {
-						// TODO: handle exception
-					}
+		letschat();
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id='firstname' ]")).sendKeys("vijay");
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id='lastname' ]")).sendKeys("sekar");
-		
+		type(m.getFirstname(),"kumar");
+		Thread.sleep(5000);
+		type(m.getLastname(),"new");
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("//*[@class='mat-select-arrow-wrapper']")).click();
@@ -645,30 +586,18 @@ public class Youraccount extends MsiteBaseClass {
 		}
 		
 		Thread.sleep(5000);
-		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup to close");
-		}
+		popupclose();
 
 
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-
-
+		letschat();
 		Thread.sleep(5000);
 				
 	
 //Step 3 : Navigate to user profile//
 
-		//btnclick(m.getUserprofile());
-		driver.findElement(By.xpath("//*[@text='Account']")).click();
+	btnclick(m.getmyaccount());
+		//driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
@@ -676,9 +605,9 @@ public class Youraccount extends MsiteBaseClass {
 
 // Step 4 : Navigate to My prescription Page
 
-		//btnclick(m.getMyprescription_page());
+		btnclick(m.getMyprescription_page());
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@text='My Prescription ']")).click();
+		//driver.findElement(By.xpath("//*[@text='My Prescription ']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to My prescription Page");
 
@@ -764,30 +693,18 @@ public class Youraccount extends MsiteBaseClass {
 		}
 		
 		Thread.sleep(5000);
-		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup to close");
-		}
+		popupclose();
 
 
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-
-
+		letschat();
 		Thread.sleep(5000);
 				
 	
 //Step 3 : Navigate to user profile//
 
-		//btnclick(m.getUserprofile());
-		driver.findElement(By.xpath("//*[@text='Account']")).click();
+		btnclick(m.getmyaccount());
+		//driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
@@ -806,13 +723,7 @@ public class Youraccount extends MsiteBaseClass {
 		System.out.println("Successfully navigate to refer and earn page");
 		
 //Let's chat handle//
-				Thread.sleep(5000);
-				try {
-					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-					netty.click();
-					}catch (Exception e) {
-						// TODO: handle exception
-					}
+				letschat();
 	
 	/*//Copy Code
 				Thread.sleep(3000);
@@ -931,11 +842,7 @@ public class Youraccount extends MsiteBaseClass {
 				}
 				
 				Thread.sleep(5000);
-				try {
-					driver.findElement(By.xpath("//span[@class='app_close']")).click();
-				} catch (Exception e) {
-					System.out.println("No Popup to close");
-				}
+				popupclose();
 
 
 		
@@ -943,8 +850,8 @@ public class Youraccount extends MsiteBaseClass {
 			
 		//Step 3 : Navigate to user profile//
 
-				//btnclick(m.getUserprofile());
-				driver.findElement(By.xpath("//*[@text='Account']")).click();
+				btnclick(m.getmyaccount());
+				//driver.findElement(By.xpath("//*[@text='Account']")).click();
 				Thread.sleep(3000);
 				logger.log(Status.PASS, "Successfully navigate to userprofile");
 				System.out.println("Successfully navigate to userprofile");
@@ -952,15 +859,7 @@ public class Youraccount extends MsiteBaseClass {
 		System.out.println("Successfully navigate to userprofile");
 		
 //Let's chat handle//
-		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}
-
-
+		letschat();
 		Thread.sleep(5000);
 
 // Step 4 : Navigate to help page
@@ -1045,11 +944,7 @@ public class Youraccount extends MsiteBaseClass {
 		}
 		
 		Thread.sleep(5000);
-		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
-		} catch (Exception e) {
-			System.out.println("No Popup to close");
-		}
+		popupclose();
 
 
 
@@ -1057,8 +952,8 @@ public class Youraccount extends MsiteBaseClass {
 	
 //Step 3 : Navigate to user profile//
 
-		//btnclick(m.getUserprofile());
-		driver.findElement(By.xpath("//*[@text='Account']")).click();
+		btnclick(m.getmyaccount());
+		//driver.findElement(By.xpath("//*[@text='Account']")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
@@ -1066,13 +961,8 @@ public class Youraccount extends MsiteBaseClass {
 
 
 //Let's chat handle//
-Thread.sleep(5000);
-try {
-	MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-	netty.click();
-	}catch (Exception e) {
-		// TODO: handle exception
-	}
+		Thread.sleep(5000);
+		letschat();
 
 	// Step 4 : Legal Information
 
@@ -1120,11 +1010,7 @@ try {
 			}
 			
 			Thread.sleep(5000);
-			try {
-				driver.findElement(By.xpath("//span[@class='app_close']")).click();
-			} catch (Exception e) {
-				System.out.println("No Popup to close");
-			}
+			popupclose();
 
 
 
@@ -1138,12 +1024,7 @@ try {
 					
 					//Let's chat handle//
 					Thread.sleep(5000);
-					try {
-						MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-						netty.click();
-						}catch (Exception e) {
-							// TODO: handle exception
-						}
+					letschat();
 					Thread.sleep(3000);
 				//	driver.swipe(82, 1275, 82, 1152, 1000);
 					//Switch to Native_App
@@ -1202,12 +1083,7 @@ try {
 
 			//Let's chat handle//
 			Thread.sleep(5000);
-			try {
-				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-				netty.click();
-				}catch (Exception e) {
-					// TODO: handle exception
-				}
+		letschat();
 				
 	//Step 4 : Offers Page
 				Thread.sleep(3000);
@@ -1261,12 +1137,7 @@ try {
 		
 		//Let's chat handle//
 		Thread.sleep(5000);
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			}catch (Exception e) {
-				// TODO: handle exception
-			}    
+		letschat();   
 		
 		driver.swipe(82, 1300, 82, 450, 1000);	
 		
@@ -1424,21 +1295,15 @@ try {
 		
 	//Step 3 : Navigate to user profile//
 
-			//btnclick(m.getUserprofile());
-			driver.findElement(By.xpath("//*[@text='Account']")).click();
+			btnclick(m.getmyaccount());
+			//driver.findElement(By.xpath("//*[@text='Account']")).click();
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to userprofile");
 			System.out.println("Successfully navigate to userprofile");
 			
 			
 			//Let's chat handle//
-			Thread.sleep(5000);
-			try {
-				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-				netty.click();
-				}catch (Exception e) {
-					// TODO: handle exception
-				}
+			letschat();
 
 			
 	// Step 4 : Navigate to contact us page
@@ -1536,36 +1401,21 @@ try {
 				
 			}
 			
-			Thread.sleep(5000);
-			try {
-				driver.findElement(By.xpath("//span[@class='app_close']")).click();
-			} catch (Exception e) {
-				System.out.println("No Popup to close");
-			}
-
-
-	
-
+			popupclose();
 			Thread.sleep(5000);
 					
 		
 	//Step 3 : Navigate to user profile//
 
-			//btnclick(m.getUserprofile());
-			driver.findElement(By.xpath("//*[@text='Account']")).click();
+			btnclick(m.getmyaccount());
+			//driver.findElement(By.xpath("//*[@text='Account']")).click();
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to userprofile");
 			System.out.println("Successfully navigate to userprofile");
 			
 			
 			//Let's chat handle//
-			Thread.sleep(5000);
-			try {
-				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-				netty.click();
-				}catch (Exception e) {
-					// TODO: handle exception
-				}
+			letschat();
 
 	// Step 4 : Navigate to Rate us page
 
@@ -1612,13 +1462,7 @@ try {
 			
 		
 	//Let's chat handle//
-				Thread.sleep(5000);
-				try {
-					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-					netty.click();
-					}catch (Exception e) {
-						System.out.println("No netty popup");
-					}
+				letschat();
 
 	//Step 6 : Write message//
 			Thread.sleep(3000);
@@ -1641,10 +1485,10 @@ try {
 		
 		//*****************************************************My reward*************************
 
-//My Orders Filter Page
+
 			
 			
-			@Test(enabled = true)
+			@Test(enabled = false)
 			public void Myrewards() throws Throwable {
 
 				logger = report.createTest("My rewards");
@@ -1674,12 +1518,7 @@ try {
 				}
 				
 				Thread.sleep(5000);
-				try {
-					driver.findElement(By.xpath("//span[@class='app_close']")).click();
-				} catch (Exception e) {
-					System.out.println("No Popup to close");
-				}
-
+				popupclose();
 				Thread.sleep(5000);
 						
 			
@@ -1703,21 +1542,17 @@ try {
 				
 				//Let's chat handle//
 				Thread.sleep(5000);
-				try {
-					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-					netty.click();
-					}catch (Exception e) {
-						System.out.println("No netty popup");
-						
-					
-					}
-				
+				letschat();
 				
 				Thread.sleep(3000);
 				
 				driver.findElement(By.xpath("(//*[@class='scratchcard ng-star-inserted'])[1]")).click();
 				Thread.sleep(3000);
 				driver.swipe(345, 1029, 900, 1105, 1000);
+				
+				driver.swipe(82, 1029, 900, 1105, 1000);
+				
+				driver.swipe(600, 1029, 900, 1105, 1000);
 
 				Thread.sleep(5000);
 				driver.findElement(By.xpath("//*[@nodeName='SPAN' and ./parent::*[@nodeName='BUTTON']]")).click();
