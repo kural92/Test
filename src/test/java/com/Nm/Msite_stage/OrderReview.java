@@ -38,6 +38,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
@@ -112,6 +113,11 @@ public class OrderReview extends MsiteBaseClass {
 		
 		logger = report.createTest("Netmeds First");
 		logger.log(Status.PASS, "*************Netmeds First********************");
+		
+		
+		// launch the browser
+		
+		
 		MsitePOM m = new MsitePOM();
 			  driver.get("https://m.netmeds.com/");
 			  
@@ -125,6 +131,11 @@ public class OrderReview extends MsiteBaseClass {
 			  Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
+		
+		
+		//remove from the cart
+		
+		
 		driver.navigate().to("https://m.netmeds.com/checkout/cart");
 		try {
 			Thread.sleep(2000);
@@ -151,15 +162,26 @@ public class OrderReview extends MsiteBaseClass {
 		} 
 		driver.navigate().to("https://m.netmeds.com");
 		Thread.sleep(5000);
+		
+		
+		
+		//search the page
+		
+		
+		
 		driver.findElement(By.xpath("//*[@text='Search for medicine & wellness products...' and @nodeName='SPAN']")).click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Patanjali Lauh Bhasm Powder 5 gm",Keys.ENTER);
-
+		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Patanjali Lauh Bhasm Powder 5 gm");
+		Thread.sleep(1500);
+		driver.pressKeyCode(AndroidKeyCode.ENTER);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./*[@nodeName='EM']]")).click();
+		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
 		// btncli(m.getSearchIcon());
 		logger.log(Status.PASS, "Successfully navigate to search result page" );
 
+		
+		//add to the cart
+		
 		Thread.sleep(3000);
 		 driver.swipe(0, 500, 0, 0, 1000);
 			try {
@@ -170,6 +192,9 @@ public class OrderReview extends MsiteBaseClass {
 				// TODO: handle exception
 			}
 			Thread.sleep(5000);
+			
+			//add the product
+			
 			driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and ./parent::*[@nodeName='DIV' and ./parent::*[@nodeName='A']]]")).click();
 			logger.log(Status.PASS, "Successfully navigate to cart page" );
 			Thread.sleep(15000);
@@ -186,6 +211,10 @@ method(m.getOrderreview_productList());
 method(m.getOrderreview_mfr());
 		
 		Thread.sleep(3000);
+		
+		// order review page for otc
+		
+		
 		logger.log(Status.PASS, "Successfully navigated to  order review page");
 		SoftAssert SoftAssert=new SoftAssert();
 		method(m.getOrderreview_productList());
@@ -200,11 +229,15 @@ method(m.getOrderreview_mfr());
 		driver.navigate().to("https://m.netmeds.com");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@text='Search for medicine & wellness products...' and @nodeName='SPAN']")).click();
+		
+		// rx product search
+		
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Rxtor 10mg Tablet 10'S",Keys.ENTER);
-
+		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Rxtor 10mg Tablet 10'S");
+		Thread.sleep(1500);
+		driver.pressKeyCode(AndroidKeyCode.ENTER);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./*[@nodeName='EM']]")).click();
+		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
 		// btncli(m.getSearchIcon());
 		logger.log(Status.PASS, "Successfully navigate to search result page" );
 
@@ -229,6 +262,9 @@ method(m.getOrderreview_mfr());
 			}catch (Exception e) {
 				// TODO: handle exception
 			}
+			
+			// upload the prescription 
+			
 			driver.findElement(By.xpath("//*[@text='Upload Prescription']")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@text='Past Rx' and @nodeName='SPAN']")).click();
@@ -236,6 +272,9 @@ method(m.getOrderreview_mfr());
 			driver.findElement(By.xpath("(//*[@name='uplpastRx'])[1]")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@nodeName='BUTTON' and @width>0 and ./*[@nodeName='SPAN']]")).click();
+			
+			// review the order
+			
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@text='Review Order']")).click();
 			Thread.sleep(5000);
@@ -246,8 +285,72 @@ method(m.getOrderreview_mfr());
 			driver.swipe(82, 939, 82, 6, 1000);
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@class='rxviewimg']")).click();
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//*[@nodeName='BUTTON' and @width>0 and ./*[@nodeName='SPAN']]")).click();
+			// Change address
+			
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//*[@class='addchange']|//android.widget.TextView[@text='CHANGE']")).click();
+			Thread.sleep(5000);
+			
+	//Let's chat handle//
+			letschat();
+			
+			
+	//Delete Address
+			
+			driver.swipe(0, 1500, 0, 1300, 1000);
+			Thread.sleep(5000);
+				btnclick(m.getDeleteaddress());
+				System.out.println("Address was deleted successfully");
+				logger.log(Status.PASS, "Address was deleted successfully");
+				
+	//Modify
+			driver.swipe(0, 1500, 0, 1300,1000);
+			Thread.sleep(5000);
+			btnclick(m.getModifyaddressbtn());
+			Thread.sleep(5000);
+			type(m.getPincode(),"600093");
+			Thread.sleep(5000);
+			type(m.getFirstname(),"gmailone");
+			Thread.sleep(5000);
+			type(m.getLastname(),"gmailtwo");
+			Thread.sleep(5000);
+			type(m.getStreet(),"gmailstreet");
+			Thread.sleep(5000);
+			type(m.getLandmark(),"gmaillandmark");
+			Thread.sleep(5000);
+			btnclick(m.getSaveaddress());
+			System.out.println("Address was modified successfully");
+			logger.log(Status.PASS, "Address was modified successfully");
+			
+			Thread.sleep(4000);
+		
+			
+	//Add address
+			btnclick(m.getAddaddress());
+			Thread.sleep(5000);
+			
+	driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-id='pin']")).sendKeys("600093");
+			
+			Thread.sleep(5000);
+			
+			type(m.getPincode(),"600093");
+			Thread.sleep(5000);
+			type(m.getFirstname(),"gmailnew");
+			Thread.sleep(5000);
+			type(m.getLastname(),"gmailnewtwo");
+			Thread.sleep(5000);
+			type(m.getStreet(),"gmailnewstreet");
+			Thread.sleep(5000);
+			type(m.getLandmark(),"gmailnewlandmark");
+			Thread.sleep(5000);
+			btnclick(m.getSaveaddress());
+			
+			System.out.println("Address was Added successfully");
+			logger.log(Status.PASS, "Address was Added successfully");
+			
+			Thread.sleep(5000);
 
 	}
 	
