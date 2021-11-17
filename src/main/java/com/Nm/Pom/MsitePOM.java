@@ -195,11 +195,59 @@ public class MsitePOM extends MsiteBaseClass{
 	public WebElement getRemoveButton() {
 		return RemoveButton;
 	}
-
 	@FindBy(xpath = "//*[@nodeName='SPAN' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV' and ./*[@nodeName='DIV']]]]")
 	private WebElement Cart_search;
+	@FindBy(xpath = "//*[@name='customerNotesByOrder']")
+	private WebElement Orderreview_textArea;
+	@FindBy(xpath = "//*[@text='CUSTOMER NOTES' and @nodeName='H5']")
+	private WebElement Orderreview_customerNotes;
+	public WebElement getOrderreview_customerNotes() {
+		return Orderreview_customerNotes;
+	}
+	public WebElement getOrderreview_textArea() {
+		return Orderreview_textArea;
+	}
 	public WebElement getCart_search() {
 		return Cart_search;
+	}
+	@FindBy(xpath = "//*[@class='prodname']")
+	private List<WebElement> 	Orderreview_productList;
+
+	@FindBy(xpath = "//*[contains(@id,'row_itmdiscprice')]")
+	private List<WebElement> Orderreview_price;
+	@FindBy(xpath = "//*[@text=' Qty: ']/span")
+	private List<WebElement> 	Orderreview_quantity;
+	@FindBy(xpath = "//*[@class='sellerinfo']")
+	private List<WebElement> 	Orderreview_sellerinfo;
+	@FindBy(xpath = "//*[@text=' Qty: ']")
+	private List<WebElement> 	getOrderreview_quantitycount;
+	@FindBy(xpath = "//*[@class='manfname']")
+	private List<WebElement> 	Orderreview_mfr;
+	@FindBy(xpath = "//*[@class='expinfo']")
+	private List<WebElement> 	Orderreview_exprity_date;
+	public List<WebElement> getOrderreview_price() {
+		return Orderreview_price;
+	}
+	public List<WebElement> getOrderreview_quantity() {
+		return Orderreview_quantity;
+	}
+	public List<WebElement> getOrderreview_sellerinfo() {
+		return Orderreview_sellerinfo;
+	}
+	public List<WebElement> getGetOrderreview_quantitycount() {
+		return getOrderreview_quantitycount;
+	}
+	public List<WebElement> getOrderreview_mfr() {
+		return Orderreview_mfr;
+	}
+	public List<WebElement> getOrderreview_exprity_date() {
+		return Orderreview_exprity_date;
+	}
+	public WebElement getMyaccount() {
+		return myaccount;
+	}
+	public List<WebElement> getOrderreview_productList() {
+		return Orderreview_productList;
 	}
 
 	@FindBy(xpath = "//*[@nodeName='INPUT']")
@@ -315,7 +363,7 @@ public class MsitePOM extends MsiteBaseClass{
 	
 		}
 		
-		@FindBy(xpath = "(//*[@class='editbtn btn'])[1]|//android.widget.Button[@text='Modify']")
+		@FindBy(xpath = "(//*[@class='editbtn btn'])[1]|//android.widget.Button[@text='Modify']|(//*[@text='Modify'])[1]")
 		private WebElement Modifyaddressbtn;
 		public WebElement getModifyaddressbtn() {
 			return Modifyaddressbtn;
@@ -363,7 +411,7 @@ public class MsitePOM extends MsiteBaseClass{
 	
 		}
 		
-		@FindBy(xpath = "//*[@text='+ ADD NEW ADDRESS']|//android.widget.TextView[@text='+ ADD NEW ADDRESS']")
+		@FindBy(xpath = "//*[@text='+ ADD NEW ADDRESS']|//android.widget.TextView[@text='+ ADD NEW ADDRESS']|//*[@class='add-address ng-star-inserted']")
 		private WebElement addaddress;
 		public WebElement getAddaddress() {
 			return addaddress;
@@ -377,10 +425,67 @@ public class MsitePOM extends MsiteBaseClass{
 			return selectaddress;
 	
 		}
+		
+		
+//*********************************************Your Account
+		
+		
+//delivery address
+		
+		@FindBy(xpath = "//*[@text='Delivery Addresses ']")
+		private WebElement Deliveryaddress;
+		public WebElement getDeliveryaddress() {
+			return Deliveryaddress;
+	
+		}
+		
+		
+//My wallet		
+		@FindBy(xpath = "//*[@href='/customer/nmswallet']")
+		private WebElement Mywallet;
+		public WebElement getMywallet() {
+			return Mywallet;
 }	
 
+		@FindBy(xpath ="//*[@class='editinfo personalinfor d-block d-sm-none ng-star-inserted']")
+		private WebElement Editprofile;
+		public WebElement getEditprofile() {
+			return Editprofile;
+		
+		}
+			
+		@FindBy(xpath ="//*[@text='My Prescription ']")
+		private WebElement Myprescription_page;
+		public WebElement getMyprescription_page() {
+			return Myprescription_page;
+		
+}
+//****************************************Category
+		
+		@FindBy(css = "DIV.arrow_link")////*[@class='arrow_link']|
+		private List<WebElement> Category_list;
+
+		public List<WebElement> getCategory_list() {
+			return Category_list;
+		}
+
+		@FindBy(xpath="//*[@css='DIV.catitem']")
+		private List<WebElement> SubCategory_list;
+
+		public List<WebElement> getSubCategory_list() {
+			return SubCategory_list;
+		}
+
+		@FindBy(xpath="//*[@class='filter-options-title']")////*[@class='filter-options-item']
+		private List<WebElement> Filterby;
+
+		public List<WebElement> getFilterby() {
+			return Filterby;
 
 
+		}
+		
+}
 
 
 		
