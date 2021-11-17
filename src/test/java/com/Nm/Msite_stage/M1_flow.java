@@ -62,12 +62,12 @@ public class M1_flow extends MobileBaseClass {
 		public void launchbrowser() throws IOException {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
+			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
 
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, FileAndEnv.envAndFile().get("UDID"));  //fc95d519 //RZ8R20GLXTA
 
-			capabilities.setCapability(MobileCapabilityType.UDID,"NBBY79GM5LTCJBJR" );  //fc95d519 // //FileAndEnv.envAndFile().get("UDID")
+			//capabilities.setCapability(MobileCapabilityType.UDID,"NBBY79GM5LTCJBJR" );  //fc95d519 // //FileAndEnv.envAndFile().get("UDID")
 
 
 			capabilities.setCapability("platformName", "Android");
