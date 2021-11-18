@@ -34,6 +34,7 @@ import org.testng.annotations.Test;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.Nm.Pom.Monepom;
+import com.Nm.Pom.MsitePOM;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -46,6 +47,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import utils.FileAndEnv;
@@ -123,114 +125,105 @@ public class M1_flow extends MobileBaseClass {
 	@Test(enabled=true)
 	public void Mone_otc() throws Throwable {
 		
-		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
-		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
+		logger = report.createTest("Netmeds First");
+		logger.log(Status.PASS, "*************Netmeds First********************");
 		
-		AndriodPom m = new AndriodPom();
-		driver.get("https://m.netmeds.com");
 		
-		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-
-		Thread.sleep(10000);
-
-
+		// launch the browser
+		
+		
+		MsitePOM m = new MsitePOM();
+			  driver.get("https://m.netmeds.com/");
+			  
+			  Thread.sleep(10000);
+			  try {
+			  driver.findElement(By.xpath("//app_close[@text='✕']")).click();
+			  }catch (Exception e) {
+				// TODO: handle exception
+			}
+			  
+			  Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
+		
+		
+		//remove from the cart
+		
+		
 		driver.navigate().to("https://m.netmeds.com/checkout/cart");
+		try {
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		for (int i = 0; i < 10; i++) {
 			Thread.sleep(5000);
-			if ((driver.findElements(By.xpath("//android.view.View[@text='ADD PRODUCTS']")).size() == 0)) {
+			if (!(driver.findElements(By.xpath("//*[@title='Remove item']")).size() == 0)) {
 
-				try {
-					driver.findElement(By.xpath("//android.view.View[@text='REMOVE']")).click();
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
+				Thread.sleep(5000);
+						try {
+							driver.findElement(By.xpath("//android.view.View[@text='REMOVE']|//*[@title='Remove item']")).click();
+						} catch (Exception e) {
+							// TODO: handle exception
+						}
 
 			} else {
-				logger.log(Status.PASS, "Successfully Product Removed from Cart");
+				//logger.log(Status.PASS, "Successfully Product Removed from Cart");
 				break;
 
 			}
 		} 
+		driver.navigate().to("https://m.netmeds.com");
+		Thread.sleep(5000);
+		
+		
+		
+		//search the page
+		
+		
+		
+		driver.findElement(By.xpath("//*[@text='Search for medicine & wellness products...' and @nodeName='SPAN']")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Patanjali Lauh Bhasm Powder 5 gm");
+		Thread.sleep(1500);
+		driver.pressKeyCode(AndroidKeyCode.ENTER);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
+		// btncli(m.getSearchIcon());
+		logger.log(Status.PASS, "Successfully navigate to search result page" );
 
-
-		try {
+		
+		//add to the cart
+		
+		Thread.sleep(3000);
+		 driver.swipe(0, 500, 0, 0, 1000);
+			try {
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@text=' ADD TO CART ']")).click();
 			
-		Thread.sleep(5000);
-		MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-		netty.click();
-		}catch (Exception e) {
-			// TODO: handle exception
-		}
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("//android.view.View[@resource-id='page-header']/android.view.View[@index='1']/android.view.View/android.view.View")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='Submit']/preceding-sibling::android.widget.EditText")).sendKeys(s);
-		Thread.sleep(3000); 
-		driver.findElement(By.xpath("//android.view.View[@text='"+s+"']")).click();
-		Thread.sleep(5000);
-
-		driver.findElement(By.xpath("//android.view.View[@resource-id='page-header']/android.view.View[@index='1']/android.view.View/android.view.View")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='Submit']/preceding-sibling::android.widget.EditText")).sendKeys(s);
-		Thread.sleep(7000);
-		driver.findElement(By.xpath("//android.view.View[@text='"+s+"']|//android.widget.TextView[@text='"+s+"']")).click();
-		Thread.sleep(8000);
-
-		driver.findElement(By.xpath("//android.widget.Button[@resource-id='product-addtocart-button']")).click();
-		Thread.sleep(8000);
-driver.findElement(By.xpath("//android.view.View[@resource-id='top_search_icon']/following-sibling::android.view.View[@index='3']")).click();	
-		Thread.sleep(10000);
-
-//MobileElement netty1 = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-
-//netty1.click();
-
-
-//MobileElement netty1 = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-
-//netty1.click();
-
-		try {
-			MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-			netty.click();
-			} catch (Exception e) {
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(5000);
+			
+			//add the product
+			
+			driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and ./parent::*[@nodeName='DIV' and ./parent::*[@nodeName='A']]]")).click();
+			logger.log(Status.PASS, "Successfully navigate to cart page" );
+			Thread.sleep(15000);
+			driver.findElement(By.xpath("//*[@text='Proceed']")).click();
+			logger.log(Status.PASS, "Successfully navigate to search order review page" );
+			try {
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+			}catch (Exception e) {
 				// TODO: handle exception
 			}
 
+			driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 
-Thread.sleep(3000);
-/*driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);*/
-
-Thread.sleep(4000);
-	
-Dimension location = driver.manage().window().getSize();
-String ss = location.toString();
-System.out.println(location);
-String replace = ss.replace("(", "").replace(")", "").replace(" ", "");
-String[] split = replace.split(",");
-
-System.out.println(split[0]);
-System.out.println(split[1]);
-int i=Integer.parseInt(split[0]);
-int i1=Integer.parseInt(split[1]);
-Thread.sleep(3000);
-TouchAction touchAction = new TouchAction(driver);
-
-
-//touchAction.tap(i-100,i1-100).perform();
-driver.findElement(By.xpath("//android.widget.Button[@text='PROCEED']")).click();
-
-touchAction.tap(i-100,i1-150).tap(i-100,i1-150).perform();
-
-
+			
 
 Thread.sleep(3000);
 //driver.swipe(0, 900, 0, 0, 1000);
@@ -240,9 +233,9 @@ driver.findElement(By.xpath("//android.widget.Button[@text='PAY']")).click();
 Thread.sleep(3000);
 driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
-MobileElement cod = (MobileElement) driver.findElement(By.xpath("//android.widget.RadioButton[@resource-id='nms_cod']"));cod.click();
+MobileElement cod = (MobileElement) driver.findElement(By.xpath("//*[@id='nms_cod' and @name='nmsmstr_paymethod']"));cod.click();
 Thread.sleep(3000);
-driver.findElement(By.xpath("//android.view.View[@resource-id='title_COD']/android.widget.Button[@index='2']")).click();
+driver.findElement(By.xpath("//*[@text and @nodeName='BUTTON']")).click();
 Thread.sleep(5000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
@@ -250,26 +243,27 @@ driver.swipe(0, 900, 0, 0, 1000);
 
 
 Thread.sleep(3000);
-driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']")).click();
+driver.findElement(By.xpath("//*[@text='Track Order']")).click();
 Thread.sleep(3000);
-driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']")).click();
-Thread.sleep(3000);
-MobileElement netty2 = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-
-netty2.click();
+driver.findElement(By.xpath("//*[@text=' View Details ' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text=' Track Order ']]]]")).click();
+try {
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+}catch (Exception e) {
+	// TODO: handle exception
+}
 Thread.sleep(5000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
-TouchAction touchAction1 = new TouchAction(driver);
-touchAction1.tap(250,i1-100).perform();
+
 //MobileElement co = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']"));co.click();
-//driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();
+driver.findElement(By.xpath("//*[@text='Cancel Order']")).click();
 Thread.sleep(3000);
-driver.findElement(By.xpath("//android.widget.RadioButton[@text='Delay in delivery']")).click();
+driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
 Thread.sleep(3000);
-driver.findElement(By.xpath("//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
+driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL' and @nodeName='BUTTON' and @top='true']")).click();
 //touchAction.tap(100,i1).perform();
 	}
 	
