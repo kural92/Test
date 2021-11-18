@@ -221,7 +221,6 @@ public class M1_flow extends MobileBaseClass {
 				// TODO: handle exception
 			}
 
-			driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 
 			
 
@@ -229,7 +228,7 @@ Thread.sleep(3000);
 //driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
 //touchAction.tap(i-100,i1-100).perform();
-driver.findElement(By.xpath("//android.widget.Button[@text='PAY']")).click();
+driver.findElement(By.xpath("//*[@text='Pay']")).click();
 Thread.sleep(3000);
 driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
@@ -238,14 +237,20 @@ Thread.sleep(3000);
 driver.findElement(By.xpath("//*[@text and @nodeName='BUTTON']")).click();
 Thread.sleep(5000);
 driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
+/*Thread.sleep(3000);
+driver.swipe(0, 900, 0, 0, 1000);*/
 
 
 Thread.sleep(3000);
 driver.findElement(By.xpath("//*[@text='Track Order']")).click();
+try {
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+}catch (Exception e) {
+	// TODO: handle exception
+}
 Thread.sleep(3000);
-driver.findElement(By.xpath("//*[@text=' View Details ' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text=' Track Order ']]]]")).click();
+driver.findElement(By.xpath("//*[@text=' View Details ' and @top='true']")).click();
 try {
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
