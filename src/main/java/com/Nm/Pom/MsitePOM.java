@@ -18,7 +18,7 @@ public class MsitePOM extends MsiteBaseClass{
 		
 	}
 	
-<<<<<<< HEAD
+
 	@FindBy(xpath = "//span[@class='app_close']|//*[@class='app_close']")
 	private WebElement Msite_HomeScreen_POP_UP;
     public WebElement getMsite_HomeScreen_POP_UP() {
@@ -29,26 +29,26 @@ public class MsitePOM extends MsiteBaseClass{
     private WebElement Msite_OrderNow;
 	public WebElement getMsite_OrderNow() {
 		return Msite_OrderNow;
-=======
+	}
 	//******************	M2
 		@FindBy(xpath = "//span[@class='app_close']")
-		private WebElement Msite_HomeScreen_POP_UP;
-	    public WebElement getMsite_HomeScreen_POP_UP() {
+		private WebElement Msite_HomeScreen_POP_UP1;
+	    public WebElement getMsite_HomeScreen_POP_UP1() {
 			return Msite_HomeScreen_POP_UP;
 		}
 	    
 	    @FindBy(xpath = "//android.view.View[@content-desc=\"Order Now\"]")
-	    private WebElement Msite_OrderNow;
-		public WebElement getMsite_OrderNow() {
+	    private WebElement Msite_OrderNow1;
+		public WebElement getMsite_OrderNow1() {
 			return Msite_OrderNow;
 			
 			
 		}
 		
 		@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
-	    private WebElement Msite_Upload_Prescription;
-		public WebElement getMsite_Upload_Prescription() {
-			return Msite_Upload_Prescription;
+	    private WebElement Msite_Upload_Prescription1;
+		public WebElement getMsite_Upload_Prescription1() {
+			return Msite_Upload_Prescription1;
 		}	
 		
 		
@@ -60,9 +60,9 @@ public class MsitePOM extends MsiteBaseClass{
 		
 		
 		@FindBy(xpath = "//android.widget.RadioButto[@text='Search and Add medicines']")
-	    private WebElement Msite_M2_searchMedicine;
-		public WebElement getMsite_M2_searchMedicine() {
-			return Msite_M2_searchMedicine;
+	    private WebElement Msite_M2_searchMedicine1;
+		public WebElement getMsite_M2_searchMedicine1() {
+			return Msite_M2_searchMedicine1;
 		}
 		
 		
@@ -73,15 +73,15 @@ public class MsitePOM extends MsiteBaseClass{
 		}
 		
 		@FindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
-		private WebElement Msite_M2_SearcCall_ContinueButton;
-		public WebElement getMsite_M2_SearcCall_ContinueButton() {
-			return Msite_M2_SearcCall_ContinueButton;
+		private WebElement Msite_M2_SearcCall_ContinueButton1;
+		public WebElement getMsite_M2_SearcCall_ContinueButton1() {
+			return Msite_M2_SearcCall_ContinueButton1;
 		}
 		
 	//*******************************	My rewards
 		
 		//my Account 
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
+
 		
 		@FindBy(xpath = "//*[@text='Account']")
 		private WebElement myaccount;
@@ -106,19 +106,19 @@ public class MsitePOM extends MsiteBaseClass{
 		return Mysubscriptionpage;
 	}
 	
-<<<<<<< HEAD
+
 	@FindBy(xpath = "//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
     private WebElement Msite_Upload_Prescription;
 	public WebElement getMsite_Upload_Prescription() {
-		return Msite_Upload_Prescription;
+		return Msite_Upload_Prescription1;
 	}	
-=======
+
 	@FindBy(xpath = "//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")
 	private WebElement NewSubscription;
 	public WebElement getNewSubscription() {
 		return NewSubscription;
 	}
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
+
 	
 	
 	@FindBy(xpath = "//*[@class='ais-SearchBox-input']|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.widget.EditText")
@@ -128,17 +128,17 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 	
-<<<<<<< HEAD
+
 	@FindBy(xpath = "(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButto[@text='Search and Add medicines']")
     private WebElement Msite_M2_searchMedicine;
 	public WebElement getMsite_M2_searchMedicine() {
 		return Msite_M2_searchMedicine;
-=======
+	}
 	@FindBy(xpath = "//*[@class='action addcart']|//android.widget.Button[@text='ADD TO CART']")
 	private WebElement Addtocart;
 	public WebElement getAddtocart() {
 		return Addtocart;
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
+
 	}
 		
 	
@@ -147,17 +147,14 @@ public class MsitePOM extends MsiteBaseClass{
 	private WebElement Proceedtocheckout;
 	public WebElement getProceedtocheckout() {
 		return Proceedtocheckout;
-	
-<<<<<<< HEAD
+	}
+
 	@FindBy(xpath = "//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")
 	private WebElement Msite_M2_SearcCall_ContinueButton;
 	public WebElement getMsite_M2_SearcCall_ContinueButton() {
-		return Msite_M2_SearcCall_ContinueButton;
-=======
->>>>>>> ca32e1987dfa277f2a3a90ce635ba4872013cade
+		return Msite_M2_SearcCall_ContinueButton1;
 	}
-		
-		
+
 		
 		@FindBy(xpath = "//*[@text='Next']|//android.widget.Button[@text='NEXT']")
 		private WebElement Nextbutton;
@@ -484,8 +481,127 @@ public class MsitePOM extends MsiteBaseClass{
 
 
 		}
+//********************************My Orders Page
+		
+		@FindBy(xpath = "//*[@text='ORDER DETAILS']")
+		private WebElement OrderDetails_text;
+		public WebElement getOrderDetails_text() {
+			return OrderDetails_text;
+}	
+	
+		
+		@FindBy(xpath = "(//*[@class='col-lg-5 col-5 pl-0'])[1]")
+		private WebElement Customer_name_text;
+		public WebElement getCustomer_name_text() {
+			return Customer_name_text;
+}		
+		
+		
+		@FindBy(xpath = "(//*[@class='col-lg-7 col-7 p-0 text-right'])[1]")
+		private WebElement Customer_name;
+		public WebElement getCustomer_name() {
+			return Customer_name;
+				}		
+		
+		@FindBy(xpath = "(//*[@class='col-lg-7 col-7 p-0 text-right'])[2]")
+		private WebElement OrderId;
+		public WebElement getOrderId() {
+			return OrderId;
+				}	
+		
+		@FindBy(xpath = "(//*[@class='col-lg-5 col-5 pl-0'])[3]")
+		private WebElement Order_placed_text;
+		public WebElement getOrder_placed_text() {
+			return Order_placed_text;
+				}
+		
+		
+		@FindBy(xpath = "(//*[@class='col-lg-7 col-7 p-0 text-right'])[3]")
+		private WebElement Order_placed;
+		public WebElement getOrder_placed() {
+			return Order_placed;
+				}	
+		
+			
+		@FindBy(xpath = "//*[@class='btn btn-help btnhelpdark ng-star-inserted' and @top='true']")
+		private WebElement NeedHelp_page;
+		public WebElement getNeedHelp_page() {
+			return NeedHelp_page;
+				}
+		
+
+		
+		@FindBy(xpath = "//*[@class='action order nmsreorder btn primary-btn ng-star-inserted' and @top='true']")
+		private WebElement Reorder;
+		public WebElement getReorder() {
+			return Reorder;
+				}	
+		
+		@FindBy(xpath = "//*[@class='btn-checkout btn btn_to_checkout']")
+		private WebElement Proceed_btn;
+		public WebElement getProceed_btn() {
+			return Proceed_btn;
+				}
+		
+	
+		@FindBy(xpath = "//*[@text='Show Status Details']")
+		private WebElement Show_Status_Details;
+		public WebElement getShow_Status_Details() {
+			return Show_Status_Details;
+				}
+		
+		@FindBy(xpath = "//*[@nodeName='SPAN' and @top='true']")
+		private WebElement Prescription_open;
+		public WebElement getPrescription_open() {
+			return Prescription_open;
+				}
+		
+		
+		@FindBy(xpath = "//*[@class='item ng-star-inserted' and @top='true'])[1]")
+		private WebElement Prescription_closed;
+		public WebElement getPrescription_closed() {
+			return Prescription_closed;
+				}
+
+		
+		@FindBy(xpath = "//*[@text='Medicine Orders']")
+		private WebElement Myorders;
+		public WebElement getMyorders() {
+			return Myorders;
+				}
+		
+		
+		@FindBy(xpath = "(//*[@class='btn-view ord-btn'])[1]")
+		private WebElement Viewdetails;
+		public WebElement getViewdetails() {
+			return Viewdetails;
+				}
+		
+		@FindBy(xpath = "//*[@text='Cancel Order']")
+		private WebElement Cancelorder;
+		public WebElement getCancelorder() {
+			return Cancelorder;
+				}
+		
+		
+		@FindBy(xpath = "//*[@text='YES']")
+		private WebElement Yesbutton;
+		public WebElement getYesbutton() {
+			return Yesbutton;
+				}
+		
+		
+		@FindBy(xpath = "(//*[@class='ng-untouched ng-pristine ng-valid'])[1]")
+		private WebElement Cancel_reason;
+		public WebElement getCancel_reason() {
+			return Cancel_reason;
+				}
 		
 }
+
+
+
+
 
 
 		

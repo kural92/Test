@@ -34,7 +34,8 @@ public class Msite_M2Flow extends MsiteBaseClass {
 	        dc.setCapability("reportDirectory", reportDirectory);
 	        dc.setCapability("reportFormat", reportFormat);
 	        dc.setCapability("testName", testName);
-	        dc.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");
+	       // dc.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");
+	        dc.setCapability("platformName", "Android");
 	        dc.setBrowserName(MobileBrowserType.CHROMIUM);
 	        dc.setCapability("noReset", true);
 	        driver = new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"), dc);
