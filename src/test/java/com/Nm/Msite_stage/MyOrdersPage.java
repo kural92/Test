@@ -240,8 +240,8 @@ static String totalamt;
 		{
 			
 			//cancel order
-
-
+			btnclick(m.getViewdetails());
+			Thread.sleep(3000);
 			btnclick(m.getCancelorder());
 			Thread.sleep(3000);
 			//yes

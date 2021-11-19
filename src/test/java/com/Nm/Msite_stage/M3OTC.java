@@ -493,35 +493,62 @@ public class M3OTC extends MsiteBaseClass {
 				letschat();
 				
 				Thread.sleep(5000);
-				driver.swipe(82, 1179, 82, 1160, 1000);
-				Thread.sleep(5000);
-				driver.findElement(By.xpath("//*[@class='btn-view ord-btn']|//android.widget.Button[@text='VIEW DETAILS']")).click();
-				Thread.sleep(5000);
-			
-				driver.swipe(82, 1600, 82, 0, 1000);
-				Thread.sleep(5000);
-				//driver.swipe(82, 900, 82, 0, 1000);
+				
+				
+
+				
+				
+		       
+				
+			//	driver.findElement(By.xpath("//*[@class='btn-view ord-btn']|//android.widget.Button[@text='VIEW DETAILS']")).click();
+				btnclick(m.getViewdetails());
 				Thread.sleep(5000);
 				
-				Thread.sleep(5000);
-				driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
+				//Switch to Native_App		
+				 Set<String> contextNames4 = driver.getContextHandles();
+			        for (String strContextName : contextNames4) {
+			            if (strContextName.contains("NATIVE_APP")) {
+			                driver.context("NATIVE_APP");
+			                break;
+			            }
+			        }		
+					
+				
+				 driver.swipe(82, 1600, 82, 0, 1000);
+				Thread.sleep(3000);
+				//driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
+				btnclick(m.getCancelorder());
 
-//				btnclick(m.getCancel_Order());
+
 				Thread.sleep(5000);
 		//
 				driver.swipe(82, 939, 82, 6, 1000);
 				
 				Thread.sleep(5000);
-				driver.findElement(By.xpath("//*[@text='YES']|//android.widget.Button[@text='YES']")).click();
-			//	btnclick(m.getCancelyes());
+				//driver.findElement(By.xpath("//*[@text='YES']|//android.widget.Button[@text='YES']")).click();
+				try{btnclick(m.getYesbutton());}
+				catch (Exception e) {
+					// TODO: handle exception
+				}
 				Thread.sleep(5000);
 
-				driver.findElement(By.xpath("(//*[@class='ng-untouched ng-pristine ng-valid'])[5]|(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[1]")).click();
-				Thread.sleep(5000);
-//				btnclick(m.getSubmit_Cancel());
+				//driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
 				
-				driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
 				
+//				
+				
+				
+	//Switch to Chrome browser
+		        Set<String> contextNames5 = driver.getContextHandles();
+		        for (String strContextName : contextNames5) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		            	
+		            btnclick(m.getCancel_reason());
+					Thread.sleep(5000);
+		            driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
 				//logger.log(Status.PASS, "Successfully Order was Cancelled");
 				System.out.println("Successfully Order was Cancelled");
 				Thread.sleep(2000);
@@ -529,7 +556,7 @@ public class M3OTC extends MsiteBaseClass {
 
 
 		}
-
+	}
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {

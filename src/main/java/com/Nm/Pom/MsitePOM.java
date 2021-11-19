@@ -19,15 +19,13 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 
-<<<<<<< HEAD
+
 	@FindBy(xpath = "//span[@class='app_close']|//*[@class='app_close']")
 	private WebElement Msite_HomeScreen_POP_UP;
     public WebElement getMsite_HomeScreen_POP_UP() {
 		return Msite_HomeScreen_POP_UP;
 	}
-=======
-	
->>>>>>> 600fe4009a0ff253d9f60446af2b20f1d1ab1d95
+
     
     @FindBy(xpath = "//*[@css=concat('A.view_btn[href=', \\\"'\\\", '/upload_prescription', \\\"'\\\", ']')]|//*[@class='app_close']//android.view.View[@content-desc=\"Order Now\"]")
     private WebElement Msite_OrderNow;
@@ -41,7 +39,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return Msite_HomeScreen_POP_UP;
 		}
 	    
-<<<<<<< HEAD
+
 	    @FindBy(xpath = "//android.view.View[@content-desc=\"Order Now\"]")
 	    private WebElement Msite_OrderNow1;
 		public WebElement getMsite_OrderNow1() {
@@ -55,9 +53,9 @@ public class MsitePOM extends MsiteBaseClass{
 		public WebElement getMsite_Upload_Prescription1() {
 			return Msite_Upload_Prescription1;
 		}	
-=======
+
 	
->>>>>>> 600fe4009a0ff253d9f60446af2b20f1d1ab1d95
+
 		
 		
 		@FindBy(xpath = "//android.widget.Button[@text='Choose Files']")
@@ -67,32 +65,26 @@ public class MsitePOM extends MsiteBaseClass{
 		}
 		
 		
-<<<<<<< HEAD
+
 		@FindBy(xpath = "//android.widget.RadioButto[@text='Search and Add medicines']")
 	    private WebElement Msite_M2_searchMedicine1;
 		public WebElement getMsite_M2_searchMedicine1() {
 			return Msite_M2_searchMedicine1;
 		}
-=======
-	
->>>>>>> 600fe4009a0ff253d9f60446af2b20f1d1ab1d95
-		
+
 		
 		@FindBy(xpath = "//android.widget.RadioButto[@text='Get call from Netmeds']")
 	    private WebElement Msite_M2_Getcall;
 		public WebElement getMsite_M2_Getcall() {
 			return Msite_M2_Getcall;
 		}
-		
-<<<<<<< HEAD
+
 		@FindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
 		private WebElement Msite_M2_SearcCall_ContinueButton1;
 		public WebElement getMsite_M2_SearcCall_ContinueButton1() {
 			return Msite_M2_SearcCall_ContinueButton1;
 		}
-=======
-		
->>>>>>> 600fe4009a0ff253d9f60446af2b20f1d1ab1d95
+
 		
 	//*******************************	My rewards
 		
@@ -143,10 +135,7 @@ public class MsitePOM extends MsiteBaseClass{
 		return M3productsearch;
 	}
 	
-<<<<<<< HEAD
-	
-=======
->>>>>>> 600fe4009a0ff253d9f60446af2b20f1d1ab1d95
+
 
 	@FindBy(xpath = "(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButto[@text='Search and Add medicines']")
     private WebElement Msite_M2_searchMedicine;
@@ -166,23 +155,16 @@ public class MsitePOM extends MsiteBaseClass{
 	private WebElement Proceedtocheckout;
 	public WebElement getProceedtocheckout() {
 		return Proceedtocheckout;
-<<<<<<< HEAD
+
 	}
 
-	@FindBy(xpath = "//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")
-	private WebElement Msite_M2_SearcCall_ContinueButton;
-	public WebElement getMsite_M2_SearcCall_ContinueButton() {
-		return Msite_M2_SearcCall_ContinueButton1;
-=======
-	
-	}
 	@FindBy(xpath = "//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")
 	private WebElement Msite_M2_SearcCall_ContinueButton;
 	public WebElement getMsite_M2_SearcCall_ContinueButton() {
 		return Msite_M2_SearcCall_ContinueButton;
 
->>>>>>> 600fe4009a0ff253d9f60446af2b20f1d1ab1d95
 	}
+	
 
 		
 		@FindBy(xpath = "//*[@text='Next']|//android.widget.Button[@text='NEXT']")
@@ -606,21 +588,21 @@ public class MsitePOM extends MsiteBaseClass{
 			return Viewdetails;
 				}
 		
-		@FindBy(xpath = "//*[@text='Cancel Order']")
+		@FindBy(xpath = "//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")
 		private WebElement Cancelorder;
 		public WebElement getCancelorder() {
 			return Cancelorder;
 				}
 		
 		
-		@FindBy(xpath = "//*[@text='YES']")
+		@FindBy(xpath = "//*[@text='YES']|//android.widget.Button[@text='YES']")
 		private WebElement Yesbutton;
 		public WebElement getYesbutton() {
 			return Yesbutton;
 				}
 		
 		
-		@FindBy(xpath = "(//*[@class='ng-untouched ng-pristine ng-valid'])[1]")
+		@FindBy(xpath = "(//*[@nodeName='LABEL' and @top='true'])[1]")
 		private WebElement Cancel_reason;
 		public WebElement getCancel_reason() {
 			return Cancel_reason;
