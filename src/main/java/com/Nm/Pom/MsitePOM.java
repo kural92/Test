@@ -55,10 +55,88 @@ public class MsitePOM extends MsiteBaseClass{
 		
 		
 	//*******************************	My rewards
+		@FindBy(xpath = "//*[@id='nms_phonepe']")
+		private WebElement Phonepe_pay;
+		public WebElement getPhonepe_pay() {
+			return Phonepe_pay;
+		}
+		@FindBy(xpath = "//*[@id='nms_cod' and @name='nmsmstr_paymethod']")
+		private WebElement Cod_popoup;
+		public WebElement getCod_popoup() {
+			return Cod_popoup;
+		}
+		@FindBy(xpath = "//*[@class='ccardno']")
+		private WebElement Cart_pay;
+		public WebElement getCart_pay() {
+			return Cart_pay;
+		}
+		@FindBy(xpath = "//*[@name='netbank_list']")
+		private WebElement More_banks;
+		public WebElement getMore_banks() {
+			return More_banks;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_axis']")
+		private WebElement Axis_bank;
+		public WebElement getAxis_bank() {
+			return Axis_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_sbi']")
+		private WebElement SBI_bank;
+		public WebElement getSBI_bank() {
+			return SBI_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_kotak']")
+		private WebElement Kotak_bank;
+		public WebElement getKotak_bank() {
+			return Kotak_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_icici']")
+		private WebElement Icici_bank;
+		public WebElement getIcici_bank() {
+			return Icici_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_hdfc']")
+		private WebElement Hdfc_bank;
+		public WebElement getHdfc_bank() {
+			return Hdfc_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_googlepay' and @name='nmsmstr_paymethod']")
+		private WebElement Googlepay_pay;
+		public WebElement getGooglepay_pay() {
+			return Googlepay_pay;
+		}
+		@FindBy(xpath = "//*[@id='nms_simpl']")
+		private WebElement Simpl_payment;
+		public WebElement getSimpl_payment() {
+			return Simpl_payment;
+		}
 		
 		//my Account 
-
-		
+		@FindBy(xpath = "//*[@id='nms_paytm' and @name='nmsmstr_paymethod']")
+		private WebElement Paytm_payment;
+		public WebElement getPaytm_payment() {
+			return Paytm_payment;
+		}
+		@FindBy(xpath = "//*[@text and @nodeName='BUTTON']")
+		private WebElement Paytm_paymentutton;
+		public WebElement getPaytm_paymentutton() {
+			return Paytm_paymentutton;
+		}
+		@FindBy(xpath = "//*[@id='nms_amazonpay']")
+		private WebElement Amazon_pay;
+		public WebElement getAmazon_pay() {
+			return Amazon_pay;
+		}
+		@FindBy(xpath = "//*[@text and @nodeName='BUTTON']")
+		private WebElement AMAZONPAY_paybutton;
+		public WebElement getAMAZONPAY_paybutton() {
+			return AMAZONPAY_paybutton;
+		}
+		@FindBy(xpath = "//*[@text='Retry']")
+		private WebElement Payment_retry;
+		public WebElement getPayment_retry() {
+			return Payment_retry;
+		}
 		@FindBy(xpath = "//*[@text='Account']")
 		private WebElement myaccount;
 		public WebElement getmyaccount() {
