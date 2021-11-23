@@ -53,6 +53,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class Msite_M2Flow extends MsiteBaseClass {
 
+<<<<<<< HEAD
 	
 	
 	
@@ -151,6 +152,22 @@ public class Msite_M2Flow extends MsiteBaseClass {
 	
 
 
+=======
+	    DesiredCapabilities dc = new DesiredCapabilities();
+	    
+	    @BeforeTest
+	    public void setUp() throws MalformedURLException {
+	        dc.setCapability("reportDirectory", reportDirectory);
+	        dc.setCapability("reportFormat", reportFormat);
+	        dc.setCapability("testName", testName);
+	        dc.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");
+	        dc.setCapability("platformName", "Android");
+	        dc.setBrowserName(MobileBrowserType.CHROMIUM);
+	        dc.setCapability("noReset", true);
+	        driver = new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"), dc);
+	        driver.setLogLevel(Level.INFO);
+	    }
+>>>>>>> 4d738cb7bb1183de7165c5d8214605d11e05e479
 		
 	  
 	  @Test(enabled = true)
@@ -163,10 +180,10 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		 // driver.findElement(By.xpath("//android.view.View[@text()='INTRODUCING NETMEDS LITE']/preceding-sibling::android.view.View[@index='0']")).click();
 		  try {
 
-		  //driver.findElement(By.xpath("//span[@class='app_close']")).click();
-			  m.getMsite_HomeScreen_POP_UP().click();
+		  driver.findElement(By.xpath("//*[@class='app_close']")).click();
+			//  m.getMsite_HomeScreen_POP_UP().click();
 
-		  driver.findElement(By.xpath("//android.view.View[@text='✕']")).click();
+		//  driver.findElement(By.xpath("//android.view.View[@text='✕']")).click();
 
 		  }catch (Exception e) {
 			// TODO: handle exception
@@ -174,6 +191,7 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		  
 		  Thread.sleep(10000);
 
+<<<<<<< HEAD
 	
 		  m.getMsite_OrderNow().click();
 
@@ -185,14 +203,30 @@ public class Msite_M2Flow extends MsiteBaseClass {
 	
 	letschat();
 
+=======
+		  driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
+		 // m.getMsite_OrderNow().click();
+
+	
+		//  driver.findElement(By.xpath("//android.view.View[@text='Order Now']")).click();
+		  try {
+			  Thread.sleep(10000);
+				MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+				netty.click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
+		
+>>>>>>> 4d738cb7bb1183de7165c5d8214605d11e05e479
 		  Thread.sleep(10000);
-		//  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
-		  m.getMsite_Upload_Prescription().click();
+		  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
+		//  m.getMsite_Upload_Prescription().click();
 		  Thread.sleep(5000);
-		//  driver.findElement(By.xpath("//android.widget.Button[@text='Choose Files']|//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']")).click();
-		  m.getMsite_Upload_Gallery().click();
+		  driver.findElement(By.xpath("//android.widget.Button[@text='Choose Files']|//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']")).click();
+		//  m.getMsite_Upload_Gallery().click();
 		  Thread.sleep(5000);
-		//  driver.findElement(By.xpath("(//*[@knownSuperClass='android.widget.ImageView'])[5]")).click();//"(//*[@id='bitmap_view'])[3]|(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click();
+	//	  driver.findElement(By.xpath("(//*[@knownSuperClass='android.widget.ImageView'])[5]")).click();//"(//*[@id='bitmap_view'])[3]|(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click();
 		// Auto IT Script
 			
 		  //Switch to Native_App
@@ -226,20 +260,14 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		  
 		 
 		  Thread.sleep(5000);
-	//	  driver.findElement(By.xpath("(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButton[@text='Search and Add medicines']")).click();
-		m.getMsite_M2_searchMedicine().click();  
+		  driver.findElement(By.xpath("(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButton[@text='Search and Add medicines']")).click();
+	//	m.getMsite_M2_searchMedicine().click();  
 
-		  Thread.sleep(10000);
-		  driver.findElement(By.xpath("//android.widget.Button[@text='Done']")).click();
-		  
-		  Thread.sleep(15000);
-		  driver.findElement(By.xpath("//android.widget.RadioButton[@text='Search and Add medicines']")).click();
-		  
 
 		  
 		  Thread.sleep(5000);
-		//  driver.findElement(By.xpath("//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")).click();
-		m.getMsite_M2_SearcCall_ContinueButton().click();  
+		  driver.findElement(By.xpath("//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")).click();
+	//	m.getMsite_M2_SearcCall_ContinueButton().click();  
 		 Thread.sleep(5000);
 		 driver.findElement(By.xpath("//*[@css='INPUT.ais-SearchBox-input']")).sendKeys("Telma");
 		 
@@ -266,22 +294,19 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		  driver.findElement(By.xpath("//*[@text='Proceed']|//android.widget.Button[@text='PROCEED']")).click();
 		  
 		  Thread.sleep(10000);
-		//  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']"));
-/*	
-	*/	 
+		  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']")).click();
+ 
+		 Thread.sleep(3000);
+	 driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 		 Thread.sleep(10000);
-		 driver.findElement(By.xpath("//*[@text='Track Order']|//android.widget.Button[@text='TRACK ORDER']")).click();
+		 driver.findElement(By.xpath("//*[@text=' View Details ']|//*[@css='BUTTON.btn-view.ord-btn']")).click();
 		 Thread.sleep(3000);
-		 driver.findElement(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();
-		
-		 //MobileElement co = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']"));co.click();
+		 driver.findElement(By.xpath("//*[@text='Cancel Order']|//*[@css='BUTTON.btn.btn-help.ng-star-inserted']")).click();
 		 Thread.sleep(3000);
-		 driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
-		 Thread.sleep(3000);
-		 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|//android.widget.RadioButton[@text='Delay in delivery']")).click();
+		 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|(//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid'])[1]")).click();
 		 Thread.sleep(3000);
 		 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-		 //touchAction.tap(100,i1).perform();
+		
 		 
 	}
 	  
@@ -299,6 +324,7 @@ public class Msite_M2Flow extends MsiteBaseClass {
 				// TODO: handle exception
 			}
 			  
+			  /*
 			  Thread.sleep(10000);
 			  driver.findElement(By.xpath("//android.view.View[@content-desc='Order Now']")).click();
 			  
@@ -315,46 +341,72 @@ public class Msite_M2Flow extends MsiteBaseClass {
 			  Thread.sleep(5000);
 			  driver.findElement(By.id("com.android.chrome:id/done")).click();
 			  
-			  Thread.sleep(5000);
-			//  driver.findElement(By.xpath("//android.widget.RadioButton[@text='Search and Add medicines']")).click();
+			  */
 			  
+
+			  driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
+			   try {
+				  Thread.sleep(10000);
+					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
+					netty.click();
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
+			  Thread.sleep(10000);
+			  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
+						  Thread.sleep(5000);
+			  driver.findElement(By.xpath("//android.widget.Button[@text='Choose Files']|//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']")).click();
+		  Thread.sleep(5000);
+		// Auto IT Script
+				
+			  //Switch to Native_App
+		        Set<String> contextNames = driver.getContextHandles();
+		        for (String strContextName : contextNames) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }
 			  
+		        //
+		        Thread.sleep(3000);
+		        driver.findElement(By.xpath("(//*[@id='bitmap_view'])[3]|(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click(); //(//*[@knownSuperClass='android.widget.ImageView'])[5]")).click();
+				
+		        Thread.sleep(5000);
+				  driver.findElement(By.id("done")).click();
+				  
+		        
+		        //Switch to Chrome browser
+		        Set<String> contextNames1 = driver.getContextHandles();
+		        for (String strContextName : contextNames1) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		        }
+			  
+
+				/////		
+		
 			  Thread.sleep(5000);
 			  driver.findElement(By.xpath("//android.widget.Button[@text='CONTINUE']")).click();
 			
+			  Thread.sleep(5000);
+			  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']")).click();
+	 
 			 Thread.sleep(10000);
-			 MobileElement CONFIRM =  (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CONFIRM ORDER']"));
-		//	 JavascriptExecutor executor = (JavascriptExecutor)driver;
-		//	 executor.executeScript("arguments[0].click();", CONFIRM);
-			 TouchAction action = new TouchAction((MobileDriver) driver);
-			 action.tap(CONFIRM);
-			  CONFIRM.click();
-			  
-			 
-			 
-			 Thread.sleep(5000);
-			 // driver.findElement(By.xpath("//android.widget.Button[@text='Submit']")).click();
-			  
-			 
-			 
-			 Thread.sleep(5000);
-			 // driver.findElement(By.xpath("//android.widget.Button[@text='Submit']")).click();
-			  
-			 
+		 driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
+			 Thread.sleep(10000);
+			 driver.findElement(By.xpath("//*[@text=' View Details ']|//*[@css='BUTTON.btn-view.ord-btn']")).click();
 			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']")).click();
+			 driver.findElement(By.xpath("//*[@text='Cancel Order']|//*[@css='BUTTON.btn.btn-help.ng-star-inserted']")).click();
 			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']")).click();
+			 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|(//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid'])[1]")).click();
+			 Thread.sleep(3000);
+			 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
 			
-			 //MobileElement co = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']"));co.click();
-			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();
-			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.RadioButton[@text='Delay in delivery']")).click();
-			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-			 //touchAction.tap(100,i1).perform();
-			 
+			
 		  
 
 	}
@@ -428,20 +480,17 @@ public class Msite_M2Flow extends MsiteBaseClass {
 			  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']"));
 			  
 
+			 Thread.sleep(10000);
+		 driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
+			 Thread.sleep(10000);
+			 driver.findElement(By.xpath("//*[@text=' View Details ']|//*[@css='BUTTON.btn-view.ord-btn']")).click();
 			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']")).click();
+			 driver.findElement(By.xpath("//*[@text='Cancel Order']|//*[@css='BUTTON.btn.btn-help.ng-star-inserted']")).click();
 			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']")).click();
+			 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|(//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid'])[1]")).click();
+			 Thread.sleep(3000);
+			 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
 			
-			 //MobileElement co = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']"));co.click();
-			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();
-			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.RadioButton[@text='Delay in delivery']")).click();
-			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-			 //touchAction.tap(100,i1).perform();
-		
 	}
 	  
 	  
