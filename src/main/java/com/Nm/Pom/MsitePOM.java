@@ -19,21 +19,43 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 
-	
+
+	@FindBy(xpath = "//span[@class='app_close']|//*[@class='app_close']")
+	private WebElement Msite_HomeScreen_POP_UP;
+    public WebElement getMsite_HomeScreen_POP_UP() {
+		return Msite_HomeScreen_POP_UP;
+	}
+
     
-    @FindBy(xpath = "//*[@css=concat('A.view_btn[href=', \\\"'\\\", '/upload_prescription', \\\"'\\\", ']')]|//*[@class='app_close']//android.view.View[@content-desc=\"Order Now\"]")
+    @FindBy(xpath = "//*[@content-desc='Order Now']|//*[@text='Order Now' ]")
     private WebElement Msite_OrderNow;
 	public WebElement getMsite_OrderNow() {
 		return Msite_OrderNow;
 	}
 	//******************	M2
 		@FindBy(xpath = "//span[@class='app_close']")
-		private WebElement Msite_HomeScreen_POP_UP;
-	    public WebElement getMsite_HomeScreen_POP_UP() {
+		private WebElement Msite_HomeScreen_POP_UP1;
+	    public WebElement getMsite_HomeScreen_POP_UP1() {
 			return Msite_HomeScreen_POP_UP;
 		}
 	    
+
+	    @FindBy(xpath = "//android.view.View[@content-desc=\"Order Now\"]")
+	    private WebElement Msite_OrderNow1;
+		public WebElement getMsite_OrderNow1() {
+			return Msite_OrderNow;
+			
+			
+		}
+		
+		//@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+	   // private WebElement Msite_Upload_Prescription1;
+		//public WebElement getMsite_Upload_Prescription1() {
+		//	return Msite_Upload_Prescription1;
+		//}	
+
 	
+
 		
 		
 		@FindBy(xpath = "//android.widget.Button[@text='Choose Files']")
@@ -43,16 +65,26 @@ public class MsitePOM extends MsiteBaseClass{
 		}
 		
 		
-	
-		
+
+		@FindBy(xpath = "//android.widget.RadioButto[@text='Search and Add medicines']")
+	    private WebElement Msite_M2_searchMedicine1;
+		public WebElement getMsite_M2_searchMedicine1() {
+			return Msite_M2_searchMedicine1;
+		}
+
 		
 		@FindBy(xpath = "//android.widget.RadioButto[@text='Get call from Netmeds']")
 	    private WebElement Msite_M2_Getcall;
 		public WebElement getMsite_M2_Getcall() {
 			return Msite_M2_Getcall;
 		}
-		
-		
+
+		@FindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+		private WebElement Msite_M2_SearcCall_ContinueButton1;
+		public WebElement getMsite_M2_SearcCall_ContinueButton1() {
+			return Msite_M2_SearcCall_ContinueButton1;
+		}
+
 		
 	//*******************************	My rewards
 		@FindBy(xpath = "//*[@id='nms_phonepe']")
@@ -161,7 +193,7 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 
-	@FindBy(xpath = "//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+	@FindBy(xpath = "//*[@text='Upload Prescription']")
     private WebElement Msite_Upload_Prescription;
 	public WebElement getMsite_Upload_Prescription() {
 		return Msite_Upload_Prescription;
@@ -182,6 +214,7 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 
+
 	@FindBy(xpath = "(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButto[@text='Search and Add medicines']")
     private WebElement Msite_M2_searchMedicine;
 	public WebElement getMsite_M2_searchMedicine() {
@@ -200,16 +233,17 @@ public class MsitePOM extends MsiteBaseClass{
 	private WebElement Proceedtocheckout;
 	public WebElement getProceedtocheckout() {
 		return Proceedtocheckout;
-	
+
 	}
+
 	@FindBy(xpath = "//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")
 	private WebElement Msite_M2_SearcCall_ContinueButton;
 	public WebElement getMsite_M2_SearcCall_ContinueButton() {
 		return Msite_M2_SearcCall_ContinueButton;
 
 	}
-		
-		
+	
+
 		
 		@FindBy(xpath = "//*[@text='Next']|//android.widget.Button[@text='NEXT']")
 		private WebElement Nextbutton;
@@ -536,8 +570,192 @@ public class MsitePOM extends MsiteBaseClass{
 
 
 		}
+//********************************My Orders Page
 		
+		@FindBy(xpath = "//*[@text='ORDER DETAILS']")
+		private WebElement OrderDetails_text;
+		public WebElement getOrderDetails_text() {
+			return OrderDetails_text;
+}	
+	
+		
+		@FindBy(xpath = "(//*[@class='col-lg-5 col-5 pl-0'])[1]")
+		private WebElement Customer_name_text;
+		public WebElement getCustomer_name_text() {
+			return Customer_name_text;
+}		
+		
+		
+		@FindBy(xpath = "(//*[@class='col-lg-7 col-7 p-0 text-right'])[1]")
+		private WebElement Customer_name;
+		public WebElement getCustomer_name() {
+			return Customer_name;
+				}		
+		
+		@FindBy(xpath = "(//*[@class='col-lg-7 col-7 p-0 text-right'])[2]")
+		private WebElement OrderId;
+		public WebElement getOrderId() {
+			return OrderId;
+				}	
+		
+		@FindBy(xpath = "(//*[@class='col-lg-5 col-5 pl-0'])[3]")
+		private WebElement Order_placed_text;
+		public WebElement getOrder_placed_text() {
+			return Order_placed_text;
+				}
+		
+		
+		@FindBy(xpath = "(//*[@class='col-lg-7 col-7 p-0 text-right'])[3]")
+		private WebElement Order_placed;
+		public WebElement getOrder_placed() {
+			return Order_placed;
+				}	
+		
+			
+		@FindBy(xpath = "//*[@class='btn btn-help btnhelpdark ng-star-inserted' and @top='true']")
+		private WebElement NeedHelp_page;
+		public WebElement getNeedHelp_page() {
+			return NeedHelp_page;
+				}
+		
+
+		
+		@FindBy(xpath = "//*[@class='action order nmsreorder btn primary-btn ng-star-inserted' and @top='true']")
+		private WebElement Reorder;
+		public WebElement getReorder() {
+			return Reorder;
+				}	
+		
+		@FindBy(xpath = "//*[@class='btn-checkout btn btn_to_checkout']")
+		private WebElement Proceed_btn;
+		public WebElement getProceed_btn() {
+			return Proceed_btn;
+				}
+		
+	
+		@FindBy(xpath = "//*[@text='Show Status Details']")
+		private WebElement Show_Status_Details;
+		public WebElement getShow_Status_Details() {
+			return Show_Status_Details;
+				}
+		
+		@FindBy(xpath = "//*[@nodeName='SPAN' and @top='true']")
+		private WebElement Prescription_open;
+		public WebElement getPrescription_open() {
+			return Prescription_open;
+				}
+		
+		
+		@FindBy(xpath = "//*[@class='item ng-star-inserted' and @top='true'])[1]")
+		private WebElement Prescription_closed;
+		public WebElement getPrescription_closed() {
+			return Prescription_closed;
+				}
+
+		
+		@FindBy(xpath = "//*[@text='Medicine Orders']")
+		private WebElement Myorders;
+		public WebElement getMyorders() {
+			return Myorders;
+				}
+		
+		
+		@FindBy(xpath = "(//*[@class='btn-view ord-btn'])[1]")
+		private WebElement Viewdetails;
+		public WebElement getViewdetails() {
+			return Viewdetails;
+				}
+		
+		@FindBy(xpath = "//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")
+		private WebElement Cancelorder;
+		public WebElement getCancelorder() {
+			return Cancelorder;
+				}
+		
+		
+		@FindBy(xpath = "//*[@text='YES']|//android.widget.Button[@text='YES']")
+		private WebElement Yesbutton;
+		public WebElement getYesbutton() {
+			return Yesbutton;
+				}
+		
+		
+		@FindBy(xpath = "(//*[@nodeName='LABEL' and @top='true'])[1]")
+		private WebElement Cancel_reason;
+		public WebElement getCancel_reason() {
+			return Cancel_reason;
+				}
+		
+	
+//************************************************ Order Success Page
+		
+		
+		@FindBy(xpath = "//*[@class='subscribe']")
+		private WebElement Subscribe_now;
+		public WebElement getSubscribe_now() {
+			return Subscribe_now;
+				}
+		
+		
+		
+		@FindBy(xpath = "//*[@class='deliver-cnt' and @top='true']")
+		private WebElement Refill_msg;
+		public WebElement getRefill_msg() {
+			return Refill_msg;
+				}
+		
+		@FindBy(xpath = "//*[@class='mode']")
+		private WebElement Paymentmode_text;
+		public WebElement getPaymentmode_text() {
+			return Paymentmode_text;
+	
+		}
+		
+		@FindBy(xpath = "//*[@class='val']")
+		private WebElement Paymentmethod_text;
+		public WebElement getPaymentmethod_text() {
+			return Paymentmethod_text;
+
+		}
+		
+		@FindBy(xpath = "//*[@class='code-txt']")
+		private WebElement Promocode;
+		public WebElement getPromocode() {
+			return Promocode;
+
+		}
+		
+				
+		@FindBy(xpath = "//*[@class='promo-txt']")
+		private WebElement Promo_percentage;
+		public WebElement getPromo_percentage() {
+			return Promo_percentage;
+
+		}
+
+		
+		@FindBy(xpath = "//*[@class='modify-txt']")
+		private WebElement Modify_or_reschedule;
+		public WebElement getModify_or_reschedule() {
+			return Modify_or_reschedule;
+
+		}
+		@FindBy(xpath = "//*[@text='ENABLE SUBSCRIPTION']")
+		private WebElement EnableSubscription;
+		public WebElement getEnableSubscription() {
+			return EnableSubscription;
+
+		}
 }
+
+
+
+
+
+
+
+
+
 
 
 		

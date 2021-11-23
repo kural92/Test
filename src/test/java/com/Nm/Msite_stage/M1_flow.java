@@ -32,6 +32,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.Nm.Base.MobileBaseClass;
+import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
@@ -52,7 +53,7 @@ import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import utils.FileAndEnv;
 
-public class M1_flow extends MobileBaseClass {
+public class M1_flow extends MsiteBaseClass {
 
 	
 	
