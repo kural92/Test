@@ -27,7 +27,7 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 
     
-    @FindBy(xpath = "//*[@css=concat('A.view_btn[href=', \\\"'\\\", '/upload_prescription', \\\"'\\\", ']')]|//*[@class='app_close']//android.view.View[@content-desc=\"Order Now\"]")
+    @FindBy(xpath = "//*[@content-desc='Order Now']|//*[@text='Order Now' ]")
     private WebElement Msite_OrderNow;
 	public WebElement getMsite_OrderNow() {
 		return Msite_OrderNow;
@@ -48,11 +48,11 @@ public class MsitePOM extends MsiteBaseClass{
 			
 		}
 		
-		@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
-	    private WebElement Msite_Upload_Prescription1;
-		public WebElement getMsite_Upload_Prescription1() {
-			return Msite_Upload_Prescription1;
-		}	
+		//@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+	   // private WebElement Msite_Upload_Prescription1;
+		//public WebElement getMsite_Upload_Prescription1() {
+		//	return Msite_Upload_Prescription1;
+		//}	
 
 	
 
@@ -115,10 +115,10 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 
-	@FindBy(xpath = "//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+	@FindBy(xpath = "//*[@text='Upload Prescription']")
     private WebElement Msite_Upload_Prescription;
 	public WebElement getMsite_Upload_Prescription() {
-		return Msite_Upload_Prescription1;
+		return Msite_Upload_Prescription;
 	}	
 
 	@FindBy(xpath = "//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")
@@ -608,7 +608,72 @@ public class MsitePOM extends MsiteBaseClass{
 			return Cancel_reason;
 				}
 		
+	
+//************************************************ Order Success Page
+		
+		
+		@FindBy(xpath = "//*[@class='subscribe']")
+		private WebElement Subscribe_now;
+		public WebElement getSubscribe_now() {
+			return Subscribe_now;
+				}
+		
+		
+		
+		@FindBy(xpath = "//*[@class='deliver-cnt' and @top='true']")
+		private WebElement Refill_msg;
+		public WebElement getRefill_msg() {
+			return Refill_msg;
+				}
+		
+		@FindBy(xpath = "//*[@class='mode']")
+		private WebElement Paymentmode_text;
+		public WebElement getPaymentmode_text() {
+			return Paymentmode_text;
+	
+		}
+		
+		@FindBy(xpath = "//*[@class='val']")
+		private WebElement Paymentmethod_text;
+		public WebElement getPaymentmethod_text() {
+			return Paymentmethod_text;
+
+		}
+		
+		@FindBy(xpath = "//*[@class='code-txt']")
+		private WebElement Promocode;
+		public WebElement getPromocode() {
+			return Promocode;
+
+		}
+		
+				
+		@FindBy(xpath = "//*[@class='promo-txt']")
+		private WebElement Promo_percentage;
+		public WebElement getPromo_percentage() {
+			return Promo_percentage;
+
+		}
+
+		
+		@FindBy(xpath = "//*[@class='modify-txt']")
+		private WebElement Modify_or_reschedule;
+		public WebElement getModify_or_reschedule() {
+			return Modify_or_reschedule;
+
+		}
+		@FindBy(xpath = "//*[@text='ENABLE SUBSCRIPTION']")
+		private WebElement EnableSubscription;
+		public WebElement getEnableSubscription() {
+			return EnableSubscription;
+
+		}
 }
+
+
+
+
+
 
 
 
