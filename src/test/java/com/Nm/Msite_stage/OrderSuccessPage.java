@@ -50,7 +50,7 @@ import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class M3OrderSuccessPage extends MsiteBaseClass {
+public class OrderSuccessPage extends MsiteBaseClass {
 
 	
 	
@@ -324,13 +324,6 @@ public class M3OrderSuccessPage extends MsiteBaseClass {
 		            }
 		        }
 			  
-				/////			
-				
-				
-				
-				
-				
-				
 			//driver.findElement(By.xpath("(//*[@resource-id='android:id/title'])[6]")).click();
 				
 				//Past Rx
@@ -527,7 +520,7 @@ public class M3OrderSuccessPage extends MsiteBaseClass {
 //*****************	M1 Order Success page
 	
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 				public void M1OrderSuccessPage() throws Throwable {
 	
 	
@@ -783,68 +776,265 @@ Thread.sleep(3000);
 		
 		driver.swipe(0, 1790, 0, 1550, 1000);
 		
-		m.getEnableSubscription();
-	
+	btnclick(m.getEnableSubscription());
+	}
+	//Order cancellation
 		
-}	
-	@AfterMethod()
-	public void screenShot(ITestResult result) throws Throwable {
 		
-	    if(result.getStatus() == ITestResult.FAILURE) {
-	    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
-	    	logger.fail(result.getThrowable());
-	    	try {
-				
+		
+//********************************M2 Order Success page
+		
+		
+		
+		 @Test(enabled = true)
+		  public void laucnh() throws Throwable {
+			  
+			  driver.get("https://m.netmeds.com/");
+			 // driver.manage().window().maximize();
+			  MsitePOM m = new MsitePOM();
+			  Thread.sleep(10000);
+			 // driver.findElement(By.xpath("//android.view.View[@text()='INTRODUCING NETMEDS LITE']/preceding-sibling::android.view.View[@index='0']")).click();
+			  try {
 
-				TakesScreenshot screenshot = (TakesScreenshot) driver;
-				File src = screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
-				System.out.println("Successfully captured a screenshot");
-				//logger.log(Status.FAIL, result.getThrowable());
-				logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
+			  driver.findElement(By.xpath("//*[@class='app_close']")).click();
+				//  m.getMsite_HomeScreen_POP_UP().click();
+
+			//  driver.findElement(By.xpath("//android.view.View[@text='✕']")).click();
+
+			  }catch (Exception e) {
+				// TODO: handle exception
+			}
+			  
+			  Thread.sleep(10000);
+
+			  m.getMsite_OrderNow().click();
+
+			  letschat();
+
+
+			  letschat();
+			  Thread.sleep(10000);
+			  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
+			//  m.getMsite_Upload_Prescription().click();
+			  Thread.sleep(5000);
+			  driver.findElement(By.xpath("//android.widget.Button[@text='Choose Files']|//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']")).click();
+			//  m.getMsite_Upload_Gallery().click();
+			  Thread.sleep(5000);
+		//	  driver.findElement(By.xpath("(//*[@knownSuperClass='android.widget.ImageView'])[5]")).click();//"(//*[@id='bitmap_view'])[3]|(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click();
+			// Auto IT Script
+				
+			  //Switch to Native_App
+		        Set<String> contextNames = driver.getContextHandles();
+		        for (String strContextName : contextNames) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }
+			  
+		        //
+		        Thread.sleep(3000);
+		        driver.findElement(By.xpath("(//*[@id='bitmap_view'])[3]|(//android.widget.ImageView[@resource-id='com.android.chrome:id/bitmap_view'])[3]")).click(); //(//*[@knownSuperClass='android.widget.ImageView'])[5]")).click();
+				
+		        Thread.sleep(5000);
+				  driver.findElement(By.id("done")).click();
+				  
+		        
+		        //Switch to Chrome browser
+		        Set<String> contextNames1 = driver.getContextHandles();
+		        for (String strContextName : contextNames1) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		        }
+	
+			  Thread.sleep(5000);
+			  driver.findElement(By.xpath("(//*[@css='INPUT.m2checkbox.ng-untouched.ng-pristine.ng-valid'])[1]|//android.widget.RadioButton[@text='Search and Add medicines']")).click();
+		//	m.getMsite_M2_searchMedicine().click();  
+
+
+			  
+			  Thread.sleep(5000);
+			  driver.findElement(By.xpath("//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")).click();
+		//	m.getMsite_M2_SearcCall_ContinueButton().click();  
+			 Thread.sleep(5000);
+			 driver.findElement(By.xpath("//*[@css='INPUT.ais-SearchBox-input']")).sendKeys("Telma");
+			 
+			 Thread.sleep(2000);
+			 driver.hideKeyboard();
+			 
+			 
+			 
+			 Thread.sleep(5000);
+			  driver.findElement(By.xpath("(//*[@css='BUTTON.btn.btn_to_cart.m-0'])[1]|/hierarchy/android.widget.FrameLayout/"
+			  		+ "android.widget.LinearLayout/android.widget.FrameLayout/"
+			  		+ "android.widget.FrameLayout/android.widget.FrameLayout/"
+			  		+ "android.view.ViewGroup/android.widget.FrameLayout[1]/"
+			  		+ "android.widget.FrameLayout[2]/android.webkit.WebView/"
+			  		+ "android.view.View/android.view.View[2]/android.view.View[2]/"
+			  		+ "android.view.View[5]/android.view.View[4]/android.widget.Button")).click();
+			  
+			  
+			 Thread.sleep(5000);
+			  driver.findElement(By.xpath("//*[@text=' Add to Cart ']|//android.widget.Button[@text='ADD TO CART']")).click();
+			  
+			 
+			 Thread.sleep(5000);
+			  driver.findElement(By.xpath("//*[@text='Proceed']|//android.widget.Button[@text='PROCEED']")).click();
+			  
+			  Thread.sleep(10000);
+			  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']")).click();
+	 
+			 Thread.sleep(3000);
+				
+			//Order Success Page
+						 
+		letschat();
+
+		System.out.println(driver.findElement(By.xpath("//*[@text='Order Placed Successfully!']")).getText());
+		Thread.sleep(3000);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@class='ordstatus']")).getText());
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 1400, 0, 0, 1000);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@text='Consult Now']")).click();
+		
+		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+		
+		//Let's chat handle//
+		letschat();
+		
+		Thread.sleep(5000);
+		
+		
+
+		
+		
+       
+		
+	//	driver.findElement(By.xpath("//*[@class='btn-view ord-btn']|//android.widget.Button[@text='VIEW DETAILS']")).click();
+		btnclick(m.getViewdetails());
+		Thread.sleep(5000);
+		
+		//Switch to Native_App		
+		 Set<String> contextNames4 = driver.getContextHandles();
+	        for (String strContextName : contextNames4) {
+	            if (strContextName.contains("NATIVE_APP")) {
+	                driver.context("NATIVE_APP");
+	                break;
+	            }
+	        }		
 			
 		
-				
-				
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
-	      }
-	 
-	    else if(result.getStatus() == ITestResult.SUCCESS) {
-	    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
-	    
-	    }
-	    else {
-	    
-	    	 // onFinish(context);
-	    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
-	    	logger.skip(result.getThrowable());
-	    	report.removeTest(logger);
-	    }
-	    
-	    
-	    
-	Thread.sleep(3000);
-	if (result.getStatus() == ITestResult.FAILURE) {
+		 driver.swipe(82, 1600, 82, 0, 1000);
 		Thread.sleep(3000);
-	//	BaseClass.mail_report();
-	
+		//driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
+		btnclick(m.getCancelorder());
+
+
+		Thread.sleep(5000);
+//
+		driver.swipe(82, 939, 82, 6, 1000);
 		
-	//	BaseClass.mail_report();
-	}
-	
-	
-	}	
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath("//*[@text='YES']|//android.widget.Button[@text='YES']")).click();
+		try{btnclick(m.getYesbutton());}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
+		
+		
+//		
+		
+		
+//Switch to Chrome browser
+        Set<String> contextNames5 = driver.getContextHandles();
+        for (String strContextName : contextNames5) {
+            if (strContextName.contains("CHROMIUM")) {
+                driver.context("CHROMIUM");
+                break;
+            }
+            	
+         //   btnclick(m.getCancel_reason());
+			Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
+		//logger.log(Status.PASS, "Successfully Order was Cancelled");
+		System.out.println("Successfully Order was Cancelled");
+		Thread.sleep(2000);
+		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
+
+        }
+		 }	
 		
 
+	
+	
+	
+	
+		 @AfterMethod()
+			public void screenShot(ITestResult result) throws Throwable {
+				
+			    if(result.getStatus() == ITestResult.FAILURE) {
+			    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
+			    	logger.fail(result.getThrowable());
+			    	try {
+						
 
-	@AfterTest
-	private void quitbrowser() {
-		report.flush();
-		
- //     driver.quit();
-	}
+						TakesScreenshot screenshot = (TakesScreenshot) driver;
+						File src = screenshot.getScreenshotAs(OutputType.FILE);
+						FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
+						System.out.println("Successfully captured a screenshot");
+						//logger.log(Status.FAIL, result.getThrowable());
+						logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
+					
+				
+						
+						
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+			      }
+			 
+			    else if(result.getStatus() == ITestResult.SUCCESS) {
+			    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
+			    
+			    }
+			    else {
+			    
+			    	 // onFinish(context);
+			    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
+			    	logger.skip(result.getThrowable());
+			    	report.removeTest(logger);
+			    }
+			    
+			    
+			    
+			Thread.sleep(3000);
+			if (result.getStatus() == ITestResult.FAILURE) {
+				Thread.sleep(3000);
+			//	BaseClass.mail_report();
+			
+				
+			//	BaseClass.mail_report();
+			}
+			
+			
+			}	
+				
 
 
-}
+			@AfterTest
+			private void quitbrowser() {
+				report.flush();
+				
+		 //     driver.quit();
+			}
+
+
+		}

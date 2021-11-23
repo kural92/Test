@@ -53,7 +53,6 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class Msite_M2Flow extends MsiteBaseClass {
 
-<<<<<<< HEAD
 	
 	
 	
@@ -151,23 +150,22 @@ public class Msite_M2Flow extends MsiteBaseClass {
    }
 	
 
+	/*
+	@BeforeMethod
+	  public void setUp1() throws MalformedURLException {
+	      System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
+	      Map<String, String> mobileEmulation = new HashMap<String, String>();
+	      mobileEmulation.put("deviceName", "Moto G4");
 
-=======
-	    DesiredCapabilities dc = new DesiredCapabilities();
+	      ChromeOptions chromeOptions = new ChromeOptions();
+	      chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+	      chromeOptions.addArguments("--disable-notifications");
+	      driver = new ChromeDriver(chromeOptions);
+	     
+	     
+	  }  */
 	    
-	    @BeforeTest
-	    public void setUp() throws MalformedURLException {
-	        dc.setCapability("reportDirectory", reportDirectory);
-	        dc.setCapability("reportFormat", reportFormat);
-	        dc.setCapability("testName", testName);
-	        dc.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");
-	        dc.setCapability("platformName", "Android");
-	        dc.setBrowserName(MobileBrowserType.CHROMIUM);
-	        dc.setCapability("noReset", true);
-	        driver = new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"), dc);
-	        driver.setLogLevel(Level.INFO);
-	    }
->>>>>>> 4d738cb7bb1183de7165c5d8214605d11e05e479
+
 		
 	  
 	  @Test(enabled = true)
@@ -191,7 +189,7 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		  
 		  Thread.sleep(10000);
 
-<<<<<<< HEAD
+
 	
 		  m.getMsite_OrderNow().click();
 
@@ -203,8 +201,8 @@ public class Msite_M2Flow extends MsiteBaseClass {
 	
 	letschat();
 
-=======
-		  driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
+
+		  //driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
 		 // m.getMsite_OrderNow().click();
 
 	
@@ -217,8 +215,6 @@ public class Msite_M2Flow extends MsiteBaseClass {
 					// TODO: handle exception
 				}
 
-		
->>>>>>> 4d738cb7bb1183de7165c5d8214605d11e05e479
 		  Thread.sleep(10000);
 		  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
 		//  m.getMsite_Upload_Prescription().click();
