@@ -198,6 +198,12 @@ public class M3PastRx extends MsiteBaseClass {
 //Let's chat handle//
 		letschat();
 		Thread.sleep(5000);
+		 Thread.sleep(10000);
+		  try {
+		  driver.findElement(By.xpath("//span[@class='app_close'] | //*[@class='app_close']")).click();
+		  }catch (Exception e) {
+			// TODO: handle exception
+		}
 				
 // Step 4 : Navigate to Mysubscription page//
 		Thread.sleep(5000);
