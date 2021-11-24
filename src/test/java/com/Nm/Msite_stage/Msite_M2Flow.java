@@ -1,46 +1,171 @@
 package com.Nm.Msite_stage;
 
+
+
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Driver;
+import java.util.List;
 import java.util.Set;
-import java.util.logging.Level;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.touch.ScrollAction;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.Nm.Base.BaseClass;
+import com.Nm.Base.MobileBaseClass;
 import com.Nm.Base.MsiteBaseClass;
+import com.Nm.Pom.AndriodPom;
+import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.remote.MobileBrowserType;
+import io.appium.java_client.android.AndroidKeyCode;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class Msite_M2Flow extends MsiteBaseClass {
-	  private String reportDirectory = "reports";
-	    private String reportFormat = "xml";
-	    private String testName = "Untitled";
-	    protected AndroidDriver<AndroidElement> driver = null;
 
-	    DesiredCapabilities dc = new DesiredCapabilities();
+	
+	
+	
+	ExtentHtmlReporter htmlReporter;
+	 public static ExtentReports report;
+		public static  ExtentTest logger;
+		@BeforeClass
+		
+		//@BeforeClass
+		public void launchbrowser2()   {
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+
+			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
+
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
+
+			capabilities.setCapability("platformName", "Android");
+		//	capabilities.setCapability("deviceName", "vivo 1819");
+		//	capabilities.setCapability("platformVersion","10.0.0" );
+			//for m-site
+			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
+			//for install Apk file
+			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
+			// already installed app
+			/*capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
+			capabilities.setCapability("noReset", true);
+			*/
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
+			capabilities.setCapability("noReset", true);
+			
+			capabilities.setCapability("autoDismissAlerts", true);  
+			
+			
+			try {
+				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+				
+			} catch (MalformedURLException e) {
+				System.out.println(e.getMessage());
+			}
+					
+		}
+
+
+		public void launchbrowser() {
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
+			capabilities.setCapability("platformName", "Android");
+			//capabilities.setCapability("deviceName", "vivo 1819");
+			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
+			//for m-site
+			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
+			//for install Apk file
+			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
+			// already installed app
+			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
+			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
+			capabilities.setCapability("noReset", true);
+			
+					
+			//capabilities.setCapability("autoDismissAlerts", true);  
+			
+			try {
+				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+				
+				
+			} catch (MalformedURLException e) {
+				System.out.println(e.getMessage()); 
+			}
+					
+		}
+	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
+   public void startReport() {
+   	
+      htmlReporter = new ExtentHtmlReporter(".//Report//AlternateBrand.html");
+       
+       //initialize ExtentReports and attach the HtmlReporter
+       report = new ExtentReports();
+       
+     // htmlReporter.setAppendExisting(true);
+       report.attachReporter(htmlReporter);
+       report.setSystemInfo("Host name", "localhost");
+       report.setSystemInfo("Environemnt", "QA");
+       report.setSystemInfo("user", "Automation Team");
+   
+       //configuration items to change the look and feel
+       //add content, manage tests etc
+
+       htmlReporter.config().setDocumentTitle("Extent Report ");
+       htmlReporter.config().setReportName("NetMeds.com");
+
+       //htmlReporter.config().setTheme(Theme.STANDARD);
+   	
+   }
+	
+
+	/*
+	@BeforeMethod
+	  public void setUp1() throws MalformedURLException {
+	      System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
+	      Map<String, String> mobileEmulation = new HashMap<String, String>();
+	      mobileEmulation.put("deviceName", "Moto G4");
+
+	      ChromeOptions chromeOptions = new ChromeOptions();
+	      chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+	      chromeOptions.addArguments("--disable-notifications");
+	      driver = new ChromeDriver(chromeOptions);
+	     
+	     
+	  }  */
 	    
-	    @BeforeTest
-	    public void setUp() throws MalformedURLException {
-	        dc.setCapability("reportDirectory", reportDirectory);
-	        dc.setCapability("reportFormat", reportFormat);
-	        dc.setCapability("testName", testName);
-	        dc.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");
-	        dc.setCapability("platformName", "Android");
-	        dc.setBrowserName(MobileBrowserType.CHROMIUM);
-	        dc.setCapability("noReset", true);
-	        driver = new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"), dc);
-	        driver.setLogLevel(Level.INFO);
-	    }
+
 		
 	  
 	  @Test(enabled = true)
@@ -64,7 +189,20 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		  
 		  Thread.sleep(10000);
 
-		  driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
+
+	
+		  m.getMsite_OrderNow().click();
+
+	
+		 
+		letschat();
+
+	//driver.findElement(By.xpath("//*[@text='Upload Prescription']"));
+	
+	letschat();
+
+
+		  //driver.findElement(By.xpath("//android.view.View[@text=\"Order Now\"]|//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]")).click();
 		 // m.getMsite_OrderNow().click();
 
 	
@@ -77,7 +215,6 @@ public class Msite_M2Flow extends MsiteBaseClass {
 					// TODO: handle exception
 				}
 
-		
 		  Thread.sleep(10000);
 		  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
 		//  m.getMsite_Upload_Prescription().click();
@@ -284,7 +421,7 @@ public class Msite_M2Flow extends MsiteBaseClass {
 			}
 			  
 			  Thread.sleep(10000);
-			  driver.findElement(By.xpath("//*[@css=concat('A.view_btn[href=', \"'\", '/upload_prescription', \"'\", ']')]|//android.view.View[@text=\\\"Order Now\\\"]")).click();
+			  btnclick(driver.findElement(By.xpath("//*[@content-desc='Order Now']")));
 			  
 			  Thread.sleep(10000);
 			  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();

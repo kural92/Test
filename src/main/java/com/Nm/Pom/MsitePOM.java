@@ -27,7 +27,7 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 
     
-    @FindBy(xpath = "//*[@css=concat('A.view_btn[href=', \\\"'\\\", '/upload_prescription', \\\"'\\\", ']')]|//*[@class='app_close']//android.view.View[@content-desc=\"Order Now\"]")
+    @FindBy(xpath = "//*[@content-desc='Order Now']|//*[@text='Order Now' ]")
     private WebElement Msite_OrderNow;
 	public WebElement getMsite_OrderNow() {
 		return Msite_OrderNow;
@@ -48,11 +48,11 @@ public class MsitePOM extends MsiteBaseClass{
 			
 		}
 		
-		@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
-	    private WebElement Msite_Upload_Prescription1;
-		public WebElement getMsite_Upload_Prescription1() {
-			return Msite_Upload_Prescription1;
-		}	
+		//@FindBy(xpath = "//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+	   // private WebElement Msite_Upload_Prescription1;
+		//public WebElement getMsite_Upload_Prescription1() {
+		//	return Msite_Upload_Prescription1;
+		//}	
 
 	
 
@@ -87,10 +87,88 @@ public class MsitePOM extends MsiteBaseClass{
 
 		
 	//*******************************	My rewards
+		@FindBy(xpath = "//*[@id='nms_phonepe']")
+		private WebElement Phonepe_pay;
+		public WebElement getPhonepe_pay() {
+			return Phonepe_pay;
+		}
+		@FindBy(xpath = "//*[@id='nms_cod' and @name='nmsmstr_paymethod']")
+		private WebElement Cod_popoup;
+		public WebElement getCod_popoup() {
+			return Cod_popoup;
+		}
+		@FindBy(xpath = "//*[@class='ccardno']")
+		private WebElement Cart_pay;
+		public WebElement getCart_pay() {
+			return Cart_pay;
+		}
+		@FindBy(xpath = "//*[@name='netbank_list']")
+		private WebElement More_banks;
+		public WebElement getMore_banks() {
+			return More_banks;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_axis']")
+		private WebElement Axis_bank;
+		public WebElement getAxis_bank() {
+			return Axis_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_sbi']")
+		private WebElement SBI_bank;
+		public WebElement getSBI_bank() {
+			return SBI_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_kotak']")
+		private WebElement Kotak_bank;
+		public WebElement getKotak_bank() {
+			return Kotak_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_icici']")
+		private WebElement Icici_bank;
+		public WebElement getIcici_bank() {
+			return Icici_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_nb_hdfc']")
+		private WebElement Hdfc_bank;
+		public WebElement getHdfc_bank() {
+			return Hdfc_bank;
+		}
+		@FindBy(xpath = "//*[@id='nms_googlepay' and @name='nmsmstr_paymethod']")
+		private WebElement Googlepay_pay;
+		public WebElement getGooglepay_pay() {
+			return Googlepay_pay;
+		}
+		@FindBy(xpath = "//*[@id='nms_simpl']")
+		private WebElement Simpl_payment;
+		public WebElement getSimpl_payment() {
+			return Simpl_payment;
+		}
 		
 		//my Account 
-
-		
+		@FindBy(xpath = "//*[@id='nms_paytm' and @name='nmsmstr_paymethod']")
+		private WebElement Paytm_payment;
+		public WebElement getPaytm_payment() {
+			return Paytm_payment;
+		}
+		@FindBy(xpath = "//*[@text and @nodeName='BUTTON']")
+		private WebElement Paytm_paymentutton;
+		public WebElement getPaytm_paymentutton() {
+			return Paytm_paymentutton;
+		}
+		@FindBy(xpath = "//*[@id='nms_amazonpay']")
+		private WebElement Amazon_pay;
+		public WebElement getAmazon_pay() {
+			return Amazon_pay;
+		}
+		@FindBy(xpath = "//*[@text and @nodeName='BUTTON']")
+		private WebElement AMAZONPAY_paybutton;
+		public WebElement getAMAZONPAY_paybutton() {
+			return AMAZONPAY_paybutton;
+		}
+		@FindBy(xpath = "//*[@text='Retry']")
+		private WebElement Payment_retry;
+		public WebElement getPayment_retry() {
+			return Payment_retry;
+		}
 		@FindBy(xpath = "//*[@text='Account']")
 		private WebElement myaccount;
 		public WebElement getmyaccount() {
@@ -115,10 +193,10 @@ public class MsitePOM extends MsiteBaseClass{
 	}
 	
 
-	@FindBy(xpath = "//*[@text='Upload Prescription']|//android.widget.Button[@text='UPLOAD PRESCRIPTION']")
+	@FindBy(xpath = "//*[@text='Upload Prescription']")
     private WebElement Msite_Upload_Prescription;
 	public WebElement getMsite_Upload_Prescription() {
-		return Msite_Upload_Prescription1;
+		return Msite_Upload_Prescription;
 	}	
 
 	@FindBy(xpath = "//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")
@@ -608,6 +686,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return Cancel_reason;
 				}
 		
+<<<<<<< HEAD
 		
 		
 		
@@ -671,7 +750,74 @@ public class MsitePOM extends MsiteBaseClass{
 		
 		
 		
+=======
+	
+//************************************************ Order Success Page
+		
+		
+		@FindBy(xpath = "//*[@class='subscribe']")
+		private WebElement Subscribe_now;
+		public WebElement getSubscribe_now() {
+			return Subscribe_now;
+				}
+		
+		
+		
+		@FindBy(xpath = "//*[@class='deliver-cnt' and @top='true']")
+		private WebElement Refill_msg;
+		public WebElement getRefill_msg() {
+			return Refill_msg;
+				}
+		
+		@FindBy(xpath = "//*[@class='mode']")
+		private WebElement Paymentmode_text;
+		public WebElement getPaymentmode_text() {
+			return Paymentmode_text;
+	
+		}
+		
+		@FindBy(xpath = "//*[@class='val']")
+		private WebElement Paymentmethod_text;
+		public WebElement getPaymentmethod_text() {
+			return Paymentmethod_text;
+
+		}
+		
+		@FindBy(xpath = "//*[@class='code-txt']")
+		private WebElement Promocode;
+		public WebElement getPromocode() {
+			return Promocode;
+
+		}
+		
+				
+		@FindBy(xpath = "//*[@class='promo-txt']")
+		private WebElement Promo_percentage;
+		public WebElement getPromo_percentage() {
+			return Promo_percentage;
+
+		}
+
+		
+		@FindBy(xpath = "//*[@class='modify-txt']")
+		private WebElement Modify_or_reschedule;
+		public WebElement getModify_or_reschedule() {
+			return Modify_or_reschedule;
+
+		}
+		@FindBy(xpath = "//*[@text='ENABLE SUBSCRIPTION']")
+		private WebElement EnableSubscription;
+		public WebElement getEnableSubscription() {
+			return EnableSubscription;
+
+		}
+>>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
 }
+
+
+
+
+
 
 
 
