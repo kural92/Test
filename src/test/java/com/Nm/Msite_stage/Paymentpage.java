@@ -109,7 +109,7 @@ public class Paymentpage extends MsiteBaseClass{
 			  try {
 			  driver.findElement(By.xpath("//app_close[@text='✕']")).click();
 			  }catch (Exception e) {
-				// TODO: handle exception
+				
 			}
 			  
 			  Thread.sleep(10000);
@@ -125,7 +125,7 @@ public class Paymentpage extends MsiteBaseClass{
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 		}catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		for (int i = 0; i < 10; i++) {
 			Thread.sleep(5000);
@@ -135,7 +135,7 @@ public class Paymentpage extends MsiteBaseClass{
 						try {
 							driver.findElement(By.xpath("//android.view.View[@text='REMOVE']|//*[@title='Remove item']")).click();
 						} catch (Exception e) {
-							// TODO: handle exception
+						
 						}
 
 			} else {
@@ -155,7 +155,7 @@ public class Paymentpage extends MsiteBaseClass{
 				try {
 					driver.findElement(By.xpath("//*[@text='✕' and @nodeName='SPAN']")).click();
 				} catch (Exception e) {
-					// TODO: handle exception
+					
 				}
 		
 		
@@ -179,7 +179,7 @@ public class Paymentpage extends MsiteBaseClass{
 				driver.findElement(By.xpath("//*[@text=' ADD TO CART ']")).click();
 			
 			}catch (Exception e) {
-				// TODO: handle exception
+				
 			}
 			Thread.sleep(5000);
 			
@@ -194,7 +194,7 @@ public class Paymentpage extends MsiteBaseClass{
 				Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 			}catch (Exception e) {
-				// TODO: handle exception
+				
 			}
 
 
@@ -219,7 +219,7 @@ Thread.sleep(10000);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 	}catch (Exception e) {
-		// TODO: handle exception
+		
 	}
 	Thread.sleep(5000);
 	
@@ -250,7 +250,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 	}catch (Exception e) {
-		// TODO: handle exception
+		
 	}
 	Thread.sleep(10000);
 	btnclick(m.getPayment_retry());
@@ -274,7 +274,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 	}catch (Exception e) {
-		// TODO: handle exception
+		
 	}
 	try {
 		m.getAMAZONPAY_paybutton().isDisplayed();
@@ -282,7 +282,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 		logger.log(Status.FAIL, "simple decline scenario is verified " );
 
 	} catch (Exception e) {
-		// TODO: handle exception
+		
 	}
 	scrolldown("600");
 	Thread.sleep(3000);
@@ -292,7 +292,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 	}catch (Exception e) {
-		// TODO: handle exception
+		
 	}
 	try {
 		m.getAMAZONPAY_paybutton().isDisplayed();
@@ -300,7 +300,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 		logger.log(Status.FAIL, "simple decline scenario is verified " );
 
 	} catch (Exception e) {
-		// TODO: handle exception
+		
 	}
 		scrolldown("300");
 	Thread.sleep(3000);
@@ -345,7 +345,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 		btnclick(m.getPayment_retry());
 		scrolldown("900");
 		Thread.sleep(5000);
-			btnclick(m.getHdfc_bank());
+		/*btnclick(m.getHdfc_bank());
 		Thread.sleep(15000);
 		driver.navigate().back();
 		try {
@@ -358,7 +358,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 			btnclick(m.getPayment_retry());
 			scrolldown("900");
 			Thread.sleep(5000);
-			/*btnclick(m.getIcici_bank());
+			btnclick(m.getIcici_bank());
 			Thread.sleep(10000);
 			driver.navigate().back();
 			try {
@@ -396,6 +396,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 					Thread.sleep(7000);
 						btnclick(m.getPayment_retry());
 						Thread.sleep(3000);
+						
 						scrolldown("900");
 						/*Thread.sleep(3000);
 						btnclick(m.getMore_banks());
@@ -413,6 +414,9 @@ driver.findElement(By.xpath("//*[@text='Bank of India']")).click();
 							btnclick(m.getCod_popoup());
 							Thread.sleep(6000);
 							
+							driver.findElement(By.xpath("//*[@text and @nodeName='BUTTON']")).click();
+							 Thread.sleep(3000);
+							scrolldown("900");
 							 logger.log(Status.PASS, "Successfully Placed the Order" );
 							 Thread.sleep(3000);
 							 driver.findElement(By.xpath("//*[@text='Track Order']")).click();
