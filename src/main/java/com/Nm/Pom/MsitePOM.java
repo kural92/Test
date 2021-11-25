@@ -685,7 +685,64 @@ public class MsitePOM extends MsiteBaseClass{
 		public WebElement getCancel_reason() {
 			return Cancel_reason;
 				}
+
 		
+		/// Msite Cart Page
+		@FindBy(xpath = "//*[@css='SPAN.searchiconmobi.ng-star-inserted']")
+		private WebElement Msite_Cart_Search;
+		public WebElement getMsite_Cart_Search() {
+			return Msite_Cart_Search;
+		}
+		
+		@FindBy(xpath = "//*[@class='ais-SearchBox-input' and @top='true']")
+		private WebElement Msite_Search_box;
+		public WebElement getMsite_Search_box() {
+			return Msite_Search_box;
+		}
+		
+		@FindBy(xpath = "//*[@css='BUTTON.action.addcart']")
+		private WebElement Msite_AddToCart;
+		public WebElement getMsite_AddToCart() {
+			return Msite_AddToCart;
+		}
+		
+		
+		@FindBy(xpath = "//*[@text='VIEW CART']")
+		private WebElement Msite_ViewCart;
+		public WebElement getMsite_ViewCart() {
+			return Msite_ViewCart;
+		}
+		
+		
+		@FindBy(xpath = "//*[@title='Save For Later']")
+		private WebElement Msite_SaveForLater;
+		public WebElement getMsite_SaveForLater() {
+			return Msite_SaveForLater;
+		}
+		
+		
+		@FindBy(xpath = "//*[@type='select-one']")
+		private WebElement Msite_QtyBtn;
+		public WebElement getMsite_QtyBtn() {
+			return Msite_QtyBtn;
+		}
+		
+		
+		
+		@FindBy(xpath = "(//*[@text='Remove'])[1]")
+		private WebElement Msite_RemoveItem;
+		public WebElement getMsite_RemoveItem() {
+			return Msite_RemoveItem;
+		}
+		
+		@FindBy(xpath = "")
+		private WebElement Msite_Cart_Mostselling;
+		
+		////////////////////////////////////////////////////////////////////////////
+		
+		
+		
+
 	
 //************************************************ Order Success Page
 		
@@ -746,6 +803,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return EnableSubscription;
 
 		}
+
 }
 
 
