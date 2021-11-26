@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,21 +24,22 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
               <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,42 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-<<<<<<< HEAD
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--2058405798\testng-customsuite.xml</span>
-=======
-                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--334954460\testng-customsuite.xml</span>
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1039226759\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -106,13 +103,8 @@
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
-<<<<<<< HEAD
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Msite_stage.Msite_CartPage" class="method navigator-link" hash-for-method="cartPage">cartPage</a> <!-- method navigator-link -->
-=======
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Msite_stage.Paymentpage" hash-for-method="paymentpage">paymentpage</a> <!-- method navigator-link -->
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Msite_stage.Msite_Search" class="method navigator-link" hash-for-method="searchPage">searchPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -130,74 +122,24 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-<<<<<<< HEAD
-              <span class="class-name">com.Nm.Msite_stage.Msite_CartPage</span>
-=======
-              <span class="class-name">com.Nm.Msite_stage.Paymentpage</span>
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+              <span class="class-name">com.Nm.Msite_stage.Msite_Search</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-<<<<<<< HEAD
-                  <a name="cartPage">
-                  </a> <!-- cartPage -->
-                  <span class="method-name">cartPage</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element (An element could not be located on the page using the given search parameters (XPATH=&apos;//*[@css=&apos;SPAN.searchiconmobi.ng-star-inserted&apos;]&apos;))  (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 20.82 seconds
-=======
-                  <a name="paymentpage">
-                  </a> <!-- paymentpage -->
-                  <span class="method-name">paymentpage</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element (An element could not be located on the page using the given search parameters (XPATH=&apos;//*[@text and @nodeName=&apos;BUTTON&apos;]&apos;))  (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 1.72 seconds
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+                  <a name="searchPage">
+                  </a> <!-- searchPage -->
+                  <span class="method-name">searchPage</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.id: com.NetmedsMarketplace.Netmeds:id/search_bar&apos;
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;NMSLAP093&apos;, ip: &apos;192.168.1.101&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-<<<<<<< HEAD
-Capabilities [{appPackage=com.android.chrome, device.majorVersion=11, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=RZ8R20GLXTA, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, autoDismissAlerts=true, platformName=Android}, device.serialNumber=RZ8R20GLXTA, locationServicesAuthorized=false, device.version=11, reportDirectory=reports, autoWebview=false, platformName=Android, udid=RZ8R20GLXTA, testName=mobile test 11/23/21 03:39 PM, device.screenSize=720x1600, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=samsung, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\NMSLAP356\appiumstudio-reports\reports\test95, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=SM-A125F, device.name=SM-A125F, autoGrantPermissions=false, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
-Session ID: b9999109-754b-4270-ad35-78a996d3ffe7
-*** Element info: {Using=xpath, value=//*[@css=&apos;SPAN.searchiconmobi.ng-star-inserted&apos;]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-=======
-Capabilities [{device.majorVersion=10, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=NBBY79GM5LTCJBJR, install.only.for.update=false, desired={noReset=true, browserName=Chromium, autoDismissAlerts=true, platformName=Android, udid=NBBY79GM5LTCJBJR}, device.serialNumber=NBBY79GM5LTCJBJR, locationServicesAuthorized=false, device.version=10, browserName=Chromium, reportDirectory=reports, autoWebview=false, platformName=Android, udid=NBBY79GM5LTCJBJR, testName=mobile test 11/23/21 10:22 PM, device.screenSize=1080x2340, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=vivo, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\Admin\appiumstudio-reports\reports\test810, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=vivo 1819, device.name=vivo 1819, autoGrantPermissions=false, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
-Session ID: 3c8733ab-3dd7-4a47-a85d-a84949fc8aff
-*** Element info: {Using=xpath, value=//*[@text and @nodeName=&apos;BUTTON&apos;]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-<<<<<<< HEAD
-	at com.sun.proxy.$Proxy12.click(Unknown Source)
-	at com.Nm.Msite_stage.Msite_CartPage.cartPage(Msite_CartPage.java:222)
+Capabilities [{appPackage=com.android.chrome, device.majorVersion=11, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=RZ8R20GLXTA, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, autoDismissAlerts=true, platformName=Android}, device.serialNumber=RZ8R20GLXTA, locationServicesAuthorized=false, device.version=11, reportDirectory=reports, autoWebview=false, platformName=Android, udid=RZ8R20GLXTA, testName=mobile test 11/25/21 04:11 PM, device.screenSize=720x1600, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=samsung, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\NMSLAP356\appiumstudio-reports\reports\test103, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=SM-A125F, device.name=SM-A125F, autoGrantPermissions=false, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
+Session ID: 5070cf44-6ee2-4b33-b892-58b2ac7940c2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+	at com.Nm.Base.MsiteBaseClass.type(MsiteBaseClass.java:81)
+	at com.Nm.Msite_stage.Msite_Search.searchPage(Msite_Search.java:218)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -224,36 +166,49 @@ Session ID: 3c8733ab-3dd7-4a47-a85d-a84949fc8aff
 	at org.testng.TestNG.runSuites(TestNG.java:1063)
 	at org.testng.TestNG.run(TestNG.java:1031)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-=======
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.Nm.Base.MsiteBaseClass.btnclick(MsiteBaseClass.java:99)
-	at com.Nm.Msite_stage.Paymentpage.paymentpage(Paymentpage.java:214)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element (An element could not be located on the page using the given search parameters (ID=&apos;com.NetmedsMarketplace.Netmeds:id/search_bar&apos;))  (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1.20 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=com.android.chrome, device.majorVersion=11, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=RZ8R20GLXTA, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, autoDismissAlerts=true, platformName=Android}, device.serialNumber=RZ8R20GLXTA, locationServicesAuthorized=false, device.version=11, reportDirectory=reports, autoWebview=false, platformName=Android, udid=RZ8R20GLXTA, testName=mobile test 11/25/21 04:11 PM, device.screenSize=720x1600, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=samsung, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\NMSLAP356\appiumstudio-reports\reports\test103, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=SM-A125F, device.name=SM-A125F, autoGrantPermissions=false, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
+Session ID: 5070cf44-6ee2-4b33-b892-58b2ac7940c2
+*** Element info: {Using=id, value=com.NetmedsMarketplace.Netmeds:id/search_bar}
+	at jdk.internal.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:64)
+	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy12.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:41)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
+	... 30 more
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -263,24 +218,16 @@ Session ID: 3c8733ab-3dd7-4a47-a85d-a84949fc8aff
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--2058405798\testng-customsuite.xml</span>
-=======
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--334954460\testng-customsuite.xml</span>
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1039226759\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Msite_stage.Msite_CartPage&quot;/&gt;
-=======
-      &lt;class name=&quot;com.Nm.Msite_stage.Paymentpage&quot;/&gt;
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+      &lt;class name=&quot;com.Nm.Msite_stage.Msite_Search&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -322,20 +269,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-<<<<<<< HEAD
-data.setCell(0, 1, 'cartPage')
-data.setCell(0, 2, 'com.Nm.Msite_stage.Msite_CartPage')
-data.setCell(0, 3, 205610);
-=======
-data.setCell(0, 1, 'paymentpage')
-data.setCell(0, 2, 'com.Nm.Msite_stage.Paymentpage')
-data.setCell(0, 3, 158434);
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+data.setCell(0, 1, 'searchPage')
+data.setCell(0, 2, 'com.Nm.Msite_stage.Msite_Search')
+data.setCell(0, 3, 270062);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -350,22 +291,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
-            <span class="header-content">1 ignored method</span>
-          </div> <!-- main-panel-header rounded-window-top -->
-          <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.Nm.Msite_stage.Msite_CartPage</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">cart_Page2</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-=======
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -374,56 +302,33 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Msite_stage.Msite_CartPage</div> <!-- chronological-class-name -->
-=======
-              <div class="chronological-class-name">com.Nm.Msite_stage.Paymentpage</div> <!-- chronological-class-name -->
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+              <div class="chronological-class-name">com.Nm.Msite_stage.Msite_Search</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">startReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-<<<<<<< HEAD
                 <span class="method-name">launchbrowser2</span>
-                <span class="method-start">327 ms</span>
-=======
-                <span class="method-name">launchbrowser</span>
-                <span class="method-start">221 ms</span>
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+                <span class="method-start">253 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-<<<<<<< HEAD
-                <span class="method-name">cartPage</span>
-                <span class="method-start">88641 ms</span>
+                <span class="method-name">searchPage</span>
+                <span class="method-start">14125 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">screenShot([TestResult name=cartPage status=FAILURE method=Msite_CartPage.cartPage()[pri:1, instance:com.Nm.Msi...)</span>
-                <span class="method-start">294272 ms</span>
+                <span class="method-name">screenShot([TestResult name=searchPage status=FAILURE method=Msite_Search.searchPage()[pri:0, instance:com.Nm.M...)</span>
+                <span class="method-start">284210 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">quitbrowser</span>
-                <span class="method-start">294289 ms</span>
-=======
-                <span class="method-name">paymentpage</span>
-                <span class="method-start">4616 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=paymentpage status=FAILURE method=Paymentpage.paymentpage()[pri:1, instance:com.Nm....)</span>
-                <span class="method-start">163064 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">quitbrowser</span>
-                <span class="method-start">170152 ms</span>
->>>>>>> 58e774750bb94531676fdd6f3acf6437d6252a11
+                <span class="method-start">284778 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>
