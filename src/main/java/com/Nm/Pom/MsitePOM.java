@@ -685,6 +685,7 @@ public class MsitePOM extends MsiteBaseClass{
 		public WebElement getCancel_reason() {
 			return Cancel_reason;
 				}
+<<<<<<< HEAD
 		
 
 		
@@ -694,6 +695,9 @@ public class MsitePOM extends MsiteBaseClass{
 		////////////////////////////////////////////////////////////////////////////////////////////
 		
 		               ////////////////////////////// ////////////////////////
+=======
+
+>>>>>>> 97db4158de89b9e7e099a81196bedf5438dd56b2
 		
 		/// Msite Cart Page
 		@FindBy(xpath = "//*[@css='SPAN.searchiconmobi.ng-star-inserted']")
@@ -1005,6 +1009,7 @@ public class MsitePOM extends MsiteBaseClass{
 		public WebElement getPDP_FrequentlyBrought_AddToCart() {
 			return PDP_FrequentlyBrought_AddToCart;
 		}
+<<<<<<< HEAD
 		
 		
 		@FindBy(xpath="//*[@class='clsgetname ellipsis']")
@@ -1294,6 +1299,9 @@ return PDP_Search_btnn;
 		
 		
 		
+=======
+
+>>>>>>> 97db4158de89b9e7e099a81196bedf5438dd56b2
 }
 
 
