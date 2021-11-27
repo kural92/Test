@@ -157,6 +157,8 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 		
 		Thread.sleep(5000);
 		
+		
+		
 		driver.hideKeyboard();
 		
 		Thread.sleep(5000);

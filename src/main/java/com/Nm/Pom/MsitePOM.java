@@ -801,8 +801,491 @@ public class MsitePOM extends MsiteBaseClass{
 		private WebElement EnableSubscription;
 		public WebElement getEnableSubscription() {
 			return EnableSubscription;
-
 		}
+		public WebElement getMsite_Cart_Mostselling() {
+			return Msite_Cart_Mostselling;
+		}
+		///////////////////////////////////////////////////////
+		  // Msite PDP 
+		
+		@FindBy(xpath = "//*[@css='P.form.m-0.mt-1']")
+		private List<WebElement> Msite_Search_Results;		
+		public List<WebElement> getMsite_Search_Results() {
+			return Msite_Search_Results;
+		}
+		
+		@FindBy(xpath = "//*[@css='DIV.rightside-details.col-10.pr-0']")
+		private WebElement Msite_SearchResult_drugName;
+		public WebElement getMsite_SearchResult_drugName() {
+			return Msite_SearchResult_drugName;
+		}
+		
+		
+		
+		@FindBy(xpath = "//*[@css='DIV.drug_c']")
+		private List<WebElement> search_results;
+		public List<WebElement> getSearch_results() {
+			return search_results;
+		}
+		
+		
+		
+		@FindBy(xpath = "//*[@css='SPAN.gen_drug.ellipsis']")
+		private WebElement PDP_category_Name;
+		public WebElement getPDP_category_Name() {
+			return PDP_category_Name;
+		}
+
+		@FindBy(xpath = "//*[@class='req_Rx']")
+		private WebElement PDP_Rx_Required;
+		public WebElement getPDP_Rx_Required() {
+			return PDP_Rx_Required;
+		}
+		
+		
+		@FindBy(xpath = "//*[@class='req_Rx']")
+		private List<WebElement> PDP_Rx_Required_List;
+		public List<WebElement> getPDP_Rx_Required_List() {
+			return PDP_Rx_Required_List;
+		}
+		
+		
+		@FindBy(xpath = "//*[@class='drug-manu ellipsis']")
+		private WebElement PDP_Manufacture_name;
+		public WebElement getPDP_Manufacture_name() {
+			return PDP_Manufacture_name;
+		}
+
+		
+		
+		@FindBy(xpath = "//*[@class='final-price']")
+		private WebElement PDP_Best_Price;
+		public WebElement getPDP_Best_Price() {
+			return PDP_Best_Price;
+		}
+		
+		@FindBy(xpath = "//*[@nodeName='STRIKE']")
+		private List<WebElement> PDP_MRP_Price_List;
+		public List<WebElement> getPDP_MRP_Price_List() {
+			return PDP_MRP_Price_List;
+		}
+		
+		
+		@FindBy(xpath = "//*[@nodeName='STRIKE']")
+		private WebElement PDP_MRP_Price;
+		public WebElement getPDP_MRP_Price() {
+			return PDP_MRP_Price;
+		}
+
+		
+		@FindBy(xpath = "//*[@text='OFFERS APPLICABLE']")
+		private WebElement PDP_OfferAvailable_Text;
+		public WebElement getPDP_OfferAvailable_Text() {
+			return PDP_OfferAvailable_Text;
+		}
+		
+		
+		@FindBy(xpath = "//*[@text='OFFERS APPLICABLE']")
+		private List<WebElement> PDP_OfferAvailable_List;
+		public List<WebElement> getPDP_OfferAvailable_List() {
+			return PDP_OfferAvailable_List;
+		}
+
+		
+		
+		@FindBy(xpath = "//*[@class='offer-code']")
+		private List<WebElement> PDP_Coupon_Code;
+		public List<WebElement> getPDP_Coupon_Code() {
+			return PDP_Coupon_Code;
+		}
+
+		@FindBy(xpath = "//*[@class='save save1']")
+		private List<WebElement> PDP_Coupon_Save_Percentage;
+		public List<WebElement> getPDP_Coupon_Save_Percentage() {
+			return PDP_Coupon_Save_Percentage;
+		}
+		
+		
+		@FindBy(xpath = "//*[@class='offer-text']")
+		private List<WebElement> PDP_Coupon_Details;
+		public List<WebElement> getPDP_Coupon_Details() {
+			return PDP_Coupon_Details;
+		}
+		
+		@FindBy(xpath="//*[@nodeName='H2']")
+		private WebElement PDP_manufacture_Page;
+		public WebElement getPDP_manufacture_Page() {
+			return PDP_manufacture_Page;
+		}
+
+		@FindBy(xpath="((//*[@nodeName='DIV' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='AIS-HITS'] and ./parent::*[@nodeName='AIS-INSTANTSEARCH']]/*/*/*[@nodeName='FORM'])[2]/*/*/*[@nodeName='path' and @width>0 and ./parent::*[@nodeName='svg']])[2]")
+		private WebElement Search_X_button;
+		public WebElement getSearch_X_button() {
+			return Search_X_button;
+		}
+		
+		@FindBy(xpath="//*[@class='share-icon']")
+		private WebElement PDP_Share_Icon;
+		public WebElement getPDP_Share_Icon() {
+			return PDP_Share_Icon;
+		}
+		
+		@FindBy(id="android:id/icon")
+		private WebElement PDP_Share_Close_Button;
+		public WebElement getPDP_Share_Close_Button() {
+			return PDP_Share_Close_Button;
+		}
+
+		@FindBy(id="android:id/button_once")
+		private WebElement Samsung_AllowOnce;
+		public WebElement getSamsung_AllowOnce() {
+			return Samsung_AllowOnce;
+		}
+		
+		@FindBy(id="android:id/button_always")
+		private WebElement Samsung_AllowAlways;
+		public WebElement getSamsung_AllowAlways() {
+			return Samsung_AllowAlways;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/imgClearTest")
+		private WebElement imgClearTest;
+		public WebElement getImgClearTest() {
+			return imgClearTest;
+		}
+		// Combo Pack
+		@FindBy(xpath="//*[@text=' BUY PACK ']")
+		private List<WebElement> PDP_BuyPack_ComboList;
+		public List<WebElement> getPDP_BuyPack_ComboList() {
+			return PDP_BuyPack_ComboList;
+		} 
+		
+		
+		@FindBy(xpath="//*[@css='SPAN.final_price']")
+		private List<WebElement> PDP_BuyPack_Combo_PriceList;		
+		public List<WebElement> getPDP_BuyPack_Combo_PriceList() {
+			return PDP_BuyPack_Combo_PriceList;
+		}
+		
+		@FindBy(xpath="//*[@css='SPAN.final_price']")
+		private WebElement PDP_BuyPack_Combo_Price;
+		public WebElement getPDP_BuyPack_Combo_Price() {
+			return PDP_BuyPack_Combo_Price;
+		}
+
+
+		@FindBy(xpath="//*[@text=' BUY PACK ']")
+		private WebElement PDP_BuyPack_ComboBtn;
+		public WebElement getPDP_BuyPack_ComboBtn() {
+			return PDP_BuyPack_ComboBtn;
+		}
+		
+		@FindBy(xpath="//*[@text=' COMBO PACKS']")
+		private WebElement PDP_ComboPack_text;
+		public WebElement getPDP_ComboPack_text() {
+			return PDP_ComboPack_text;
+		}
+		
+		@FindBy(xpath="//*[@text='FREQUENTLY BOUGHT TOGETHER']")
+		private WebElement PDP_FrequentlyBrought_text;
+		public WebElement getPDP_FrequentlyBrought_text() {
+			return PDP_FrequentlyBrought_text;
+		}
+		
+		@FindBy(xpath="//*[@title='ADD TO CART']")
+		private WebElement PDP_FrequentlyBrought_AddToCart;
+		public WebElement getPDP_FrequentlyBrought_AddToCart() {
+			return PDP_FrequentlyBrought_AddToCart;
+		}
+
+		
+		
+		@FindBy(xpath="//*[@class='clsgetname ellipsis']")
+		private WebElement PDP_FrequentlyBrought_Productname;
+		public WebElement getPDP_FrequentlyBrought_Productname() {
+			return PDP_FrequentlyBrought_Productname;
+		}
+		
+		@FindBy(id="got_it")
+		private WebElement SnackBar_GotIT_btn;
+		public WebElement getSnackBar_GotIT_btn() {
+			return SnackBar_GotIT_btn;
+		}
+		
+		
+		
+		@FindBy(xpath="//*[@text='Proceed To Cart']")
+		private WebElement PDP_ProceedToCart;
+		public WebElement getPDP_ProceedToCart() {
+			return PDP_ProceedToCart;
+		}
+		
+		@FindBy(xpath="(//*[@id='row_itmdiscprice_100376'])[2]")
+		private WebElement Cart_Price;
+		public WebElement getCart_Price() {
+			return Cart_Price;
+		}
+		//com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty
+		@FindBy(xpath="//*[@name='quantity']")
+		private WebElement Cart_Quantity;		
+		public WebElement getCart_Quantity() {
+			return Cart_Quantity;
+		}
+		
+		
+		// Alternate brand
+		@FindBy(xpath="//*[@text='ALTERNATE BRANDS']")
+		private WebElement PDP_AlternateBrand_Text;
+		public WebElement getPDP_AlternateBrand_Text() {
+			return PDP_AlternateBrand_Text;
+		}
+		
+		
+		
+		@FindBy(xpath="com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name")
+		private List<WebElement> PDP_AlternateBrand_Name_List;
+		public List<WebElement> getPDP_AlternateBrand_Name_List() {
+			return PDP_AlternateBrand_Name_List;
+		}
+		
+		
+		
+		@FindBy(xpath="//*[@css='SPAN.drug_name']")
+		private WebElement PDP_AlternateBrand_Name;
+		public WebElement getPDP_AlternateBrand_Name() {
+			return PDP_AlternateBrand_Name;
+		}
+		
+		
+		@FindBy(xpath="//*[@class='counter']")
+		private WebElement PDP_Cart_btn;
+		public WebElement getPDP_Cart_btn() {
+			return PDP_Cart_btn;
+		}
+		
+		
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/cart_adapter_drug_name")
+		private List<WebElement> Cart_drug_name_List;
+		public List<WebElement> getCart_drug_name_List() {
+			return Cart_drug_name_List;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/cart_adapter_drug_name")
+		private WebElement Cart_drug_name;
+		public WebElement getCart_drug_name() {
+			return Cart_drug_name;
+		}
+		
+		@FindBy(xpath="//android.widget.TextView[@text='MOST SELLING PRODUCTS']")
+		private WebElement Most_Selling_text;
+		public WebElement getMost_Selling_text() {
+			return Most_Selling_text;
+		}
+		
+		
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/most_selling_product_name")
+		private List<WebElement> MostSelling_drug_name_List;
+		public List<WebElement> getMostSelling_drug_name_List() {
+			return MostSelling_drug_name_List;
+		}
+		
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/most_selling_product_name")
+		private WebElement MostSelling_drug_name;
+		public WebElement getMostSelling_drug_name() {
+			return MostSelling_drug_name;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")
+		private WebElement Add_To_cart;
+		public WebElement getAdd_To_cart() {
+			return Add_To_cart;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")
+		private List<WebElement> Add_To_cart_List;
+		public List<WebElement> getAdd_To_cart_List() {
+			return Add_To_cart_List;
+		}
+		
+		
+		// Cold Storage
+		
+				@FindBy(xpath = "//android.widget.TextView[@text='Check Availability']")
+				private WebElement PDP_CheckAvailabilty_btn;
+				public WebElement getPDP_CheckAvailabilty_btn() {
+					return PDP_CheckAvailabilty_btn;
+				}
+				
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/btn_dismiss")
+				private WebElement PDP_CheckAvailabilty_Close_btn;
+				public WebElement getPDP_CheckAvailabilty_Close_btn() {
+					return PDP_CheckAvailabilty_Close_btn;
+				}
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/pincode")
+				private WebElement PDP_ColdStorage_PinCheck;
+				public WebElement getPDP_ColdStorage_PinCheck() {
+					return PDP_ColdStorage_PinCheck;
+				}
+
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/check_availability")
+				private WebElement PDP_CheckAvailabilty_CheckBtn;
+				public WebElement getPDP_CheckAvailabilty_CheckBtn() {
+					return PDP_CheckAvailabilty_CheckBtn;
+				}
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_error")
+				private WebElement PDP_Colstorage_DeliveryError;
+				public WebElement getPDP_Colstorage_DeliveryError() {
+					return PDP_Colstorage_DeliveryError;
+				}
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/closeView")
+				private WebElement DoctorConsultation_CloseBtn;
+				public WebElement getDoctorConsultation_CloseBtn() {
+					return DoctorConsultation_CloseBtn;
+				}
+				
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/setAddressButton")
+				private WebElement Order_review_btn;
+				public WebElement getOrder_review_btn() {
+					return Order_review_btn;
+				}
+				
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_error_message")
+				private WebElement Order_review_ColdStorage_text;
+				public WebElement getOrder_review_ColdStorage_text() {
+					return Order_review_ColdStorage_text;
+				}
+				 
+				
+				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/tv_split_post_error_description")
+				private WebElement Take_Action_Description;
+				public WebElement getTake_Action_Description() {
+					return Take_Action_Description;
+				}
+		
+				
+			/////   Search
+				
+
+
+@FindBy(id="search")
+private WebElement Header_SearchBar;
+public WebElement getHeader_SearchBar() {
+return Header_SearchBar;
+} 
+
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search_bar")
+private WebElement SearchBar;
+public WebElement getSearchBar() {
+return SearchBar;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/parent_view']")
+private WebElement Search_results_Detail;
+public WebElement getSearch_results_Detail() {
+return Search_results_Detail;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/parent_view']")
+private List<WebElement> Search_results_Detail_List;
+public List<WebElement> getSearch_results_Detail_List() {
+return Search_results_Detail_List;
+}
+
+
+@FindBy(xpath="//*[@css='DIV.info']")
+private List<WebElement> Search_results_Drug_List;
+public List<WebElement> getSearch_results_Drug_List() {
+return Search_results_Drug_List;
+}
+
+
+@FindBy(xpath="//*[@css='DIV.info']")
+private WebElement Search_results_Drug;
+public WebElement getSearch_results_Drug() {
+return Search_results_Drug;
+}
+
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
+private WebElement Search_results_AddTocart;
+public WebElement getSearch_results_AddTocart() {
+return Search_results_AddTocart;
+}
+
+@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
+private List<WebElement> Search_results_AddTocart_List;
+public List<WebElement> getSearch_results_AddTocart_List() {
+return Search_results_AddTocart_List;
+}
+
+
+@FindBy(xpath="//*[@class='qtybtn qty_add qty_plus']")
+private List<WebElement> Search_results_AddTocart_IncreaseQty_List;
+public List<WebElement> getSearch_results_AddTocart_IncreaseQty_List() {
+return Search_results_AddTocart_IncreaseQty_List;
+}
+
+
+@FindBy(xpath="//*[@class='qtybtn qty_add qty_plus']")
+private WebElement Search_results_AddTocart_IncreaseQty;
+public WebElement getSearch_results_AddTocart_IncreaseQty() {
+return Search_results_AddTocart_IncreaseQty;
+}
+
+
+
+@FindBy(xpath="//*[@class='qtybtn qty_add qty_minus prodminus']")
+private List<WebElement> Search_results_AddTocart_DecreaseQty_List;
+public List<WebElement> getSearch_results_AddTocart_DecreaseQty_List() {
+return Search_results_AddTocart_DecreaseQty_List;
+}
+
+
+@FindBy(xpath="//*[@class='qtybtn qty_add qty_minus prodminus']")
+private WebElement Search_results_AddTocart_DecreaseQty;
+public WebElement getSearch_results_AddTocart_DecreaseQty() {
+return Search_results_AddTocart_DecreaseQty;
+}
+
+
+@FindBy(xpath="//*[@class='gen_drug ellipsis']")
+private List<WebElement> Search_results_category_List;
+public List<WebElement> getSearch_results_category_List() {
+return Search_results_category_List;
+}
+
+@FindBy(xpath="//*[@class='gen_drug ellipsis']")
+private WebElement Search_results_Category;
+public WebElement getSearch_results_Category() {
+return Search_results_Category;
+}
+
+
+@FindBy(xpath="//*[@class='search-icon']")
+private WebElement PDP_Search_btnn;
+public WebElement getPDP_Search_btnn() {
+return PDP_Search_btnn;
+}
+
+				
+		@FindBy(xpath = "//*[@class='cart_btn']")
+		private WebElement Msite_Search_AddToCart;
+		public WebElement getMsite_Search_AddToCart() {
+			return Msite_Search_AddToCart;
+		}
+		
+		
 
 }
 
