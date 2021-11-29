@@ -685,19 +685,7 @@ public class MsitePOM extends MsiteBaseClass{
 		public WebElement getCancel_reason() {
 			return Cancel_reason;
 				}
-<<<<<<< HEAD
-		
 
-		
-		
-		
-		
-		////////////////////////////////////////////////////////////////////////////////////////////
-		
-		               ////////////////////////////// ////////////////////////
-=======
-
->>>>>>> 97db4158de89b9e7e099a81196bedf5438dd56b2
 		
 		/// Msite Cart Page
 		@FindBy(xpath = "//*[@css='SPAN.searchiconmobi.ng-star-inserted']")
@@ -1009,7 +997,7 @@ public class MsitePOM extends MsiteBaseClass{
 		public WebElement getPDP_FrequentlyBrought_AddToCart() {
 			return PDP_FrequentlyBrought_AddToCart;
 		}
-<<<<<<< HEAD
+
 		
 		
 		@FindBy(xpath="//*[@class='clsgetname ellipsis']")
@@ -1163,7 +1151,7 @@ public class MsitePOM extends MsiteBaseClass{
 				}
 				
 				
-				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/setAddressButton")
+				@FindBy(xpath = "//*[@text='Review Order']")
 				private WebElement Order_review_btn;
 				public WebElement getOrder_review_btn() {
 					return Order_review_btn;
@@ -1298,10 +1286,57 @@ return PDP_Search_btnn;
 		}
 		
 		
+		@FindBy(xpath = "//*[@text='Proceed']" )
+		private WebElement msite_m2_ProceedBtn;
+		public WebElement getMsite_m2_ProceedBtn() {
+			return msite_m2_ProceedBtn;
+		}
 		
-=======
+		
+		
+		///
+		@FindBy(xpath = "//android.widget.CheckBox[@id='externaldoctr']|//*[@id='externaldoctr']")
+		private WebElement Msite_Doctor_Consultation;
+		public WebElement getMsite_Doctor_Consultation() {
+			return Msite_Doctor_Consultation;
+		}
+		
+		
+		@FindBy(id = "cart_netpay_amt2")
+		private WebElement order_review_totalAmount;
+		public WebElement getOrder_review_totalAmount() {
+			return order_review_totalAmount;
+		}
+		
+		
 
->>>>>>> 97db4158de89b9e7e099a81196bedf5438dd56b2
+		@FindBy(xpath = "//*[@text='Pay']|//android.widget.Button[@text='PAY']")
+		private WebElement order_review_payBtn;
+		public WebElement getOrder_review_payBtn() {
+			return order_review_payBtn;
+		}
+		
+		@FindBy(xpath = "(//*[@id='nms_cod'])[2]|//*[@id='nms_cod']")
+		private WebElement COD_CheckBox;
+		public WebElement getCOD_CheckBox() {
+		return COD_CheckBox;
+		}
+
+		
+		
+		@FindBy(xpath="//*[@css='BUTTON.float-right.process-orderplace.col-md-5.col-12']|//*[@type='button']")
+		private WebElement COD_PayBtn;
+		public WebElement getCOD_PayBtn() {
+		return COD_PayBtn;
+		}
+
+
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/snackbar_text")
+		private WebElement COD_Not_Eligible_Text;
+		public WebElement getCOD_Not_Eligible_Text() {
+		return COD_Not_Eligible_Text;
+		}
+		
 }
 
 
