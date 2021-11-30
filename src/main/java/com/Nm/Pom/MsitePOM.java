@@ -360,7 +360,7 @@ public class MsitePOM extends MsiteBaseClass{
 
 	@FindBy(xpath = "//*[@text=' ADD TO CART ']")
 	private WebElement AddtoCartButton;
-	@FindBy(xpath = "//*[@text='  ' and @nodeName='DIV' and @width>0 and ./*[@text='0']]")
+	@FindBy(xpath = "//*[@text='  ' and @nodeName='DIV' and @width>0 and ./*[@text='0']]|//*[@class='counter']")
 	private WebElement Gotocart;
 	@FindBy(xpath = "//*[@text='Become Netmeds First Member' and @nodeName='H4']")
 	private WebElement Cart_prime_header_text;
@@ -804,6 +804,132 @@ public class MsitePOM extends MsiteBaseClass{
 
 		}
 
+	//******************************************************************Consultation
+
+		@FindBy(xpath="//*[@content-desc='Consult Now']|//*[@href='https://consult.netmeds.com/users/' and @top='true']")
+		private WebElement Consultation_Btn;
+		public WebElement getConsultation_Btn() {
+			return Consultation_Btn;
+		}
+		
+		@FindBy(xpath="//*[@content-desc='Consult Now']|//*[@href='https://consult.netmeds.com/users/' and @top='true']")
+		private List<WebElement> Consultation_Btn_List;	
+		public List<WebElement> getConsultation_Btn_List() {
+			return Consultation_Btn_List;
+		}
+
+
+		@FindBy(xpath="//*[@text='START CONSULTATION ' and @top='true']")
+		private WebElement Start_Consultation_Btn;
+		public WebElement getStart_Consultation_Btn() {
+			return Start_Consultation_Btn;
+		}
+		
+		@FindBy(xpath = "//*[@text='Myself' and @top='true']")
+		private WebElement Consult_MySelf;  
+		public WebElement getConsult_MySelf() {
+			return Consult_MySelf;
+		}
+		
+		
+		
+		@FindBy(xpath = "//*[@text='Someone Else' and @top='true']")
+		private WebElement Consult_Others;
+		public WebElement getConsult_Others() {
+			return Consult_Others;
+		}
+		
+		@FindBy(xpath = "//*[@class='full-width text-area ng-untouched ng-pristine ng-valid' and @top='true']")
+		private WebElement Consult_Symptons_TextBox;
+		public WebElement getConsult_Symptons_TextBox() {
+			return Consult_Symptons_TextBox;
+		}
+		
+		@FindBy(xpath = "//*[@text='View All Specialisation']")
+		private WebElement Consult_Specialist_ViewAll;
+		public WebElement getConsult_Specialist_ViewAll() {
+			return Consult_Specialist_ViewAll;
+		}
+		
+		@FindBy(xpath = "//*[@text='ENT' and @top='true']")
+		private WebElement Consult_ENT;
+		public WebElement getConsult_ENT() {
+			return Consult_ENT;
+		}
+		
+		
+		@FindBy(xpath = "//*[@text='Done' and @top='true']")
+		private WebElement Consult_specilaisation_DoneBtn;
+		public WebElement getConsult_specilaisation_DoneBtn() {
+			return Consult_specilaisation_DoneBtn;
+		}
+		
+		@FindBy(xpath = "//*[@text='START CONSULTATION ' and @top='true']|//*[@text='START CONSULTATION ']")
+		private WebElement START_CONSULTATION_BTN;
+		public WebElement getSTART_CONSULTATION_BTN() {
+			return START_CONSULTATION_BTN;
+		}
+		
+		@FindBy(xpath = "//*[@text='Chat' and @top='true']")
+		private WebElement Consult_Chat_Text;
+		public WebElement getConsult_Chat_Text() {
+			return Consult_Chat_Text;
+		}
+		
+		
+		
+		@FindBy(xpath = "//*[@text='Select' and @top='true']")
+		private WebElement Consult_Doctor_select_btn;
+		public WebElement getConsult_Doctor_select_btn() {
+			return Consult_Doctor_select_btn;
+		}
+		
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_chat']|//android.widget.TextView[@text='Chat']")
+		private WebElement Consult_Chat;
+		public WebElement getConsult_Chat() {
+			return Consult_Chat;
+		}
+		
+		
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_audio")
+		private WebElement Consult_Audio;
+		public WebElement getConsult_Audio() {
+			return Consult_Audio;
+		}
+		
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_video")
+		private WebElement Consult_Video;
+		public WebElement getConsult_Video() {
+			return Consult_Video;
+		}
+		
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_video")
+		private List<WebElement> Consult_Payment_Package_List;
+		public List<WebElement> getConsult_Payment_Package_List() {
+			return Consult_Payment_Package_List;
+		}
+		
+		
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/btn_make_payment")
+		private WebElement Consult_Pay_Btn;
+		public WebElement getConsult_Pay_Btn() {
+			return Consult_Pay_Btn;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/txtViewGeneralPhy")
+		private WebElement Consult_general_Physician;
+		public WebElement getConsult_general_Physician() {
+			return Consult_general_Physician;
+		}
+				
+		@FindBy(xpath="//*[@name='radio-button-off']")
+		private List<WebElement> listofbanks;
+		public List<WebElement> getListofbanks() {
+			return listofbanks;
+		}
+		
+		
 }
 
 

@@ -167,7 +167,7 @@ return text;
 					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
 					netty.click();
 					}catch (Exception e) {
-						System.out.println("No Natty popup available to close");
+						System.out.println("No Netty popup available to close");
 					}
 
 	}

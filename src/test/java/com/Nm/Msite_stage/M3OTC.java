@@ -532,21 +532,15 @@ public class M3OTC extends MsiteBaseClass {
 				}
 				Thread.sleep(5000);
 
-				//driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
+				driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
 				
 				
 //				
 				
 				
-	//Switch to Chrome browser
-		        Set<String> contextNames5 = driver.getContextHandles();
-		        for (String strContextName : contextNames5) {
-		            if (strContextName.contains("CHROMIUM")) {
-		                driver.context("CHROMIUM");
-		                break;
-		            }
+
 		            	
-		            btnclick(m.getCancel_reason());
+		         //   btnclick(m.getCancel_reason());
 					Thread.sleep(5000);
 		            driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
 				//logger.log(Status.PASS, "Successfully Order was Cancelled");
@@ -555,7 +549,7 @@ public class M3OTC extends MsiteBaseClass {
 				driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 
 
-		}
+		
 	}
 	
 	@AfterMethod()
