@@ -1286,7 +1286,7 @@ return PDP_Search_btnn;
 		}
 		
 		
-<<<<<<< HEAD
+
 		@FindBy(xpath = "//*[@text='Proceed']" )
 		private WebElement msite_m2_ProceedBtn;
 		public WebElement getMsite_m2_ProceedBtn() {
@@ -1348,10 +1348,7 @@ return PDP_Search_btnn;
 		public WebElement getCOD_Not_Eligible_Text() {
 		return COD_Not_Eligible_Text;
 		}
-		
-=======
 
->>>>>>> 681e727bf3c9ffcafab9309439ce72afa42e9a68
 }
 
 
