@@ -1113,7 +1113,7 @@ public class MsitePOM extends MsiteBaseClass{
 		
 		// Cold Storage
 		
-				@FindBy(xpath = "//android.widget.TextView[@text='Check Availability']")
+				@FindBy(xpath = "//android.view.View[@text='Check Availability']|//*[@id='check_availablility']")
 				private WebElement PDP_CheckAvailabilty_btn;
 				public WebElement getPDP_CheckAvailabilty_btn() {
 					return PDP_CheckAvailabilty_btn;
@@ -1126,13 +1126,13 @@ public class MsitePOM extends MsiteBaseClass{
 					return PDP_CheckAvailabilty_Close_btn;
 				}
 				
-				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/pincode")
+				@FindBy(xpath = "//*[@id='pincode']|//android.widget.EditText[@id='pincode']")
 				private WebElement PDP_ColdStorage_PinCheck;
 				public WebElement getPDP_ColdStorage_PinCheck() {
 					return PDP_ColdStorage_PinCheck;
 				}
 
-				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/check_availability")
+				@FindBy(xpath = "//android.widget.Button[@text='CHECK AVAILABILITY']|//*[@id='check_cs_btn']")
 				private WebElement PDP_CheckAvailabilty_CheckBtn;
 				public WebElement getPDP_CheckAvailabilty_CheckBtn() {
 					return PDP_CheckAvailabilty_CheckBtn;
@@ -1320,6 +1320,17 @@ return PDP_Search_btnn;
 		private WebElement COD_CheckBox;
 		public WebElement getCOD_CheckBox() {
 		return COD_CheckBox;
+		}
+		@FindBy(xpath = "(//*[@id='nms_cod'])[2]|//*[@id='nms_cod']")
+		private List<WebElement> COD_Not_Eligible_Text_List;
+		public List<WebElement> getCOD_Not_Eligible_Text_List() {
+		return COD_Not_Eligible_Text_List;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/order_image")
+		private WebElement Footer_Orders;
+		public WebElement getFooter_Orders() {
+		return Footer_Orders;
 		}
 
 		

@@ -2,8 +2,10 @@ package com.Nm.Msite_stage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -21,7 +23,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class Msite_COD_Logic extends MsiteBaseClass {
+public class Msite_COD_Processing extends MsiteBaseClass {
+	
 	
 	
 
@@ -81,10 +84,11 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 	
 	
 	@Test
-	public void cod_Logic_2() throws Throwable {
+	public void cod_Processing() throws Throwable {
+		
 		
 		logger =  report.createTest("Cash On Delivery Logic");
-		logger.log(Status.PASS, "COD for 60 to 500" );
+		logger.log(Status.PASS, "COD Processing Order" );
 		
 		MsitePOM m = new MsitePOM();
 		
@@ -123,19 +127,16 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				driver.get("https://m.netmeds.com");
 				
+
 				Thread.sleep(3000);
-				String aa = "Gemer 2mg,Ajmal Amber Wood";
+				String aa = "Gemer 2mg";
 				String [] spl = aa.split(",");
 				System.out.println(spl.length);
 				
 				
 				
-				for (int i = 0; i < spl.length; i++) {
+				for (int i = 0; i < 3; i++) {
 					
-					
-				
-				
-				
 				Thread.sleep(3000);
 				btnclick(m.getHeader_SearchBar());
 				Thread.sleep(5000);
@@ -155,7 +156,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				
 				
 				
-				for (int j = 0; j < 5; j++) {
+				for (int j = 0; j < 2; j++) {
 					
 					Thread.sleep(3000);
 					btnclick(m.getSearch_results_AddTocart_IncreaseQty());
@@ -169,9 +170,15 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				
 				Thread.sleep(10000);
 				btnclick(m.getMsite_m2_ProceedBtn());
+				try {
+					Thread.sleep(3000);
+					letschat();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 			try {	
-				Thread.sleep(3000);
-				letschat();
+				
+				
 				Thread.sleep(6000);
 				btnclick(m.getMsite_Doctor_Consultation());
 				
@@ -214,11 +221,11 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				
 				
 				
-				Thread.sleep(3000);
+				Thread.sleep(10000);
 				if (total<60||total>5000) {
 					
 					System.out.println("Unable to Process the payment / Cash on Delivery Option.The Net Value was Below 60 or above 5000");
-				try {	
+			/*	try {	
 					Thread.sleep(3000);
 					driver.swipe(0, 500, 0, 0, 1000);
 					
@@ -244,7 +251,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				}catch (Exception e) {
 					// TODO: handle exception
 				}
-				
+				*/
 				/////
 					
 				} else {
@@ -264,21 +271,41 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					Thread.sleep(3000);
 					driver.swipe(0, 500, 0, 0, 1000);
 					
-					Thread.sleep(3000);
-					btnclick(m.getCOD_CheckBox());
 					
-					Thread.sleep(3000);
-					btnclick(m.getCOD_PayBtn());
 					
-					Thread.sleep(3000);
+					/////
+					Thread.sleep(10000);
+					if (!(m.getCOD_Not_Eligible_Text_List().size()==0)) {
+						
+				//	
+						Thread.sleep(3000);
+						btnclick(m.getCOD_CheckBox());
+						
+						Thread.sleep(3000);
+						btnclick(m.getCOD_PayBtn());
+						
+					Thread.sleep(6000);
+					driver.get("https://m.netmeds.com");
+					
+					
+					////
+					
+					
 
 					Thread.sleep(3000);
-					driver.swipe(0, 200, 0, 0, 1000);
+				
+					Thread.sleep(3000);
+					/*driver.swipe(0, 200, 0, 0, 1000);
 				//	btnclick(m.getTrack_Order());
-					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
+				//	driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
 					 Thread.sleep(10000);
 					 letschat();
-					 driver.findElement(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();
+					 List<WebElement> view_Details =  driver.findElements(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']"));
+					 Thread.sleep(3000);
+						for (int j = 0; j < 3; j++) {
+							Thread.sleep(6000);
+							btnclick(view_Details.get(j));
+						
 					 Thread.sleep(3000);
 					 driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
 					 Thread.sleep(3000);
@@ -288,22 +315,62 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					
 					
 					Thread.sleep(10000);
-					driver.get("https://m.netmeds.com");
+					driver.get("https://m.netmeds.com/customer/orderhistory");
 					
-					Thread.sleep(6000);
-					
+					Thread.sleep(10000);
+					*/
 					
 					
 				}
 				
-				}
-				
-				
-			}
-				
-				
+				else {
+					Thread.sleep(3000);
+					System.out.println("There More Than 2 Order was in Proicessing.COD is not eligible for this order");
+					
+					
+					
+					Thread.sleep(13000);
 
+					Thread.sleep(3000);
 				
+					Thread.sleep(3000);
+					driver.swipe(0, 200, 0, 0, 1000);
+				//	btnclick(m.getTrack_Order());
+				//	driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
+					 Thread.sleep(10000);
+					 letschat();
+					 List<WebElement> view_Details =  driver.findElements(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']"));
+					 Thread.sleep(3000);
+						for (int j = 0; j < 3; j++) {
+							Thread.sleep(6000);
+							btnclick(view_Details.get(j));
+						
+					 Thread.sleep(3000);
+					 driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
+					 Thread.sleep(3000);
+					 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|//android.widget.RadioButton[@text='Delay in delivery']")).click();
+					 Thread.sleep(3000);
+					 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
+					
+						Thread.sleep(10000);
+						driver.get("https://m.netmeds.com/customer/orderhistory");
+						
+						Thread.sleep(10000);
+					
+				}
+				
+				
+		
+		
+
+	}
 	
+	
+
+}
+				}
 				
+				/////
+	}
+	
 }

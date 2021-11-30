@@ -21,8 +21,10 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class Msite_COD_Logic extends MsiteBaseClass {
+public class Msite_Cols_Storage extends MsiteBaseClass{
 	
+	
+
 	
 
 	ExtentHtmlReporter htmlReporter;
@@ -81,10 +83,11 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 	
 	
 	@Test
-	public void cod_Logic_2() throws Throwable {
+	public void cold_Storage() throws Throwable {
+		
 		
 		logger =  report.createTest("Cash On Delivery Logic");
-		logger.log(Status.PASS, "COD for 60 to 500" );
+		logger.log(Status.PASS, "COD Processing Order" );
 		
 		MsitePOM m = new MsitePOM();
 		
@@ -123,24 +126,17 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				driver.get("https://m.netmeds.com");
 				
+
 				Thread.sleep(3000);
-				String aa = "Gemer 2mg,Ajmal Amber Wood";
+				String aa = "Boostrix Injection";
 				String [] spl = aa.split(",");
 				System.out.println(spl.length);
-				
-				
-				
-				for (int i = 0; i < spl.length; i++) {
-					
-					
-				
-				
 				
 				Thread.sleep(3000);
 				btnclick(m.getHeader_SearchBar());
 				Thread.sleep(5000);
 				//type(m.getSearchBar(), spl[i]);
-				m.getHeader_SearchBar().sendKeys(spl[i]);
+				m.getHeader_SearchBar().sendKeys(aa);
 				Thread.sleep(3000);
 				driver.findElement(By.xpath("//*[@class='search-text search-bg']")).click();
 				//m.getHeader_SearchBar().sendKeys(Keys.ENTER);
@@ -149,161 +145,43 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				
 				driver.hideKeyboard();
-				
-				Thread.sleep(5000);
-				btnclick(m.getMsite_Search_AddToCart());
-				
-				
-				
-				for (int j = 0; j < 5; j++) {
-					
-					Thread.sleep(3000);
-					btnclick(m.getSearch_results_AddTocart_IncreaseQty());
-					
-					
-				}
-				
-				Thread.sleep(5000);
-				btnclick(m.getPDP_Cart_btn());
-				
-				
+
+				Thread.sleep(2000);
+				//btnclick(m.getMsite_SearchResult_drugName());
+		btnclick(m.getMsite_Search_Results().get(0));
+		
 				Thread.sleep(10000);
-				btnclick(m.getMsite_m2_ProceedBtn());
-			try {	
-				Thread.sleep(3000);
-				letschat();
-				Thread.sleep(6000);
-				btnclick(m.getMsite_Doctor_Consultation());
-				
-				Thread.sleep(3000);
-			//	btnclick(m.getDoctorConsultation_CloseBtn());
-				
-				Thread.sleep(3000);
-				btnclick(m.getOrder_review_btn());
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
 			
-			float total ;
 				Thread.sleep(3000);
-				String Tot = m.getOrder_review_totalAmount().getText();
-				System.out.println(Tot);
-				try {
-				String tota = Tot.substring(3, 9);
-				System.out.println(tota);
-				 total = Float.parseFloat(tota);
-				System.out.println(total);
-				} catch (Exception e) {
-					String tota = Tot.substring(3, 10);
-					System.out.println(tota);
-					if (tota.contains(",")) {
-						Thread.sleep(1000);
-						String rep = tota.replace(",", "");
-						total = Float.parseFloat(rep);
-						System.out.println(total);
-					} else {
-						Thread.sleep(1000);
-						 total = Float.parseFloat(tota);
-							System.out.println(total);
-					}
-					
-				}
+				String ab = "600055,600100,180001";
+				String [] spll = aa.split(",");
+				System.out.println(spll.length);
+				Thread.sleep(2000);
+				btnclick(m.getPDP_CheckAvailabilty_btn());
 				
-				Thread.sleep(3000);
-				btnclick(m.getOrder_review_payBtn());
-				
-				
-				
-				Thread.sleep(3000);
-				if (total<60||total>5000) {
+				Thread.sleep(2000);
+				//	driver.hideKeyboard();
 					
-					System.out.println("Unable to Process the payment / Cash on Delivery Option.The Net Value was Below 60 or above 5000");
-				try {	
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					
-					Thread.sleep(3000);
-					if (m.getCOD_CheckBox().isDisplayed()) {
-						
-					} else {
-						System.err.println("COD Option  available ");
-					}
-					
-					
-				
-				}catch (Exception e) {
-					// TODO: handle exception
-				}
-				
-				/////
-					
-				} else {
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					btnclick(m.getCOD_CheckBox());
-					
-					Thread.sleep(3000);
-					btnclick(m.getCOD_PayBtn());
-					
-					Thread.sleep(3000);
-
-					Thread.sleep(3000);
-					driver.swipe(0, 200, 0, 0, 1000);
-				//	btnclick(m.getTrack_Order());
-					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
-					 Thread.sleep(10000);
-					 letschat();
-					 driver.findElement(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();
-					 Thread.sleep(3000);
-					 driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
-					 Thread.sleep(3000);
-					 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|//android.widget.RadioButton[@text='Delay in delivery']")).click();
-					 Thread.sleep(3000);
-					 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-					
-					
-					Thread.sleep(10000);
-					driver.get("https://m.netmeds.com");
-					
-					Thread.sleep(6000);
-					
-					
-					
-				}
-				
-				}
-				
-				
-			}
-				
-				
-
-				
+for (int i = 0; i < spll.length; i++) {
 	
+
+					Thread.sleep(2000);
+					type(m.getPDP_ColdStorage_PinCheck(), spll[i]);
+					
+
+					Thread.sleep(3000);
+					btnclick(m.getPDP_CheckAvailabilty_CheckBtn());
+					
+					Thread.sleep(2000);
+//					System.out.println(m.getPDP_Colstorage_DeliveryError().getText());
+					
+
+					Thread.sleep(2000);
+					m.getPDP_ColdStorage_PinCheck().clear();
+					
+					Thread.sleep(2000);
+}
+
+	}
 				
 }
