@@ -83,7 +83,7 @@ public class ColdStorage_android_Live extends MobileBaseClass{
 		
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
-		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
+		logger.log(Status.PASS, "************* Cold Storage ********************" );
 		
 		AndriodPom m = new AndriodPom();
 		

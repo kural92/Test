@@ -1113,7 +1113,7 @@ public class MsitePOM extends MsiteBaseClass{
 		
 		// Cold Storage
 		
-				@FindBy(xpath = "//android.widget.TextView[@text='Check Availability']")
+				@FindBy(xpath = "//android.view.View[@text='Check Availability']|//*[@id='check_availablility']")
 				private WebElement PDP_CheckAvailabilty_btn;
 				public WebElement getPDP_CheckAvailabilty_btn() {
 					return PDP_CheckAvailabilty_btn;
@@ -1126,13 +1126,13 @@ public class MsitePOM extends MsiteBaseClass{
 					return PDP_CheckAvailabilty_Close_btn;
 				}
 				
-				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/pincode")
+				@FindBy(xpath = "//*[@id='pincode']|//android.widget.EditText[@id='pincode']")
 				private WebElement PDP_ColdStorage_PinCheck;
 				public WebElement getPDP_ColdStorage_PinCheck() {
 					return PDP_ColdStorage_PinCheck;
 				}
 
-				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/check_availability")
+				@FindBy(xpath = "//android.widget.Button[@text='CHECK AVAILABILITY']|//*[@id='check_cs_btn']")
 				private WebElement PDP_CheckAvailabilty_CheckBtn;
 				public WebElement getPDP_CheckAvailabilty_CheckBtn() {
 					return PDP_CheckAvailabilty_CheckBtn;
@@ -1151,7 +1151,7 @@ public class MsitePOM extends MsiteBaseClass{
 				}
 				
 				
-				@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/setAddressButton")
+				@FindBy(xpath = "//*[@text='Review Order']")
 				private WebElement Order_review_btn;
 				public WebElement getOrder_review_btn() {
 					return Order_review_btn;
@@ -1285,6 +1285,69 @@ return PDP_Search_btnn;
 			return Msite_Search_AddToCart;
 		}
 		
+		
+
+		@FindBy(xpath = "//*[@text='Proceed']" )
+		private WebElement msite_m2_ProceedBtn;
+		public WebElement getMsite_m2_ProceedBtn() {
+			return msite_m2_ProceedBtn;
+		}
+		
+		
+		
+		///
+		@FindBy(xpath = "//android.widget.CheckBox[@id='externaldoctr']|//*[@id='externaldoctr']")
+		private WebElement Msite_Doctor_Consultation;
+		public WebElement getMsite_Doctor_Consultation() {
+			return Msite_Doctor_Consultation;
+		}
+		
+		
+		@FindBy(id = "cart_netpay_amt2")
+		private WebElement order_review_totalAmount;
+		public WebElement getOrder_review_totalAmount() {
+			return order_review_totalAmount;
+		}
+		
+		
+
+		@FindBy(xpath = "//*[@text='Pay']|//android.widget.Button[@text='PAY']")
+		private WebElement order_review_payBtn;
+		public WebElement getOrder_review_payBtn() {
+			return order_review_payBtn;
+		}
+		
+		@FindBy(xpath = "(//*[@id='nms_cod'])[2]|//*[@id='nms_cod']")
+		private WebElement COD_CheckBox;
+		public WebElement getCOD_CheckBox() {
+		return COD_CheckBox;
+		}
+		@FindBy(xpath = "(//*[@id='nms_cod'])[2]|//*[@id='nms_cod']")
+		private List<WebElement> COD_Not_Eligible_Text_List;
+		public List<WebElement> getCOD_Not_Eligible_Text_List() {
+		return COD_Not_Eligible_Text_List;
+		}
+		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/order_image")
+		private WebElement Footer_Orders;
+		public WebElement getFooter_Orders() {
+		return Footer_Orders;
+		}
+
+		
+		
+		@FindBy(xpath="//*[@css='BUTTON.float-right.process-orderplace.col-md-5.col-12']|//*[@type='button']")
+		private WebElement COD_PayBtn;
+		public WebElement getCOD_PayBtn() {
+		return COD_PayBtn;
+		}
+
+
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/snackbar_text")
+		private WebElement COD_Not_Eligible_Text;
+		public WebElement getCOD_Not_Eligible_Text() {
+		return COD_Not_Eligible_Text;
+		}
 		
 
 }
