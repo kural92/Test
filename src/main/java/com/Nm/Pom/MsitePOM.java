@@ -680,7 +680,7 @@ public class MsitePOM extends MsiteBaseClass{
 				}
 		
 		
-		@FindBy(xpath = "(//*[@nodeName='LABEL' and @top='true'])[1]")
+		@FindBy(xpath = "//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|//android.widget.RadioButton[@text='Delay in delivery']")
 		private WebElement Cancel_reason;
 		public WebElement getCancel_reason() {
 			return Cancel_reason;
@@ -1286,7 +1286,7 @@ return PDP_Search_btnn;
 		}
 		
 		
-<<<<<<< HEAD
+
 		@FindBy(xpath = "//*[@text='Proceed']" )
 		private WebElement msite_m2_ProceedBtn;
 		public WebElement getMsite_m2_ProceedBtn() {
@@ -1348,11 +1348,87 @@ return PDP_Search_btnn;
 		public WebElement getCOD_Not_Eligible_Text() {
 		return COD_Not_Eligible_Text;
 		}
+//Consultation
 		
-=======
-
->>>>>>> 681e727bf3c9ffcafab9309439ce72afa42e9a68
+		
+		@FindBy(xpath="//*[@text='Consult Now' and @top='true']")
+		private List<WebElement> Consultation_Btn_List;
+		public List<WebElement> getConsultation_Btn_List() {
+		return Consultation_Btn_List;
+		}
+		
+		@FindBy(xpath="//*[@text='Consult Now' and @top='true']")
+		private WebElement Consultation_Btn;
+		public WebElement getConsultation_Btn() {
+		return Consultation_Btn;
+		}
+		
+			
+		
+		
+		@FindBy(xpath="//*[@text='START CONSULTATION ' and @top='true']|//*[@text='START CONSULTATION']")
+		private WebElement Start_Consultation_Btn;
+		public WebElement getStart_Consultation_Btn() {
+		return Start_Consultation_Btn;
+		}
+		
+		
+		@FindBy(xpath="//*[@text='Myself' and @nodeName='A' and @top='true']|//*[@text='Myself' and @top='true']")
+		private WebElement Consult_MySelf;
+		public WebElement getConsult_MySelf() {
+		return Consult_MySelf;
+		}
+		
+		@FindBy(xpath="//*[@name='SYMTOMS' and @top='true']|//*[@class='android.widget.EditText' and ./parent::*[@class='android.view.View'] and @top='true']")
+		private WebElement Consult_Symptons_TextBox;
+		public WebElement getConsult_Symptons_TextBox() {
+		return Consult_Symptons_TextBox;
+		}
+		
+		@FindBy(xpath="//*[@text='View All Specialisation']|//*[@text='View All Specialisation' and @nodeName='A']|//*[@text='View All Specialisation' and @nodeName='A' and @top='true']")
+		private WebElement Consult_Specialist_ViewAll;
+		public WebElement getConsult_Specialist_ViewAll() {
+		return Consult_Specialist_ViewAll;
+		}
+		
+		
+		
+				
+				
+		@FindBy(xpath="(//*[@text='ENT'])[1]")
+				private WebElement Consult_speciality;
+				public WebElement getConsult_speciality() {
+				return Consult_speciality;
+				}
+				
+				
+				@FindBy(xpath="//*[@text='Done']")
+				private WebElement Consult_specilaisation_DoneBtn;
+				public WebElement getConsult_specilaisation_DoneBtn() {
+				return Consult_specilaisation_DoneBtn;
+				}		
+				
+	
+								
+				
+				@FindBy(xpath="//*[@text='Chat']")
+				private WebElement Consult_Chat_Text;
+				public WebElement getConsult_Chat_Text() {
+				return Consult_Chat_Text;
+				}	
+				
+								
+				
+				@FindBy(xpath="(//*[@class='icon-class ng-star-inserted md hydrated' and @top='true'])[1]|//*[@text='SELECT']")
+				private WebElement Consult_Doctor_select_btn;
+				public WebElement getConsult_Doctor_select_btn() {
+				return Consult_Doctor_select_btn;
+				}		
+				
 }
+
+
+
 
 
 

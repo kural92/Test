@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -382,54 +383,52 @@ public class M3PastRx extends MsiteBaseClass {
 			//	btnclick(m.getMedicineorders());
 			
 				
-				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
-				
+						Thread.sleep(3000);	
+						driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
+							
 
-				
-				//Let's chat handle//
-				Thread.sleep(5000);
-				try {
-					MobileElement netty = (MobileElement) driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]|//android.view.View[@resource-id='haptik-xdk']/android.view.View/android.view.View/android.view.View/android.view.View"));
-					netty.click();
-					System.out.println("Successfully closed let's chat");
-					}catch (Exception e) {
-						System.out.println("No pop up available to close");
-					}
-				
-				Thread.sleep(5000);
-				driver.swipe(82, 1179, 82, 1160, 1000);
-				Thread.sleep(5000);
-				driver.findElement(By.xpath("//*[@class='btn-view ord-btn']|//android.widget.Button[@text='VIEW DETAILS']")).click();
-				Thread.sleep(5000);
-			
-				driver.swipe(82, 1600, 82, 0, 1000);
-				Thread.sleep(5000);
-				//driver.swipe(82, 900, 82, 0, 1000);
-				Thread.sleep(5000);
-				
-				Thread.sleep(5000);
-				driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
+							
+						//Cancel Order			
 
-//				btnclick(m.getCancel_Order());
-				Thread.sleep(5000);
-		//
-				driver.swipe(82, 939, 82, 6, 1000);
-				
-				Thread.sleep(5000);
-				driver.findElement(By.xpath("//*[@text='YES']|//android.widget.Button[@text='YES']")).click();
-			//	btnclick(m.getCancelyes());
-				Thread.sleep(5000);
+						//Let's chat handle//
+									letschat();
+									
+									Thread.sleep(5000);
+							
+									btnclick(m.getViewdetails());
+									Thread.sleep(5000);
+									
+									//Switch to Native_App		
+									 Set<String> contextNames4 = driver.getContextHandles();
+								        for (String strContextName : contextNames4) {
+								            if (strContextName.contains("NATIVE_APP")) {
+								                driver.context("NATIVE_APP");
+								                break;
+								            }
+								        }		
+										
+									
+									 driver.swipe(82, 1600, 82, 0, 1000);
+									Thread.sleep(3000);
+									btnclick(m.getCancelorder());
+									Thread.sleep(5000);
+									driver.swipe(82, 939, 82, 6, 1000);
+									Thread.sleep(5000);
+									try{btnclick(m.getYesbutton());}
+									catch (Exception e) {
+										// TODO: handle exception
+									}
+									Thread.sleep(5000);
+									btnclick(m.getCancel_reason());
+									 Thread.sleep(3000);
+									 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
+						
+							       
+									logger.log(Status.PASS, "Successfully Order was Cancelled");
+									System.out.println("Successfully Order was Cancelled");
+									Thread.sleep(2000);
+									driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 
-				driver.findElement(By.xpath("(//*[@class='ng-untouched ng-pristine ng-valid'])[5]|(//input[@class=\"ng-untouched ng-pristine ng-valid\"])[1]")).click();
-				Thread.sleep(5000);
-//				btnclick(m.getSubmit_Cancel());
-				
-				driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-				
-				//logger.log(Status.PASS, "Successfully Order was Cancelled");
-				System.out.println("Successfully Order was Cancelled");
-				Thread.sleep(2000);
-				driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 
 
 		}

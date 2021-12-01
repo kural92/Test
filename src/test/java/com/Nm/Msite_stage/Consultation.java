@@ -208,26 +208,13 @@ public class Consultation extends MsiteBaseClass {
 				}
 
 			}
-			 //Switch to Chrome browser
-	        Set<String> contextNames1 = driver.getContextHandles();
-	        for (String strContextName : contextNames1) {
-	            if (strContextName.contains("CHROMIUM")) {
-	                driver.context("CHROMIUM");
-	                break;
-	            }
-	        }			
+						
 			driver.navigate().back();
 		//btnclick(m.getFooter_HomePage());
 	
 		Thread.sleep(5000);
 		
-		Set<String> contextNames2 = driver.getContextHandles();
-        for (String strContextName : contextNames2) {
-            if (strContextName.contains("NATIVE_APP")) {
-                driver.context("NATIVE_APP");
-                break;
-            }
-        }
+	
 		  try {
 
 			  driver.findElement(By.xpath("//*[@class='app_close']")).click();
@@ -239,20 +226,13 @@ public class Consultation extends MsiteBaseClass {
 				// TODO: handle exception
 			}	
 		  
-		//Switch to Chrome browser
-		    Set<String> contextNames3 = driver.getContextHandles();
-		    for (String strContextName : contextNames3) {
-		        if (strContextName.contains("CHROMIUM")) {
-		            driver.context("CHROMIUM");
-		            break;
-		        }
-		    }	  	  
+			  
 		
 		for (int i = 0; i < 10; i++) {
 			
 			Thread.sleep(3000);
 			driver.swipe(0, 800, 0, 0, 1000);
-			
+			Thread.sleep(3000);
 			if (m.getConsultation_Btn_List().size()!=0) {
 				
 				Thread.sleep(3000);
@@ -268,6 +248,7 @@ public class Consultation extends MsiteBaseClass {
 			
 		}
 		
+	
 		WebDriverWait wait= new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.elementToBeClickable(m.getStart_Consultation_Btn()));
 		
@@ -275,9 +256,12 @@ public class Consultation extends MsiteBaseClass {
 		btnclick(m.getStart_Consultation_Btn());
 		
 		Thread.sleep(3000);
+		try {
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_MySelf()));
 		btnclick(m.getConsult_MySelf());
-		
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		Thread.sleep(3000);
 		type(m.getConsult_Symptons_TextBox(), "Ear pain");
 		
@@ -289,33 +273,43 @@ public class Consultation extends MsiteBaseClass {
 		
 		
 		Thread.sleep(3000);
-		btnclick(m.getConsult_ENT());
+		btnclick(m.getConsult_speciality());
 		
 		
+		
+		
+	//	driver.swipe(0, 1100, 0, 0, 1000);
+	//	driver.swipe(0, 1100, 0, 0, 1000);
 		Thread.sleep(3000);
-		btnclick(m.getConsult_specilaisation_DoneBtn());
+		driver.findElement(By.xpath("//*[@text='DONE']")).click();
 
 		Thread.sleep(3000);
-		btnclick(m.getSTART_CONSULTATION_BTN());
+		btnclick(m.getStart_Consultation_Btn());
 		
 		
 		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
 		btnclick(m.getConsult_Chat_Text());
 		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//*[@class='icon-class ng-star-inserted md hydrated' and @top='true'])[1]|(//*[@class='link' and @top='true'])[1]")).click();
+		driver.findElement(By.xpath("(//*[@text='radio button off'])[1]")).click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Doctor_select_btn()));
 		Thread.sleep(3000);
 		btnclick(m.getConsult_Doctor_select_btn());
 		
 		
-		
+		  Set<String> contextNames1 = driver.getContextHandles();
+	        for (String strContextName : contextNames1) {
+	            if (strContextName.contains("CHROMIUM")) {
+	                driver.context("CHROMIUM");
+	                break;
+	            }
+	        }	
 // Payment Decline
 		
 //NetBanking	
 		
-		
+		Thread.sleep(3000);
 	//Axis bank	
 	String Url1 = 	(driver.getCurrentUrl());
 		
@@ -567,7 +561,7 @@ public class Consultation extends MsiteBaseClass {
 		
 		Thread.sleep(10000);
 		
-		driver.findElement(By.xpath("(//span[@class='slot ng-tns-c8-0 ng-star-inserted'])[3]")).click();
+		driver.findElement(By.xpath("(//*[@class='link' and @top='true'])[2]"));
 		
 		Thread.sleep(6000);
 		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));

@@ -428,73 +428,57 @@ driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-
 
 	//	btnclick(m.getMedicineorders());
 	
-		
+		Thread.sleep(3000);
 		driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 		
 
 		
+
+
+
+
+//Cancel Order			
+
 //Let's chat handle//
-		letschat();
-		
-		Thread.sleep(5000);
-		
-	//	Thread.sleep(5000);
-		driver.findElement(By.xpath("(//*[@class='btn-view ord-btn'])[1]")).click();
-		Thread.sleep(5000);
+			letschat();
+			
+			Thread.sleep(5000);
+	
+			btnclick(m.getViewdetails());
+			Thread.sleep(5000);
+			
+			//Switch to Native_App		
+			 Set<String> contextNames4 = driver.getContextHandles();
+		        for (String strContextName : contextNames4) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }		
+				
+			
+			 driver.swipe(82, 1600, 82, 0, 1000);
+			Thread.sleep(3000);
+			btnclick(m.getCancelorder());
+			Thread.sleep(5000);
+			driver.swipe(82, 939, 82, 6, 1000);
+			Thread.sleep(5000);
+			try{btnclick(m.getYesbutton());}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(5000);
+			btnclick(m.getCancel_reason());
+			 Thread.sleep(3000);
+			 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
 
-//Switch to Native_App
-		
-		
-        Set<String> contextNames3 = driver.getContextHandles();
-        for (String strContextName : contextNames3) {
-            if (strContextName.contains("NATIVE_APP")) {
-                driver.context("NATIVE_APP");
-                break;
-            }
-        }
-	  
-        driver.swipe(82, 1081, 82, 0, 1000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']")).click();////*[@text='Cancel Order']\"
-
-//		btnclick(m.getCancel_Order());
-		Thread.sleep(5000);
-//
-		driver.swipe(82, 1081, 82, 0, 1000);
-		
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//android.widget.Button[@text='YES']")).click();//|//*[@text='YES']
-	//	btnclick(m.getCancelyes());
-		Thread.sleep(5000);
+	       
+			logger.log(Status.PASS, "Successfully Order was Cancelled");
+			System.out.println("Successfully Order was Cancelled");
+			Thread.sleep(2000);
+			driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 
 
-		
-		
-		
-		   //Switch to Chrome browser
-        Set<String> contextNames4 = driver.getContextHandles();
-        for (String strContextName : contextNames4) {
-            if (strContextName.contains("CHROMIUM")) {
-                driver.context("CHROMIUM");
-                break;
-            }
-            
-            driver.swipe(82, 1081, 82, 0, 1000);
-            
-            driver.swipe(82, 1081, 82, 0, 1000);
-            
-            driver.swipe(82, 1081, 82, 0, 1000);
-            
-        driver.findElement(By.xpath("(//*[@nodeName='LABEL'])[2]")).click();
-        
-        Thread.sleep(3000);
-            
-        driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']")).click();//|//android.widget.Button[@text='SUBMIT & CANCEL']    
-        }
-	  
-		//logger.log(Status.PASS, "Successfully Order was Cancelled");
-		System.out.println("Successfully Order was Cancelled");
-		Thread.sleep(2000);
-		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 }
 
 	
