@@ -1350,7 +1350,7 @@ return PDP_Search_btnn;
 		}
 //Consultation
 		
-<<<<<<< .merge_file_a32384
+
 		
 		@FindBy(xpath="//*[@text='Consult Now' and @top='true']")
 		private List<WebElement> Consultation_Btn_List;
@@ -1426,9 +1426,9 @@ return PDP_Search_btnn;
 				return Consult_Doctor_select_btn;
 				}		
 				
-=======
 
->>>>>>> .merge_file_a37648
+
+
 }
 
 
