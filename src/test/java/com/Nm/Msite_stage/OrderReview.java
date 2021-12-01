@@ -25,6 +25,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.Nm.Andriod_prod.RetryAnalyzer;
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Base.MsiteBaseClass;
@@ -103,8 +104,8 @@ public class OrderReview extends MsiteBaseClass {
 		// htmlReporter.config().setTheme(Theme.STANDARD);
 
 	}
-	@Test
-	//@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
+	//@Test
+	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 	
@@ -122,12 +123,7 @@ public class OrderReview extends MsiteBaseClass {
 			  driver.get("https://m.netmeds.com/");
 			  
 			  Thread.sleep(10000);
-			  try {
-			  driver.findElement(By.xpath("//app_close[@text='✕']")).click();
-			  }catch (Exception e) {
-				// TODO: handle exception
-			}
-			  
+				popupclose() ;
 			  Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
@@ -175,7 +171,7 @@ public class OrderReview extends MsiteBaseClass {
 		Thread.sleep(1500);
 		driver.pressKeyCode(AndroidKeyCode.ENTER);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
+		driver.findElement(By.xpath("//*[@text='                                     Patanjali Lauh Bhasm Powder 5 gm                                    ']")).click();
 		// btncli(m.getSearchIcon());
 		logger.log(Status.PASS, "Successfully navigate to search result page" );
 
@@ -227,6 +223,8 @@ method(m.getOrderreview_mfr());
 		type(m.getOrderreview_textArea(), "testing");
 		SoftAssert.assertEquals(gettext(m.getOrderreview_customerNotes()), "CUSTOMER NOTES");
 		driver.navigate().to("https://m.netmeds.com");
+		Thread.sleep(5000);
+		popupclose() ;
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@text='Search for medicine & wellness products...' and @nodeName='SPAN']")).click();
 		
@@ -306,9 +304,10 @@ method(m.getOrderreview_mfr());
 				logger.log(Status.PASS, "Address was deleted successfully");
 				
 	//Modify
-			driver.swipe(0, 1500, 0, 1300,1000);
+				Thread.sleep(2000);
+			driver.swipe(0, 1800, 0, 1500,1000);
 			Thread.sleep(5000);
-			btnclick(m.getModifyaddressbtn());
+		driver.findElement(By.xpath("//*[@text='Modify' and @top='true']")).click();
 			Thread.sleep(5000);
 			type(m.getPincode(),"600093");
 			Thread.sleep(5000);

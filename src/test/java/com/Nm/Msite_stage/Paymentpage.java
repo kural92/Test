@@ -27,6 +27,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.Nm.Andriod_prod.RetryAnalyzer;
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.Monepom;
@@ -92,8 +93,8 @@ public class Paymentpage extends MsiteBaseClass{
 		// htmlReporter.config().setTheme(Theme.STANDARD);
 
 	}
-	@Test(priority=1)
-	//@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
+	//@Test(priority=1)
+	@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
 	public void paymentpage() throws Throwable {
 		logger = report.createTest("Payment page");
 		logger.log(Status.PASS, "*************Payment page********************");
@@ -106,11 +107,9 @@ public class Paymentpage extends MsiteBaseClass{
 			  driver.get("https://m.netmeds.com/");
 			  
 			  Thread.sleep(10000);
-			  try {
-			  driver.findElement(By.xpath("//app_close[@text='✕']")).click();
-			  }catch (Exception e) {
+		
 				
-			}
+				popupclose() ;
 			  
 			  Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
@@ -321,15 +320,15 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 
 		
 	Thread.sleep(3000);
-	scrolldown("700");
+	/*scrolldown("700");
 	btnclick(m.getCart_pay());
 	Thread.sleep(3000);
 	try {
 		m.getAMAZONPAY_paybutton().isDisplayed();
 		System.out.println("cart payment is displayed");
-	} catch (Exception e) {
+	} catch (Exception e) { 
 		// TODO: handle exception
-	}
+	}*/
 	scrolldown("900");
 	Thread.sleep(3000);
 		btnclick(m.getAxis_bank());
