@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.Nm.Andriod_prod.RetryAnalyzer;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.MsitePOM;
 import com.aventstack.extentreports.ExtentReports;
@@ -80,7 +81,7 @@ public class NetmedsFirst extends MobileBaseClass  {
 			// htmlReporter.config().setTheme(Theme.STANDARD);
 
 		}
-	@Test
+		@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 		public void laucnh() throws Throwable {
 		logger = report.createTest("Netmeds First");
 		logger.log(Status.PASS, "*************Netmeds First********************");
@@ -88,14 +89,8 @@ public class NetmedsFirst extends MobileBaseClass  {
 			  driver.get("https://m.netmeds.com/");
 			  
 			  Thread.sleep(10000);
-			  try {
-			  driver.findElement(By.xpath("//app_close[@text='✕']")).click();
-			  }catch (Exception e) {
-				// TODO: handle exception
-			}
-			  
-			  Thread.sleep(10000);
-				String s="Patanjali Lauh Bhasm Powder 5 gm";
+				popupclose() ;
+			  Thread.sleep(10000);	String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
 		driver.navigate().to("https://m.netmeds.com/checkout/cart");
 		try {

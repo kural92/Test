@@ -19,6 +19,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.Nm.Andriod_prod.RetryAnalyzer;
 import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.MsitePOM;
 import com.aventstack.extentreports.ExtentReports;
@@ -135,6 +136,8 @@ public class Diaganostic  extends MsiteBaseClass {
    
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
 	//@Test(enabled = true)
+	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
+
 	public void CategoryPage() throws Throwable {
 		
 		logger =  report.createTest("dignostic Page");
@@ -361,7 +364,9 @@ driver.findElement(By.xpath("(//*[@nodeName='INPUT'])[1]")).click();
 		
 	
 	//*****************************************************************M3 Subscription OTC Flow	*********************************************************
-		@Test(enabled = true)
+		//@Test(enabled = true)
+	@Test(priority = 2,retryAnalyzer=RetryAnalyzer.class)
+
 		public void diganosticpage() throws Throwable {
 			
 			logger =  report.createTest("dignostic Page");
