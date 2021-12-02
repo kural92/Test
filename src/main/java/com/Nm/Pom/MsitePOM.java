@@ -1412,7 +1412,7 @@ return PDP_Search_btnn;
 	
 								
 				
-				@FindBy(xpath="//*[@text='Chat']")
+				@FindBy(xpath="//*[@text='Chat']|//*[@text='Chat' and @top='true']")
 				private WebElement Consult_Chat_Text;
 				public WebElement getConsult_Chat_Text() {
 				return Consult_Chat_Text;

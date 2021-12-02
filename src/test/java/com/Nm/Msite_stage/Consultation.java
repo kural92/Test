@@ -477,19 +477,23 @@ public class Consultation extends MsiteBaseClass {
 		
 		WebDriverWait wait= new WebDriverWait(driver, 60);
 	
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 	
-		driver.swipe(82, 1870, 82, 900, 1000);
-
-		driver.swipe(0, 1870, 82, 900, 1000);
 		
-		driver.swipe(0, 1870, 82, 900, 1000);
+		driver.swipe(550, 1750, 550, 600, 1000);
+
+		Thread.sleep(5000);
+		
+				
+		//driver.navigate().to("https://consult.netmeds.com/users/choose-doctor");
 		
 	 Thread.sleep(5000);
 	 
-	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Consult now']"))));
-	 btnclick(driver.findElement(By.xpath("//*[@text='Consult now']")));
+	// wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Consult now']"))));
+	btnclick(driver.findElement(By.xpath("//*[@text='Consult now']")));
 	 
+	 
+
 	 Thread.sleep(5000);
 	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@class='filter-button showMobileLayout']"))));
 	 driver.findElement(By.xpath("//*[@class='filter-button showMobileLayout']")).click();
@@ -523,52 +527,56 @@ public class Consultation extends MsiteBaseClass {
 	 driver.findElement(By.xpath("//*[@text='Apply ']|//android.widget.Button[@text='APPLY']")).click();
 	 
 		
-		Set<String> toremovefilter = driver.getContextHandles();
-        for (String strtoremovefilter : toremovefilter) {
-            if (strtoremovefilter.contains("NATIVE_APP")) {
-                driver.context("NATIVE_APP");
-                break;
-            }
-        }
+		
 	 Thread.sleep(8000);
 
-	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//*[@text='CONSULT'])[2]"))));
-	 driver.findElement(By.xpath("(//*[@text='CONSULT'])[2]")).click();
+	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//*[@text='Consult ' and @top='true'])[2]"))));
+	 driver.findElement(By.xpath("(//*[@text='Consult ' and @top='true'])[2]")).click();
 	 
+	
 	 
 	 Thread.sleep(5000);
-	 try {
+		Thread.sleep(3000);
+		try {
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_MySelf()));
 		btnclick(m.getConsult_MySelf());
-	 
-	
-	
-		Thread.sleep(5000);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		Thread.sleep(3000);
 		type(m.getConsult_Symptons_TextBox(), "Ear pain");
 		
 		driver.hideKeyboard();
-	 }catch (Exception e) {
-		// TODO: handle exception
-	}
 		
+		
+		
+		
+		
+		
+	//	driver.swipe(0, 1100, 0, 0, 1000);
+	//	driver.swipe(0, 1100, 0, 0, 1000);
+		Thread.sleep(3000);
+
+
+		Thread.sleep(3000);
+		btnclick(m.getStart_Consultation_Btn());
 		
 		
 		Thread.sleep(3000);
-		driver.swipe(0, 1800, 0, 0, 1000);
-		Thread.sleep(5000);
 		
-		driver.findElement(By.xpath("//*[@text='START CONSULTATION']")).click();
+		//List <WebElement> findelements = driver.findElements(By.xpath("//*[contains(@text,'PM')]|//*[contains(@text,'AM')]"));
 		
-		Thread.sleep(10000);
+		//findelements.get(3).click();
 		
-		driver.findElement(By.xpath("(//*[@class='link' and @top='true'])[2]"));
-		
-		Thread.sleep(6000);
-		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
-		btnclick(m.getConsult_Chat_Text());
+		driver.findElement(By.xpath("//*[@text='Today' and @top='true']/following::SPAN")).click();
 		
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@class='ng-star-inserted ion-color ion-color-secondary md button button-full button-large button-solid ion-activatable ion-focusable hydrated']")).click();
+	//	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("(//*[contains(@text,'Chat')])[3]"))));
+		driver.findElement(By.xpath("//*[@text='Chat']")).click();
+		Thread.sleep(3000);
+	
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[contains(@text,'Pay')]|//*[@class='ng-star-inserted ion-color ion-color-secondary md button button-full button-large button-solid ion-activatable ion-focusable hydrated']")).click();
 		Thread.sleep(3000);
 
 		
@@ -603,7 +611,7 @@ public class Consultation extends MsiteBaseClass {
 	driver.findElement(By.xpath("(//*[@name='radio-button-off' and @top='true'])[4]")).click();
 	
 	Thread.sleep(5000);
-	driver.findElement(By.xpath("//*[@class='ng-star-inserted ion-color ion-color-secondary md button button-full button-large button-solid ion-activatable ion-focusable hydrated']//*[@text='Pay']")).click();
+	driver.findElement(By.xpath("//*[@text='Pay']")).click();
 	Thread.sleep(5000);
 	driver.navigate().back();
 	Thread.sleep(5000);
