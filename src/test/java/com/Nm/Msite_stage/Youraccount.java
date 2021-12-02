@@ -186,7 +186,7 @@ public class Youraccount extends MsiteBaseClass {
 //Menu : Delivery Address//
 	
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void DeliverAddressSection() throws Throwable {
 
 		logger = report.createTest("DeliverAddressSection");
@@ -338,7 +338,7 @@ public class Youraccount extends MsiteBaseClass {
 	// **************************************************************MY
 	// Wallet*************************************************************************************//
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void Mywallet() throws Throwable {
 
 		logger = report.createTest("Mywallet");
@@ -557,7 +557,7 @@ public class Youraccount extends MsiteBaseClass {
 	
 
 //********************************************* My prescription***************************************************************************************
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void Myprescription() throws Throwable {
 
 		logger = report.createTest("Myprescription");
@@ -664,7 +664,7 @@ public class Youraccount extends MsiteBaseClass {
 	// **************************************************************refer and
 	// earn*************************************************************************************//
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void Referearn() throws Throwable {
 
 		logger = report.createTest("refer&earn");
@@ -915,7 +915,7 @@ public class Youraccount extends MsiteBaseClass {
 	// **************************************************************Legal
 	// Information*************************************************************************************//
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void Legalinformation() throws Throwable {
 
 		logger = report.createTest("Legalinformation");
@@ -981,7 +981,7 @@ public class Youraccount extends MsiteBaseClass {
 	// **************************************************************offers
 		// page*************************************************************************************//
 
-		@Test(enabled = false)
+		@Test(enabled = true)
 		public void offersPage() throws Throwable {
 
 			logger = report.createTest("Offers Page");
@@ -1251,7 +1251,7 @@ public class Youraccount extends MsiteBaseClass {
 		// **************************************************************Contact
 		// Us*************************************************************************************//
 
-		@Test(enabled = false)
+		@Test(enabled = true)
 		public void contactus() throws Throwable {
 
 			logger = report.createTest("contact");
@@ -1373,7 +1373,7 @@ public class Youraccount extends MsiteBaseClass {
 		// **************************************************************Rate
 		// Us*************************************************************************************//
 
-		@Test(enabled = false)
+		@Test(enabled = true)
 		public void rateus() throws Throwable {
 
 			logger = report.createTest("Rateus");
@@ -1488,7 +1488,7 @@ public class Youraccount extends MsiteBaseClass {
 
 			
 			
-			@Test(enabled = false)
+			@Test(enabled = true)
 			public void Myrewards() throws Throwable {
 
 				logger = report.createTest("My rewards");
@@ -1615,50 +1615,64 @@ public class Youraccount extends MsiteBaseClass {
 			}
 				
 	
-	@AfterMethod()
-	public void screenShot(ITestResult result) throws Throwable {
+			@AfterMethod()
+			public void screenShot(ITestResult result) throws Throwable {
+				
+			    if(result.getStatus() == ITestResult.FAILURE) {
+			    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
+			    	logger.fail(result.getThrowable());
+			    	try {
+						
 
-		if (result.getStatus() == ITestResult.FAILURE) {
-			logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));
-			logger.fail(result.getThrowable());
-			try {
-
-				TakesScreenshot screenshot = (TakesScreenshot) driver;
-				File src = screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src, new File("./Report/" + result.getName() + ".png"));
-				System.out.println("Successfully captured a screenshot");
-				// logger.log(Status.FAIL, result.getThrowable());
-				logger.log(Status.FAIL,
-						"Snapshot below: " + logger.addScreenCaptureFromPath(result.getName() + ".png"));
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		else if (result.getStatus() == ITestResult.SUCCESS) {
-			logger.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));
-
-		} else {
-
-			// onFinish(context);
-			logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
-			logger.skip(result.getThrowable());
-			report.removeTest(logger);
-		}
-		Thread.sleep(3000);
-		if (result.getStatus() == ITestResult.FAILURE) {
+						TakesScreenshot screenshot = (TakesScreenshot) driver;
+						File src = screenshot.getScreenshotAs(OutputType.FILE);
+						FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
+						System.out.println("Successfully captured a screenshot");
+						//logger.log(Status.FAIL, result.getThrowable());
+						logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
+					
+				
+						
+						
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+			      }
+			 
+			    else if(result.getStatus() == ITestResult.SUCCESS) {
+			    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
+			    
+			    }
+			    else {
+			    
+			    	 // onFinish(context);
+			    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
+			    	logger.skip(result.getThrowable());
+			    	report.removeTest(logger);
+			    }
+			    
+			    
+			    
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+			if (result.getStatus() == ITestResult.FAILURE) {
+				Thread.sleep(3000);
+			//	BaseClass.mail_report();
+			
+				
+			//	BaseClass.mail_report();
+			}
+			
+			
+			}	
+				
+
+
+			@AfterTest
+			private void quitbrowser() {
+				report.flush();
+				
+		 //     driver.quit();
+			}
+
+
 		}
-
-	}
-
-	@AfterTest
-	private void quitbrowser() {
-		report.flush();
-
-		driver.quit();
-	}
-
-}

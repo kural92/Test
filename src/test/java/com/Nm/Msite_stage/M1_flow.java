@@ -31,6 +31,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.Nm.Andriod_prod.RetryAnalyzer;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.AndriodPom;
@@ -123,7 +124,7 @@ public class M1_flow extends MsiteBaseClass {
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled=true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void Mone_otc() throws Throwable {
 		
 		logger = report.createTest("Netmeds First");
@@ -137,11 +138,10 @@ public class M1_flow extends MsiteBaseClass {
 			  driver.get("https://m.netmeds.com/");
 			  
 			  Thread.sleep(10000);
-			  try {
-			  driver.findElement(By.xpath("//app_close[@text='✕']")).click();
-			  }catch (Exception e) {
-				// TODO: handle exception
-			}
+			  
+				
+				popupclose() ;
+
 			  
 			  Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
@@ -189,7 +189,7 @@ public class M1_flow extends MsiteBaseClass {
 		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Patanjali Lauh Bhasm Powder 5 gm");
 		Thread.sleep(1500);
 		driver.pressKeyCode(AndroidKeyCode.ENTER);
-		Thread.sleep(3000);
+			Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
 		// btncli(m.getSearchIcon());
 		logger.log(Status.PASS, "Successfully navigate to search result page" );
@@ -245,7 +245,7 @@ driver.swipe(0, 900, 0, 0, 1000);*/
 Thread.sleep(3000);
 driver.findElement(By.xpath("//*[@text='Track Order']")).click();
 try {
-	Thread.sleep(2000);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 }catch (Exception e) {
 	// TODO: handle exception

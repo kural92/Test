@@ -486,21 +486,13 @@ public class M3OTC extends MsiteBaseClass {
 			
 				
 				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
-				
+	//Cancel Order			
 
-				
-				//Let's chat handle//
+	//Let's chat handle//
 				letschat();
 				
 				Thread.sleep(5000);
-				
-				
-
-				
-				
-		       
-				
-			//	driver.findElement(By.xpath("//*[@class='btn-view ord-btn']|//android.widget.Button[@text='VIEW DETAILS']")).click();
+		
 				btnclick(m.getViewdetails());
 				Thread.sleep(5000);
 				
@@ -516,46 +508,27 @@ public class M3OTC extends MsiteBaseClass {
 				
 				 driver.swipe(82, 1600, 82, 0, 1000);
 				Thread.sleep(3000);
-				//driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
 				btnclick(m.getCancelorder());
-
-
 				Thread.sleep(5000);
-		//
 				driver.swipe(82, 939, 82, 6, 1000);
-				
 				Thread.sleep(5000);
-				//driver.findElement(By.xpath("//*[@text='YES']|//android.widget.Button[@text='YES']")).click();
 				try{btnclick(m.getYesbutton());}
 				catch (Exception e) {
 					// TODO: handle exception
 				}
 				Thread.sleep(5000);
-
-				//driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
-				
-				
-//				
-				
-				
-	//Switch to Chrome browser
-		        Set<String> contextNames5 = driver.getContextHandles();
-		        for (String strContextName : contextNames5) {
-		            if (strContextName.contains("CHROMIUM")) {
-		                driver.context("CHROMIUM");
-		                break;
-		            }
-		            	
-		            btnclick(m.getCancel_reason());
-					Thread.sleep(5000);
-		            driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-				//logger.log(Status.PASS, "Successfully Order was Cancelled");
+				btnclick(m.getCancel_reason());
+				 Thread.sleep(3000);
+				 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
+	
+		       
+				logger.log(Status.PASS, "Successfully Order was Cancelled");
 				System.out.println("Successfully Order was Cancelled");
 				Thread.sleep(2000);
 				driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 
 
-		}
+		
 	}
 	
 	@AfterMethod()
