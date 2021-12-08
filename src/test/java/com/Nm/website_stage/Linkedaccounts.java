@@ -261,8 +261,7 @@ public class Linkedaccounts extends BaseClass {
 
 	// Step1 :Launch Browser//
 			Monepom m = new Monepom();
-			driver.manage().window().maximize();
-
+		
 			
 				try {
 
@@ -280,16 +279,16 @@ public class Linkedaccounts extends BaseClass {
 				} catch (Exception e) {
 					System.out.println("Already Logged In");
 				}
-
+				driver.navigate().to("https://s1-meds.netmeds.com");
 				try {
 					btncli(m.getNetmedshome());
 				} catch (Exception e) {
 
 				}
 				
-
+			
 	// Step 3 : Navigate to user profile//
-
+				Thread.sleep(3000);
 			btncli(m.getUserprofile());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to userprofile");
@@ -303,7 +302,7 @@ public class Linkedaccounts extends BaseClass {
 				
 				btncli(m.getPayment_method());
 				Thread.sleep(3000);
-				
+				try {
 				WebElement saved_card =	m.getSaved_card();//driver.findElement(By.xpath("//ul[@class=\"savedcards ng-star-inserted\"]"));
 	
 				System.out.println("Card Details are as follows  "+saved_card.getText());
@@ -313,7 +312,9 @@ public class Linkedaccounts extends BaseClass {
 				driver.findElement(By.xpath("//button[@class=\"delete-card\"]")).isDisplayed();
 				
 				System.out.println("Yes Delete button is available");
-				
+				}catch (Exception e) {
+					System.out.println("no saved card is avalible");
+				}
 				SoftAssert SoftAssert = new SoftAssert();
 				
 				SoftAssert.assertEquals(gettext(m.getLinked_wallets_details_text()), "LINKED WALLETS");

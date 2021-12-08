@@ -102,24 +102,11 @@ static String totalamt;
 
 //Step1 :Launch Browser//		
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 //Step 2 :Login with user name and password//
-		btncli(m.getSignin());
-		Thread.sleep(5000);
+		driver.navigate().to("https://s1-meds.netmeds.com");
 
-		type(m.getMobileno(), "7010752043");
-		Thread.sleep(3000);
-
-		//btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
-		btncli(m.getUsepwdbtn());
-		Thread.sleep(3000);
-		type(m.getPassword(), "Change@92");
-
-		btncli(m.getSignInpage());
-		Thread.sleep(3000);
-		logger.log(Status.PASS, "Successfully navigate to home page");
-		System.out.println("Successully logged in");
 
 //Step 3 : Navigate to user profile//
 

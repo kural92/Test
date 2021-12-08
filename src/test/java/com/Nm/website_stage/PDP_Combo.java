@@ -7,6 +7,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -81,7 +82,7 @@ public class PDP_Combo extends BaseClass{
 	
 	
 	
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority=1)
 	public void offersAvail() throws Throwable {
 		
 		
@@ -124,6 +125,7 @@ try {
 
 			} else {
 				break;
+				
 
 			}
 
@@ -138,8 +140,8 @@ try {
 		// search
 		btncli(m.getSearch());
 		type(m.getSearch(),"Pro360");  //Pro360 //Horlicks
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		m.getSearch().sendKeys(Keys.ENTER);
+		
 		//btncli(m.getSearchIcon());
 		
 		Thread.sleep(5000);
@@ -266,7 +268,7 @@ try {
 	
 	
 
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority=2)
 	public void ferquentlyBought() throws Throwable {
 
 	Monepom m = new Monepom();
@@ -322,8 +324,7 @@ try {
 		// search
 		btncli(m.getSearch());
 		type(m.getSearch(),"Horlicks Health Drink Powder Classic Malt 500 gm");  //Pro360 //Horlicks
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		m.getSearch().sendKeys(Keys.ENTER);
 		//btncli(m.getSearchIcon());
 		
 		Thread.sleep(5000);
@@ -342,7 +343,7 @@ try {
 			btncli(driver.findElement(By.xpath("(//h5[contains(text(),'FREQUENTLY BOUGHT TOGETHER ')]//following::span[@class='clsgetname'])[2]")));
 			
 			Thread.sleep(3000);
-			btncli(driver.findElement(By.id("product-addtocart-button")));
+			btncli(driver.findElement(By.xpath("//button[@class='toCart cartbag addtocartbtnpdp prodbtn']")));
 			
 		} else {
 			
@@ -359,44 +360,43 @@ try {
 	}
 	
 	
-	@AfterMethod()
+
+	//@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
-		
-	    if(result.getStatus() == ITestResult.FAILURE) {
-	//    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
-	//    	logger.fail(result.getThrowable());
-	    	try {
-				
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+			logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));
+			logger.fail(result.getThrowable());
+			try {
 
 				TakesScreenshot screenshot = (TakesScreenshot) driver;
 				File src = screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
+				FileUtils.copyFile(src, new File("./Report/" + result.getName() + ".png"));
 				System.out.println("Successfully captured a screenshot");
-				//logger.log(Status.FAIL, result.getThrowable());
-	//			logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
-			
-		
-				
-				
-			}catch (Exception e) {
+				// logger.log(Status.FAIL, result.getThrowable());
+				logger.log(Status.FAIL,
+						"Snapshot below: " + logger.addScreenCaptureFromPath(result.getName() + ".png"));
+
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-	      }
-	 
-	    else if(result.getStatus() == ITestResult.SUCCESS) {
-	 //   	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
-	    
-	    }
-	    else {
-	    
-	    	 // onFinish(context);
-	 //   	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
-	  //  	logger.skip(result.getThrowable());
-	    	report.removeTest(logger);
-	    }
-	    
-	    
-	    
+		}
+
+		else if (result.getStatus() == ITestResult.SUCCESS) {
+			logger.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));
+
+		} else {
+
+			// onFinish(context);
+			logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
+			logger.skip(result.getThrowable());
+			report.removeTest(logger);
+		}
+		Thread.sleep(3000);
+		if (result.getStatus() == ITestResult.FAILURE) {
+			Thread.sleep(3000);
+			
+		}	    
 	Thread.sleep(3000);
 	if (result.getStatus() == ITestResult.FAILURE) {
 		Thread.sleep(3000);

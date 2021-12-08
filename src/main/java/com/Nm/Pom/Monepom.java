@@ -1488,7 +1488,7 @@ public class Monepom extends BaseClass {
 	}
 	@FindBy(xpath= "//input[@id='nms_googlepay']")
 	private WebElement googlepay_pay;
-	@FindBy(xpath= "//input[contains(@id, 'nmspay_card')]")
+	@FindBy(xpath= "//a[@id='newcardlink']")
 	private WebElement cart_pay;
 	@FindBy(xpath= "//*[@id='credit&debitcards']/div[2]/div/div[1]/div/div/div[2]/div[2]/button")
 	private WebElement cart_paymentutton;
