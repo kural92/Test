@@ -93,7 +93,7 @@ static String totalamt;
 				*/
 //**************************************************My Orders page****************************************************************************************
 	
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test()
 	public void MyOrdersPage() throws Throwable {
 		
 		
@@ -379,7 +379,7 @@ static String totalamt;
 		 logger.log(Status.PASS, " Successfully Navigated to Help Page" );
 		 
 //Reorder//
-		 
+		 Thread.sleep(3000);
 		 btncli(m.getReorder());
 		 Thread.sleep(3000);
 		 SoftAssert.assertEquals(driver.getCurrentUrl(), "https://s1-meds.netmeds.com/checkout/cart");
