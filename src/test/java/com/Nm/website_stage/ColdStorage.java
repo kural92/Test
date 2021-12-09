@@ -82,7 +82,8 @@ public class ColdStorage extends BaseClass {
 
 		// Login
 
-		driver.manage().window().maximize();
+	//	driver.manage().window().maximize();
+		try {
 		btncli(m.getSignin());
 		Thread.sleep(5000);
 		type(m.getMobileno(), "7010752043");
@@ -91,7 +92,9 @@ public class ColdStorage extends BaseClass {
 		Thread.sleep(3000);
 		type(m.getPassword(), "Change@92");
 		btncli(m.getSignInpage());
-
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		//////////////
 
 /////////////  Remove Product //
@@ -184,10 +187,16 @@ public class ColdStorage extends BaseClass {
 
 		try {
 			Thread.sleep(3000);
+			if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+				
+				Thread.sleep(3000);
 			btncli(driver.findElement(By.id("externaldoctr")));
 			logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
 			logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
-
+			}  else {
+				
+			}
+			
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'Review Order')]")));
 
