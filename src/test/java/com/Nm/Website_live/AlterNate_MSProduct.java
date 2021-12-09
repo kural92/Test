@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -43,7 +44,8 @@ import utils.FileAndEnv;
 6.In cart Page. Click and Add Most Selling Product to cart
 7.Click on Most Selling Product and landed into the PDP page 
 8.From PDP page product was added to cart.
-9.Click on Proceed and choose the Schedule Doctor consulatation if RX product
+9.Click on Proceed and choose the Schedule Doc
+tor consulatation if RX product
 10.Click on pay and landed into payment page
 
 
@@ -147,8 +149,9 @@ public class AlterNate_MSProduct extends BaseClass{
 		  Thread.sleep(3000);
 		btncli(m.getSearch());
 		type(m.getSearch(), "Trajenta 5mg Tablet 10"); //Trajenta 5mg Tablet 10'S
-         r.keyPress(java.awt.event.KeyEvent.VK_ENTER);
-         r.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+      //   r.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+     //    r.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+		m.getSearch().sendKeys(Keys.ENTER);
 		
 		//btncli(m.getSearchIcon());
 		Thread.sleep(5000);
@@ -159,7 +162,8 @@ public class AlterNate_MSProduct extends BaseClass{
 	
 		
 		Thread.sleep(3000);
-		btncli(m.getSearch_AddtoCart_btn());//driver.findElement(By.id("product-addtocart-button")));
+	//	btncli(m.getSearch_AddtoCart_btn());
+		driver.findElement(By.xpath("//button[@title='ADD TO CART']")).click();
 		
 		
 		Thread.sleep(5000);
@@ -238,7 +242,8 @@ public class AlterNate_MSProduct extends BaseClass{
 		
 		
 		Thread.sleep(3000);
-		btncli(m.getSearch_AddtoCart_btn());//driver.findElement(By.id("product-addtocart-button")));
+		//btncli(m.getSearch_AddtoCart_btn());
+		driver.findElement(By.xpath("//button[@title='ADD TO CART']")).click();
 		logger.log(Status.PASS, "Successfully Added the Most Selling Product from PDP Page ");
 		
 		Thread.sleep(3000);
@@ -264,9 +269,23 @@ public class AlterNate_MSProduct extends BaseClass{
 		} catch (Exception e) {
 
 		}
-		Thread.sleep(3000);
+		Thread.sleep(5000);
+
+		// handle Lets chat button
+				try {
+					driver.switchTo().frame("haptik-xdk");
+					Actions acc = new Actions(driver);
+					acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+							.perform();
+					driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+					driver.switchTo().defaultContent();
+				} catch (Exception e) {
+
+				}
 
 		logger.log(Status.PASS, "Successfully navigated to  order review page");
+		Thread.sleep(3000);
+		
 		
 		Thread.sleep(3000);
 		btncli(m.getPaybutton());

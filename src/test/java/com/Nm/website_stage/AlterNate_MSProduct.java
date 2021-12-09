@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -83,7 +84,7 @@ public class AlterNate_MSProduct extends BaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test//(retryAnalyzer=RetryAnalyzer.class)
 	public void alterNate_Product() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
@@ -93,7 +94,7 @@ public class AlterNate_MSProduct extends BaseClass{
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		Robot r = new Robot();
-		
+	try {	
 		 driver.manage().window().maximize();
 		 btncli(m.getSignin());
 		  Thread.sleep(5000);
@@ -103,7 +104,9 @@ public class AlterNate_MSProduct extends BaseClass{
 		  Thread.sleep(3000);
 		  type(m.getPassword(),"Change@92"); 
 		  btncli(m.getSignInpage());
-		  
+	} catch (Exception e) {
+		// TODO: handle exception
+	}	  
 		  //////////////////////
 		  
 		  
@@ -144,9 +147,9 @@ public class AlterNate_MSProduct extends BaseClass{
 		  Thread.sleep(3000);
 		btncli(m.getSearch());
 		type(m.getSearch(), "Trajenta 5mg Tablet 10"); //Trajenta 5mg Tablet 10'S
-         r.keyPress(java.awt.event.KeyEvent.VK_ENTER);
-         r.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
-		
+        // r.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+        // r.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+		m.getSearch().sendKeys(Keys.ENTER);
 		//btncli(m.getSearchIcon());
 		Thread.sleep(5000);
 		btncli(m.getSearch_Product_Info());//driver.findElement(By.xpath("//div[@class='info']")));
@@ -156,7 +159,8 @@ public class AlterNate_MSProduct extends BaseClass{
 	
 		
 		Thread.sleep(3000);
-		btncli(m.getSearch_AddtoCart_btn());//driver.findElement(By.id("product-addtocart-button")));
+		//btncli(m.getSearch_AddtoCart_btn());
+		driver.findElement(By.xpath("//button[@title='ADD TO CART']")).click();
 		
 		
 		Thread.sleep(5000);
@@ -233,7 +237,8 @@ public class AlterNate_MSProduct extends BaseClass{
 		
 		
 		Thread.sleep(3000);
-		btncli(m.getSearch_AddtoCart_btn());//driver.findElement(By.id("product-addtocart-button")));
+		//btncli(m.getSearch_AddtoCart_btn());
+		driver.findElement(By.xpath("//button[@title='ADD TO CART']")).click();
 		logger.log(Status.PASS, "Successfully Added the Most Selling Product from PDP Page ");
 		
 		Thread.sleep(3000);
@@ -263,10 +268,13 @@ public class AlterNate_MSProduct extends BaseClass{
 
 		logger.log(Status.PASS, "Successfully navigated to  order review page");
 		
+		try {
 		Thread.sleep(3000);
 		btncli(m.getPaybutton());
 		logger.log(Status.PASS, "Successfully navigated to Payment Page");
-		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		
 		

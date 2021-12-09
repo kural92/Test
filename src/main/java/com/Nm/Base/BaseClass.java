@@ -64,7 +64,7 @@ public class BaseClass {
 //		public static  String production_homeurl="https://www.netmeds.com/";
 //>>>>>>> 8c763ac315449dc4a565821488bc49b90dacd6ba
 
-	//	public static  String production_homeurl="https://s1-meds.netmeds.com/";
+		public static  String stage_homeurl="https://s1-meds.netmeds.com/";
 
 
 
@@ -76,7 +76,7 @@ public class BaseClass {
 		ChromeOptions option = new ChromeOptions();
 		option.setExperimentalOption("debuggerAddress", "localhost:9222");
 		driver = new ChromeDriver(option);
-		driver.get("https://www.netmeds.com");
+		driver.get(stage_homeurl);
 		
 		//driver.manage().window().maximize();
 		

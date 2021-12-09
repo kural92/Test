@@ -1348,8 +1348,7 @@ return PDP_Search_btnn;
 		public WebElement getCOD_Not_Eligible_Text() {
 		return COD_Not_Eligible_Text;
 		}
-<<<<<<< HEAD
-=======
+
 //Consultation
 		
 
@@ -1430,7 +1429,7 @@ return PDP_Search_btnn;
 				
 
 
->>>>>>> a89968e519a9f08b542101f541743b01bed49bc0
+
 
 }
 

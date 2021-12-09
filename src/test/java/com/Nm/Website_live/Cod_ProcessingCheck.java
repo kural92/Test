@@ -24,6 +24,9 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import org.openqa.selenium.JavascriptExecutor;
+
+
 
 
 
@@ -70,12 +73,13 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 	}
 
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test//(retryAnalyzer=RetryAnalyzer.class)
 	public void cod_process3() throws Throwable {
 
 		logger = report.createTest("Cash on Delivery Check for More than 3 Processing Order ");
 		logger.log(Status.PASS, "************* Cash On Delivery - Processing Orders ********************");
 		Monepom m = new Monepom();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
 
 // Login
 
@@ -185,7 +189,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 			logger.log(Status.PASS, "Successfully navigated to  order review page");
 
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 			btncli(m.getPaybutton());
 			logger.log(Status.PASS, "Successfully navigated to Payment Page");
 
@@ -200,7 +204,11 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 			// String Net_P = Net.substring(3, 6);
 			System.out.println(Net_Pa);
-
+			Thread.sleep(1000);
+if (Net_Pa.contains(",")) {
+	String NetPa = Net_Pa.replace(",", "");
+} else {}
+Thread.sleep(1000);
 			Float Net_Pay = Float.parseFloat(Net_Pa);
 			// int Net_Pay = Integer.parseInt(Net_Pa);
 			System.out.println(Net_Pay);
@@ -217,11 +225,13 @@ public class Cod_ProcessingCheck extends BaseClass {
 					try {
 						btncli(driver.findElement(By.id("nms_cod")));
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
-
+						js.executeScript("window.scrollTo(0,200)");
 						Thread.sleep(5000);
 						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
 					} catch (Exception e) {
 						Thread.sleep(3000);
+						//JavaScriptExecutor js = (JavaScriptExecutor)driver;
+						js.executeScript("window.scrollTo(0,200)");
 						btncli(driver.findElement(By.xpath("//button[contains(text(),'PAY WITH CASH')]")));
 					}
 				} else {
