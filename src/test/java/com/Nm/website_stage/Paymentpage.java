@@ -59,23 +59,34 @@ public class Paymentpage extends BaseClass{
 	}
 
 
-	@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority=1)
 	public void paymentpage() throws Throwable {
 		logger =  report.createTest("Payment page");
 	logger.log(Status.PASS, "*************Decline case********************" );
 	Monepom m=new Monepom();
-	driver.manage().window().maximize();
-	btncli(m.getSignin());
-	Thread.sleep(5000);
-	type(m.getMobileno(),"9677159095");
-	btncli(m.getPass());
+	try {
+
+		btncli(m.getSignin());
+		Thread.sleep(5000);
+		type(m.getMobileno(), "8072281468");
+		Thread.sleep(3000);
+		btncli(m.getUsepwdbtn());
+		Thread.sleep(3000);
+		type(m.getPassword(), "test@123");
+		btncli(m.getSignInpage());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to home page");
+	} catch (Exception e) {
+		System.out.println("Already Logged In");
+	}
+
+	try {
+		btncli(m.getNetmedshome());
+	} catch (Exception e) {
+
+	}
 	Thread.sleep(3000);
-	type(m.getPassword(),"test4nmm");
-	btncli(m.getSignInpage());
-	Thread.sleep(3000);
-	logger.log(Status.PASS, "Successfully navigate to home page" );
-	Thread.sleep(3000);
-	btncli(m.getMinicart());
+	driver.navigate().to("https://s1-meds.netmeds.com/checkout/cart");
 	
 	for (int i = 0; i < 16; i++) {
 		Thread.sleep(3000);
@@ -203,15 +214,53 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	scrolldown("700");
 	btncli(m.getCart_pay());
 	Thread.sleep(3000);
+	WebElement ea=driver.findElement(By.xpath("//iframe[@class='card_number_iframe']"));
+	driver.switchTo().frame(ea);
+	driver.findElement(By.xpath("//input[@id='card_number']")).sendKeys("4111111111111111");
+	driver.switchTo().defaultContent();
+	WebElement ea1=driver.findElement(By.xpath("//iframe[@class='card_exp_month_iframe']"));
+	driver.switchTo().frame(ea1);
+	driver.findElement(By.xpath("//input[@id='card_exp_month']")).sendKeys("12");
+	driver.switchTo().defaultContent();
+	WebElement ea2=driver.findElement(By.xpath("//iframe[@class='card_exp_year_iframe']"));
+	driver.switchTo().frame(ea2);
+	
+	driver.findElement(By.xpath("//input[@id='card_exp_year']")).sendKeys("23");
+	driver.switchTo().defaultContent();
+	WebElement ea4=driver.findElement(By.xpath("//iframe[@class='security_code_iframe']"));
+	driver.switchTo().frame(ea4);
+	
+	driver.findElement(By.xpath("//input[@id='security_code']")).sendKeys("231");
+	driver.switchTo().defaultContent();
+	WebElement ea3=driver.findElement(By.xpath("//iframe[@class='name_on_card_iframe']"));
+	driver.switchTo().frame(ea3);
+
+	driver.findElement(By.xpath("//input[@id='name_on_card']")).sendKeys("test netmeds");
+	driver.switchTo().defaultContent();
+Thread.sleep(3000);
+WebElement ele = driver.findElement(By.xpath("//button[text()='Pay']"));
+JavascriptExecutor executor = (JavascriptExecutor)driver;
+executor.executeScript("arguments[0].click();", ele);
+	//driver.findElement(By.xpath("//button[text()='Pay']")).click();
+
 	try {
 		m.getCart_payment().isDisplayed();
 		System.out.println("cart payment is displayed");
 	} catch (Exception e) {
-		// TODO: handle exception
+		driver.navigate().refresh();
+		Thread.sleep(3000);
 	}
-	scrolldown("800");
+	try {
+		btncli(m.getPayment_retry());
+		System.out.println("cart payment is displayed");
+	} catch (Exception e) {
+		
+		
+	}
 	Thread.sleep(3000);
-	btncli(m.getAxis_bank());
+	scrolldown("1000");
+	Thread.sleep(3000);
+	/*btncli(m.getAxis_bank());
 	Thread.sleep(10000);
 	driver.navigate().back();
 	Thread.sleep(3000);
@@ -244,11 +293,12 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 					driver.navigate().back();
 					Thread.sleep(3000);
 						btncli(m.getPayment_retry());
-						Thread.sleep(3000);
+						*/Thread.sleep(3000);
 						scrolldown("900");
 						select_text(m.getMore_banks(), "Bank of India");
 						Thread.sleep(10000);
 						driver.navigate().to("https://s1-meds.netmeds.com/checkout/payment-information");
+	
 						Thread.sleep(3000);
 							btncli(m.getCod_popoup());
 							Thread.sleep(6000);
@@ -279,7 +329,7 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 							
 								
 	}
-	@Test(priority=2,retryAnalyzer=RetryAnalyzer.class)
+	//@Test(priority=2)
 	public void nmscash() throws Throwable {
 
 		

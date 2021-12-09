@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 
-public class Sample {
+public class Sample {/*
 	public static WebDriver driver=null;
 	@BeforeClass
 	  public void setUp1() throws MalformedURLException {
@@ -27,4 +27,16 @@ public class Sample {
 	    
 	     
 	  }  
+*/
+	
+public static void main(String[] args) {
+	String s="santhosh";
+	
+	 for (int i = s.length()-1; i >=0; i--) {
+		 char c = s.charAt(i);
+		System.out.print(c);
+		
+	}
+	 
+}
 }
