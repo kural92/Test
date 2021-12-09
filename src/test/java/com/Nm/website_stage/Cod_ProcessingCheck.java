@@ -175,7 +175,11 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 			try {
 				Thread.sleep(3000);
-				btncli(driver.findElement(By.id("externaldoctr")));
+				if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+					Thread.sleep(3000);
+					btncli(driver.findElement(By.id("externaldoctr")));
+				}
+				//btncli(driver.findElement(By.id("externaldoctr")));
 				logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
 				logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
 
@@ -273,7 +277,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 			btncli(m.getView_DetailsList().get(i));
 			Thread.sleep(6000);
-
+try {
 			btncli(m.getCancel_Order());
 			Thread.sleep(3000);
 			btncli(m.getCancel_reason());
@@ -281,7 +285,9 @@ public class Cod_ProcessingCheck extends BaseClass {
 			btncli(m.getSubmit_Cancel());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully Order was Cancelled");
-
+} catch (Exception e) {
+	// TODO: handle exception
+}
 			Thread.sleep(5000);
 			btncli(driver.findElement(By.xpath("//*[@id=\"app\"]/main/app-order-detail/div[1]/div[1]/a")));
 
@@ -298,7 +304,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 				btncli(m.getView_DetailsList().get(i));
 				Thread.sleep(6000);
-
+try {
 				btncli(m.getCancel_Order());
 				Thread.sleep(3000);
 				btncli(m.getCancel_reason());
@@ -306,7 +312,9 @@ public class Cod_ProcessingCheck extends BaseClass {
 				btncli(m.getSubmit_Cancel());
 				Thread.sleep(3000);
 				logger.log(Status.PASS, "Successfully Order was Cancelled");
-
+} catch (Exception e) {
+	// TODO: handle exception
+}
 				Thread.sleep(5000);
 				btncli(driver.findElement(By.xpath("//*[@id=\"app\"]/main/app-order-detail/div[1]/div[1]/a")));
 
