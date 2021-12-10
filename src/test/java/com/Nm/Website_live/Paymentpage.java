@@ -211,11 +211,49 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 	scrolldown("700");
 	btncli(m.getCart_pay());
 	Thread.sleep(3000);
+	WebElement ea=driver.findElement(By.xpath("//iframe[@class='card_number_iframe']"));
+	driver.switchTo().frame(ea);
+	driver.findElement(By.xpath("//input[@id='card_number']")).sendKeys("4111111111111111");
+	driver.switchTo().defaultContent();
+	WebElement ea1=driver.findElement(By.xpath("//iframe[@class='card_exp_month_iframe']"));
+	driver.switchTo().frame(ea1);
+	driver.findElement(By.xpath("//input[@id='card_exp_month']")).sendKeys("12");
+	driver.switchTo().defaultContent();
+	WebElement ea2=driver.findElement(By.xpath("//iframe[@class='card_exp_year_iframe']"));
+	driver.switchTo().frame(ea2);
+	
+	driver.findElement(By.xpath("//input[@id='card_exp_year']")).sendKeys("23");
+	driver.switchTo().defaultContent();
+	WebElement ea4=driver.findElement(By.xpath("//div[@class='newcard-details']//iframe[@class='security_code_iframe']"));
+	driver.switchTo().frame(ea4);
+	//sendKeysJavascript(m.getCvv(), "231");
+	Thread.sleep(2000);
+	WebElement ele1 = driver.findElement(By.xpath("//input[@id='security_code']"));
+	JavascriptExecutor executor = (JavascriptExecutor)driver;
+	executor.executeScript("arguments[0].click();", ele1);
+	sendKeysJavascript(ele1, "231");
+	//driver.findElement(By.xpath("//input[@id='security_code']")).sendKeys("231");
+	driver.switchTo().defaultContent();
+	WebElement ea3=driver.findElement(By.xpath("//iframe[@class='name_on_card_iframe']"));
+	driver.switchTo().frame(ea3);
+
+	driver.findElement(By.xpath("//input[@id='name_on_card']")).sendKeys("test netmeds");
+	driver.switchTo().defaultContent();
+Thread.sleep(3000);
+/*WebElement ele = driver.findElement(By.xpath("//div[@class='newcard-details']//button[text()='Pay']"));
+JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+executor1.executeScript("arguments[0].click();", ele);*/
+	//driver.findElement(By.xpath("//button[text()='Pay']")).click();
+
+driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
+		System.out.println("cart payment is displayed");
+	
 	try {
-		m.getCart_payment().isDisplayed();
+		btncli(m.getPayment_retry());
 		System.out.println("cart payment is displayed");
 	} catch (Exception e) {
-		// TODO: handle exception
+		
+		
 	}
 	scrolldown("900");
 	Thread.sleep(3000);
