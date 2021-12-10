@@ -10,6 +10,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -87,7 +88,7 @@ public class M1_Cod extends BaseClass {
 
 	}
 
-	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority = 1)//,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 		logger = report.createTest("M1 Flow To Check Payment Method");
@@ -96,8 +97,8 @@ public class M1_Cod extends BaseClass {
 		Robot r = new Robot();
 
 		// Login
-		
-			driver.manage().window().maximize();
+		try {
+			//driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
 			type(m.getMobileno(), "8072281468");
@@ -106,7 +107,9 @@ public class M1_Cod extends BaseClass {
 			Thread.sleep(3000);
 			type(m.getPassword(), "test@123");
 			btncli(m.getSignInpage());
-		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 
 		//////////////
 
@@ -143,8 +146,9 @@ public class M1_Cod extends BaseClass {
 		for (int i = 9; i < 13; i++) {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
-			r.keyPress(KeyEvent.VK_ENTER);
-			r.keyRelease(KeyEvent.VK_ENTER);
+			m.getSearch().sendKeys(Keys.ENTER);
+			//r.keyPress(KeyEvent.VK_ENTER);
+			//r.keyRelease(KeyEvent.VK_ENTER);
 			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully Added  " + BaseClass.getExcelData("COD_Check", i, 0));
 
@@ -186,15 +190,21 @@ public class M1_Cod extends BaseClass {
 
 		//////////////////////////////////
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		btncli(m.getProceedbutton());
 
 		try {
 			Thread.sleep(3000);
-			btncli(driver.findElement(By.id("externaldoctr")));
-			logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
-			logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+			if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+				Thread.sleep(3000);
+				btncli(driver.findElement(By.id("externaldoctr")));
+				logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
+				logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
 
+			} else {
+				
+			}
+			
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'Review Order')]")));
 
@@ -306,7 +316,7 @@ public class M1_Cod extends BaseClass {
 	
 	
 
-	@Test(priority = 2,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority = 2)//,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check_5000() throws Throwable {
 		
 		logger = report.createTest("M1 Flow To Check Payment Method");
@@ -364,9 +374,7 @@ public class M1_Cod extends BaseClass {
 		for (int i = 7; i < 13; i++) {
 			Thread.sleep(5000);
 			type(m.getSearch(), BaseClass.getExcelData("COD_Check", i, 0));
-			r.keyPress(KeyEvent.VK_ENTER);
-			
-			r.keyRelease(KeyEvent.VK_ENTER);
+			m.getSearch().sendKeys(Keys.ENTER);
 			//btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully Added  " + BaseClass.getExcelData("COD_Check", i, 0));
 
@@ -413,10 +421,15 @@ public class M1_Cod extends BaseClass {
 
 		try {
 			Thread.sleep(3000);
-			btncli(driver.findElement(By.id("externaldoctr")));
-			logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
-			logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+			if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+				Thread.sleep(3000);
+				btncli(driver.findElement(By.id("externaldoctr")));
+				logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
+				logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
 
+			} else {
+				
+			}
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'Review Order')]")));
 

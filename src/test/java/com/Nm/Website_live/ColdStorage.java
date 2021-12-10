@@ -185,11 +185,16 @@ try {
 		btncli(m.getProceedbutton());
 
 		try {
-			Thread.sleep(15000);
-			btncli(driver.findElement(By.id("externaldoctr")));
-			logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
-			logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+			Thread.sleep(5000);
+if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+	Thread.sleep(3000);
+	btncli(driver.findElement(By.id("externaldoctr")));
+	logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
+	logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
 
+	
+}
+			
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'Review Order')]")));
 
@@ -211,15 +216,7 @@ try {
 		
 		////////////
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		//Change Address
 		 Thread.sleep(3000);

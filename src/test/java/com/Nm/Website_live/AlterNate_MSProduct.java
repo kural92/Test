@@ -86,7 +86,7 @@ public class AlterNate_MSProduct extends BaseClass{
    }
 	
 	
-	@Test(retryAnalyzer=RetryAnalyzer.class,priority = 1)
+	@Test//(retryAnalyzer=RetryAnalyzer.class,priority = 1)
 	public void alterNate_Product() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
@@ -258,8 +258,11 @@ public class AlterNate_MSProduct extends BaseClass{
 		btncli(m.getProceedbutton());
 
 		try {
-			Thread.sleep(3000);
-			btncli(driver.findElement(By.id("externaldoctr")));
+			if (!(driver.findElement(By.id("externaldoctr"))).isSelected()) {
+				Thread.sleep(3000);
+				btncli(driver.findElement(By.id("externaldoctr")));
+			} else {}
+			
 		//	logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
 		//	logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
 
