@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,22 +24,32 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
+<<<<<<< HEAD
       <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+=======
+      <span class="top-banner-font-1">1 suite</span>
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
+<<<<<<< HEAD
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
               <span class="suite-name border-failed">Default suite</span>
+=======
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+              <span class="suite-name border-passed">Default suite</span>
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,37 +59,42 @@
             <div class="suite-section-content">
               <ul>
                 <li>
+<<<<<<< HEAD
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
                     <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--2013980144\testng-customsuite.xml</span>
+=======
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1463610277\testng-customsuite.xml</span>
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,16 +107,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
+<<<<<<< HEAD
                     <span class="method-stats">4 methods, 3 failed,   1 passed</span>
+=======
+                    <span class="method-stats">1 method,   1 passed</span>
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Default_suite">
+                    <div class="method-list-content passed suite-Default_suite">
                       <span>
+<<<<<<< HEAD
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Website_live.M3_Subscription" hash-for-method="M3Doctorconsultation">M3Doctorconsultation</a> <!-- method navigator-link -->
                       </span>
@@ -127,6 +148,10 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Website_live.M3_Subscription" hash-for-method="M3RXflow">M3RXflow</a> <!-- method navigator-link -->
+=======
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Website_live.NetmedsHomepage" class="method navigator-link" hash-for-method="homePage">homePage</a> <!-- method navigator-link -->
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -141,14 +166,20 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
+          <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
               <img src="failed.png"/>
               <span class="class-name">com.Nm.Website_live.M3_Subscription</span>
+=======
+              <img src="passed.png"/>
+              <span class="class-name">com.Nm.Website_live.NetmedsHomepage</span>
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
                   <a name="M3Doctorconsultation">
                   </a> <!-- M3Doctorconsultation -->
                   <span class="method-name">M3Doctorconsultation</span>
@@ -353,20 +384,36 @@ Session ID: 3d2dc0a111ad23e191a355b97a4ed415
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
+=======
+                  <a name="homePage">
+                  </a> <!-- homePage -->
+                  <span class="method-name">homePage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--2013980144\testng-customsuite.xml</span>
+=======
+            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1463610277\testng-customsuite.xml</span>
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
+<<<<<<< HEAD
       &lt;class name=&quot;com.Nm.Website_live.M3_Subscription&quot;/&gt;
+=======
+      &lt;class name=&quot;com.Nm.Website_live.NetmedsHomepage&quot;/&gt;
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -408,6 +455,7 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
+<<<<<<< HEAD
 data.setCell(0, 1, 'M3RXflow')
 data.setCell(0, 2, 'com.Nm.Website_live.M3_Subscription')
 data.setCell(0, 3, 155627);
@@ -423,11 +471,20 @@ data.setCell(3, 0, 3)
 data.setCell(3, 1, 'M3OTCandnonrxSubscription')
 data.setCell(3, 2, 'com.Nm.Website_live.M3_Subscription')
 data.setCell(3, 3, 115789);
+=======
+data.setCell(0, 1, 'homePage')
+data.setCell(0, 2, 'com.Nm.Website_live.NetmedsHomepage')
+data.setCell(0, 3, 101893);
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 8 minutes</span>
+=======
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -453,6 +510,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
               <div class="chronological-class-name">com.Nm.Website_live.M3_Subscription</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">startReport</span>
@@ -504,9 +562,21 @@ return data;
                 <span class="method-name">quitbrowser</span>
                 <span class="method-start">606649 ms</span>
               </div> <!-- configuration-test after -->
+=======
+              <div class="chronological-class-name">com.Nm.Website_live.NetmedsHomepage</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">launchbrowser</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">homePage</span>
+                <span class="method-start">6331 ms</span>
+              </div> <!-- test-method -->
+>>>>>>> b58cb7b8aac23a90f82a9106f7f8ac4275530434
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

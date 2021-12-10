@@ -171,20 +171,31 @@ public class Cod_ProcessingCheck extends BaseClass {
 			//////////////////////////////////
 
 			Thread.sleep(3000);
+			js.executeScript("window.scrollTo(0,200)");
+			Thread.sleep(3000);
 			btncli(m.getProceedbutton());
 
 			try {
-				Thread.sleep(3000);
-				btncli(driver.findElement(By.id("externaldoctr")));
-				logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
-				logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+				
+				if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+					Thread.sleep(3000);
+					btncli(driver.findElement(By.id("externaldoctr")));
+					logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
+					logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
 
+				} else {
+					
+				}
+				
+				
 				Thread.sleep(3000);
 				btncli(driver.findElement(By.xpath("//button[contains(text(),'Review Order')]")));
 
 			} catch (Exception e) {
 
 			}
+			
+			
 			Thread.sleep(3000);
 
 			logger.log(Status.PASS, "Successfully navigated to  order review page");
@@ -225,12 +236,20 @@ Thread.sleep(1000);
 					try {
 						btncli(driver.findElement(By.id("nms_cod")));
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
-						js.executeScript("window.scrollTo(0,200)");
+						js.executeScript("window.scrollTo(0,1000)");
 						Thread.sleep(5000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
+						Thread.sleep(3000);
+						js.executeScript("window.scrollTo(0,500)");
+						Thread.sleep(3000);
+						js.executeScript("window.scrollTo(0,200)");
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[10]")));
 					} catch (Exception e) {
 						Thread.sleep(3000);
 						//JavaScriptExecutor js = (JavaScriptExecutor)driver;
+						js.executeScript("window.scrollTo(0,500)");
+						Thread.sleep(3000);
+						js.executeScript("window.scrollTo(0,500)");
+						Thread.sleep(3000);
 						js.executeScript("window.scrollTo(0,200)");
 						btncli(driver.findElement(By.xpath("//button[contains(text(),'PAY WITH CASH')]")));
 					}

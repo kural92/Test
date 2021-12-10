@@ -2306,29 +2306,29 @@ public class Monepom extends BaseClass {
 					
 					@FindBy(xpath = "(//a[text()='Beauty'][1])")
 					private WebElement beauty;
-					
-					@FindBy(xpath = "(//a[text()='Body Care'])")
+					// Personal Care
+					@FindBy(xpath = "//a[contains(text(),'Personal Care')]")//"(//a[text()='Body Care'])")
 					private WebElement bodycare;
-					
-					@FindBy(xpath ="(//a[text()='Face Care'])")
+					// make-up
+					@FindBy(xpath ="//a[contains(text(),'Make-Up')]")//"(//a[text()='Face Care'])")
 					private WebElement facecare;
-					
-					@FindBy(xpath = "(//a[text()='Fragrances'])")
+					// hair
+					@FindBy(xpath = "//a[contains(text(),'Hair')]")//"(//a[text()='Fragrances'])")
 					private WebElement fragnance;
-					
-					@FindBy(xpath = "(//a[text()='Hands and Feet'])")
+					// Skin care
+					@FindBy(xpath = "//a[contains(text(),'Skin Care')]")//"(//a[text()='Hands and Feet'])")
 					private WebElement handfeet;
-					
-					@FindBy(xpath = "(//a[text()='Home Care'])")
+					// Tools And Appliances
+					@FindBy(xpath = "//a[contains(text(),'Tools & Appliances')]")//"(//a[text()='Home Care'])")
 					private WebElement homecare;
-					
-					@FindBy(xpath = "(//a[text()='Eye Care'])")
+					// Mom and baby
+					@FindBy(xpath = "//a[contains(text(),'Mom & Baby')]")//"(//a[text()='Eye Care'])")
 					private WebElement eyecare;
-					
-					@FindBy(linkText = "Men's Care")
+					// fragrance
+					@FindBy(xpath = "//a[contains(text(),'Fragrances')]")
 					private WebElement menscare;
-					
-					@FindBy(xpath = "(//a[text()='Senior Care'])")
+					// Mens grooming
+					@FindBy(xpath = "//a[contains(text(),'Grooming')]")//"(//a[text()='Senior Care'])")
 					private WebElement seniorcare;
 					
 					@FindBy(xpath = "//a[text()=' Health Corner']")
