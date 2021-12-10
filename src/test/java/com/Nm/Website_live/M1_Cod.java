@@ -85,7 +85,7 @@ public class M1_Cod extends BaseClass {
 
 	}
 
-	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check() throws Throwable {
 
 		logger = report.createTest("M1 Flow To Check Payment Method");
@@ -251,15 +251,19 @@ public class M1_Cod extends BaseClass {
 				// Check Cash On Deleivery Enabled 
 		    	Thread.sleep(3000);
 		    	if (!(driver.findElements(By.id("nms_cod")).size()==0)) {
-		    		
+		    		Thread.sleep(3000);
 					if (!(driver.findElement(By.id("nms_cod")).isSelected())) {
 						Thread.sleep(3000);
+						try {
 						btncli(driver.findElement(By.id("nms_cod")));
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 						
 						Thread.sleep(3000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
-						
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[10]")));
+						} catch (Exception e) {
+							Thread.sleep(3000);
+							driver.findElement(By.xpath("")).click();
+						}	
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());
 						
@@ -317,7 +321,7 @@ public class M1_Cod extends BaseClass {
 	
 	
 
-	@Test(priority = 2,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,priority = 2,retryAnalyzer=RetryAnalyzer.class)
 	public void cash_On_delivery_Check_5000() throws Throwable {
 		
 		logger = report.createTest("M1 Flow To Check Payment Method");
@@ -427,10 +431,15 @@ public class M1_Cod extends BaseClass {
 
 		try {
 			Thread.sleep(3000);
-			btncli(driver.findElement(By.id("externaldoctr")));
-			logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
-			logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+			if (!(driver.findElement(By.id("externaldoctr")).isSelected())) {
+				Thread.sleep(3000);
+				btncli(driver.findElement(By.id("externaldoctr")));
+				logger.log(Status.PASS, "Successfully navigated to Attach Prescription page");
+				logger.log(Status.PASS, "Successfully Selected the Schedule FREE doctor Consultation");
+			} else {
 
+			}
+			
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'Review Order')]")));
 
@@ -483,7 +492,7 @@ public class M1_Cod extends BaseClass {
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 						
 						Thread.sleep(3000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[9]")));
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[10]")));
 						
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());
