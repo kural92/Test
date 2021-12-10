@@ -14,7 +14,7 @@ public class NetmedsHomepage extends BaseClass {
 	
 	
 	
-@Test(retryAnalyzer=RetryAnalyzer.class)
+@Test()
 public void homePage() throws Throwable {
 	// TODO Auto-generated method stub
 
@@ -31,7 +31,7 @@ public void homePage() throws Throwable {
 		 * options.addArguments("--disable-notifications"); driver=new
 		 * ChromeDriver(options); driver.get("https://s1-meds.netmeds.com");
 		 */
-		driver.manage().window().maximize();
+	//	driver.manage().window().maximize();
 		
 		//Homepage_GuestUser
 		thread(3000);

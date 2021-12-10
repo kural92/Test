@@ -19,7 +19,13 @@ public class Monepom extends BaseClass {
 	@FindBy(xpath="//a[@class='text m-rgt']")
 	private WebElement cartformembership ;
 	
-	
+	@FindBy(xpath="//input[@id='security_code']")
+	private WebElement cvv ;
+	public WebElement getCvv() {
+		return cvv;
+	}
+
+
 	public WebElement getCartformembership() {
 		return cartformembership;
 	}

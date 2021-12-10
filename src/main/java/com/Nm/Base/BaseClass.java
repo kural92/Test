@@ -99,7 +99,11 @@ public class BaseClass {
 		element.clear();
 			
 	}
-	
+	public static void sendKeysJavascript(WebElement element, String keysToSend) throws InterruptedException {
+	   Thread.sleep(2000);
+	    JavascriptExecutor ex = (JavascriptExecutor) driver;
+	    ex.executeScript("arguments[0].value='"+ keysToSend +"';", element);
+	}
 	public void btncli(WebElement element) throws Throwable {
 		
 		 WebDriverWait wait = new WebDriverWait(driver, 30);

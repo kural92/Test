@@ -89,7 +89,7 @@ public class M3_Subscription extends BaseClass {
 
 		// Step1 :Launch Browser//
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		try {
 
@@ -184,7 +184,8 @@ public class M3_Subscription extends BaseClass {
 		}
 
 		// Step 8 : Click view Cart//
-
+		driver.navigate().refresh();
+		Thread.sleep(3000);
 		btncli(m.getViewcart());
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
@@ -309,7 +310,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 		logger.log(Status.PASS, "*************M3Doctorconsultation********************");
 
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		// Step1 :Launch Browser//
 
@@ -337,6 +338,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 		}
 
 		// Step 3 : Navigate to user profile//
+		driver.navigate().to("https://www.netmeds.com");
 
 		btncli(m.getUserprofile());
 		Thread.sleep(3000);
@@ -405,7 +407,8 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 		}
 
 		// Step 8 : Click view Cart//
-
+driver.navigate().refresh();
+Thread.sleep(3000);
 		btncli(m.getViewcart());
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
@@ -651,7 +654,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 
 		// Step1 :Launch Browser//
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		try {
 
@@ -667,6 +670,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
 		} catch (Exception e) {
+			driver.navigate().to("https://www.netmeds.com");
 			System.out.println("Already Logged In");
 		}
 
@@ -748,7 +752,8 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 		}
 
 		// Step 8 : Click view Cart//
-
+		driver.navigate().refresh();
+		Thread.sleep(5000);
 		btncli(m.getViewcart());
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
@@ -866,6 +871,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
 		} catch (Exception e) {
+driver.navigate().to("https://www.netmeds.com");
 			System.out.println("Already Logged In");
 		}
 
@@ -947,7 +953,8 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 		}
 
 		// Step 8 : Click view Cart//
-
+		driver.navigate().refresh();
+		Thread.sleep(3000);
 		btncli(m.getViewcart());
 		Thread.sleep(2000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
@@ -973,7 +980,7 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 		
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("(//close[@type='button'])")).click();
+		driver.findElement(By.xpath("//h4[text()='Recent Upload']/following-sibling::button")).click();
 
 		// Step 10 : select duration//
 		Thread.sleep(3000);

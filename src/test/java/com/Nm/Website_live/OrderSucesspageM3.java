@@ -1,4 +1,4 @@
-package com.Nm.website_stage;
+package com.Nm.Website_live;
 
 
 import java.io.File;
@@ -106,7 +106,7 @@ public class OrderSucesspageM3 extends BaseClass {
 
 			}
 			// Step 3 : Navigate to user profile//
-			driver.navigate().to("https://s1-meds.netmeds.com/");
+			driver.navigate().to("https://www.netmeds.com");
 			Thread.sleep(3000);
 			btncli(m.getUserprofile());
 			Thread.sleep(3000);
@@ -251,7 +251,7 @@ Thread.sleep(3000);
 			
 			
 			//Pharmacists Verification//
-			/*
+			
 			String Actual_pharmacists_verfication = m.getPharmacists_verfication().getAttribute("innerText");
 				
 			
@@ -260,7 +260,7 @@ Thread.sleep(3000);
 			
 			System.out.println(Actual_pharmacists_verfication);
 			
-			logger.log(Status.PASS, Actual_pharmacists_verfication);*/
+			logger.log(Status.PASS, Actual_pharmacists_verfication);
 					
 			Thread.sleep(3000);
 					
