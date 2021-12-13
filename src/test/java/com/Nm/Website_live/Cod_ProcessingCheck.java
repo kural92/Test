@@ -172,7 +172,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 			Thread.sleep(3000);
 			js.executeScript("window.scrollTo(0,200)");
-			Thread.sleep(3000);
+			Thread.sleep(7000);
 			btncli(m.getProceedbutton());
 
 			try {

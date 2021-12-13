@@ -257,7 +257,7 @@ public class M1_Cod extends BaseClass {
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 						
 						Thread.sleep(3000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[11]")));
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[13]")));
 						
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());
@@ -482,7 +482,7 @@ public class M1_Cod extends BaseClass {
 						logger.log(Status.PASS, "Successfully Clicked on Cash on Delivery");
 						
 						Thread.sleep(3000);
-						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[11]")));
+						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[13]")));
 						
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());

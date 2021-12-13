@@ -15,7 +15,7 @@ public class NetmedsHomepage extends BaseClass {
 	
 	
 	
-@Test(retryAnalyzer=RetryAnalyzer.class)
+@Test//(retryAnalyzer=RetryAnalyzer.class)
 public void homePage() throws Throwable {
 	// TODO Auto-generated method stub
 
@@ -107,13 +107,16 @@ public void homePage() throws Throwable {
 		
 		Thread.sleep(2000);
 		//UserLogin
+		try {
 		clk(hp.getLogin());
 		sendkeys(hp.getMobileno(), "7010752043");
 		clk(hp.getClick());
 	    thread(1000);
 	    sendkeys(hp.getPwd(), "Change@92");
 	    clk(hp.getSign());
-		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 	    //category
 	    thread(3000);
@@ -139,11 +142,19 @@ public void homePage() throws Throwable {
 	    }catch (Exception e) {
 			// TODO: handle exception
 		}
+	    try {
 	    clk(hp.getSimpl());
 	    pageTitle();
 	    back();
+	    } catch (Exception e) {
+			// TODO: handle exception
+		}
+	    try {
 	    clk(hp.getPayviewll());
 	    pageTitle();
+	    } catch (Exception e) {
+			// TODO: handle exception
+		}
 	    try {
 		clk(hp.getChkmed());
 	    } catch (Exception e) {

@@ -75,8 +75,8 @@ public class ColdStorage extends BaseClass {
 		
 		
 
-		logger = report.createTest("M1 Flow To Check Payment Method");
-		logger.log(Status.PASS, "************* Cash On Delivery ********************");
+		logger = report.createTest("M1 Flow To Check Cold Storage");
+		logger.log(Status.PASS, "************* Cold Storage ********************");
 		Monepom m = new Monepom();
 
 		// Login
