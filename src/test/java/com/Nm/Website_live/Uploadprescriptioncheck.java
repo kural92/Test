@@ -57,7 +57,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 	  2.Uploading unsupported file and ensuring proper error message is getting displayed.
 	  3.Uploading jpg,gif,png file and ensuring files are supported and uploaded successfully.
 	 */
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test//(retryAnalyzer=RetryAnalyzer.class)
 	public void uploadprescription() throws Throwable {
 		
 		
@@ -85,6 +85,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 			System.out.println("Already Logged In");
 		}
 
+		driver.navigate().to("https://www.netmeds.com/");
 		try {
 			btncli(m.getNetmedshome());
 		} catch (Exception e) {
@@ -176,7 +177,7 @@ public class Uploadprescriptioncheck extends BaseClass {
 						Thread.sleep(3000);
 						System.out.println(error_message.getText());
 						
-					for (int i=0;i<12;i++) {
+					for (int i=0;i<11;i++) {
 							
 							
 						btncli(m.getDeletepresc());
