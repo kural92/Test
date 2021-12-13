@@ -83,7 +83,7 @@ public class Consultation extends MobileBaseClass {
 	
 	
 	
-	@Test(priority = 1,enabled=false)
+	@Test(priority = 1,enabled=true)
 	public void Consult_Myself() throws Throwable {
 		
 		

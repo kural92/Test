@@ -170,7 +170,7 @@ public class Monepom extends BaseClass {
 	public WebElement getM3productsearch() {
 		return m3productsearch;
 	}
-	@FindBy(xpath ="//button[text()='PROCEED TO SUBCSCRIPTION CART']")
+	@FindBy(xpath ="//button[text()='PROCEED TO SUBCSCRIPTION CART']|//button[contains(text(),'PROCEED TO SUBCSCRIPTION CART')]")
 	private WebElement viewcart;
 	
 	public WebElement getViewcart() {

@@ -140,7 +140,7 @@ public class ColdStorage_android_Live extends MobileBaseClass{
 
 		
 		Thread.sleep(2000);
-		m.getSearchbarone().sendKeys("Boostrix Injection");
+		m.getSearchbarone().sendKeys("human mixtard injection");
 		
 		Thread.sleep(5000);
 		//driver.hideKeyboard();
@@ -151,13 +151,13 @@ public class ColdStorage_android_Live extends MobileBaseClass{
 		Thread.sleep(2000);
 		btnclick(m.getSearch_drugname());
 		Thread.sleep(10000);
+		/*
 		
-		
-		btnclick(m.getPDP_CheckAvailabilty_btn());
+	//	btnclick(m.getPDP_CheckAvailabilty_btn());
 		
 
 		Thread.sleep(2000);
-	//	btnclick(m.getPDP_ColdStorage_PinCheck());
+		btnclick(m.getPDP_ColdStorage_PinCheck());
 		
 		Thread.sleep(2000);
 	//	driver.hideKeyboard();
@@ -217,6 +217,9 @@ public class ColdStorage_android_Live extends MobileBaseClass{
 		
 			Thread.sleep(3000);
 		btnclick(m.getPDP_CheckAvailabilty_Close_btn());
+		
+		*/
+		
 		
 		Thread.sleep(3000);
 		btnclick(m.getAdd_To_cart());

@@ -462,7 +462,7 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_RX_Checkbox;
 		}
 		
-		@FindBy(id = "com.android.camera:id/done_button")
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/doneButton|com.android.camera:id/done_button")
 		private WebElement m2_RX_DoneBtn;
 		public WebElement getM2_RX_DoneBtn() {
 			return m2_RX_DoneBtn;
@@ -998,6 +998,7 @@ private List<WebElement> Search_results_AddTocart_IncreaseQty_List;
 public List<WebElement> getSearch_results_AddTocart_IncreaseQty_List() {
 return Search_results_AddTocart_IncreaseQty_List;
 }
+
 
 
 @FindBy(id="com.NetmedsMarketplace.Netmeds:id/increment")

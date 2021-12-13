@@ -81,7 +81,7 @@ public class M3_Subscription extends BaseClass {
 	
 	
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false)//(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3OTCandnonrxSubscription");
@@ -89,7 +89,7 @@ public class M3_Subscription extends BaseClass {
 
 		// Step1 :Launch Browser//
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+	//	driver.manage().window().maximize();
 
 		try {
 
@@ -132,7 +132,7 @@ public class M3_Subscription extends BaseClass {
 		System.out.println("Successfully navigate to mysubscriptionpage");
 		// Step 5 :Click create new fill button//
 
-		btncli(m.getCreatenewfill());
+		btncli(driver.findElement(By.xpath("(//a[contains(text(),'CREATE NEW SUBSCRIPTION')])[2]")));//(m.getCreatenewfill());
 		//driver.findElement(By.xpath("//a[@class =\"refillbtn\"]|//button[.=\"CREATE NEW SUBSCRIPTION\"]")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully button was clicked");
@@ -298,14 +298,14 @@ public class M3_Subscription extends BaseClass {
 	// *********************************************M3 -Doctor consultation
 	// **********************************************************************************************//
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true)//(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
 		logger.log(Status.PASS, "*************M3Doctorconsultation********************");
 
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		// Step1 :Launch Browser//
 
@@ -630,7 +630,7 @@ public class M3_Subscription extends BaseClass {
 	}
 
 //*******************************************************************M3  Rx  flow******************************************************************//
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false)//(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void M3RXflow() throws Throwable {
 
 		logger = report.createTest(" M3RXflow");
@@ -819,7 +819,7 @@ String confirmation = m.getOrder_Placed_text().getText();
 	}
 
 //****************************************************************M3 -Past Rx flow***********************************************************************//
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false)//(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void pastrx() throws Throwable {
 
 		logger = report.createTest(" Pastrx");

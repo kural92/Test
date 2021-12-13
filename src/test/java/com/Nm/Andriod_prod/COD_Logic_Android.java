@@ -172,17 +172,17 @@ public class COD_Logic_Android extends MobileBaseClass {
 		
 		for (int j = 0; j < 5; j++) {
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			btnclick(m.getSearch_results_AddTocart_IncreaseQty());
 			
 			
 		}
 		
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		btnclick(m.getPDP_Cart_btn());
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		btnclick(m.getM2_ProceedBtn());
 	try {	
 		Thread.sleep(6000);
@@ -265,7 +265,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			Thread.sleep(3000);
 			btnclick(m.getCOD_PayBtn());
 			
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 			btnclick(m.getTrack_Order());
 			
 			Thread.sleep(6000);

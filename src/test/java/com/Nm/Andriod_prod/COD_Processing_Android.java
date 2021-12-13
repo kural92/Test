@@ -182,7 +182,7 @@ public class COD_Processing_Android  extends MobileBaseClass{
 	btnclick(m.getPDP_Cart_btn());
 	
 	
-	Thread.sleep(3000);
+	Thread.sleep(7000);
 	btnclick(m.getM2_ProceedBtn());
 try {	
 	Thread.sleep(6000);
@@ -319,7 +319,7 @@ float total ;
 
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		btnclick(m.getTrack_Order());
 		
 		/*
