@@ -49,7 +49,7 @@ public class OrderSuccessPage extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");//"c195de14" //07c55fe10406
+			//capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");//"c195de14" //07c55fe10406
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -98,7 +98,7 @@ public class OrderSuccessPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 -Order success page	*********************************************************
-	//@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void OrderSuccessPageM3() throws Throwable {
 		
 		logger =  report.createTest("Order Success Page ");
@@ -425,7 +425,7 @@ System.out.println("M3 Order Success is working properly");
 
 
 //***************************************Order Success page M1***************************************
-@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -499,7 +499,7 @@ public void OrderSuccesspageM1() throws Throwable {
 		}
 	}
 	btnclick(m.getCart_search());
-	Thread.sleep(2000);
+	Thread.sleep(5000);
 m.getSearchbarone().sendKeys(s);
 	 
 	 
@@ -741,7 +741,7 @@ Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 					
 //***********************************Order Success Page M2*****************************************************************
 
-//@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM2() throws Throwable {
 	
 	
@@ -859,7 +859,7 @@ public void OrderSuccesspageM2() throws Throwable {
 	Thread.sleep(3000);
 	btnclick(m.getM2_Upload_ContinueBtn());
 	
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	btnclick(m.getM2_SearchMedicine());
 	
 	Thread.sleep(3000);
@@ -874,7 +874,7 @@ public void OrderSuccesspageM2() throws Throwable {
 	Thread.sleep(5000);
 	btnclick(m.getM2_Search_AddToCart());
 	
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 //	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")));
 	
 

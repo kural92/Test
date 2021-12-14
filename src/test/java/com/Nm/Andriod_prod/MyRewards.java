@@ -51,7 +51,7 @@ public class MyRewards extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
+			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -100,12 +100,12 @@ public class MyRewards extends MobileBaseClass {
    }
 	
 
-//*****************************************************My Orders Filter Page*************************
+//*****************************************************My Rewards*************************
 
-//My Orders Filter Page
+
 	
-	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true)
+			//retryAnalyzer=RetryAnalyzer.class)
 	public void Myrewards() throws Throwable {
 
 		logger = report.createTest("My rewards");
@@ -159,28 +159,28 @@ public class MyRewards extends MobileBaseClass {
 //Step 3 : Navigate to user profile//
 
 		btnclick(m.getUserprofile());
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
 		
 
 //Navigate to My rewards
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_rewards")).click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		
 		driver.findElement(By.xpath("//android.widget.FrameLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/card_view_reward']")).click();
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		driver.swipe(345, 1029, 900, 1105, 1000);
 
 
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 
 		driver.swipe(370, 1160, 700, 1160, 1000);
 		//System.out.println(congrats.getText());
 
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 
 		driver.swipe(400, 1260, 700, 1460, 1000);
 
@@ -191,20 +191,20 @@ public class MyRewards extends MobileBaseClass {
 		
 		System.out.println("offer Amount " + driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_offer_amount")).getText());
 		
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		
 		System.out.println("offer description is " + driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_offer_description")).getText());
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		 
 		System.out.println("offer expiry_date is " + driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_offer_expiry_date")).getText());
 		
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		
 		System.out.println("offercode is  " + driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_offer_code")).getText());
 		 
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		
 		try{
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_link")).isEnabled();
@@ -215,7 +215,7 @@ public class MyRewards extends MobileBaseClass {
 		}
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		
 		List <WebElement> instruction_details = driver.findElements(By.xpath("//android.view.ViewGroup[@resource-id='com.NetmedsMarketplace.Netmeds:id/lyt_instruction_details']"));
 		

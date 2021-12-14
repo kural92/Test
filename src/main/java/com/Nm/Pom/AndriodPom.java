@@ -261,7 +261,7 @@ public class AndriodPom extends MobileBaseClass{
 
 		@FindBy(xpath="//android.widget.TextView[@text='Search for medicine & wellness products…']")
 		private WebElement Searchbar;
-		@FindBy(xpath="//android.widget.EditText[@text='Search here…']")
+		@FindBy(xpath="//android.widget.EditText[@text='Search here…']|//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/search_bar']")
 		private WebElement Searchbarone;
 		public WebElement getSearchbarone() {
 			return Searchbarone;
@@ -392,7 +392,7 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_Search_AddToCart;
 		}
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton']" )
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton']|android.widget.TextView[@text='PROCEED TO CART']" )
 		private WebElement m2_ProceedToCart;
 		public WebElement getM2_ProceedToCart() {
 			return m2_ProceedToCart;
