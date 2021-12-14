@@ -275,9 +275,9 @@ public class OrderReviewPage extends MobileBaseClass {
 			logger.log(Status.PASS, "Address was modified successfully");
 			System.out.println("Address was modified successfully");
 			Thread.sleep(3000);
-			List<WebElement> delete  = driver.findElements(By.xpath("(//android.widget.TextView[@text='DELETE'])"));
+			List<WebElement> delete  = driver.findElements(By.xpath("//android.widget.TextView[@text='DELETE']|//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/delete']"));
 
-			delete.get(1).click();
+			delete.get(0).click();
 
 
 
