@@ -72,7 +72,7 @@ public class Monepom extends BaseClass {
 	private WebElement minicart;
 	@FindBy(xpath="//div[@class='process-checkout']")
 	private WebElement proceedbutton;
-	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']/button|//button[@class=\"btn-checkout btn btn_to_checkout m-0 ng-star-inserted\"]")
+	@FindBy(xpath="//div[@class='process-checkout col-7 pl-1 ng-star-inserted']/button|//button[@class=\"btn-checkout btn btn_to_checkout m-0 ng-star-inserted\"]|//button[@class='btn-checkout btn btn_to_checkout']")
 	private WebElement paybutton;
 	@FindBy(xpath="//span[@class='title col-md-4']")
 	private WebElement paydeatailText;

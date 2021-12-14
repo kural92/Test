@@ -56,7 +56,7 @@ public class Paymentpage extends BaseClass{
 		// htmlReporter.config().setTheme(Theme.STANDARD);
 
 	}
-	@Test(priority=1)
+	@Test(priority=1,enabled = true)
 	//@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
 	public void paymentpage() throws Throwable {
 		logger =  report.createTest("Payment page");
@@ -175,8 +175,9 @@ logger.log(Status.FAIL, "paytm decline scenario is verified " );
 
 	btncli(m.getPayment_retry());*/
 	Thread.sleep(3000);
-	btncli(m.getSimpl_payment());
+	
 	try {
+		btncli(m.getSimpl_payment());
 		m.getSIMPL_paybutton().isDisplayed();
 		System.out.println("simple payment is displayed");
 		logger.log(Status.FAIL, "simple decline scenario is verified " );
@@ -325,10 +326,11 @@ driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
 							
 								
 	}
-	@Test(priority=2)
+	
+	@Test(priority=2,enabled = true)
 	//@Test(priority=2,retryAnalyzer=RetryAnalyzer.class)
 	public void nmscash() throws Throwable {
-		//logger =  report.createTest("Payment page");
+		logger =  report.createTest("Payment page");
 		
 	Monepom m=new Monepom();
 	try {
@@ -389,6 +391,7 @@ driver.navigate().to("https://www.netmeds.com/checkout/payment-information");
 	btncli(m.getProceedbutton());
 	Thread.sleep(5000);
 	logger.log(Status.PASS, "Successfully navigate to search order review page" );
+	Thread.sleep(5000);
 	btncli(m.getPaybutton());
 	Thread.sleep(3000);
 	logger.log(Status.PASS, "Successfully navigate to search payment Details page" );
