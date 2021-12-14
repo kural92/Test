@@ -223,7 +223,7 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 		btnclick(m.getSearch_results_Drug());
 		
 		
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		btnclick(m.getPDP_Search_btnn());
 		
 		Thread.sleep(3000);
@@ -244,7 +244,7 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 		Thread.sleep(3000);
 		btnclick(m.getSearch_results_Drug());
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		btnclick(m.getPDP_Manufacture_name());
 		
 		Thread.sleep(3000);
