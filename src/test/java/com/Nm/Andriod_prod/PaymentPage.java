@@ -219,60 +219,15 @@ public class PaymentPage extends MobileBaseClass {
 			}
 			Thread.sleep(5000);
 			btnclick(m.getRetry());
-			
+			Thread.sleep(5000);
 			driver.swipe(0, 900, 0, 0, 1000);
 			Thread.sleep(5000);
 			btnclick(m.getPhonepe());
-			Thread.sleep(5000);
-			Thread.sleep(5000);
-			 driver.swipe(0, 900, 0, 0, 1000);
 				
-				Thread.sleep(5000);
-			/*btnclick(m.getFreecharge_PayLater_Wallet());
-			Thread.sleep(5000);
-			try {
-				btnclick(m.getPayment_paybutton());
 			
-			
-			} catch (Exception e) {
-			}
-			Thread.sleep(17000);
-			driver.pressKeyCode(AndroidKeyCode.BACK);
-			try {
-				//btnclick(m.getPayment_paybutton());
-				Thread.sleep(10000);
-				driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();		
-				} catch (Exception e) {
-			}
-			Thread.sleep(5000);
-			btnclick(m.getRetry());*/
 		
-			Thread.sleep(5000);
 			
-			 driver.swipe(0, 900, 0, 0, 1000);
-				//btnclick(m.getPhonepe());
-				Thread.sleep(5000);
-				
-				driver.swipe(0, 200, 0, 0, 1000);
-					btnclick(m.getAddnewCard());
-type(m.getCart_name(), "4111 1111 1111 1111");
-type(m.getCardValidity(), "06/25");
-type(m.getCardCvv(), "123");
-type(m.getCardHolderName(), "Netmeds testing");
-btnclick(m.getChk_save_card());	
-btnclick(m.getTv_pay());	
-Thread.sleep(10000);
-driver.pressKeyCode(AndroidKeyCode.BACK);
 
-try {
-	//btnclick(m.getPayment_paybutton());
-	Thread.sleep(15000);
-	driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
-}
-Thread.sleep(5000);
-btnclick(m.getRetry());
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(5000);
 btnclick(m.getAxis_Bank());
 Thread.sleep(10000);
@@ -351,6 +306,30 @@ Thread.sleep(10000);
 btnclick(m.getRetry());
 Thread.sleep(5000);
 
+
+driver.swipe(0, 900, 0, 0, 1000);
+	//btnclick(m.getPhonepe());
+	Thread.sleep(5000);
+	
+	driver.swipe(0, 200, 0, 0, 1000);
+		btnclick(m.getAddnewCard());
+type(m.getCart_name(), "4111 1111 1111 1111");
+type(m.getCardValidity(), "06/25");
+type(m.getCardCvv(), "123");
+type(m.getCardHolderName(), "Netmeds testing");
+btnclick(m.getChk_save_card());	
+btnclick(m.getTv_pay());	
+Thread.sleep(10000);
+driver.pressKeyCode(AndroidKeyCode.BACK);
+
+try {
+//btnclick(m.getPayment_paybutton());
+Thread.sleep(15000);
+driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
+}
+Thread.sleep(5000);
+btnclick(m.getRetry());
+Thread.sleep(5000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(5000);
 driver.swipe(0, 300, 0, 1000, 1000);
