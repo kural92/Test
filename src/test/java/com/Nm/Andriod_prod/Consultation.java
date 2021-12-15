@@ -1,27 +1,41 @@
 package com.Nm.Andriod_prod;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Driver;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.ScrollAction;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -29,17 +43,18 @@ import io.appium.java_client.remote.MobileCapabilityType;
 public class Consultation extends MobileBaseClass {
 
 	
-
+	
+	
 	ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
+			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability("platformVersion","10.0.0" );
+			//capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
 			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
 			//for install Apk file
@@ -48,6 +63,9 @@ public class Consultation extends MobileBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
+			
+					
+			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -58,32 +76,34 @@ public class Consultation extends MobileBaseClass {
 					
 		}
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
-  public void startReport() {
-  	
-     htmlReporter = new ExtentHtmlReporter(".//Report//Search.html");
-      
-      //initialize ExtentReports and attach the HtmlReporter
-      report = new ExtentReports();
-      
-    // htmlReporter.setAppendExisting(true);
-      report.attachReporter(htmlReporter);
-      report.setSystemInfo("Host name", "localhost");
-      report.setSystemInfo("Environemnt", "QA");
-      report.setSystemInfo("user", "Automation Team");
-  
-      //configuration items to change the look and feel
-      //add content, manage tests etc
+   public void startReport() {
+   	
+      htmlReporter = new ExtentHtmlReporter(".//Report//AlternateBrand.html");
+       
+       //initialize ExtentReports and attach the HtmlReporter
+       report = new ExtentReports();
+       
+     // htmlReporter.setAppendExisting(true);
+       report.attachReporter(htmlReporter);
+       report.setSystemInfo("Host name", "localhost");
+       report.setSystemInfo("Environemnt", "QA");
+       report.setSystemInfo("user", "Automation Team");
+   
+       //configuration items to change the look and feel
+       //add content, manage tests etc
 
-      htmlReporter.config().setDocumentTitle("Extent Report ");
-      htmlReporter.config().setReportName("NetMeds.com");
+       htmlReporter.config().setDocumentTitle("Extent Report ");
+       htmlReporter.config().setReportName("NetMeds.com");
 
-      //htmlReporter.config().setTheme(Theme.STANDARD);
-  	
-  }
+       //htmlReporter.config().setTheme(Theme.STANDARD);
+   	
+   }
+	
+
 	
 	
 	
-	@Test(priority = 1,enabled=false)
+	@Test(priority = 1,enabled=true)
 	public void Consult_Myself() throws Throwable {
 		
 		
@@ -262,7 +282,7 @@ public class Consultation extends MobileBaseClass {
 	
 	
 	
-	@Test(priority = 2)
+	@Test(priority = 2,enabled = false)
 	public void premium_Consultation() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");

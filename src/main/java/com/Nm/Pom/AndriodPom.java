@@ -261,7 +261,7 @@ public class AndriodPom extends MobileBaseClass{
 
 		@FindBy(xpath="//android.widget.TextView[@text='Search for medicine & wellness products…']")
 		private WebElement Searchbar;
-		@FindBy(xpath="//android.widget.EditText[@text='Search here…']")
+		@FindBy(xpath="//android.widget.EditText[@text='Search here…']|//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/search_bar']")
 		private WebElement Searchbarone;
 		public WebElement getSearchbarone() {
 			return Searchbarone;
@@ -392,7 +392,7 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_Search_AddToCart;
 		}
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton']" )
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/proceedToCheckoutButton']|android.widget.TextView[@text='PROCEED TO CART']" )
 		private WebElement m2_ProceedToCart;
 		public WebElement getM2_ProceedToCart() {
 			return m2_ProceedToCart;
@@ -462,7 +462,7 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_RX_Checkbox;
 		}
 		
-		@FindBy(id = "com.android.camera:id/done_button")
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/doneButton|com.android.camera:id/done_button")
 		private WebElement m2_RX_DoneBtn;
 		public WebElement getM2_RX_DoneBtn() {
 			return m2_RX_DoneBtn;
@@ -1000,6 +1000,7 @@ return Search_results_AddTocart_IncreaseQty_List;
 }
 
 
+
 @FindBy(id="com.NetmedsMarketplace.Netmeds:id/increment")
 private WebElement Search_results_AddTocart_IncreaseQty;
 public WebElement getSearch_results_AddTocart_IncreaseQty() {
@@ -1035,7 +1036,7 @@ return Search_results_Category;
 }
 
 
-@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search")
+@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search") //com.NetmedsMarketplace.Netmeds:id/search
 private WebElement PDP_Search_btnn;
 public WebElement getPDP_Search_btnn() {
 return PDP_Search_btnn;

@@ -89,7 +89,7 @@ static String totalamt;
 	public void cartpagescenarioone() throws Throwable {
 
 		logger = report.createTest("cartpage scenario one ");
-		logger.log(Status.PASS, "************* cartpage scenario 2********************");
+		logger.log(Status.PASS, "************* cartpage scenario 1********************");
 		Monepom m = new Monepom();
 		
 
@@ -313,7 +313,7 @@ static String totalamt;
 		Thread.sleep(3000);
 		System.out.println("Successfully naviagted to PD page");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//button[@id=\"product-addtocart-button\"])[1]")).click();
+		driver.findElement(By.xpath("(//button[@id=\"product-addtocart-button\"])[1]|(//button[@class='toCart cartbag addtocartbtnpdp prodbtn'])[1]")).click();
 		System.out.println("Successfully item added to the cart");
 		Thread.sleep(3000);
 		m.getNetmedshome();
@@ -518,7 +518,7 @@ static String totalamt;
 
 		
 
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariotwo() throws Throwable {
 
 		logger = report.createTest("cartpage scenario two");
@@ -839,7 +839,7 @@ static String totalamt;
 
 			
 
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void carpagescenariothree() throws Throwable {
 
 		logger = report.createTest("cartpage scenario three");
@@ -1141,7 +1141,7 @@ static String totalamt;
 //******************************Test case 4: Verify Cart page when NMS wallet cash used*****************************************************************
 				
 				
-				@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+				@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 				public void carpagescenariofour() throws Throwable {
 
 					logger = report.createTest("cartpage scenario four");
@@ -1253,6 +1253,7 @@ static String totalamt;
 					System.out.println("successfully closed letschat");
 					
 			//adding NMS wallet//
+					
 					
 					Thread.sleep(3000);
 					driver.findElement(By.id("nmssupercash")).click();

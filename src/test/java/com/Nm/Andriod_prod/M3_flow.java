@@ -219,7 +219,8 @@ Thread.sleep(3000);
 		
 		// Step 11: Decrease qty//
 		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
-		WebElement qty_dec = 	driver.findElement(By.xpath("//android.widget.TextView[@text='3']"));
+		Thread.sleep(3000);
+		WebElement qty_dec = 	driver.findElement(By.xpath("//android.widget.TextView[@text='13']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[6]"));
 		qty_dec.click();
 		//Select qtydecrease = new Select(m.getQty_Incr_Decr());
 		//qtydecrease.selectByIndex(1);
@@ -234,8 +235,9 @@ Thread.sleep(3000);
 				driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
 				//Select qtyincrease = new Select(m.getQty_Incr_Decr());
 				//qtyincrease.selectByIndex(3);
-		WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='5']"));
-			
+				Thread.sleep(3000);
+		WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='15']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[9]"));
+		Thread.sleep(3000);
 		qty_increase.click();
 				//driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])"));
 				Thread.sleep(3000);
@@ -508,7 +510,7 @@ Thread.sleep(3000);
 	Thread.sleep(3000);
 	driver.findElementByAccessibilityId("Shutter button").click();
 	
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	
 	driver.findElement(By.id("com.android.camera:id/done_button")).click();
  Thread.sleep(5000);
@@ -1033,9 +1035,9 @@ System.out.println("Address was modified successfully");
 
 //Delete address
 
-Thread.sleep(3000);
+Thread.sleep(5000);
 List<WebElement> delete  = driver.findElements(By.xpath("(//android.widget.TextView[@text='DELETE'])"));
-
+Thread.sleep(3000);
 delete.get(1).click();
 
 

@@ -5,6 +5,7 @@ import java.net.URL;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -227,7 +228,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		btnclick(m.getCancel_Order_reason());
 		
 		Thread.sleep(3000);
-		driver.swipe(0, 100, 0, 0, 1000);
+		driver.swipe(0, 200, 0, 0, 1000);
 		
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
@@ -517,8 +518,9 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		btnclick(driver.findElement(By.xpath("(//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox'])[2]")));
 		
 		
-		Thread.sleep(2000);
-		btnclick(m.getM2_RX_DoneBtn());
+		Thread.sleep(5000);
+		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/doneButton")).click();
+		//btnclick(m.getM2_RX_DoneBtn());
 		
 		
 		Thread.sleep(25000);
@@ -582,7 +584,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		btnclick(m.getCancel_Order_reason());
 		
 		Thread.sleep(3000);
-		driver.swipe(0, 100, 0 , 0, 1000);
+		driver.swipe(0, 200, 0 , 0, 1000);
 		
 		
 		Thread.sleep(5000);
@@ -601,7 +603,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 	}
 	
 	
-	@Test(priority = 4,enabled = false)
+	@Test(priority = 4,enabled = true)
 	public void pastRX_getCall() throws Throwable {
 		
 
@@ -688,9 +690,11 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		btnclick(driver.findElement(By.xpath("(//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/prescriptionCheckBox'])[3]")));
 		
 		
-		Thread.sleep(2000);
-		btnclick(m.getM2_RX_DoneBtn());
-		
+		//Thread.sleep(5000);
+		//btnclick(m.getM2_RX_DoneBtn());
+
+		Thread.sleep(5000);
+		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/doneButton")).click();
 		
 		
 		Thread.sleep(5000);
@@ -863,6 +867,9 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		Thread.sleep(5000);
 		btnclick(m.getCancel_Order_reason());
 		
+		Thread.sleep(5000);
+		//JavascriptExecutor js = (JavascriptExecutor)driver;
+	//	js.executeScript("window.scrollTo(0,200)");
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
 		
