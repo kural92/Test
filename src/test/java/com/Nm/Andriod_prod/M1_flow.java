@@ -52,9 +52,9 @@ public class M1_flow extends MobileBaseClass {
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
 
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
@@ -104,7 +104,7 @@ public class M1_flow extends MobileBaseClass {
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void Mone_otc() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
@@ -233,7 +233,7 @@ public class M1_flow extends MobileBaseClass {
 
 
 	}
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void mone_precrption() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
@@ -248,7 +248,7 @@ public class M1_flow extends MobileBaseClass {
 		
 		Thread.sleep(10000);
 
-	try {
+	/*try {
 
 		try {
 
@@ -268,11 +268,8 @@ public class M1_flow extends MobileBaseClass {
 		Thread.sleep(15000);
 
 		//driver.hideKeyboard();
-		Thread.sleep(10000);
+		Thread.sleep(10000);*/
 
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
 		
 		try {
 			
@@ -443,9 +440,9 @@ Thread.sleep(5000);
 	
 	
 		
-	} catch (Exception e) {
+	//} catch (Exception e) {
 		// TODO: handle exception
-	}
+	//}
 	
 	}
 	
