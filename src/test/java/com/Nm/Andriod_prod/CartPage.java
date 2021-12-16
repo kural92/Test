@@ -138,6 +138,7 @@ Float total_Wallet_amt;
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
 	
 	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+			//retryAnalyzer=RetryAnalyzer.class)
 	public void CartPageScenario1() throws Throwable {
 		
 		logger =  report.createTest("Cart Page Scenario1 ");
@@ -266,57 +267,45 @@ Float total_Wallet_amt;
 
 
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/save_for_later_button")).click();
-//qty increase//
-	
-				driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
-				
-				Thread.sleep(3000);
-						
-				WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='14']"));
-					
-				Thread.sleep(3000);
-				qty_increase.click();
-						
-				Thread.sleep(3000);
-						
-				logger.log(Status.PASS, " quantity increased Successfully");
-				System.out.println(" quantity increased Successfully");
-
-		Thread.sleep(3000);
-		
-		// Step  :Remove item//
-		
+		// Step 10 :Remove qty//
 				btnclick(m.getRemoveitem());
 				Thread.sleep(3000);
-				
 				logger.log(Status.PASS, " item removed Successfully");
 				System.out.println(" item removed Successfully");
 				
-		// Step : Decrease qty//
-
-				Thread.sleep(3000);
-				
-				
+				// Step 11: Decrease qty//
 				driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
-				
 				Thread.sleep(3000);
-				
-				
-				driver.swipe(946, 400, 980, 1800, 1000);
-				WebElement qty_decrease = driver.findElement(By.xpath("//android.widget.TextView[@text='13']"));
-					
-				qty_increase.click();
-						
+				WebElement qty_dec = 	driver.findElement(By.xpath("//android.widget.TextView[@text='13']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[6]"));
+				qty_dec.click();
+				//Select qtydecrease = new Select(m.getQty_Incr_Decr());
+				//qtydecrease.selectByIndex(1);
+			
 				Thread.sleep(3000);
 				
 				logger.log(Status.PASS, " quantity decreased Successfully");
-				System.out.println(" quantity decreased Successfully");
-				
+				System.out.println(" quantity decareased Successfully");
+
+				//Step 9 :Increase qty//
+
+						driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
+						//Select qtyincrease = new Select(m.getQty_Incr_Decr());
+						//qtyincrease.selectByIndex(3);
+						Thread.sleep(3000);
+				WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='15']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[9]"));
+				Thread.sleep(3000);
+				qty_increase.click();
+						//driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])"));
+						Thread.sleep(3000);
+						
+						logger.log(Status.PASS, " quantity increased Successfully");
+						System.out.println(" quantity increased Successfully");
+
 		
 		driver.swipe(790, 1100, 800, 70, 1000);
 		
 		int n = 1;
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 	
 		
 		for (int i = 0;i<n; i++)
@@ -389,6 +378,7 @@ Float total_Wallet_amt;
 		logger.log(Status.PASS, "Successfully navigated to next page in similar product");
 		System.out.println("Successfully navigated to next page in similar product");
 		
+		driver.swipe(0, 1900, 0, 0, 1000);
 		Thread.sleep(3000);
 		
 		btnclick(m.getMost_Selling_products());
@@ -649,7 +639,8 @@ Float total_Wallet_amt;
 		
 		
 		
-		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+				//,retryAnalyzer=RetryAnalyzer.class)
 		public void CartPageScenario2() throws Throwable {
 			
 			logger =  report.createTest("Cart Page Scenario2 ");
@@ -768,7 +759,7 @@ Float total_Wallet_amt;
 			}	
 
 	//Click mini cart//
-			
+			Thread.sleep(3000);
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to cart page");
@@ -1005,7 +996,8 @@ Float total_Wallet_amt;
 			}	
 
 //Test Case 3 :Verify Cart page when the Total amount is more than greater than 150 and less than or equal to 500
-		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+		//,retryAnalyzer=RetryAnalyzer.class)
 		public void CartPageScenario3() throws Throwable {
 			
 			logger =  report.createTest("Cart Page Scenario 3");
@@ -1362,7 +1354,8 @@ Float total_Wallet_amt;
 			}	
 //Test case 4: Verify Cart page when the Total amount when NMS wallet is applied
 		
-		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+		//,retryAnalyzer=RetryAnalyzer.class)
 		public void CartPageScenario4() throws Throwable {
 			
 			logger =  report.createTest("Cart Page Scenario 4");

@@ -307,11 +307,9 @@ btnclick(m.getRetry());
 Thread.sleep(5000);
 
 
-driver.swipe(0, 900, 0, 0, 1000);
+driver.swipe(0, 500, 0, 0, 1000);
 	//btnclick(m.getPhonepe());
-	Thread.sleep(5000);
 	
-	driver.swipe(0, 200, 0, 0, 1000);
 		btnclick(m.getAddnewCard());
 type(m.getCart_name(), "4111 1111 1111 1111");
 type(m.getCardValidity(), "06/25");
@@ -328,7 +326,7 @@ Thread.sleep(15000);
 driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();			} catch (Exception e) {
 }
 Thread.sleep(5000);
-btnclick(m.getRetry());
+//btnclick(m.getRetry());
 Thread.sleep(5000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(5000);
@@ -341,7 +339,19 @@ Thread.sleep(2000);
 driver.swipe(0, 300, 0, 1000, 1000);
 Thread.sleep(2000);
 driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+
 Thread.sleep(5000);
+try {
+	
+if (m.getNmsCashCheckBox().isDisplayed()) {
+	
+
 btnclick(m.getNmsCashCheckBox());
 Thread.sleep(5000);
 btnclick(m.getTv_place_order());
@@ -390,7 +400,11 @@ btnclick(m.getSubmit_cancel());
 logger.log(Status.PASS, "Order was cancelled successfully");
 System.out.println("Order was cancelled successfully");
 
-	}
+}} catch (Exception e) {
+	// TODO: handle exception
+	System.out.println("nms cash is not available");
+
+}}
 	
 	
 	@AfterMethod()

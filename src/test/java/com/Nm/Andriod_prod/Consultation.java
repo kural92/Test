@@ -103,7 +103,7 @@ public class Consultation extends MobileBaseClass {
 	
 	
 	
-	@Test(priority = 1,enabled=true)
+	@Test(priority = 1,enabled=false)
 	public void Consult_Myself() throws Throwable {
 		
 		
@@ -229,7 +229,10 @@ public class Consultation extends MobileBaseClass {
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Doctor_select_btn()));
 		Thread.sleep(3000);
 		btnclick(m.getConsult_Doctor_select_btn());
+		Thread.sleep(3000);
+		driver.swipe(0, 1000, 0, 0, 1000);
 		
+<<<<<<< HEAD
 		Thread.sleep(6000);
 	//	wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
 		btnclick(m.getConsult_Chat());
@@ -243,6 +246,18 @@ public class Consultation extends MobileBaseClass {
 		}
 		
 		Thread.sleep(6000);
+=======
+	//wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
+
+		//btnclick(m.getConsult_Chat());
+		
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Chat']")).click();
+		
+		Thread.sleep(3000);
+		
+	//	driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_make_payment']")).click();
+		Thread.sleep(3000);
+>>>>>>> c46e40dc3c1e4cafce38f877af16c26bb972ac1c
 		wait.until(ExpectedConditions.visibilityOfAllElements(m.getConsult_Payment_Package_List()));
 		m.getConsult_Payment_Package_List().get(1).click();
 		
@@ -292,7 +307,7 @@ public class Consultation extends MobileBaseClass {
 	
 	
 	
-	@Test(priority = 2,enabled = false)
+	@Test(priority = 2,enabled = true)
 	public void premium_Consultation() throws Throwable {
 		
 		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");

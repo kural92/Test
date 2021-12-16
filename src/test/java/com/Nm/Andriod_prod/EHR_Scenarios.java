@@ -52,7 +52,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -157,14 +157,25 @@ public class EHR_Scenarios extends MobileBaseClass {
 
 		
 //Step 3 : consult button //
-		Thread.sleep(3000);
-		driver.swipe(620, 1250, 620, 0, 1000);
-		Thread.sleep(3000);
+	for (int i = 0; i < 10; i++) {
 		
-		driver.swipe(620, 1250, 620, 0, 1000);
+		Thread.sleep(3000);
+		driver.swipe(0, 1000, 0, 0, 1000);
 		
-		driver.swipe(550, 1250, 620, 0, 1000);
-		btnclick(m.getConsultnow());
+		if (m.getConsultation_Btn_List().size()==1) {
+			
+			Thread.sleep(3000);
+			btnclick(m.getConsultation_Btn());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}
+		
+		
+		
+	}
 		
 		
 		logger.log(Status.PASS, "Successfully Clicked the consult button");

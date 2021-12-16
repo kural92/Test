@@ -103,7 +103,7 @@ public class Diagnostic extends MobileBaseClass {
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled=true,priority =1)
+	@Test(enabled=true,priority =1,retryAnalyzer=RetryAnalyzer.class)
 	public void Mone_otc() throws Throwable {
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -334,7 +334,7 @@ driver.swipe(0, 900, 0, 0, 1000);
 	type(m.getPincode(), "600100");
 	Thread.sleep(2000);
 	type(m.getFirstname(),"Firstname");
-	Thread.sleep(2000);
+	Thread.sleep(3000);
 	type(m.getLastname(),"Test");
 	Thread.sleep(2000);
 	type(m.getAddress(),"Addressfirst");
@@ -344,7 +344,7 @@ driver.swipe(0, 900, 0, 0, 1000);
 	btnclick(m.getSave_address());
 	logger.log(Status.PASS, "Address was modified successfully");
 	System.out.println("Address was modified successfully");
-	Thread.sleep(3000);
+	Thread.sleep(6000);
 WebElement delete  = driver.findElement(By.xpath("(//android.widget.TextView[@text='DELETE'])"));
 
 	delete.click();
@@ -367,7 +367,7 @@ WebElement delete  = driver.findElement(By.xpath("(//android.widget.TextView[@te
 	type(m.getFirstname(),"Firstaddress");
 	Thread.sleep(2000);
 	type(m.getLastname(),"Test");
-	Thread.sleep(2000);
+	Thread.sleep(3000);
 	type(m.getAddress(),"Addressfirst");
 	Thread.sleep(2000);
 	type(m.getLandmark(),"neartheatre");
@@ -405,6 +405,7 @@ Assert.assertNotEquals(m.getTextName().getText(), "");
 Assert.assertEquals(m.getTxtViewOfferApplied().getText(),"APPLY PROMO CODE");
 Assert.assertEquals(m.getTxtViewMyRewards().getText(),"My Rewards");
 btnclick(m.getBtnProceed());
+try {
 btnclick(m.getPhonepe());
 /*Thread.sleep(15000);
 driver.pressKeyCode(AndroidKeyCode.BACK);
@@ -522,7 +523,9 @@ Thread.sleep(5000);
 driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(5000);
 	
-	
+}catch(Exception e) {
+
+}
 	
 	
 	
