@@ -230,9 +230,19 @@ public class Consultation extends MobileBaseClass {
 		Thread.sleep(3000);
 		btnclick(m.getConsult_Doctor_select_btn());
 		
-		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
+		Thread.sleep(6000);
+	//	wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
 		btnclick(m.getConsult_Chat());
 		
+		try {
+			Thread.sleep(6000);
+			//	wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
+				btnclick(m.getConsult_Chat());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		Thread.sleep(6000);
 		wait.until(ExpectedConditions.visibilityOfAllElements(m.getConsult_Payment_Package_List()));
 		m.getConsult_Payment_Package_List().get(1).click();
 		
