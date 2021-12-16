@@ -1208,7 +1208,7 @@ public List<WebElement> getViewdetails_List() {
 		return Consult_Video;
 	}
 	
-	@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/text_video")
+	@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/check_payment_package']")
 	private List<WebElement> Consult_Payment_Package_List;
 	public List<WebElement> getConsult_Payment_Package_List() {
 		return Consult_Payment_Package_List;
@@ -2170,7 +2170,7 @@ public List<WebElement> getViewdetails_List() {
 			
 //************************************************************Cart Page**********************************************************
 
-	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/imgChecked")	
+	@FindBy(xpath="//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/imgChecked']")	
 	private List<WebElement> Promo;
 	public List<WebElement> getPromo() {
 		return Promo;
