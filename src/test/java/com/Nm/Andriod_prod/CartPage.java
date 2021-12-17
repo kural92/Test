@@ -370,15 +370,42 @@ Float total_Wallet_amt;
 		
 //click next/previous button to see the products in most selling page//
 		
-		driver.swipe(790, 1100, 800, 70, 1000);
+	/*	
+		List <WebElement> Most_selling = driver.findElements(By.xpath("//android.widget.TextView[@text='ADD TO CART']|//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_qty_picker']"));
+		
+for (int i = 0; i < 3; i++) {
+			
+			Thread.sleep(3000);
+			driver.swipe(0, 1000, 0, 0, 1000);
+			
+			if (Most_selling.size()!=0) {
+				
+				Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='ADD TO CART']|//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_qty_picker']")).click();
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to add to cart");
+
+			}
+		
+		
+		
+}
+		
+		
+		
+		
+		
+	/*driver.swipe(790, 1100, 800, 70, 1000);
 		Thread.sleep(3000);
 		new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
-		Thread.sleep(3000);
+	
 		new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
 		Thread.sleep(3000);
 		
 		logger.log(Status.PASS, "Successfully navigated to next page in similar product");
-		System.out.println("Successfully navigated to next page in similar product");
+		System.out.println("Successfully navigated to next page in similar product");*/
 		
 		driver.swipe(0, 1900, 0, 0, 1000);
 		Thread.sleep(3000);
