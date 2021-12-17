@@ -13,6 +13,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.touch.ScrollAction;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -103,7 +104,7 @@ public class Consultation extends MobileBaseClass {
 	
 	
 	
-	@Test(priority = 1,enabled=false)
+	@Test(priority = 1,enabled=true)
 	public void Consult_Myself() throws Throwable {
 		
 		
@@ -229,10 +230,7 @@ public class Consultation extends MobileBaseClass {
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Doctor_select_btn()));
 		Thread.sleep(3000);
 		btnclick(m.getConsult_Doctor_select_btn());
-		Thread.sleep(3000);
-		driver.swipe(0, 1000, 0, 0, 1000);
-		
-<<<<<<< HEAD
+		/*
 		Thread.sleep(6000);
 	//	wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
 		btnclick(m.getConsult_Chat());
@@ -240,45 +238,54 @@ public class Consultation extends MobileBaseClass {
 		try {
 			Thread.sleep(6000);
 			//	wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
+			
 				btnclick(m.getConsult_Chat());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		
 		Thread.sleep(6000);
-=======
-	//wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
-
-		//btnclick(m.getConsult_Chat());
-		
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Chat']")).click();
-		
-		Thread.sleep(3000);
-		
-	//	driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_make_payment']")).click();
-		Thread.sleep(3000);
->>>>>>> c46e40dc3c1e4cafce38f877af16c26bb972ac1c
 		wait.until(ExpectedConditions.visibilityOfAllElements(m.getConsult_Payment_Package_List()));
 		m.getConsult_Payment_Package_List().get(1).click();
+		*/
 		
+		
+			    //wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
+
+			        //btnclick(m.getConsult_Chat());
+		Thread.sleep(6000);
+			        driver.findElement(By.xpath("//android.widget.TextView[@text='Chat']")).click();
+			        
+			        Thread.sleep(3000);
+			        
+			    //    driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_make_payment']")).click();
+			        Thread.sleep(3000);
+			
+			        wait.until(ExpectedConditions.visibilityOfAllElements(m.getConsult_Payment_Package_List()));
+			        m.getConsult_Payment_Package_List().get(1).click();
+			        
+			        Thread.sleep(3000);
+			        
+				        driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_make_payment']")).click();
+				      
 		
 // Payment Decline
-		
-		
-		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"))));
-		List<WebElement> pay_Link = driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"));
+		try {
+				        Thread.sleep(10000);
+	//	wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/tv_wallet_link"))));
+		List<WebElement> pay_Link = driver.findElements(By.xpath("//android.widget.TextView[@text='LINK']"));//("com.NetmedsMarketplace.Netmeds:id/tv_wallet_link"));
 	
 		//Mobiwik
 		Thread.sleep(3000);
-		pay_Link.get(0);
+		pay_Link.get(0).click();
 		
 		
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
+		//wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
 		driver.findElementByAccessibilityId("Navigate up").click();
 		
 		//PayTM 
 		Thread.sleep(3000);
-		pay_Link.get(1);
+		pay_Link.get(1).click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementByAccessibilityId("Navigate up")));
 		driver.findElementByAccessibilityId("Navigate up").click();
@@ -301,7 +308,9 @@ public class Consultation extends MobileBaseClass {
 		 
 		*/
 		
-		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 	}
 	
@@ -353,10 +362,13 @@ AndriodPom m = new AndriodPom();
 		
 		
 		///
+		try {
 		Thread.sleep(5000);
 		driver.findElementByAccessibilityId("Navigate up").click();
 		//btnclick(m.getFooter_HomePage());
-		
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		
 		for (int i = 0; i < 10; i++) {
@@ -381,7 +393,7 @@ AndriodPom m = new AndriodPom();
 		
 		
 		Thread.sleep(10000);
-		driver.swipe(0, 500, 0, 0, 1000);
+		driver.swipe(0, 700, 0, 0, 1000);
 		
 	 Thread.sleep(3000);
 	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_consult_now"))));
@@ -404,8 +416,8 @@ AndriodPom m = new AndriodPom();
 	}
 	 
 	 Thread.sleep(3000);
-	 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']"));
-	 
+	 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']")).click();
+	 Thread.sleep(3000);
 	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_consult_now']"))));
 	 driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_consult_now']")).click();
 	 
@@ -453,24 +465,26 @@ AndriodPom m = new AndriodPom();
 			
 			
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("com.NetmedsMarketplace.Netmeds:id/txt_view_schedule_consultation")).click();
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_view_schedule_consultation")).click();
 			
 		}
 		
 		
-		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
-		
+	
+		//wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
+		Thread.sleep(7000);
 		/*
 		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Doctor_select_btn()));
 		Thread.sleep(3000);
 		btnclick(m.getConsult_Doctor_select_btn());
 		*/
-		wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
-		btnclick(m.getConsult_Chat());
+	//	wait.until(ExpectedConditions.elementToBeClickable(m.getConsult_Chat()));
+		btnclick(driver.findElement(By.xpath("//android.widget.TextView[@text='Chat']")));//.getConsult_Chat());
 		
+		Thread.sleep(7000);
 		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment"))));
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment")).click();
-		
+		try {
 		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"))));
 		List<WebElement> pay_Link = driver.findElements(By.xpath("android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_wallet_link']"));
 	
@@ -508,7 +522,9 @@ AndriodPom m = new AndriodPom();
 		*/
 		
 		
-		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		
 	}

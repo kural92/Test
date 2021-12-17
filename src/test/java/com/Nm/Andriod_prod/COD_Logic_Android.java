@@ -146,7 +146,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 		//btnclick(m.getFooter_HomePage());
 		
 		Thread.sleep(3000);
-		String aa = "Gemer 2mg,Ajmal Amber Wood";
+		String aa = "salbetol,Gemer 2mg,Ajmal Amber Wood";
 		String [] spl = aa.split(",");
 		System.out.println(spl.length);
 		
@@ -170,7 +170,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 		Thread.sleep(5000);
 		btnclick(m.getM2_Search_AddToCart());
 		
-		for (int j = 0; j < 5; j++) {
+		for (int j = 0; j < 4; j++) {
 			
 			Thread.sleep(5000);
 			btnclick(m.getSearch_results_AddTocart_IncreaseQty());

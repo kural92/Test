@@ -205,7 +205,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[2]")).click();
-		Thread.sleep(3000);
+		Thread.sleep(10000); // com.NetmedsMarketplace.Netmeds:id/edt_ud_name
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_name")).sendKeys("Test");
 		Thread.sleep(3000);
 		
@@ -230,17 +230,20 @@ public class EHR_Scenarios extends MobileBaseClass {
 		
 		driver.findElement(By.id("android:id/date_picker_header_year")).click();
 		Thread.sleep(2000);
-		
-		driver.swipe(752, 1586, 752, 2000, 1000);
-		
-		driver.swipe(752, 1586, 752, 2000, 1000);
-		
-		driver.swipe(752, 1586, 752, 2000, 1000);
-		
-		driver.swipe(752, 1586, 752, 2000, 1000);
-		driver.swipe(752, 1586, 752, 2000, 1000);
-		
-		driver.findElement(By.xpath("//android.widget.TextView[@text='2000']")).click();
+		/*
+	//	driver.swipe(752, 1586, 752, 2000, 1000);
+		driver.swipe(0, 0, 0, 2000, 1000);
+		//driver.swipe(752, 1586, 752, 2000, 1000);
+		driver.swipe(0, 0, 0, 2000, 1000);
+		//driver.swipe(752, 1586, 752, 2000, 1000);
+		driver.swipe(0, 0, 0, 2000, 1000);
+		//driver.swipe(752, 1586, 752, 2000, 1000);
+		driver.swipe(0, 0, 0, 2000, 1000);
+		//driver.swipe(752, 1586, 752, 2000, 1000);
+		driver.swipe(0, 0, 0, 2000, 1000);
+		*/
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='2015']")).click();
 		
 		driver.findElement(By.id("android:id/button1")).click();
 		
@@ -264,8 +267,8 @@ public class EHR_Scenarios extends MobileBaseClass {
 		
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_weight")).sendKeys("60");
 		Thread.sleep(3000);
-		driver.swipe(752, 1900, 752, 1100, 1000);
-		
+		//driver.swipe(752, 1900, 752, 1100, 1000);
+		driver.swipe(0, 500, 0, 0, 1000);
 		Thread.sleep(3000);
 		
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_bp_systolic")).sendKeys("90");
@@ -432,9 +435,9 @@ public class EHR_Scenarios extends MobileBaseClass {
 		//	driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
 		//	Thread.sleep(3000);
 	//Add Name
-			
+			Thread.sleep(5000);
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_name")).sendKeys("Name1");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_contact")).sendKeys("1234567890");
 			 
@@ -457,7 +460,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 			
 			driver.findElement(By.id("android:id/date_picker_header_year")).click();
 			Thread.sleep(2000);
-			
+			/*
 			driver.swipe(752, 1586, 752, 2000, 1000);
 			
 			driver.swipe(752, 1586, 752, 2000, 1000);
@@ -466,8 +469,9 @@ public class EHR_Scenarios extends MobileBaseClass {
 			
 			driver.swipe(752, 1586, 752, 2000, 1000);
 			driver.swipe(752, 1586, 752, 2000, 1000);
-			
-			driver.findElement(By.xpath("//android.widget.TextView[@text='2000']")).click();
+			*/
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='2015']")).click();
 			
 			driver.findElement(By.id("android:id/button1")).click();
 			
@@ -491,8 +495,8 @@ public class EHR_Scenarios extends MobileBaseClass {
 			
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_weight")).sendKeys("60");
 			Thread.sleep(3000);
-			driver.swipe(752, 1900, 752, 1100, 1000);
-			
+			//driver.swipe(752, 1900, 752, 1100, 1000);
+			driver.swipe(0, 500, 0, 0, 1000);
 			Thread.sleep(3000);
 			
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_bp_systolic")).sendKeys("90");
@@ -516,10 +520,10 @@ public class EHR_Scenarios extends MobileBaseClass {
 			logger.log(Status.PASS, "Successfully given the EHR patient details and saved");
 			System.out.println("Successfully given the EHR patient details and saved");
 			
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 			
 			WebElement Listofpatients = driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_hr_patient_name'])[2]"));
-
+			Thread.sleep(3000);
 			TouchAction action = new TouchAction((MobileDriver)driver); 
 			action.longPress(Listofpatients).release().perform();
 			
@@ -536,10 +540,8 @@ public class EHR_Scenarios extends MobileBaseClass {
 			System.out.println("EHR Scenario 2 is working properly");
 			
 		}					
-	private WebElement findElement(By id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
 
@@ -574,7 +576,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+	//		BaseClass.mail_report();
 		}
 
 	}
@@ -583,7 +585,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 	private void quitbrowser() {
 		report.flush();
 
-		driver.quit();
+	//	driver.quit();
 	}
 
 }
