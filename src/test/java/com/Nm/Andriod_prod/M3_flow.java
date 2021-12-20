@@ -49,7 +49,7 @@ public class M3_flow extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14" //07c55fe10406//RZ8R20GLXTA
+			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //07c55fe10406//RZ8R20GLXTA
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -98,7 +98,7 @@ public class M3_flow extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3SubscriptionOTCflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Subscription OTC Flow");
@@ -353,7 +353,7 @@ System.out.println("M3 Subscription OTC Flow is working properly");
 	
 //******************************************************M3 Rx Flow*****************************************************
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscriptionrxflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Rx Flow");
@@ -855,7 +855,7 @@ System.out.println("M3  past RX is working properly");
 	
 //**************************************************M3 -Doctor consultation***************************************************
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void M3Subscription_DoctorConsultationflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - DoctorConsultation Flow");

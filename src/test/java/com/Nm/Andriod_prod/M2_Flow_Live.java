@@ -160,15 +160,15 @@ public class M2_Flow_Live extends MobileBaseClass{
 		btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/doneButton']")));
 		*/
 		
-		Thread.sleep(25000);
-		//btncli(driver.findElement(By.xpath("//android.view.View[@index='0']")));
+		Thread.sleep(10000);
+	 //btncli(driver.findElement(By.xpath("//android.view.View[@index='0']"))); com.google.android.documentsui:id/icon_thumb
 		
-		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
+		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']")));
 		
-		Thread.sleep(25000);
+		Thread.sleep(10000);
 		btnclick(m.getM2_Upload_ContinueBtn());
 		
-		Thread.sleep(25000);
+		Thread.sleep(30000);
 		btnclick(m.getM2_SearchMedicine());
 		
 		Thread.sleep(25000);
@@ -228,7 +228,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		btnclick(m.getCancel_Order_reason());
 		
 		Thread.sleep(3000);
-		driver.swipe(0, 200, 0, 0, 1000);
+		driver.swipe(0, 400, 0, 0, 1000);
 		
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
@@ -266,7 +266,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 
 
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void m2_getCall() throws Throwable {
 	
 		AndriodPom m = new AndriodPom();
@@ -354,7 +354,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		
 		Thread.sleep(5000);
-		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
+		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']")));
 		
 		
 		Thread.sleep(5000);
@@ -411,7 +411,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		btnclick(m.getCancel_Order_reason());
 		
 		Thread.sleep(3000);
-		driver.swipe(0, 100, 0, 0, 1000);
+		driver.swipe(0, 400, 0, 0, 1000);
 		
 		Thread.sleep(5000);
 		btnclick(m.getSubmit_cancelBtn());
@@ -523,18 +523,18 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		//btnclick(m.getM2_RX_DoneBtn());
 		
 		
-		Thread.sleep(25000);
+	//	Thread.sleep(15000);
 		//btncli(driver.findElement(By.xpath("//android.view.View[@index='0']")));
 		
 	//	btncli(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
 		
-		Thread.sleep(25000);
+		Thread.sleep(15000);
 		btnclick(m.getM2_Upload_ContinueBtn());
 		
-		Thread.sleep(25000);
+		Thread.sleep(15000);
 		btnclick(m.getM2_SearchMedicine());
 		
-		Thread.sleep(25000);
+		Thread.sleep(15000);
 		btnclick(m.getM2_Search_CAll_ContinueBtn());
 		
 		Thread.sleep(5000);
@@ -584,7 +584,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		btnclick(m.getCancel_Order_reason());
 		
 		Thread.sleep(3000);
-		driver.swipe(0, 200, 0 , 0, 1000);
+		driver.swipe(0, 400, 0 , 0, 1000);
 		
 		
 		Thread.sleep(5000);
@@ -735,6 +735,8 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		type(m.getM2_PinCode(), "311003");
 		
 		//Firstname
+		
+		
 		Thread.sleep(5000);
 		m.getM2_FirstName().clear();
 		
@@ -868,6 +870,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		btnclick(m.getCancel_Order_reason());
 		
 		Thread.sleep(5000);
+		driver.swipe(0, 400, 0, 0, 1000);
 		//JavascriptExecutor js = (JavascriptExecutor)driver;
 	//	js.executeScript("window.scrollTo(0,200)");
 		Thread.sleep(5000);

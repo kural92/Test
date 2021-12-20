@@ -292,9 +292,7 @@ public class AndriodPom extends MobileBaseClass{
 			return Payment_cod_list;
 		}
 
-		public WebElement getStartassesment() {
-			return Startassesment;
-		}
+	
 
 
 		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_pay']")
@@ -418,7 +416,8 @@ public class AndriodPom extends MobileBaseClass{
 		
 		
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/place_order']" )
+		//com.NetmedsMarketplace.Netmeds:id/place_order
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/place_order")//(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/place_order']" )
 		private WebElement m2_Place_Order;
 		public WebElement getM2_Place_Order() {
 			return m2_Place_Order;
@@ -484,7 +483,7 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getM2_RX_DoneBtn() {
 			return m2_RX_DoneBtn;
 		}
-		
+		//com.NetmedsMarketplace.Netmeds:id/tv_change_address
 		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_change_address']")
 		private WebElement m2_ChangeAddress;
 		public WebElement getM2_ChangeAddress() {
