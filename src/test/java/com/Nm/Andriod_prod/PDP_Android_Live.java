@@ -240,7 +240,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 								System.out.println(gettext(Coupon_Save_Per.get(j)));
 								
 								Thread.sleep(2000);
-								System.out.println(gettext(Coupon_Details.get(j)));
+								System.out.println(gettext(Coupon_Detils.get(j)));
 								
 							}
 							

@@ -1113,9 +1113,7 @@ public List<WebElement> getCOD_CheckBox_Lst() {
 	return COD_CheckBox_Lst;
 }
 
-public WebElement getStartassesment() {
-	return Startassesment;
-}
+
 
 
 
