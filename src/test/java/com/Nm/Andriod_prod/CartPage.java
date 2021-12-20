@@ -344,44 +344,23 @@ Float total_Wallet_amt;
 		 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/apply_remove_coupon_btn")).click();
 		 }
 		}	
-			/*Thread.sleep(3000);
 			
-			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
-			Thread.sleep(4000);
-			//driver.findElement(By.xpath("//input[@class='rdbtn auto_apply_coupon_popup']")).click();
-			
-			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/imgChecked")).click();
-			
-			System.out.println("promo code is successfully applied");*/
-		
-/*//save for later
-		
-		
-		
-		Thread.sleep(3000);
-		
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/move_to_cart_button']")).click();
-		
-		*/
-			
-
-
 		
 //click next/previous button to see the products in most selling page//
 		
-	/*	
+	
 		List <WebElement> Most_selling = driver.findElements(By.xpath("//android.widget.TextView[@text='ADD TO CART']|//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_qty_picker']"));
 		
-for (int i = 0; i < 3; i++) {
+for (int i = 0; i < 5; i++) {
 			
 			Thread.sleep(3000);
 			driver.swipe(0, 1000, 0, 0, 1000);
 			
-			if (Most_selling.size()!=0) {
+			if (m.getMost_Selling_products().size()!=0) {
 				
 				Thread.sleep(3000);
-			driver.findElement(By.xpath("//android.widget.TextView[@text='ADD TO CART']|//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_qty_picker']")).click();
+				
+				driver.findElement(By.xpath("//android.widget.TextView[@text='ADD TO CART']")).click();
 				break;
 			} else {
 				
@@ -393,37 +372,10 @@ for (int i = 0; i < 3; i++) {
 		
 }
 		
+System.out.println("Successfully item added to the cart");
+logger.log(Status.PASS, "Items are added successfully");	
 		
-		
-		
-		
-	/*driver.swipe(790, 1100, 800, 70, 1000);
-		Thread.sleep(3000);
-		new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
-	
-		new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
-		Thread.sleep(3000);
-		
-		logger.log(Status.PASS, "Successfully navigated to next page in similar product");
-		System.out.println("Successfully navigated to next page in similar product");*/
-		
-		driver.swipe(0, 1900, 0, 0, 1000);
-		Thread.sleep(3000);
-		
-		btnclick(m.getMost_Selling_products());
-		Thread.sleep(3000);
-		System.out.println("Successfully item added to the cart");
-		logger.log(Status.PASS, "Items are added successfully");
-		
-/*//open the item from most selling product page and add the item to the cart though PDG page"
-		
-		driver.findElement(By.xpath("//com.NetmedsMarketplace.Netmeds[@resource-id='com.NetmedsMarketplace.Netmeds:id/most_selling_product_name']")).click();
-		Thread.sleep(3000);
-		System.out.println("Successfully naviagted to PD page");
-		Thread.sleep(3000);
-		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")).click();
-		System.out.println("Successfully item added to the cart");*/
-		
+ 
 		
 		 
 

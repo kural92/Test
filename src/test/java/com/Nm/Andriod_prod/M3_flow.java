@@ -290,16 +290,21 @@ System.out.println("Order was placed successfully");
 
 
 //Order success page
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-btnclick(m.getPayment_cod());
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getPayment_cod_list().size()==1) {
+		
+		Thread.sleep(3000);
+		 btnclick(m.getPayment_cod());
+		break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Pay Button");
+
+	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(3000);
@@ -549,16 +554,21 @@ System.out.println("Order was placed successfully");
 
 
 //Payment
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-btnclick(m.getPayment_cod());
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getPayment_cod_list().size()==1) {
+		
+		Thread.sleep(3000);
+		 btnclick(m.getPayment_cod());
+		break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Pay Button");
+
+	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(3000);
@@ -795,16 +805,21 @@ logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
 
 //Payment page
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-btnclick(m.getPayment_cod());
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getPayment_cod_list().size()==1) {
+		
+		Thread.sleep(3000);
+		 btnclick(m.getPayment_cod());
+		break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Pay Button");
+
+	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(3000);
@@ -1096,16 +1111,21 @@ System.out.println("Order was placed successfully");
 
 
 //Payment page
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-btnclick(m.getPayment_cod());
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getPayment_cod_list().size()==1) {
+		
+		Thread.sleep(3000);
+		 btnclick(m.getPayment_cod());
+		break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Pay Button");
+
+	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(3000);
