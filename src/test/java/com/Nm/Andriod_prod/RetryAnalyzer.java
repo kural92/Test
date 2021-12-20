@@ -7,7 +7,7 @@ public class RetryAnalyzer implements IRetryAnalyzer  {
 
 	  private int count = 0; 
 
-	  private int maxCount = 3;
+	  private int maxCount = 0;
 
 	  @Override
 

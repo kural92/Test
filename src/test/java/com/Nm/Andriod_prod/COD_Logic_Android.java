@@ -146,7 +146,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 		//btnclick(m.getFooter_HomePage());
 		
 		Thread.sleep(3000);
-		String aa = "Gemer 2mg,Ajmal Amber Wood";
+		String aa = "Gemer 2mg,Ajmal Amber Wood,salbetol";
 		String [] spl = aa.split(",");
 		System.out.println(spl.length);
 		
@@ -170,7 +170,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 		Thread.sleep(5000);
 		btnclick(m.getM2_Search_AddToCart());
 		
-		for (int j = 0; j < 5; j++) {
+		for (int j = 0; j < 4; j++) {
 			
 			Thread.sleep(5000);
 			btnclick(m.getSearch_results_AddTocart_IncreaseQty());
@@ -222,6 +222,20 @@ public class COD_Logic_Android extends MobileBaseClass {
 		if (total<60||total>5000) {
 			
 			System.out.println("Unable to Process the payment / Cash on Delivery Option.The Net Value was Below 60 or above 5000");
+			Thread.sleep(10000);
+			driver.findElementByAccessibilityId("Navigate up").click();
+			Thread.sleep(3000);
+			driver.findElementByAccessibilityId("Navigate up").click();
+			Thread.sleep(3000);
+			driver.findElementByAccessibilityId("Navigate up").click();
+			Thread.sleep(3000);
+			driver.findElementByAccessibilityId("Navigate up").click();
+			
+			Thread.sleep(3000);
+			btnclick(m.getFooter_HomePage());
+			
+			Thread.sleep(5000);
+			
 		/*	
 			Thread.sleep(3000);
 			driver.swipe(0, 500, 0, 0, 1000);
@@ -247,8 +261,21 @@ public class COD_Logic_Android extends MobileBaseClass {
 		} else {
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 500, 0, 0, 1000);
+			for (int j = 0; j < 7; j++) {
+				
+				Thread.sleep(3000);
+				driver.swipe(0, 500, 0, 0, 1000);
+				Thread.sleep(1000);
+				if (m.getCOD_CheckBox_Lst().size()==1) {
+					Thread.sleep(3000);
+					btnclick(m.getCOD_CheckBox());
+					break;
+				} else {
+					
+				}
+			}
 			
+			/*
 			Thread.sleep(3000);
 			driver.swipe(0, 500, 0, 0, 1000);
 			
@@ -261,7 +288,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			
 			Thread.sleep(3000);
 			btnclick(m.getCOD_CheckBox());
-			
+			*/
 			Thread.sleep(3000);
 			btnclick(m.getCOD_PayBtn());
 			
@@ -278,11 +305,20 @@ public class COD_Logic_Android extends MobileBaseClass {
 			btnclick(m.getCancel_Order_reason());
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 200, 0, 0, 0);
-			
+		//	driver.swipe(0, 200, 0, 0, 0);
+			for (int jj = 0; jj < 3; jj++) {
+				Thread.sleep(3000);
+				driver.swipe(0, 300, 0, 0, 0);
+				Thread.sleep(1000);
+				if (m.getSubmit_cancelBtn_lst().size()==1) {
+					Thread.sleep(3000);
+					btnclick(m.getSubmit_cancelBtn());
+					break;
+				} else {}
+			}
 			
 			Thread.sleep(3000);
-			btnclick(m.getSubmit_cancelBtn());
+		//	btnclick(m.getSubmit_cancelBtn());
 			
 			Thread.sleep(10000);
 			btnclick(m.getFooter_HomePage());

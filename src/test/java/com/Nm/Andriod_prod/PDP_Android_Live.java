@@ -199,7 +199,17 @@ public class PDP_Android_Live extends MobileBaseClass{
 				
 				
 				Thread.sleep(2000);
-				driver.swipe(0, 200, 0, 0, 1000);
+				for (int j = 0; j < 5; j++) {
+					driver.swipe(0, 200, 0, 0, 1000);
+					Thread.sleep(2000);
+					if (m.getPDP_OfferAvailable_List().size()==1) {
+						System.out.println("Swipe down to check Offer");
+						break;
+					} else {
+
+					}
+				}
+			
 				
 				Thread.sleep(2000);
 				Thread.sleep(2000);
@@ -208,7 +218,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 					Thread.sleep(2000);
 					 btnclick(m.getPDP_OfferAvailable_Text());
 					 Thread.sleep(2000);
-						driver.swipe(0, 300, 0, 0, 1000);
+						driver.swipe(0, 500, 0, 0, 1000);
 						
 						Thread.sleep(2000);
 						
@@ -216,7 +226,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 								Thread.sleep(2000);
 						List<WebElement> Coupon_Save_Per = m.getPDP_Coupon_Save_Percentage();
 						Thread.sleep(2000);
-						List<WebElement> Coupon_Details = m.getPDP_Coupon_Details();
+						List<WebElement> Coupon_Detils = m.getPDP_Coupon_Details();
 					    Thread.sleep(2000);
 						
 						if (!(Coupon_code.size()==0)) {
@@ -244,6 +254,8 @@ public class PDP_Android_Live extends MobileBaseClass{
 				
 				
 				Thread.sleep(2000);
+				 Thread.sleep(2000);
+					driver.swipe(0, 0, 0, 200, 1000);
 	btnclick(m.getPDP_Manufacture_name());
 	
 	Thread.sleep(15000);
@@ -319,8 +331,20 @@ public class PDP_Android_Live extends MobileBaseClass{
 				///////  Alternade // combo // frequently 
 				Thread.sleep(3000);
 				Thread.sleep(2000);
-				driver.swipe(0, 1000, 0, 0, 1000);
-				
+			//	driver.swipe(0, 1000, 0, 0, 1000);
+				 
+				for (int i = 0; i < 5; i++) {
+					Thread.sleep(2000);
+					driver.swipe(0, 700, 0, 0, 1000);
+					Thread.sleep(2000);
+					if (m.getPDP_BuyPack_ComboList().size()==2|m.getPDP_BuyPack_ComboList().size()==2) {
+						System.out.println("Swipe Down Check the Combo Pack");
+						break;
+						
+					} else {
+
+					}
+				}
 				
 				Thread.sleep(3000);
 				if (m.getPDP_ComboPack_text().getText().contains("COMBO PACKS")) {
@@ -467,12 +491,23 @@ Thread.sleep(2000);
 						Thread.sleep(5000);
 				
 						Thread.sleep(3000);
-						Thread.sleep(2000);
-						driver.swipe(0, 1000, 0, 0, 1000);
+						
+						for (int i = 0; i < 5; i++) {
+							Thread.sleep(2000);
+							driver.swipe(0, 700, 0, 0, 1000);
+							Thread.sleep(2000);
+							if (m.getPDP_FrequentlyBrought_text_Lst().size()==1) {
+								System.out.println("Swipe down to check Frequently Brought");
+								break;
+							} else {
+
+							}
+						}
+						
 						
 						Thread.sleep(3000);
 						Thread.sleep(2000);
-						driver.swipe(0, 700, 0, 0, 1000);
+						//driver.swipe(0, 700, 0, 0, 1000);
 						
 						
 						Thread.sleep(3000);
@@ -521,12 +556,23 @@ Thread.sleep(2000);
 								Thread.sleep(5000);
 								
 								Thread.sleep(3000);
+								for (int i = 0; i < 5; i++) {
+									Thread.sleep(2000);
+									driver.swipe(0, 700, 0, 0, 1000);
+									Thread.sleep(2000);
+									if (m.getPDP_AlternateBrand_TextList().size()==1) {
+										System.out.println("Swipe down to check Alternate  Brand");
+										break;
+									} else {
+
+									}
+								}
 								Thread.sleep(2000);
-								driver.swipe(0, 800, 0, 0, 1000);
+							//	driver.swipe(0, 800, 0, 0, 1000);
 								
 								
 								Thread.sleep(2000);
-								driver.swipe(0, 800, 0, 0, 1000);
+							//	driver.swipe(0, 800, 0, 0, 1000);
 								
 								Thread.sleep(3000);
 								if (m.getPDP_AlternateBrand_Text().isDisplayed()) {
@@ -569,8 +615,20 @@ Thread.sleep(2000);
 								/////////////////////////////////////////
 								// Most Selling Product
 								Thread.sleep(3000);
+								Thread.sleep(3000);
+								for (int i = 0; i < 5; i++) {
+									Thread.sleep(2000);
+									driver.swipe(0, 700, 0, 0, 1000);
+									Thread.sleep(2000);
+									if (m.getMost_Selling_text_List().size()==1) {
+										System.out.println("Swipe down to check Most Selling  Brand");
+										break;
+									} else {
+
+									}
+								}
 								Thread.sleep(2000);
-								driver.swipe(0, 1000, 0, 0, 1000);
+//							/	driver.swipe(0, 1000, 0, 0, 1000);
 								
 								Thread.sleep(2000);
 								if (m.getMost_Selling_text().isDisplayed()) {

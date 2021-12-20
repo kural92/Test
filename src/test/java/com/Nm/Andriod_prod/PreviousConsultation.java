@@ -151,15 +151,34 @@ public class PreviousConsultation extends MobileBaseClass {
 	}
 	
 //Step 3 : consult button //
+	
 	Thread.sleep(3000);
-	driver.swipe(620, 1250, 620, 0, 1000);
+	/*
+	driver.swipe(0, 1250, 0, 0, 1000);
 	Thread.sleep(3000);
 	
-	driver.swipe(620, 1250, 620, 0, 1000);
+	driver.swipe(0, 1250, 0, 0, 1000);
 	
-	driver.swipe(620, 1250, 620, 0, 1000);
+	driver.swipe(0, 1250, 0, 0, 1000);
 	btnclick(m.getConsultnow());
+		*/
+	
+	for (int ii = 0; ii < 10; ii++) {
 		
+		Thread.sleep(3000);
+		driver.swipe(0, 1000, 0, 0, 1000);
+		
+		if (m.getConsultation_Btn_List().size()==1) {
+			
+			Thread.sleep(3000);
+			btnclick(m.getConsultation_Btn());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}
+	}
 	logger.log(Status.PASS, "Successfully clicked consultnow button");
 	System.out.println("Successfully clicked consultnow button");
 //Previous Consultation
@@ -307,7 +326,7 @@ List<WebElement>	list =  m.getLeftside_Link();
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+		//	BaseClass.mail_report();
 		}
 
 	}
@@ -316,7 +335,7 @@ List<WebElement>	list =  m.getLeftside_Link();
 	private void quitbrowser() {
 		report.flush();
 
-		driver.quit();
+	//.quit();
 	}
 
 }

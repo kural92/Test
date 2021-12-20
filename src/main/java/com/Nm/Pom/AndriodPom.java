@@ -458,7 +458,13 @@ public class AndriodPom extends MobileBaseClass{
 			return Submit_cancelBtn;
 		}
 		
-		
+		@FindBy(xpath = "//android.widget.Button[@text='SUBMIT & CANCEL']")
+		private List<WebElement> Submit_cancelBtn_lst;
+		public List<WebElement> getSubmit_cancelBtn_lst() {
+			return Submit_cancelBtn_lst;
+		}
+
+
 		@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.NetmedsMarketplace.Netmeds:id/callCheckBox']")
 		private WebElement m2_GetCallBtn;
 		public WebElement getM2_GetCallBtn() {
@@ -729,6 +735,13 @@ public class AndriodPom extends MobileBaseClass{
 			return PDP_FrequentlyBrought_text;
 		}
 		
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/similarProductTitle")
+		private List<WebElement> PDP_FrequentlyBrought_text_Lst;	
+		public List<WebElement> getPDP_FrequentlyBrought_text_Lst() {
+			return PDP_FrequentlyBrought_text_Lst;
+		}
+
+
 		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")
 		private WebElement PDP_FrequentlyBrought_AddToCart;
 		public WebElement getPDP_FrequentlyBrought_AddToCart() {
@@ -777,7 +790,13 @@ public class AndriodPom extends MobileBaseClass{
 		}
 		
 		
-		
+		@FindBy(xpath="//android.widget.TextView[@text='ALTERNATE BRANDS']")
+		private List<WebElement> PDP_AlternateBrand_TextList;	
+		public List<WebElement> getPDP_AlternateBrand_TextList() {
+			return PDP_AlternateBrand_TextList;
+		}
+
+
 		@FindBy(xpath="com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name")
 		private List<WebElement> PDP_AlternateBrand_Name_List;
 		public List<WebElement> getPDP_AlternateBrand_Name_List() {
@@ -818,9 +837,13 @@ public class AndriodPom extends MobileBaseClass{
 		public WebElement getMost_Selling_text() {
 			return Most_Selling_text;
 		}
-		
-		
-		
+		@FindBy(xpath="//android.widget.TextView[@text='MOST SELLING PRODUCTS']")
+		private List<WebElement> Most_Selling_text_List;		
+		public List<WebElement> getMost_Selling_text_List() {
+			return Most_Selling_text_List;
+		}
+
+
 		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/most_selling_product_name")
 		private List<WebElement> MostSelling_drug_name_List;
 		public List<WebElement> getMostSelling_drug_name_List() {
@@ -1083,6 +1106,18 @@ private WebElement COD_CheckBox;
 public WebElement getCOD_CheckBox() {
 return COD_CheckBox;
 }
+
+@FindBy(xpath = "//android.widget.TextView[@text='COD']")
+private List<WebElement> COD_CheckBox_Lst;
+public List<WebElement> getCOD_CheckBox_Lst() {
+	return COD_CheckBox_Lst;
+}
+
+public WebElement getStartassesment() {
+	return Startassesment;
+}
+
+
 
 @FindBy(id="com.NetmedsMarketplace.Netmeds:id/proceed_btn")
 private WebElement order_Review_ProceedBtn;
