@@ -244,11 +244,23 @@ public class OrderReviewPage extends MobileBaseClass {
 	Thread.sleep(6000);
 	
 	btnclick(m.getSchedule_delivery());
-	Thread.sleep(5000);
+	for (int i = 0; i < 10; i++) {
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 900, 0, 0, 1000);
+		
+		if (m.getOrp_prescriptionImage_List().size()==1) {
+			
+			Thread.sleep(3000);
+			btnclick(m.getOrp_prescriptionImage());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}}
 	
-	 driver.swipe(0, 900, 0, 0, 1000);
-	Thread.sleep(3000);
-	btnclick(m.getOrp_prescriptionImage());
+
 	Thread.sleep(3000);
 	btnclick(m.getOrp_preview_close());
 	Thread.sleep(3000);

@@ -173,17 +173,22 @@ public class M1_flow extends MobileBaseClass {
 			Thread.sleep(3000);
 
 			btnclick(m.getPlaceorder());
+			for (int i = 0; i < 10; i++) {
+				
+				Thread.sleep(3000);
+				driver.swipe(0, 900, 0, 0, 1000);
+				
+				if (m.getPayment_cod_list().size()==1) {
+					
+					Thread.sleep(3000);
+					 btnclick(m.getPayment_cod());
+					break;
+				} else {
+					
+					System.out.println("Swipe Down to click on Consult Now Button");
 
-			Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_cod());
+				}}
+			
 			 Thread.sleep(3000);
 			 btnclick(m.getPayment_paybutton());
 			 Thread.sleep(3000);
@@ -224,6 +229,7 @@ public class M1_flow extends MobileBaseClass {
 
 			//Submit and cancel
 			Thread.sleep(3000);
+			
 			 driver.swipe(0, 900, 0, 0, 1000);
 			 Thread.sleep(3000);
 			btnclick(m.getSubmit_cancel());
@@ -382,16 +388,21 @@ btnclick(m.getSchedule_delivery());
 Thread.sleep(5000);
 			btnclick(m.getPlaceorder());
 
-			Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 driver.swipe(0, 900, 0, 0, 1000);
-			 Thread.sleep(3000);
-			 btnclick(m.getPayment_cod());
+for (int i = 0; i < 10; i++) {
+				
+				Thread.sleep(3000);
+				driver.swipe(0, 900, 0, 0, 1000);
+				
+				if (m.getPayment_cod_list().size()==1) {
+					
+					Thread.sleep(3000);
+					 btnclick(m.getPayment_cod());
+					break;
+				} else {
+					
+					System.out.println("Swipe Down to click on Consult Now Button");
+
+				}}
 			 Thread.sleep(3000);
 			 btnclick(m.getPayment_paybutton());
 			 Thread.sleep(3000);

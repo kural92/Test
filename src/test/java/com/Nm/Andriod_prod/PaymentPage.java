@@ -465,7 +465,22 @@ System.out.println("Order was cancelled successfully");
 		
       //driver.quit();
 	}
+ 
+	private void Amazonpay() throws InterruptedException {
+		for (int i = 0; i < 10; i++) {
+			
+			Thread.sleep(3000);
+			driver.swipe(0, 900, 0, 0, 1000);
+			
+			if (driver.findElements(By.xpath("//android.widget.TextView[@text()='Amazon Pay']")).size()==1) {
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to click on Consult Now Button");
 
+			}}	
+
+	}
 
 
 
