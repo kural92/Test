@@ -107,7 +107,9 @@ public class EHR_Scenarios extends MobileBaseClass {
 
 	
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class,priority = 1)
+	@Test(enabled = true,priority = 1)
+	
+//	retryAnalyzer=RetryAnalyzer.class,
 	public void EHR1() throws Throwable {
 
 		logger = report.createTest("EHR2");
@@ -352,7 +354,8 @@ public class EHR_Scenarios extends MobileBaseClass {
 
 	
 	
-		@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class,priority = 2)
+		@Test(enabled = true,priority = 2)
+		//retryAnalyzer=RetryAnalyzer.class,
 		public void EHR2() throws Throwable {
 
 			logger = report.createTest("EHR2");
@@ -515,6 +518,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 			
 			Thread.sleep(3000);
 			
+			driver.swipe(0, 1000, 0, 0, 1000);
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_save_update_user")).click();
 			
 			logger.log(Status.PASS, "Successfully given the EHR patient details and saved");
