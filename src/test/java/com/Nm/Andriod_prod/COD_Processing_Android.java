@@ -247,6 +247,22 @@ float total ;
 	} else {
 		
 		Thread.sleep(3000);
+		for (int j = 0; j < 7; j++) {
+			
+			Thread.sleep(3000);
+			driver.swipe(0, 500, 0, 0, 1000);
+			Thread.sleep(1000);
+			if (m.getCOD_CheckBox_Lst().size()==1) {
+				Thread.sleep(3000);
+				btnclick(m.getCOD_CheckBox());
+				break;
+			} else {
+				
+			}
+		}
+		
+		/*
+		Thread.sleep(3000);
 		driver.swipe(0, 500, 0, 0, 1000);
 		
 		Thread.sleep(3000);
@@ -261,7 +277,7 @@ float total ;
 		
 		Thread.sleep(3000);
 		btnclick(m.getCOD_CheckBox());
-		
+		*/
 		Thread.sleep(3000);
 		btnclick(m.getCOD_PayBtn());
 		
@@ -301,11 +317,20 @@ float total ;
 			btnclick(m.getCancel_Order_reason());
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 200, 0, 0, 0);
-			
+		//	driver.swipe(0, 200, 0, 0, 0);
+			for (int jj = 0; jj < 3; jj++) {
+				Thread.sleep(3000);
+				driver.swipe(0, 300, 0, 0, 0);
+				Thread.sleep(1000);
+				if (m.getSubmit_cancelBtn_lst().size()==1) {
+					Thread.sleep(3000);
+					btnclick(m.getSubmit_cancelBtn());
+					break;
+				} else {}
+			}
 			
 			Thread.sleep(3000);
-			btnclick(m.getSubmit_cancelBtn());
+		//	btnclick(m.getSubmit_cancelBtn());
 			
 			Thread.sleep(3000);
 			
