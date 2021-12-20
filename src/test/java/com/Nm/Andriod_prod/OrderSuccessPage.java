@@ -98,7 +98,7 @@ public class OrderSuccessPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 -Order success page	*********************************************************
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void OrderSuccessPageM3() throws Throwable {
 		
 		logger =  report.createTest("Order Success Page ");
@@ -251,16 +251,21 @@ logger.log(Status.PASS, "Order was placed successfully");
 System.out.println("Order was placed successfully");
 //payment page
 
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-btnclick(m.getPayment_cod());
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getPayment_cod_list().size()==1) {
+		
+		Thread.sleep(3000);
+		 btnclick(m.getPayment_cod());
+		break;
+	} else {
+		
+		System.out.println("Swipe Down to click on pay Button");
+
+	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(10000);
@@ -425,7 +430,7 @@ System.out.println("M3 Order Success is working properly");
 
 
 //***************************************Order Success page M1***************************************
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -520,16 +525,21 @@ Thread.sleep(2000);
 
 		btnclick(m.getPlaceorder());
 
-		Thread.sleep(5000);
-		 driver.swipe(0, 900, 0, 0, 1000);
-		 Thread.sleep(3000);
-		 driver.swipe(0, 900, 0, 0, 1000);
-		 Thread.sleep(3000);
-		 driver.swipe(0, 900, 0, 0, 1000);
-		 Thread.sleep(3000);
-		 driver.swipe(0, 900, 0, 0, 1000);
-		 Thread.sleep(3000);
-		 btnclick(m.getPayment_cod());
+		for (int i = 0; i < 10; i++) {
+			
+			Thread.sleep(3000);
+			driver.swipe(0, 900, 0, 0, 1000);
+			
+			if (m.getPayment_cod_list().size()==1) {
+				
+				Thread.sleep(3000);
+				 btnclick(m.getPayment_cod());
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to click on Consult Now Button");
+
+			}}
 		 Thread.sleep(3000);
 		 btnclick(m.getPayment_paybutton());
 		 Thread.sleep(5000);
@@ -747,50 +757,47 @@ public void OrderSuccesspageM2() throws Throwable {
 	
 	AndriodPom m = new AndriodPom();
 	
-	driver.launchApp();
-		
-		try {
-			popupclose();
-			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			//driver.resetApp();
-			//driver.launchApp();
-		
-		}
-		
-		Thread.sleep(1000);
-		
 	try {
-		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
 		Thread.sleep(5000);
-	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
+	btnclick(m.getLetsstarted());
+	} catch (Exception e) {
+		driver.launchApp();
 	}
 	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	 
-		popupclose();
+
+	
+popupclose();
+popupclose();
+
+	Thread.sleep(10000);
+try {	
+	Thread.sleep(2000);
+	driver.hideKeyboard();
+	
+	Thread.sleep(2000);
+	btnclick(m.getMobilenumber());
+	
+	Thread.sleep(2000);
+	type(m.getMobilenumber(), "7010752043");
 	
 	
- 
+	//com.NetmedsMarketplace.Netmeds:id/btn_use_password
 	
+	Thread.sleep(2000);
+	btnclick(m.getUsepwd());
+	
+	Thread.sleep(5000);
+	Thread.sleep(2000);
+	type(m.getPassword(), "Change@92");
+	
+	Thread.sleep(2000);
+	btnclick(m.getLogin());
+	
+} catch (Exception e) {
+	// TODO: handle exception
+}
+
+
 	try {
 	Thread.sleep(10000);
 	btnclick(driver.findElement(By.xpath("//android.widget.TextView[index='0']")));
@@ -799,46 +806,13 @@ public void OrderSuccesspageM2() throws Throwable {
 	}
 
 	
-	btnclick(m.getGotocart()); 
-	for (int i = 0; i < 2; i++) {
-		Thread.sleep(3000);
-		if ((driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/cart_remove_product")).size() == 0)) {
-			
-
-			try {
-
-					
-				btnclick(m.getRemovebutton());
-				
-				
-				logger.log(Status.PASS, "Items are removed successfully");
-				System.out.println("Items are removed from the cart");
-			} catch (Exception e) {
-				System.out.println("No items in the cart ");
-			
-			}
-
-		} else {
-			break;
-
-		}
-
-	}
-	
-	//driver.findElement(By.xpath("//android.widget.TextView[@text='GO TO SEARCH']")).click();
-	Thread.sleep(3000);
-	//driver.navigate().back();
-	Thread.sleep(5000);
-	driver.navigate().back();
-	//Thread.sleep(3000);
-	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_medicine_button")).click();
 	
 	
-	Thread.sleep(3000);
-	//driver.findElement(By.xpath("//android.widget.TextView[@text='UPLOAD']")).click();
+	Thread.sleep(2000);
+	btnclick(m.getM2_OrderNow());
 	
 	
-	Thread.sleep(3000);
+	Thread.sleep(30000);
 	btnclick(driver.findElementByAccessibilityId("Gallery"));
 	
 	
@@ -851,25 +825,25 @@ public void OrderSuccesspageM2() throws Throwable {
 	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/doneButton']")));
 	*/
 	
-	Thread.sleep(5000);
+	Thread.sleep(25000);
 	//btncli(driver.findElement(By.xpath("//android.view.View[@index='0']")));
 	
-	btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[2]")));
+	btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
 	
-	Thread.sleep(3000);
+	Thread.sleep(25000);
 	btnclick(m.getM2_Upload_ContinueBtn());
 	
-	Thread.sleep(5000);
+	Thread.sleep(25000);
 	btnclick(m.getM2_SearchMedicine());
 	
-	Thread.sleep(3000);
+	Thread.sleep(25000);
 	btnclick(m.getM2_Search_CAll_ContinueBtn());
 	
 	Thread.sleep(5000);
 	btnclick(m.getM2_SearchBar());
 	
 	Thread.sleep(2000);
-	type(m.getM2_SearchBar(), "Korandil 5mg Tablet 10'S");
+	type(m.getM2_SearchBar(), MobileBaseClass.getExcelData("AndM2", 0, 0));
 	
 	Thread.sleep(5000);
 	btnclick(m.getM2_Search_AddToCart());
@@ -878,16 +852,17 @@ public void OrderSuccesspageM2() throws Throwable {
 //	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")));
 	
 
-	btnclick(m.getM2_ProceedToCart());
-	Thread.sleep(3000);
+	
+	Thread.sleep(5000);
 //	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_proceed_to_checkout']")));
 	
-	
+	Thread.sleep(5000);
 	btnclick(m.getM2_ProceedBtn());
 	
 	Thread.sleep(5000);
-//	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']")));
+//	btnclick(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']")));
 	
+	Thread.sleep(5000);
 	if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']"))).contains("AO40")) {
 		
 		System.out.println("AO40 - Promo Code Matches");
@@ -897,10 +872,10 @@ public void OrderSuccesspageM2() throws Throwable {
 		System.err.println("AO40 - Promo not Code Matches");
 
 	}
-
-
-Thread.sleep(5000);
-btnclick(m.getM2_Place_Order());
+	
+	
+	Thread.sleep(5000);
+	btnclick(m.getM2_Place_Order());
 
 Thread.sleep(3000);
 //Step 14 : Order status//

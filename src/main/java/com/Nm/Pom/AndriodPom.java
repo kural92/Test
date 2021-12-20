@@ -292,7 +292,11 @@ public class AndriodPom extends MobileBaseClass{
 			return Payment_cod_list;
 		}
 
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> 882527eaf5c4adcbeaf8aa6a62972bc069659ad9
 
 
 		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_pay']")
@@ -395,7 +399,7 @@ public class AndriodPom extends MobileBaseClass{
 		}
 		
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']" )
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']|" )
 		private WebElement m2_Search_AddToCart;
 		public WebElement getM2_Search_AddToCart() {
 			return m2_Search_AddToCart;
@@ -1112,9 +1116,7 @@ public List<WebElement> getCOD_CheckBox_Lst() {
 	return COD_CheckBox_Lst;
 }
 
-public WebElement getStartassesment() {
-	return Startassesment;
-}
+
 
 
 @FindBy(id="com.NetmedsMarketplace.Netmeds:id/proceed_btn")
@@ -2248,12 +2250,12 @@ public List<WebElement> getViewdetails_List() {
 		return Promo;
 	}
 	
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
-	private WebElement Most_Selling_products;
-	public WebElement getMost_Selling_products() {
+	@FindBy(xpath ="//android.widget.TextView[@text='ADD TO CART']")
+	private List<WebElement> Most_Selling_products;
+	public List<WebElement> getMost_Selling_products() {
 		return Most_Selling_products;
 	}
-		
+
 
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diag_image")
 	private WebElement diag_image;
@@ -2868,8 +2870,8 @@ public List<WebElement> getViewdetails_List() {
 
 
 		@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/btn_subscribe")
-		private WebElement Startassesment;
-		public WebElement getStaratassesment() {
+		private List<WebElement> Startassesment;
+		public List<WebElement> getStaratassesment() {
 			return Startassesment;
 		}
 

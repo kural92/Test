@@ -154,14 +154,25 @@ public class CovidAssesement extends MobileBaseClass {
 	}
 	
 //Step 3 : consult button //
-	Thread.sleep(3000);
-	driver.swipe(620, 1250, 620, 0, 1000);
-	Thread.sleep(3000);
-	
-	driver.swipe(620, 1250, 620, 0, 1000);
-	
-	driver.swipe(620, 1250, 620, 0, 1000);
-	btnclick(m.getConsultnow());
+	for (int i = 0; i < 10; i++) {
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 1000, 0, 0, 1000);
+		
+		if (m.getConsultation_Btn_List().size()==1) {
+			
+			Thread.sleep(3000);
+			btnclick(m.getConsultation_Btn());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}
+		
+		
+		
+	}
 		
 	logger.log(Status.PASS, "Successfully clicked consultnow button");
 	System.out.println("Successfully clicked consultnow button");
@@ -173,7 +184,33 @@ public class CovidAssesement extends MobileBaseClass {
 	
 	driver.swipe(620, 1250, 620, 0, 1000);
 	
-	btnclick(m.getStaratassesment());
+	
+	
+	for (int i = 0; i < 10; i++) {
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 1000, 0, 0, 1000);
+		
+		if (m.getStaratassesment().size()==1) {
+			
+			Thread.sleep(3000);
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_subscribe")).click();
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	logger.log(Status.PASS, "Successfully clicked start Assessment button");
 	System.out.println("Successfully clicked start Assessment button");
 	
