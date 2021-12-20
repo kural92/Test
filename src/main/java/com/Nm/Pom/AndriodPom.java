@@ -1113,9 +1113,7 @@ public List<WebElement> getCOD_CheckBox_Lst() {
 	return COD_CheckBox_Lst;
 }
 
-public WebElement getStartassesment() {
-	return Startassesment;
-}
+
 
 
 @FindBy(id="com.NetmedsMarketplace.Netmeds:id/proceed_btn")
@@ -2249,12 +2247,12 @@ public List<WebElement> getViewdetails_List() {
 		return Promo;
 	}
 	
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")
-	private WebElement Most_Selling_products;
-	public WebElement getMost_Selling_products() {
+	@FindBy(xpath ="//android.widget.TextView[@text='ADD TO CART']")
+	private List<WebElement> Most_Selling_products;
+	public List<WebElement> getMost_Selling_products() {
 		return Most_Selling_products;
 	}
-		
+
 
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diag_image")
 	private WebElement diag_image;
