@@ -286,6 +286,17 @@ public class AndriodPom extends MobileBaseClass{
 		private WebElement search_drugname;
 		@FindBy(xpath="//android.widget.TextView[@text='COD']")
 		private WebElement Payment_cod;
+		@FindBy(xpath="//android.widget.TextView[@text='COD']")
+		private List<WebElement> Payment_cod_list;
+		public List<WebElement> getPayment_cod_list() {
+			return Payment_cod_list;
+		}
+
+		public WebElement getStartassesment() {
+			return Startassesment;
+		}
+
+
 		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_pay']")
 		private WebElement Payment_paybutton;
 		public WebElement getPayment_paybutton() {
@@ -1409,6 +1420,13 @@ public List<WebElement> getViewdetails_List() {
 		private WebElement NetmedsFirstPage_header_text;
 		@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_add_to_cart'])[1]")
 		private WebElement NetmedsFirstPage_6month;
+		@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_add_to_cart'])[1]")
+		private List<WebElement> NetmedsFirstPage_6month_list;
+		public List<WebElement> getNetmedsFirstPage_6month_list() {
+			return NetmedsFirstPage_6month_list;
+		}
+
+
 		@FindBy(xpath = "(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/btn_add_to_cart'])[2]")
 		private WebElement NetmedsFirstPage_12month;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/benefits_header_text")
@@ -1429,6 +1447,13 @@ public List<WebElement> getViewdetails_List() {
 		private WebElement cart_img_circle_arrow;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cart_deliveryCharges")
 		private WebElement cart_deliveryCharges;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cart_deliveryCharges")
+		private List<WebElement> cart_deliveryCharges_list;
+		public List<WebElement> getCart_deliveryCharges_list() {
+			return cart_deliveryCharges_list;
+		}
+
+
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/account_text")
 		private WebElement Home_accountPage;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cl_elite")
@@ -1478,6 +1503,13 @@ public List<WebElement> getViewdetails_List() {
 		private WebElement Orp_disclaimer_text;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/prescriptionImage")
 		private WebElement Orp_prescriptionImage;
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/prescriptionImage")
+		private List<WebElement> Orp_prescriptionImage_List;
+		public List<WebElement> getOrp_prescriptionImage_List() {
+			return Orp_prescriptionImage_List;
+		}
+
+
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/preview_close")
 		private WebElement Orp_preview_close;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/retry")
@@ -1488,6 +1520,13 @@ public List<WebElement> getViewdetails_List() {
 		private WebElement Phonepe;
 		@FindBy(xpath = "//android.widget.TextView[@text='ADD NEW CARD']")
 		private WebElement AddnewCard;
+		@FindBy(xpath = "//android.widget.TextView[@text='ADD NEW CARD']")
+		private List<WebElement> AddnewCard_list;
+		public List<WebElement> getAddnewCard_list() {
+			return AddnewCard_list;
+		}
+
+
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cardNumber")
 		private WebElement Cart_name;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cardValidity")
@@ -2233,6 +2272,17 @@ public List<WebElement> getViewdetails_List() {
 	private WebElement snackbar_text;
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewTitleRadio")
 	private WebElement txtViewTitleRadio;
+
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewTitleRadio")
+	private List<WebElement> txtViewTitleRadio_list;
+	
+
+
+	public List<WebElement> getTxtViewTitleRadio_list() {
+		return txtViewTitleRadio_list;
+	}
+
+
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/txtViewTitlePathology")
 	private WebElement txtViewTitlePathology;
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/imgCheck")
@@ -2359,6 +2409,13 @@ public List<WebElement> getViewdetails_List() {
 	private WebElement View_All_Popular_Packages;
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/packageImage")
 	private WebElement packageImage;
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/packageImage")
+	private List<WebElement> packageImage_list;
+	public List<WebElement> getPackageImage_list() {
+		return packageImage_list;
+	}
+
+
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/viewAllTest")
 	private WebElement viewAllTest;
 	public WebElement getImgFilterCheck1() {
@@ -2484,6 +2541,13 @@ public List<WebElement> getViewdetails_List() {
 	private WebElement tvTimeSlotHint;
 	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textDesc_1")
 	private WebElement textDesc_1;
+	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/textDesc_1")
+	private List<WebElement> textDesc_1_list;
+	public List<WebElement> getTextDesc_1_list() {
+		return textDesc_1_list;
+	}
+
+
 	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/tv_desc_2")
 	private WebElement tv_desc_2;
 	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/tv_desc_3")

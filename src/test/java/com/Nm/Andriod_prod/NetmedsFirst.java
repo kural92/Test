@@ -181,19 +181,25 @@ Assert.assertEquals( m.getNetmedsFirstPage_benefits_header_text().getText(),"GET
 Assert.assertEquals(m.getNetmedsFirstPage_benefits_sub_header_text().getText(),"Netmeds First Membership");
 Assert.assertEquals(m.getNetmedsFirstPage_benefits_tip_text().getText(),"Get special discounts and offers on Netmeds services");
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkPage().getText());
-Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkType().getText());
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);	
+Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkType().getText());	
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkPage().getText());
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkType().getText());
-Thread.sleep(3000);
-driver.swipe(0, 300, 0, 1000, 1000);
-Thread.sleep(2000);
-driver.swipe(0, 300, 0, 1000, 1000);
-Thread.sleep(2000);
-driver.swipe(0, 300, 0, 1000, 1000);
-Thread.sleep(3000);
-btnclick(m.getNetmedsFirstPage_6month());
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getNetmedsFirstPage_6month_list().size()==1) {
+		
+		Thread.sleep(3000);
+		btnclick(m.getNetmedsFirstPage_6month());		break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Consult Now Button");
+
+	}}
+
+
 try {
 	Thread.sleep(2000);
 	btnclick(m.getRemoveButton());
@@ -235,22 +241,37 @@ Assert.assertEquals("Join membership to save much more! Exclusive offers designe
 btnclick(m.getCart_img_circle_arrow());
 Thread.sleep(5000);
 btnclick(m.getNetmedsFirstPage_6month());
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 500, 0, 0, 1000);
-Thread.sleep(3000);
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getCart_deliveryCharges_list().size()==1) {
+			break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Consult Now Button");
+
+	}}
+
 //driver.swipe(0, 500, 0, 0, 1000);
 String text = m.getCart_deliveryCharges().getText();
 String ss = text.substring(1);
 System.out.println(ss);
 Assert.assertEquals("0.00", ss);
-Thread.sleep(3000);
-driver.swipe(500, 500, 500, 1500, 1000);
-Thread.sleep(3000);
-driver.swipe(500, 500, 500, 1500, 1000);
-Thread.sleep(3000);
-driver.swipe(500, 500, 500, 1500, 1000);
+for (int i = 0; i < 10; i++) {
+	
+	Thread.sleep(3000);
+	driver.swipe(500, 500, 500, 1500, 1000);
+	
+	if (driver.findElements(By.xpath("//android.widget.TextView[@text='PRODUCTS']")).size()==1) {
+			break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Consult Now Button");
+
+	}}
+
 for (int i = 0; i < 16; i++) {
 	Thread.sleep(3000);
 	if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
@@ -297,13 +318,13 @@ for (int i = 0; i < 16; i++) {
 		driver.navigate().back();
 		Thread.sleep(5000);
 		driver.navigate().back();
-		Thread.sleep(5000);
+		/*	Thread.sleep(5000);
 		 driver.swipe(0, 1600, 0, 1100, 1000);
 		 Thread.sleep(5000);
 		 driver.swipe(0, 1600, 0, 1100, 1000);
 		 Thread.sleep(5000);
 		 driver.swipe(0, 1600, 0, 1100, 1000);
-		/* btnclick(m.getAcountPage_logout());
+		 btnclick(m.getAcountPage_logout());
 		 Thread.sleep(5000);
 		 btnclick(m.getLetsstarted());
 		 popupclose();

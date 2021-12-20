@@ -176,16 +176,25 @@ public class Diagnostic extends MobileBaseClass {
 	driver.hideKeyboard();
 	Thread.sleep(3000);
 	btnclick(m.getNavigate_up());
-	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
-	Thread.sleep(3000);
-	btnclick(m.getPackageImage());
+	for (int i = 0; i < 10; i++) {
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 900, 0, 0, 1000);
+		
+		if (m.getPackageImage_list().size()==1) {
+			
+			Thread.sleep(3000);
+			btnclick(m.getPackageImage());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}}
+	
+	
 	Thread.sleep(3000);
 	btnclick(m.getArrow_back());
-	/*	Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);*/
 	Thread.sleep(5000);
 	btnclick(m.getViewAllTest());
 	Thread.sleep(3000);
@@ -193,15 +202,40 @@ driver.swipe(0, 900, 0, 0, 1000);
 	Thread.sleep(3000);
 	btnclick(m.getNavigate_up());
 	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
+for (int i = 0; i < 10; i++) {
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 900, 0, 0, 1000);
+		
+		if (m.getImgFilterCheck().size()==1) {
+			
+			
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}}
+
+	
 	Thread.sleep(3000);
 	for (int i = 0; i < m.getImgFilterCheck().size(); i++) {
 		m.getImgFilterCheck().get(i).click();
 	}
-	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
-	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
+for (int i = 0; i < 10; i++) {
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 900, 0, 0, 1000);
+		
+		if (m.getTextDesc_1_list().size()==1) {
+			
+			
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}}
 	Assert.assertEquals( m.getTextDesc_1().getText(),"NABL, CAP, ISO Certified");
 	Assert.assertEquals( m.getTv_desc_2().getText(),"Up to 80% Discount");
 	Assert.assertEquals( m.getTv_desc_3().getText(),"Online Lab Report");
@@ -232,18 +266,22 @@ driver.swipe(0, 900, 0, 0, 1000);
 	}catch (Exception e) {
 		// TODO: handle exception
 	}
-	Thread.sleep(5000);
-	driver.swipe(0, 300, 0, 1000, 1000);
-	Thread.sleep(2000);
-	driver.swipe(0, 300, 0, 1000, 1000);
-	Thread.sleep(2000);
-	driver.swipe(0, 300, 0, 1000, 1000);
-	Thread.sleep(2000);
-	driver.swipe(0, 300, 0, 1000, 1000);
-	Thread.sleep(2000);
-	driver.swipe(0, 300, 0, 1000, 1000);
-	Thread.sleep(5000);
-	btnclick(m.getTxtViewTitleRadio());	
+for (int i = 0; i < 10; i++) {
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 900, 0, 0, 1000);
+		
+		if (m.getTxtViewTitleRadio_list().size()==1) {
+			
+			Thread.sleep(5000);
+			btnclick(m.getTxtViewTitleRadio());	
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on Consult Now Button");
+
+		}}
+	
 	btnclick(m.getImgCheck());
 	driver.hideKeyboard();
 	Thread.sleep(5000);
@@ -451,13 +489,23 @@ btnclick(m.getRetry());
 Thread.sleep(5000);
 btnclick(m.getSimplpay());
 Thread.sleep(5000);
-
-driver.swipe(0, 900, 0, 0, 1000);
-	//btnclick(m.getPhonepe());
-	Thread.sleep(5000);
+for (int i = 0; i < 10; i++) {
 	
-	driver.swipe(0, 400, 0, 0, 1000);
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	
+	if (m.getAddnewCard_list().size()==1) {
+		Thread.sleep(3000);
+
 		btnclick(m.getAddnewCard());
+		
+		break;
+	} else {
+		
+		System.out.println("Swipe Down to click on Consult Now Button");
+
+	}}
+		
 type(m.getCart_name(), "4111 1111 1111 1111");
 type(m.getCardValidity(), "06/25");
 type(m.getCardCvv(), "123");

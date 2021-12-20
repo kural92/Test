@@ -138,7 +138,6 @@ Float total_Wallet_amt;
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
 	
 	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
-			//retryAnalyzer=RetryAnalyzer.class)
 	public void CartPageScenario1() throws Throwable {
 		
 		logger =  report.createTest("Cart Page Scenario1 ");
@@ -276,7 +275,7 @@ Float total_Wallet_amt;
 				// Step 11: Decrease qty//
 				driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
 				Thread.sleep(3000);
-				WebElement qty_dec = 	driver.findElement(By.xpath("//android.widget.TextView[@text='13']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[6]"));
+				WebElement qty_dec = 	driver.findElement(By.xpath("//android.widget.TextView[@text='15']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[10]"));
 				qty_dec.click();
 				//Select qtydecrease = new Select(m.getQty_Incr_Decr());
 				//qtydecrease.selectByIndex(1);
@@ -292,7 +291,7 @@ Float total_Wallet_amt;
 						//Select qtyincrease = new Select(m.getQty_Incr_Decr());
 						//qtyincrease.selectByIndex(3);
 						Thread.sleep(3000);
-				WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='15']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[9]"));
+				WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='18']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[13]"));
 				Thread.sleep(3000);
 				qty_increase.click();
 						//driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])"));
@@ -305,7 +304,7 @@ Float total_Wallet_amt;
 		driver.swipe(790, 1100, 800, 70, 1000);
 		
 		int n = 1;
-		Thread.sleep(7000);
+		Thread.sleep(3000);
 	
 		
 		for (int i = 0;i<n; i++)
@@ -313,7 +312,10 @@ Float total_Wallet_amt;
 		{
 			
 			Thread.sleep(3000);
-			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
+			try {
+			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();}catch (Exception e) {
+				// TODO: handle exception
+			}
 			Thread.sleep(3000);
 			List<WebElement> radiobtn = m.getPromo();//driver.findElements(By.xpath("//input[@class='rdbtn auto_apply_coupon_popup']"));
 			Thread.sleep(3000);
@@ -368,15 +370,42 @@ Float total_Wallet_amt;
 		
 //click next/previous button to see the products in most selling page//
 		
-		driver.swipe(790, 1100, 800, 70, 1000);
+	/*	
+		List <WebElement> Most_selling = driver.findElements(By.xpath("//android.widget.TextView[@text='ADD TO CART']|//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_qty_picker']"));
+		
+for (int i = 0; i < 3; i++) {
+			
+			Thread.sleep(3000);
+			driver.swipe(0, 1000, 0, 0, 1000);
+			
+			if (Most_selling.size()!=0) {
+				
+				Thread.sleep(3000);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='ADD TO CART']|//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_qty_picker']")).click();
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to add to cart");
+
+			}
+		
+		
+		
+}
+		
+		
+		
+		
+		
+	/*driver.swipe(790, 1100, 800, 70, 1000);
 		Thread.sleep(3000);
 		new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
-		Thread.sleep(3000);
+	
 		new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
 		Thread.sleep(3000);
 		
 		logger.log(Status.PASS, "Successfully navigated to next page in similar product");
-		System.out.println("Successfully navigated to next page in similar product");
+		System.out.println("Successfully navigated to next page in similar product");*/
 		
 		driver.swipe(0, 1900, 0, 0, 1000);
 		Thread.sleep(3000);
