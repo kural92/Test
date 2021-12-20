@@ -187,7 +187,7 @@ Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkType().getText());
 for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
+	driver.swipe(0, 300, 0, 1000, 1000);
 	
 	if (m.getNetmedsFirstPage_6month_list().size()==1) {
 		
@@ -195,7 +195,7 @@ for (int i = 0; i < 10; i++) {
 		btnclick(m.getNetmedsFirstPage_6month());		break;
 	} else {
 		
-		System.out.println("Swipe Down to click on Consult Now Button");
+		System.out.println("Swipe up to click on netmeds first Button");
 
 	}}
 
