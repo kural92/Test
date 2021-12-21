@@ -360,7 +360,7 @@ System.out.println("Covid Assesment scenario is working properly");
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+			//BaseClass.mail_report();
 		}
 
 	}

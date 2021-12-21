@@ -148,7 +148,7 @@ public class CategoryPage extends MobileBaseClass {
 		System.out.println("Already logged in");
 	}
 	
-// // Remove existing items from the cart  //
+//  Remove existing items from the cart  //
 	
 	
 	

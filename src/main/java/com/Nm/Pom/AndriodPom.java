@@ -395,7 +395,7 @@ public class AndriodPom extends MobileBaseClass{
 		}
 		
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']|" )
+		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']" )
 		private WebElement m2_Search_AddToCart;
 		public WebElement getM2_Search_AddToCart() {
 			return m2_Search_AddToCart;
