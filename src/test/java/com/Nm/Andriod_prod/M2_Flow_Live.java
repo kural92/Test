@@ -34,7 +34,11 @@ public class M2_Flow_Live extends MobileBaseClass{
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
+
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
+
 			//capabilities.setCapability(MobileCapabilityType.UDID, UDID);  //fc95d519 //RZ8R20GLXTA
+
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
@@ -53,6 +57,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 			
 			try {
+				
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
 			} catch (MalformedURLException e) {
@@ -86,7 +91,7 @@ public class M2_Flow_Live extends MobileBaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void m2_getSearchMedicine() throws Throwable {
 		
 		
