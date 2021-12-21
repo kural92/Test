@@ -518,7 +518,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 			
 			Thread.sleep(3000);
 			
-			driver.swipe(0, 1000, 0, 0, 1000);
+			driver.swipe(0, 1000, 0, 0, 1000);   
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_save_update_user")).click();
 			
 			logger.log(Status.PASS, "Successfully given the EHR patient details and saved");
