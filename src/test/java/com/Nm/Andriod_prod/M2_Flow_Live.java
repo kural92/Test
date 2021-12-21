@@ -16,6 +16,7 @@ import com.Nm.Base.MobileBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
@@ -34,7 +35,9 @@ public class M2_Flow_Live extends MobileBaseClass{
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
+
 		//	capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
+
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
@@ -53,6 +56,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 			
 			try {
+				
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
 			} catch (MalformedURLException e) {
@@ -86,7 +90,7 @@ public class M2_Flow_Live extends MobileBaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void m2_getSearchMedicine() throws Throwable {
 		
 		
@@ -140,10 +144,34 @@ public class M2_Flow_Live extends MobileBaseClass{
 			// TODO: handle exception
 		}
 
+		Thread.sleep(10000);
+		btnclick(m.getGotocart()); 
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
+
+				try {
+					btnclick(m.getRemoveButton());
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			} else {
+				logger.log(Status.PASS, "Successfully Product Removed from Cart");
+				break;
+
+			}
+		}
+		
+		
+		///
+		Thread.sleep(5000);
+		driver.findElementByAccessibilityId("Navigate up").click();
+		//btnclick(m.getFooter_HomePage());
 		
 		
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		btnclick(m.getM2_OrderNow());
 		
 		
@@ -721,7 +749,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		// Address Change
 		
 		//Click on Change
-		
+	/*	
 		Thread.sleep(5000);
 		btnclick(m.getM2_ChangeAddress());
 		
@@ -832,7 +860,7 @@ if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']
 		////////////////////////////////
 		Thread.sleep(3000);
 		btnclick(m.getM2_DeleteAddress());
-		
+	*/	
 		//Back to Place Order page
 		Thread.sleep(3000);
 		btnclick(m.getM2_BackToCart());
