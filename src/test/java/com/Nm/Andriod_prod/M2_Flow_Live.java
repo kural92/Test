@@ -34,7 +34,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");  //fc95d519 //RZ8R20GLXTA
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
