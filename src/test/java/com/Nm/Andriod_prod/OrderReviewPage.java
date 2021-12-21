@@ -46,7 +46,7 @@ public class OrderReviewPage extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
+			//capabilities.setCapability(MobileCapabilityType.UDID,UDID);  //fc95d519 //RZ8R20GLXTA
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );

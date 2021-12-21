@@ -59,7 +59,7 @@ public class MobileBaseClass {
 	public static ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
-
+		public static  String UDID="NBBY79GM5LTCJBJR";
 
 		public static  String production_homeurl="https://www.netmeds.com/";
 

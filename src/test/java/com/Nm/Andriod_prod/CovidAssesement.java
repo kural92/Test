@@ -51,7 +51,11 @@ public class CovidAssesement extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
+<<<<<<< HEAD
 			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //RZ8R20GLXTA
+=======
+			//capabilities.setCapability(MobileCapabilityType.UDID, UDID);//"c195de14"
+>>>>>>> 1b230ea19110eb6b40d863b1ee8e8917f791eae1
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
