@@ -45,9 +45,8 @@ public class DignosticRadiology extends MobileBaseClass {
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");  //fc95d519 //RZ8R20GLXTA
+			capabilities.setCapability(MobileCapabilityType.UDID, UDID);  //fc95d519 //RZ8R20GLXTA
 
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");

@@ -49,7 +49,7 @@ public class CategoryPage extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14" //07c55fe10406
+			capabilities.setCapability(MobileCapabilityType.UDID, UDID);//"c195de14" //07c55fe10406
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );

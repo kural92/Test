@@ -71,7 +71,7 @@ Float total_Wallet_amt;
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14" //07c55fe10406
+			capabilities.setCapability(MobileCapabilityType.UDID, UDID);//"c195de14" //07c55fe10406
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -137,7 +137,7 @@ Float total_Wallet_amt;
 
 	//******************************Test case 1: Verify Cart page when the Total amount is more than 500 and promo code is applied
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true)
 	public void CartPageScenario1() throws Throwable {
 		
 		logger =  report.createTest("Cart Page Scenario1 ");
