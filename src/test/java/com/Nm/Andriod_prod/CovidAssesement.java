@@ -51,11 +51,11 @@ public class CovidAssesement extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-<<<<<<< HEAD
+
 			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //RZ8R20GLXTA
-=======
+
 			//capabilities.setCapability(MobileCapabilityType.UDID, UDID);//"c195de14"
->>>>>>> 1b230ea19110eb6b40d863b1ee8e8917f791eae1
+
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -67,12 +67,12 @@ public class CovidAssesement extends MobileBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-			
+	
 					
-			capabilities.setCapability("autoDismissAlerts", true);  
+			//capabilities.setCapability("autoDismissAlerts", true);  
 			
 			try {
-				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4724/wd/hub"), capabilities);
 				
 			} catch (MalformedURLException e) {
 				System.out.println(e.getMessage());
