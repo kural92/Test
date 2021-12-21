@@ -36,7 +36,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			//capabilities.setCapability(MobileCapabilityType.UDID, UDID); //RZ8R20GLXTA //GBT4C19326001968
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability("platformVersion","10.0.0" );
+	//		capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
 			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
 			//for install Apk file
@@ -108,12 +108,12 @@ public class COD_Logic_Android extends MobileBaseClass {
 			popupclose();
 			popupclose();
 			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("7010752043");
+			m.getMobilenumber().sendKeys("");
 			Thread.sleep(3000);
 			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
 		
-			m.getPassword().sendKeys("Change@92");
+			m.getPassword().sendKeys("");
 			
 			btnclick(m.getLogin());
 			Thread.sleep(2000);
@@ -146,7 +146,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 		//btnclick(m.getFooter_HomePage());
 		
 		Thread.sleep(3000);
-		String aa = "Gemer 2mg,Ajmal Amber Wood,salbetol";
+		String aa = "Rxtor 10mg ,Ajmal Amber Wood"; //,salbetol
 		String [] spl = aa.split(",");
 		System.out.println(spl.length);
 		
@@ -232,6 +232,12 @@ public class COD_Logic_Android extends MobileBaseClass {
 			driver.findElementByAccessibilityId("Navigate up").click();
 			
 			Thread.sleep(3000);
+			try {
+			driver.findElementByAccessibilityId("Navigate up").click();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(10000);
 			btnclick(m.getFooter_HomePage());
 			
 			Thread.sleep(5000);
@@ -264,7 +270,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			for (int j = 0; j < 7; j++) {
 				
 				Thread.sleep(3000);
-				driver.swipe(0, 500, 0, 0, 1000);
+				driver.swipe(0, 600, 0, 0, 1000);
 				Thread.sleep(1000);
 				if (m.getCOD_CheckBox_Lst().size()==1) {
 					Thread.sleep(3000);

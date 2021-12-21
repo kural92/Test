@@ -72,7 +72,11 @@ Float total_Wallet_amt;
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
+
+			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //07c55fe10406//RZ8R20GLXTA
+
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //07c55fe10406//RZ8R20GLXTA
+
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, UDID);//"c195de14" //07c55fe10406
 
@@ -305,7 +309,7 @@ Float total_Wallet_amt;
 						System.out.println(" quantity increased Successfully");
 
 		
-		driver.swipe(790, 1100, 800, 70, 1000);
+		driver.swipe(0, 1100, 0, 0, 1000);
 		
 		int n = 1;
 		Thread.sleep(3000);
@@ -750,7 +754,7 @@ logger.log(Status.PASS, "Items are added successfully");
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 			System.out.println("Successfully navigated to cart page");
 			Thread.sleep(3000);
-			driver.swipe(0, 1100, 800, 0, 1000);
+			driver.swipe(0, 1100, 0, 0, 1000);
 
 
 	//Delivery Charge//
@@ -1107,7 +1111,7 @@ logger.log(Status.PASS, "Items are added successfully");
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 			System.out.println("Successfully navigated to cart page");
 
-			driver.swipe(790, 1100, 800, 70, 1000);
+			driver.swipe(0, 1100, 0, 0, 1000);
 
 
 	//Delivery Charge//
@@ -1465,7 +1469,7 @@ logger.log(Status.PASS, "Items are added successfully");
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 			System.out.println("Successfully navigated to cart page");
 
-			driver.swipe(790, 1100, 800, 70, 1000);
+			driver.swipe(0, 1100, 0, 0, 1000);
 
 			
 			
