@@ -658,7 +658,7 @@ public class Youraccount extends MobileBaseClass {
 
 // Step 4 : Navigate to Refer and earn
 
-		driver.swipe(790, 1100, 800, 70, 1000);
+		driver.swipe(0, 1100, 0, 0, 1000);
 		
 		Thread.sleep(3000);
 

@@ -745,8 +745,8 @@ logger.log(Status.PASS, "Items are added successfully");
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 			System.out.println("Successfully navigated to cart page");
-
-			driver.swipe(790, 1100, 800, 70, 1000);
+			Thread.sleep(3000);
+			driver.swipe(0, 1100, 800, 0, 1000);
 
 
 	//Delivery Charge//

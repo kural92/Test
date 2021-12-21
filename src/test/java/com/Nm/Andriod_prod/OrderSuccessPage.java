@@ -756,7 +756,7 @@ public void OrderSuccesspageM2() throws Throwable {
 	
 	
 	AndriodPom m = new AndriodPom();
-	
+
 	try {
 		Thread.sleep(5000);
 	btnclick(m.getLetsstarted());
@@ -825,18 +825,18 @@ try {
 	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/doneButton']")));
 	*/
 	
-	Thread.sleep(25000);
-	//btncli(driver.findElement(By.xpath("//android.view.View[@index='0']")));
+	Thread.sleep(10000);
+ //btncli(driver.findElement(By.xpath("//android.view.View[@index='0']"))); com.google.android.documentsui:id/icon_thumb
 	
-	btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")));
+	btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']")));
 	
-	Thread.sleep(25000);
+	Thread.sleep(10000);
 	btnclick(m.getM2_Upload_ContinueBtn());
 	
-	Thread.sleep(25000);
+	Thread.sleep(30000);
 	btnclick(m.getM2_SearchMedicine());
 	
-	Thread.sleep(25000);
+	Thread.sleep(5000);
 	btnclick(m.getM2_Search_CAll_ContinueBtn());
 	
 	Thread.sleep(5000);
@@ -846,7 +846,19 @@ try {
 	type(m.getM2_SearchBar(), MobileBaseClass.getExcelData("AndM2", 0, 0));
 	
 	Thread.sleep(5000);
-	btnclick(m.getM2_Search_AddToCart());
+	
+	try {
+		btnclick(m.getM2_Search_AddToCart());
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
+	try {
+		driver.findElement(By.xpath("//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/increment']")).click();
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
 	
 	Thread.sleep(5000);
 //	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")));
@@ -872,10 +884,6 @@ try {
 		System.err.println("AO40 - Promo not Code Matches");
 
 	}
-	
-	
-	Thread.sleep(5000);
-	btnclick(m.getM2_Place_Order());
 
 Thread.sleep(3000);
 //Step 14 : Order status//
