@@ -292,10 +292,7 @@ public class AndriodPom extends MobileBaseClass{
 			return Payment_cod_list;
 		}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 417f11711e8b92a014dbf6a12bb988e9ac0cc5ed
 
 
 		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_pay']")

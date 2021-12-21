@@ -53,6 +53,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 			
 			
 			try {
+				
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
 			} catch (MalformedURLException e) {
