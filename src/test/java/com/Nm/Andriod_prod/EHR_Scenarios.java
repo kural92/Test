@@ -190,9 +190,13 @@ public class EHR_Scenarios extends MobileBaseClass {
 		driver.findElement(By.xpath("(//android.widget.TextView[@text='Our Speciality']/parent::android.widget.LinearLayout/child::android.widget.TextView)[2]")).click();
 		
 		Thread.sleep(5000);
-		
+		try {
 		driver.swipe(550, 519, 220, 0, 1000);
+		}catch (Exception e) {
+			// TODO: handle exception
 		
+		driver.swipe(0, 500, 0, 0, 1000);
+	}
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Dentist']")).click();
 		
 		Thread.sleep(3000);

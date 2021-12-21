@@ -98,7 +98,7 @@ public class OrderSuccessPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 -Order success page	*********************************************************
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void OrderSuccessPageM3() throws Throwable {
 		
 		logger =  report.createTest("Order Success Page ");
@@ -430,7 +430,7 @@ System.out.println("M3 Order Success is working properly");
 
 
 //***************************************Order Success page M1***************************************
-	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM1() throws Throwable {
 	
 	logger =  report.createTest("Order Success page M1");
@@ -632,7 +632,7 @@ try {
 		System.out.println(m.getInvite_friends().getText());
 
 		
-Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
+		Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 
 
 		//System.out.println(m.getOffer_code().getText());
@@ -751,12 +751,13 @@ Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 					
 //***********************************Order Success Page M2*****************************************************************
 
-@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+@Test(enabled = true)
+//retryAnalyzer=RetryAnalyzer.class)
 public void OrderSuccesspageM2() throws Throwable {
 	
 	
 	AndriodPom m = new AndriodPom();
-
+	
 	try {
 		Thread.sleep(5000);
 	btnclick(m.getLetsstarted());
@@ -828,15 +829,15 @@ try {
 	Thread.sleep(10000);
  //btncli(driver.findElement(By.xpath("//android.view.View[@index='0']"))); com.google.android.documentsui:id/icon_thumb
 	
-	btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']")));
+	driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
 	
-	Thread.sleep(10000);
+	Thread.sleep(4000);
 	btnclick(m.getM2_Upload_ContinueBtn());
 	
-	Thread.sleep(30000);
+	Thread.sleep(3000);
 	btnclick(m.getM2_SearchMedicine());
 	
-	Thread.sleep(5000);
+	Thread.sleep(25000);
 	btnclick(m.getM2_Search_CAll_ContinueBtn());
 	
 	Thread.sleep(5000);
@@ -846,19 +847,7 @@ try {
 	type(m.getM2_SearchBar(), MobileBaseClass.getExcelData("AndM2", 0, 0));
 	
 	Thread.sleep(5000);
-	
-	try {
-		btnclick(m.getM2_Search_AddToCart());
-	} catch (Exception e) {
-		// TODO: handle exception
-	}
-	
-	try {
-		driver.findElement(By.xpath("//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/increment']")).click();
-	} catch (Exception e) {
-		// TODO: handle exception
-	}
-	
+	btnclick(m.getM2_Search_AddToCart());
 	
 	Thread.sleep(5000);
 //	btncli(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")));
@@ -871,20 +860,12 @@ try {
 	Thread.sleep(5000);
 	btnclick(m.getM2_ProceedBtn());
 	
-	Thread.sleep(5000);
 //	btnclick(driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn']")));
 	
+	
+	
 	Thread.sleep(5000);
-	if (gettext(driver.findElement(By.xpath("//android.widget.TextView[@text='AO40']"))).contains("AO40")) {
-		
-		System.out.println("AO40 - Promo Code Matches");
-		
-	} else {
-		
-		System.err.println("AO40 - Promo not Code Matches");
-
-	}
-
+	btnclick(m.getM2_Place_Order());
 Thread.sleep(3000);
 //Step 14 : Order status//
 

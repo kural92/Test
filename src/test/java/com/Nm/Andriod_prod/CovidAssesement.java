@@ -106,7 +106,8 @@ public class CovidAssesement extends MobileBaseClass {
 
 	
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true)
+			//retryAnalyzer=RetryAnalyzer.class)
 	public void CovidAssesment() throws Throwable {
 
 		logger = report.createTest("Covid Assesment");
@@ -180,11 +181,6 @@ public class CovidAssesement extends MobileBaseClass {
 
 	Thread.sleep(6000);
 	
-	driver.swipe(620, 1250, 620, 0, 1000);
-	
-	driver.swipe(620, 1250, 620, 0, 1000);
-	
-	
 	
 	for (int i = 0; i < 10; i++) {
 		
@@ -242,7 +238,7 @@ public class CovidAssesement extends MobileBaseClass {
 	
 	Thread.sleep(3000);
 	
-	driver.swipe(620, 1400, 620, 0, 1000);
+	
 	
 	
 	System.out.println(m.getOther_symptoms_text().getText());
@@ -251,16 +247,32 @@ public class CovidAssesement extends MobileBaseClass {
 	
 	Thread.sleep(3000);
 	
+	try {
+		driver.swipe(620, 1900, 620, 0, 1000);
+	} catch (Exception e) {
+		driver.swipe(0, 500, 0, 0, 1000);
+	}
+	
+
+	
+	
+	Thread.sleep(3000);
 	btnclick(m.getConfirm());
-	
-	
+
 	Thread.sleep(3000);
 	
-	driver.swipe(0, 500, 0, 0, 1000);
+
 	
-	Thread.sleep(3000);
 	Thread.sleep(3000);
 	System.out.println(m.getTravelorcovid_contact_text().getText());
+	
+	Thread.sleep(5000);
+	
+	try {
+		driver.swipe(620, 1900, 620, 0, 1000);
+	} catch (Exception e) {
+		driver.swipe(0, 500, 0, 0, 1000);
+	}
 	
 	Thread.sleep(3000);
 	btnclick(m.getTravelorcovid_contact());
@@ -270,7 +282,12 @@ public class CovidAssesement extends MobileBaseClass {
 	
 	System.out.println(m.getSymptoms_progress_text().getText());
 	
-	driver.swipe(620, 1900, 620, 0, 1000);
+	Thread.sleep(3000);
+	try {
+		driver.swipe(620, 1900, 620, 0, 1000);
+	} catch (Exception e) {
+		driver.swipe(0, 500, 0, 0, 1000);
+	}
 	
 	btnclick(m.getSymptoms_progress_option1());
 	
@@ -298,7 +315,7 @@ try	{
 	logger.log(Status.PASS, "Successfully given the recommendation based on the risk factor");
 	System.out.println("Successfully given the recommendation based on the risk factor");
 	
-	driver.swipe(620, 1200, 620, 0, 1000);
+	driver.swipe(0, 1200, 0, 0, 1000);
 	
 	Thread.sleep(3000);
 	

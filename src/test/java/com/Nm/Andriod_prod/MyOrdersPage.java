@@ -212,7 +212,7 @@ static String totalamt;
 
 
 			btnclick(m.getCancel_reason());
-			driver.swipe(790, 1100, 800, 70, 1000);
+			driver.swipe(0, 1000, 0, 0, 1000);
 
 			Thread.sleep(2000);
 			
@@ -269,7 +269,7 @@ static String totalamt;
 			
 			//System.out.println("Delivery Address is   " + Address_details.getText());
 				
-				driver.swipe(720, 950, 600, 70, 1000);
+				driver.swipe(0, 1000, 0, 0, 1000);
 				
 			List<WebElement> Druglist = driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/tv_drug_name']"));
 			
@@ -312,7 +312,7 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 			}
 	
 			
-			driver.swipe(860, 1300, 900, 60, 1000);
+			driver.swipe(0, 1200, 0, 0, 1000);
 			//Assert.assertTrue(gettext(m.getDelivery_address_text()).contains("DELIVERY ADDRESS"));
 			
 		//system.out.println(m.getDelivery_address_text().getText());
@@ -412,7 +412,7 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 						 }
 				 
 				 
-				 driver.swipe(790, 600, 800, 1200, 1000);
+				 driver.swipe(0, 500, 0, 1200, 1000);
 //show status details//
 				try {
 					Thread.sleep(3000);
@@ -464,7 +464,7 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 				
 	//Sub Total//
 				 
-				driver.swipe(790, 1600, 800, 500, 1000);
+				driver.swipe(0, 1600, 0, 500, 1000);
 				
 				String total = driver.findElement(By.xpath("//android.widget.TextView[@text='Sub Total']/parent::android.widget.LinearLayout/parent::android.widget.TableRow/child::android.widget.TextView")).getText();
 				
