@@ -86,7 +86,7 @@ public class M2_Flow_Live extends MobileBaseClass{
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void m2_getSearchMedicine() throws Throwable {
 		
 		
