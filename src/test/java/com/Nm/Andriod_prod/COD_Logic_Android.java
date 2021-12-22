@@ -181,6 +181,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 		}
 		
 		Thread.sleep(10000);
+		
 		btnclick(m.getPDP_Cart_btn());
 		
 		
@@ -297,7 +298,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			Thread.sleep(3000);
 			btnclick(m.getCOD_CheckBox());
 			*/
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			btnclick(m.getCOD_PayBtn());
 			
 			Thread.sleep(10000);
