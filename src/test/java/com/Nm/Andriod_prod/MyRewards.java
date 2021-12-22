@@ -171,6 +171,7 @@ public class MyRewards extends MobileBaseClass {
 		Thread.sleep(10000);
 		
 		driver.findElement(By.xpath("//android.widget.FrameLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/card_view_reward']")).click();
+		try {
 		Thread.sleep(7000);
 		driver.swipe(345, 1029, 900, 1105, 1000);
 
@@ -183,7 +184,20 @@ public class MyRewards extends MobileBaseClass {
 		Thread.sleep(7000);
 
 		driver.swipe(400, 1260, 700, 1460, 1000);
+		} catch (Exception e) {
+			Thread.sleep(7000);
+			driver.swipe(200, 700, 260, 800, 1000);
 
+
+			Thread.sleep(7000);
+
+			driver.swipe(230, 750, 2600, 850, 1000);
+			//System.out.println(congrats.getText());
+
+			Thread.sleep(7000);
+
+			driver.swipe(270, 900, 300, 950, 1000);
+		}
 		//driver.navigate().back();
 		
 		Thread.sleep(5000);

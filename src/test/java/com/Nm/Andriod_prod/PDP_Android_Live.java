@@ -145,7 +145,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 		
 		
 		int a = MobileBaseClass.getRowCount("AndPDP");
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 1; i++) {
 			
 		
 		Thread.sleep(5000);
