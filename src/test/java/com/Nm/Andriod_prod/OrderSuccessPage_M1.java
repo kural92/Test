@@ -110,7 +110,7 @@ public void OrderSuccesspageM1() throws Throwable {
 	
 	AndriodPom m = new AndriodPom();
 	
-	driver.launchApp();
+	//driver.launchApp();
 		
 		/*try {
 			popupclose();
@@ -193,7 +193,7 @@ Thread.sleep(2000);
 		btnclick(m.getGotocart()); 
 		Thread.sleep(2000);
 		btnclick(m.getProceed_btn());
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		btnclick(m.getPlaceorder());
 
@@ -288,9 +288,11 @@ try {
 		Thread.sleep(3000);
 
 		Thread.sleep(3000);
-
+try {
 		driver.swipe(790, 1100, 800, 70, 1000);
-		
+} catch (Exception e) {
+	driver.swipe(0, 1100, 0, 0, 1000);
+}
 		Assert.assertEquals(gettext(m.getGrab_text()),"GRAB YOUR");
 
 		System.out.println(m.getGrab_text().getText());
@@ -304,7 +306,8 @@ try {
 		System.out.println(m.getInvite_friends().getText());
 
 		
-		//Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
+	//	Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
+
 
 
 		//System.out.println(m.getOffer_code().getText());
@@ -378,7 +381,7 @@ try {
 	
 		Thread.sleep(5000);
 		try {
-	//	driver.swipe(770, 1300, 770, 2100, 1000);
+		driver.swipe(770, 1300, 770, 2100, 1000);
 		}catch (Exception e) {
 			driver.swipe(0, 0, 0, 1000, 1000);
 		}

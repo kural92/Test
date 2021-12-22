@@ -130,21 +130,29 @@ driver.resetApp();		}
 				String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
 		btnclick(m.getGotocart()); 
-		for (int i = 0; i < 16; i++) {
+		for (int i = 0; i < 25; i++) {
 			Thread.sleep(3000);
-			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/cart_no_result']")).size() == 0)) {
+			if (!(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/cart_remove_product")).size() == 0)) {
+				
 
-				try {
-					btnclick(m.getRemoveButton());
+				try { 
+
+						
+					btnclick(m.getRemovebutton());
+					
+					
+					logger.log(Status.PASS, "Items are removed successfully");
+					System.out.println("Items are removed from the cart");
 				} catch (Exception e) {
-					// TODO: handle exception
+					System.out.println("No items in the cart ");
+				
 				}
 
 			} else {
-				logger.log(Status.PASS, "Successfully Product Removed from Cart");
 				break;
 
 			}
+
 		}
 		Thread.sleep(2000);
 		driver.navigate().back();
@@ -155,7 +163,7 @@ driver.resetApp();		}
 
 				try {
 					Thread.sleep(3000);
-					 driver.swipe(0, 900, 0, 0, 1000);			
+					 driver.swipe(0, 700, 0, 0, 1000);			
 					 } catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -263,8 +271,12 @@ Assert.assertEquals("0.00", ss);
 for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
+	try {
 	driver.swipe(500, 500, 500, 1500, 1000);
-	
+	} catch (Exception e) {
+		driver.swipe(0, 1000, 0, 0, 1000);
+	}
+	Thread.sleep(3000);
 	if (driver.findElements(By.xpath("//android.widget.TextView[@text='PRODUCTS']")).size()==1) {
 			break;
 	} else {

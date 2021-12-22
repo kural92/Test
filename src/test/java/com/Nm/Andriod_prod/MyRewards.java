@@ -168,7 +168,7 @@ public class MyRewards extends MobileBaseClass {
 		Thread.sleep(7000);
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_rewards")).click();
 		
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		
 		driver.findElement(By.xpath("//android.widget.FrameLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/card_view_reward']")).click();
 		Thread.sleep(7000);

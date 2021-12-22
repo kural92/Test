@@ -213,7 +213,7 @@ public class PreviousConsultation extends MobileBaseClass {
 	
 	logger.log(Status.PASS, "Successfully navigated to Go chat button");
 	System.out.println("Successfully navigated to Go chat button");
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	
 	driver.navigate().back();
 	

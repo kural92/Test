@@ -309,7 +309,7 @@ for (int i = 0; i < 10; i++) {
 	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
-Thread.sleep(3000);
+Thread.sleep(10000);
 
 
 //my orders
@@ -345,7 +345,11 @@ Thread.sleep(2000);
 //Submit and cancel
 
 Thread.sleep(2000);
+try {
 driver.swipe(790, 1100, 800, 70, 1000);
+}catch (Exception e) {
+	driver.swipe(0, 500, 0, 0, 1000);
+}
 Thread.sleep(2000);
 
 

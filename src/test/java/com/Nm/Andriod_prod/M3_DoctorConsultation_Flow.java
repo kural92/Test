@@ -194,7 +194,7 @@ public class M3_DoctorConsultation_Flow extends MobileBaseClass {
 		
 		//Proceed
 		btnclick(m.getProceed_btn());
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	
 	//Select doctor consultation
 		btnclick(m.getDoctor_consultation());
@@ -323,7 +323,7 @@ System.out.println("Address was added successfully");
 
 //place order
 
-Thread.sleep(4000);
+Thread.sleep(5000);
 btnclick(m.getPlaceorder());
 
 Thread.sleep(3000);

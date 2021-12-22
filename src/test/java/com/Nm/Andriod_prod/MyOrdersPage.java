@@ -463,9 +463,12 @@ List  <WebElement> Drugqty = driver.findElements(By.id("com.NetmedsMarketplace.N
 			
 				
 	//Sub Total//
-				 
+				 try {
 				driver.swipe(0, 1600, 0, 500, 1000);
-				
+				 } catch (Exception e) {
+					 driver.swipe(0, 1100, 0, 0, 1000);
+				}
+				 Thread.sleep(3000);
 				String total = driver.findElement(By.xpath("//android.widget.TextView[@text='Sub Total']/parent::android.widget.LinearLayout/parent::android.widget.TableRow/child::android.widget.TextView")).getText();
 				
 				logger.log(Status.PASS, "total is "+total);

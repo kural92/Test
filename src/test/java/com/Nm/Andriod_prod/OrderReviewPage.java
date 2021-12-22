@@ -171,7 +171,7 @@ public class OrderReviewPage extends MobileBaseClass {
 			Thread.sleep(2000);
 			btnclick(m.getProceed_btn());
 			SoftAssert Assert=new SoftAssert();
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 			//Assert.assertEquals( m.getOrP_product_title().getText(),"PRODUCTS");
 			Assert.assertEquals( m.getOrP_Delivery_Estimate().getText(),"Delivery Estimate");
 			Assert.assertNotNull(m.getOrP_txt_estimate_date().getText());

@@ -73,8 +73,7 @@ Float total_Wallet_amt;
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //07c55fe10406//RZ8R20GLXTA
-
+		
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //07c55fe10406//RZ8R20GLXTA
 
 
