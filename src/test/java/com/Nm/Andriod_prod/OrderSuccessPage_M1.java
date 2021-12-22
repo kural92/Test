@@ -193,7 +193,7 @@ Thread.sleep(2000);
 		btnclick(m.getGotocart()); 
 		Thread.sleep(2000);
 		btnclick(m.getProceed_btn());
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		btnclick(m.getPlaceorder());
 

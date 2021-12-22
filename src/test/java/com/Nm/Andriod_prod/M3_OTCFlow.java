@@ -309,7 +309,7 @@ for (int i = 0; i < 10; i++) {
 	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
-Thread.sleep(3000);
+Thread.sleep(10000);
 
 
 //my orders
