@@ -182,19 +182,19 @@ public class DiagnosticPathology extends MobileBaseClass {
 	btnclick(m.getArrow_back());
 	Thread.sleep(5000);
 	for (int i = 0; i < 10; i++) {
-<<<<<<< HEAD
+
 		
 		Thread.sleep(3000);
 		driver.swipe(0, 500, 0, 0, 1000);
 		
 		if (m.getPackageImage_list().size()==1) {
-=======
+
 	
 	Thread.sleep(3000);
 	driver.swipe(0, 900, 0, 0, 1000);
 	try {
 		if (m.getViewAllTest().isDisplayed()) {
->>>>>>> 57d09d0daefc5bdd8f2c0ae1eeaa7443cd5d8623
+
 			
 			Thread.sleep(3000);
 			//btnclick(m.getPackageImage());
@@ -595,7 +595,7 @@ Thread.sleep(5000);
 }
 	
 	
-	
+	}
 	
 	
 	}
