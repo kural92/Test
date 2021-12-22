@@ -40,7 +40,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class CovidAssesement extends MobileBaseClass {
+public class Youraccount_DeliverAddressSection extends MobileBaseClass {
 
 	
 	
@@ -51,15 +51,7 @@ public class CovidAssesement extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-
-
-		//	capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //RZ8R20GLXTA
-
-			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA");//"c195de14" //RZ8R20GLXTA
-
-
 			//capabilities.setCapability(MobileCapabilityType.UDID, UDID);//"c195de14"
-
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 			//capabilities.setCapability("platformVersion","10.0.0" );
@@ -71,9 +63,9 @@ public class CovidAssesement extends MobileBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-	
+			
 					
-			//capabilities.setCapability("autoDismissAlerts", true);  
+			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -107,24 +99,36 @@ public class CovidAssesement extends MobileBaseClass {
    	
    }
 	
+	/* Under your account page
+	 	Test Case 1 : Verify the functionalities of Delivery address Page (Add, Edit, Select and Delete Address).
+	  	Test Case 2 : Verify the functionalities under my wallet page (Assertion of all the texts,NMS Cash, NMS super Cash And how to use it).
+	  	Test Case 3 : Verify the functionalities of Edit profile Page.
+	  	Test Case 4	: Verify the functionalities of Contact us  Page.(Assertion of all the texts).
+	  	Test Case 5 : Verify the functionalities of My Prescription Page.(Assertion of all the texts).
+	  	Test Case 6 : Verify the functionalities of refer and earn.(Assertion of all the texts).
+	  	Test Case 7 :Verify the functionalities of Help Page.
+	  	Test Case 8 :Verify the functionalities of Rate us page.
+	  	Test Case 9 :Verify the functionalities of Legal Information Page.
+	  :
+	 */
+	
+	
 
+//*****************************************************Your Accountpage*************************
 
-//*****************************************************Covid Assesment*************************
-
-
+//Menu : Delivery Address//
 	
 	
 	@Test(enabled = true)
-			//retryAnalyzer=RetryAnalyzer.class)
-	public void CovidAssesment() throws Throwable {
+	public void DeliverAddressSection() throws Throwable {
 
-		logger = report.createTest("Covid Assesment");
-		logger.log(Status.PASS, "*************Covid Assesment********************");
+		logger = report.createTest("DeliverAddressSection");
+		logger.log(Status.PASS, "*************DeliverAddressSection********************");
 
 	
 	AndriodPom m = new AndriodPom();
 		
-		driver.launchApp();
+	driver.launchApp();
 		
 		try {
 			popupclose();
@@ -133,13 +137,14 @@ public class CovidAssesement extends MobileBaseClass {
 		btnclick(m.getLetsstarted());
 		} catch (Exception e) {
 			//driver.resetApp();
+			//driver.launchApp();
 		
 		}
 		
 		Thread.sleep(1000);
 		
 	try {
-
+		
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
 		popupclose();
@@ -161,191 +166,94 @@ public class CovidAssesement extends MobileBaseClass {
 	catch(Exception e) {
 		System.out.println("Already logged in");
 	}
+	 
+		popupclose();
 	
-//Step 3 : consult button //
-	for (int i = 0; i < 10; i++) {
-		
+	
+//Step 3 : Navigate to user profile//
+
+		btnclick(m.getUserprofile());
 		Thread.sleep(3000);
-		driver.swipe(0, 1000, 0, 0, 1000);
-		
-		if (m.getConsultation_Btn_List().size()==1) {
-			
-			Thread.sleep(3000);
-			btnclick(m.getConsultation_Btn());
-			break;
-		} else {
-			
-			System.out.println("Swipe Down to click on Consult Now Button");
+		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		System.out.println("Successfully navigate to userprofile");
 
-		}
-		
-		
-		
-	}
-		
-	logger.log(Status.PASS, "Successfully clicked consultnow button");
-	System.out.println("Successfully clicked consultnow button");
-//Step 4 : click covid assement button //
+//Step 4 : Navigate to Delivery Address//
 
-	Thread.sleep(6000);
-	
-	
-	for (int i = 0; i < 10; i++) {
-		
+		btnclick(m.getDeliveryaddress());
 		Thread.sleep(3000);
-		driver.swipe(0, 1000, 0, 0, 1000);
-		
-		if (m.getStaratassesment().size()==1) {
-			
-			Thread.sleep(3000);
-			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_subscribe")).click();
-			break;
-		} else {
-			
-			System.out.println("Swipe Down to click on Consult Now Button");
+		logger.log(Status.PASS, "Successfully navigate to Delivery Address");
+		System.out.println("Successfully navigate to Delivery Address");
 
-		}
-		
-		
-		
-	}
-	
-	
-	
-	
-	
-	
-	logger.log(Status.PASS, "Successfully clicked start Assessment button");
-	System.out.println("Successfully clicked start Assessment button");
-	
+//Step 5: Select Address//
 
-//Step 5: Risk Assesment//
-
-	Thread.sleep(5000);
-	
-	System.out.println(m.getHowoldareyou_text().getText());
-	
-	type(m.getAddage(), "19");
-	
-	Thread.sleep(3000);
-	
-	
-	btnclick(m.getAge_done());
-	
-	Thread.sleep(3000);
-	System.out.println(m.getGender_text().getText());
-	Thread.sleep(3000);
-	btnclick(m.getGender_selection_covid());
-	
-	Thread.sleep(3000);
-	
-	
-	System.out.println(m.getBody_temp_text().getText());
-	
-	btnclick(m.getBody_temp_mild());
-	
-	Thread.sleep(3000);
-	
-	
-	
-	
-	System.out.println(m.getOther_symptoms_text().getText());
-	
-	btnclick(m.getOther_symptoms_sneezing());
-	
-	Thread.sleep(3000);
-	
-	try {
-		driver.swipe(620, 1900, 620, 0, 1000);
-	} catch (Exception e) {
-		driver.swipe(0, 600, 0, 0, 1000);
-	}
-	
-
-	
-	
-	Thread.sleep(3000);
-	btnclick(m.getConfirm());
-
-	Thread.sleep(3000);
-	
-
-	
-	Thread.sleep(3000);
-	System.out.println(m.getTravelorcovid_contact_text().getText());
-	
-	Thread.sleep(5000);
-	
-	try {
-		driver.swipe(620, 1900, 620, 0, 1000);
-	} catch (Exception e) {
-		driver.swipe(0, 600, 0, 0, 1000);
-	}
-	
-	Thread.sleep(3000);
-	btnclick(m.getTravelorcovid_contact());
-	
-
-	Thread.sleep(3000);
-	
-	System.out.println(m.getSymptoms_progress_text().getText());
-	
-	Thread.sleep(3000);
-	try {
-		driver.swipe(620, 1900, 620, 0, 1000);
-	} catch (Exception e) {
-		driver.swipe(0, 600, 0, 0, 1000);
-	}
-	
-	btnclick(m.getSymptoms_progress_option1());
-	
-
-	
-	Thread.sleep(10000);
-	
-	logger.log(Status.PASS, "Successfully given the assessment details");
-	System.out.println("Successfully given the assessment details");
-	
-	
-try	{
-//Symtom checker covid -19
-	
-	System.out.println(driver.findElement(By.xpath("//android.widget.TextView[@text='RISK OF COVID-19*:']")).getText());
-	
-	
-		
-	System.out.println("Risk level is "+ driver.findElement(By.xpath("//android.widget.TextView[@text='Low risk']")).getText());
-	
-	System.out.println(driver.findElement(By.xpath("(//android.widget.TextView[@text='RECOMMENDATIONS']/parent::androidx.appcompat.widget.LinearLayoutCompat/child::android.widget.TextView)[1]")).getText());
-	
-	System.out.println(driver.findElement(By.xpath("(//android.widget.TextView[@text='RECOMMENDATIONS']/parent::androidx.appcompat.widget.LinearLayoutCompat/child::android.widget.TextView)[2]")).getText());
-	
-	logger.log(Status.PASS, "Successfully given the recommendation based on the risk factor");
-	System.out.println("Successfully given the recommendation based on the risk factor");
-	
-	driver.swipe(0, 1200, 0, 0, 1000);
-	
-	Thread.sleep(3000);
-	
-	List <WebElement> FAQ = driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_faq_title']"));
-	
-	System.out.println("The element size is" + FAQ.size());
-	
-	for (int i=0;i<FAQ.size();i++) {
-		
+		btnclick(m.getSlctaddress());
 		Thread.sleep(3000);
-		FAQ.get(i).click();
-	}
-	
-	
-	}catch (Exception e) {
-		// TODO: handle exception
+		logger.log(Status.PASS, "Address was selected successfully");
+		System.out.println("Address was selected successfully");
+
+//Step 6: Modify Address//
+
+		//Modify address
+		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edit")).click();
+
+		
+
+		type(m.getPincode(), "600100");
+		Thread.sleep(2000);
+		type(m.getFirstname(),"Firstname");
+		Thread.sleep(2000);
+		type(m.getLastname(),"Test");
+		Thread.sleep(2000);
+		type(m.getAddress(),"Addressfirst");
+		Thread.sleep(2000);
+		type(m.getLandmark(),"nearplaza");
+		Thread.sleep(2000);
+		btnclick(m.getSave_address());
+
+		logger.log(Status.PASS, "Address was modified successfully");
+
+		System.out.println("Address was modified successfully");
+
+		//Delete address
+
+		Thread.sleep(3000);
+		List<WebElement> delete  = driver.findElements(By.xpath("(//android.widget.TextView[@text='DELETE'])"));
+
+		delete.get(1).click();
+
+		logger.log(Status.PASS, "Address was deleted successfully");
+		System.out.println("Address was deleted successfully");
+
+		//Add address
+
+		Thread.sleep(3000);
+
+		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/addAddress")).click();
+		Thread.sleep(3000);
+		
+
+		type(m.getPincode(), "600097");
+		Thread.sleep(2000);
+		type(m.getFirstname(),"Firstaddress");
+		Thread.sleep(2000);
+		type(m.getLastname(),"Test");
+		Thread.sleep(2000);
+		type(m.getAddress(),"Addressfirst");
+		Thread.sleep(2000);
+		type(m.getLandmark(),"neartheatre");
+		Thread.sleep(2000);
+		btnclick(m.getSave_address());
+
+		logger.log(Status.PASS, "Address was addedd successfully");
+		System.out.println("Address was added successfully");
+
+
+		System.out.println("Delivery Address Section is working properly ");
 	}
 
-logger.log(Status.PASS, "Covid Assesment scenario is working properly");
-System.out.println("Covid Assesment scenario is working properly");
+	
 
-	}					
+				
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
@@ -381,7 +289,7 @@ System.out.println("Covid Assesment scenario is working properly");
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			//BaseClass.mail_report();
+			BaseClass.mail_report();
 		}
 
 	}
