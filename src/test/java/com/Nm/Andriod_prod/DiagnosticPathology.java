@@ -183,12 +183,6 @@ public class DiagnosticPathology extends MobileBaseClass {
 	Thread.sleep(5000);
 	for (int i = 0; i < 10; i++) {
 
-		
-		Thread.sleep(3000);
-		driver.swipe(0, 500, 0, 0, 1000);
-		
-		if (m.getPackageImage_list().size()==1) {
-
 	
 	Thread.sleep(3000);
 	driver.swipe(0, 900, 0, 0, 1000);
@@ -207,7 +201,7 @@ public class DiagnosticPathology extends MobileBaseClass {
 	} catch (Exception e) {
 		// TODO: handle exception
 	}
-	}}
+	}
 
 	btnclick(m.getViewAllTest());
 	Thread.sleep(3000);
@@ -281,7 +275,7 @@ for (int i = 0; i < 10; i++) {
 	}
 for (int i = 0; i < 10; i++) {
 		
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 		driver.swipe(0, 500, 0, 1000, 1000);
 		try {
 			if (m.getTxtViewTitleRadio().isDisplayed()) {
@@ -437,7 +431,8 @@ btnclick(m.getBtnNext());
 Thread.sleep(5000);
 Assert.assertEquals(m.getTxtViewRequireFasting().getText(),"Note: Some tests/packages may require fasting");
 Assert.assertEquals(m.getTvTimeSlotHint().getText(),"Select interval when you want the person to collect the sample.");
-btnclick(m.getDateslot());Thread.sleep(2000);
+//btnclick(m.getDateslot());
+Thread.sleep(2000);
 btnclick(m.getImgSlotCheck());
 Thread.sleep(2000);
 btnclick(m.getBtnNext());
