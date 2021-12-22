@@ -214,8 +214,8 @@ return text;
 			List<WebElement> SubCategory_list = m.getSubCategory_list();
 			System.out.println("The element size is"+  SubCategory_list.size());
 			
-					for (int i1=0;i1<SubCategory_list.size();i1++) {
-						
+				//	for (int i1=0;i1<SubCategory_list.size();i1++) {
+			for (int i1=0;i1<=1;i1++) {
 						Thread.sleep(5000);
 						 if (i1>2) {
 							 try {
