@@ -154,7 +154,7 @@ public class CategoryPage extends MobileBaseClass {
 	
 	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 	
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		for (int i = 0; i < 25; i++) {
 			Thread.sleep(3000);
 			if (!(driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/cart_remove_product")).size() == 0)) {
@@ -185,12 +185,12 @@ public class CategoryPage extends MobileBaseClass {
 	
 	//Wellness page
 	
-	Thread.sleep(4000);
+	Thread.sleep(6000);
 	driver.findElement(By.xpath("//android.widget.TextView[@text='Wellness']")).click();
 	System.out.println("Successfully Naviagted to Wellness Page");
 	logger.log(Status.PASS, "Successfully Naviagted to Wellness Page");
 	//View all
-	Thread.sleep(4000);
+	Thread.sleep(6000);
 	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/wellness_viewAll")).click();
 	
 

@@ -189,11 +189,11 @@ return text;
 		
 		for (int i=0;i<Category_list.size();i++) {
 			
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			Category_list.get(i).click();
 			
 			System.out.println("Successfull navigated to  category page");
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 			Navigating_to_subcategory();
 			
 			Navigating_to_Sortby();
@@ -226,18 +226,18 @@ return text;
 							// new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
 						 }
 						
-						Thread.sleep(5000);
+						Thread.sleep(7000);
 						SubCategory_list.get(i1).click();
 						System.out.println("Successfull navigated to sub category page");
 						 
-						Thread.sleep(5000);
+						Thread.sleep(7000);
 						try {
 						driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")).click();
 						System.out.println("Successfully item added to cart");
 						}catch (Exception e) {
 						System.out.println("Item is  "+ driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/stock_info']")).getText());
 						}
-						Thread.sleep(5000);
+						Thread.sleep(7000);
 						driver.navigate().back();
 						
 					
@@ -258,18 +258,18 @@ return text;
 		AndriodPom m = new AndriodPom();
 	
 	int n = 1;
-	Thread.sleep(5000);
+	Thread.sleep(7000);
 
 	
 	for (int i2 = 0;i2<5; i2++)
 	
 	{
 		
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Sort']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		List<WebElement> Sortby = driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/sortTitle']"));
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		System.out.println("Total element size is  "+ Sortby.size());
 		n = Sortby.size();
 	
@@ -280,13 +280,13 @@ return text;
 	//	driver.swipe(950, 1050, 430, 1050, 1000);
 	//}
 	Sortby.get(i2).click();
-	 Thread.sleep(5000);
+	 Thread.sleep(7000);
 	 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']")).click();
-	 Thread.sleep(5000);
+	 Thread.sleep(7000);
 	 
 	 System.out.println ("drug name is "+ driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")).getText());
 	 
-	 Thread.sleep(5000);
+	 Thread.sleep(7000);
 
 	System.out.println("Category name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_category_name']")).getText());
 		
@@ -295,7 +295,7 @@ return text;
 	System.out.println("Sub Category name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/category_name_2']")).getText());
 	 
 	 
-	Thread.sleep(5000);
+	Thread.sleep(7000);
 		
 	System.out.println("Best Price is " + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/search_alternateBrainalgoliaPrice']")).getText());
 	 
@@ -305,7 +305,7 @@ return text;
 	System.out.println("Manufacturer name is" + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_manufacturer_name']")).getText());
 	 
 	try {
-	Thread.sleep(5000);
+	Thread.sleep(7000);
 	
 	System.out.println("dsicount percentage is " + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/product_discount']")).getText());
 	

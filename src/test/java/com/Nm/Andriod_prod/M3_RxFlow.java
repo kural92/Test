@@ -229,7 +229,7 @@ driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.goog
  
  logger.log(Status.PASS, "Prescription was uploaded successfully");
 	System.out.println("Prescription was uploaded successfully");
- 
+ /*
 Thread.sleep(3000);
 	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/continueUpload")).click();
 	
@@ -264,6 +264,7 @@ Thread.sleep(3000);
 	
 	driver.findElement(By.id("com.android.camera:id/done_button")).click();
  Thread.sleep(5000);
+ */
  //Schedule delivery
  
  //driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/setAddressButton")).click();

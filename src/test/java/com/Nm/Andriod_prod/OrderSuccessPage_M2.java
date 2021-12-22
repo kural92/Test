@@ -263,7 +263,7 @@ Thread.sleep(3000);
 
 
 
-
+/*
 		Assert.assertEquals(gettext(m.getShare_with_friends()),"Tap to share code with your friends");
 
 		System.out.println(m.getShare_with_friends().getText());
@@ -281,7 +281,7 @@ Thread.sleep(3000);
 		//My rewards
 		//driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_view_reward")).click();
 
-
+*/
 		//my orders
 
 
@@ -305,7 +305,12 @@ Thread.sleep(3000);
 
 
 		btnclick(m.getCancel_reason());
-		driver.swipe(790, 1100, 800, 70, 1000);
+		try {
+			driver.swipe(790, 1100, 800, 70, 1000);
+		} catch (Exception e) {
+			Thread.sleep(3000);
+			driver.swipe(0, 400, 0, 0, 1000);
+		}
 
 		Thread.sleep(2000);
 

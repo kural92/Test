@@ -209,7 +209,7 @@ Thread.sleep(2000);
 				break;
 			} else {
 				
-				System.out.println("Swipe Down to click on Consult Now Button");
+				System.out.println("Swipe Down to click on pay Button");
 
 			}}
 		 Thread.sleep(3000);
@@ -311,7 +311,7 @@ try {
 
 	System.out.println(m.getOffer_code().getText());
 
-
+/*
 
 		Assert.assertEquals(gettext(m.getShare_with_friends()),"Tap to share code with your friends");
 
@@ -324,8 +324,9 @@ try {
 		driver.findElement(By.id("android:id/button2")).click();
 
 		Thread.sleep(3000);
-
+*/
 //Subscribe now
+	Thread.sleep(3000);
 		
 		m.getSubscribe_now().click();
 		
@@ -376,8 +377,11 @@ try {
 		m.getSubscribe().click();
 	
 		Thread.sleep(5000);
-		
-		driver.swipe(770, 1300, 770, 2100, 1000);
+		try {
+	//	driver.swipe(770, 1300, 770, 2100, 1000);
+		}catch (Exception e) {
+			driver.swipe(0, 0, 0, 1000, 1000);
+		}
 		
 		//My rewards
 		//driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_view_reward")).click();
@@ -406,7 +410,14 @@ try {
 		//Cancel reason
 
 		btnclick(m.getCancel_reason());
-		driver.swipe(790, 1100, 800, 70, 1000);
+		
+		try {
+			driver.swipe(790, 1100, 800, 70, 1000);
+		} catch (Exception e) {
+			Thread.sleep(3000);
+			driver.swipe(0, 400, 0, 0, 1000);
+		}
+		
 
 		Thread.sleep(2000);
 

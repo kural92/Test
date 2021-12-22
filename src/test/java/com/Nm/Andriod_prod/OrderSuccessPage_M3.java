@@ -285,7 +285,7 @@ driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/img_scratch")).click
 
 Thread.sleep(3000);
 
-driver.swipe(345, 1029, 900, 1105, 1000);
+driver.swipe(345, 1029, 900, 1029, 1000);
 
 
 Thread.sleep(3000);
@@ -318,6 +318,7 @@ System.out.println(m.getInvite_friends().getText());
 
 Thread.sleep(3000);
 
+/*
 driver.swipe(790, 1100, 800, 70, 1000);
 //Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 
@@ -338,7 +339,7 @@ driver.findElement(By.id("android:id/button2")).click();
 
 Thread.sleep(3000);
 
-
+*/
 
 //My rewards
 //driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_view_reward")).click();
@@ -374,7 +375,12 @@ Thread.sleep(2000);
 
 
 btnclick(m.getCancel_reason());
-driver.swipe(790, 1100, 800, 70, 1000);
+try {
+	driver.swipe(790, 1100, 800, 70, 1000);
+} catch (Exception e) {
+	Thread.sleep(3000);
+	driver.swipe(0, 400, 0, 0, 1000);
+}
 
 Thread.sleep(2000);
 
