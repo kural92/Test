@@ -61,7 +61,7 @@ public class OrderReviewPage extends MobileBaseClass {
 			
 			
 			
-			capabilities.setCapability("autoDismissAlerts", true);  
+			//capabilities.setCapability("autoDismissAlerts", true);  
 			
 			
 			try {
@@ -158,7 +158,7 @@ public class OrderReviewPage extends MobileBaseClass {
 		 
 		 
 		
-	Thread.sleep(2000);
+	Thread.sleep(5000);
 			btnclick(m.getSearch_drugname());
 			Thread.sleep(5000);
 			try {
