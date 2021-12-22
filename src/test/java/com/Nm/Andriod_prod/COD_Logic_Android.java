@@ -328,7 +328,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			Thread.sleep(3000);
 			btnclick(m.getSubmit_cancelBtn());
 			
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			btnclick(m.getFooter_HomePage());
 			
 			Thread.sleep(6000);
