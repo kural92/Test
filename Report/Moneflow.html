@@ -33,8 +33,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
-			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -47,7 +46,11 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
+<<<<<<< HEAD
+                    <span class='label suite-start-time blue darken-3'>Dec 21, 2021 08:31:58 PM</span>
+=======
                     <span class='label suite-start-time blue darken-3'>Dec 21, 2021 07:54:11 PM</span>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 				</a>
 			</li>
 			<li>
@@ -73,7 +76,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -124,10 +126,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -139,10 +141,17 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
+<<<<<<< HEAD
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+=======
 					<span class='tooltipped' data-position='top' data-tooltip='40%'><span class='strong'>2</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='60%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 				</div>
 			</div>
 		</div>
@@ -157,9 +166,19 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Adding Alternate Brands and Most Selling Products to Cart</span>
+<<<<<<< HEAD
+						<span class='test-time'>Dec 21, 2021 08:32:13 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 21, 2021 08:32:13 PM</span>
+	<span class='label end-time'>Dec 21, 2021 08:35:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 29s+295ms</span>
+=======
 						<span class='test-time'>Dec 21, 2021 07:54:30 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
@@ -168,6 +187,7 @@
 	<span class='label start-time'>Dec 21, 2021 07:54:30 PM</span>
 	<span class='label end-time'>Dec 21, 2021 07:57:07 PM</span>
 	<span class='label time-taken grey lighten-1 white-text'>0h 2m 36s+804ms</span>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -181,11 +201,34 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+<<<<<<< HEAD
+					<td class='timestamp'>8:32:13 PM</td>
+=======
 					<td class='timestamp'>7:54:30 PM</td>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 					<td class='step-details'>*************AlterNate and Most Selling Product********************</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+<<<<<<< HEAD
+					<td class='timestamp'>8:33:36 PM</td>
+					<td class='step-details'>Successfully Product Removed from Cart</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:35:21 PM</td>
+					<td class='step-details'>Order was placed successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:35:42 PM</td>
+					<td class='step-details'>Order was cancelled successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:35:42 PM</td>
+					<td class='step-details'><span class='label white-text green'>mone_precrption PASSED </span></td>
+=======
 					<td class='timestamp'>7:56:00 PM</td>
 					<td class='step-details'>Successfully Product Removed from Cart</td>
 				</tr>
@@ -269,13 +312,17 @@ Session ID: 54aa2870-dee8-4020-beb3-47f8e832d10a
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
 					<td class='timestamp'>7:57:07 PM</td>
 					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@5300f14a</td>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 				</tr>
 			</tbody>
 		</table>
 	</div>
+<<<<<<< HEAD
+=======
 							<ul class='screenshots'>
 								<li><img data-featherlight='mone_precrption.png' width='10%' src='mone_precrption.png' data-src='mone_precrption.png'></li>
 							</ul>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 					</div>
 				</li>
 			</ul>
@@ -304,6 +351,8 @@ Session ID: 54aa2870-dee8-4020-beb3-47f8e832d10a
 </div>
 <!-- test view -->
 <!-- category view -->
+<<<<<<< HEAD
+=======
 <div id='exception-view' class='view hide'>
 
     <section id='controls'>
@@ -431,6 +480,7 @@ Session ID: 54aa2870-dee8-4020-beb3-47f8e832d10a
         </div>
     </div>
 </div>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -452,19 +502,31 @@ Session ID: 54aa2870-dee8-4020-beb3-47f8e832d10a
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
+<<<<<<< HEAD
+					<div class='panel-lead'>Dec 21, 2021 08:31:58 PM</div>
+=======
 					<div class='panel-lead'>Dec 21, 2021 07:54:11 PM</div>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
+<<<<<<< HEAD
+			 		<div class='panel-lead'>Dec 21, 2021 08:35:45 PM</div>
+=======
 			 		<div class='panel-lead'>Dec 21, 2021 07:57:13 PM</div>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
+<<<<<<< HEAD
+					<div class='panel-lead'>0h 3m 47s+607ms</div>
+=======
 					<div class='panel-lead'>0h 3m 1s+820ms</div>
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 				</div>
 			</div>
 			<div class='col s4'>
@@ -501,22 +563,27 @@ Session ID: 54aa2870-dee8-4020-beb3-47f8e832d10a
 
 		<script>
 			var statusGroup = {
-				passParent: 0,
-				failParent: 1,
+				passParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
+<<<<<<< HEAD
+				passChild: 5,
+				failChild: 0,
+=======
 				passChild: 2,
 				failChild: 3,
+>>>>>>> a5a86fac1b55532e9f7c56a2749b4a61adc27239
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 3,
+				exceptionsChild: 0,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

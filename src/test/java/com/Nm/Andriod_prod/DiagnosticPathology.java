@@ -207,7 +207,7 @@ public class DiagnosticPathology extends MobileBaseClass {
 	} catch (Exception e) {
 		// TODO: handle exception
 	}
-	}
+	}}
 
 	btnclick(m.getViewAllTest());
 	Thread.sleep(3000);
@@ -598,7 +598,7 @@ Thread.sleep(5000);
 	}
 	
 	
-	}
+	
 	
 	
 	@AfterMethod()
