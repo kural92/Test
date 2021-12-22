@@ -110,7 +110,7 @@ public void OrderSuccesspageM1() throws Throwable {
 	
 	AndriodPom m = new AndriodPom();
 	
-	driver.launchApp();
+	//driver.launchApp();
 		
 		/*try {
 			popupclose();
@@ -304,7 +304,7 @@ try {
 		System.out.println(m.getInvite_friends().getText());
 
 		
-		Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
+	//	Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 
 
 		//System.out.println(m.getOffer_code().getText());
