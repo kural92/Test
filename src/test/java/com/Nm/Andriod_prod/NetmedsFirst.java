@@ -184,7 +184,7 @@ Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkPage().getText());
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkType().getText());	
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkPage().getText());
 Assert.assertNotNull(m.getNetmedsFirstPage_benefits_linkType().getText());
-for (int i = 0; i < 10; i++) {
+/*for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
 	driver.swipe(0, 900, 0, 0, 1000);
@@ -197,9 +197,10 @@ for (int i = 0; i < 10; i++) {
 		
 		System.out.println("Swipe Down to click on Consult Now Button");
 
-	}}
+	}}*/
 
-
+Thread.sleep(3000);
+btnclick(m.getNetmedsFirstPage_6month());	
 try {
 	Thread.sleep(2000);
 	btnclick(m.getRemoveButton());
@@ -211,7 +212,7 @@ driver.navigate().back();
 Thread.sleep(3000);
 btnclick(m.getNetmedsFirstPage_12month());
 try {
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	btnclick(m.getRemoveButton());
 } catch (Exception e) {
 	// TODO: handle exception
