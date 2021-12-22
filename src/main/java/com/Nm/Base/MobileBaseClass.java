@@ -183,11 +183,12 @@ return text;
 		
 		List <WebElement> Category_list = m.getCategory_list();
 		
+		
 		System.out.println("The element size is"+  Category_list.size());
 		
 		
 		
-		for (int i=0;i<Category_list.size();i++) {
+		for (int i=0;i<=1;i++) {
 			
 			Thread.sleep(6000);
 			Category_list.get(i).click();

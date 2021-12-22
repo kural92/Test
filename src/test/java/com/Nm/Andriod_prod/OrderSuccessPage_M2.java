@@ -232,7 +232,7 @@ public void OrderSuccesspageM2() throws Throwable {
 		
 		Thread.sleep(5000);
 		btnclick(m.getM2_Place_Order());
-Thread.sleep(3000);
+Thread.sleep(10000);
 //Step 14 : Order status//
 
 		String Actual_orderstatus = m.getOrder_status().getText();
@@ -325,7 +325,7 @@ Thread.sleep(3000);
 		System.out.println("M2 Order Success is working properly");
 }
 
-@AfterMethod()
+//@AfterMethod()
 public void screenShot(ITestResult result) throws Throwable {
 
 	if (result.getStatus() == ITestResult.FAILURE) {

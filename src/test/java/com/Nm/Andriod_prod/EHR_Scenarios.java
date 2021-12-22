@@ -212,7 +212,14 @@ public class EHR_Scenarios extends MobileBaseClass {
 		
 		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[2]")).click();
 		Thread.sleep(10000); // com.NetmedsMarketplace.Netmeds:id/edt_ud_name
+		
+		try {
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_name")).sendKeys("Test");
+		}catch (Exception e) {
+		
+			driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/edt_ud_name']")).sendKeys("Test");
+		}
+		
 		Thread.sleep(3000);
 		
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_contact")).sendKeys("1234567890");

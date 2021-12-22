@@ -234,8 +234,13 @@ public class Youraccount_Referandearn extends MobileBaseClass {
 
 		logger.log(Status.PASS, "all the texts were asserted successfully");
 		System.out.println("all the texts are asserted successfully");
+
+/*//Step 6: Referral code check//
+
+=======
 //Step 6: Referral code check//
 		Thread.sleep(3000);
+>>>>>>> f84e776695b2ff9aac4bfc44396dc1357abab599
 		String Actualreferralcodenumber = m.getYourreferralcode().getText();
 
 		String Originalreferralcodenumber = "AMUD9230";//TEST1932
@@ -262,7 +267,7 @@ driver.navigate().back();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Copy']")).click();
 		Thread.sleep(3000);
-		System.out.println("Code was succesfully copied");
+		System.out.println("Code was succesfully copied");*/
 
 
 		

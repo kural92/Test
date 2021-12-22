@@ -202,7 +202,7 @@ System.out.println("Delivery interval selected successfully");
 //proceed
 
 btnclick(m.getProceedto_placeorder());
-Thread.sleep(2000);
+Thread.sleep(5000);
 
 //place order
 

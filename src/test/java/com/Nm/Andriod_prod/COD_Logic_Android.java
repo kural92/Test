@@ -314,8 +314,8 @@ public class COD_Logic_Android extends MobileBaseClass {
 			btnclick(m.getCancel_Order_reason());
 			
 			Thread.sleep(3000);
-		//	driver.swipe(0, 200, 0, 0, 0);
-			for (int jj = 0; jj < 3; jj++) {
+			driver.swipe(0, 500, 0, 0, 0);
+			/*for (int jj = 0; jj < 3; jj++) {
 				Thread.sleep(3000);
 				driver.swipe(0, 300, 0, 0, 0);
 				Thread.sleep(1000);
@@ -325,11 +325,11 @@ public class COD_Logic_Android extends MobileBaseClass {
 					break;
 				} else {}
 			}
-			
+			*/
 			Thread.sleep(3000);
-		//	btnclick(m.getSubmit_cancelBtn());
+			btnclick(m.getSubmit_cancelBtn());
 			
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			btnclick(m.getFooter_HomePage());
 			
 			Thread.sleep(6000);
