@@ -102,7 +102,7 @@ public class DiagnosticPathology extends MobileBaseClass {
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
-	@Test(enabled=true,priority =1,retryAnalyzer=RetryAnalyzer.class)
+	@Test()
 	public void Diagostic_pathology() throws Throwable {
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -175,26 +175,40 @@ public class DiagnosticPathology extends MobileBaseClass {
 	driver.hideKeyboard();
 	Thread.sleep(3000);
 	btnclick(m.getNavigate_up());
+	
+	Thread.sleep(3000);
+	btnclick(m.getPackageImage());
+	Thread.sleep(3000);
+	btnclick(m.getArrow_back());
+	Thread.sleep(5000);
 	for (int i = 0; i < 10; i++) {
+<<<<<<< HEAD
 		
 		Thread.sleep(3000);
 		driver.swipe(0, 500, 0, 0, 1000);
 		
 		if (m.getPackageImage_list().size()==1) {
+=======
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	try {
+		if (m.getViewAllTest().isDisplayed()) {
+>>>>>>> 57d09d0daefc5bdd8f2c0ae1eeaa7443cd5d8623
 			
 			Thread.sleep(3000);
-			btnclick(m.getPackageImage());
+			//btnclick(m.getPackageImage());
 			break;
 		} else {
 			
-			System.out.println("Swipe Down to click on Consult Now Button");
+			System.out.println("Swipe Down to click on package Button");
 
-		}}
-	
-	
-	Thread.sleep(3000);
-	btnclick(m.getArrow_back());
-	Thread.sleep(5000);
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	}
+
 	btnclick(m.getViewAllTest());
 	Thread.sleep(3000);
 	driver.hideKeyboard();
@@ -212,7 +226,7 @@ for (int i = 0; i < 10; i++) {
 			break;
 		} else {
 			
-			System.out.println("Swipe Down to click on Consult Now Button");
+			System.out.println("Swipe Down to click on diganostic Now Button");
 
 		}}
 
@@ -223,7 +237,7 @@ for (int i = 0; i < 10; i++) {
 	}
 for (int i = 0; i < 10; i++) {
 		
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		driver.swipe(0, 900, 0, 0, 1000);
 		
 		if (m.getTextDesc_1_list().size()==1) {
@@ -232,7 +246,7 @@ for (int i = 0; i < 10; i++) {
 			break;
 		} else {
 			
-			System.out.println("Swipe Down to click on Consult Now Button");
+			System.out.println("Swipe Down to click on package Now Button");
 
 		}}
 	Assert.assertEquals( m.getTextDesc_1().getText(),"NABL, CAP, ISO Certified");
@@ -267,19 +281,23 @@ for (int i = 0; i < 10; i++) {
 	}
 for (int i = 0; i < 10; i++) {
 		
-		Thread.sleep(3000);
-		driver.swipe(0, 900, 0, 0, 1000);
-		
-		if (m.getTxtViewTitleRadio_list().size()==1) {
-			
-			Thread.sleep(5000);
-			btnclick(m.getTxtViewTitleRadio());	
-			break;
-		} else {
-			
-			System.out.println("Swipe Down to click on Consult Now Button");
+		Thread.sleep(1500);
+		driver.swipe(0, 500, 0, 1000, 1000);
+		try {
+			if (m.getTxtViewTitleRadio().isDisplayed()) {
+				
+				Thread.sleep(5000);
+				btnclick(m.getTxtViewTitleRadio());	
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to click on Consult Now Button");
 
-		}}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		}
 	
 	btnclick(m.getImgCheck());
 	driver.hideKeyboard();
@@ -299,6 +317,7 @@ for (int i = 0; i < 10; i++) {
 	btnclick(m.getDigansticsyesbutton());
 	btnclick(m.getBtnNext());
 	btnclick(m.getTxtViewChangeAddress());
+	Thread.sleep(3000);
 	type(m.getEdtPinCode(), "624709");
 	driver.hideKeyboard(); btnclick(m.getCHECK());	
 
@@ -310,6 +329,7 @@ for (int i = 0; i < 10; i++) {
 		
 	}
 	clrtxt(m.getEdtPinCode());
+	Thread.sleep(3000);
 	type(m.getEdtPinCode(), "600097");
 	driver.hideKeyboard(); btnclick(m.getCHECK());
 	btnclick(m.getTxtViewChangeAddress());	

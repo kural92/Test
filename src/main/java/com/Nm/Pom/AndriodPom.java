@@ -394,10 +394,11 @@ public class AndriodPom extends MobileBaseClass{
 			return m2_SearchBar;
 		}
 		
-		
+
 
 
 		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']|//android.widget.TextView[@text='ADD TO CART']" )
+
 
 		private WebElement m2_Search_AddToCart;
 		public WebElement getM2_Search_AddToCart() {
