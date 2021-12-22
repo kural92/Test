@@ -695,13 +695,12 @@ public class AndriodPom extends MobileBaseClass{
 		
 		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/imgClearTest")
 		private WebElement imgClearTest;
-		// Combo Pack
-		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/bundle_buy_pack")
-		private List<WebElement> PDP_BuyPack_ComboList;
 		public WebElement getImgClearTest() {
 			return imgClearTest;
 		}
-
+		// Combo Pack
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/bundle_buy_pack")
+		private List<WebElement> PDP_BuyPack_ComboList;
 		public List<WebElement> getPDP_BuyPack_ComboList() {
 			return PDP_BuyPack_ComboList;
 		} 
