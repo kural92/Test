@@ -127,7 +127,7 @@ public class Youraccount_Myprescription extends MobileBaseClass {
 //Step1 :Launch Browser//		
 		AndriodPom m = new AndriodPom();
 		
-		driver.launchApp();
+		//driver.launchApp();
 			
 			try {
 				popupclose();
@@ -170,7 +170,7 @@ public class Youraccount_Myprescription extends MobileBaseClass {
 		
 		
 //Step 3 : Navigate to user profile//
-
+			Thread.sleep(5000);
 		btnclick(m.getUserprofile());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
@@ -178,7 +178,27 @@ public class Youraccount_Myprescription extends MobileBaseClass {
 		System.out.println("Successfully navigate to userprofile");
 
 // Step 4 : Navigate to My prescription Page
+		for (int i = 0; i < 10; i++) {
 
+			
+			Thread.sleep(3000);
+			driver.swipe(400, 1400, 300, 1300, 1000);
+			try {
+				if (m.getMyprescription_page().isDisplayed()) {
+
+					
+					Thread.sleep(3000);
+					//btnclick(m.getPackageImage());
+					break;
+				} else {
+					
+					System.out.println("Swipe Down to click on package Button");
+
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			}
 		btnclick(m.getMyprescription_page());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to My prescription Page");
@@ -277,7 +297,7 @@ public class Youraccount_Myprescription extends MobileBaseClass {
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+			//BaseClass.mail_report();
 		}
 
 	}
