@@ -307,6 +307,7 @@ try {
 	//	Assert.assertEquals(gettext(m.getOffer_code()),"TEST1932");
 
 
+
 		//System.out.println(m.getOffer_code().getText());
 
 	System.out.println(m.getOffer_code().getText());

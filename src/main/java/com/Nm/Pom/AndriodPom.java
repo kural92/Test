@@ -2010,7 +2010,7 @@ public List<WebElement> getViewdetails_List() {
 		}
 
 
-		@FindBy(xpath = "//android.widget.TextView[@text='TEST1932']")
+		@FindBy(xpath = "//android.widget.TextView[@text='TEST1932']|/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]")
 		private WebElement yourreferralcode;
 		public WebElement getYourreferralcode() {
 			return yourreferralcode;

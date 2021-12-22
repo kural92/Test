@@ -188,9 +188,11 @@ public class MyRewards extends MobileBaseClass {
 		
 		Thread.sleep(5000);
 		
-		
+		try {
 		System.out.println("offer Amount " + driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_offer_amount")).getText());
-		
+		}catch (Exception e) {
+			System.out.println("offer Amount " + driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txt_offer_amount']")).getText());
+		}
 		Thread.sleep(7000);
 		
 		System.out.println("offer description is " + driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_offer_description")).getText());
@@ -215,7 +217,7 @@ public class MyRewards extends MobileBaseClass {
 		}
 		
 		
-		Thread.sleep(7000);
+		Thread.sleep(5000);
 		
 		List <WebElement> instruction_details = driver.findElements(By.xpath("//android.view.ViewGroup[@resource-id='com.NetmedsMarketplace.Netmeds:id/lyt_instruction_details']"));
 		

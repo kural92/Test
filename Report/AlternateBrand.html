@@ -33,8 +33,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
-			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -47,7 +46,11 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
+<<<<<<< HEAD
                     <span class='label suite-start-time blue darken-3'>Dec 22, 2021 11:00:26 PM</span>
+=======
+                    <span class='label suite-start-time blue darken-3'>Dec 22, 2021 09:02:28 PM</span>
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				</a>
 			</li>
 			<li>
@@ -73,7 +76,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -124,10 +126,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -139,10 +141,17 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
+<<<<<<< HEAD
 					<span class='tooltipped' data-position='top' data-tooltip='40%'><span class='strong'>2</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='60%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+=======
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				</div>
 			</div>
 		</div>
@@ -157,6 +166,7 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
+<<<<<<< HEAD
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Previous Consultation</span>
@@ -168,6 +178,19 @@
 	<span class='label start-time'>Dec 22, 2021 11:00:38 PM</span>
 	<span class='label end-time'>Dec 22, 2021 11:02:13 PM</span>
 	<span class='label time-taken grey lighten-1 white-text'>0h 1m 34s+757ms</span>
+=======
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Myorder filters page</span>
+						<span class='test-time'>Dec 22, 2021 09:02:46 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2021 09:02:46 PM</span>
+	<span class='label end-time'>Dec 22, 2021 09:05:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 37s+78ms</span>
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -181,6 +204,7 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+<<<<<<< HEAD
 					<td class='timestamp'>11:00:38 PM</td>
 					<td class='step-details'>*************Previous Consultation********************</td>
 				</tr>
@@ -261,13 +285,35 @@ Session ID: ac11399f-7007-49fb-b4d9-0ef88f4f0ab6
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
 					<td class='timestamp'>11:02:13 PM</td>
 					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@14f9390f</td>
+=======
+					<td class='timestamp'>9:02:46 PM</td>
+					<td class='step-details'>*************My order filters page********************</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>9:03:35 PM</td>
+					<td class='step-details'>Successfully navigate to userprofile</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>9:03:38 PM</td>
+					<td class='step-details'>Successfully navigate to Myorders Page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>9:05:23 PM</td>
+					<td class='step-details'><span class='label white-text green'>Myorderfilterpage PASSED </span></td>
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				</tr>
 			</tbody>
 		</table>
 	</div>
+<<<<<<< HEAD
 							<ul class='screenshots'>
 								<li><img data-featherlight='PreviousConsultation.png' width='10%' src='PreviousConsultation.png' data-src='PreviousConsultation.png'></li>
 							</ul>
+=======
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 					</div>
 				</li>
 			</ul>
@@ -296,6 +342,7 @@ Session ID: ac11399f-7007-49fb-b4d9-0ef88f4f0ab6
 </div>
 <!-- test view -->
 <!-- category view -->
+<<<<<<< HEAD
 <div id='exception-view' class='view hide'>
 
     <section id='controls'>
@@ -415,6 +462,8 @@ Session ID: ac11399f-7007-49fb-b4d9-0ef88f4f0ab6
         </div>
     </div>
 </div>
+=======
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -430,25 +479,41 @@ Session ID: ac11399f-7007-49fb-b4d9-0ef88f4f0ab6
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
+<<<<<<< HEAD
 					<div class='panel-lead'>5</div>
+=======
+					<div class='panel-lead'>4</div>
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
+<<<<<<< HEAD
 					<div class='panel-lead'>Dec 22, 2021 11:00:26 PM</div>
+=======
+					<div class='panel-lead'>Dec 22, 2021 09:02:28 PM</div>
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
+<<<<<<< HEAD
 			 		<div class='panel-lead'>Dec 22, 2021 11:02:19 PM</div>
+=======
+			 		<div class='panel-lead'>Dec 22, 2021 09:05:26 PM</div>
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
+<<<<<<< HEAD
 					<div class='panel-lead'>0h 1m 52s+847ms</div>
+=======
+					<div class='panel-lead'>0h 2m 57s+831ms</div>
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				</div>
 			</div>
 			<div class='col s4'>
@@ -485,22 +550,31 @@ Session ID: ac11399f-7007-49fb-b4d9-0ef88f4f0ab6
 
 		<script>
 			var statusGroup = {
-				passParent: 0,
-				failParent: 1,
+				passParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
+<<<<<<< HEAD
 				passChild: 2,
 				failChild: 3,
+=======
+				passChild: 4,
+				failChild: 0,
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
+<<<<<<< HEAD
 				exceptionsChild: 3,
+=======
+				exceptionsChild: 0,
+>>>>>>> 4adcffb3bef2254be9d639a0780f0ce528b6bd03
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

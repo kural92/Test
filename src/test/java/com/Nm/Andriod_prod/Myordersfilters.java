@@ -173,8 +173,11 @@ public class Myordersfilters extends MobileBaseClass {
 //Step 5 : Navigate to Filter Page
 		
 		Thread.sleep(3000);
+		try {
 		driver.swipe(790, 1100, 800, 70, 1000);
-		
+		} catch (Exception e) {
+			driver.swipe(0, 1000, 0, 0, 1000);
+		}
 		Thread.sleep(3000);
 		
 //Naviagte to Filter page

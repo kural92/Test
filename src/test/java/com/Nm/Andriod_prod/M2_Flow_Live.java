@@ -6,6 +6,7 @@ import java.net.URL;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +21,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -190,8 +192,16 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		Thread.sleep(10000);
 	 //btncli(driver.findElement(By.xpath("//android.view.View[@index='0']"))); com.google.android.documentsui:id/icon_thumb
+		WebElement image =driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']"));
 		
-		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']")));
+		try {
+			
+			System.out.println("");
+			image.click();
+		} catch (Exception e) { Thread.sleep(3000);
+     // new TouchAction(driver).moveTo(image).waitAction(2000).press(image).perform();
+		//	new TouchAction(driver).moveTo(200, 800).waitAction(2000).tap(200, 800).perform();
+		}
 		
 		Thread.sleep(10000);
 		btnclick(m.getM2_Upload_ContinueBtn());
