@@ -299,12 +299,12 @@ public class PDP_Android_Live extends MobileBaseClass{
 	
 	
 		}
-	
+		/*
 		
 		 //Share ICON
 		/////////////////
 		Thread.sleep(2000);
-		m.getSearchbarone().sendKeys(MobileBaseClass.getExcelData("AndPDP", 0, 0));
+		m.getSearchbarone().sendKeys("Horlicks");
 		
 		Thread.sleep(5000);
 		driver.hideKeyboard();
@@ -313,7 +313,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 		Thread.sleep(2000);
 				btnclick(m.getSearch_drugname());
 				Thread.sleep(5000);
-		
+				
 				Thread.sleep(3000);
 				btnclick(m.getPDP_Share_Icon());
 				
@@ -340,11 +340,11 @@ public class PDP_Android_Live extends MobileBaseClass{
 				Thread.sleep(2000);
 			//	driver.swipe(0, 1000, 0, 0, 1000);
 				 
-				for (int i = 0; i < 5; i++) {
+				for (int i = 0; i < 10; i++) {
 					Thread.sleep(2000);
-					driver.swipe(0, 700, 0, 0, 1000);
+					driver.swipe(0, 500, 0, 0, 1000);
 					Thread.sleep(2000);
-					if (m.getPDP_BuyPack_ComboList().size()==2|m.getPDP_BuyPack_ComboList().size()==2) {
+					if (m.getPDP_BuyPack_ComboList().size()==2) {
 						System.out.println("Swipe Down Check the Combo Pack");
 						break;
 						
@@ -478,7 +478,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 				}
 				
 				////////////////////////
-				
+				*/
 				////Frequently Bought
 Thread.sleep(2000);
 				
@@ -542,139 +542,8 @@ Thread.sleep(2000);
 						
 						
 						
-						//// Alternade Brands
-						Thread.sleep(2000);
-						try {
-						btnclick(m.getSearch_X_button());
-						} catch (Exception e) {
-							// TODO: handle exception
-						}
-						Thread.sleep(3000);
-						Thread.sleep(2000);
-						m.getSearchbarone().sendKeys("Trajenta 5mg Tablet 10");
-						
-						Thread.sleep(5000);
-						driver.hideKeyboard();
-						
-						Thread.sleep(5000);
-
-						Thread.sleep(2000);
-								btnclick(m.getSearch_drugname());
-								Thread.sleep(5000);
-								
-								Thread.sleep(3000);
-								for (int i = 0; i < 10; i++) {
-									Thread.sleep(2000);
-									driver.swipe(0, 500, 0, 0, 1000);
-									Thread.sleep(2000);
-									if (m.getPDP_AlternateBrand_TextList().size()==1) {
-										System.out.println("Swipe down to check Alternate  Brand");
-										break;
-									} else {
-
-									}
-								}
-								Thread.sleep(2000);
-							//	driver.swipe(0, 800, 0, 0, 1000);
-								
-								
-								Thread.sleep(2000);
-							//	driver.swipe(0, 800, 0, 0, 1000);
-								
-								Thread.sleep(3000);
-								if (m.getPDP_AlternateBrand_Text().isDisplayed()) {
-									
-									Thread.sleep(2000);
-									List<WebElement> CART_SIZE = driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn"));
-									int aa = CART_SIZE.size();
-									
-									btnclick(CART_SIZE.get(aa-1));
-									
-									Thread.sleep(3000);
-									String abText = gettext(m.getPDP_AlternateBrand_Name());
-									
-									Thread.sleep(3000);
-									btnclick(m.getPDP_Cart_btn());
-									
-									
-									Thread.sleep(5000);
-									String cart_drug = gettext(m.getCart_drug_name());
-									
-									Thread.sleep(2000);
-									if (abText.contains(cart_drug)) {
-										
-										System.out.println("Alternate Brand Added to  the Cart Successfully");
-										
-									} else {
-
-										System.out.println("Alternate Brand Not  Added to  the Cart Successfully");
-										
-									}
-									
-								} else {
-									
-									System.out.println("There is no Alternate brand Available");
-
-								}
-								
-								
-								
-								/////////////////////////////////////////
-								// Most Selling Product
-								Thread.sleep(3000);
-								Thread.sleep(3000);
-								for (int i = 0; i < 10; i++) {
-									Thread.sleep(2000);
-									driver.swipe(0, 500, 0, 0, 1000);
-									Thread.sleep(2000);
-									if (m.getMost_Selling_text_List().size()==1) {
-										System.out.println("Swipe down to check Most Selling  Brand");
-										break;
-									} else {
-
-									}
-								}
-								Thread.sleep(2000);
-//							/	driver.swipe(0, 1000, 0, 0, 1000);
-								
-								Thread.sleep(2000);
-								if (m.getMost_Selling_text().isDisplayed()) {
-									
-									Thread.sleep(3000);
-									System.out.println(m.getAdd_To_cart_List().size());
-									
-									Thread.sleep(3000);
-									btnclick(m.getAdd_To_cart_List().get(0));
-									
-									Thread.sleep(3000);
-									btnclick(m.getMostSelling_drug_name_List().get(1));
-									
-									Thread.sleep(5000);
-									btnclick(m.getAdd_To_cart());
-									
-									
-									Thread.sleep(2000);
-									btnclick(m.getPDP_ProceedToCart());
-									
-									
-									
-									
-									
-									
-									
-									
-								}
-								
-								
-								
-								
-								
-								
-								
-								
-								
 	}
-	
+								
 	
 	
 	

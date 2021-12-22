@@ -288,9 +288,11 @@ try {
 		Thread.sleep(3000);
 
 		Thread.sleep(3000);
-
+try {
 		driver.swipe(790, 1100, 800, 70, 1000);
-		
+} catch (Exception e) {
+	driver.swipe(0, 1100, 0, 0, 1000);
+}
 		Assert.assertEquals(gettext(m.getGrab_text()),"GRAB YOUR");
 
 		System.out.println(m.getGrab_text().getText());
@@ -379,7 +381,7 @@ try {
 	
 		Thread.sleep(5000);
 		try {
-	//	driver.swipe(770, 1300, 770, 2100, 1000);
+		driver.swipe(770, 1300, 770, 2100, 1000);
 		}catch (Exception e) {
 			driver.swipe(0, 0, 0, 1000, 1000);
 		}

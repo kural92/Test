@@ -338,7 +338,11 @@ Thread.sleep(2000);
 //Submit and cancel
 
 Thread.sleep(2000);
+try {
 driver.swipe(790, 1100, 800, 70, 1000);
+}catch (Exception e) {
+	driver.swipe(0, 500, 0, 0, 1000);
+}
 Thread.sleep(2000);
 
 btnclick(m.getSubmit_cancel());

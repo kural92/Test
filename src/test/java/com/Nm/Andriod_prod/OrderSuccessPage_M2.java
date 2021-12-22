@@ -368,7 +368,7 @@ public void screenShot(ITestResult result) throws Throwable {
  	private void quitbrowser() {
 	 report.flush();
 
-	 driver.quit();
+	// driver.quit();
 }
 
 }
