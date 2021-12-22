@@ -91,7 +91,7 @@ public class M2_Flow_RX extends MobileBaseClass{
 	
 	
 
-	@Test(priority = 1,enabled = false)
+	@Test(priority = 1,enabled = true)
 	public void pastRX_search() throws Throwable {
 		
 		

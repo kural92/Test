@@ -109,12 +109,12 @@ public class PDP_Android_Live extends MobileBaseClass{
 		try {
 			
 			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("7010752043");
+			m.getMobilenumber().sendKeys(" ");
 			Thread.sleep(3000);
 			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
 		
-			m.getPassword().sendKeys("Change@92");
+			m.getPassword().sendKeys(" ");
 			
 			btnclick(m.getLogin());
 			Thread.sleep(2000);

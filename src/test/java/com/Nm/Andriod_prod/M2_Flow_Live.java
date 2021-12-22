@@ -157,7 +157,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 				}
 
 			} else {
-				logger.log(Status.PASS, "Successfully Product Removed from Cart");
+			//	logger.log(Status.PASS, "Successfully Product Removed from Cart");
 				break;
 
 			}
@@ -275,22 +275,6 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 	}
 	
-	
-	public ExtentHtmlReporter getHtmlReporter() {
-		return htmlReporter;
-	}
-
-
-
-	public static ExtentReports getReport() {
-		return report;
-	}
-
-
-
-	public static ExtentTest getLogger() {
-		return logger;
-	}
 
 
 

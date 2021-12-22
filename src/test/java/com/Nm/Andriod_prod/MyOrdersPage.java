@@ -138,7 +138,7 @@ static String totalamt;
 		try {
 			
 			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("8072281468");
+			m.getMobilenumber().sendKeys(" ");
 			popupclose();
 			Thread.sleep(10000);
 			popupclose();
@@ -146,7 +146,7 @@ static String totalamt;
 			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
 		
-			m.getPassword().sendKeys("test@123");
+			m.getPassword().sendKeys(" ");
 			
 			Thread.sleep(2000);
 		
