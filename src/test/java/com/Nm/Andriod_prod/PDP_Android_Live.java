@@ -40,7 +40,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 			//capabilities.setCapability(MobileCapabilityType.UDID, UDID); //RZ8R20GLXTA //GBT4C19326001968
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability("platformVersion","10.0.0" );
+	//		capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
 			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
 			//for install Apk file
@@ -109,12 +109,12 @@ public class PDP_Android_Live extends MobileBaseClass{
 		try {
 			
 			Thread.sleep(2000);
-			m.getMobilenumber().sendKeys("7010752043");
+			m.getMobilenumber().sendKeys(" ");
 			Thread.sleep(3000);
 			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
 		
-			m.getPassword().sendKeys("Change@92");
+			m.getPassword().sendKeys(" ");
 			
 			btnclick(m.getLogin());
 			Thread.sleep(2000);
@@ -139,6 +139,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 
 			}
 		}
+		Thread.sleep(5000);
 		btnclick(m.getCart_search());
 		Thread.sleep(2000);
 		
@@ -147,7 +148,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 		for (int i = 0; i < 3; i++) {
 			
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		m.getSearchbarone().sendKeys(MobileBaseClass.getExcelData("AndPDP", i, 0));
 		
 		Thread.sleep(5000);
@@ -255,7 +256,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 				
 				Thread.sleep(2000);
 				 Thread.sleep(2000);
-					driver.swipe(0, 0, 0, 200, 1000);
+	/*				driver.swipe(0, 0, 0, 200, 1000);
 	btnclick(m.getPDP_Manufacture_name());
 	
 	Thread.sleep(15000);
@@ -270,7 +271,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 		
 		System.err.println("Manufacture not Matches");
 	}
-	
+	*/
 	Thread.sleep(2000);
 	driver.findElementByAccessibilityId("Navigate up").click();
 	
@@ -278,13 +279,19 @@ public class PDP_Android_Live extends MobileBaseClass{
 	Thread.sleep(10000);
 	driver.findElementByAccessibilityId("Navigate up").click();
 	
+	try {
+	Thread.sleep(2000);
+//	driver.findElementByAccessibilityId("Navigate up").click();
+	}catch (Exception e) {
+		// TODO: handle exception
+	}
 	
 	Thread.sleep(2000);
-	driver.findElementByAccessibilityId("Navigate up").click();
-	
-	
-	Thread.sleep(2000);
+	try {
 	btnclick(m.getSearch_X_button());
+	}catch (Exception e) {
+		// TODO: handle exception
+	}
 	Thread.sleep(2000);
 	Thread.sleep(2000);
 	Thread.sleep(2000);
@@ -311,7 +318,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 				btnclick(m.getPDP_Share_Icon());
 				
 				Thread.sleep(3000);
-				btnclick(m.getPDP_Share_Message_Samsung());
+			//	btnclick(m.getPDP_Share_Message_Samsung());
 				
 				
 				Thread.sleep(5000);
@@ -492,9 +499,9 @@ Thread.sleep(2000);
 				
 						Thread.sleep(3000);
 						
-						for (int i = 0; i < 5; i++) {
+						for (int i = 0; i < 10; i++) {
 							Thread.sleep(2000);
-							driver.swipe(0, 700, 0, 0, 1000);
+							driver.swipe(0, 800, 0, 0, 1000);
 							Thread.sleep(2000);
 							if (m.getPDP_FrequentlyBrought_text_Lst().size()==1) {
 								System.out.println("Swipe down to check Frequently Brought");
@@ -556,9 +563,9 @@ Thread.sleep(2000);
 								Thread.sleep(5000);
 								
 								Thread.sleep(3000);
-								for (int i = 0; i < 5; i++) {
+								for (int i = 0; i < 10; i++) {
 									Thread.sleep(2000);
-									driver.swipe(0, 700, 0, 0, 1000);
+									driver.swipe(0, 500, 0, 0, 1000);
 									Thread.sleep(2000);
 									if (m.getPDP_AlternateBrand_TextList().size()==1) {
 										System.out.println("Swipe down to check Alternate  Brand");
@@ -616,9 +623,9 @@ Thread.sleep(2000);
 								// Most Selling Product
 								Thread.sleep(3000);
 								Thread.sleep(3000);
-								for (int i = 0; i < 5; i++) {
+								for (int i = 0; i < 10; i++) {
 									Thread.sleep(2000);
-									driver.swipe(0, 700, 0, 0, 1000);
+									driver.swipe(0, 500, 0, 0, 1000);
 									Thread.sleep(2000);
 									if (m.getMost_Selling_text_List().size()==1) {
 										System.out.println("Swipe down to check Most Selling  Brand");

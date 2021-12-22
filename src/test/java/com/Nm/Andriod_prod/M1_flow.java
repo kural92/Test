@@ -403,9 +403,9 @@ for (int i = 0; i < 10; i++) {
 					System.out.println("Swipe Down to click on Consult Now Button");
 
 				}}
-			 Thread.sleep(3000);
+			 Thread.sleep(5000);
 			 btnclick(m.getPayment_paybutton());
-			 Thread.sleep(3000);
+			 Thread.sleep(5000);
 			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
 					
 					
