@@ -139,7 +139,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 
 			}
 		}
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		btnclick(m.getCart_search());
 		Thread.sleep(2000);
 		
@@ -281,7 +281,7 @@ public class PDP_Android_Live extends MobileBaseClass{
 	
 	try {
 	Thread.sleep(2000);
-	driver.findElementByAccessibilityId("Navigate up").click();
+//	driver.findElementByAccessibilityId("Navigate up").click();
 	}catch (Exception e) {
 		// TODO: handle exception
 	}
@@ -499,9 +499,9 @@ Thread.sleep(2000);
 				
 						Thread.sleep(3000);
 						
-						for (int i = 0; i < 5; i++) {
+						for (int i = 0; i < 10; i++) {
 							Thread.sleep(2000);
-							driver.swipe(0, 700, 0, 0, 1000);
+							driver.swipe(0, 800, 0, 0, 1000);
 							Thread.sleep(2000);
 							if (m.getPDP_FrequentlyBrought_text_Lst().size()==1) {
 								System.out.println("Swipe down to check Frequently Brought");
@@ -563,9 +563,9 @@ Thread.sleep(2000);
 								Thread.sleep(5000);
 								
 								Thread.sleep(3000);
-								for (int i = 0; i < 5; i++) {
+								for (int i = 0; i < 10; i++) {
 									Thread.sleep(2000);
-									driver.swipe(0, 700, 0, 0, 1000);
+									driver.swipe(0, 500, 0, 0, 1000);
 									Thread.sleep(2000);
 									if (m.getPDP_AlternateBrand_TextList().size()==1) {
 										System.out.println("Swipe down to check Alternate  Brand");
@@ -623,9 +623,9 @@ Thread.sleep(2000);
 								// Most Selling Product
 								Thread.sleep(3000);
 								Thread.sleep(3000);
-								for (int i = 0; i < 5; i++) {
+								for (int i = 0; i < 10; i++) {
 									Thread.sleep(2000);
-									driver.swipe(0, 700, 0, 0, 1000);
+									driver.swipe(0, 500, 0, 0, 1000);
 									Thread.sleep(2000);
 									if (m.getMost_Selling_text_List().size()==1) {
 										System.out.println("Swipe down to check Most Selling  Brand");
