@@ -390,7 +390,7 @@ System.out.println("Covid Assesment scenario is working properly");
 	private void quitbrowser() {
 		report.flush();
 
-		driver.quit();
+	//	driver.quit();
 	}
 
 }
