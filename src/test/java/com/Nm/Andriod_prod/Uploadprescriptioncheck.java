@@ -240,9 +240,11 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 				
 				Thread.sleep(2000);
 				//driver.swipe(925, 0, 430, 0, 5000);
-				
+				try {
 				new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
-				
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 			// Long Press gesture using TouchAction class
 				//new TouchAction(driver).long_press(element).release().perform()
 
@@ -476,7 +478,7 @@ public void screenShot(ITestResult result) throws Throwable {
 	Thread.sleep(3000);
 	if (result.getStatus() == ITestResult.FAILURE) {
 		Thread.sleep(3000);
-		BaseClass.mail_report();
+	//	BaseClass.mail_report();
 	}
 
 }
@@ -485,7 +487,7 @@ public void screenShot(ITestResult result) throws Throwable {
  	private void quitbrowser() {
 	 report.flush();
 
-	 driver.quit();
+	// driver.quit();
 }
 
 }

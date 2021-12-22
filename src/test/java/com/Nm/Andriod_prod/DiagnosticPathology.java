@@ -182,11 +182,19 @@ public class DiagnosticPathology extends MobileBaseClass {
 	btnclick(m.getArrow_back());
 	Thread.sleep(5000);
 	for (int i = 0; i < 10; i++) {
+
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 500, 0, 0, 1000);
+		
+		if (m.getPackageImage_list().size()==1) {
+
 	
 	Thread.sleep(3000);
 	driver.swipe(0, 900, 0, 0, 1000);
 	try {
 		if (m.getViewAllTest().isDisplayed()) {
+
 			
 			Thread.sleep(3000);
 			//btnclick(m.getPackageImage());
@@ -199,7 +207,7 @@ public class DiagnosticPathology extends MobileBaseClass {
 	} catch (Exception e) {
 		// TODO: handle exception
 	}
-	}
+	}}
 
 	btnclick(m.getViewAllTest());
 	Thread.sleep(3000);
@@ -587,10 +595,10 @@ Thread.sleep(5000);
 }
 	
 	
-	
-	
-	
 	}
+	
+	
+	
 	
 	
 	@AfterMethod()

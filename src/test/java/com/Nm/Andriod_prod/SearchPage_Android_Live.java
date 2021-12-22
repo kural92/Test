@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -26,11 +27,6 @@ import io.appium.java_client.remote.MobileCapabilityType;
 public class SearchPage_Android_Live extends MobileBaseClass {
 	
 	
-	
-	
-
-
-	
 	ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
@@ -40,7 +36,7 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 			//capabilities.setCapability(MobileCapabilityType.UDID, UDID); //RZ8R20GLXTA //GBT4C19326001968
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability("platformVersion","10.0.0" );
+		//	capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
 			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
 			//for install Apk file
@@ -202,19 +198,23 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 		
 		Thread.sleep(3000);
 		for (int j = 0; j < 10; j++) {
-
+try {
 			Thread.sleep(3000);
 			btnclick(m.getSearch_results_AddTocart_IncreaseQty());
-			
+} catch (Exception e) {
+	// TODO: handle exception
+}
 			
 		}
 		
 		Thread.sleep(3000);
 		for (int j = 0; j < 11; j++) {
-
+try {
 			Thread.sleep(3000);
 			btnclick(m.getSearch_results_AddTocart_DecreaseQty());
-			
+} catch (Exception e) {
+	// TODO: handle exception
+}
 			
 		}
 		
@@ -255,5 +255,11 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 		
 	}
 	
+	
+	@AfterTest
+	public void tearDown() {
+		// TODO Auto-generated method stub
+  
+	}
 
 }
