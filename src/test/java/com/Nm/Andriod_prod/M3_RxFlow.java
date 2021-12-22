@@ -286,7 +286,7 @@ logger.log(Status.PASS, "Delievery intervalselected successfully");
 System.out.println("Delievery interval selected successfully");
 
 //proceed
-
+Thread.sleep(3000);
 btnclick(m.getProceedto_placeorder());
 Thread.sleep(4000);
 
@@ -351,7 +351,11 @@ Thread.sleep(2000);
 
 //Submit and cancel
 Thread.sleep(2000);
+try {
 driver.swipe(790, 1100, 800, 70, 1000);
+}catch (Exception e) {
+	driver.swipe(0, 500, 0, 0, 1000);
+}
 Thread.sleep(2000);
 
 

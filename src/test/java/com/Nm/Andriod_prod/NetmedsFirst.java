@@ -155,7 +155,7 @@ driver.resetApp();		}
 
 				try {
 					Thread.sleep(3000);
-					 driver.swipe(0, 900, 0, 0, 1000);			
+					 driver.swipe(0, 700, 0, 0, 1000);			
 					 } catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -263,8 +263,12 @@ Assert.assertEquals("0.00", ss);
 for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
+	try {
 	driver.swipe(500, 500, 500, 1500, 1000);
-	
+	} catch (Exception e) {
+		driver.swipe(0, 1000, 0, 0, 1000);
+	}
+	Thread.sleep(3000);
 	if (driver.findElements(By.xpath("//android.widget.TextView[@text='PRODUCTS']")).size()==1) {
 			break;
 	} else {

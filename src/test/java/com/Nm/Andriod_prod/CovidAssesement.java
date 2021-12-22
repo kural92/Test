@@ -250,7 +250,13 @@ public class CovidAssesement extends MobileBaseClass {
 	
 	
 	System.out.println(m.getOther_symptoms_text().getText());
+Thread.sleep(3000);
 	
+	try {
+		driver.swipe(620, 1900, 620, 0, 1000);
+	} catch (Exception e) {
+		driver.swipe(0, 600, 0, 0, 1000);
+	}
 	btnclick(m.getOther_symptoms_sneezing());
 	
 	Thread.sleep(3000);
@@ -390,7 +396,7 @@ System.out.println("Covid Assesment scenario is working properly");
 	private void quitbrowser() {
 		report.flush();
 
-	//	driver.quit();
+		driver.quit();
 	}
 
 }
