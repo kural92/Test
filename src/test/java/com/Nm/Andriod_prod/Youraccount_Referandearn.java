@@ -234,11 +234,16 @@ public class Youraccount_Referandearn extends MobileBaseClass {
 
 		logger.log(Status.PASS, "all the texts were asserted successfully");
 		System.out.println("all the texts are asserted successfully");
+
 /*//Step 6: Referral code check//
 
+=======
+//Step 6: Referral code check//
+		Thread.sleep(3000);
+>>>>>>> f84e776695b2ff9aac4bfc44396dc1357abab599
 		String Actualreferralcodenumber = m.getYourreferralcode().getText();
 
-		String Originalreferralcodenumber = "TEST1932";
+		String Originalreferralcodenumber = "AMUD9230";//TEST1932
 
 		Assert.assertEquals(Actualreferralcodenumber, Originalreferralcodenumber);
 
@@ -254,8 +259,8 @@ public class Youraccount_Referandearn extends MobileBaseClass {
 		logger.log(Status.PASS, "Share link was opened successfully");
 		System.out.println("Share link was opened successfully");
 
-
-		driver.findElement(By.id("miui:id/buttonPanel")).click();
+driver.navigate().back();
+	//	driver.findElement(By.id("miui:id/buttonPanel")).click();
 
 		
 		//Copy Code

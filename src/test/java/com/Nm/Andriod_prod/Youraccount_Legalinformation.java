@@ -182,8 +182,11 @@ public class Youraccount_Legalinformation extends MobileBaseClass {
 			System.out.println("Successfully navigate to userprofile");
 
 	// Step 4 : Legal Information
-
+try {
 			driver.swipe(790, 1100, 800, 70, 1000);
+}catch (Exception e) {
+	        driver.swipe(0, 800, 0, 0, 1000);
+}
 			btnclick(m.getLegalinfo());
 		Thread.sleep(3000);
 		List<WebElement>	list_tc =  m.getTC_Link();
@@ -259,7 +262,7 @@ public class Youraccount_Legalinformation extends MobileBaseClass {
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+		//	BaseClass.mail_report();
 		}
 
 	}
@@ -268,7 +271,7 @@ public class Youraccount_Legalinformation extends MobileBaseClass {
 	private void quitbrowser() {
 		report.flush();
 
-		driver.quit();
+	//	driver.quit();
 	}
 
 }

@@ -210,7 +210,7 @@ public class M3_DoctorConsultation_Flow extends MobileBaseClass {
 
 //Delivery Interval
 //btncli(m.getDelivery_30days());
-Thread.sleep(2000);
+Thread.sleep(5000);
 	
 btnclick(m.getDelivery_45days());
 Thread.sleep(2000);
