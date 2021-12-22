@@ -172,7 +172,7 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 				popupclose();
 			
 			
-		
+				Thread.sleep(3000);
 
 					driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 					Thread.sleep(3000);
@@ -214,7 +214,7 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 	//Step 4 : Offers Page
 				Thread.sleep(3000);
 				btnclick(m.getOffers_page());
-				Thread.sleep(2000);
+				Thread.sleep(5000);
 				
 	//Medicine
 				
@@ -259,7 +259,7 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 		
 			WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='11']"));
 			
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			qty_increase.click();
 		
 		
@@ -288,7 +288,7 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 		}
 		
 		
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
 			
 			Thread.sleep(3000);

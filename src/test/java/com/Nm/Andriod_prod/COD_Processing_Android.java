@@ -79,7 +79,7 @@ public class COD_Processing_Android  extends MobileBaseClass{
 	
 	
 	
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class,priority = 1)
 	public void COD_3_Processing() throws Throwable {
 	
 	
@@ -170,7 +170,7 @@ public class COD_Processing_Android  extends MobileBaseClass{
 	Thread.sleep(5000);
 	btnclick(m.getM2_Search_AddToCart());
 	
-	for (int j = 0; j < 5; j++) {
+/*	for (int j = 0; j < 5; j++) {
 	try {	
 		Thread.sleep(5000);
 		btnclick(m.getSearch_results_AddTocart_IncreaseQty());
@@ -178,7 +178,7 @@ public class COD_Processing_Android  extends MobileBaseClass{
 		// TODO: handle exception
 	}	
 		
-	}
+	}*/
 	
 	Thread.sleep(5000);
 	btnclick(m.getPDP_Cart_btn());
@@ -288,13 +288,13 @@ float total ;
 			
 		System.out.println("There More Than 2 Order was in Proicessing.COD is not eligible for this order");	
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElementByAccessibilityId("Navigate up").click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElementByAccessibilityId("Navigate up").click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElementByAccessibilityId("Navigate up").click();
 		
 		Thread.sleep(3000);
