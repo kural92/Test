@@ -397,7 +397,7 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+			
 		}
 
 	}
