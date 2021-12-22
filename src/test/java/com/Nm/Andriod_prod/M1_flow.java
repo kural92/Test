@@ -400,12 +400,12 @@ for (int i = 0; i < 10; i++) {
 					break;
 				} else {
 					
-					System.out.println("Swipe Down to click on Consult Now Button");
+					System.out.println("Swipe Down to click on cod Now Button");
 
 				}}
 			 Thread.sleep(3000);
 			 btnclick(m.getPayment_paybutton());
-			 Thread.sleep(3000);
+			 Thread.sleep(10000);
 			String Order_id =  driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/order_id")).getText();
 					
 					
@@ -413,7 +413,7 @@ for (int i = 0; i < 10; i++) {
 			System.out.println("Order was placed successfully and the "   + Order_id);
  			//my orders
 
-
+			Thread.sleep(3000);
 			btnclick(m.getMyorders());
 
 			Thread.sleep(3000);
@@ -442,7 +442,8 @@ for (int i = 0; i < 10; i++) {
 			Thread.sleep(2000);
 
 			//Submit and cancel
-
+			Thread.sleep(3000);
+			driver.swipe(0, 900, 0, 0, 1000);
 			btnclick(m.getSubmit_cancel());
 			logger.log(Status.PASS, "Order was cancelled successfully");
 			System.out.println("Order was cancelled successfully");
