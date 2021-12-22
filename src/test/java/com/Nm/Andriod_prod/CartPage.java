@@ -3,6 +3,7 @@ package com.Nm.Andriod_prod;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -266,7 +267,7 @@ Float total_Wallet_amt;
 		}	
 
 //Click mini cart//
-		
+		Thread.sleep(3000);
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigated to cart page");
@@ -1469,7 +1470,17 @@ logger.log(Status.PASS, "Items are added successfully");
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 			System.out.println("Successfully navigated to cart page");
 
-			driver.swipe(0, 1100, 0, 0, 1000);
+			for (int i = 0; i < 6; i++) {
+				driver.swipe(0, 600, 0, 0, 1000);
+				if (driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_nms_super_cash")).isDisplayed()) {
+					Thread.sleep(3000);
+					driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_nms_super_cash")).click();
+					break;
+				} else {
+
+				}
+			}
+			//driver.swipe(0, 1100, 0, 0, 1000);
 
 			
 			

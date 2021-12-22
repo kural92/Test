@@ -171,10 +171,12 @@ public class COD_Processing_Android  extends MobileBaseClass{
 	btnclick(m.getM2_Search_AddToCart());
 	
 	for (int j = 0; j < 5; j++) {
-		
+	try {	
 		Thread.sleep(5000);
 		btnclick(m.getSearch_results_AddTocart_IncreaseQty());
-		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}	
 		
 	}
 	

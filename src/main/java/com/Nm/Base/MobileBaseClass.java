@@ -218,8 +218,11 @@ return text;
 						
 						Thread.sleep(5000);
 						 if (i1>2) {
-							 
+							 try {
 							 driver.swipe(950, 1050, 430, 1050, 1000);
+							 } catch (Exception e) {
+								driver.swipe(500, 0, 0, 0, 1000);
+							}
 							// new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
 						 }
 						

@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -202,19 +203,23 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 		
 		Thread.sleep(3000);
 		for (int j = 0; j < 10; j++) {
-
+try {
 			Thread.sleep(3000);
 			btnclick(m.getSearch_results_AddTocart_IncreaseQty());
-			
+} catch (Exception e) {
+	// TODO: handle exception
+}
 			
 		}
 		
 		Thread.sleep(3000);
 		for (int j = 0; j < 11; j++) {
-
+try {
 			Thread.sleep(3000);
 			btnclick(m.getSearch_results_AddTocart_DecreaseQty());
-			
+} catch (Exception e) {
+	// TODO: handle exception
+}
 			
 		}
 		
@@ -255,5 +260,11 @@ public class SearchPage_Android_Live extends MobileBaseClass {
 		
 	}
 	
+	
+	@AfterTest
+	public void tearDown() {
+		// TODO Auto-generated method stub
+  
+	}
 
 }
