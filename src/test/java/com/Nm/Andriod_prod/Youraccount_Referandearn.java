@@ -40,7 +40,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class PreviousConsultation extends MobileBaseClass {
+public class Youraccount_Referandearn extends MobileBaseClass {
 
 	
 	
@@ -99,198 +99,186 @@ public class PreviousConsultation extends MobileBaseClass {
    	
    }
 	
+	/* Under your account page
+	 	Test Case 1 : Verify the functionalities of Delivery address Page (Add, Edit, Select and Delete Address).
+	  	Test Case 2 : Verify the functionalities under my wallet page (Assertion of all the texts,NMS Cash, NMS super Cash And how to use it).
+	  	Test Case 3 : Verify the functionalities of Edit profile Page.
+	  	Test Case 4	: Verify the functionalities of Contact us  Page.(Assertion of all the texts).
+	  	Test Case 5 : Verify the functionalities of My Prescription Page.(Assertion of all the texts).
+	  	Test Case 6 : Verify the functionalities of refer and earn.(Assertion of all the texts).
+	  	Test Case 7 :Verify the functionalities of Help Page.
+	  	Test Case 8 :Verify the functionalities of Rate us page.
+	  	Test Case 9 :Verify the functionalities of Legal Information Page.
+	  :
+	 */
+	
+	
+
+//*****************************************************Your Accountpage*************************
 
 
-//*****************************************************Previous Consultation*************************
+	// **************************************************************refer and
+	// earn*************************************************************************************//
 
 	@Test(enabled = true)
-	public void PreviousConsultation() throws Throwable {
+	public void Referearn() throws Throwable {
 
-		logger = report.createTest("Previous Consultation");
-		logger.log(Status.PASS, "*************Previous Consultation********************");
+		logger = report.createTest("Refer and earn");
+		logger.log(Status.PASS, "*************Refer and earn********************");
 
-	
-	AndriodPom m = new AndriodPom();
-	WebDriverWait wait= new WebDriverWait(driver, 60);
+//Step1 :Launch Browser//		
+		AndriodPom m = new AndriodPom();
+		
 		driver.launchApp();
-		
+			
+			try {
+				popupclose();
+				Thread.sleep(5000);
+				popupclose();
+			btnclick(m.getLetsstarted());
+			} catch (Exception e) {
+				//driver.resetApp();
+				//driver.launchApp();
+			
+			}
+			
+			Thread.sleep(1000);
+			
 		try {
+			
+			Thread.sleep(2000);
+			m.getMobilenumber().sendKeys("8072281468");
 			popupclose();
+			Thread.sleep(10000);
+			popupclose();
+			Thread.sleep(10000);
+			btnclick(m.getUsepwd());
 			Thread.sleep(5000);
-			popupclose();
-		btnclick(m.getLetsstarted());
-		} catch (Exception e) {
-			//driver.resetApp();
 		
+			m.getPassword().sendKeys("test@123");
+			
+			Thread.sleep(2000);
+		
+			
+			Thread.sleep(5000);
+			btnclick(m.getLogin());
 		}
 		
-		Thread.sleep(1000);
+		catch(Exception e) {
+			System.out.println("Already logged in");
+		}
+		 
+			popupclose();
 		
-	try {
 		
-		Thread.sleep(2000);
-		m.getMobilenumber().sendKeys("8072281468");
-		popupclose();
-		Thread.sleep(10000);
-		popupclose();
-		Thread.sleep(10000);
-		btnclick(m.getUsepwd());
-		Thread.sleep(5000);
 	
-		m.getPassword().sendKeys("test@123");
-		
-		Thread.sleep(2000);
-	
-		
-		Thread.sleep(5000);
-		btnclick(m.getLogin());
-	}
-	
-	catch(Exception e) {
-		System.out.println("Already logged in");
-	}
-	
-//Step 3 : consult button //
-	
-	Thread.sleep(3000);
-	/*
-	driver.swipe(0, 1250, 0, 0, 1000);
-	Thread.sleep(3000);
-	
-	driver.swipe(0, 1250, 0, 0, 1000);
-	
-	driver.swipe(0, 1250, 0, 0, 1000);
-	btnclick(m.getConsultnow());
-		*/
-	
-	for (int ii = 0; ii < 10; ii++) {
+//Step 3 : Navigate to user profile//
+
+		btnclick(m.getUserprofile());
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to userprofile");
+
+		System.out.println("Successfully navigate to userprofile");
+
+// Step 4 : Navigate to Refer and earn
+
+		driver.swipe(0, 1100, 0, 0, 1000);
 		
 		Thread.sleep(3000);
-		driver.swipe(0, 1000, 0, 0, 1000);
-		
-		if (m.getConsultation_Btn_List().size()==1) {
-			
-			Thread.sleep(3000);
-			btnclick(m.getConsultation_Btn());
-			break;
-		} else {
-			
-			System.out.println("Swipe Down to click on Consult Now Button");
 
-		}
+		btnclick(m.getReferearnpage());
+		Thread.sleep(3000);
+		
+		logger.log(Status.PASS, "Successfully navigate to refer and earn page");
+
+		System.out.println("Successfully navigate to refer and earn page");
+
+//Step 5 : Do assertion for all the text in refer and earn page//			
+
+		Assert.assertEquals(gettext(m.getGrabyour()), "GRAB YOUR");
+		
+		System.out.println(m.getGrabyour().getText());
+		Assert.assertEquals(gettext(m.getInstantrewards()), "Instant Rewards");
+		
+		System.out.println(m.getInstantrewards().getText());
+
+		Assert.assertEquals(gettext(m.getSimplerway_txt()), "A simpler way to earn and get discounts");
+		
+		System.out.println(m.getSimplerway_txt().getText());
+
+		Assert.assertEquals(gettext(m.getInvite()), "Invite your friends and family");
+		
+		System.out.println(m.getInvite().getText());
+
+		Assert.assertEquals(gettext(m.getShare_netemed_app_txt()),
+				"share the Netmeds app download link & Referral code with your friends and family");
+
+			System.out.println(m.getShare_netemed_app_txt().getText());
+		Assert.assertEquals(gettext(m.getYouget_txt()), "You get");
+		
+		System.out.println(m.getYouget_txt().getText());
+
+		Assert.assertEquals(gettext(m.getNMSSupercash_txt()), "Rs.150 NMS SuperCash - after your Friend’s first order is delivered!");
+		
+		System.out.println(m.getNMSSupercash_txt().getText());
+
+		Assert.assertEquals(gettext(m.getYourfrndsget_txt()), "Your Friends Get");
+
+		System.out.println(m.getYourfrndsget_txt().getText());
+		
+	
+		Assert.assertTrue(gettext(m.getFlat20offer_txt()).contains("Flat 20% off"));
+
+		System.out.println(m.getFlat20offer_txt().getText());
+		
+
+		logger.log(Status.PASS, "all the texts were asserted successfully");
+		System.out.println("all the texts are asserted successfully");
+//Step 6: Referral code check//
+
+		String Actualreferralcodenumber = m.getYourreferralcode().getText();
+
+		String Originalreferralcodenumber = "TEST1932";
+
+		Assert.assertEquals(Actualreferralcodenumber, Originalreferralcodenumber);
+
+		System.out.println(Actualreferralcodenumber);
+
+		Thread.sleep(3000);
+		
+		//Step 9 : Click share link
+
+		btnclick(m.getsharelink());
+		Thread.sleep(3000);
+
+		logger.log(Status.PASS, "Share link was opened successfully");
+		System.out.println("Share link was opened successfully");
+
+
+		driver.findElement(By.id("miui:id/buttonPanel")).click();
+
+		
+		//Copy Code
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Copy']")).click();
+		Thread.sleep(3000);
+		System.out.println("Code was succesfully copied");
+
+
+		
+
+		//btnclick(m.getTermscondition_link());
+
+
+
+		driver.navigate().back();
+		Thread.sleep(3000);
+
+
+		logger.log(Status.PASS, "refer and earn page is working properly");
+		System.out.println("refer and earn page is working properly");
 	}
-	logger.log(Status.PASS, "Successfully clicked consultnow button");
-	System.out.println("Successfully clicked consultnow button");
-//Previous Consultation
-	
-	
-	Thread.sleep(3000);
-	//viewall
-	driver.findElement(By.xpath("(//android.widget.TextView[@text='Your Previous Consultations']/parent::android.widget.LinearLayout/child::android.widget.TextView)[2]")).click();
-	
-	Thread.sleep(3000);
-	driver.navigate().back();
-	
-	Thread.sleep(3000);
-	driver.findElement(By.xpath("//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/previous_consultation_layout']")).click();
-	
-	Thread.sleep(3000);
-	
-	//Last consultation  details
-	
-		System.out.println("Last consultation details are as follows");
-		
-		System.out.println("mode of consultation is"+  driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txt_type']")).getText());
-		
-		System.out.println("Consultation Status is"+  driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txt_status']")).getText());
-		
-		System.out.println("Consultation date is"+  driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txt_date']")).getText());
-	
-	//Go to chat
-	
-	
-	btnclick(m.getGotochat());
-	
-	logger.log(Status.PASS, "Successfully navigated to Go chat button");
-	System.out.println("Successfully navigated to Go chat button");
-	Thread.sleep(3000);
-	
-	driver.navigate().back();
-	
-	//Help
-	
-	Thread.sleep(3000);
-	
-	
-	btnclick(m.getHelp_previous_consultation());
-	
-	logger.log(Status.PASS, "Successfully navigated to help page");
-	System.out.println("Successfully navigated to help page");
-/*	
-	Thread.sleep(3000);
-List<WebElement>	list =  m.getLeftside_Link();
-	
-	int help = list.size();
-	
-	System.out.println("the element size is   "+help);
-	
 
-		 for (int i = 0; i<13; i++)
-			 
-		 {
-
-				Thread.sleep(3000);
-
-		
-				list.get(i).click();
-
-				 driver.navigate().back();
-				
-				Thread.sleep(1500);
-				driver.swipe(730, 330, 730, 240, 3000);
-
-				System.out.println(list.get(i).getText());
-				logger.log(Status.PASS, "Successfully all the topics are clicked");
-			}
-
-		 System.out.println("Successfully all the topics are clicked");
-*/	
-	Thread.sleep(5000);
-	
-	driver.navigate().back();
-	
-	//Consult again
-	
-	Thread.sleep(5000);
-	
-	btnclick(m.getConsult_again());
-	
-	Thread.sleep(3000);
-	
-	//Time selection
-	driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_multi_choice'])[7]")).click();
-	
-	//Schedule button click
-	
-	Thread.sleep(3000);
-	
-	btnclick(m.getSchedule_button());
-	logger.log(Status.PASS, "Successfully  clicked schedule button");
-	System.out.println("Successfully  clicked schedule button");
-	
-	Thread.sleep(3000);
-	
-	//wait.until(ExpectedConditions.visibilityOf(m.getConsult_Chat_Text()));
-	
-	//btnclick(m.getConsult_Chat());
-	driver.findElement(By.xpath("//android.widget.TextView[@text='Chat']")).click();
-	
-	Thread.sleep(3000);
-	
-	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/btn_make_payment")).click();
-	
-	System.out.println("Previous consultation screen is working fine");
-	}					
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
@@ -326,7 +314,7 @@ List<WebElement>	list =  m.getLeftside_Link();
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-		//	BaseClass.mail_report();
+			BaseClass.mail_report();
 		}
 
 	}
@@ -335,7 +323,7 @@ List<WebElement>	list =  m.getLeftside_Link();
 	private void quitbrowser() {
 		report.flush();
 
-	//.quit();
+		driver.quit();
 	}
 
 }

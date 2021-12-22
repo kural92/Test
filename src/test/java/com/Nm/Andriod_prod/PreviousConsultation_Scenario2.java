@@ -40,7 +40,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class PreviousConsultation extends MobileBaseClass {
+public class PreviousConsultation_Scenario2 extends MobileBaseClass {
 
 	
 	
@@ -103,7 +103,7 @@ public class PreviousConsultation extends MobileBaseClass {
 
 //*****************************************************Previous Consultation*************************
 
-	@Test(enabled = true)
+	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
 	public void PreviousConsultation() throws Throwable {
 
 		logger = report.createTest("Previous Consultation");
@@ -226,7 +226,7 @@ public class PreviousConsultation extends MobileBaseClass {
 	
 	logger.log(Status.PASS, "Successfully navigated to help page");
 	System.out.println("Successfully navigated to help page");
-/*	
+	
 	Thread.sleep(3000);
 List<WebElement>	list =  m.getLeftside_Link();
 	
@@ -254,7 +254,7 @@ List<WebElement>	list =  m.getLeftside_Link();
 			}
 
 		 System.out.println("Successfully all the topics are clicked");
-*/	
+	
 	Thread.sleep(5000);
 	
 	driver.navigate().back();

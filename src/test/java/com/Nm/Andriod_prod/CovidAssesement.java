@@ -139,7 +139,7 @@ public class CovidAssesement extends MobileBaseClass {
 		Thread.sleep(1000);
 		
 	try {
-		
+
 		Thread.sleep(2000);
 		m.getMobilenumber().sendKeys("8072281468");
 		popupclose();
