@@ -188,7 +188,7 @@ return text;
 		
 		
 		
-		for (int i=0;i<=1;i++) {
+		for (int i=0;i<=0;i++) {
 			
 			Thread.sleep(6000);
 			Category_list.get(i).click();
@@ -216,7 +216,7 @@ return text;
 			System.out.println("The element size is"+  SubCategory_list.size());
 			
 				//	for (int i1=0;i1<SubCategory_list.size();i1++) {
-			for (int i1=0;i1<=1;i1++) {
+			for (int i1=0;i1<=0;i1++) {
 						Thread.sleep(5000);
 						 if (i1>2) {
 							 try {

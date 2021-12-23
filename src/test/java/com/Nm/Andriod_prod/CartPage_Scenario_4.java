@@ -272,7 +272,7 @@ Float total_Wallet_amt;
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 			System.out.println("Successfully navigated to cart page");
 
-			driver.swipe(0, 1100, 0, 0, 1000);
+		//	driver.swipe(0, 1100, 0, 0, 1000);
 
 			
 			
@@ -393,7 +393,8 @@ Float total_Wallet_amt;
 				
 				
 	//Total Amount//	
-				
+				Thread.sleep(3000);
+				driver.swipe(0, 300, 0, 0, 1000);
 				String totalamount = driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart_orderAmount")).getText();
 				
 				//String totalamount = m.getTotal_amount().getText();
