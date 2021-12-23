@@ -7,6 +7,7 @@ import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -197,10 +198,11 @@ public class M2_Flow_Live extends MobileBaseClass{
 		try {
 			
 			System.out.println("");
-			image.click();
+		//	image.click();
 		} catch (Exception e) { Thread.sleep(3000);
      // new TouchAction(driver).moveTo(image).waitAction(2000).press(image).perform();
-		//	new TouchAction(driver).moveTo(200, 800).waitAction(2000).tap(200, 800).perform();
+		//	new TouchAction(driver).moveTo(150, 700).waitAction(2000).tap(150, 700).perform();
+			new TouchActions(driver).singleTap(image).perform();
 		}
 		
 		Thread.sleep(10000);
@@ -374,10 +376,12 @@ public class M2_Flow_Live extends MobileBaseClass{
 		Thread.sleep(30000);
 		btnclick(driver.findElementByAccessibilityId("Gallery"));
 		
-		
+		try {
 		Thread.sleep(5000);
 		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']")));
-		
+		}catch (Exception e) {
+			new TouchAction(driver).moveTo(150, 700).waitAction(2000).tap(150, 700).perform();
+		}
 		
 		Thread.sleep(5000);
 		btnclick(m.getM2_Upload_ContinueBtn());

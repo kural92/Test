@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,25 +24,22 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-<<<<<<< HEAD
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-=======
-            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
               <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -52,54 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-<<<<<<< HEAD
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1178514907\testng-customsuite.xml</span>
-=======
-                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-<<<<<<< HEAD
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--883693793\testng-customsuite.xml</span>
-=======
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1397649328\testng-customsuite.xml</span>
-=======
-                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-<<<<<<< HEAD
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1103405105\testng-customsuite.xml</span>
-=======
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-438295803\testng-customsuite.xml</span>
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1743376372\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -112,10 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-<<<<<<< HEAD
-                    <span class="method-stats">1 method, 1 failed,   </span>
-=======
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -125,42 +103,13 @@
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.EHR_Scenarios" hash-for-method="EHR1">EHR1</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M2_Flow_Live" class="method navigator-link" hash-for-method="m2_getCall">m2_getCall</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-<<<<<<< HEAD
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.OrderSuccessPage_M1" class="method navigator-link" hash-for-method="OrderSuccesspageM1">OrderSuccesspageM1</a> <!-- method navigator-link -->
-=======
-<<<<<<< HEAD
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.EHR_Scenarios" hash-for-method="EHR2">EHR2</a> <!-- method navigator-link -->
-=======
-<<<<<<< HEAD
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.Youraccount_OffersPage" hash-for-method="offersPage">offersPage</a> <!-- method navigator-link -->
-=======
-                        <img src="passed.png" width="3%"/>
-<<<<<<< HEAD
-                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.Frequently_Bought" class="method navigator-link" hash-for-method="freqBought">freqBought</a> <!-- method navigator-link -->
-=======
-                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.AlternateProduct" class="method navigator-link" hash-for-method="alterPro">alterPro</a> <!-- method navigator-link -->
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+                        <a href="#" panel-name="suite-Default_suite" title="com.Nm.Andriod_prod.M2_Flow_Live" class="method navigator-link" hash-for-method="m2_getSearchMedicine">m2_getSearchMedicine</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -178,74 +127,28 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-<<<<<<< HEAD
-              <span class="class-name">com.Nm.Andriod_prod.OrderSuccessPage_M1</span>
-=======
-<<<<<<< HEAD
-              <span class="class-name">com.Nm.Andriod_prod.EHR_Scenarios</span>
-=======
-              <span class="class-name">com.Nm.Andriod_prod.Youraccount_OffersPage</span>
-=======
-              <img src="passed.png"/>
-<<<<<<< HEAD
-              <span class="class-name">com.Nm.Andriod_prod.Frequently_Bought</span>
-=======
-              <span class="class-name">com.Nm.Andriod_prod.AlternateProduct</span>
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+              <span class="class-name">com.Nm.Andriod_prod.M2_Flow_Live</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-<<<<<<< HEAD
-                  <a name="OrderSuccesspageM1">
-                  </a> <!-- OrderSuccesspageM1 -->
-                  <span class="method-name">OrderSuccesspageM1</span>
+                  <a name="m2_getCall">
+                  </a> <!-- m2_getCall -->
+                  <span class="method-name">m2_getCall</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 247 milliseconds
-=======
-<<<<<<< HEAD
-                  <a name="EHR1">
-                  </a> <!-- EHR1 -->
-                  <span class="method-name">EHR1</span>
-=======
-<<<<<<< HEAD
-                  <a name="freqBought">
-                  </a> <!-- freqBought -->
-                  <span class="method-name">freqBought</span>
-=======
-<<<<<<< HEAD
-                  <a name="offersPage">
-                  </a> <!-- offersPage -->
-                  <span class="method-name">offersPage</span>
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 160 milliseconds
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+Command duration or timeout: 162 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-<<<<<<< HEAD
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=45, noReset=true, viewportRect={top=45, left=0, width=720, height=1420}, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, autoDismissAlerts=true, platformName=Android}, platformVersion=11, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung, deviceScreenSize=720x1600, networkConnectionEnabled=true, warnings={}, autoDismissAlerts=true, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=1.875, locationContextEnabled=false, deviceScreenDensity=300, deviceModel=SM-A125F}]
-Session ID: ba6d34de-0f87-4bf4-ae92-94c77df15a32
-*** Element info: {Using=xpath, value=//android.widget.EditText[@text=&apos;Search here…&apos;]|//android.widget.EditText[@resource-id=&apos;com.NetmedsMarketplace.Netmeds:id/search_bar&apos;]}
+Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, deviceScreenSize=720x1600, networkConnectionEnabled=true, statBarHeight=45, noReset=true, warnings={}, viewportRect={top=45, left=0, width=720, height=1420}, databaseEnabled=false, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, platformName=Android}, platformVersion=11, pixelRatio=1.875, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=300, deviceModel=SM-A125F, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung}]
+Session ID: 307ba987-94a1-4dbc-9c24-da912e448428
+*** Element info: {Using=xpath, value=//android.widget.TextView[@resource-id=&apos;com.NetmedsMarketplace.Netmeds:id/order_medicine_button&apos;]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-=======
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=84, noReset=true, viewportRect={top=84, left=0, width=1080, height=2130}, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, autoDismissAlerts=true, platformName=Android}, platformVersion=10, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo, deviceScreenSize=1080x2340, networkConnectionEnabled=true, warnings={}, autoDismissAlerts=true, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=3, locationContextEnabled=false, deviceScreenDensity=480, deviceModel=vivo 1819}]
-Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
-*** Element info: {Using=xpath, value=//android.widget.EditText[@resource-id=&apos;com.NetmedsMarketplace.Netmeds:id/edt_ud_name&apos;]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
@@ -265,11 +168,11 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-<<<<<<< HEAD
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy12.sendKeys(Unknown Source)
-	at com.Nm.Andriod_prod.OrderSuccessPage_M1.OrderSuccesspageM1(OrderSuccessPage_M1.java:180)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:96)
+	at com.Nm.Andriod_prod.M2_Flow_Live.m2_getCall(M2_Flow_Live.java:373)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -296,63 +199,85 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
 	at org.testng.TestNG.runSuites(TestNG.java:1063)
 	at org.testng.TestNG.run(TestNG.java:1031)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-=======
-	at com.Nm.Andriod_prod.EHR_Scenarios.EHR1(EHR_Scenarios.java:220)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 
 </div> <!-- stack-trace -->
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
-          <div class="suite-Default_suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.Nm.Andriod_prod.EHR_Scenarios</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="EHR2">
-                  </a> <!-- EHR2 -->
-                  <span class="method-name">EHR2</span>
-=======
-=======
-                  <a name="alterPro">
-                  </a> <!-- alterPro -->
-                  <span class="method-name">alterPro</span>
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+                  <a name="m2_getSearchMedicine">
+                  </a> <!-- m2_getSearchMedicine -->
+                  <span class="method-name">m2_getSearchMedicine</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 190 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, deviceScreenSize=720x1600, networkConnectionEnabled=true, statBarHeight=45, noReset=true, warnings={}, viewportRect={top=45, left=0, width=720, height=1420}, databaseEnabled=false, deviceName=RZ8R20GLXTA, platform=LINUX, deviceUDID=RZ8R20GLXTA, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, platformName=Android}, platformVersion=11, pixelRatio=1.875, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=300, deviceModel=SM-A125F, platformName=Android, deviceApiLevel=30, deviceManufacturer=samsung}]
+Session ID: 307ba987-94a1-4dbc-9c24-da912e448428
+*** Element info: {Using=xpath, value=//android.widget.TextView[@resource-id=&apos;com.NetmedsMarketplace.Netmeds:id/continueButton&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.btnclick(MobileBaseClass.java:96)
+	at com.Nm.Andriod_prod.M2_Flow_Live.m2_getSearchMedicine(M2_Flow_Live.java:209)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -360,48 +285,16 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1178514907\testng-customsuite.xml</span>
-=======
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--883693793\testng-customsuite.xml</span>
-=======
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1103405105\testng-customsuite.xml</span>
-=======
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1397649328\testng-customsuite.xml</span>
-=======
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-438295803\testng-customsuite.xml</span>
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1743376372\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Andriod_prod.OrderSuccessPage_M1&quot;/&gt;
-=======
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Andriod_prod.EHR_Scenarios&quot;/&gt;
-=======
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Andriod_prod.Frequently_Bought&quot;/&gt;
-=======
-<<<<<<< HEAD
-      &lt;class name=&quot;com.Nm.Andriod_prod.Youraccount_OffersPage&quot;/&gt;
-=======
-      &lt;class name=&quot;com.Nm.Andriod_prod.AlternateProduct&quot;/&gt;
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+      &lt;class name=&quot;com.Nm.Andriod_prod.M2_Flow_Live&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -443,42 +336,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-<<<<<<< HEAD
-data.setCell(0, 1, 'OrderSuccesspageM1')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.OrderSuccessPage_M1')
-data.setCell(0, 3, 28637);
-=======
-<<<<<<< HEAD
-data.setCell(0, 1, 'EHR2')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.EHR_Scenarios')
-data.setCell(0, 3, 141359);
+data.setCell(0, 1, 'm2_getSearchMedicine')
+data.setCell(0, 2, 'com.Nm.Andriod_prod.M2_Flow_Live')
+data.setCell(0, 3, 143002);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'EHR1')
-data.setCell(1, 2, 'com.Nm.Andriod_prod.EHR_Scenarios')
-data.setCell(1, 3, 83690);
-=======
-<<<<<<< HEAD
-data.setCell(0, 1, 'freqBought')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.Frequently_Bought')
-data.setCell(0, 3, 233774);
-=======
-<<<<<<< HEAD
-data.setCell(0, 1, 'offersPage')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.Youraccount_OffersPage')
-data.setCell(0, 3, 62006);
-=======
-data.setCell(0, 1, 'alterPro')
-data.setCell(0, 2, 'com.Nm.Andriod_prod.AlternateProduct')
-data.setCell(0, 3, 184590);
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+data.setCell(1, 1, 'm2_getCall')
+data.setCell(1, 2, 'com.Nm.Andriod_prod.M2_Flow_Live')
+data.setCell(1, 3, 48443);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 28 seconds</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -504,91 +373,35 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Andriod_prod.OrderSuccessPage_M1</div> <!-- chronological-class-name -->
-=======
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Andriod_prod.EHR_Scenarios</div> <!-- chronological-class-name -->
-=======
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Andriod_prod.Frequently_Bought</div> <!-- chronological-class-name -->
-=======
-<<<<<<< HEAD
-              <div class="chronological-class-name">com.Nm.Andriod_prod.Youraccount_OffersPage</div> <!-- chronological-class-name -->
-=======
-              <div class="chronological-class-name">com.Nm.Andriod_prod.AlternateProduct</div> <!-- chronological-class-name -->
->>>>>>> ccd0930310b9e3c9d1894331d1761d398610eb9a
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+              <div class="chronological-class-name">com.Nm.Andriod_prod.M2_Flow_Live</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">startReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">launchbrowser</span>
-<<<<<<< HEAD
-                <span class="method-start">350 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">191 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">230 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">232 ms</span>
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+                <span class="method-start">339 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-<<<<<<< HEAD
-                <span class="method-name">OrderSuccesspageM1</span>
-                <span class="method-start">18017 ms</span>
+                <span class="method-name">m2_getSearchMedicine</span>
+                <span class="method-start">17882 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=OrderSuccesspageM1 status=FAILURE method=OrderSuccessPage_M1.OrderSuccesspageM1()[p...)</span>
-                <span class="method-start">46690 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">quitbrowser</span>
-                <span class="method-start">53596 ms</span>
-=======
-                <span class="method-name">EHR1</span>
-                <span class="method-start">11996 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=EHR1 status=FAILURE method=EHR_Scenarios.EHR1()[pri:1, instance:com.Nm.Andriod_prod...)</span>
-                <span class="method-start">95700 ms</span>
-              </div> <!-- configuration-method after -->
-<<<<<<< HEAD
               <div class="test-method">
-                <span class="method-name">EHR2</span>
-                <span class="method-start">102546 ms</span>
-=======
-=======
-                <span class="method-start">224 ms</span>
->>>>>>> aef1c974c5d1a979a9c658fa75115bef7545c166
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">freqBought</span>
-                <span class="method-start">13569 ms</span>
->>>>>>> 3f40d148ab829cba1cb439beda6b686d857a7680
+                <img src="failed.png">
+                </img>
+                <span class="method-name">m2_getCall</span>
+                <span class="method-start">160926 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">screenShot([TestResult name=EHR2 status=SUCCESS method=EHR_Scenarios.EHR2()[pri:2, instance:com.Nm.Andriod_prod...)</span>
-                <span class="method-start">243909 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-test after">
-                <span class="method-name">quitbrowser</span>
-                <span class="method-start">246925 ms</span>
->>>>>>> 4137829113a4e187d65a0609731d8ab69e18de7b
+                <span class="method-name">tearDown</span>
+                <span class="method-start">209392 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>
