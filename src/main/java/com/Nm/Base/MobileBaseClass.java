@@ -262,7 +262,7 @@ return text;
 	Thread.sleep(7000);
 
 	
-	for (int i2 = 0;i2<5; i2++)
+	for (int i2 = 0;i2<3; i2++)
 	
 	{
 		
@@ -353,6 +353,9 @@ return text;
 			 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/checked")).click();
 			 Thread.sleep(5000);
 			 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']")).click();
+			 Thread.sleep(3000);
+				driver.swipe(0, 200, 0, 0, 1000);
+				
 			 Thread.sleep(5000);
 			 System.out.println ("drug name is "+ driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")).getText());
 			 Thread.sleep(5000);
