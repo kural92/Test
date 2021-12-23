@@ -156,7 +156,7 @@ public class Frequently_Bought extends MobileBaseClass{
 					Thread.sleep(2000);
 					driver.swipe(0, 900, 0, 0, 1000);
 					Thread.sleep(2000);
-					if (m.getPDP_FrequentlyBrought_text().isDisplayed()|m.getPDP_FrequentlyBrought_text_Lst().size()==1) {
+					if (m.getPDP_FrequentlyBrought_text_Lst().size()==1) {
 						System.out.println("Swipe down to check Frequently Brought");
 						break;
 					} else {
