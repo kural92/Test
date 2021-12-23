@@ -264,7 +264,8 @@ Thread.sleep(3000);
 	try {
 		driver.swipe(620, 1900, 620, 0, 1000);
 	} catch (Exception e) {
-		driver.swipe(0, 600, 0, 0, 1000);
+		Thread.sleep(3000);
+		driver.swipe(20, 600, 0, 0, 1000);
 	}
 	
 
@@ -285,7 +286,7 @@ Thread.sleep(3000);
 	try {
 		driver.swipe(620, 1900, 620, 0, 1000);
 	} catch (Exception e) {
-		driver.swipe(0, 600, 0, 0, 1000);
+		driver.swipe(20, 600, 0, 0, 1000);
 	}
 	
 	Thread.sleep(3000);
@@ -300,7 +301,7 @@ Thread.sleep(3000);
 	try {
 		driver.swipe(620, 1900, 620, 0, 1000);
 	} catch (Exception e) {
-		driver.swipe(0, 600, 0, 0, 1000);
+		driver.swipe(20, 600, 0, 0, 1000);
 	}
 	
 	btnclick(m.getSymptoms_progress_option1());
