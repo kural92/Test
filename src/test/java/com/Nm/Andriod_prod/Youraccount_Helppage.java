@@ -181,16 +181,32 @@ public class Youraccount_Helppage extends MobileBaseClass {
 		System.out.println("Successfully navigate to userprofile");
 
 // Step 4 : Navigate to Refer and earn
-try {
-		driver.swipe(790, 1100, 800, 70, 1000);
-} catch (Exception e) {
-	driver.swipe(0, 1000, 0, 0, 1000);
-}
-		 btnclick(m.getHelppage());
+for (int K = 0; K < 10; K++) {
+
+			
+			Thread.sleep(3000);
+			 driver.swipe(800, 1300, 800, 1200, 3000);
+			try {
+				if (m.getHelppage().isDisplayed()) {
+
+					
+					Thread.sleep(3000);
+					 btnclick(m.getHelppage());					break;
+				} else {
+					
+					System.out.println("Swipe right to click on others Button");
+
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			}
+		Thread.sleep(3000);
 		 
-		 Thread.sleep(3000);
+		
+		
 		 
-		 driver.swipe(800, 250, 800, 250, 3000);	 
+		 
 		 
 	List<WebElement>	list =  m.getLeftside_Link();
 	
@@ -199,7 +215,7 @@ try {
 	System.out.println("the element size is   "+help);
 	
 
-		 for (int i = 0; i<13; i++)
+		 for (int i = 0; i<12; i++)
 			 
 		 {
 
