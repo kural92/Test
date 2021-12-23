@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Dec 23, 2021 12:47:58 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Dec 23, 2021 09:33:42 AM</span>
 				</a>
 			</li>
 			<li>
@@ -124,10 +124,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -139,10 +139,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='76.923%'><span class='strong'>10</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='57.143%'><span class='strong'>4</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='23.077%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='42.857%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -159,15 +159,15 @@
 				
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>EHR2</span>
-						<span class='test-time'>Dec 23, 2021 12:48:10 AM</span>
+						<span class='test-name'>Category Page</span>
+						<span class='test-time'>Dec 23, 2021 09:33:55 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 23, 2021 12:48:10 AM</span>
-	<span class='label end-time'>Dec 23, 2021 12:49:35 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 24s+524ms</span>
+	<span class='label start-time'>Dec 23, 2021 09:33:55 AM</span>
+	<span class='label end-time'>Dec 23, 2021 09:41:28 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 7m 33s+226ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -181,60 +181,38 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:48:10 AM</td>
-					<td class='step-details'>*************EHR2********************</td>
+					<td class='timestamp'>9:33:55 AM</td>
+					<td class='step-details'>*************CategoryPage********************</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:49:05 AM</td>
-					<td class='step-details'>Successfully Clicked the consult button</td>
+					<td class='timestamp'>9:34:35 AM</td>
+					<td class='step-details'>Items are removed successfully</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:49:20 AM</td>
-					<td class='step-details'>Successfully selected the specialist</td>
+					<td class='timestamp'>9:34:39 AM</td>
+					<td class='step-details'>Items are removed successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>9:34:49 AM</td>
+					<td class='step-details'>Successfully Naviagted to Wellness Page</td>
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>12:49:34 AM</td>
-					<td class='step-details'><span class='label white-text red'>EHR1 FAILED </span></td>
+					<td class='timestamp'>9:41:26 AM</td>
+					<td class='step-details'><span class='label white-text red'>CategoryPage FAILED </span></td>
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>12:49:34 AM</td>
-					<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 160 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'NMSLAP093', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=84, noReset=true, viewportRect={top=84, left=0, width=1080, height=2130}, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, autoDismissAlerts=true, platformName=Android}, platformVersion=10, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo, deviceScreenSize=1080x2340, networkConnectionEnabled=true, warnings={}, autoDismissAlerts=true, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=3, locationContextEnabled=false, deviceScreenDensity=480, deviceModel=vivo 1819}]
-Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
-*** Element info: {Using=xpath, value=//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/edt_ud_name']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.Nm.Andriod_prod.EHR_Scenarios.EHR1(EHR_Scenarios.java:220)
+					<td class='timestamp'>9:41:26 AM</td>
+					<td class='step-details'><pre>java.lang.IndexOutOfBoundsException: Index: 4, Size: 4
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.Navigating_to_Sortby(MobileBaseClass.java:283)
+	at com.Nm.Base.MobileBaseClass.Navigating_to_category(MobileBaseClass.java:200)
+	at com.Nm.Andriod_prod.CategoryPage.CategoryPage(CategoryPage.java:199)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -264,79 +242,15 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>12:49:35 AM</td>
-					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@9573584</td>
+					<td class='timestamp'>9:41:28 AM</td>
+					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@5a5338df</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 							<ul class='screenshots'>
-								<li><img data-featherlight='EHR1.png' width='10%' src='EHR1.png' data-src='EHR1.png'></li>
+								<li><img data-featherlight='CategoryPage.png' width='10%' src='CategoryPage.png' data-src='CategoryPage.png'></li>
 							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>EHR2</span>
-						<span class='test-time'>Dec 23, 2021 12:49:41 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Dec 23, 2021 12:49:41 AM</span>
-	<span class='label end-time'>Dec 23, 2021 12:52:02 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 2m 21s+362ms</span>
-</div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:49:41 AM</td>
-					<td class='step-details'>*************EHR2********************</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:50:16 AM</td>
-					<td class='step-details'>Successfully navigate to userprofile</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:50:19 AM</td>
-					<td class='step-details'>Successfully navigated to EHR page</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:50:22 AM</td>
-					<td class='step-details'>Successfully clicked add user button</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:51:43 AM</td>
-					<td class='step-details'>Successfully given the EHR patient details and saved</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:52:02 AM</td>
-					<td class='step-details'>Successfully deleted the Patient detail</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>12:52:02 AM</td>
-					<td class='step-details'><span class='label white-text green'>EHR2 PASSED </span></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
 					</div>
 				</li>
 			</ul>
@@ -392,7 +306,7 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+                                <span class='exception-name'>java.lang.IndexOutOfBoundsException</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -407,41 +321,14 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Dec 23, 2021 12:48:10 AM</td>
-                                                        <td class='linked' test-id='1'>EHR2</td>
-                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 160 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'NMSLAP093', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.NetmedsMarketplace.Netmeds, statBarHeight=84, noReset=true, viewportRect={top=84, left=0, width=1080, height=2130}, deviceName=NBBY79GM5LTCJBJR, platform=LINUX, deviceUDID=NBBY79GM5LTCJBJR, desired={appPackage=com.NetmedsMarketplace.Netmeds, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, noReset=true, autoDismissAlerts=true, platformName=Android}, platformVersion=10, webStorageEnabled=false, takesScreenshot=true, javascriptEnabled=true, platformName=Android, deviceApiLevel=29, deviceManufacturer=vivo, deviceScreenSize=1080x2340, networkConnectionEnabled=true, warnings={}, autoDismissAlerts=true, databaseEnabled=false, appActivity=com.netmedsmarketplace.netmeds.AppUriSchemeHandler, pixelRatio=3, locationContextEnabled=false, deviceScreenDensity=480, deviceModel=vivo 1819}]
-Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
-*** Element info: {Using=xpath, value=//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/edt_ud_name']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.Nm.Andriod_prod.EHR_Scenarios.EHR1(EHR_Scenarios.java:220)
+                                                        <td>Dec 23, 2021 09:33:55 AM</td>
+                                                        <td class='linked' test-id='1'>Category Page</td>
+                                                        <td><pre><pre>java.lang.IndexOutOfBoundsException: Index: 4, Size: 4
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at com.Nm.Base.MobileBaseClass.Navigating_to_Sortby(MobileBaseClass.java:283)
+	at com.Nm.Base.MobileBaseClass.Navigating_to_category(MobileBaseClass.java:200)
+	at com.Nm.Andriod_prod.CategoryPage.CategoryPage(CategoryPage.java:199)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -493,31 +380,31 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>13</div>
+					<div class='panel-lead'>7</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 23, 2021 12:47:58 AM</div>
+					<div class='panel-lead'>Dec 23, 2021 09:33:42 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 23, 2021 12:52:05 AM</div>
+			 		<div class='panel-lead'>Dec 23, 2021 09:41:34 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 4m 6s+831ms</div>
+					<div class='panel-lead'>0h 7m 52s+133ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -554,7 +441,7 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 0,
 				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
@@ -562,7 +449,7 @@ Session ID: 2121dfde-cf59-42ce-9f38-70522f02a7ac
 				skipParent: 0,
 				exceptionsParent: 1,
 				
-				passChild: 10,
+				passChild: 4,
 				failChild: 3,
 				fatalChild: 0,
 				errorChild: 0,
