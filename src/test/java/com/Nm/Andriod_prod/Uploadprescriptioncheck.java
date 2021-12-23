@@ -229,7 +229,7 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 		
 		driver.findElementByAccessibilityId("Gallery").click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]")).click();
+		driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]||//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")).click();
 		
 		Thread.sleep(2000);
 // Rx 
@@ -261,7 +261,7 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 			
 			Thread.sleep(2000);
 			
-			driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[3]")).click();
+			driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[3]|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")).click();
  
 			System.out.println("prescription uploaded");
  
@@ -348,7 +348,7 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//android.widget.ImageView[@content-desc=\"Past Rx\"])[2]")).click();
 	Thread.sleep(3000);
-	driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[4]")).click();
+	driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[4]||//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")).click();
 		
 	
 	for (int i=0;i<10;i++) {
@@ -372,7 +372,7 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 			
 			Thread.sleep(2000);
 			
-			driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[4]")).click();
+			driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[4]||//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")).click();
  
 			
 			

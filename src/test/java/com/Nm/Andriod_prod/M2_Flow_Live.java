@@ -193,8 +193,9 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		Thread.sleep(10000);
 	 //btncli(driver.findElement(By.xpath("//android.view.View[@index='0']"))); com.google.android.documentsui:id/icon_thumb
-		WebElement image =driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']"));
+		WebElement image =driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']"));
 		
+
 		try {
 			
 			System.out.println("");
@@ -378,12 +379,16 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		try {
 		Thread.sleep(5000);
-		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']")));
+
+		btnclick(driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")));
+		
+
 		}catch (Exception e) {
 			new TouchAction(driver).moveTo(150, 700).waitAction(2000).tap(150, 700).perform();
 		}
+
 		
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		btnclick(m.getM2_Upload_ContinueBtn());
 		
 		
