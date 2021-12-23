@@ -107,13 +107,11 @@ public class EHR_Scenarios extends MobileBaseClass {
 
 	
 	
-	@Test(enabled = true,priority = 1)
-	
-//	retryAnalyzer=RetryAnalyzer.class,
+	@Test(enabled = true,priority = 1,retryAnalyzer=RetryAnalyzer.class)
 	public void EHR1() throws Throwable {
 
-		logger = report.createTest("EHR2");
-		logger.log(Status.PASS, "*************EHR2********************");
+		logger = report.createTest("EHR1");
+		logger.log(Status.PASS, "*************EHR1********************");
 
 	
 		AndriodPom m = new AndriodPom();
@@ -210,7 +208,65 @@ public class EHR_Scenarios extends MobileBaseClass {
 	
 		Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[2]")).click();
+		List <WebElement> others = driver.findElements(By.xpath("//android.widget.TextView[@text='Others']"));
+		
+		//Step 3 : consult button //
+		/*for (int k = 0; k < 4; k++) {
+			
+			Thread.sleep(5000);
+			driver.swipe(490, 770, 10, 770, 1000);
+			
+			if (others.size()==1) {
+				
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//android.widget.TextView[@text='Others']"));
+				
+			
+				
+				break;
+			} else {
+				
+				System.out.println("Swipe right to click on Others Button");
+
+			}
+		
+		}
+		
+		
+		*/
+		
+		
+		for (int K = 0; K < 10; K++) {
+
+			
+			Thread.sleep(3000);
+			driver.swipe(490, 770, 10, 770, 1000);
+			try {
+				if (driver.findElement(By.xpath("//android.widget.TextView[@text='Others']")).isDisplayed()) {
+
+					
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//android.widget.TextView[@text='Others']")).click();
+					break;
+				} else {
+					
+					System.out.println("Swipe right to click on others Button");
+
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//driver.findElement(By.xpath("(//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/text_myself'])[2]")).click();
 		Thread.sleep(10000); // com.NetmedsMarketplace.Netmeds:id/edt_ud_name
 		
 		try {
@@ -297,7 +353,8 @@ public class EHR_Scenarios extends MobileBaseClass {
 		
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/edt_ud_temperature")).sendKeys("75");
 		
-		
+		Thread.sleep(3000);
+		driver.swipe(0, 500, 0, 0, 1000);
 		Thread.sleep(3000);
 		
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/tv_save_update_user")).click();
