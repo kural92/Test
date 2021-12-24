@@ -159,7 +159,7 @@ public class AlternateProduct extends MobileBaseClass {
 					Thread.sleep(2000);
 					driver.swipe(0, 1000, 0, 0, 1000);
 					Thread.sleep(2000);
-					if (m.getPDP_AlternateBrand_Text().isDisplayed()|m.getPDP_AlternateBrand_TextList().size()==1) {
+					if (m.getPDP_AlternateBrand_TextList().size()==1) {
 						System.out.println("Swipe down to check Alternate  Brand");
 						break;
 					} else {
