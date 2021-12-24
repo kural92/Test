@@ -129,7 +129,7 @@ static String totalamt;
 		System.out.println("Successfully navigate to userprofile");
 		
 //Cancel order//
-		
+		Thread.sleep(3000);
 		btncli(m.getMedicineorders());
 		
 		Thread.sleep(3000);
@@ -165,6 +165,18 @@ static String totalamt;
 		}	
 	//Track Order//		
 		
+		
+		// handle Lets chat button
+				try {
+					driver.switchTo().frame("haptik-xdk");
+					Actions acc = new Actions(driver);
+					acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+							.perform();
+					driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+					driver.switchTo().defaultContent();
+				} catch (Exception e) {
+
+				}
 			
 				
 				SoftAssert  SoftAssert = new SoftAssert();
