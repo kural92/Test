@@ -175,20 +175,11 @@ public class M1_Cod extends BaseClass {
 
 		
 
-		// handle Lets chat button
-		try {
-			driver.switchTo().frame("haptik-xdk");
-			Actions acc = new Actions(driver);
-			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
-					.perform();
-			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
-			driver.switchTo().defaultContent();
-		} catch (Exception e) {
-
-		}
 
 		//////////////////////////////////
 
+		Thread.sleep(3000);
+		letsChat_Close();
 		Thread.sleep(3000);
 		btncli(m.getProceedbutton());
 
@@ -262,7 +253,7 @@ public class M1_Cod extends BaseClass {
 						btncli(driver.findElement(By.xpath("(//button[contains(text(),'Pay Rs')])[10]")));
 						} catch (Exception e) {
 							Thread.sleep(3000);
-							driver.findElement(By.xpath("")).click();
+							driver.findElement(By.xpath("//button[contains(text(),'PAY WITH CASH')]")).click();
 						}	
 						Thread.sleep(3000);
 						//System.out.println(driver.findElement(By.xpath("(//span[@class='order-number'])[2]")).getText());

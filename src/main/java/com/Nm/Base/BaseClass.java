@@ -32,6 +32,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -76,7 +77,7 @@ public class BaseClass {
 		ChromeOptions option = new ChromeOptions();
 		option.setExperimentalOption("debuggerAddress", "localhost:9222");
 		driver = new ChromeDriver(option);
-		driver.get(stage_homeurl);
+		driver.get(production_homeurl);
 		
 		//driver.manage().window().maximize();
 		
@@ -274,6 +275,25 @@ driver.switchTo().window(Url);
 ////////////////////////////////////////////////////
 
 
+
+/// Lets Chat 
+public void letsChat_Close() throws Throwable {
+	// handle Lets chat button-
+			try {
+				Thread.sleep(3000);
+				driver.switchTo().frame("haptik-xdk");
+				Actions acc = new Actions(driver);
+				acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+						.perform();
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+				driver.switchTo().defaultContent();
+			} catch (Exception e) {
+				Thread.sleep(2000);
+				driver.switchTo().defaultContent();
+			}
+
+}
 
 
 

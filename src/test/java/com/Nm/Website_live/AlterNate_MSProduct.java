@@ -213,7 +213,7 @@ public class AlterNate_MSProduct extends BaseClass{
 			driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
 			driver.switchTo().defaultContent();
 		} catch (Exception e) {
-
+			driver.switchTo().defaultContent();
 		}
 
 		//////////////////////////////////
