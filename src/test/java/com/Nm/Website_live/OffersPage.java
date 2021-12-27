@@ -52,7 +52,8 @@ public class OffersPage extends BaseClass {
 
 		
 //*******************************************************************Offer Page ******************************************************************//
-	@Test(priority=1,retryAnalyzer=RetryAnalyzer.class)
+	@Test(priority=1)
+			//retryAnalyzer=RetryAnalyzer.class)
 
 	public void OffersPage() throws Throwable {
 
@@ -209,12 +210,13 @@ public class OffersPage extends BaseClass {
 			
 			btncli(m.getConsultation_checkbox());
 			Thread.sleep(5000);
-			WebElement consultation = driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[6]"));
+			WebElement consultation = driver.findElement(By.xpath("(//img[@class=\"offer_sub_img\"])[7]"));
 			actionClick(consultation);
 			//consultation.click();
 			System.out.println("Coupon related to consultation offer was sucessfully opened");
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//h5[@class=\"terms\"]")).click();
+			driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
+			Thread.sleep(3000);
 			driver.navigate().to("https://www.netmeds.com/offers");
 			Thread.sleep(3000);
 			
@@ -228,7 +230,7 @@ public class OffersPage extends BaseClass {
 			
 			Thread.sleep(3000);
 			try{
-			driver.findElement(By.xpath("//h5[@class=\"terms\"]")).click(); 
+				driver.findElement(By.xpath("//h5[.=\"Terms and Conditions\"]")).click();
 			}catch (Exception e) {
 				// TODO: handle exception
 			}

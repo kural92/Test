@@ -303,7 +303,8 @@ List<WebElement> process = driver.findElements(By.xpath("//span[contains(text(),
 	// *********************************************M3 -Doctor consultation
 	// **********************************************************************************************//
 	
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true)
+			//retryAnalyzer=RetryAnalyzer.class)
 	public void M3Doctorconsultation() throws Throwable {
 
 		logger = report.createTest("M3Doctorconsultation");
@@ -446,6 +447,22 @@ Thread.sleep(3000);
 		System.out.println(doctorconfirmation);
 
 		Thread.sleep(3000);
+		
+		//handle let's chat//
+				try {
+					driver.switchTo().frame("haptik-xdk");
+					Actions acc = new Actions(driver);
+					acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+							.perform();
+
+					driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+
+					driver.switchTo().defaultContent();
+					System.out.println("Successfully closed let's chat");
+				} catch (Exception e) {
+
+				}	
+		
 		
 		// Step 10 : Add New address
 
