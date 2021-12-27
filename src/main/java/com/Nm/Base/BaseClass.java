@@ -76,7 +76,7 @@ public class BaseClass {
 		ChromeOptions option = new ChromeOptions();
 		option.setExperimentalOption("debuggerAddress", "localhost:9222");
 		driver = new ChromeDriver(option);
-		driver.get(stage_homeurl);
+		driver.get(production_homeurl);
 		
 		//driver.manage().window().maximize();
 		
