@@ -87,11 +87,11 @@ public class Cod_ProcessingCheck extends BaseClass {
 			driver.manage().window().maximize();
 			btncli(m.getSignin());
 			Thread.sleep(5000);
-			type(m.getMobileno(), "8098882244");
+			type(m.getMobileno(), " ");
 			Thread.sleep(3000);
 			btncli(driver.findElement(By.xpath("//button[contains(text(),'USE PASSWORD')]")));
 			Thread.sleep(3000);
-			type(m.getPassword(), "Netmeds123");
+			type(m.getPassword(), " ");
 			btncli(m.getSignInpage());
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -153,23 +153,11 @@ public class Cod_ProcessingCheck extends BaseClass {
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 
-			// handle Lets chat button
-			try {
-				driver.switchTo().frame("haptik-xdk");
-				Actions acc = new Actions(driver);
-
-				acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span")))
-						.build().perform();
-
-				driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
-
-				driver.switchTo().defaultContent();
-			} catch (Exception e) {
-
-			}
+			
 
 			//////////////////////////////////
-
+			Thread.sleep(3000);
+			letsChat_Close();
 			Thread.sleep(3000);
 			js.executeScript("window.scrollTo(0,200)");
 			Thread.sleep(7000);

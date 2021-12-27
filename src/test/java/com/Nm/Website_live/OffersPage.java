@@ -180,6 +180,8 @@ public class OffersPage extends BaseClass {
 			Thread.sleep(3000);
 			btncli(m.getMinicart());
 			Thread.sleep(3000);
+			letsChat_Close();
+			Thread.sleep(3000);
 			btncli(m.getPromo_apply());
 			Thread.sleep(3000);
 			btncli(m.getCoupon_code());
