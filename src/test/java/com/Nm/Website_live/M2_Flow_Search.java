@@ -119,11 +119,13 @@ public class M2_Flow_Search extends BaseClass {
 			
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
+			letsChat_Close();
 			logger.log(Status.PASS, "Successfully navigated to Add Prescription page" );
 			/*
 			type(mm.getUpload_Rx(), "C:\\Users\\NMSLAP356\\Desktop\\Screen-Net\\M2 Pay");
 			Thread.sleep(3000);
 			*/
+			Thread.sleep(3000);
 			btncli(m.getPast_Rx());
 			Thread.sleep(3000);
 			
@@ -169,6 +171,9 @@ public class M2_Flow_Search extends BaseClass {
 				
 			}
 			logger.log(Status.PASS, "Successfully Clicked on Search Medicines" );
+			
+			 Thread.sleep(3000);
+			 letsChat_Close();
 			 
 				btncli(m.getContinue_cta());
 				Thread.sleep(5000);
@@ -195,7 +200,8 @@ public class M2_Flow_Search extends BaseClass {
 			 System.out.println(Pcode); 
 			
 			 
-			 
+			 Thread.sleep(3000);
+			 letsChat_Close();
 			 
 			 
 			btncli(m.getConfirm_Order_cta());
@@ -268,6 +274,9 @@ public class M2_Flow_Search extends BaseClass {
 			type(m.getUpload_Rx(), "C:\\Users\\NMSLAP356\\Desktop\\Screen-Net\\M2 Pay");
 			Thread.sleep(3000);
 			*/
+			 Thread.sleep(3000);
+			 letsChat_Close();
+			 Thread.sleep(3000);
 			btncli(m.getPast_Rx());
 			Thread.sleep(3000);
 			
@@ -292,8 +301,8 @@ public class M2_Flow_Search extends BaseClass {
 			
 		
 			btncli(m.getGet_call());
-			Thread.sleep(3000);
 			
+			 Thread.sleep(3000);
 				btncli(m.getContinue_cta());
 			Thread.sleep(5000);
 			
@@ -310,21 +319,8 @@ public class M2_Flow_Search extends BaseClass {
 			 System.out.println(Pcode);
 			 logger.log(Status.PASS, Pcode );
 			 
-			 try {
-				// Handling Lets Chat Window
-					driver.switchTo().frame("haptik-xdk");
-					Actions acc = new Actions(driver);
-					
-					acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build().perform();
-					
-					driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
-					
-					 Thread.sleep(2000);
-					driver.switchTo().defaultContent();
-					
-			 } catch (Exception e) {
-				
-			}
+			 Thread.sleep(3000);
+			 letsChat_Close();
 			 
 			 
 			 ////   Change Address
@@ -397,7 +393,8 @@ public class M2_Flow_Search extends BaseClass {
 			 
 					 Thread.sleep(3000);
 						btncli(driver.findElement(By.xpath("//div[@class='addressitem selected-item']")));
-			 
+						 Thread.sleep(3000);
+						 letsChat_Close();
 						Thread.sleep(3000);
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
@@ -468,7 +465,8 @@ public class M2_Flow_Search extends BaseClass {
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to Add Prescription page" );
-			
+			 Thread.sleep(3000);
+			 letsChat_Close();
 			
 			
 			Thread.sleep(5000);
@@ -518,6 +516,9 @@ public class M2_Flow_Search extends BaseClass {
 			 Thread.sleep(3000);
 			 String Pcode = m.getM2_CoupCode_text().getText();
 			 System.out.println(Pcode);
+			 
+			 Thread.sleep(3000);
+			 letsChat_Close();
 			
 			btncli(m.getConfirm_Order_cta());
 			Thread.sleep(6000);
@@ -588,7 +589,8 @@ public class M2_Flow_Search extends BaseClass {
 			btncli(m.getUpload_cta());
 			Thread.sleep(3000);
 			logger.log(Status.PASS, "Successfully navigated to Add Prescription page" );
-			
+			 Thread.sleep(3000);
+			 letsChat_Close();
 			
 			Thread.sleep(5000);
 			//btncli(driver.findElement(By.xpath("//label[@class='up-fileupload']")));
@@ -626,6 +628,8 @@ public class M2_Flow_Search extends BaseClass {
 			}
 			logger.log(Status.PASS, "Successfully Clicked on Search Medicines" );
 			 
+			 Thread.sleep(3000);
+			 letsChat_Close();
 				btncli(m.getContinue_cta());
 				Thread.sleep(5000);
 				
@@ -742,7 +746,7 @@ public class M2_Flow_Search extends BaseClass {
 		private void quitbrowser() {
 			report.flush();
 			
-	      driver.quit();
+	    //  driver.quit();
 		}
 
 	}

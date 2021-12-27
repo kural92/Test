@@ -1,4 +1,4 @@
-package com.Nm.Andriod_prod;
+	package com.Nm.Andriod_prod;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -197,7 +197,7 @@ Float total_Wallet_amt;
 	//  Remove existing items from the cart  //
 		
 		
-		
+		Thread.sleep(5000);
 		driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 		
 			Thread.sleep(3000);
@@ -394,7 +394,7 @@ Float total_Wallet_amt;
 				
 	//Total Amount//	
 				Thread.sleep(3000);
-				driver.swipe(0, 300, 0, 0, 1000);
+				driver.swipe(0, 500, 0, 0, 1000);
 				String totalamount = driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart_orderAmount")).getText();
 				
 				//String totalamount = m.getTotal_amount().getText();

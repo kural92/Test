@@ -92,7 +92,8 @@ static String totalamt;
 				*/
 //**************************************************My Orders page****************************************************************************************
 	
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test
+	//(retryAnalyzer=RetryAnalyzer.class)
 	public void MyOrdersPage() throws Throwable {
 		
 		
@@ -101,7 +102,7 @@ static String totalamt;
 
 //Step1 :Launch Browser//		
 		Monepom m = new Monepom();
-		driver.manage().window().maximize();
+	//	driver.manage().window().maximize();
 
 		try {
 
@@ -129,7 +130,7 @@ static String totalamt;
 		System.out.println("Successfully navigate to userprofile");
 		
 //Cancel order//
-		
+		Thread.sleep(3000);
 		btncli(m.getMedicineorders());
 		
 		Thread.sleep(3000);
@@ -165,6 +166,18 @@ static String totalamt;
 		}	
 	//Track Order//		
 		
+		
+		// handle Lets chat button
+				try {
+					driver.switchTo().frame("haptik-xdk");
+					Actions acc = new Actions(driver);
+					acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+							.perform();
+					driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+					driver.switchTo().defaultContent();
+				} catch (Exception e) {
+
+				}
 			
 				
 				SoftAssert  SoftAssert = new SoftAssert();
@@ -223,11 +236,10 @@ static String totalamt;
 				logger.log(Status.PASS, " Drug list was successfully captured" );
 			}
 	
-			//Delivery Charge//
-			
-			if (!(driver.findElements(By.xpath("//div[.=\"Shipping Charges\"]")).size()==0))
+			// ////div[.=\"Shipping Charges\"]
+			if (!(driver.findElements(By.xpath("//div[.='Shipping Charges']")).size()==0))
 			{
-				shipping_charge = driver.findElement(By.xpath("(//div[@class=\"col-5 pr-0 text-right\"])[1]")).getText();
+				shipping_charge = driver.findElement(By.xpath("//div[.='Shipping Charges']//following::div[1]")).getText();
 				System.out.println(shipping_charge);
 				logger.log(Status.PASS, "Ordered Product price was "+shipping_charge);
 				
@@ -249,11 +261,11 @@ static String totalamt;
 	
 			//Netmeds Discount//
 			
-
+letsChat_Close();
 			
 			if (!(driver.findElements(By.xpath("//div[.=\"Discount\"]")).size()==0))
 			{
-				discount = driver.findElement(By.xpath("(//div[@class=\"col-5 pr-0 text-right\"])[1]")).getText();
+				discount = driver.findElement(By.xpath("//div[contains(text(),'Discount')]//following::div[1]")).getText();//"(//div[@class=\"col-5 pr-0 text-right\"])[1]")).getText();
 				System.out.println(discount);
 				logger.log(Status.PASS, "Discount is "+ discount);
 				
@@ -305,7 +317,7 @@ static String totalamt;
 			
 	//Net Payable amount//
 			
-			String payable = driver.findElement(By.xpath("(//div[@class=\"col-5 pr-0 text-right\"])[2]")).getText();
+			String payable = driver.findElement(By.xpath("//div[contains(text(),'Net Amount Payable')]//following::div[1]")).getText();
 			
 			logger.log(Status.PASS, "mrp is "+payable);
 			

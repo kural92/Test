@@ -103,7 +103,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
@@ -223,7 +223,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
@@ -340,7 +340,8 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
+			
 		} catch (Exception e) {
 
 		}
@@ -471,7 +472,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
@@ -579,7 +580,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
@@ -674,7 +675,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
@@ -728,7 +729,7 @@ public class Youraccount extends BaseClass {
 
 		logger.log(Status.PASS, "all the texts were asserted successfully");
 		System.out.println("all the texts are asserted successfully");
-//Step 6: Referral code check//
+/*//Step 6: Referral code check//
 
 		String Actualreferralcodenumber = m.getYourreferralcodenumber().getText();
 
@@ -742,21 +743,21 @@ public class Youraccount extends BaseClass {
 
 //Step 7 :Click terms and condition page//
 
-		btncli(m.getTermscondition_link());
+		btncli(m.getTermscondition_link());*/
 
 //Step 8 : Do assertion in terms and condition page//
 
-		SoftAssert.assertEquals(gettext(m.getReferearnpage_TC()), "Refer & Earn");
+	//	SoftAssert.assertEquals(gettext(m.getReferearnpage_TC()), "Refer & Earn");
 
-		SoftAssert.assertEquals(gettext(m.getTermsandcondition()),
-				"TERMS AND CONDITIONS - Netmeds Refer & Earn Programme");
+	//	SoftAssert.assertEquals(gettext(m.getTermsandcondition()),
+	//			"TERMS AND CONDITIONS - Netmeds Refer & Earn Programme");
 
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
 
-		driver.navigate().back();
-		Thread.sleep(3000);
+	//	driver.navigate().back();
+	//	Thread.sleep(3000);
 
-//Step 9 : Click share link
+/*//Step 9 : Click share link
 
 		btncli(m.getsharelink());
 		Thread.sleep(3000);
@@ -765,7 +766,7 @@ public class Youraccount extends BaseClass {
 
 		System.out.println(share);
 
-		driver.findElement(By.xpath("(//button[@class='close pull-right'])[2]")).click();
+		driver.findElement(By.xpath("(//button[@class='close pull-right'])[2]")).click();*/	
 
 		logger.log(Status.PASS, "refer and earn page is working properly");
 		System.out.println("refer and earn page is working properly");
@@ -803,7 +804,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
@@ -907,7 +908,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
@@ -1015,7 +1016,7 @@ public class Youraccount extends BaseClass {
 		}
 
 		try {
-			btncli(m.getNetmedshome());
+			driver.navigate().to("https://www.netmeds.com/");
 		} catch (Exception e) {
 
 		}
