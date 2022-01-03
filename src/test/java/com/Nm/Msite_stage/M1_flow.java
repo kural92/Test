@@ -51,6 +51,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import utils.FileAndEnv;
 
@@ -66,7 +67,7 @@ public class M1_flow extends MsiteBaseClass {
 		public void launchbrowser() throws IOException {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
+			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
 
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, FileAndEnv.envAndFile().get("UDID"));  //fc95d519 //RZ8R20GLXTA
@@ -86,6 +87,8 @@ public class M1_flow extends MsiteBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
 			*/
+			capabilities.setBrowserName(MobileBrowserType.CHROMIUM);
+
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
 			capabilities.setCapability("noReset", true);
@@ -136,7 +139,7 @@ public class M1_flow extends MsiteBaseClass {
 		
 		MsitePOM m = new MsitePOM();
 			  driver.get("https://m.netmeds.com/");
-			  
+			  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			  Thread.sleep(10000);
 			  
 				

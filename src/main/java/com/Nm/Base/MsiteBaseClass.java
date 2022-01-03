@@ -178,7 +178,7 @@ return text;
 	public static void popupclose() throws Throwable {
 		
 		try {
-			driver.findElement(By.xpath("//span[@class='app_close']")).click();
+			driver.findElement(By.xpath("//span[@class='app_close']|//span[@class='app_close']")).click();
 		} catch (Exception e) {
 			System.out.println("No Popup to close");
 		}
