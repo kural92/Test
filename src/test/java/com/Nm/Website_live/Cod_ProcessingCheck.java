@@ -150,7 +150,7 @@ public class Cod_ProcessingCheck extends BaseClass {
 
 			Thread.sleep(3000);
 			btncli(m.getMinicart());
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			logger.log(Status.PASS, "Successfully navigated to cart page");
 
 			
