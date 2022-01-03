@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.util.SystemOutLogger;
@@ -178,6 +179,7 @@ static String totalamt;
 				MsitePOM m = new MsitePOM();
 				//driver.manage().window().maximize();
 				driver.get("https://m.netmeds.com/");
+				driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			/*	try {
 
 				//	btnclick(m.getSignin());
@@ -219,6 +221,7 @@ static String totalamt;
 		//btnclick(m.getMyorders());
 		
 			driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
+			
 		Thread.sleep(3000);
 		
 //Let's chat handle//

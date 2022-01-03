@@ -24,6 +24,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.internal.Coordinates;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -139,6 +141,7 @@ public class M1_flow extends MsiteBaseClass {
 		
 		MsitePOM m = new MsitePOM();
 			  driver.get("https://m.netmeds.com/");
+
 			  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			  Thread.sleep(10000);
 			  
@@ -246,15 +249,29 @@ driver.swipe(0, 900, 0, 0, 1000);*/
 
 
 Thread.sleep(3000);
-driver.findElement(By.xpath("//*[@text='Track Order']")).click();
+
+WebDriverWait wait = new WebDriverWait(driver, 30);
+wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Track Order']")))).click();
+Thread.sleep(1000);
+
+
 try {
 	Thread.sleep(5000);
-	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+	
+	
+	wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")))).click();
+	Thread.sleep(1000);
+
+	//driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 }catch (Exception e) {
 	// TODO: handle exception
 }
-Thread.sleep(3000);
-driver.findElement(By.xpath("//*[@text=' View Details ' and @top='true']")).click();
+Thread.sleep(5000);
+//Let's chat handle//
+letschat();
+
+Thread.sleep(5000);
+btnclick(m.getViewdetails());
 try {
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();

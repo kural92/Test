@@ -135,7 +135,7 @@ public class Diaganostic  extends MsiteBaseClass {
 	
 
    
-//*****************************************************************M3 Subscription OTC Flow	*********************************************************
+//*****************************************************************Diagnostics	*********************************************************
 	//@Test(enabled = true)
 	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 
@@ -147,7 +147,7 @@ public class Diaganostic  extends MsiteBaseClass {
 		MsitePOM m = new MsitePOM();
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
-		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+		driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 
 		Thread.sleep(6000);
 		

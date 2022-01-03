@@ -3,6 +3,7 @@ package com.Nm.Msite_stage;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -94,7 +95,7 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 		
 		 driver.get("http://m.netmeds.com");
 	        
-
+		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 	        Thread.sleep(10000);
 			  try {
 			  driver.findElement(By.xpath("//span[@class='app_close'] | //*[@class='app_close']")).click();

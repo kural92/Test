@@ -160,7 +160,9 @@ public class CategoryPage extends MsiteBaseClass {
 		MsitePOM m = new MsitePOM();
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
+
 		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+
 
 	/*	try {
 
