@@ -8,6 +8,7 @@ import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -159,6 +160,10 @@ public class CategoryPage extends MsiteBaseClass {
 		MsitePOM m = new MsitePOM();
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
+		driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+
+
+
 	/*	try {
 
 		//	btnclick(m.getSignin());

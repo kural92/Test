@@ -8,6 +8,7 @@ import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -175,6 +176,7 @@ public class OrderSuccessPage extends MsiteBaseClass {
 				MsitePOM m = new MsitePOM();
 				//driver.manage().window().maximize();
 				driver.get("https://m.netmeds.com/");
+				driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			/*	try {
 
 				//	btnclick(m.getSignin());
@@ -502,6 +504,7 @@ public class OrderSuccessPage extends MsiteBaseClass {
 	MsitePOM m = new MsitePOM();
 	//driver.manage().window().maximize();
 	driver.get("https://m.netmeds.com/");
+	driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 /*	try {
 
 	//	btnclick(m.getSignin());
@@ -802,6 +805,7 @@ Thread.sleep(3000);
 		  public void laucnh() throws Throwable {
 			  
 			  driver.get("https://m.netmeds.com/");
+			  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			 // driver.manage().window().maximize();
 			  MsitePOM m = new MsitePOM();
 			  Thread.sleep(10000);

@@ -8,6 +8,7 @@ import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -164,7 +165,7 @@ public class Consultation extends MsiteBaseClass {
 		//driver.manage().window().maximize();
 				driver.get("https://m.netmeds.com/");
 			
-	
+				driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 				Thread.sleep(6000);
 				
 				popupclose() ;
