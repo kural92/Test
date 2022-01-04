@@ -261,9 +261,12 @@ static String totalamt;
 
 
 			btnclick(m.getCancel_reason());
+			try {
 			
 			driver.swipe(790, 1100, 800, 70, 1000);
-
+			}catch (Exception e) {
+				driver.swipe(0, 1100, 0, 70, 1000);
+			}
 			Thread.sleep(2000);
 			
 		}
@@ -318,8 +321,11 @@ static String totalamt;
 			//WebElement Address_details  = driver.findElement(By.xpath("//div[@class=\"adddetails\"]"));
 			
 			//System.out.println("Delivery Address is   " + Address_details.getText());
-				
+				try {
 				driver.swipe(720, 950, 600, 70, 1000);
+				}catch (Exception e) {
+					driver.swipe(0, 1000, 0, 70, 1000);
+				}
 				
 			List<WebElement> Druglist = driver.findElements(By.xpath("//*[@css='DIV.product-item-name' and @top='true']"));
 			
@@ -361,8 +367,11 @@ List  <WebElement> Drugqty = driver.findElements(By.xpath("//*[@css='DIV.qtyinfo
 				
 			}
 	
-			
+			try {
 			driver.swipe(860, 1300, 900, 60, 1000);
+			}catch (Exception e) {
+				driver.swipe(0, 1300, 0, 0, 1000);
+			}
 			//Assert.assertTrue(gettext(m.getDelivery_address_text()).contains("DELIVERY ADDRESS"));
 			
 		//system.out.println(m.getDelivery_address_text().getText());
@@ -471,7 +480,11 @@ List  <WebElement> Drugqty = driver.findElements(By.xpath("//*[@css='DIV.qtyinfo
 						 }
 				 
 				*/ 
+				try {
 				 driver.swipe(82, 1000, 800, 82, 1000);
+				}catch (Exception e) {
+					driver.swipe(0, 1000, 0, 0, 1000);
+				}
 				 
 //show status details//
 				try {
@@ -525,8 +538,11 @@ List  <WebElement> Drugqty = driver.findElements(By.xpath("//*[@css='DIV.qtyinfo
 			
 				
 	//Sub Total//
-				 
+				 try {
 				driver.swipe(790, 1600, 800, 0, 1000);
+				 }catch (Exception e) {
+					 driver.swipe(0, 1500, 0, 0, 1000);
+				}
 				
 				String total = driver.findElement(By.xpath("(//*[@class='col-7 pr-0 text-right'])[1]")).getText();
 				

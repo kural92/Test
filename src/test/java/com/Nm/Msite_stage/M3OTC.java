@@ -85,7 +85,7 @@ public class M3OTC extends MsiteBaseClass {
 			capabilities.setCapability("noReset", true);
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
-			
+			capabilities.setCapability("autoGrantPermissions", true);
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -111,7 +111,7 @@ public class M3OTC extends MsiteBaseClass {
 			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
 			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-			
+			capabilities.setCapability("autoGrantPermissions", true);
 					
 			//capabilities.setCapability("autoDismissAlerts", true);  
 			
@@ -175,8 +175,6 @@ public class M3OTC extends MsiteBaseClass {
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
 		driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
-
-
 
 	/*	try {
 
@@ -382,7 +380,11 @@ public class M3OTC extends MsiteBaseClass {
 
 // Step 10 :Remove qty//
 					//btnclick(m.getRemoveitem());
+        try {
         driver.swipe(82, 1182, 82, 990, 0);
+        }catch (Exception e) {
+        	 driver.swipe(0, 1500, 820, 0, 0);	
+		}
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[@class='action action-delete removeitem'])[2]")).click();
 		logger.log(Status.PASS, " item removed Successfully");
@@ -411,8 +413,11 @@ public class M3OTC extends MsiteBaseClass {
 		btnclick(m.getProceedtocheckout());
 		//driver.findElement(By.xpath("//*[@class='btn-checkout btn btn_to_checkout']|//android.widget.Button[@text='PROCEED']")).click();
 		Thread.sleep(3000);
-		
+		try {
 		driver.swipe(530, 1500, 530, 550, 1000);
+		}catch (Exception e) {
+			driver.swipe(0, 1500, 0, 0, 1000);
+		}
 		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();
@@ -445,7 +450,13 @@ public class M3OTC extends MsiteBaseClass {
 
 	
 		Thread.sleep(3000);
+		try {
 		driver.swipe(530, 1440, 530, 0, 1000);
+		}catch (Exception e) {
+			driver.swipe(0, 1500, 0, 0, 1000);
+		}
+		
+		
 		Thread.sleep(3000);
 		btnclick(m.getSubscribe());
 		//driver.findElement(By.xpath("//*[@text='Subscribe']|//android.widget.Button[@text='SUBSCRIBE']")).click();
@@ -510,12 +521,21 @@ public class M3OTC extends MsiteBaseClass {
 			            }
 			        }		
 					
-				
+				try {
 				 driver.swipe(82, 1600, 82, 0, 1000);
+				}catch (Exception e) {
+					driver.swipe(0, 1600, 0, 0, 1000);
+				}
 				Thread.sleep(3000);
 				btnclick(m.getCancelorder());
 				Thread.sleep(5000);
-				driver.swipe(82, 939, 82, 6, 1000);
+				
+				try {
+					driver.swipe(82, 939, 82, 6, 1000);
+				} catch (Exception e) {
+					driver.swipe(0, 1000, 0, 0, 1000);
+				}
+				
 				Thread.sleep(5000);
 				try{btnclick(m.getYesbutton());}
 				catch (Exception e) {

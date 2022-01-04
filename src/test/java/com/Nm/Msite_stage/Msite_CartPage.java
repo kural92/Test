@@ -133,7 +133,7 @@ Float total_Wallet_amt;
 		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
+		//	capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
 			//for m-site
 			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
 			//for install Apk file
@@ -194,7 +194,7 @@ Float total_Wallet_amt;
 		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 	        Thread.sleep(10000);
 			  try {
-			  driver.findElement(By.xpath("//span[@class='app_close'] | //*[@class='app_close']")).click();
+			  driver.findElement(By.xpath("//span[@class='app_close']|//*[@class='app_close']")).click();
 			  }catch (Exception e) {
 				// TODO: handle exception
 			}			  	  

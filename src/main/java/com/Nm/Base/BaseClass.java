@@ -283,10 +283,10 @@ public void letsChat_Close() throws Throwable {
 				Thread.sleep(3000);
 				driver.switchTo().frame("haptik-xdk");
 				Actions acc = new Actions(driver);
-				acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span"))).build()
+				acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-textarea']//span|//div[@class='bot-prompt-minimal-cross-icon']"))).build()
 						.perform();
 				Thread.sleep(1000);
-				driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]")).click();
+				driver.findElement(By.xpath("(/html/body/div/div[1]/div[1])[1]|/html/body/div/div[1]/div[1]")).click();
 				driver.switchTo().defaultContent();
 			} catch (Exception e) {
 				Thread.sleep(2000);

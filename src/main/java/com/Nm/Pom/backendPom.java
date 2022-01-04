@@ -154,7 +154,7 @@ public class backendPom extends BackendBaseClass{
 		@FindBy(xpath = "//a[text()='My WishList ']")
 		private WebElement wishlist_youraccount;
 		
-		@FindBy(xpath = "//button[text()='Proceed']")
+		@FindBy(xpath = "//button[text()='Proceed']|//button[contains(text(),'Proceed')]")
 		private WebElement Cart_Proceed;
 		
 		@FindBy(xpath = "(//span[text()='Past Rx'])")

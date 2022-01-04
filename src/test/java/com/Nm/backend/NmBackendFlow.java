@@ -20,6 +20,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BackendBaseClass;
+import com.Nm.Base.BaseClass;
 import com.Nm.Pom.backendPom;
 
 public class NmBackendFlow extends BackendBaseClass{
@@ -42,7 +43,7 @@ public class NmBackendFlow extends BackendBaseClass{
 	@Test(priority = 1)
 	public void test() throws Throwable {
 		backendPom s = new backendPom();
-		
+		BaseClass bc = new BaseClass();
 
 /////////////  Remove Product //
 
@@ -85,7 +86,13 @@ public class NmBackendFlow extends BackendBaseClass{
 		
 		clk(s.getPDP_AddtoCart_btn());
 		clk(s.getHomecart());
+		thread(5000);
+		bc.letsChat_Close();
 		thread(2000);
+		
+		
+		
+		
 		clk(s.getCart_Proceed());
 		thread(3000);
 		

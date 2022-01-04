@@ -2,51 +2,29 @@ package com.Nm.Msite_stage;
 
 
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.ScrollAction;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.Nm.Base.BaseClass;
-import com.Nm.Base.MobileBaseClass;
 import com.Nm.Base.MsiteBaseClass;
-import com.Nm.Pom.AndriodPom;
-import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -153,7 +131,7 @@ public class Consultation extends MsiteBaseClass {
 	
 //*************************************************	
 	
-	@Test(priority = 1,enabled=false)
+	@Test(priority = 1,enabled=true)
 	public void Consult_Myself() throws Throwable {
 		
 		
@@ -164,8 +142,12 @@ public class Consultation extends MsiteBaseClass {
 		
 		//driver.manage().window().maximize();
 				driver.get("https://m.netmeds.com/");
-			
+
 				driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+	
+
+			
+	//			driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 				Thread.sleep(6000);
 				
 				popupclose() ;
@@ -232,7 +214,7 @@ public class Consultation extends MsiteBaseClass {
 		for (int i = 0; i < 10; i++) {
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 800, 0, 0, 1000);
+			driver.swipe(0, 700, 0, 0, 1000);
 			Thread.sleep(3000);
 			if (m.getConsultation_Btn_List().size()!=0) {
 				
@@ -264,6 +246,7 @@ public class Consultation extends MsiteBaseClass {
 			// TODO: handle exception
 		}
 		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Symptons_TextBox()));
 		type(m.getConsult_Symptons_TextBox(), "Ear pain");
 		
 		driver.hideKeyboard();
@@ -400,7 +383,7 @@ public class Consultation extends MsiteBaseClass {
 	MsitePOM m = new MsitePOM();
 
 				driver.get("https://m.netmeds.com/");
-		
+				driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 				
 				Thread.sleep(6000);
 				
@@ -459,7 +442,7 @@ public class Consultation extends MsiteBaseClass {
 		for (int i = 0; i < 10; i++) {
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 800, 0, 0, 1000);
+			driver.swipe(50, 500, 0, 0, 1000);
 			
 			if (m.getConsultation_Btn_List().size()!=0) {
 				
@@ -481,7 +464,7 @@ public class Consultation extends MsiteBaseClass {
 		Thread.sleep(7000);
 	
 		
-		driver.swipe(550, 1750, 550, 600, 1000);
+		driver.swipe(20, 300, 0, 0, 1000);
 
 		Thread.sleep(5000);
 		
@@ -490,7 +473,7 @@ public class Consultation extends MsiteBaseClass {
 		
 	 Thread.sleep(5000);
 	 
-	// wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Consult now']"))));
+	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Consult now']"))));
 	btnclick(driver.findElement(By.xpath("//*[@text='Consult now']")));
 	 
 	 
@@ -511,16 +494,16 @@ public class Consultation extends MsiteBaseClass {
 		 
 	}
 
-	 driver.swipe(0, 1000, 0, 0, 1000);
+	 driver.swipe(20, 1000, 0, 0, 1000);
 	 
 	 
-	 driver.swipe(0, 1000, 0, 0, 1000);
+	 driver.swipe(20, 1000, 0, 0, 1000);
 	 
 	 
-	 driver.swipe(0, 1000, 0, 0, 1000);
+	 driver.swipe(20, 1000, 0, 0, 1000);
 	 
 	 
-	 driver.swipe(0, 1000, 0, 0, 1000);
+	 driver.swipe(20, 1000, 0, 0, 1000);
 	 
 	 Thread.sleep(6000);
 
@@ -548,11 +531,6 @@ public class Consultation extends MsiteBaseClass {
 		type(m.getConsult_Symptons_TextBox(), "Ear pain");
 		
 		driver.hideKeyboard();
-		
-		
-		
-		
-		
 		
 	//	driver.swipe(0, 1100, 0, 0, 1000);
 	//	driver.swipe(0, 1100, 0, 0, 1000);
@@ -620,12 +598,6 @@ public class Consultation extends MsiteBaseClass {
 	
 	System.out.println(Url2);
 	
-		
-		
-		
-	
-		
-		
 	}
 
 		

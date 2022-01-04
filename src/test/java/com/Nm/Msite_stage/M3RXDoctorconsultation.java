@@ -87,7 +87,8 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 			capabilities.setCapability("noReset", true);
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
-			
+			capabilities.setCapability("autoGrantPermissions", true);
+			  
 			
 		try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -113,7 +114,7 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
 			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-			
+			capabilities.setCapability("autoGrantPermissions", true);
 					
 			//capabilities.setCapability("autoDismissAlerts", true);  
 			
@@ -266,7 +267,7 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 		Thread.sleep(5000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 
-		driver.swipe(530, 1500, 530, 0, 1000);
+		driver.swipe(0, 1500, 0, 0, 1000);
 		
 
 		
@@ -304,7 +305,7 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 		Thread.sleep(5000);
 		logger.log(Status.PASS, "Successfully Next button was clicked");
 		
-		driver.swipe(82, 1500, 0, 82, 1000); 
+		driver.swipe(0, 1500, 0, 0, 1000); 
 
 // Change address
 		
@@ -317,15 +318,16 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 		
 		
 //Delete Address
-		
-		driver.swipe(0, 1500, 0, 1300, 1000);
+//		driver.swipe(0, 1500, 0, 1300,1000);
+		driver.swipe(0, 500, 0, 0, 1000);
 		Thread.sleep(5000);
 			btnclick(m.getDeleteaddress());
 			System.out.println("Address was deleted successfully");
 			logger.log(Status.PASS, "Address was deleted successfully");
 			
 //Modify
-		driver.swipe(0, 1500, 0, 1300,1000);
+	//	driver.swipe(0, 1500, 0, 1300,1000);
+			driver.swipe(0, 500, 0, 0, 1000);
 		Thread.sleep(5000);
 		btnclick(m.getModifyaddressbtn());
 		Thread.sleep(5000);
@@ -379,7 +381,7 @@ driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-
 		
 // Step 15: Click Subscribe//
 
-		driver.swipe(530, 1440, 530, 0, 1000);
+		driver.swipe(0, 1500, 0, 0, 1000);
 		Thread.sleep(5000);
 		btnclick(m.getSubscribe());
 		logger.log(Status.PASS, "Successfully Subscribe button was clicked");
@@ -412,8 +414,8 @@ driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-
 
 				System.out.println(confirmation + "and the id is " + Orderid);
 				Thread.sleep(3000);
-				driver.swipe(82, 1500, 82, 1420, 1000);
-				
+			//	driver.swipe(82, 1500, 82, 1420, 1000);
+				driver.swipe(0, 500, 0, 0, 1000);
 				Thread.sleep(3000);
 				String	Deliverydate	=	driver.findElement(By.xpath("//*[@class='deldate']")).getText();
 
@@ -459,11 +461,12 @@ driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-
 		        }		
 				
 			
-			 driver.swipe(82, 1600, 82, 0, 1000);
+			 driver.swipe(0, 1600, 0, 0, 1000);
 			Thread.sleep(3000);
 			btnclick(m.getCancelorder());
 			Thread.sleep(5000);
-			driver.swipe(82, 939, 82, 6, 1000);
+		//	driver.swipe(82, 939, 82, 6, 1000);
+			driver.swipe(0, 500, 0, 0, 1000);
 			Thread.sleep(5000);
 			try{btnclick(m.getYesbutton());}
 			catch (Exception e) {

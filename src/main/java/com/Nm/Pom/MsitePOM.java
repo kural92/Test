@@ -540,7 +540,7 @@ public class MsitePOM extends MsiteBaseClass{
 		
 		}
 			
-		@FindBy(xpath ="//*[@text='My Prescription ']")
+		@FindBy(xpath ="//*[@class='myprescription-link ng-star-inserted']|//*[@text='My Prescription ']")
 		private WebElement Myprescription_page;
 		public WebElement getMyprescription_page() {
 			return Myprescription_page;
@@ -1353,13 +1353,13 @@ return PDP_Search_btnn;
 		
 
 		
-		@FindBy(xpath="//*[@text='Consult Now' and @top='true']")
+		@FindBy(xpath="(//*[@text='Consult Now'])[2]|//*[@text='Consult Now' and @top='true']")
 		private List<WebElement> Consultation_Btn_List;
 		public List<WebElement> getConsultation_Btn_List() {
 		return Consultation_Btn_List;
 		}
 		
-		@FindBy(xpath="//*[@text='Consult Now' and @top='true']")
+		@FindBy(xpath="(//*[@text='Consult Now'])[2]|//*[@text='Consult Now' and @top='true']")
 		private WebElement Consultation_Btn;
 		public WebElement getConsultation_Btn() {
 		return Consultation_Btn;
@@ -1429,8 +1429,22 @@ return PDP_Search_btnn;
 				
 
 
-
-
+				@FindBy(xpath="//*[@id='nms_cod']")
+				private List<WebElement> Payment_cod_list;
+				public List<WebElement> getPayment_cod_list() {
+					return Payment_cod_list;
+				}
+				
+				@FindBy(xpath="//*[@id='nms_cod']")
+				private WebElement Payment_cod;
+				public WebElement getPayment_cod() {
+					return Payment_cod;
+				}
+				@FindBy(xpath="//*[@class='float-right process-orderplace col-md-5 col-12']")
+				private WebElement Payment_paybutton;
+				public WebElement getPayment_paybutton() {
+					return Payment_paybutton;
+				}
 }
 
 

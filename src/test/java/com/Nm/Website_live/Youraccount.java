@@ -1119,7 +1119,7 @@ public class Youraccount extends BaseClass {
 		Thread.sleep(3000);
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Thread.sleep(3000);
-			BaseClass.mail_report();
+	//		BaseClass.mail_report();
 		}
 
 	}
@@ -1128,7 +1128,7 @@ public class Youraccount extends BaseClass {
 	private void quitbrowser() {
 		report.flush();
 
-		driver.quit();
+//		driver.quit();
 	}
 
 }
