@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -134,7 +135,7 @@ public class Diaganostic  extends MsiteBaseClass {
 	
 
    
-//*****************************************************************M3 Subscription OTC Flow	*********************************************************
+//*****************************************************************Diagnostics	*********************************************************
 	//@Test(enabled = true)
 	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 
@@ -146,7 +147,8 @@ public class Diaganostic  extends MsiteBaseClass {
 		MsitePOM m = new MsitePOM();
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
-		
+		driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+
 		Thread.sleep(6000);
 		
 		popupclose() ;

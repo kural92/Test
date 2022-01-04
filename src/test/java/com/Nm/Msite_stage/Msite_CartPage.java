@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import org.apache.commons.io.FileUtils;
@@ -190,7 +191,7 @@ Float total_Wallet_amt;
 		MsitePOM ms = new MsitePOM();
 		  driver.get("http://m.netmeds.com");
 	        
-
+		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 	        Thread.sleep(10000);
 			  try {
 			  driver.findElement(By.xpath("//span[@class='app_close'] | //*[@class='app_close']")).click();

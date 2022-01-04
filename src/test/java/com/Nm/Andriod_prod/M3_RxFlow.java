@@ -217,7 +217,7 @@ public class M3_RxFlow extends MobileBaseClass {
 //Upload Image
  driver.findElementByAccessibilityId("Gallery").click();
  Thread.sleep(3000);
-driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]||//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")).click();
+driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[2]|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")).click();
 
  Thread.sleep(3000);
  

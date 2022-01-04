@@ -24,6 +24,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.internal.Coordinates;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -51,6 +53,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import utils.FileAndEnv;
 
@@ -66,7 +69,7 @@ public class M1_flow extends MsiteBaseClass {
 		public void launchbrowser() throws IOException {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
+			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
 
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, FileAndEnv.envAndFile().get("UDID"));  //fc95d519 //RZ8R20GLXTA
@@ -86,6 +89,8 @@ public class M1_flow extends MsiteBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
 			*/
+			capabilities.setBrowserName(MobileBrowserType.CHROMIUM);
+
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
 			capabilities.setCapability("noReset", true);
@@ -136,6 +141,10 @@ public class M1_flow extends MsiteBaseClass {
 		
 		MsitePOM m = new MsitePOM();
 			  driver.get("https://m.netmeds.com/");
+<<<<<<< HEAD
+=======
+
+>>>>>>> d925feb16f4ef68b95f4178dcde519cb39623d0c
 			  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			  Thread.sleep(10000);
 			  
@@ -243,15 +252,29 @@ driver.swipe(0, 900, 0, 0, 1000);*/
 
 
 Thread.sleep(3000);
-driver.findElement(By.xpath("//*[@text='Track Order']")).click();
+
+WebDriverWait wait = new WebDriverWait(driver, 30);
+wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Track Order']")))).click();
+Thread.sleep(1000);
+
+
 try {
 	Thread.sleep(5000);
-	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+	
+	
+	wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")))).click();
+	Thread.sleep(1000);
+
+	//driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 }catch (Exception e) {
 	// TODO: handle exception
 }
-Thread.sleep(3000);
-driver.findElement(By.xpath("//*[@text=' View Details ' and @top='true']")).click();
+Thread.sleep(5000);
+//Let's chat handle//
+letschat();
+
+Thread.sleep(5000);
+btnclick(m.getViewdetails());
 try {
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
