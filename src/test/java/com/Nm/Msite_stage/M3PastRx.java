@@ -85,7 +85,7 @@ public class M3PastRx extends MsiteBaseClass {
 			capabilities.setCapability("noReset", true);
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
-			
+			capabilities.setCapability("autoGrantPermissions", true);
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -111,7 +111,7 @@ public class M3PastRx extends MsiteBaseClass {
 			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
 			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-			
+			capabilities.setCapability("autoGrantPermissions", true);
 					
 			//capabilities.setCapability("autoDismissAlerts", true);  
 			
@@ -270,8 +270,11 @@ public class M3PastRx extends MsiteBaseClass {
 		Thread.sleep(5000);
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 
+		try {
 		driver.swipe(530, 1500, 530, 0, 1000);
-		
+		}catch (Exception e) {
+			driver.swipe(0, 1500, 0, 0, 1000);
+		}
 //driver.swipe(530, 1500, 530, 550, 1000);
 		
 		//Let's chat handle//
@@ -313,7 +316,11 @@ public class M3PastRx extends MsiteBaseClass {
 				driver.findElement(By.xpath("//*[@nodeName='SPAN' and ./parent::*[@nodeName='BUTTON']]")).click();
 				
 				Thread.sleep(3000);
+				try {
 				driver.swipe(82, 1750, 82, 0, 1000);
+				}catch (Exception e) {
+					driver.swipe(0, 1750, 0, 0, 1000);
+				}
 				Thread.sleep(3000);
 				
 				driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();
@@ -341,7 +348,11 @@ public class M3PastRx extends MsiteBaseClass {
 
 	//	btnclick(m.getSubscribe());
 		
+		try {
 		driver.swipe(530, 1440, 530, 0, 1000);
+		}catch (Exception e) {
+			driver.swipe(0, 1500, 0, 0, 1000);
+		}
 		Thread.sleep(3000);
 		btnclick(m.getSubscribe());
 		logger.log(Status.PASS, "Successfully Subscribe button was clicked");;
@@ -409,12 +420,19 @@ public class M3PastRx extends MsiteBaseClass {
 								            }
 								        }		
 										
-									
+									try {
 									 driver.swipe(82, 1600, 82, 0, 1000);
+									}catch (Exception e) {
+										 driver.swipe(0, 1600, 0, 0, 1000);
+									}
 									Thread.sleep(3000);
 									btnclick(m.getCancelorder());
 									Thread.sleep(5000);
+									try {
 									driver.swipe(82, 939, 82, 6, 1000);
+									}catch (Exception e) {
+										driver.swipe(0, 1000, 0, 0, 1000);
+									}
 									Thread.sleep(5000);
 									try{btnclick(m.getYesbutton());}
 									catch (Exception e) {

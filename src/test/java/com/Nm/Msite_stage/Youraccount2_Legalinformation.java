@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -30,6 +31,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
@@ -37,6 +39,7 @@ import com.Nm.Base.MsiteBaseClass;
 import com.Nm.Pom.AndriodPom;
 import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
+import com.Nm.Website_live.RetryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -50,7 +53,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class CategoryPage extends MsiteBaseClass {
+public class Youraccount2_Legalinformation extends MsiteBaseClass {
 
 	
 	
@@ -72,7 +75,7 @@ public class CategoryPage extends MsiteBaseClass {
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
-			capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse_WorkSpace\\Automation\\Driver\\chromedriver.exe");
+			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
 			//for install Apk file
 			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
 			// already installed app
@@ -146,198 +149,172 @@ public class CategoryPage extends MsiteBaseClass {
 
        //htmlReporter.config().setTheme(Theme.STANDARD);
    	
-   } 
+   }
 	
 
-   
-//*****************************************************************Category Page   *********************************************************
+	/*
+	@BeforeMethod
+	  public void setUp1() throws MalformedURLException {
+	      System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
+	      Map<String, String> mobileEmulation = new HashMap<String, String>();
+	      mobileEmulation.put("deviceName", "Moto G4");
+
+	      ChromeOptions chromeOptions = new ChromeOptions();
+	      chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+	      chromeOptions.addArguments("--disable-notifications");
+	      driver = new ChromeDriver(chromeOptions);
+	     
+	     
+	  }  */
+	
+	/* Under your account page
+	 	Test Case 1 : Verify the functionalities of Delivery address Page (Add, Edit, Select and Delete Address).
+	  	Test Case 2 : Verify the functionalities under my wallet page (Assertion of all the texts,NMS Cash, NMS super Cash And how to use it).
+	  	Test Case 3 : Verify the functionalities of Edit profile Page.
+	  	Test Case 4	: Verify the functionalities of Contact us  Page.(Assertion of all the texts).
+	  	Test Case 5 : Verify the functionalities of My Prescription Page.(Assertion of all the texts).
+	  	Test Case 6 : Verify the functionalities of refer and earn.(Assertion of all the texts).
+	  	Test Case 7 :Verify the functionalities of Help Page.
+	  	Test Case 8 :Verify the functionalities of Rate us page.
+	  	Test Case 9 :Verify the functionalities of Legal Information Page.
+	  :
+	 */
+	
+	
+
+//*****************************************************Your Accountpage*************************
+
+
+	// **************************************************************Legal
+	// Information*************************************************************************************//
+
 	@Test(enabled = true)
-	public void CategoryPage() throws Throwable {
-		
-		logger =  report.createTest("Category Page");
-		logger.log(Status.PASS, "*************CategoryPage********************" );
-		
+	public void Legalinformation() throws Throwable {
+
+		logger = report.createTest("Legalinformation");
+		logger.log(Status.PASS, "*************Legalinformation********************");
+
+		//Step1 :Launch Browser//		
 		MsitePOM m = new MsitePOM();
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
-<<<<<<< HEAD
 		driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
-=======
-
-		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
-
-
->>>>>>> d925feb16f4ef68b95f4178dcde519cb39623d0c
-	/*	try {
+		try {
 
 		//	btnclick(m.getSignin());
 			Thread.sleep(5000);
-		
-			Thread.sleep(3000);
+		//	type(m.getMobileno(), "8072281468");
+			Thread.sleep(5000);
 		//	btnclick(m.getUsepwdbtn());
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		//	type(m.getPassword(), "test@123");
 		//	btnclick(m.getSignInpage());
-		//	Thread.sleep(3000);
+		//	Thread.sleep(5000);
 			logger.log(Status.PASS, "Successfully navigate to home page");
 		} catch (Exception e) {
 			
 			System.out.println("Already Logged in");
 			
-		}*/
+		}
 		
-		Thread.sleep(6000);
-		
-		popupclose() ;
-
-
-//Let's chat handle//
-		letschat();
 		Thread.sleep(5000);
+		popupclose();
+
+
+
+				
 	
-//  Remove existing items from the cart  //
+//Step 3 : Navigate to user profile//
 
-		driver.findElement(By.xpath("//*[@class='counter']")).click();
-		Thread.sleep(5000);
-		
-		
+		btnclick(m.getmyaccount());
+		//driver.findElement(By.xpath("//*[@text='Account']")).click();
+		Thread.sleep(3000);
+		logger.log(Status.PASS, "Successfully navigate to userprofile");
+		System.out.println("Successfully navigate to userprofile");
+
+
+
 //Let's chat handle//
 		Thread.sleep(5000);
 		letschat();
-		Thread.sleep(3000);
-	//	driver.swipe(82, 1275, 82, 1152, 1000);
-		//Switch to Native_App
-		
-		
-        Set<String> contextNames = driver.getContextHandles();
-        for (String strContextName : contextNames) {
-            if (strContextName.contains("NATIVE_APP")) {
-                driver.context("NATIVE_APP");
-                break;
-            }
-        }
-		for (int i = 0; i < 25; i++) {
+
+	// Step 4 : Legal Information
+try {
+			driver.swipe(790, 1100, 800, 70, 1000);
+}catch (Exception e) {
+	driver.swipe(0, 1100, 0, 0, 1000);
+}
 			Thread.sleep(3000);
-			if (!(driver.findElements(By.xpath("//*[@text='REMOVE']")).size() == 0)) {
+			btnclick(driver.findElement(By.xpath("//*[@href='/terms-and-conditions']")));
+			
+			Thread.sleep(3000);
+
+		logger.log(Status.PASS, "Terms and condition page is working properly");
+		System.out.println("Terms and condition page is working properly");
+
+	}
+
+	
+	
+	
+			@AfterMethod()
+			public void screenShot(ITestResult result) throws Throwable {
+				
+			    if(result.getStatus() == ITestResult.FAILURE) {
+			    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
+			    	logger.fail(result.getThrowable());
+			    	try {
+						
+
+						TakesScreenshot screenshot = (TakesScreenshot) driver;
+						File src = screenshot.getScreenshotAs(OutputType.FILE);
+						FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
+						System.out.println("Successfully captured a screenshot");
+						//logger.log(Status.FAIL, result.getThrowable());
+						logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
+					
+				
+						
+						
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+			      }
+			 
+			    else if(result.getStatus() == ITestResult.SUCCESS) {
+			    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
+			    
+			    }
+			    else {
+			    
+			    	 // onFinish(context);
+			    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
+			    	logger.skip(result.getThrowable());
+			    	report.removeTest(logger);
+			    }
+			    
+			    
+			    
+			Thread.sleep(3000);
+			if (result.getStatus() == ITestResult.FAILURE) {
+				Thread.sleep(3000);
+			//	BaseClass.mail_report();
+			
+				
+			//	BaseClass.mail_report();
+			}
+			
+			
+			}	
 				
 
-				try {
 
-					Thread.sleep(3000);
-					driver.findElement(By.xpath("//*[@text='REMOVE']")).click();
-					
-					Thread.sleep(3000);
-					logger.log(Status.PASS, "Items are removed successfully");
-					System.out.println("Items are removed from the cart");
-				} catch (Exception e) {
-					System.out.println("No items in the cart ");
-				}
-
-			} else {
-				break;
-
+			@AfterTest
+			private void quitbrowser() {
+				report.flush();
+				
+		 //     driver.quit();
 			}
+
 
 		}
-			
-		 //Switch to Chrome browser
-	    Set<String> contextNames1 = driver.getContextHandles();
-	    for (String strContextName : contextNames1) {
-	        if (strContextName.contains("CHROMIUM")) {
-	            driver.context("CHROMIUM");
-	            break;
-	        }
-	    }
-			
-	
-	driver.navigate().back();
-	
-	//Wellness page
-	
-	Thread.sleep(4000);
-	driver.findElement(By.xpath("//*[@text='Wellness']")).click();
-	System.out.println("Successfully Naviagted to Wellness Page");
-	logger.log(Status.PASS, "Successfully Naviagted to Wellness Page");
-	//View all
-	Thread.sleep(4000);
-	driver.navigate().to("https://m.netmeds.com/non-prescriptions");
-	
-
-	
-	
-	Navigating_to_category();
-	
-		
-	System.out.println("Category Page is working properly");
-		
-		
-		
-	}
-	
-		
-	
-	
-	
-		
-	
-	@AfterMethod()
-	public void screenShot(ITestResult result) throws Throwable {
-		
-	    if(result.getStatus() == ITestResult.FAILURE) {
-	    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
-	    	logger.fail(result.getThrowable());
-	    	try {
-				
-
-				TakesScreenshot screenshot = (TakesScreenshot) driver;
-				File src = screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src, new File("./Report/"+ result.getName()+".png"));
-				System.out.println("Successfully captured a screenshot");
-				//logger.log(Status.FAIL, result.getThrowable());
-				logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath( result.getName()+".png"));
-			
-		
-				
-				
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
-	      }
-	 
-	    else if(result.getStatus() == ITestResult.SUCCESS) {
-	    	logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
-	    
-	    }
-	    else {
-	    
-	    	 // onFinish(context);
-	    	logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
-	    	logger.skip(result.getThrowable());
-	    	report.removeTest(logger);
-	    }
-	    
-	    
-	    
-	Thread.sleep(3000);
-	if (result.getStatus() == ITestResult.FAILURE) {
-		Thread.sleep(3000);
-	//	BaseClass.mail_report();
-	
-		
-	//	BaseClass.mail_report();
-	}
-	
-	
-	}	
-		
-
-
-	@AfterTest
-	private void quitbrowser() {
-		report.flush();
-		
-      //driver.quit();
-	}
-
-
-}
