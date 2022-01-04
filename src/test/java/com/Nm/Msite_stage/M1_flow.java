@@ -141,10 +141,6 @@ public class M1_flow extends MsiteBaseClass {
 		
 		MsitePOM m = new MsitePOM();
 			  driver.get("https://m.netmeds.com/");
-<<<<<<< HEAD
-=======
-
->>>>>>> d925feb16f4ef68b95f4178dcde519cb39623d0c
 			  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			  Thread.sleep(10000);
 			  

@@ -47,7 +47,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				System.out.println(e.getMessage());
 			}
 					
-		}
+		}/*
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability("platformName", "Android");
@@ -62,7 +62,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 			}				
 		}
 		
-		
+		*/
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
