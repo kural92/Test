@@ -275,12 +275,27 @@ method(m.getOrderreview_mfr());
 			
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@text='Review Order']")).click();
-			Thread.sleep(5000);
-			driver.swipe(82, 939, 82, 6, 1000);
-			Thread.sleep(1500);
-			driver.swipe(82, 939, 82, 6, 1000);
-			Thread.sleep(1500);
-			driver.swipe(82, 939, 82, 6, 1000);
+for (int i = 0; i < 10; i++) {
+
+				
+				Thread.sleep(3000);
+				driver.swipe(82, 939, 82, 6, 1000);				try {
+					if (driver.findElement(By.xpath("//*[@class='rxviewimg']")).isDisplayed()) {
+
+						
+						Thread.sleep(3000);
+						//btnclick(m.getPackageImage());
+						break;
+					} else {
+						
+						System.out.println("Swipe Down to click on package Button");
+
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				}
+			
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@class='rxviewimg']")).click();
 			Thread.sleep(5000);
@@ -296,16 +311,56 @@ method(m.getOrderreview_mfr());
 			
 			
 	//Delete Address
-			
-			driver.swipe(0, 1500, 0, 1300, 1000);
+			for (int i = 0; i < 10; i++) {
+
+				
+				Thread.sleep(3000);
+				driver.swipe(0, 1500, 0, 1300, 1000);
+				try {
+					if (m.getDeleteaddress().isDisplayed()) {
+
+						
+						Thread.sleep(3000);
+						//btnclick(m.getPackageImage());
+						break;
+					} else {
+						
+						System.out.println("Swipe Down to click on package Button");
+
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				}
 			Thread.sleep(5000);
 				btnclick(m.getDeleteaddress());
 				System.out.println("Address was deleted successfully");
 				logger.log(Status.PASS, "Address was deleted successfully");
 				
 	//Modify
-				Thread.sleep(2000);
-			driver.swipe(0, 1800, 0, 1500,1000);
+				for (int i = 0; i < 10; i++) {
+
+					
+					Thread.sleep(3000);
+					driver.swipe(0, 1800, 0, 1500,1000);
+					try {
+						if (driver.findElement(By.xpath("//*[@text='Modify' and @top='true']")).isDisplayed()) {
+
+							
+							Thread.sleep(3000);
+							//btnclick(m.getPackageImage());
+							break;
+						} else {
+							
+							System.out.println("Swipe Down to click on package Button");
+
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+					}
+				
+				
 			Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@text='Modify' and @top='true']")).click();
 			Thread.sleep(5000);
