@@ -808,13 +808,13 @@ public class MsitePOM extends MsiteBaseClass{
 		///////////////////////////////////////////////////////
 		  // Msite PDP 
 		
-		@FindBy(xpath = "//*[@css='P.form.m-0.mt-1']")
+		@FindBy(xpath = "//*[@css='P.form.m-0.mt-1']|//*[@css='DIV.info']")
 		private List<WebElement> Msite_Search_Results;		
 		public List<WebElement> getMsite_Search_Results() {
 			return Msite_Search_Results;
 		}
 		
-		@FindBy(xpath = "//*[@css='DIV.rightside-details.col-10.pr-0']")
+		@FindBy(xpath = "//*[@css='DIV.rightside-details.col-10.pr-0']|//*[@css='DIV.info']")
 		private WebElement Msite_SearchResult_drugName;
 		public WebElement getMsite_SearchResult_drugName() {
 			return Msite_SearchResult_drugName;
@@ -1272,7 +1272,7 @@ return Search_results_Category;
 }
 
 
-@FindBy(xpath="//*[@class='search-icon']")
+@FindBy(xpath="//*[@css='SPAN.searchiconmobi.ng-star-inserted']|//*[@class='search-icon']")
 private WebElement PDP_Search_btnn;
 public WebElement getPDP_Search_btnn() {
 return PDP_Search_btnn;
@@ -1322,6 +1322,15 @@ return PDP_Search_btnn;
 		public WebElement getCOD_CheckBox() {
 		return COD_CheckBox;
 		}
+		
+		@FindBy(xpath = "(//*[@id='nms_cod'])[2]|//*[@id='nms_cod']")
+		private List<WebElement> COD_CheckBox_List;
+public List<WebElement> getCOD_CheckBox_List() {
+			return COD_CheckBox_List;
+		}
+
+
+
 		@FindBy(xpath = "(//*[@id='nms_cod'])[2]|//*[@id='nms_cod']")
 		private List<WebElement> COD_Not_Eligible_Text_List;
 		public List<WebElement> getCOD_Not_Eligible_Text_List() {

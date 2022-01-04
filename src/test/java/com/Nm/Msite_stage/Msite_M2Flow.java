@@ -8,6 +8,7 @@ import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -168,10 +169,11 @@ public class Msite_M2Flow extends MsiteBaseClass {
 
 		
 	  
-	  @Test(enabled = true)
+	  @Test(enabled = false)
 	  public void laucnh() throws Throwable {
 		  
 		  driver.get("https://m.netmeds.com/");
+		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 		 // driver.manage().window().maximize();
 		  MsitePOM m = new MsitePOM();
 		  Thread.sleep(10000);
@@ -189,8 +191,6 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		  
 		  Thread.sleep(10000);
 
-
-	
 		  m.getMsite_OrderNow().click();
 
 	
@@ -295,7 +295,8 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		 Thread.sleep(10000);
 	 driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 		 Thread.sleep(10000);
-		 /*	 driver.findElement(By.xpath("//android.widget.Button[@text='VIEW DETAILS']|//*[@class='android.widget.Button']")).click();
+		 /*
+		  driver.findElement(By.xpath("(//*[@css='BUTTON.btn-view.ord-btn'])[1]|//android.widget.Button[@text='VIEW DETAILS']|//*[@class='android.widget.Button']")).click();
 		 Thread.sleep(3000);
 		 driver.findElement(By.xpath("//*[@text='Cancel Order']|//*[@css='BUTTON.btn.btn-help.ng-star-inserted']")).click();
 		 Thread.sleep(3000);
@@ -315,10 +316,11 @@ public class Msite_M2Flow extends MsiteBaseClass {
 	}
 	  
 	  
-	  @Test(enabled = false )
+	  @Test(enabled = true )
 	  public void m2_miste_getCall() throws Throwable {
 		
 		  driver.get("https://m.netmeds.com/");
+		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			 // driver.manage().window().maximize();
 			  
 			  Thread.sleep(10000);
@@ -394,7 +396,7 @@ public class Msite_M2Flow extends MsiteBaseClass {
 				/////		
 		
 			  Thread.sleep(5000);
-			  driver.findElement(By.xpath("//android.widget.Button[@text='CONTINUE']")).click();
+			  driver.findElement(By.xpath("//*[@text='Continue']|//android.widget.Button[@text='CONTINUE']")).click();
 			
 			  Thread.sleep(5000);
 			  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']")).click();
@@ -403,7 +405,8 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		 driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 		 Thread.sleep(10000);
 		 letschat();
-		 driver.findElement(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();
+		 /*
+		 driver.findElement(By.xpath("(//*[@css='BUTTON.btn-view.ord-btn'])[1]|//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();
 		 Thread.sleep(3000);
 		 driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
 		 Thread.sleep(3000);
@@ -411,7 +414,7 @@ public class Msite_M2Flow extends MsiteBaseClass {
 		 Thread.sleep(3000);
 		 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
 		
-		  
+		  */
 
 	}
 	  
@@ -419,6 +422,7 @@ public class Msite_M2Flow extends MsiteBaseClass {
 	  public void m2_msite_PastRXSearch() throws Throwable {
 		  
 		  driver.get("https://m.netmeds.com/");
+		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			 // driver.manage().window().maximize();
 			  
 			  Thread.sleep(10000);
@@ -487,14 +491,15 @@ public class Msite_M2Flow extends MsiteBaseClass {
 			 Thread.sleep(10000);
 		 driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 			 Thread.sleep(10000);
-			 driver.findElement(By.xpath("//*[@text=' View Details ']|//*[@css='BUTTON.btn-view.ord-btn']")).click();
+			 /*
+			 driver.findElement(By.xpath("(//*[@css='BUTTON.btn-view.ord-btn'])[1]|//*[@text=' View Details ']|//*[@css='BUTTON.btn-view.ord-btn']")).click();
 			 Thread.sleep(3000);
 			 driver.findElement(By.xpath("//*[@text='Cancel Order']|//*[@css='BUTTON.btn.btn-help.ng-star-inserted']")).click();
 			 Thread.sleep(3000);
 			 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|(//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid'])[1]")).click();
 			 Thread.sleep(3000);
 			 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-			
+			*/
 	}
 	  
 	  

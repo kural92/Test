@@ -32,14 +32,14 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 		
 		
 		@BeforeClass
-		public void launchbrowser2()   {
-			DesiredCapabilities capabilities = new DesiredCapabilities();
+			public void launchbrowser2()   {
+					DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		    capabilities.setCapability("platformName", "Android");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
 			capabilities.setCapability("noReset", true);			
-			capabilities.setCapability("autoDismissAlerts", true);  			
+		//	capabilities.setCapability("autoDismissAlerts", true);  			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
@@ -47,11 +47,11 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				System.out.println(e.getMessage());
 			}
 					
-		}/*
+		}
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability("platformName", "Android");
-			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
+		//	capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
 			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
 			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
 			capabilities.setCapability("noReset", true);
@@ -62,7 +62,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 			}				
 		}
 		
-		*/
+		
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
@@ -125,7 +125,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				driver.get("https://m.netmeds.com");
 				
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				String aa = "Gemer 2mg,Ajmal Amber Wood";
 				String [] spl = aa.split(",");
 				System.out.println(spl.length);
@@ -134,12 +134,8 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				
 				for (int i = 0; i < spl.length; i++) {
 					
-					
-				
-				
-				
-				Thread.sleep(3000);
-				btnclick(m.getHeader_SearchBar());
+				Thread.sleep(10000);
+				//btnclick(m.getHeader_SearchBar());
 				Thread.sleep(5000);
 				//type(m.getSearchBar(), spl[i]);
 				m.getHeader_SearchBar().sendKeys(spl[i]);
@@ -221,28 +217,21 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					
 					System.out.println("Unable to Process the payment / Cash on Delivery Option.The Net Value was Below 60 or above 5000");
 				try {	
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
 					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					
-					Thread.sleep(3000);
-					if (m.getCOD_CheckBox().isDisplayed()) {
+					for (int j = 0; j < 10; j++) {
 						
-					} else {
-						System.err.println("COD Option  available ");
+						Thread.sleep(3000);
+						driver.swipe(50, 500, 0, 0, 1000);
+						if (m.getCOD_CheckBox_List().size()!=0) {
+						
+							Thread.sleep(3000);
+							break;
+						} else {
+							
+						}
 					}
-					
-					
-				
+					Thread.sleep(3000);
+
 				}catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -251,23 +240,26 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					
 				} else {
 					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
+                 for (int j = 0; j < 10; j++) {
+						
+						Thread.sleep(3000);
+						driver.swipe(50, 500, 0, 0, 1000);
+						if (m.getCOD_CheckBox_List().size()!=0) {
+						
+							Thread.sleep(3000);
+							break;
+						} else {
+							
+						}
+						
+                 }
+						Thread.sleep(3000);
+						letschat();
+						
+						
 					Thread.sleep(3000);
 					btnclick(m.getCOD_CheckBox());
+					
 					
 					Thread.sleep(3000);
 					btnclick(m.getCOD_PayBtn());
@@ -275,7 +267,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					Thread.sleep(3000);
 
 					Thread.sleep(3000);
-					driver.swipe(0, 200, 0, 0, 1000);
+					driver.swipe(50, 300, 0, 0, 1000);
 				//	btnclick(m.getTrack_Order());
 					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
 					 Thread.sleep(10000);
@@ -305,7 +297,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				
 				
 
-				
+	
 	
 				
 }

@@ -2,6 +2,7 @@ package com.Nm.Msite_stage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -92,7 +93,7 @@ public class Msite_Cols_Storage extends MsiteBaseClass{
 		MsitePOM m = new MsitePOM();
 		
 		 driver.get("http://m.netmeds.com");
-	        
+		 driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 
 	        Thread.sleep(10000);
 			  try {
@@ -147,8 +148,12 @@ public class Msite_Cols_Storage extends MsiteBaseClass{
 				driver.hideKeyboard();
 
 				Thread.sleep(2000);
-				//btnclick(m.getMsite_SearchResult_drugName());
-		btnclick(m.getMsite_Search_Results().get(0));
+				try {
+				btnclick(m.getMsite_SearchResult_drugName());
+				} catch (Exception e) {
+					btnclick(m.getMsite_Search_Results().get(0));
+				}
+	
 		
 				Thread.sleep(10000);
 			
