@@ -111,7 +111,7 @@ public class CategoryPage extends MsiteBaseClass {
 			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
 			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-			
+			capabilities.setCapability("autoGrantPermissions", true);
 					
 			//capabilities.setCapability("autoDismissAlerts", true);  
 			
@@ -150,7 +150,7 @@ public class CategoryPage extends MsiteBaseClass {
 	
 
    
-//*****************************************************************M3 Subscription OTC Flow	*********************************************************
+//*****************************************************************Category Page   *********************************************************
 	@Test(enabled = true)
 	public void CategoryPage() throws Throwable {
 		

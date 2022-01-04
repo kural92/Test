@@ -87,7 +87,8 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 			capabilities.setCapability("noReset", true);
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
-			
+			capabilities.setCapability("autoGrantPermissions", true);
+			  
 			
 		try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);

@@ -203,7 +203,7 @@ return text;
 	
 	//driver.navigate().to("https://m.netmeds.com/non-prescriptions");
 		
-		for (int j=0;j<=m.getCategory_list().size();j++) {
+		for (int j=0;j<=0;j++) {
 			
 			Thread.sleep(2000);
 			driver.swipe(0, 1900, 0, 2200, 1000);
@@ -266,7 +266,7 @@ return text;
 			List<WebElement> SubCategory_list = m.getSubCategory_list();
 			System.out.println("The element size is"+  SubCategory_list.size());
 			
-					for (int i1=0;i1<=2;i1++) {
+					for (int i1=0;i1<=0;i1++) {
 						
 						Thread.sleep(5000);
 						/* if (i1>2) {
@@ -310,7 +310,7 @@ return text;
 	Thread.sleep(5000);
 
 	
-	for (int i2 = 0;i2<3; i2++)
+	for (int i2 = 0;i2<2; i2++)
 	
 	{
 		driver.swipe(82, 1897, 82, 1465, 1000);
@@ -381,7 +381,7 @@ return text;
 			Thread.sleep(5000);
 		
 
-	for (int i3 = 0;i3<4; i3++)
+	for (int i3 = 0;i3<2; i3++)
 			
 			{
 		driver.swipe(82, 1897, 82, 1465, 1000);
