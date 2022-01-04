@@ -1353,13 +1353,13 @@ return PDP_Search_btnn;
 		
 
 		
-		@FindBy(xpath="//*[@text='Consult Now' and @top='true']")
+		@FindBy(xpath="(//*[@text='Consult Now'])[2]|//*[@text='Consult Now' and @top='true']")
 		private List<WebElement> Consultation_Btn_List;
 		public List<WebElement> getConsultation_Btn_List() {
 		return Consultation_Btn_List;
 		}
 		
-		@FindBy(xpath="//*[@text='Consult Now' and @top='true']")
+		@FindBy(xpath="(//*[@text='Consult Now'])[2]|//*[@text='Consult Now' and @top='true']")
 		private WebElement Consultation_Btn;
 		public WebElement getConsultation_Btn() {
 		return Consultation_Btn;

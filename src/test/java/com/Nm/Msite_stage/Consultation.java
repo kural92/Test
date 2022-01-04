@@ -8,6 +8,7 @@ import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -152,7 +153,7 @@ public class Consultation extends MsiteBaseClass {
 	
 //*************************************************	
 	
-	@Test(priority = 1,enabled=false)
+	@Test(priority = 1,enabled=true)
 	public void Consult_Myself() throws Throwable {
 		
 		
@@ -163,7 +164,7 @@ public class Consultation extends MsiteBaseClass {
 		
 		//driver.manage().window().maximize();
 				driver.get("https://m.netmeds.com/");
-			
+				driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 	
 				Thread.sleep(6000);
 				
@@ -231,7 +232,7 @@ public class Consultation extends MsiteBaseClass {
 		for (int i = 0; i < 10; i++) {
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 800, 0, 0, 1000);
+			driver.swipe(0, 700, 0, 0, 1000);
 			Thread.sleep(3000);
 			if (m.getConsultation_Btn_List().size()!=0) {
 				
@@ -263,6 +264,7 @@ public class Consultation extends MsiteBaseClass {
 			// TODO: handle exception
 		}
 		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOf(m.getConsult_Symptons_TextBox()));
 		type(m.getConsult_Symptons_TextBox(), "Ear pain");
 		
 		driver.hideKeyboard();
@@ -399,7 +401,7 @@ public class Consultation extends MsiteBaseClass {
 	MsitePOM m = new MsitePOM();
 
 				driver.get("https://m.netmeds.com/");
-		
+				driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 				
 				Thread.sleep(6000);
 				
@@ -458,7 +460,7 @@ public class Consultation extends MsiteBaseClass {
 		for (int i = 0; i < 10; i++) {
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 800, 0, 0, 1000);
+			driver.swipe(20, 500, 0, 0, 1000);
 			
 			if (m.getConsultation_Btn_List().size()!=0) {
 				
@@ -480,7 +482,7 @@ public class Consultation extends MsiteBaseClass {
 		Thread.sleep(7000);
 	
 		
-		driver.swipe(550, 1750, 550, 600, 1000);
+		driver.swipe(20, 900, 20, 600, 1000);
 
 		Thread.sleep(5000);
 		
@@ -489,7 +491,7 @@ public class Consultation extends MsiteBaseClass {
 		
 	 Thread.sleep(5000);
 	 
-	// wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Consult now']"))));
+	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Consult now']"))));
 	btnclick(driver.findElement(By.xpath("//*[@text='Consult now']")));
 	 
 	 

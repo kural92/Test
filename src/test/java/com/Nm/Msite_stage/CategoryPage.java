@@ -8,6 +8,7 @@ import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -71,7 +72,7 @@ public class CategoryPage extends MsiteBaseClass {
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
-			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
+			capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse_WorkSpace\\Automation\\Driver\\chromedriver.exe");
 			//for install Apk file
 			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
 			// already installed app
@@ -159,6 +160,7 @@ public class CategoryPage extends MsiteBaseClass {
 		MsitePOM m = new MsitePOM();
 		//driver.manage().window().maximize();
 		driver.get("https://m.netmeds.com/");
+		driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 	/*	try {
 
 		//	btnclick(m.getSignin());
