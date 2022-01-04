@@ -117,15 +117,28 @@ public class NetmedsFirst extends MobileBaseClass  {
 			}
 		} 
 		driver.navigate().to("https://m.netmeds.com");
-		Thread.sleep(5000);
-				driver.swipe(82, 939, 82, 6, 1000);
-				Thread.sleep(1500);	
-				driver.swipe(82, 939, 82, 6, 1000);
-				Thread.sleep(1500);	
-				driver.swipe(82, 939, 82, 6, 1000);
-				Thread.sleep(1500);	
-				driver.swipe(82, 939, 82, 6, 1000);
-				
+		for (int i = 0; i < 10; i++) {
+
+			
+			Thread.sleep(3000);
+			driver.swipe(82, 939, 82, 6, 1000);
+			try {
+				if (driver.findElement(By.xpath("//*[@text='Netmeds First Membership' and @nodeName='H2']")).isDisplayed()) {
+
+					
+					Thread.sleep(3000);
+					//btnclick(m.getPackageImage());
+					break;
+				} else {
+					
+					System.out.println("Swipe Down to click on package Button");
+
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			}
+		
 				Thread.sleep(2000);
 		
 				driver.findElement(By.xpath("//*[@text='Netmeds First Membership' and @nodeName='H2']")).getText().equalsIgnoreCase("Netmeds First Membership");
@@ -162,7 +175,28 @@ driver.findElement(By.xpath("//*[@text='Explore Plans' and @nodeName='A']")).cli
 	Thread.sleep(3000);
 	driver.navigate().back();
 	Thread.sleep(5000);
-	driver.swipe(82, 939, 82, 6, 1000);
+	for (int i = 0; i < 10; i++) {
+
+		
+		Thread.sleep(3000);
+		driver.swipe(82, 939, 82, 6, 1000);
+		try {
+			if (driver.findElement(By.xpath("//*[@text=' Add to Cart ' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Rs. 499']]]]")).isDisplayed()) {
+
+				
+				Thread.sleep(3000);
+				//btnclick(m.getPackageImage());
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to click on package Button");
+
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		}
+	
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//*[@text=' Add to Cart ' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Rs. 499']]]]")).click();
 	try {
@@ -223,12 +257,27 @@ driver.findElement(By.xpath("//*[@text='Explore Plans' and @nodeName='A']")).cli
 	}
 	Thread.sleep(10000);
 	driver.findElement(By.xpath("//*[@nodeName='DIV' and @width>0 and (./preceding-sibling::* | ./following-sibling::*)[./*[@text='Rs. 299']] and ./*[@text=' Add to Cart ' and @nodeName='BUTTON']]")).click();
-	Thread.sleep(5000);
-	driver.swipe(0, 900, 0, 0, 1000);
-	Thread.sleep(3000);
-	driver.swipe(0, 500, 0, 0, 1000);
-	Thread.sleep(3000);
-	//driver.swipe(0, 500, 0, 0, 1000);
+	for (int i = 0; i < 10; i++) {
+
+		
+		Thread.sleep(3000);
+		driver.swipe(82, 939, 82, 6, 1000);
+		try {
+			if (driver.findElement(By.xpath("//*[@id='cart_del_charge' and @nodeName='SPAN']")).isDisplayed()) {
+
+				
+				Thread.sleep(3000);
+				//btnclick(m.getPackageImage());
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to click on package Button");
+
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		}
 	if ((driver.findElements(By.xpath("//*[@id='cart_del_charge' and @nodeName='SPAN']")).size()==0)) {
 		
 		System.out.println("delevery charge is not displayed");
@@ -236,12 +285,28 @@ driver.findElement(By.xpath("//*[@text='Explore Plans' and @nodeName='A']")).cli
 		
 		System.out.println("delevery charge is displayed");
 	}
-	Thread.sleep(3000);
-	driver.swipe(500, 500, 500, 1500, 1000);
-	Thread.sleep(3000);
-	driver.swipe(500, 500, 500, 1500, 1000);
-	Thread.sleep(3000);
-	driver.swipe(500, 500, 500, 1500, 1000);
+for (int i = 0; i < 10; i++) {
+
+		
+		Thread.sleep(3000);
+		driver.swipe(500, 500, 500, 1500, 1000);
+		try {
+			if (driver.findElement(By.xpath("//*[@id='cart_del_charge' and @nodeName='SPAN']")).isDisplayed()) {
+
+				
+				Thread.sleep(3000);
+				//btnclick(m.getPackageImage());
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to click on package Button");
+
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		}
+	
 	for (int i = 0; i < 16; i++) {
 		Thread.sleep(3000);
 		if ((driver.findElements(By.xpath("//*[@nodeName='A']")).size() == 0)) {

@@ -199,7 +199,7 @@ public class MsitePOM extends MsiteBaseClass{
 		return Msite_Upload_Prescription;
 	}	
 
-	@FindBy(xpath = "//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']")
+	@FindBy(xpath = "//*[@text=' CREATE NEW SUBSCRIPTION ']|//android.widget.Button[@text='CREATE NEW SUBSCRIPTION']|//android.view.View[@text='CREATE NEW SUBSCRIPTION']|//*[@text='CREATE NEW SUBSCRIPTION' and @nodeName='A']")
 	private WebElement NewSubscription;
 	public WebElement getNewSubscription() {
 		return NewSubscription;

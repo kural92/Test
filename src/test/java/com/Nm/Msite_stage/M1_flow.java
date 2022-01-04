@@ -215,7 +215,7 @@ public class M1_flow extends MsiteBaseClass {
 			
 			//add the product
 			
-			driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and ./parent::*[@nodeName='DIV' and ./parent::*[@nodeName='A']]]")).click();
+			driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and ./parent::*[@nodeName='DIV' and ./parent::*[@nodeName='A']]]|//*[not(@hidden)]//*[@text='Proceed To Cart']")).click();
 			logger.log(Status.PASS, "Successfully navigate to cart page" );
 			Thread.sleep(15000);
 			driver.findElement(By.xpath("//*[@text='Proceed']")).click();
@@ -235,9 +235,27 @@ Thread.sleep(3000);
 Thread.sleep(3000);
 //touchAction.tap(i-100,i1-100).perform();
 driver.findElement(By.xpath("//*[@text='Pay']")).click();
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
+for (int i = 0; i < 10; i++) {
+
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	try {
+		if (driver.findElement(By.xpath("//*[@id='nms_cod' and @name='nmsmstr_paymethod']")).isDisplayed()) {
+
+			
+			Thread.sleep(3000);
+			//btnclick(m.getPackageImage());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on package Button");
+
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	}Thread.sleep(3000);
 MobileElement cod = (MobileElement) driver.findElement(By.xpath("//*[@id='nms_cod' and @name='nmsmstr_paymethod']"));cod.click();
 Thread.sleep(3000);
 driver.findElement(By.xpath("//*[@text and @nodeName='BUTTON']")).click();
@@ -277,11 +295,27 @@ try {
 }catch (Exception e) {
 	// TODO: handle exception
 }
-Thread.sleep(5000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
-driver.swipe(0, 900, 0, 0, 1000);
-Thread.sleep(3000);
+for (int i = 0; i < 10; i++) {
+
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	try {
+		if (driver.findElement(By.xpath("//*[@text='Cancel Order']")).isDisplayed()) {
+
+			
+			Thread.sleep(3000);
+			//btnclick(m.getPackageImage());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on package Button");
+
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	}
 
 //MobileElement co = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']"));co.click();
 driver.findElement(By.xpath("//*[@text='Cancel Order']")).click();
