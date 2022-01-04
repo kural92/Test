@@ -269,12 +269,14 @@ return text;
 					for (int i1=0;i1<=0;i1++) {
 						
 						Thread.sleep(5000);
-						/* if (i1>2) {
-							 
+						if (i1>2) {
+							 try {
 							 driver.swipe(950, 1050, 430, 1050, 1000);
+							 } catch (Exception e) {
+								driver.swipe(500, 0, 0, 0, 1000);
+							}
 							// new TouchAction(driver).press(950, 1050) .waitAction(2000) .moveTo(430, 1050) .release().perform();
 						 }
-						*/
 						Thread.sleep(5000);
 						SubCategory_list.get(i1).click();
 						System.out.println("Successfull navigated to sub category page");
@@ -313,7 +315,11 @@ return text;
 	for (int i2 = 0;i2<2; i2++)
 	
 	{
+		try {
 		driver.swipe(82, 1897, 82, 1465, 1000);
+		}catch (Exception e) {
+			driver.swipe(0, 1500, 0, 0, 1000);
+		}
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@id='list_sort_btn']")).click();
 		Thread.sleep(5000);
@@ -384,7 +390,11 @@ return text;
 	for (int i3 = 0;i3<2; i3++)
 			
 			{
+		try {
 		driver.swipe(82, 1897, 82, 1465, 1000);
+		}catch (Exception e) {
+			driver.swipe(0, 1500, 0, 0, 1000);
+		}
 				Thread.sleep(5000);
 				driver.findElement(By.xpath("//*[@id='filter-btn']")).click();
 				Thread.sleep(5000);
