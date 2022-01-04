@@ -257,28 +257,27 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 					
 				} else {
 					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
+					  for (int j = 0; j < 10; j++) {
+							
+							Thread.sleep(3000);
+							driver.swipe(50, 500, 0, 0, 1000);
+							if (m.getCOD_CheckBox_List().size()!=0) {
+							
+								Thread.sleep(3000);
+								break;
+							} else {
+								
+							}
 					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					Thread.sleep(3000);
-					driver.swipe(0, 500, 0, 0, 1000);
-					
-					
+					  }
 					
 					/////
 					Thread.sleep(10000);
 					if (!(m.getCOD_Not_Eligible_Text_List().size()==0)) {
 						
 				//	
+						Thread.sleep(3000);
+						letschat();
 						Thread.sleep(3000);
 						btnclick(m.getCOD_CheckBox());
 						
@@ -335,16 +334,16 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 					Thread.sleep(3000);
 				
 					Thread.sleep(3000);
-					driver.swipe(0, 200, 0, 0, 1000);
+					driver.swipe(50, 200, 0, 0, 1000);
 				//	btnclick(m.getTrack_Order());
 				//	driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
 					 Thread.sleep(10000);
 					 letschat();
 					 List<WebElement> view_Details =  driver.findElements(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']"));
 					 Thread.sleep(3000);
-						for (int j = 0; j < 3; j++) {
+						for (int jj = 0; jj < 3; jj++) {
 							Thread.sleep(6000);
-							btnclick(view_Details.get(j));
+							btnclick(view_Details.get(jj));
 						
 					 Thread.sleep(3000);
 					 driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
@@ -372,6 +371,7 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 				}
 				
 				/////
-	}
+				}
+	
 	
 }

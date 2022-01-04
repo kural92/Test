@@ -220,7 +220,7 @@ public class M3OTC extends MsiteBaseClass {
 // Step 6:Search Product//
 
 		Thread.sleep(5000);
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 2; i++) {
 
 			type(m.getM3productsearch(), MobileBaseClass.getExcelData("Otcandnonrx", i, 0));
 			
@@ -359,7 +359,7 @@ public class M3OTC extends MsiteBaseClass {
         }
 	  
  //Decrease quantity
-        WebElement qty_increase = 	driver.findElement(By.xpath("(//android.widget.CheckedTextView[@resource-id='android:id/text1'])[12]"));
+        WebElement qty_increase = 	driver.findElement(By.xpath("(//android.widget.CheckedTextView[@resource-id='android:id/text1'])[12]|//*[@text='12']"));
 		qty_increase.click();
 	
 		Thread.sleep(3000);

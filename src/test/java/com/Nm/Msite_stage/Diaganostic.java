@@ -86,19 +86,12 @@ public class Diaganostic  extends MsiteBaseClass {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
 			capabilities.setCapability("platformName", "Android");
-			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
-			//for m-site
-			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
-			//for install Apk file
-			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
-			// already installed app
-			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
-			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			capabilities.setCapability("noReset", true);
 			
-					
-			//capabilities.setCapability("autoDismissAlerts", true);  
+			capabilities.setCapability("newCommandTimeout", 100);
+			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
+				capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
+			capabilities.setCapability("noReset", true);
+		   capabilities.setCapability("autoDismissAlerts", true);  
 			
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -286,8 +279,27 @@ String Email_ID=driver.findElement(By.xpath("//*[@text='Email ID']")).getText();
 	logger.log(Status.PASS, "Address was deleted successfully");
 	
 //Modify
-driver.swipe(0, 1500, 0, 1300,1000);
-Thread.sleep(5000);
+	for (int i = 0; i < 10; i++) {
+
+		
+		Thread.sleep(3000);
+		driver.swipe(0, 900, 0, 0, 1000);
+		try {
+			if (driver.findElement(By.xpath("//*[@text='Edit']")).isDisplayed()) {
+
+				
+				Thread.sleep(3000);
+				//btnclick(m.getPackageImage());
+				break;
+			} else {
+				
+				System.out.println("Swipe Down to click on package Button");
+
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		}
 driver.findElement(By.xpath("//*[@text='Edit']")).click();
 Thread.sleep(5000);
 //type(m.getPincode(),"600093");
