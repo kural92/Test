@@ -312,16 +312,25 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 	            }
 	        }		
 			
-		
+		try {
 		 driver.swipe(82, 1600, 82, 0, 1000);
+		}catch (Exception e) {
+			 driver.swipe(0, 1500, 0, 0, 1000);
+		}
+			
+		
 		Thread.sleep(3000);
 		//driver.findElement(By.xpath("//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")).click();
 		btnclick(m.getCancelorder());
 
 
 		Thread.sleep(5000);
-//
+// 
+		try {
 		driver.swipe(82, 939, 82, 6, 1000);
+		}catch (Exception e) {
+		driver.swipe(0, 500, 0, 6, 1000);
+		}
 		
 		Thread.sleep(5000);
 		//driver.findElement(By.xpath("//*[@text='YES']|//android.widget.Button[@text='YES']")).click();
@@ -331,7 +340,7 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 		}
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
+		driver.findElement(By.xpath("//*[@text='Delay in delivery ' and @top='true']|//*[@text='Delay in delivery']")).click();
 		
 		
 //		
@@ -377,12 +386,19 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 				            }
 				        }		
 						
-					
+				    try    {
 					 driver.swipe(82, 1600, 82, 0, 1000);
+				    }catch (Exception e) {
+				    	 driver.swipe(0, 1600, 0, 0, 1000);
+					}
 					Thread.sleep(3000);
 					btnclick(m.getCancelorder());
 					Thread.sleep(5000);
-					driver.swipe(82, 939, 82, 6, 1000);
+					 try    {
+						 driver.swipe(82, 1600, 82, 0, 1000);
+					    }catch (Exception e) {
+					    	 driver.swipe(0, 1600, 0, 0, 1000);
+						}
 					Thread.sleep(5000);
 					try{btnclick(m.getYesbutton());}
 					catch (Exception e) {
