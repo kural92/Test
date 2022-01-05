@@ -458,14 +458,14 @@ public class M3OTC extends MsiteBaseClass {
 				btnclick(m.getViewdetails());
 				Thread.sleep(5000);
 				
-				//Switch to Native_App		
+			/*	//Switch to Native_App		
 				 Set<String> contextNames4 = driver.getContextHandles();
 			        for (String strContextName : contextNames4) {
 			            if (strContextName.contains("NATIVE_APP")) {
 			                driver.context("NATIVE_APP");
 			                break;
 			            }
-			        }		
+			        }		*/
 					
 				try {
 				 driver.swipe(82, 1600, 82, 0, 1000);

@@ -298,10 +298,8 @@ driver.swipe(0, 900, 0, 0, 1000);*/
 
 //Step 16 : Ensure order is placed successfully//
 
-WebDriverWait wait = new WebDriverWait(driver, 30);
-wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Track Order']"))));
-Thread.sleep(1000);
 
+Thread.sleep(9000);
 		String confirmation = driver.findElement(By.xpath("//*[@text='Order Placed Successfully!']|//android.view.View[@text='Order Placed Successfully!']")).getText(); 
 		
 		System.out.println(confirmation);

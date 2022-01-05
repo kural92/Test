@@ -318,8 +318,7 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 		Thread.sleep(2000);
 		driver.navigate().to("https://www.netmeds.com/customer/orderhistory");
 		
-		Thread.sleep(3000);	
-		driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
+		
 			
 
 			
@@ -328,8 +327,8 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 		//Let's chat handle//
 					letschat();
 					
-					Thread.sleep(5000);
-			
+					/*	Thread.sleep(5000);
+		
 					btnclick(m.getViewdetails());
 					Thread.sleep(5000);
 					
@@ -360,6 +359,8 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 					catch (Exception e) {
 						// TODO: handle exception
 					}
+					
+					letschat();
 					Thread.sleep(5000);
 					btnclick(m.getCancel_reason());
 					 Thread.sleep(3000);
@@ -373,11 +374,11 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 
 
 
-        }
+        }*/
 		 }	
 		
 
-	
+		 }
 	
 	
 	
