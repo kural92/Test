@@ -42,8 +42,9 @@ public class NetmedsFirst extends MobileBaseClass  {
 
 			
 			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+			capabilities.setCapability("platformName", "Android");
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");
 			capabilities.setBrowserName(MobileBrowserType.CHROMIUM);
 
 			capabilities.setCapability("noReset", true);

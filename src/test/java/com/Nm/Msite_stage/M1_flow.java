@@ -69,7 +69,7 @@ public class M1_flow extends MsiteBaseClass {
 		public void launchbrowser() throws IOException {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
+	//		capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
 
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, FileAndEnv.envAndFile().get("UDID"));  //fc95d519 //RZ8R20GLXTA
@@ -159,9 +159,9 @@ public class M1_flow extends MsiteBaseClass {
 		driver.navigate().to("https://m.netmeds.com/checkout/cart");
 		try {
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+			letschat();
 		}catch (Exception e) {
-			// TODO: handle exception
+			driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 		}
 		for (int i = 0; i < 10; i++) {
 			Thread.sleep(5000);

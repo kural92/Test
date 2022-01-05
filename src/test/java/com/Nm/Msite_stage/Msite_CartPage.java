@@ -200,6 +200,8 @@ Float total_Wallet_amt;
 			}			  	  
 			  // Remove From Cart
 				driver.navigate().to("https://m.netmeds.com/checkout/cart");
+				
+				letschat();
 				for (int i = 0; i < 10; i++) {
 					Thread.sleep(10000);
 					if (!(driver.findElements(By.xpath("//*[@title='Remove item']")).size() == 0)) {
@@ -284,6 +286,9 @@ Float total_Wallet_amt;
 				
 				ms.getMsite_ViewCart().click();
 				Thread.sleep(10000);
+				
+				letschat();
+				Thread.sleep(3000);
 				ms.getMsite_SaveForLater().click();
 				Thread.sleep(3000);
 			//	logger.log(Status.PASS, "Successfully navigated to cart page");
@@ -291,6 +296,8 @@ Float total_Wallet_amt;
 
 				
 				//qty increase//
+				
+				Thread.sleep(3000);
 				
 			     ms.getMsite_QtyBtn().click();
 				

@@ -360,7 +360,7 @@ public class MsitePOM extends MsiteBaseClass{
 
 	@FindBy(xpath = "//*[@text=' ADD TO CART ']")
 	private WebElement AddtoCartButton;
-	@FindBy(xpath = "//*[@text='  ' and @nodeName='DIV' and @width>0 and ./*[@text='0']]")
+	@FindBy(xpath = "//*[@text='  ' and @nodeName='DIV' and @width>0 and ./*[@text='0']]|//*[@css='DIV.counter']")
 	private WebElement Gotocart;
 	@FindBy(xpath = "//*[@text='Become Netmeds First Member' and @nodeName='H4']")
 	private WebElement Cart_prime_header_text;
