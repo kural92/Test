@@ -207,7 +207,11 @@ return text;
 		for (int j=0;j<=0;j++) {
 			
 			Thread.sleep(2000);
+			try {
 			driver.swipe(0, 1900, 0, 2200, 1000);
+			}catch (Exception e) {
+				driver.swipe(50, 300, 0, 0, 1000);
+			}
 			Thread.sleep(2000);
 			
 			

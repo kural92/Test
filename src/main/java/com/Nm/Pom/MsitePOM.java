@@ -721,7 +721,7 @@ public class MsitePOM extends MsiteBaseClass{
 		}
 		
 		
-		@FindBy(xpath = "//*[@type='select-one']")
+		@FindBy(xpath = "//*[@name='quantity']|//*[@type='select-one']")
 		private WebElement Msite_QtyBtn;
 		public WebElement getMsite_QtyBtn() {
 			return Msite_QtyBtn;

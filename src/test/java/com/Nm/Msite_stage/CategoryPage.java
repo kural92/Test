@@ -80,6 +80,7 @@ public class CategoryPage extends MsiteBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
 			*/
+			capabilities.setCapability("newCommandTimeout", 100);
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
 			capabilities.setCapability("noReset", true);
