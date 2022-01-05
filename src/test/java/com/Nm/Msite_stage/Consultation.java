@@ -62,7 +62,7 @@ public class Consultation extends MsiteBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
 			capabilities.setCapability("noReset", true);
-			
+			capabilities.setCapability("newCommandTimeout", 100);
 			capabilities.setCapability("autoDismissAlerts", true);  
 			
 			
@@ -90,7 +90,9 @@ public class Consultation extends MsiteBaseClass {
 			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
 			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
-			
+			capabilities.setCapability("newCommandTimeout", 100);
+
+
 					
 			//capabilities.setCapability("autoDismissAlerts", true);  
 			
@@ -131,7 +133,7 @@ public class Consultation extends MsiteBaseClass {
 	
 //*************************************************	
 	
-	@Test(priority = 1,enabled=true)
+	@Test(priority = 1,enabled=false)
 	public void Consult_Myself() throws Throwable {
 		
 		
@@ -214,7 +216,7 @@ public class Consultation extends MsiteBaseClass {
 		for (int i = 0; i < 10; i++) {
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 700, 0, 0, 1000);
+			driver.swipe(100, 700, 0, 0, 1000);
 			Thread.sleep(3000);
 			if (m.getConsultation_Btn_List().size()!=0) {
 				

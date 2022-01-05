@@ -63,8 +63,7 @@ public class Youraccount2_Myreward extends MsiteBaseClass {
 		public static  ExtentTest logger;
 		@BeforeClass
 		
-		//@BeforeClass
-		public void launchbrowser2()   {
+		public void launchbrowser()   {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
@@ -89,7 +88,7 @@ public class Youraccount2_Myreward extends MsiteBaseClass {
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
 			capabilities.setCapability("autoGrantPermissions", true);
-			
+			capabilities.setCapability("newCommandTimeout", 100);
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
@@ -99,34 +98,6 @@ public class Youraccount2_Myreward extends MsiteBaseClass {
 					
 		}
 
-
-		public void launchbrowser() {
-			DesiredCapabilities capabilities = new DesiredCapabilities();
-			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
-			capabilities.setCapability("platformName", "Android");
-			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
-			//for m-site
-			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
-			//for install Apk file
-			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
-			// already installed app
-			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
-			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			capabilities.setCapability("noReset", true);
-			capabilities.setCapability("autoGrantPermissions", true);
-					
-			//capabilities.setCapability("autoDismissAlerts", true);  
-			
-			try {
-				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-				
-				
-			} catch (MalformedURLException e) {
-				System.out.println(e.getMessage()); 
-			}
-					
-		}
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
@@ -152,20 +123,6 @@ public class Youraccount2_Myreward extends MsiteBaseClass {
    }
 	
 
-	/*
-	@BeforeMethod
-	  public void setUp1() throws MalformedURLException {
-	      System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
-	      Map<String, String> mobileEmulation = new HashMap<String, String>();
-	      mobileEmulation.put("deviceName", "Moto G4");
-
-	      ChromeOptions chromeOptions = new ChromeOptions();
-	      chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-	      chromeOptions.addArguments("--disable-notifications");
-	      driver = new ChromeDriver(chromeOptions);
-	     
-	     
-	  }  */
 	
 	/* Under your account page
 	 	Test Case 1 : Verify the functionalities of Delivery address Page (Add, Edit, Select and Delete Address).

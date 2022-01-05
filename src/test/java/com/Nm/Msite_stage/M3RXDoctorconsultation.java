@@ -61,13 +61,12 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 		public static  ExtentTest logger;
 		@BeforeClass
 		
-		//@BeforeClass
-		public void launchbrowser2()   {
+		public void launchbrowser()   {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
 
 			capabilities.setCapability("platformName", "Android");
 		//	capabilities.setCapability("deviceName", "vivo 1819");
@@ -81,16 +80,14 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
 			*/
-			//capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
-			capabilities.setBrowserName(MobileBrowserType.CHROMIUM);
-			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
 			capabilities.setCapability("noReset", true);
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
 			capabilities.setCapability("autoGrantPermissions", true);
-			  
-			
-		try {
+			capabilities.setCapability("newCommandTimeout", 100);
+			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
 			} catch (MalformedURLException e) {
@@ -99,34 +96,6 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 					
 		}
 
-
-		public void launchbrowser() {
-			DesiredCapabilities capabilities = new DesiredCapabilities();
-		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
-			capabilities.setCapability("platformName", "Android");
-			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
-			//for m-site
-			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
-			//for install Apk file
-			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
-			// already installed app
-			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
-			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			capabilities.setCapability("noReset", true);
-			capabilities.setCapability("autoGrantPermissions", true);
-					
-			//capabilities.setCapability("autoDismissAlerts", true);  
-			
-			try {
-				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-				
-				
-			} catch (MalformedURLException e) {
-				System.out.println(e.getMessage()); 
-			}
-					
-		}
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
@@ -152,20 +121,6 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
    }
 	
 
-	/*
-	@BeforeMethod
-	  public void setUp1() throws MalformedURLException {
-	      System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
-	      Map<String, String> mobileEmulation = new HashMap<String, String>();
-	      mobileEmulation.put("deviceName", "Moto G4");
-
-	      ChromeOptions chromeOptions = new ChromeOptions();
-	      chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-	      chromeOptions.addArguments("--disable-notifications");
-	      driver = new ChromeDriver(chromeOptions);
-	     
-	     
-	  }  */
 //*******************************************************M3 Rx**********************************************************************//
 	@Test
 	public void M3Doctorconsultation() throws Throwable {
@@ -281,10 +236,15 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 
 //Let's chat handle//
 				letschat();
-
+				Thread.sleep(5000);
 //Doctor consulation 
-				
-				driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+				if (!(driver.findElement(By.xpath("//*[@id='externaldoctr']|//android.widget.CheckBox[@resource-id='externaldoctr']")).isSelected())) {
+					driver.findElement(By.xpath("//*[@id='externaldoctr']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+					Thread.sleep(5000);
+				} else {
+					System.out.println("Schedule doctor Already Selected");
+				}
+			//	driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
 				Thread.sleep(5000);
 				
 				driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();

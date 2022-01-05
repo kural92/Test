@@ -3,6 +3,7 @@ package com.Nm.Msite_stage;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -99,7 +100,7 @@ public class Msite_Search extends MsiteBaseClass{
 		MsitePOM m = new MsitePOM();
 		
 		 driver.get("http://m.netmeds.com");
-	        
+		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 
 	        Thread.sleep(10000);
 			  try {
