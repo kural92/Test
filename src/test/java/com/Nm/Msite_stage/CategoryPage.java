@@ -86,7 +86,7 @@ public class CategoryPage extends MsiteBaseClass {
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
 			capabilities.setCapability("autoGrantPermissions", true);
-			
+			capabilities.setCapability("newCommandTimeout", 100);
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
@@ -112,7 +112,7 @@ public class CategoryPage extends MsiteBaseClass {
 			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
 			capabilities.setCapability("noReset", true);
 			capabilities.setCapability("autoGrantPermissions", true);
-					
+			capabilities.setCapability("newCommandTimeout", 100);	
 			//capabilities.setCapability("autoDismissAlerts", true);  
 			
 			try {
