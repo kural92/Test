@@ -299,7 +299,7 @@ Float total_Wallet_amt;
 
 				
 				//qty increase//
-			/*	
+				
 			     ms.getMsite_QtyBtn().click();
 				
 				Thread.sleep(3000);
@@ -341,7 +341,7 @@ Float total_Wallet_amt;
 		
 	////
 		
-		*/
+		
 		driver.swipe(0, 0, 0, 300, 1000);
 		
 		////

@@ -5,23 +5,16 @@ package com.Nm.Msite_stage;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Driver;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.ScrollAction;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -31,11 +24,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Base.MsiteBaseClass;
-import com.Nm.Pom.AndriodPom;
-import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -45,10 +35,8 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 public class M3OTC extends MsiteBaseClass {
 
@@ -61,7 +49,7 @@ public class M3OTC extends MsiteBaseClass {
 		@BeforeClass
 		
 		//@BeforeClass
-		public void launchbrowser2()   {
+		public void launchbrowser()   {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
 			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
@@ -86,7 +74,7 @@ public class M3OTC extends MsiteBaseClass {
 			
 			capabilities.setCapability("autoDismissAlerts", true);  
 			capabilities.setCapability("autoGrantPermissions", true);
-			
+			capabilities.setCapability("newCommandTimeout", 100);
 			try {
 				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 				
@@ -96,34 +84,6 @@ public class M3OTC extends MsiteBaseClass {
 					
 		}
 
-
-		public void launchbrowser() {
-			DesiredCapabilities capabilities = new DesiredCapabilities();
-			//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
-			capabilities.setCapability("platformName", "Android");
-			//capabilities.setCapability("deviceName", "vivo 1819");
-			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
-			//for m-site
-			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
-			//for install Apk file
-			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
-			// already installed app
-			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
-			//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-			capabilities.setCapability("noReset", true);
-			capabilities.setCapability("autoGrantPermissions", true);
-					
-			//capabilities.setCapability("autoDismissAlerts", true);  
-			
-			try {
-				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-				
-				
-			} catch (MalformedURLException e) {
-				System.out.println(e.getMessage()); 
-			}
-					
-		}
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
    public void startReport() {
    	
@@ -149,20 +109,6 @@ public class M3OTC extends MsiteBaseClass {
    }
 	
 
-	/*
-	@BeforeMethod
-	  public void setUp1() throws MalformedURLException {
-	      System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
-	      Map<String, String> mobileEmulation = new HashMap<String, String>();
-	      mobileEmulation.put("deviceName", "Moto G4");
-
-	      ChromeOptions chromeOptions = new ChromeOptions();
-	      chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-	      chromeOptions.addArguments("--disable-notifications");
-	      driver = new ChromeDriver(chromeOptions);
-	     
-	     
-	  }  */
 //*******************************************************M3 Non Rx & OTC flow**********************************************************************//
 	@Test
 	public void M3OTCandnonrxSubscription() throws Throwable {

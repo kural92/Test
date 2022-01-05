@@ -64,109 +64,66 @@ static String totalamt;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
 		@BeforeClass
-		//@BeforeClass
-				public void launchbrowser2()   {
-					DesiredCapabilities capabilities = new DesiredCapabilities();
+		public void launchbrowser()   {
+			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-					//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
+			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8R20GLXTA"); //RZ8R20GLXTA //GBT4C19326001968
 
-				//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
+		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
 
-					capabilities.setCapability("platformName", "Android");
-				//	capabilities.setCapability("deviceName", "vivo 1819");
-				//	capabilities.setCapability("platformVersion","10.0.0" );
-					//for m-site
-					//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
-					//for install Apk file
-					//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
-					// already installed app
-					/*capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
-					capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-					capabilities.setCapability("noReset", true);
-					*/
-					capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
-					capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
-					capabilities.setCapability("noReset", true);
-					
-					capabilities.setCapability("autoDismissAlerts", true);  
-					
-					
-					try {
-						driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-						
-					} catch (MalformedURLException e) {
-						System.out.println(e.getMessage());
-					}
-							
-				}
-
-
-				public void launchbrowser() {
-					DesiredCapabilities capabilities = new DesiredCapabilities();
-					//capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");//"c195de14"
-					capabilities.setCapability("platformName", "Android");
-					//capabilities.setCapability("deviceName", "vivo 1819");
-					capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
-					//for m-site
-					capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
-					//for install Apk file
-					//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
-					// already installed app
-					capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
-					//capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
-					capabilities.setCapability("noReset", true);
-					
-							
-					//capabilities.setCapability("autoDismissAlerts", true);  
-					
-					try {
-						driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-						
-						
-					} catch (MalformedURLException e) {
-						System.out.println(e.getMessage()); 
-					}
-							
-				}
-			@BeforeTest(groups = {"forgetPassword","sanity","reg"})
-		   public void startReport() {
-		   	
-		      htmlReporter = new ExtentHtmlReporter(".//Report//AlternateBrand.html");
-		       
-		       //initialize ExtentReports and attach the HtmlReporter
-		       report = new ExtentReports();
-		       
-		     // htmlReporter.setAppendExisting(true);
-		       report.attachReporter(htmlReporter);
-		       report.setSystemInfo("Host name", "localhost");
-		       report.setSystemInfo("Environemnt", "QA");
-		       report.setSystemInfo("user", "Automation Team");
-		   
-		       //configuration items to change the look and feel
-		       //add content, manage tests etc
-
-		       htmlReporter.config().setDocumentTitle("Extent Report ");
-		       htmlReporter.config().setReportName("NetMeds.com");
-
-		       //htmlReporter.config().setTheme(Theme.STANDARD);
-		   	
-		   }
+			capabilities.setCapability("platformName", "Android");
+		//	capabilities.setCapability("deviceName", "vivo 1819");
+		//	capabilities.setCapability("platformVersion","10.0.0" );
+			//for m-site
+			//capabilities.setCapability("chromedriverExecutable", "D:\\Eclipse\\nm_website\\driver\\chromedriver.exe");
+			//for install Apk file
+			//capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Admin\\Downloads\\wyth_SIT_s9.10.apk");
+			// already installed app
+			/*capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.NetmedsMarketplace.Netmeds");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.netmedsmarketplace.netmeds.AppUriSchemeHandler");
+			capabilities.setCapability("noReset", true);
+			*/
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE ,"com.android.chrome");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY ,"com.google.android.apps.chrome.Main");
+			capabilities.setCapability("noReset", true);
 			
+			capabilities.setCapability("autoDismissAlerts", true);  
+			capabilities.setCapability("autoGrantPermissions", true);
+			capabilities.setCapability("newCommandTimeout", 100);
+			try {
+				driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+				
+			} catch (MalformedURLException e) {
+				System.out.println(e.getMessage());
+			}
+					
+		}
 
-			/*
-			@BeforeMethod
-			  public void setUp1() throws MalformedURLException {
-			      System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Driver\\chromedriver.exe");
-			      Map<String, String> mobileEmulation = new HashMap<String, String>();
-			      mobileEmulation.put("deviceName", "Moto G4");
+	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
+   public void startReport() {
+   	
+      htmlReporter = new ExtentHtmlReporter(".//Report//AlternateBrand.html");
+       
+       //initialize ExtentReports and attach the HtmlReporter
+       report = new ExtentReports();
+       
+     // htmlReporter.setAppendExisting(true);
+       report.attachReporter(htmlReporter);
+       report.setSystemInfo("Host name", "localhost");
+       report.setSystemInfo("Environemnt", "QA");
+       report.setSystemInfo("user", "Automation Team");
+   
+       //configuration items to change the look and feel
+       //add content, manage tests etc
 
-			      ChromeOptions chromeOptions = new ChromeOptions();
-			      chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-			      chromeOptions.addArguments("--disable-notifications");
-			      driver = new ChromeDriver(chromeOptions);
-			     
-			     
-			  }  */
+       htmlReporter.config().setDocumentTitle("Extent Report ");
+       htmlReporter.config().setReportName("NetMeds.com");
+
+       //htmlReporter.config().setTheme(Theme.STANDARD);
+   	
+   }
+	
+
 	
 //*****************************************************************MyOrdersPage	*********************************************************
 	@Test(enabled = true)
