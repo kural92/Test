@@ -236,10 +236,15 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 
 //Let's chat handle//
 				letschat();
-
+				Thread.sleep(5000);
 //Doctor consulation 
-				
-				driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+				if (!(driver.findElement(By.xpath("//*[@id='externaldoctr']|//android.widget.CheckBox[@resource-id='externaldoctr']")).isSelected())) {
+					driver.findElement(By.xpath("//*[@id='externaldoctr']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+					Thread.sleep(5000);
+				} else {
+					System.out.println("Schedule doctor Already Selected");
+				}
+			//	driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
 				Thread.sleep(5000);
 				
 				driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();

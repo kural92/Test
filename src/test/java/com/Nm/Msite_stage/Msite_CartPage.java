@@ -200,10 +200,12 @@ Float total_Wallet_amt;
 			}			  	  
 			  // Remove From Cart
 				driver.navigate().to("https://m.netmeds.com/checkout/cart");
-				
+
+				Thread.sleep(10000);
+
 				letschat();
 				for (int i = 0; i < 10; i++) {
-					Thread.sleep(10000);
+					Thread.sleep(5000);
 					if (!(driver.findElements(By.xpath("//*[@title='Remove item']")).size() == 0)) {
 
 						Thread.sleep(5000);
@@ -286,10 +288,20 @@ Float total_Wallet_amt;
 				
 				ms.getMsite_ViewCart().click();
 				Thread.sleep(10000);
+
 				
 				letschat();
 				Thread.sleep(3000);
 				ms.getMsite_SaveForLater().click();
+
+				try {
+				//	driver.swipe(50, 300, 0, 0, 1000);
+					Thread.sleep(3000);
+				} catch (Exception e) {
+					
+				}
+				//ms.getMsite_SaveForLater().click();
+
 				Thread.sleep(3000);
 			//	logger.log(Status.PASS, "Successfully navigated to cart page");
 				System.out.println("Successfully navigated to cart page");
@@ -303,7 +315,7 @@ Float total_Wallet_amt;
 				
 				Thread.sleep(3000);
 						
-				WebElement qty_increase = driver.findElement(By.xpath("//*[@text='10' and @top='true']"));
+				WebElement qty_increase = driver.findElement(By.xpath("(//*[@id='text1'])[10]|//*[@text='10' and @top='true']"));
 					
 				Thread.sleep(3000);
 				qty_increase.click();
@@ -329,7 +341,7 @@ Float total_Wallet_amt;
 		ms.getMsite_QtyBtn().click();
 		
 		Thread.sleep(3000);
-		WebElement qty_decrease = driver.findElement(By.xpath("//*[@text='2' and @top='true']"));
+		WebElement qty_decrease = driver.findElement(By.xpath("(//*[@id='text1'])[3]|//*[@text='2' and @top='true']"));
 			
 		qty_decrease.click();
 				
@@ -934,7 +946,7 @@ Float total_Wallet_amt;
 	
 	@AfterMethod()
 	public void screenShot(ITestResult result) throws Throwable {
-		
+	/*	
 	    if(result.getStatus() == ITestResult.FAILURE) {
 	    	logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
 	    	logger.fail(result.getThrowable());
@@ -979,14 +991,14 @@ Float total_Wallet_amt;
 	//	BaseClass.mail_report();
 	}
 	
-	
+	*/
 	}	
 		
 
 
 	@AfterTest
 	private void quitbrowser() {
-		report.flush();
+//		report.flush();
 		
  //     driver.quit();
 	}

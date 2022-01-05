@@ -361,6 +361,7 @@ public class M3PastRx extends MsiteBaseClass {
 						//Cancel Order			
 
 						//Let's chat handle//
+						Thread.sleep(10000);
 									letschat();
 									
 									Thread.sleep(5000);

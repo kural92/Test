@@ -5,23 +5,16 @@ package com.Nm.Msite_stage;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Driver;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.ScrollAction;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -31,11 +24,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Base.MsiteBaseClass;
-import com.Nm.Pom.AndriodPom;
-import com.Nm.Pom.Monepom;
 import com.Nm.Pom.MsitePOM;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -45,10 +35,8 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 public class M3OTC extends MsiteBaseClass {
 
@@ -461,7 +449,7 @@ public class M3OTC extends MsiteBaseClass {
 				
 				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 	//Cancel Order			
-
+				Thread.sleep(5000);
 	//Let's chat handle//
 				letschat();
 				
@@ -484,7 +472,7 @@ public class M3OTC extends MsiteBaseClass {
 				}catch (Exception e) {
 					driver.swipe(0, 1600, 0, 0, 1000);
 				}
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				btnclick(m.getCancelorder());
 				Thread.sleep(5000);
 				
