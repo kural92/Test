@@ -503,7 +503,7 @@ public class M3OTC extends MsiteBaseClass {
 				
 				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 	//Cancel Order			
-
+				Thread.sleep(5000);
 	//Let's chat handle//
 				letschat();
 				
@@ -526,7 +526,7 @@ public class M3OTC extends MsiteBaseClass {
 				}catch (Exception e) {
 					driver.swipe(0, 1600, 0, 0, 1000);
 				}
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				btnclick(m.getCancelorder());
 				Thread.sleep(5000);
 				

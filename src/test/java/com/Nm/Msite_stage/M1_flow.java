@@ -69,12 +69,7 @@ public class M1_flow extends MsiteBaseClass {
 		public void launchbrowser() throws IOException {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR"); //RZ8R20GLXTA //GBT4C19326001968//07c55fe10406//RZ8R20GLXTA
-
-
-			//capabilities.setCapability(MobileCapabilityType.UDID, FileAndEnv.envAndFile().get("UDID"));  //fc95d519 //RZ8R20GLXTA
-
-			//capabilities.setCapability(MobileCapabilityType.UDID,"NBBY79GM5LTCJBJR" );  //fc95d519 // //FileAndEnv.envAndFile().get("UDID")
+			capabilities.setCapability("newCommandTimeout", 100);
 
 
 			capabilities.setCapability("platformName", "Android");
@@ -149,7 +144,7 @@ public class M1_flow extends MsiteBaseClass {
 
 			  
 			  Thread.sleep(10000);
-				String s="Patanjali Lauh Bhasm Powder 5 gm";
+				//String s="Patanjali Lauh Bhasm Powder 5 gm";
 		Thread.sleep(2000);
 		
 		
@@ -191,7 +186,7 @@ public class M1_flow extends MsiteBaseClass {
 		
 		driver.findElement(By.xpath("//*[@text='Search for medicine & wellness products...' and @nodeName='SPAN']")).click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Patanjali Lauh Bhasm Powder 5 gm");
+		driver.findElement(By.xpath("//*[@name='q']")).sendKeys("Horlicks Health Drink Powder Classic Malt 500 gm (Refill Pack)");
 		Thread.sleep(1500);
 		driver.pressKeyCode(AndroidKeyCode.ENTER);
 			Thread.sleep(3000);
