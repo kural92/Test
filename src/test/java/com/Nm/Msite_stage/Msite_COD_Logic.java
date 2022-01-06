@@ -165,8 +165,9 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				btnclick(m.getPDP_Cart_btn());
 				
 				
-				Thread.sleep(10000);
-				btnclick(m.getMsite_m2_ProceedBtn());
+				/*Thread.sleep(10000);
+				btnclick(m.getMsite_m2_ProceedBtn());*/	Thread.sleep(15000);
+				driver.findElement(By.xpath("//*[@text='Proceed']")).click();
 			try {	
 				Thread.sleep(3000);
 				letschat();
@@ -264,11 +265,11 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					Thread.sleep(3000);
 					btnclick(m.getCOD_PayBtn());
 					
-					Thread.sleep(3000);
+					Thread.sleep(10000);
 
-					Thread.sleep(3000);
-					driver.swipe(50, 300, 0, 0, 1000);
+					 driver.swipe(0, 500, 0, 0, 1000);
 				//	btnclick(m.getTrack_Order());
+					 Thread.sleep(5000);
 					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
 					 Thread.sleep(10000);
 					 letschat();
