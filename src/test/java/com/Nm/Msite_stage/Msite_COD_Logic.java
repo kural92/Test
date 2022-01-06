@@ -164,23 +164,23 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				btnclick(m.getPDP_Cart_btn());
 				
-<<<<<<< HEAD
+
 				Thread.sleep(3000);
 				letschat();
 				Thread.sleep(10000);
 				btnclick(m.getMsite_m2_ProceedBtn());
-=======
+
 				
 				/*Thread.sleep(10000);
 				btnclick(m.getMsite_m2_ProceedBtn());*/	Thread.sleep(15000);
 				driver.findElement(By.xpath("//*[@text='Proceed']")).click();
->>>>>>> eb92a86ed3d8d0b4fe4a808faca7d8b4f2b01b50
+
 			try {	
 				Thread.sleep(3000);
 				letschat();
 				Thread.sleep(6000);
 				if (m.getMsite_Doctor_Consultation().isSelected()) {
-					System.out.println(" ");
+					System.out.println(" Already Schedule Doctor Selected ");
 				} else {
 					Thread.sleep(3000);
 					btnclick(m.getMsite_Doctor_Consultation());
@@ -192,6 +192,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				
 				Thread.sleep(3000);
 				btnclick(m.getOrder_review_btn());
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 			}

@@ -1151,7 +1151,7 @@ public class MsitePOM extends MsiteBaseClass{
 				}
 				
 				
-				@FindBy(xpath = "//*[@text='Review Order']")
+				@FindBy(xpath = "//*[@text='Review Order']|")
 				private WebElement Order_review_btn;
 				public WebElement getOrder_review_btn() {
 					return Order_review_btn;
