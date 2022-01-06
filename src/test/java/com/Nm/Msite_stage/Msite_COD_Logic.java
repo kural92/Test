@@ -126,7 +126,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				driver.get("https://m.netmeds.com");
 				
 				Thread.sleep(5000);
-				String aa = "Gemer 2mg,Ajmal Amber Wood";
+				String aa = "Gemer 1mg,Ajmal Amber Wood";
 				String [] spl = aa.split(",");
 				System.out.println(spl.length);
 				
@@ -164,14 +164,21 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				btnclick(m.getPDP_Cart_btn());
 				
-				
+				Thread.sleep(3000);
+				letschat();
 				Thread.sleep(10000);
 				btnclick(m.getMsite_m2_ProceedBtn());
 			try {	
 				Thread.sleep(3000);
 				letschat();
 				Thread.sleep(6000);
-				btnclick(m.getMsite_Doctor_Consultation());
+				if (m.getMsite_Doctor_Consultation().isSelected()) {
+					System.out.println(" ");
+				} else {
+					Thread.sleep(3000);
+					btnclick(m.getMsite_Doctor_Consultation());
+				}
+				
 				
 				Thread.sleep(3000);
 			//	btnclick(m.getDoctorConsultation_CloseBtn());
@@ -279,8 +286,6 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|//android.widget.RadioButton[@text='Delay in delivery']")).click();
 					 Thread.sleep(3000);
 					 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-					
-					
 					Thread.sleep(10000);
 					driver.get("https://m.netmeds.com");
 					
