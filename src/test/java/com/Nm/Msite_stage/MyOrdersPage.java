@@ -229,6 +229,8 @@ static String totalamt;
 		}
 		
 	//Track Order//		
+		Thread.sleep(3000);
+		letschat();
 		
 		Thread.sleep(3000);
 			btnclick(m.getViewdetails());	
@@ -370,7 +372,7 @@ List  <WebElement> Drugqty = driver.findElements(By.xpath("//*[@css='DIV.qtyinfo
 	//Reorder//
 			 
 			 
-			 Thread.sleep(3000);
+			 Thread.sleep(10000);
 			 btnclick(m.getReorder());
 			 Thread.sleep(3000);
 			 System.out.println("Successfully Navigated to reorder Page");
