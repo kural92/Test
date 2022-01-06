@@ -449,7 +449,7 @@ public class M3OTC extends MsiteBaseClass {
 				
 				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 	//Cancel Order			
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 	//Let's chat handle//
 				letschat();
 				
@@ -458,6 +458,8 @@ public class M3OTC extends MsiteBaseClass {
 				btnclick(m.getViewdetails());
 				Thread.sleep(5000);
 				
+
+
 			/*	//Switch to Native_App		
 				 Set<String> contextNames4 = driver.getContextHandles();
 			        for (String strContextName : contextNames4) {
@@ -467,6 +469,7 @@ public class M3OTC extends MsiteBaseClass {
 			            }
 			        }		*/
 					
+
 				try {
 				 driver.swipe(82, 1600, 82, 0, 1000);
 				}catch (Exception e) {

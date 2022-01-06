@@ -164,10 +164,17 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				btnclick(m.getPDP_Cart_btn());
 				
+<<<<<<< HEAD
 				Thread.sleep(3000);
 				letschat();
 				Thread.sleep(10000);
 				btnclick(m.getMsite_m2_ProceedBtn());
+=======
+				
+				/*Thread.sleep(10000);
+				btnclick(m.getMsite_m2_ProceedBtn());*/	Thread.sleep(15000);
+				driver.findElement(By.xpath("//*[@text='Proceed']")).click();
+>>>>>>> eb92a86ed3d8d0b4fe4a808faca7d8b4f2b01b50
 			try {	
 				Thread.sleep(3000);
 				letschat();
@@ -271,12 +278,13 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					Thread.sleep(3000);
 					btnclick(m.getCOD_PayBtn());
 					
-					Thread.sleep(3000);
+					Thread.sleep(10000);
 
-					Thread.sleep(5000);
+		Thread.sleep(5000);
 					driver.swipe(50, 750, 0, 0, 1000);
 				//	btnclick(m.getTrack_Order());
 					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']|//*[@text='Track Order']")).click();
+
 					 Thread.sleep(10000);
 					 letschat();
 					 driver.findElement(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();

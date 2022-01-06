@@ -31,6 +31,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.Nm.Andriod_prod.RetryAnalyzer;
 import com.Nm.Base.BaseClass;
 import com.Nm.Base.MobileBaseClass;
 import com.Nm.Base.MsiteBaseClass;
@@ -121,7 +122,7 @@ public class M3RX extends MsiteBaseClass {
 	
 
 //*******************************************************M3 Rx**********************************************************************//
-	@Test
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void M3OTCandnonrxSubscription() throws Throwable {
 
 		logger = report.createTest("M3RX");
@@ -350,7 +351,7 @@ public class M3RX extends MsiteBaseClass {
 
 		// Step 16 : Ensure order is placed successfully//
 
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 
 						String confirmation = driver.findElement(By.xpath("//*[@text='Order Placed Successfully!']|//android.view.View[@text='Order Placed Successfully!']")).getText(); 
 						
@@ -399,7 +400,7 @@ public class M3RX extends MsiteBaseClass {
 				
 				driver.navigate().to("https://m.netmeds.com/customer/orderhistory");
 				
-				Thread.sleep(3000);	
+				Thread.sleep(10000);	
 				
 					
 
@@ -414,14 +415,16 @@ public class M3RX extends MsiteBaseClass {
 							btnclick(m.getViewdetails());
 							Thread.sleep(5000);
 							
-							//Switch to Native_App		
-							/* Set<String> contextNames4 = driver.getContextHandles();
-						        for (String strContextName : contextNames4) {
-						            if (strContextName.contains("NATIVE_APP")) {
-						                driver.context("NATIVE_APP");
-						                break;
-						            }
-						        }*/		
+
+//							//Switch to Native_App		
+//							 Set<String> contextNames4 = driver.getContextHandles();
+//						        for (String strContextName : contextNames4) {
+//						            if (strContextName.contains("NATIVE_APP")) {
+//						                driver.context("NATIVE_APP");
+//						                break;
+//						            }
+//						        }		
+
 								
 							try {
 							 driver.swipe(82, 1600, 82, 0, 1000);

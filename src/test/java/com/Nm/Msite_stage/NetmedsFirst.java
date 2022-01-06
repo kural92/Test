@@ -122,9 +122,9 @@ public class NetmedsFirst extends MobileBaseClass  {
 
 			
 			Thread.sleep(3000);
-			driver.swipe(82, 939, 82, 6, 1000);
+			driver.swipe(0, 500, 0, 0, 1000);
 			try {
-				if (driver.findElement(By.xpath("//*[@text='Netmeds First Membership' and @nodeName='H2']")).isDisplayed()) {
+				if (driver.findElement(By.xpath("//*[@text='Netmeds First Membership' and @nodeName='H2']|//*[@text='Explore Plans']")).isDisplayed()) {
 
 					
 					Thread.sleep(3000);
@@ -180,7 +180,7 @@ driver.findElement(By.xpath("//*[@text='Explore Plans' and @nodeName='A']")).cli
 
 		
 		Thread.sleep(3000);
-		driver.swipe(82, 939, 82, 6, 1000);
+		driver.swipe(0, 500, 0, 0, 1000);
 		try {
 			if (driver.findElement(By.xpath("//*[@text=' Add to Cart ' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Rs. 499']]]]")).isDisplayed()) {
 
@@ -201,17 +201,30 @@ driver.findElement(By.xpath("//*[@text='Explore Plans' and @nodeName='A']")).cli
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//*[@text=' Add to Cart ' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Rs. 499']]]]")).click();
 	try {
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
 	}catch (Exception e) {
 		// TODO: handle exception
 	}
 	Thread.sleep(5000);
-	try {
-		driver.findElement(By.xpath("//android.view.View[@text='REMOVE']|//*[@title='Remove item']")).click();
-	} catch (Exception e) {
-		// TODO: handle exception
-	}
+	for (int i = 0; i < 10; i++) {
+		Thread.sleep(5000);
+		if (!(driver.findElements(By.xpath("//*[@title='Remove item']")).size() == 0)) {
+
+			Thread.sleep(5000);
+					try {
+						driver.findElement(By.xpath("//android.view.View[@text='REMOVE']|//*[@title='Remove item']")).click();
+						driver.navigate().refresh();
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
+		} else {
+			//logger.log(Status.PASS, "Successfully Product Removed from Cart");
+			break;
+
+		}
+	} 
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//*[@nodeName='SPAN' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV' and ./*[@nodeName='DIV']]]]")).click();
 
