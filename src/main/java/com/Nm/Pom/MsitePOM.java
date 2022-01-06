@@ -1182,7 +1182,7 @@ public WebElement getHeader_SearchBar() {
 return Header_SearchBar;
 } 
 
-@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search_bar")
+@FindBy(xpath="//*[@css='INPUT.ais-SearchBox-input']|//*[@placeholder='Search here...']|//*[@class='ais-SearchBox-input']")
 private WebElement SearchBar;
 public WebElement getSearchBar() {
 return SearchBar;
