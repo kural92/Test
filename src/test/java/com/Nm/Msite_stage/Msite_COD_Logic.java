@@ -267,10 +267,11 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					
 					Thread.sleep(10000);
 
-					 driver.swipe(0, 500, 0, 0, 1000);
+		Thread.sleep(5000);
+					driver.swipe(50, 750, 0, 0, 1000);
 				//	btnclick(m.getTrack_Order());
-					 Thread.sleep(5000);
-					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
+					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']|//*[@text='Track Order']")).click();
+
 					 Thread.sleep(10000);
 					 letschat();
 					 driver.findElement(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();

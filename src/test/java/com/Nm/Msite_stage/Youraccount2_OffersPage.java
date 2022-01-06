@@ -50,6 +50,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
@@ -196,13 +197,13 @@ public class Youraccount2_OffersPage extends MsiteBaseClass {
 					//Switch to Native_App
 					
 					
-			        Set<String> contextNames = driver.getContextHandles();
+			      /*  Set<String> contextNames = driver.getContextHandles();
 			        for (String strContextName : contextNames) {
 			            if (strContextName.contains("NATIVE_APP")) {
 			                driver.context("NATIVE_APP");
 			                break;
 			            }
-			        }
+			        }*/
 					for (int i = 0; i < 16; i++) {
 						Thread.sleep(3000);
 						if (!(driver.findElements(By.xpath("//*[@text='REMOVE']")).size() == 0)) {
@@ -210,10 +211,10 @@ public class Youraccount2_OffersPage extends MsiteBaseClass {
 
 							try {
 	
-								Thread.sleep(3000);
+								Thread.sleep(6000);
 								driver.findElement(By.xpath("//*[@text='REMOVE']")).click();
 								
-								Thread.sleep(3000);
+								Thread.sleep(5000);
 								logger.log(Status.PASS, "Items are removed successfully");
 								System.out.println("Items are removed from the cart");
 							} catch (Exception e) {
@@ -226,16 +227,46 @@ public class Youraccount2_OffersPage extends MsiteBaseClass {
 						}
 
 					}
-					 //Switch to Chrome browser
+					/* //Switch to Chrome browser
 			        Set<String> contextNames1 = driver.getContextHandles();
 			        for (String strContextName : contextNames1) {
 			            if (strContextName.contains("CHROMIUM")) {
 			                driver.context("CHROMIUM");
 			                break;
 			            }
-			        }			
-					driver.navigate().back();
+			        }	*/		
 					
+					Thread.sleep(5000);
+					driver.navigate().back();
+					Thread.sleep(5000);
+					
+					//search the page
+					
+					
+					
+					driver.findElement(By.xpath("//*[@text='Search for medicine & wellness products...' and @nodeName='SPAN']")).click();
+					Thread.sleep(5000);
+					driver.findElement(By.xpath("//*[@name='q']")).sendKeys("Horlicks Health Drink Powder Classic Malt 500 gm (Refill Pack)");
+					Thread.sleep(1500);
+					driver.pressKeyCode(AndroidKeyCode.ENTER);
+						Thread.sleep(3000);
+					driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
+					// btncli(m.getSearchIcon());
+					logger.log(Status.PASS, "Successfully navigate to search result page" );
+
+					
+					//add to the cart
+					
+					Thread.sleep(3000);
+					 driver.swipe(0, 500, 0, 0, 1000);
+						try {
+							Thread.sleep(3000);
+							driver.findElement(By.xpath("//*[@text=' ADD TO CART ']")).click();
+						}catch (Exception e) {
+							// TODO: handle exception
+						}
+						Thread.sleep(5000);
+						driver.get("https://m.netmeds.com/");
 					//Step 3 : Navigate to user profile//
 
 					//btnclick(m.getUserprofile());

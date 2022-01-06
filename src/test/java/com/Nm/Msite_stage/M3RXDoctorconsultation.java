@@ -238,13 +238,15 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 				letschat();
 				Thread.sleep(5000);
 //Doctor consulation 
-				if (!(driver.findElement(By.xpath("//*[@id='externaldoctr']|//android.widget.CheckBox[@resource-id='externaldoctr']")).isSelected())) {
-					driver.findElement(By.xpath("//*[@id='externaldoctr']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+				
+			/*	if (!(driver.findElement(By.xpath("//*[@class='extcheckbox']|//*[@nodeName='INPUT']")).isSelected())) {
+					driver.findElement(By.xpath("//*[@class='extcheckbox']|//*[@nodeName='INPUT']")).click();
 					Thread.sleep(5000);
 				} else {
+					
 					System.out.println("Schedule doctor Already Selected");
-				}
-			//	driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+				}*/
+				driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
 				Thread.sleep(5000);
 				
 				driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();
@@ -412,13 +414,13 @@ driver.findElement(By.xpath("//*[@id='pin']|//android.widget.EditText[@resource-
 			Thread.sleep(5000);
 			
 			//Switch to Native_App		
-			 Set<String> contextNames4 = driver.getContextHandles();
+		/*	 Set<String> contextNames4 = driver.getContextHandles();
 		        for (String strContextName : contextNames4) {
 		            if (strContextName.contains("NATIVE_APP")) {
 		                driver.context("NATIVE_APP");
 		                break;
 		            }
-		        }		
+		        }	*/	
 				
 			
 			 driver.swipe(0, 1600, 0, 0, 1000);

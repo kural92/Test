@@ -201,6 +201,7 @@ public class Youraccount2_Contactus extends MsiteBaseClass {
 			
 			
 			//Let's chat handle//
+			Thread.sleep(3000);
 			letschat();
 
 			

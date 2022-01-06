@@ -415,6 +415,7 @@ public class M3RX extends MsiteBaseClass {
 							btnclick(m.getViewdetails());
 							Thread.sleep(5000);
 							
+
 //							//Switch to Native_App		
 //							 Set<String> contextNames4 = driver.getContextHandles();
 //						        for (String strContextName : contextNames4) {
@@ -423,6 +424,7 @@ public class M3RX extends MsiteBaseClass {
 //						                break;
 //						            }
 //						        }		
+
 								
 							try {
 							 driver.swipe(82, 1600, 82, 0, 1000);

@@ -138,6 +138,7 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 				
 				int a = MobileBaseClass.getRowCount("AndPDP");
 				for (int i = 0; i < a; i++) {
+				
 					Thread.sleep(3000);
 					type(m.getMsite_Search_box(), MsiteBaseClass.getExcelData("AndPDP", i, 0));
 					Thread.sleep(2000);
@@ -256,11 +257,14 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 						
 						
 						Thread.sleep(10000);
+						try {
 						driver.findElement(By.xpath("//*[@class='back-icon']")).click();
+						}catch (Exception e) {
+							// TODO: handle exception
+						}
 						
-						
-						Thread.sleep(10000);
-						driver.findElement(By.xpath("//*[@class='back-icon']")).click();
+					//	Thread.sleep(10000);
+					//	driver.findElement(By.xpath("//*[@class='back-icon']|//*[@css='DIV.backlink.ng-star-inserted']")).click();
 						
 						Thread.sleep(10000);
 						try {
@@ -289,7 +293,18 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 				
 				Thread.sleep(5000);
 				Thread.sleep(2000);
-						btnclick(m.getMsite_SearchResult_drugName());
+				letschat();
+				try {
+					Thread.sleep(2000);
+					//	btnclick(m.getMsite_SearchResult_drugName());
+					//	m.getMsite_SearchResult_drugName().click();
+						driver.findElement(By.xpath("//*[@class='leftside-icons col-2 p-0']|(//*[@nodeName='A'])[5]|(//*[@nodeName='A'])[6]")).click();
+						
+				} catch (Exception e) {
+					Thread.sleep(2000);
+				//	btnclick(m.getMsite_Search_Results().get(0));
+				//	m.getMsite_Search_Results().get(1).click();
+				}
 						Thread.sleep(5000);
 						
 						Thread.sleep(3000);
@@ -302,8 +317,17 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 					//	driver.findElement(By.xpath("//*[@class='back-icon']")).click();
 					///////  Alternade // combo // frequently 
 						Thread.sleep(3000);
-						Thread.sleep(2000);
+						
 						driver.swipe(0, 500, 0, 0, 1000);
+						for (int i = 0; i <10; i++) {
+							Thread.sleep(2000);
+							driver.swipe(50, 500, 0, 0, 1000);
+							if (m.getPDP_ComboPack_text().isDisplayed()) {
+								break;
+							}else {
+								
+							}
+						}
 							
 						Thread.sleep(3000);
 						if (m.getPDP_ComboPack_text().getText().contains("COMBO PACKS")) {
@@ -320,10 +344,10 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 								Thread.sleep(3000);
 						//		btnclick(m.getSnackBar_GotIT_btn());
 								
-								Thread.sleep(3000);
+								Thread.sleep(5000);
 								btnclick(m.getPDP_ProceedToCart());
 								
-								Thread.sleep(5000);
+								Thread.sleep(10000);
 							letschat();
 								
 								Thread.sleep(5000);
@@ -431,11 +455,11 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 						/////
 
 						////////////////////////
-						
+				/*		
 						////Frequently Bought
 		Thread.sleep(2000);
 						
-						Thread.sleep(2000);
+						Thread.sleep(10000);
 						btnclick(m.getMsite_Cart_Search());
 						Thread.sleep(2000);
 						
@@ -548,7 +572,7 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 										
 						
 						
-						
+						*/
 						
 						
 						

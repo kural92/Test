@@ -163,13 +163,13 @@ public class Consultation extends MsiteBaseClass {
 		letschat();
 		
 		
-		 Set<String> contextNames = driver.getContextHandles();
+		/* Set<String> contextNames = driver.getContextHandles();
 	        for (String strContextName : contextNames) {
 	            if (strContextName.contains("NATIVE_APP")) {
 	                driver.context("NATIVE_APP");
 	                break;
 	            }
-	        }
+	        }*/
 			for (int i = 0; i < 16; i++) {
 				Thread.sleep(3000);
 				if (!(driver.findElements(By.xpath("//*[@text='REMOVE']")).size() == 0)) {
@@ -394,7 +394,8 @@ public class Consultation extends MsiteBaseClass {
 
 		Thread.sleep(10000);
 		
-		btnclick(m.getGotocart()); 
+	//	btnclick(m.getGotocart()); 
+		driver.navigate().to("https://m.netmeds.com/checkout/cart");
 		
 		Thread.sleep(3000);
 		letschat();
@@ -444,7 +445,7 @@ public class Consultation extends MsiteBaseClass {
 		for (int i = 0; i < 10; i++) {
 			
 			Thread.sleep(3000);
-			driver.swipe(50, 500, 0, 0, 1000);
+			driver.swipe(50, 750, 0, 0, 1000);
 			
 			if (m.getConsultation_Btn_List().size()!=0) {
 				
@@ -475,6 +476,7 @@ public class Consultation extends MsiteBaseClass {
 		
 	 Thread.sleep(5000);
 	 
+	 driver.swipe(50,250,0,0,1000);
 	 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@text='Consult now']"))));
 	btnclick(driver.findElement(By.xpath("//*[@text='Consult now']")));
 	 
