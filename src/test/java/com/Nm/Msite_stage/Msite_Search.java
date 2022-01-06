@@ -1,4 +1,4 @@
-package com.Nm.Msite_stage;
+ package com.Nm.Msite_stage;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -61,7 +61,7 @@ public class Msite_Search extends MsiteBaseClass{
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability("platformName", "Android");
-			capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
+			//capabilities.setCapability(MobileCapabilityType.VERSION,"11 RP1A.200720.011" );
 			capabilities.setCapability("chromedriverExecutable", "D:\\Automation\\Driver\\chromedriver.exe");
 			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
 			capabilities.setCapability("noReset", true);

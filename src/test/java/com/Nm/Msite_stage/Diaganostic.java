@@ -441,7 +441,12 @@ Thread.sleep(4000);
 		SoftAssert.assertNotNull(Email_ID);
 		driver.findElement(By.xpath("//*[@name='email']")).clear();
 		driver.findElement(By.xpath("//*[@name='email']")).sendKeys("testingnetmeds@gmail.com");
-		driver.findElement(By.xpath("//*[@text='Next']")).click();
+		try {
+			driver.findElement(By.xpath("(//*[@name='address'])[1]")).click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		//driver.findElement(By.xpath("//*[@text='Next']")).click();
 		
 	
 		Thread.sleep(5000);

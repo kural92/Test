@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.util.SystemOutLogger;
@@ -64,8 +65,9 @@ public class OrderReview extends MsiteBaseClass {
 
 		
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+		capabilities.setCapability("platformName", "Android");
 
-		capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");
+	//	capabilities.setCapability(MobileCapabilityType.UDID, "NBBY79GM5LTCJBJR");
 		capabilities.setBrowserName(MobileBrowserType.CHROMIUM);
 
 		capabilities.setCapability("noReset", true);
@@ -121,8 +123,10 @@ public class OrderReview extends MsiteBaseClass {
 		
 		MsitePOM m = new MsitePOM();
 			  driver.get("https://m.netmeds.com/");
+			  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
 			  
-			  Thread.sleep(10000);
+			 
+			  Thread.sleep(4000);
 				popupclose() ;
 			  Thread.sleep(10000);
 				String s="Patanjali Lauh Bhasm Powder 5 gm";

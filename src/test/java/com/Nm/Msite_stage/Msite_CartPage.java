@@ -200,7 +200,9 @@ Float total_Wallet_amt;
 			}			  	  
 			  // Remove From Cart
 				driver.navigate().to("https://m.netmeds.com/checkout/cart");
+
 				Thread.sleep(10000);
+
 				letschat();
 				for (int i = 0; i < 10; i++) {
 					Thread.sleep(5000);
@@ -286,6 +288,12 @@ Float total_Wallet_amt;
 				
 				ms.getMsite_ViewCart().click();
 				Thread.sleep(10000);
+
+				
+				letschat();
+				Thread.sleep(3000);
+				ms.getMsite_SaveForLater().click();
+
 				try {
 				//	driver.swipe(50, 300, 0, 0, 1000);
 					Thread.sleep(3000);
@@ -293,12 +301,15 @@ Float total_Wallet_amt;
 					
 				}
 				//ms.getMsite_SaveForLater().click();
+
 				Thread.sleep(3000);
 			//	logger.log(Status.PASS, "Successfully navigated to cart page");
 				System.out.println("Successfully navigated to cart page");
 
 				
 				//qty increase//
+				
+				Thread.sleep(3000);
 				
 			     ms.getMsite_QtyBtn().click();
 				

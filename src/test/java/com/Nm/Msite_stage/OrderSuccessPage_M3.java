@@ -377,7 +377,7 @@ public class OrderSuccessPage_M3 extends MsiteBaseClass {
 						
 						Thread.sleep(3000);
 						
-						
+		/*				
 			 driver.findElement(By.xpath("//*[@class='star']")).click();
 						
 			 Thread.sleep(3000);
@@ -394,6 +394,7 @@ public class OrderSuccessPage_M3 extends MsiteBaseClass {
 				
 				Thread.sleep(3000);	
 				driver.findElement(By.xpath("//*[@text='SUBMIT FEEDBACK']")).click();
+				*/
 				// Tracking order//
 				
 				

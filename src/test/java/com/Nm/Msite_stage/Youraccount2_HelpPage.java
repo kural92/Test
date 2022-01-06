@@ -145,7 +145,7 @@ public class Youraccount2_HelpPage extends MsiteBaseClass {
 	// **************************************************************Help
 	// Page*************************************************************************************//
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void Helppage() throws Throwable {
 
 		logger = report.createTest("Helppage");
@@ -230,6 +230,7 @@ try {
 				}
 		
 				list.get(i).click();
+				System.out.println(list.get(i).getText());
 				Thread.sleep(3000);
 				
 				driver.navigate().to("https://m.netmeds.com/customer/account");
@@ -253,13 +254,14 @@ try {
 				}
 
 				System.out.println(list.get(i).getText());
-				logger.log(Status.PASS, "Successfully all the topics are clicked");
+				
 			}
 		 
-		 System.out.println("Successfully all the topics are clicked");
+		 
 
 	}
-	
+		 System.out.println("Successfully all the topics are clicked");
+		 logger.log(Status.PASS, "Successfully all the topics are clicked");
 		 System.out.println("Help Page is working fine");
 
 	}			
