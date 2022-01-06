@@ -238,16 +238,16 @@ method(m.getOrderreview_mfr());
 		driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Rxtor 10mg Tablet 10'S");
 		Thread.sleep(1500);
 		driver.pressKeyCode(AndroidKeyCode.ENTER);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
 		// btncli(m.getSearchIcon());
 		logger.log(Status.PASS, "Successfully navigate to search result page" );
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		 driver.swipe(0, 500, 0, 0, 1000);
 			try {
 				Thread.sleep(3000);
-				driver.findElement(By.xpath("//*[@text=' ADD TO CART ']")).click();
+				driver.findElement(By.xpath("//*[@text='ADD TO CART']")).click();
 			
 			}catch (Exception e) {
 				// TODO: handle exception

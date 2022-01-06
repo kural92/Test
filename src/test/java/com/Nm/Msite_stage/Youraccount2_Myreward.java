@@ -194,7 +194,7 @@ public class Youraccount2_Myreward extends MsiteBaseClass {
 			
 				
 				
-				Thread.sleep(3000);
+				Thread.sleep(10000);
 				
 				btnclick(m.getMyrewards());
 				
