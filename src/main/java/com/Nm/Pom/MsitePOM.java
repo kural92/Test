@@ -694,7 +694,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return Msite_Cart_Search;
 		}
 		
-		@FindBy(xpath = "//*[@class='ais-SearchBox-input' and @top='true']")
+		@FindBy(xpath = "//*[@id='search']|//*[@class='ais-SearchBox-input' and @top='true']")
 		private WebElement Msite_Search_box;
 		public WebElement getMsite_Search_box() {
 			return Msite_Search_box;
@@ -808,7 +808,7 @@ public class MsitePOM extends MsiteBaseClass{
 		///////////////////////////////////////////////////////
 		  // Msite PDP 
 		
-		@FindBy(xpath = "//*[@css='P.form.m-0.mt-1']|//*[@css='DIV.info']")
+		@FindBy(xpath = "//*[@css='DIV.product-itemdetails.row.m-0.ng-star-inserted']|//*[@css='P.form.m-0.mt-1']|//*[@css='DIV.info']")
 		private List<WebElement> Msite_Search_Results;		
 		public List<WebElement> getMsite_Search_Results() {
 			return Msite_Search_Results;
@@ -830,7 +830,7 @@ public class MsitePOM extends MsiteBaseClass{
 		
 		
 		
-		@FindBy(xpath = "//*[@css='SPAN.gen_drug.ellipsis']")
+		@FindBy(xpath = "//*[@css='SPAN.gen_drug.ellipsis']|//*[@css='DIV.otc_category_names']")
 		private WebElement PDP_category_Name;
 		public WebElement getPDP_category_Name() {
 			return PDP_category_Name;
@@ -912,7 +912,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return PDP_Coupon_Details;
 		}
 		
-		@FindBy(xpath="//*[@nodeName='H2']")
+		@FindBy(xpath="//*[@css='H1.page-title']|//*[@nodeName='H2']")
 		private WebElement PDP_manufacture_Page;
 		public WebElement getPDP_manufacture_Page() {
 			return PDP_manufacture_Page;
@@ -930,7 +930,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return PDP_Share_Icon;
 		}
 		
-		@FindBy(id="android:id/icon")
+		@FindBy(xpath="//*[@css='BUTTON.close']")
 		private WebElement PDP_Share_Close_Button;
 		public WebElement getPDP_Share_Close_Button() {
 			return PDP_Share_Close_Button;
@@ -1020,7 +1020,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return PDP_ProceedToCart;
 		}
 		
-		@FindBy(xpath="(//*[@id='row_itmdiscprice_100376'])[2]")
+		@FindBy(xpath="(//*[@id='row_itmdiscprice_100376'])[2]|//*[@css='DIV.discount-val']")
 		private WebElement Cart_Price;
 		public WebElement getCart_Price() {
 			return Cart_Price;
