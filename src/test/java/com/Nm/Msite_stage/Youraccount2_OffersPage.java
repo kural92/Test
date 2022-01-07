@@ -147,7 +147,7 @@ public class Youraccount2_OffersPage extends MsiteBaseClass {
 	// **************************************************************offers
 		// page*************************************************************************************//
 
-		@Test(enabled = true)
+		@Test(enabled = true,retryAnalyzer = RetryAnalyzer.class)
 		public void offersPage() throws Throwable {
 
 			logger = report.createTest("Offers Page");

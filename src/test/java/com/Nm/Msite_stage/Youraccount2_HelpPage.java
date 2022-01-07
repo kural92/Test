@@ -217,7 +217,7 @@ try {
 	System.out.println("the element size is   "+help);
 	
 
-		 for (int i = 0; i<12; i++)
+		 for (int i = 0; i<11; i++)
 			 
 		 {
 
@@ -234,6 +234,7 @@ try {
 				Thread.sleep(3000);
 				
 				driver.navigate().to("https://m.netmeds.com/customer/account");
+				letschat();
 				
 				try {
 				driver.swipe(790, 1100, 800, 70, 1000);
