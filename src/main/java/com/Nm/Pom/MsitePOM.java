@@ -666,7 +666,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return Viewdetails;
 				}
 		
-		@FindBy(xpath = "//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")
+		@FindBy(xpath = "//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']|//*[@css='BUTTON.btn.btn-help.ng-star-inserted']")
 		private WebElement Cancelorder;
 		public WebElement getCancelorder() {
 			return Cancelorder;

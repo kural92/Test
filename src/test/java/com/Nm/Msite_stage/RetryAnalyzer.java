@@ -1,4 +1,4 @@
-package com.Nm.Website_live;
+package com.Nm.Msite_stage;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
