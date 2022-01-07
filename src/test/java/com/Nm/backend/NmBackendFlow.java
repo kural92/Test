@@ -7,12 +7,14 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import org.testng.annotations.BeforeClass;
@@ -44,7 +46,7 @@ public class NmBackendFlow extends BackendBaseClass{
 	public void test() throws Throwable {
 		backendPom s = new backendPom();
 		BaseClass bc = new BaseClass();
-
+JavascriptExecutor js =(JavascriptExecutor)driver;
 /////////////  Remove Product //
 
 	Thread.sleep(3000);
@@ -87,9 +89,29 @@ public class NmBackendFlow extends BackendBaseClass{
 		clk(s.getPDP_AddtoCart_btn());
 		clk(s.getHomecart());
 		thread(5000);
-		bc.letsChat_Close();
-		thread(2000);
 		
+		////
+		try {
+			Thread.sleep(3000);
+			driver.switchTo().frame("haptik-xdk");
+			System.out.println("Switched to Frame");
+			Actions acc = new Actions(driver);
+			acc.moveToElement(driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-cross-icon']|//div[@class='bot-prompt-minimal-textarea']//span|//div[@class='bot-prompt-minimal-cross-icon']"))).build()
+					.perform();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@class='bot-prompt-minimal-cross-icon']|(/html/body/div/div[1]/div[1])[1]|/html/body/div/div[1]/div[1]")).click();
+			driver.switchTo().defaultContent();
+		} catch (Exception e) {
+			Thread.sleep(2000);
+			driver.switchTo().defaultContent();
+		}
+		
+		
+		//////
+	//	bc.letsChat_Close();
+		thread(2000);
+		js.executeScript("window.scrollTo(0,500)");
+		thread(2000);
 		
 		
 		
@@ -166,7 +188,14 @@ public class NmBackendFlow extends BackendBaseClass{
 		
 		sendkeys(s.getOrderCode_View(), AppID);
 		thread(3000);
-		
+		try {
+			Thread.sleep(3000);
+			driver.switchTo().alert().accept();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		thread(3000);
+		/*
 		clk(s.getChck1_View());
 		clk(s.getChck2_View());
 		clk(s.getChck3_View());
@@ -181,10 +210,19 @@ public class NmBackendFlow extends BackendBaseClass{
 		clk(s.getChck12_View());
 		clk(s.getChck13_View());
 		clk(s.getChck14_View());
-		
+	*/	
 	
 		clk(s.getSubmit_View());
 		
+		//////////
+		try {
+			Thread.sleep(3000);
+			driver.switchTo().alert().accept();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		///////////////////
 		WebElement NameView = s.getCustName_View();
 		String ViewName = NameView.getText();
 		System.out.println(ViewName);
@@ -226,7 +264,7 @@ public class NmBackendFlow extends BackendBaseClass{
 		
 		Navi("https://stg-win.netmeds.com/s1-nmsbackpanel/UI/Common/Login_new.aspx");
 		
-		thread(3000);
+		thread(5000);
 		
 		sendkeys(s.getUsername_BO(), "test");
 		sendkeys(s.getPassword_BO(), "test123");
@@ -261,7 +299,13 @@ public class NmBackendFlow extends BackendBaseClass{
 		
 		sendkeys(s.getOrderCode_View(), AppID);
 		thread(1000);
-		
+		try {
+			Thread.sleep(3000);
+			driver.switchTo().alert().accept();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	/*	
 		clk(s.getChck1_View());
 		clk(s.getChck2_View());
 		clk(s.getChck3_View());
@@ -276,7 +320,7 @@ public class NmBackendFlow extends BackendBaseClass{
 		clk(s.getChck12_View());
 		clk(s.getChck13_View());
 		clk(s.getChck14_View());
-		
+	*/	
 		clk(s.getSubmit_View());
 		
 		WebElement StatuView1 = s.getStatus_View();
@@ -284,6 +328,7 @@ public class NmBackendFlow extends BackendBaseClass{
 		System.out.println("Status of the order has been changed to"+ ViewStatusChange);
 		
 		driver.switchTo().window(tabs.get(1));
+		thread(1000);
 		Navi("https://stg-win.netmeds.com/ccpanel/Dashboard");
 		
 		thread(10000);
@@ -348,7 +393,8 @@ public class NmBackendFlow extends BackendBaseClass{
 		}
 		
 		
-		Thread.sleep(10000);
+		Thread.sleep(50000);
+		
 		clk(s.getRwos_HamBurger_Menu());
 		clk(s.getRwos_SaleTransaction());
 		clk(s.getRwos_SaleTransaction_Search());
@@ -413,7 +459,7 @@ public class NmBackendFlow extends BackendBaseClass{
 	}
 	
 
-@Test(priority = 2)
+@Test(priority = 2,enabled = false)
 public void pickList() throws Throwable {
 	// TODO Auto-generated method stub
 	Thread.sleep(5000);

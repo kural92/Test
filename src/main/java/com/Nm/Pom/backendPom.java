@@ -797,7 +797,7 @@ public class backendPom extends BackendBaseClass{
 		}
 		
 		
-		@FindBy(xpath ="//label[contains(text(),'769 - RRL MDU')]" )
+		@FindBy(xpath ="//label[contains(text(),'769 - RRL MDU')]|//label[contains(text(),'769  - HX0F - RRL MDU')]" )
 		private WebElement Rwos_FcPanel;
 		public WebElement getRwos_FcPanel() {
 			return Rwos_FcPanel;
