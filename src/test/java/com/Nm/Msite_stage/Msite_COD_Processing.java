@@ -136,13 +136,13 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 				
 				
 				
-				for (int i = 0; i < 3; i++) {
+				for (int i = 0; i < 4; i++) {
 					
 				Thread.sleep(3000);
 				btnclick(m.getHeader_SearchBar());
 				Thread.sleep(5000);
 				//type(m.getSearchBar(), spl[i]);
-				m.getHeader_SearchBar().sendKeys(spl[i]);
+				m.getHeader_SearchBar().sendKeys(aa);
 				Thread.sleep(3000);
 				driver.findElement(By.xpath("//*[@class='search-text search-bg']")).click();
 				//m.getHeader_SearchBar().sendKeys(Keys.ENTER);
