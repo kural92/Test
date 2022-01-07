@@ -183,6 +183,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(3000);
 				letschat();
 				Thread.sleep(6000);
+				btnclick(m.getMsite_Doctor_Consultation());
 				if (m.getMsite_Doctor_Consultation().isSelected()) {
 				//	System.out.println(" Already Schedule Doctor Selected ");
 				} else {
