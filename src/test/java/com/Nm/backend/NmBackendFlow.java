@@ -146,6 +146,7 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		driver.navigate().refresh();
 		thread(2000);
 		clk(s.getUserprofile());
+		thread(3000);
 		clk(s.getYourAcc_MediOrder());
 		thread(2000);
 		clk(s.getDetails_Button());
@@ -348,7 +349,7 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		}
 			
 		driver.navigate().to("https://stg-win.netmeds.com/ccpanel/OrderSubmit/FcSelection");
-		thread(3000);
+		thread(5000);
 		
 		sendkeys(s.getOrderID_FC(),AppID);
 		clk(s.getSubmit1_FC());
@@ -384,12 +385,12 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		try {
 			Thread.sleep(3000);
 		clk(s.getRwos_FcPanel());
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		clk(s.getRwos_FcPanel_Proceed());
 			Thread.sleep(3000);
 		clk(s.getRwos_AlreadySignIn_YesBtn());
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		
 		
@@ -459,7 +460,7 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 	}
 	
 
-@Test(priority = 2,enabled = false)
+@Test(priority = 2,enabled = true)
 public void pickList() throws Throwable {
 	// TODO Auto-generated method stub
 	Thread.sleep(5000);
