@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 6, 2022 06:28:38 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 6, 2022 06:30:19 PM</span>
 				</a>
 			</li>
 			<li>
@@ -139,10 +139,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='25%'><span class='strong'>1</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>1</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='75%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -160,14 +160,14 @@
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>M3Doctorconsultation</span>
-						<span class='test-time'>Jan 6, 2022 06:28:50 PM</span>
+						<span class='test-time'>Jan 6, 2022 06:31:02 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 6, 2022 06:28:50 PM</span>
-	<span class='label end-time'>Jan 6, 2022 06:29:15 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+701ms</span>
+	<span class='label start-time'>Jan 6, 2022 06:31:02 PM</span>
+	<span class='label end-time'>Jan 6, 2022 06:31:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 36s+953ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -181,36 +181,45 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>6:28:50 PM</td>
+					<td class='timestamp'>6:31:02 PM</td>
 					<td class='step-details'>*************M3Doctorconsultation********************</td>
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>6:29:14 PM</td>
+					<td class='timestamp'>6:31:39 PM</td>
 					<td class='step-details'><span class='label white-text red'>M3Doctorconsultation FAILED </span></td>
 				</tr>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>6:29:14 PM</td>
-					<td class='step-details'><pre>org.openqa.selenium.WebDriverException: unknown error (An unknown server-side error occurred. status='false'. Failed to complete internal method: 'launch args: [chrome:https://m.netmeds.com/, false, false]', details: Failed to launch URL: chrome:https://m.netmeds.com/: java.util.concurrent.TimeoutException)  (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 23.40 seconds
+					<td class='timestamp'>6:31:39 PM</td>
+					<td class='step-details'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'NMSLAP093', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.android.chrome, device.majorVersion=10, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=NBBY79GM5LTCJBJR, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, newCommandTimeout=100, autoDismissAlerts=true, autoGrantPermissions=true, platformName=Android}, device.serialNumber=NBBY79GM5LTCJBJR, locationServicesAuthorized=false, device.version=10, newCommandTimeout=100, reportDirectory=reports, autoWebview=false, platformName=Android, udid=NBBY79GM5LTCJBJR, testName=mobile test 01/06/22 06:28 PM, device.screenSize=1080x2340, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=vivo, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\Admin\appiumstudio-reports\reports\test1042, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=vivo 1819, device.name=vivo 1819, autoGrantPermissions=true, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
-Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+Driver info: driver.version: AndroidDriver
+Capabilities [{appPackage=com.android.chrome, device.majorVersion=10, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=NBBY79GM5LTCJBJR, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, newCommandTimeout=100, autoDismissAlerts=true, autoGrantPermissions=true, platformName=Android}, device.serialNumber=NBBY79GM5LTCJBJR, locationServicesAuthorized=false, device.version=10, newCommandTimeout=100, reportDirectory=reports, autoWebview=false, platformName=Android, udid=NBBY79GM5LTCJBJR, testName=mobile test 01/06/22 06:30 PM, device.screenSize=1080x2340, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=vivo, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\Admin\appiumstudio-reports\reports\test1043, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=vivo 1819, device.name=vivo 1819, autoGrantPermissions=true, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
+Session ID: f0403c60-0aa3-4cbd-91b6-7501b9c0368c
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
-	at com.Nm.Msite_stage.M3RXDoctorconsultation.M3Doctorconsultation(M3RXDoctorconsultation.java:134)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.Nm.Base.MsiteBaseClass.btnclick(MsiteBaseClass.java:99)
+	at com.Nm.Msite_stage.M3RXDoctorconsultation.M3Doctorconsultation(M3RXDoctorconsultation.java:165)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -236,19 +245,46 @@ Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: org.apache.http.conn.HttpHostConnectException: Connect to 0.0.0.0:4723 [/0.0.0.0] failed: Connection refused: connect
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'NMSLAP093', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:84)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+	... 46 more
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 0.0.0.0:4723 [/0.0.0.0] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:69)
+	... 47 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 60 more
 </pre></td>
-				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>6:29:15 PM</td>
-					<td class='step-details'>Snapshot below: com.aventstack.extentreports.ExtentTest@4416d64f</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='M3Doctorconsultation.png' width='10%' src='M3Doctorconsultation.png' data-src='M3Doctorconsultation.png'></li>
-							</ul>
 					</div>
 				</li>
 			</ul>
@@ -304,7 +340,7 @@ Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.WebDriverException</span>
+                                <span class='exception-name'>org.openqa.selenium.remote.UnreachableBrowserException</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -319,27 +355,36 @@ Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Jan 6, 2022 06:28:50 PM</td>
+                                                        <td>Jan 6, 2022 06:31:02 PM</td>
                                                         <td class='linked' test-id='1'>M3Doctorconsultation</td>
-                                                        <td><pre><pre>org.openqa.selenium.WebDriverException: unknown error (An unknown server-side error occurred. status='false'. Failed to complete internal method: 'launch args: [chrome:https://m.netmeds.com/, false, false]', details: Failed to launch URL: chrome:https://m.netmeds.com/: java.util.concurrent.TimeoutException)  (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 23.40 seconds
+                                                        <td><pre><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'NMSLAP093', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.android.chrome, device.majorVersion=10, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=NBBY79GM5LTCJBJR, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, newCommandTimeout=100, autoDismissAlerts=true, autoGrantPermissions=true, platformName=Android}, device.serialNumber=NBBY79GM5LTCJBJR, locationServicesAuthorized=false, device.version=10, newCommandTimeout=100, reportDirectory=reports, autoWebview=false, platformName=Android, udid=NBBY79GM5LTCJBJR, testName=mobile test 01/06/22 06:28 PM, device.screenSize=1080x2340, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=vivo, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\Admin\appiumstudio-reports\reports\test1042, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=vivo 1819, device.name=vivo 1819, autoGrantPermissions=true, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
-Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+Driver info: driver.version: AndroidDriver
+Capabilities [{appPackage=com.android.chrome, device.majorVersion=10, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=NBBY79GM5LTCJBJR, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, newCommandTimeout=100, autoDismissAlerts=true, autoGrantPermissions=true, platformName=Android}, device.serialNumber=NBBY79GM5LTCJBJR, locationServicesAuthorized=false, device.version=10, newCommandTimeout=100, reportDirectory=reports, autoWebview=false, platformName=Android, udid=NBBY79GM5LTCJBJR, testName=mobile test 01/06/22 06:30 PM, device.screenSize=1080x2340, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=vivo, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\Admin\appiumstudio-reports\reports\test1043, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=vivo 1819, device.name=vivo 1819, autoGrantPermissions=true, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
+Session ID: f0403c60-0aa3-4cbd-91b6-7501b9c0368c
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
-	at com.Nm.Msite_stage.M3RXDoctorconsultation.M3Doctorconsultation(M3RXDoctorconsultation.java:134)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.Nm.Base.MsiteBaseClass.btnclick(MsiteBaseClass.java:99)
+	at com.Nm.Msite_stage.M3RXDoctorconsultation.M3Doctorconsultation(M3RXDoctorconsultation.java:165)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -365,6 +410,41 @@ Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: org.apache.http.conn.HttpHostConnectException: Connect to 0.0.0.0:4723 [/0.0.0.0] failed: Connection refused: connect
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'NMSLAP093', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:84)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+	... 46 more
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 0.0.0.0:4723 [/0.0.0.0] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:69)
+	... 47 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 60 more
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -397,25 +477,25 @@ Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 6, 2022 06:28:38 PM</div>
+					<div class='panel-lead'>Jan 6, 2022 06:30:19 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 6, 2022 06:29:25 PM</div>
+			 		<div class='panel-lead'>Jan 6, 2022 06:31:51 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 46s+805ms</div>
+					<div class='panel-lead'>0h 1m 32s+207ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -461,13 +541,13 @@ Session ID: bcaa2a22-db4c-47de-995f-d7926786fbc1
 				exceptionsParent: 1,
 				
 				passChild: 1,
-				failChild: 3,
+				failChild: 2,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 3,
+				exceptionsChild: 2,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,
