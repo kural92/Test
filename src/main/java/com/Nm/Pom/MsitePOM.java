@@ -700,14 +700,14 @@ public class MsitePOM extends MsiteBaseClass{
 			return Msite_Search_box;
 		}
 		
-		@FindBy(xpath = "//*[@css='BUTTON.action.addcart']")
+		@FindBy(xpath = "//*[@text=' ADD TO CART ']|//*[@css='BUTTON.action.addcart']")
 		private WebElement Msite_AddToCart;
 		public WebElement getMsite_AddToCart() {
 			return Msite_AddToCart;
 		}
 		
 		
-		@FindBy(xpath = "//*[@text='VIEW CART']")
+		@FindBy(xpath = "//*[@css='DIV.counter']|//*[@text='VIEW CART']")
 		private WebElement Msite_ViewCart;
 		public WebElement getMsite_ViewCart() {
 			return Msite_ViewCart;

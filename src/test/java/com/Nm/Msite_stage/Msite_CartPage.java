@@ -226,15 +226,30 @@ Float total_Wallet_amt;
                  driver.hideKeyboard();
                  
                  WebDriverWait wait = new WebDriverWait(driver, 30);
-					WebElement Cart_btn = driver.findElement(By.xpath("//*[@class='btn btn_to_cart m-0']"));
+					
 							//wait.until(.elementToBeClickable(By.id("//*[@css='BUTTON.btn.btn_to_cart.m-0']")));
 
 					Thread.sleep(3000);
-
-					btnclick(Cart_btn);
-					
+driver.findElement(By.xpath("//*[@css='DIV.leftside-icons.col-2.p-0']|//*[@class='product-item-name col-8 pl-0']|//*[@css='DIV.product-item-name.col-8.pl-0']|//*[@css='DIV.product-itemdetails.row.m-0.ng-star-inserted']")).click();
+				//	btnclick(Cart_btn);
+try {
+	Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@css='DIV.leftside-icons.col-2.p-0']|//*[@class='product-item-name col-8 pl-0']|//*[@css='DIV.product-item-name.col-8.pl-0']|//*[@css='DIV.product-itemdetails.row.m-0.ng-star-inserted']")).click();
+			
+} catch (Exception e) {
+	// TODO: handle exception
+}
+					try {
 					Thread.sleep(3000);
+					driver.findElement(By.xpath("//*[@class='search-text search-bg']")).click();
+					}catch (Exception e) {
+						// TODO: handle exception
+					}
+					Thread.sleep(3000);
+				//	WebElement Cart_btn = driver.findElement(By.xpath("//*[@class='btn btn_to_cart m-0']"));
+				//	btnclick(Cart_btn);
 
+					Thread.sleep(3000);
 					btnclick(ms.getMsite_AddToCart());
 				
                  /*
@@ -351,7 +366,7 @@ Float total_Wallet_amt;
 	*/	
 	////
 
-		driver.swipe(0, 0, 0, 300, 1000);
+		driver.swipe(50, 500, 0, 0, 1000);
 		
 		////
 		
@@ -364,11 +379,11 @@ Float total_Wallet_amt;
 		{
 			
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("((//*[@class='android.view.View' and ./parent::*[@class='android.view.View' and ./parent::*[@id='app']]]/*[@class='android.view.View'])[1]/*[@class='android.view.View'])[4]")).click();
+			driver.findElement(By.xpath("//*[@css='SPAN.arricon']|//*[@text='Apply Promo Code']|((//*[@class='android.view.View' and ./parent::*[@class='android.view.View' and ./parent::*[@id='app']]]/*[@class='android.view.View'])[1]/*[@class='android.view.View'])[4]")).click();
 			Thread.sleep(3000);
-			List<WebElement> radiobtn = driver.findElements(By.id("id=livecoupon_popup_1"));
+			List<WebElement> radiobtn = driver.findElements(By.xpath("//*[@name='livecoupon_popup']"));
 			Thread.sleep(3000);
-			System.out.println("Total element size is  "+ radiobtn.size());
+		//	System.out.println("Total element size is  "+ radiobtn.size());
 			n = radiobtn.size();
 		
 		try {
@@ -405,7 +420,7 @@ Float total_Wallet_amt;
 		/////////////////////////
 	//	driver.swipe(0, 0, 0, 1000, 1000);
 		
-		driver.swipe(0, 0, 0, 400, 1000);	
+		driver.swipe(50, 500, 0, 0, 1000);	
 
 		//Delivery Charge//
 		
@@ -413,7 +428,7 @@ Float total_Wallet_amt;
 				{
 					dlcharge = driver.findElement(By.id("icart_del_charge")).getText();
 					System.out.println(dlcharge);
-					logger.log(Status.PASS, "Ordered Product price was "+dlcharge);
+					//logger.log(Status.PASS, "Ordered Product price was "+dlcharge);
 					
 					String[] total_dlcharge = dlcharge.split("Rs."); 	
 					System.out.println(total_dlcharge);
@@ -426,7 +441,9 @@ Float total_Wallet_amt;
 				
 			} else {
 				
-				System.out.println("Total amount is more the Rs.500");
+			//	System.out.println("Total amount is more than Rs.500");
+				System.out.println("Delivery Charge is not Applicable");
+			
 			}
 				
 				
@@ -438,10 +455,10 @@ Float total_Wallet_amt;
 				{
 					discount = driver.findElement(By.id("cart_total_disc1")).getText();
 					System.out.println(discount);
-					logger.log(Status.PASS, "Discount is "+ discount);
+				//	logger.log(Status.PASS, "Discount is "+ discount);
 					
 					String[] discount_amt = discount.split("Rs."); 	
-					System.out.println(discount_amt);
+					System.out.println(discount_amt[1]);
 					
 					discount = discount_amt[1].toString();
 					System.out.println(discount);
@@ -465,7 +482,7 @@ Float total_Wallet_amt;
 					
 					//String totalmrp = m.getTotalmrp().getText();
 					
-					logger.log(Status.PASS, "mrp is "+totalmrp);
+				//	logger.log(Status.PASS, "mrp is "+totalmrp);
 					
 					String[] total_mrp1 = totalmrp.split("Rs."); 
 					
@@ -495,8 +512,8 @@ Float total_Wallet_amt;
 					
 					//String totalamount = m.getTotal_amount().getText();
 					
-					logger.log(Status.PASS, "Ordered Product price was "+totalamount);
-					String[] total_amt1 = totalamount.split("₹");  //String a = element.getText();  String[] id = a.split(" : ");  String ab = id[1].toString();
+			//		logger.log(Status.PASS, "Ordered Product price was "+totalamount);
+					String[] total_amt1 = totalamount.split("Rs.");  //String a = element.getText();  String[] id = a.split(" : ");  String ab = id[1].toString();
 					
 				
 					if (total_amt1[1].contains(",")) {
@@ -520,7 +537,7 @@ Float total_Wallet_amt;
 					Thread.sleep(3000);
 					
 		//Mrp charge(net charge) calculation//
-
+try {
 				if (mrpcharge<=150.00 && dlcharge.equals("50.00")) {
 			    	
 			  	Netcharge = mrpcharge + delcharge;
@@ -532,7 +549,9 @@ Float total_Wallet_amt;
 			    	
 				  	Netcharge = mrpcharge ;
 			    }
-			    	
+} catch (Exception e) {
+	// TODO: handle exception
+}
 				System.out.println("netcharge==="+Netcharge);
 				System.out.println("total_amt==="+total_amt);
 				
@@ -543,7 +562,7 @@ Float total_Wallet_amt;
 				{
 					additional_discount = driver.findElement(By.id("cart_additionalDiscount")).getText();
 					System.out.println(additional_discount);
-					logger.log(Status.PASS, "Discount is "+ additional_discount);
+		//			logger.log(Status.PASS, "Discount is "+ additional_discount);
 					
 					String[] add_discount_amt = additional_discount.split("Rs."); 	
 					System.out.println(add_discount_amt);
@@ -564,7 +583,7 @@ Float total_Wallet_amt;
 				
 				
 		//discount calculation//		
-				
+				try {
 				if (discount!= null && !discount.isEmpty())
 				
 				{
@@ -576,7 +595,7 @@ Float total_Wallet_amt;
 					
 					 Netcharge= Netcharge.parseFloat(Netcharge1);
 					System.out.println("Actual net charge after discount is =="+Netcharge);
-				}
+				} else {}
 					
 				
 				if (Float.compare(Netcharge, total_amt) == 0) 
@@ -587,7 +606,9 @@ Float total_Wallet_amt;
 				   System.out.println("Total amount mismatch");
 			   }
 
-
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
 				
 				
 				
@@ -597,7 +618,7 @@ Float total_Wallet_amt;
 				{
 					savings = driver.findElement(By.id("cart_totalSaving")).getText();
 					System.out.println(savings);
-					logger.log(Status.PASS, "saving is "+ savings);
+			//		logger.log(Status.PASS, "saving is "+ savings);
 					
 					String save = savings.replaceAll(" ","");
 					System.out.println("total==="+save);
@@ -637,7 +658,7 @@ Float total_Wallet_amt;
 				   }
 					
 					
-					 }
+					 } else {}
 				
 					
 				System.out.println("cartpage Scenario 1 is working properly");
