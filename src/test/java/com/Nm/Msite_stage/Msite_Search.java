@@ -141,8 +141,14 @@ public class Msite_Search extends MsiteBaseClass{
 				Thread.sleep(5000);
 			//	type(m.getHeader_SearchBar(), "Gemer 2mg");
 				m.getHeader_SearchBar().sendKeys("Gemer 2mg");
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//*[@class='search-text search-bg']")).click();
+				try {
+				Thread.sleep(10000);
+				driver.findElement(By.xpath("//*[@css='DIV.search-text.search-bg']")).click();
+				}catch (Exception e) {
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//*[@class='search-text search-bg']")).click();
+				}
+				
 				//m.getHeader_SearchBar().sendKeys(Keys.ENTER);
 				Thread.sleep(5000);
 				
@@ -225,12 +231,20 @@ public class Msite_Search extends MsiteBaseClass{
 				
 				Thread.sleep(3000);
 				btnclick(m.getPDP_Cart_btn());
-				
-				Thread.sleep(3000);
+			/*	
+				Thread.sleep(10000);
+				try {
 				btnclick(m.getPDP_Search_btnn());
+				}catch (Exception e) {
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("//*[@css='SPAN.searchiconmobi.ng-star-inserted']")).click();
+				}
+				Thread.sleep(10000);
+			//	type(m.getSearchBar(), "Dolo");
+				driver.findElement(By.xpath("//*[@css='SPAN.searchiconmobi.ng-star-inserted']|(//*[@class='android.widget.EditText'])[1]")).sendKeys("Dolo");
 				
-				Thread.sleep(3000);
-				type(m.getSearchBar(), "Dolo");
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@class='search-text search-bg']")).click();
 				
 				Thread.sleep(3000);
 				btnclick(m.getSearch_results_Drug());
@@ -241,7 +255,7 @@ public class Msite_Search extends MsiteBaseClass{
 				Thread.sleep(3000);
 				btnclick(m.getPDP_Search_btnn());
 
-		
+		*/
 
 	}
 	

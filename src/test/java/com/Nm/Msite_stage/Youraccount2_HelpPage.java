@@ -183,7 +183,7 @@ public class Youraccount2_HelpPage extends MsiteBaseClass {
 						
 			
 		//Step 3 : Navigate to user profile//
-
+				Thread.sleep(5000);
 				btnclick(m.getmyaccount());
 				//driver.findElement(By.xpath("//*[@text='Account']")).click();
 				Thread.sleep(3000);
@@ -198,9 +198,9 @@ public class Youraccount2_HelpPage extends MsiteBaseClass {
 
 // Step 4 : Navigate to help page
 try {
-		driver.swipe(790, 1100, 800, 70, 1000);
+		driver.swipe(50, 1100, 0, 70, 1000);
 }catch (Exception e) {
-	driver.swipe(0, 1000, 0, 0, 1000);
+	driver.swipe(50, 1000, 0, 0, 1000);
 }
 		
 		 btnclick(driver.findElement(By.xpath("//*[@class='help-link']")));
@@ -217,7 +217,7 @@ try {
 	System.out.println("the element size is   "+help);
 	
 
-		 for (int i = 0; i<12; i++)
+		 for (int i = 0; i<11; i++)
 			 
 		 {
 
@@ -233,7 +233,8 @@ try {
 				System.out.println(list.get(i).getText());
 				Thread.sleep(3000);
 				
-				driver.navigate().to("https://m.netmeds.com/customer/account");
+				driver.navigate().to("https://m.netmeds.com/help-support");
+				letschat();
 				
 				try {
 				driver.swipe(790, 1100, 800, 70, 1000);
@@ -241,8 +242,11 @@ try {
 					driver.swipe(0, 1100, 0, 0, 1000);
 				}
 				Thread.sleep(3000);
-				
+				try {
 				 btnclick(driver.findElement(By.xpath("//*[@class='help-link']")));
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
 				 Thread.sleep(3000);
 				Thread.sleep(1500);
 				

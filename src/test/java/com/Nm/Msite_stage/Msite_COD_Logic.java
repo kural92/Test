@@ -126,7 +126,7 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				driver.get("https://m.netmeds.com");
 				
 				Thread.sleep(5000);
-				String aa = "Gemer 2mg,Ajmal Amber Wood";
+				String aa = "Gemer 1mg,Ajmal Amber Wood";
 				String [] spl = aa.split(",");
 				System.out.println(spl.length);
 				
@@ -164,25 +164,50 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				Thread.sleep(5000);
 				btnclick(m.getPDP_Cart_btn());
 				
-				
-				/*Thread.sleep(10000);
-				btnclick(m.getMsite_m2_ProceedBtn());*/	Thread.sleep(15000);
-				driver.findElement(By.xpath("//*[@text='Proceed']")).click();
+
+				Thread.sleep(3000);
+				letschat();
+				Thread.sleep(10000);
+				btnclick(m.getMsite_m2_ProceedBtn());
+
+				try {
+				Thread.sleep(10000);
+			//	btnclick(m.getMsite_m2_ProceedBtn());	
+				}catch (Exception e) {
+					Thread.sleep(15000);
+			//		driver.findElement(By.xpath("//*[@text='Proceed']")).click();
+				}
+			
+
 			try {	
 				Thread.sleep(3000);
 				letschat();
 				Thread.sleep(6000);
 				btnclick(m.getMsite_Doctor_Consultation());
+				if (m.getMsite_Doctor_Consultation().isSelected()) {
+				//	System.out.println(" Already Schedule Doctor Selected ");
+				} else {
+					Thread.sleep(3000);
+				//	btnclick(m.getMsite_Doctor_Consultation());
+				}
+				
 				
 				Thread.sleep(3000);
 			//	btnclick(m.getDoctorConsultation_CloseBtn());
 				
+				
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			
+			try {
 				Thread.sleep(3000);
 				btnclick(m.getOrder_review_btn());
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			
 			float total ;
 				Thread.sleep(3000);
 				String Tot = m.getOrder_review_totalAmount().getText();
@@ -273,6 +298,48 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']|//*[@text='Track Order']")).click();
 
 					 Thread.sleep(10000);
+
+Thread.sleep(5000);
+btnclick(m.getViewdetails());
+try {
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+}catch (Exception e) {
+	// TODO: handle exception
+}
+for (int ii = 0; ii < 10; ii++) {
+
+	
+	Thread.sleep(3000);
+	driver.swipe(0, 900, 0, 0, 1000);
+	try {
+		if (driver.findElement(By.xpath("//*[@text='Cancel Order']")).isDisplayed()) {
+
+			
+			Thread.sleep(3000);
+			//btnclick(m.getPackageImage());
+			break;
+		} else {
+			
+			System.out.println("Swipe Down to click on package Button");
+
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	}
+
+//MobileElement co = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='CANCEL ORDER']"));co.click();
+driver.findElement(By.xpath("//*[@text='Cancel Order']")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@text='Delay in delivery ']")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL' and @nodeName='BUTTON' and @top='true']")).click();
+//touchAction.tap(100,i1).perform();
+	}
+					 
+					 
+					 /*
 					 letschat();
 					 driver.findElement(By.xpath("//*[@text=' View Details ']|//android.widget.Button[@text='VIEW DETAILS']")).click();
 					 Thread.sleep(3000);
@@ -281,10 +348,9 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 					 driver.findElement(By.xpath("//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']|//android.widget.RadioButton[@text='Delay in delivery']")).click();
 					 Thread.sleep(3000);
 					 driver.findElement(By.xpath("//*[@text='SUBMIT & CANCEL']|//android.widget.Button[@text='SUBMIT & CANCEL']")).click();
-					
-					
 					Thread.sleep(10000);
-					driver.get("https://m.netmeds.com");
+					*/
+				//	driver.get("https://m.netmeds.com");
 					
 					Thread.sleep(6000);
 					
@@ -294,12 +360,6 @@ public class Msite_COD_Logic extends MsiteBaseClass {
 				
 				}
 				
-				
-			}
-				
-				
 
-	
-	
 				
 }

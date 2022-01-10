@@ -666,7 +666,7 @@ public class MsitePOM extends MsiteBaseClass{
 			return Viewdetails;
 				}
 		
-		@FindBy(xpath = "//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']")
+		@FindBy(xpath = "//*[@text='Cancel Order']|//android.widget.Button[@text='CANCEL ORDER']|//*[@css='BUTTON.btn.btn-help.ng-star-inserted']")
 		private WebElement Cancelorder;
 		public WebElement getCancelorder() {
 			return Cancelorder;
@@ -1182,7 +1182,7 @@ public WebElement getHeader_SearchBar() {
 return Header_SearchBar;
 } 
 
-@FindBy(id="com.NetmedsMarketplace.Netmeds:id/search_bar")
+@FindBy(xpath="//*[@css='INPUT.ais-SearchBox-input']|//*[@placeholder='Search here...']|//*[@class='ais-SearchBox-input']")
 private WebElement SearchBar;
 public WebElement getSearchBar() {
 return SearchBar;

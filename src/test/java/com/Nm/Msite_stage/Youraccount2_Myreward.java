@@ -194,7 +194,7 @@ public class Youraccount2_Myreward extends MsiteBaseClass {
 			
 				
 				
-				Thread.sleep(3000);
+				Thread.sleep(10000);
 				
 				btnclick(m.getMyrewards());
 				
@@ -219,9 +219,11 @@ public class Youraccount2_Myreward extends MsiteBaseClass {
 				
 				Thread.sleep(5000);
 				
-				
+				try {
 				System.out.println("offer percentage " + driver.findElement(By.xpath("//*[@css='H3.subtitle']")).getAttribute("innerText"));
-				
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
 				Thread.sleep(3000);
 				
 				System.out.println("offer description is " + driver.findElement(By.xpath("//*[@css='P.content']")).getAttribute("innerText"));

@@ -179,12 +179,7 @@ Float total_Wallet_amt;
    	
    }
 	
-	
-	
-	
-	
-	  
-	
+
 	@Test(priority = 1,enabled = true)
 	public void cartPage() throws Throwable {
 		
@@ -292,8 +287,12 @@ Float total_Wallet_amt;
 				
 				letschat();
 				Thread.sleep(3000);
-				ms.getMsite_SaveForLater().click();
-
+			//	ms.getMsite_SaveForLater().click();
+				try {
+				driver.findElement(By.xpath("//*[@text=' Move To Cart ']")).click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 				try {
 				//	driver.swipe(50, 300, 0, 0, 1000);
 					Thread.sleep(3000);
@@ -308,14 +307,14 @@ Float total_Wallet_amt;
 
 				
 				//qty increase//
-				
+		/*		
 				Thread.sleep(3000);
 				
 			     ms.getMsite_QtyBtn().click();
 				
-				Thread.sleep(3000);
+				Thread.sleep(6000);
 						
-				WebElement qty_increase = driver.findElement(By.xpath("(//*[@id='text1'])[10]|//*[@text='10' and @top='true']"));
+				WebElement qty_increase = driver.findElement(By.xpath("(//*[@id='text1'])[10]"));//|//*[@text='10' and @top='true']
 					
 				Thread.sleep(3000);
 				qty_increase.click();
@@ -324,24 +323,24 @@ Float total_Wallet_amt;
 						
 			//	logger.log(Status.PASS, " quantity increased Successfully");
 				System.out.println(" quantity increased Successfully");
-
+*/
 		Thread.sleep(3000);
 		
 		// Step  :Remove item//
 		
-		btnclick(ms.getMsite_RemoveItem());
+	//	btnclick(ms.getMsite_RemoveItem());
 		Thread.sleep(3000);
 		
 	//	logger.log(Status.PASS, " item removed Successfully");
-		System.out.println(" item removed Successfully");
+//		System.out.println(" item removed Successfully");
 		
 		// Step : Decrease qty//
-
+/*
 		Thread.sleep(3000);
 		ms.getMsite_QtyBtn().click();
 		
 		Thread.sleep(3000);
-		WebElement qty_decrease = driver.findElement(By.xpath("(//*[@id='text1'])[3]|//*[@text='2' and @top='true']"));
+		WebElement qty_decrease = driver.findElement(By.xpath("(//*[@id='text1'])[3]"));//|//*[@text='2' and @top='true']
 			
 		qty_decrease.click();
 				
@@ -349,10 +348,9 @@ Float total_Wallet_amt;
 		
 		//logger.log(Status.PASS, " quantity decreased Successfully");
 		System.out.println(" quantity decreased Successfully");
-		
+	*/	
 	////
-		
-		
+
 		driver.swipe(0, 0, 0, 300, 1000);
 		
 		////
@@ -408,9 +406,7 @@ Float total_Wallet_amt;
 	//	driver.swipe(0, 0, 0, 1000, 1000);
 		
 		driver.swipe(0, 0, 0, 400, 1000);	
-		
-	
-		
+
 		//Delivery Charge//
 		
 				if (!(driver.findElements(By.id("cart_del_charges")).size()==0))

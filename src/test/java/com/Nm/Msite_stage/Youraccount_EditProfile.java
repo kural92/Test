@@ -194,7 +194,7 @@ public class Youraccount_EditProfile extends MsiteBaseClass {
 		System.out.println("Successfully navigate to userprofile");
 		
 //click Modify button
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		btnclick(m.getEditprofile());
 		
 	

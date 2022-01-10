@@ -190,15 +190,16 @@ public class Youraccount2_referandearn extends MsiteBaseClass {
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");
 		System.out.println("Successfully navigate to userprofile");
-		
+		Thread.sleep(3000);
+		letschat();
 	// Step 4 : Navigate to Refer and earn
 		try {
-		driver.swipe(790, 1100, 800, 70, 1000);
+		driver.swipe(50, 1100, 800, 70, 1000);
 		}catch (Exception e) {
-			driver.swipe(0, 1100, 0, 0, 1000);
+			driver.swipe(50, 1100, 0, 0, 1000);
 		}
 		
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 
 		btnclick(driver.findElement(By.xpath("//*[@text='INVITE NOW']")));
 		Thread.sleep(3000);

@@ -239,14 +239,18 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 				Thread.sleep(5000);
 //Doctor consulation 
 				
-			/*	if (!(driver.findElement(By.xpath("//*[@class='extcheckbox']|//*[@nodeName='INPUT']")).isSelected())) {
-					driver.findElement(By.xpath("//*[@class='extcheckbox']|//*[@nodeName='INPUT']")).click();
+				try {
+				if (!(driver.findElement(By.xpath("//*[@class='extcheckbox']|//*[@nodeName='INPUT']|//android.widget.CheckBox[@resource-id='externaldoctr']|//*[@resource-id='externaldoctr']")).isSelected())) {
+					driver.findElement(By.xpath("//*[@class='extcheckbox']|//*[@nodeName='INPUT']|//android.widget.CheckBox[@resource-id='externaldoctr']|//*[@resource-id='externaldoctr']")).click();
 					Thread.sleep(5000);
 				} else {
 					
 					System.out.println("Schedule doctor Already Selected");
-				}*/
-				driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+				}
+				}catch (Exception e) {
+					driver.findElement(By.xpath("//*[@class='extcheckbox']|//android.widget.CheckBox[@resource-id='externaldoctr']")).click();
+				}
+				
 				Thread.sleep(5000);
 				
 				driver.findElement(By.xpath("//*[@text='Schedule Delivery']")).click();
@@ -288,6 +292,12 @@ public class M3RXDoctorconsultation extends MsiteBaseClass {
 			logger.log(Status.PASS, "Address was deleted successfully");
 			
 //Modify
+			try {
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@class='addchange']|//android.widget.TextView[@text='CHANGE']")).click();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 	//	driver.swipe(0, 1500, 0, 1300,1000);
 			//driver.swipe(0, 500, 0, 0, 1000);
 		Thread.sleep(5000);
