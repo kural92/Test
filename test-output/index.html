@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1805689741\testng-customsuite.xml</span>
+                    <span>C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1538298964\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -130,15 +130,15 @@
                   <a name="cartPage">
                   </a> <!-- cartPage -->
                   <span class="method-name">cartPage</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element (An element could not be located on the page using the given search parameters (XPATH=&apos;((//*[@class=&apos;android.view.View&apos; and ./parent::*[@class=&apos;android.view.View&apos; and ./parent::*[@id=&apos;app&apos;]]]/*[@class=&apos;android.view.View&apos;])[1]/*[@class=&apos;android.view.View&apos;])[4]&apos;))  (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 2.68 seconds
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element (An element could not be located on the page using the given search parameters (XPATH=&apos;//*[@text=&apos; ADD TO CART &apos;]|//*[@css=&apos;BUTTON.action.addcart&apos;]&apos;))  (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1.17 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;NMSLAP356&apos;, ip: &apos;192.168.8.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.android.chrome, device.majorVersion=11, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=RZ8R20GLXTA, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, autoDismissAlerts=true, platformName=Android}, device.serialNumber=RZ8R20GLXTA, locationServicesAuthorized=false, device.version=11, reportDirectory=reports, autoWebview=false, platformName=Android, udid=RZ8R20GLXTA, testName=mobile test 01/07/22 05:36 PM, device.screenSize=720x1600, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=samsung, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\NMSLAP356\appiumstudio-reports\reports\test303, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=SM-A125F, device.name=SM-A125F, autoGrantPermissions=false, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
-Session ID: d405f2ff-181c-4c8b-87ef-189892bff0f8
-*** Element info: {Using=xpath, value=((//*[@class=&apos;android.view.View&apos; and ./parent::*[@class=&apos;android.view.View&apos; and ./parent::*[@id=&apos;app&apos;]]]/*[@class=&apos;android.view.View&apos;])[1]/*[@class=&apos;android.view.View&apos;])[4]}
+Capabilities [{appPackage=com.android.chrome, device.majorVersion=11, dontGoHomeOnQuit=false, device.os=Android, noReset=true, dontStopAppOnReset=false, applicationClearData=false, reservationDuration=240, reportFormat=xml, fullReset=false, platform=ANY, deviceUDID=RZ8R20GLXTA, install.only.for.update=false, desired={appPackage=com.android.chrome, appActivity=com.google.android.apps.chrome.Main, noReset=true, autoDismissAlerts=true, platformName=Android}, device.serialNumber=RZ8R20GLXTA, locationServicesAuthorized=false, device.version=11, reportDirectory=reports, autoWebview=false, platformName=Android, udid=RZ8R20GLXTA, testName=mobile test 01/10/22 12:12 PM, device.screenSize=720x1600, useKeystore=false, test.type=Mobile, commandTimeouts=120000, device.manufacture=samsung, instrumentApp=false, appiumVersion=1.8.0, device.category=PHONE, autoDismissAlerts=true, reportUrl=C:\Users\NMSLAP356\appiumstudio-reports\reports\test316, newSessionWaitTimeout=600, keystorePath=~/.android/debug.keystore, appActivity=com.google.android.apps.chrome.Main, installOnlyForUpdate=false, waitForDeviceTimeout=120000, device.model=SM-A125F, device.name=SM-A125F, autoGrantPermissions=false, appBuildVersion=, appReleaseVersion=, takeScreenshots=true, projectName=, autoAcceptAlerts=false}]
+Session ID: b7ef6bf2-5028-4d2c-ba9f-7bfea41da7e2
+*** Element info: {Using=xpath, value=//*[@text=&apos; ADD TO CART &apos;]|//*[@css=&apos;BUTTON.action.addcart&apos;]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -163,7 +163,11 @@ Session ID: d405f2ff-181c-4c8b-87ef-189892bff0f8
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.Nm.Msite_stage.Msite_CartPage.cartPage(Msite_CartPage.java:367)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy12.click(Unknown Source)
+	at com.Nm.Base.MsiteBaseClass.btnclick(MsiteBaseClass.java:99)
+	at com.Nm.Msite_stage.Msite_CartPage.cartPage(Msite_CartPage.java:253)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -201,7 +205,7 @@ Session ID: d405f2ff-181c-4c8b-87ef-189892bff0f8
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse--1805689741\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\NMSLAP356\AppData\Local\Temp\testng-eclipse-1538298964\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -254,12 +258,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'cartPage')
 data.setCell(0, 2, 'com.Nm.Msite_stage.Msite_CartPage')
-data.setCell(0, 3, 147675);
+data.setCell(0, 3, 102495);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -299,21 +303,21 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">launchbrowser2</span>
-                <span class="method-start">359 ms</span>
+                <span class="method-start">244 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">cartPage</span>
-                <span class="method-start">70076 ms</span>
+                <span class="method-start">12795 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShot([TestResult name=cartPage status=FAILURE method=Msite_CartPage.cartPage()[pri:1, instance:com.Nm.Msi...)</span>
-                <span class="method-start">217775 ms</span>
+                <span class="method-start">115306 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">quitbrowser</span>
-                <span class="method-start">217784 ms</span>
+                <span class="method-start">115313 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
