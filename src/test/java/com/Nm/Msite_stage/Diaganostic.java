@@ -129,8 +129,8 @@ public class Diaganostic  extends MsiteBaseClass {
 
    
 //*****************************************************************Diagnostics	*********************************************************
-	//@Test(enabled = true)
-	@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true)
+	//@Test(priority = 1,retryAnalyzer=RetryAnalyzer.class)
 
 	public void CategoryPage() throws Throwable {
 		
@@ -215,9 +215,13 @@ public class Diaganostic  extends MsiteBaseClass {
 	System.out.println("Successfully Naviagted to Diagnostics Page");
 	logger.log(Status.PASS, "Successfully Naviagted to Wellness Page");
 	//View all
-	Thread.sleep(4000);
-driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='SPAN' and ./*[@nodeName='IMG']]]")).click();
+	Thread.sleep(5000);
+	try {
+		driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='SPAN' and ./*[@nodeName='IMG']]]")).click();
+
+	} catch (Exception e) {
 		
+	}
 	System.out.println("Category Page is working properly");
 	/*driver.findElement(By.xpath("//*[@class='closeicon layout-align-center-center layout-column']")).click();
 	Thread.sleep(4000);
@@ -237,21 +241,19 @@ try {
 	Thread.sleep(4000);
 	driver.findElement(By.xpath("//*[@name='pincode']")).sendKeys("600001");
 	Thread.sleep(4000);
-	driver.findElement(By.xpath("(//*/*/*/*[@nodeName='IMG' and ./parent::*[@text and @nodeName='SPAN']])[1]")).click();
+	driver.findElement(By.xpath("//*[@text='View All' and @nodeName='DIV' and (./preceding-sibling::* | ./following-sibling::*)[@text='POPULAR TESTS']]")).click();
+	Thread.sleep(6000);
+	driver.findElement(By.xpath("//*[@name='cart[]' and @checked='false']|//*[@name='cart[]']")).click();
 	Thread.sleep(4000);
-	driver.findElement(By.xpath("//*[@text='Book Test']")).click();
+	driver.findElement(By.xpath("//*[@text='NEXT' and @nodeName='BUTTON']")).click();
+	Thread.sleep(10000);
+	driver.findElement(By.xpath("(//*[@type='checkbox'])[1]")).click();
+
+	//driver.findElement(By.xpath("(//*[@type='checkbox'])[1]|//*[@type='checkbox']|(//*[@type='checkbox'])[2]|(//*[@type='checkbox'])[3]|(//*[@type='checkbox'])[4]")).click();
 	Thread.sleep(4000);
-	/*driver.findElement(By.xpath("//*[@id='input_8' and @nodeName='INPUT']")).click();
-	driver.findElement(By.xpath("//*[@name='medName']")).sendKeys("Complete Blood Count (CBC)/ Hemogram");
-	driver.findElement(By.xpath("(//*[@name='cart[]'])[1]")).click();*/
-	try {
-		Thread.sleep(4000);
-		driver.findElement(By.xpath("(//*/*/*/*[@nodeName='IMG' and ./parent::*[@text and @nodeName='SPAN']])[1]")).click();
-		Thread.sleep(4000);
-		driver.findElement(By.xpath("//*[@text='Book Test']")).click();
-	} catch (Exception e) {
-		
-	}SoftAssert SoftAssert=new SoftAssert();
+	driver.findElement(By.xpath("//*[@text='NEXT']|//*[@text='Next']")).click();
+	
+SoftAssert SoftAssert=new SoftAssert();
 	Thread.sleep(4000);
 /*	String paientName=driver.findElement(By.xpath("//*[@nodeName='LABEL' and (./preceding-sibling::* | ./following-sibling::*)[@id='input_2']]")).getText();
 	
@@ -264,8 +266,8 @@ try {
 	driver.findElement(By.xpath("//*[@name='mobileno']")).clear();
 	driver.findElement(By.xpath("//*[@name='mobileno']")).sendKeys("8012222872");
 
-	driver.findElement(By.xpath("//*[@text='Age']")).clear();
-	driver.findElement(By.xpath("//*[@text='Age']")).sendKeys("29");
+/*	driver.findElement(By.xpath("//*[@text='Age']")).clear();
+	driver.findElement(By.xpath("//*[@text='Age']")).sendKeys("29");*/
 	driver.findElement(By.xpath("//*[@text='Female' and @nodeName='DIV']")).click();
 String Email_ID=driver.findElement(By.xpath("//*[@text='Email ID']")).getText();
 	
@@ -314,7 +316,10 @@ Thread.sleep(5000);
 btnclick(m.getSaveaddress());
 System.out.println("Address was modified successfully");
 logger.log(Status.PASS, "Address was modified successfully");
-
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
+Thread.sleep(2000);
+driver.swipe(0, 300, 0, 1000, 1000);
 Thread.sleep(4000);
 
 driver.findElement(By.xpath("//*[@text='ADD NEW ADDRESS' and @nodeName='A']")).click();
@@ -347,7 +352,7 @@ logger.log(Status.PASS, "Address was Added successfully");
 
 Thread.sleep(5000);
 try {
-	driver.findElement(By.xpath("//*[@id='cusadd_10101302' and @name='address']")).click();
+	driver.findElement(By.xpath("(//*[@name='address'])[1]")).click();
 }
 catch (Exception e) {
 
@@ -379,7 +384,7 @@ driver.findElement(By.xpath("(//*[@nodeName='INPUT'])[1]")).click();
 	
 	//*****************************************************************M3 Subscription OTC Flow	*********************************************************
 		//@Test(enabled = true)
-	@Test(priority = 2,retryAnalyzer=RetryAnalyzer.class)
+	//@Test(priority = 2,retryAnalyzer=RetryAnalyzer.class)
 
 		public void diganosticpage() throws Throwable {
 			
