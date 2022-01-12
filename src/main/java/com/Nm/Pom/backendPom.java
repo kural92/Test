@@ -809,7 +809,7 @@ public class backendPom extends BackendBaseClass{
 			return Rwos_FcPanelList;
 		}
 		
-		@FindBy(xpath ="//span[contains(text(),'Proceed')]" )
+		@FindBy(xpath ="//span[contains(text(),'Proceed')]")
 		private WebElement Rwos_FcPanel_Proceed;
 		public WebElement getRwos_FcPanel_Proceed() {
 			return Rwos_FcPanel_Proceed;
