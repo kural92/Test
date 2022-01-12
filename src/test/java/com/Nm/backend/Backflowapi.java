@@ -80,7 +80,7 @@ String mobilenumber="9677159095";
 			noUserid.queryParam("channel", "web");
 			
 			Response response = noUserid.request(Method.GET, "https://s1-meds.netmeds.com/mst/rest/v1/session/create/using_mobileno");
-		   // System.out.println(response.getBody().asString());
+		   System.out.println(response.getBody().asString());
 		    String id = response.jsonPath().get("result.session.id").toString();
 		    String customer_id = response.jsonPath().get("result.session.customer_id").toString();
 		    RequestSpecification noUserid1 = RestAssured.given();
