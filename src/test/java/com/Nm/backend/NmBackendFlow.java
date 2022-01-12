@@ -15,8 +15,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -42,11 +43,12 @@ public class NmBackendFlow extends BackendBaseClass{
 	/**
 	 * @throws Throwable
 	 */
-	@Test(priority = 1)
+	@Test(priority = 1,enabled = true)
 	public void test() throws Throwable {
 		backendPom s = new backendPom();
 		BaseClass bc = new BaseClass();
 JavascriptExecutor js =(JavascriptExecutor)driver;
+WebDriverWait wait = new WebDriverWait(driver, 100);
 /////////////  Remove Product //
 
 	Thread.sleep(3000);
@@ -136,6 +138,7 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 			clk(s.getCOD_Radio());
 			clk(s.getPay_COD());
 		} catch (Exception e) {
+			thread(3000);
 			clk(driver.findElement(By.xpath("//button[contains(text(),'PAY WITH CASH')]")));
 			
 		}
@@ -195,7 +198,10 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		
+		
 		thread(3000);
+		
 		/*
 		clk(s.getChck1_View());
 		clk(s.getChck2_View());
@@ -306,6 +312,8 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		
+		
 	/*	
 		clk(s.getChck1_View());
 		clk(s.getChck2_View());
@@ -322,6 +330,8 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		clk(s.getChck13_View());
 		clk(s.getChck14_View());
 	*/	
+		
+		
 		clk(s.getSubmit_View());
 		
 		WebElement StatuView1 = s.getStatus_View();
@@ -367,7 +377,7 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		WebElement Suborder = s.getSuborderID_View();
 		String subOrID = Suborder.getText();
 		System.out.println("Sub Order ID:" + subOrID);
-		
+	
 		
 		///  RWOS FLOW
 		
@@ -394,9 +404,11 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		}
 		
 		
-		Thread.sleep(50000);
+	//	Thread.sleep(50000);
+		wait.until(ExpectedConditions.visibilityOf(s.getRwos_HamBurger_Menu()));
 		
 		clk(s.getRwos_HamBurger_Menu());
+			
 		clk(s.getRwos_SaleTransaction());
 		clk(s.getRwos_SaleTransaction_Search());
 
@@ -417,7 +429,7 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 			Thread.sleep(2000);
 		    Eye.get(i).click();
 			Thread.sleep(2000);		
-			
+			wait.until(ExpectedConditions.visibilityOf(s.getRwos_BillingAddress()));
 			String BillingAddress = s.getRwos_BillingAddress().getText();
 			String DeliverAddress = s.getRwos_ShippingAddress().getText();
 			
@@ -431,7 +443,7 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 	
 		
 			//SoftAssert sof = new SoftAssert();
-			
+		
 			sof.assertEquals(ViewName, Name);
 			System.out.println("Customer Name is true");
 			sof.assertEquals(IDView, TxnID);
@@ -444,11 +456,29 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 			System.out.println("Mode of payment is equal");
 			sof.assertEquals(ViewAddress, DeliverAddress);
 			System.out.println("Order Address is Equal");
-			
+		
 			
 			Thread.sleep(2000);
 			clk(s.getRwos_CloseBtn());
-		
+			
+			
+			
+			
+			///Item master
+			driver.findElement(By.xpath("(//a[@routerlinkactive='selectedMenu'])[16]")).click();
+			//Show Stock
+			driver.findElement(By.xpath("//span[contains(text(),'Show Stock')]")).click();
+			//stock qty
+			driver.findElement(By.xpath("//span[contains(text(),'Stock Qty')]")).click();
+			
+			//Search Item
+			driver.findElement(By.xpath("(//input[@placeholder='Search'])[1]")).sendKeys("Dolo");
+			//refresh stock
+			driver.findElement(By.xpath("//span[contains(text(),'Refresh Stock')]")).click();
+			//stock qty
+			driver.findElement(By.xpath("//span[contains(text(),'Stock Qty')]")).click();
+			
+			//
 	
 		}
 	
@@ -458,16 +488,18 @@ JavascriptExecutor js =(JavascriptExecutor)driver;
 		
 		
 	}
-	
+
 
 @Test(priority = 2,enabled = true)
 public void pickList() throws Throwable {
 	// TODO Auto-generated method stub
+	WebDriverWait wait = new WebDriverWait(driver, 60);
 	Thread.sleep(5000);
 
 		driver.get("https://sit-shipstation.netmeds.com/picking/login");
 		
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='user_name']"))));
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769picklist");
 		Thread.sleep(1000);
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
@@ -475,33 +507,51 @@ public void pickList() throws Throwable {
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
 		
 		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("mat-input-0"))));
 		WebElement pickListType = driver.findElement(By.id("mat-input-0"));
 		Select ss = new Select(pickListType);	
 		ss.selectByIndex(1);
+		//Order Source Filter
+		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("mat-input-9"))));
+		WebElement OrderSource = driver.findElement(By.id("mat-input-1"));
+		Select ss1 = new Select(OrderSource);	
+		ss1.selectByIndex(0);
+		//Customer Sale Filter
+		Thread.sleep(3000);
+			//	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("mat-input-10"))));
+				WebElement CustomerSale = driver.findElement(By.id("mat-input-2"));
+				Select ss2 = new Select(CustomerSale);	
+				ss2.selectByIndex(0);
 		
-		Thread.sleep(1000);
+		
+		//Thread.sleep(1000);
+				wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Generate Picklist')]"))));
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Generate Picklist')]")));
 		
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//span[contains(text(),'Picklist Generated Orders : ')]//following::span[1]"))));
 		String picklistOrder = driver.findElement(By.xpath("//span[contains(text(),'Picklist Generated Orders : ')]//following::span[1]")).getText();
 		System.out.println("Picklist Generated Orders : "+picklistOrder);
 		
-		clk(driver.findElement(By.xpath("//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+		clk(driver.findElement(By.xpath("//span[contains(text(),'769picklist')]|//*[@id=\"app\"]/header/app-header/div/div/div/button")));
 		clk(driver.findElement(By.xpath("//a[contains(text(),'Log out')]")));
 		
 		////
-		
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='user_name']"))));
 		Thread.sleep(5000);
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769pick_Admin");
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
 		
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Print')]"))));
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Print')]")));
 		Thread.sleep(1000);
-		clk(driver.findElement(By.xpath("//*[@id=\"cdk-overlay-0\"]/div/div/a[1]")));
+		clk(driver.findElement(By.xpath("//a[contains(text(),'Print SRNO')]|//*[@id=\"cdk-overlay-0\"]/div/div/a[1]")));
 		
 		Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id='app']/main/div/app-print-serialno/div[3]/table/tbody/tr[1]/td[2]"))));
 		 txn_id = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-print-serialno/div[3]/table/tbody/tr[1]/td[2]")).getText();
 		System.err.println(txn_id);
 		
@@ -528,7 +578,8 @@ public void pickList() throws Throwable {
 		r.keyRelease(KeyEvent.VK_ESCAPE);
 		//driver.navigate().refresh();
 		Thread.sleep(3000);
-		clk(driver.findElement(By.xpath("//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+		clk(driver.findElement(By.xpath("//span[contains(text(),'769pick_admin')]|//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+		Thread.sleep(1000);
 		clk(driver.findElement(By.xpath("//a[contains(text(),'Log out')]")));
 		
 		Thread.sleep(3000);
@@ -570,7 +621,33 @@ public void pickList() throws Throwable {
 	System.out.println(pc);
 	
 	
+	/////////////////////////////////////
+	
+	//Dispatch
+	
+	Navi("https://sit-shipstation.netmeds.com/dispatch/login");
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='user_name']"))));
+	sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769test_dispatch_user");
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='password']"))));
+	sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
+	//Thread.sleep(2000);
+	//input[@formcontrolname='password']
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Login')]"))));
+	clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
+	
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("invoice_header1"))));
+	clk(driver.findElement(By.id("invoice_header1")));
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("(//button[contains(text(),'Submit')])[1]"))));
+	clk(driver.findElement(By.xpath("(//button[contains(text(),'Submit')])[1]")));
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("sr_no"))));
+	sendkeys(driver.findElement(By.id("sr_no")),txn_id);
+	
+	
 
 	}
+
+
+
+
 	
 }
