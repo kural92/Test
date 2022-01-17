@@ -331,9 +331,9 @@ WebDriverWait wait = new WebDriverWait(driver, 100);
 		clk(s.getChck14_View());
 	*/	
 		
-		
+		thread(1000);
 		clk(s.getSubmit_View());
-		
+		thread(2000);
 		WebElement StatuView1 = s.getStatus_View();
 		String ViewStatusChange = StatuView1.getText();
 		System.out.println("Status of the order has been changed to"+ ViewStatusChange);
@@ -357,11 +357,12 @@ WebDriverWait wait = new WebDriverWait(driver, 100);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-			
+		thread(1000);
 		driver.navigate().to("https://stg-win.netmeds.com/ccpanel/OrderSubmit/FcSelection");
-		thread(5000);
+		thread(10000);
 		
 		sendkeys(s.getOrderID_FC(),AppID);
+		thread(1000);
 		clk(s.getSubmit1_FC());
 		thread(1000);
 		WebElement FC = driver.findElement(By.xpath("//select[@id='drpfcvals']"));
@@ -432,7 +433,7 @@ WebDriverWait wait = new WebDriverWait(driver, 100);
 			wait.until(ExpectedConditions.visibilityOf(s.getRwos_BillingAddress()));
 			String BillingAddress = s.getRwos_BillingAddress().getText();
 			String DeliverAddress = s.getRwos_ShippingAddress().getText();
-			
+			try {
 			String Name = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[1]/table/tbody/tr[2]/td[4]/p")).getText();
 		    String Amt = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[3]/div[1]/div/div[2]/table/tbody/tr[1]/td[3]/p")).getText();
 			String qty = driver.findElement(By.xpath("//*[@id=\"content-wrapper\"]/div[2]/customer-order-view/div/form/div[3]/div[1]/div/div[1]/table/tbody/tr[2]/td[1]/p")).getText();
@@ -457,7 +458,9 @@ WebDriverWait wait = new WebDriverWait(driver, 100);
 			sof.assertEquals(ViewAddress, DeliverAddress);
 			System.out.println("Order Address is Equal");
 		
-			
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			Thread.sleep(2000);
 			clk(s.getRwos_CloseBtn());
 			
@@ -465,20 +468,27 @@ WebDriverWait wait = new WebDriverWait(driver, 100);
 			
 			
 			///Item master
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//a[@routerlinkactive='selectedMenu'])[16]")).click();
 			//Show Stock
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//span[contains(text(),'Show Stock')]")).click();
 			//stock qty
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//span[contains(text(),'Stock Qty')]")).click();
-			
+			Thread.sleep(2000);
 			//Search Item
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//input[@placeholder='Search'])[1]")).sendKeys("Dolo");
 			//refresh stock
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//span[contains(text(),'Refresh Stock')]")).click();
 			//stock qty
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//span[contains(text(),'Stock Qty')]")).click();
 			
 			//
+			Thread.sleep(2000);
 	
 		}
 	
@@ -499,13 +509,16 @@ public void pickList() throws Throwable {
 		driver.get("https://sit-shipstation.netmeds.com/picking/login");
 		
 		//Thread.sleep(5000);
+		try {
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='user_name']"))));
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769picklist");
 		Thread.sleep(1000);
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
 		Thread.sleep(1000);
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
-		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		Thread.sleep(3000);
 	//	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("mat-input-0"))));
 		WebElement pickListType = driver.findElement(By.id("mat-input-0"));
@@ -535,15 +548,19 @@ public void pickList() throws Throwable {
 		System.out.println("Picklist Generated Orders : "+picklistOrder);
 		
 		clk(driver.findElement(By.xpath("//span[contains(text(),'769picklist')]|//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+		Thread.sleep(1000);
 		clk(driver.findElement(By.xpath("//a[contains(text(),'Log out')]")));
 		
 		////
-		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='user_name']"))));
+	//	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='user_name']"))));
 		Thread.sleep(5000);
+		try {
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769pick_Admin");
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
-		
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Print')]"))));
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Print')]")));
@@ -585,14 +602,16 @@ public void pickList() throws Throwable {
 		Thread.sleep(3000);
 		driver.navigate().refresh();
 		driver.get("https://sit-shipstation.netmeds.com/picking/login");
-		
+		try {
 		Thread.sleep(5000);
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769test_pick_user");
 		Thread.sleep(2000);
 		sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='password']")), "Nms@12345");
 		Thread.sleep(2000);
 		clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
-		
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		Thread.sleep(3000);
 		sendkeys(driver.findElement(By.xpath("//*[@id=\"app\"]/main/div/app-picker/div[1]/div[2]/div/form/div/input")),txn_id ); //txn_id
 		
@@ -620,12 +639,19 @@ public void pickList() throws Throwable {
 	String pc = driver.findElement(By.xpath("/html/body/div/div")).getText();
 	System.out.println(pc);
 	
+	//
+	Thread.sleep(3000);
+	clk(driver.findElement(By.xpath("//span[contains(text(),'769test_pick_user')]|//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+	Thread.sleep(1000);
+	clk(driver.findElement(By.xpath("//a[contains(text(),'Log out')]")));
 	
 	/////////////////////////////////////
 	
 	//Dispatch
-	
+	Thread.sleep(1000);
 	Navi("https://sit-shipstation.netmeds.com/dispatch/login");
+	try {
+		Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='user_name']"))));
 	sendkeys(driver.findElement(By.xpath("//input[@formcontrolname='user_name']")),"769test_dispatch_user");
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@formcontrolname='password']"))));
@@ -634,20 +660,37 @@ public void pickList() throws Throwable {
 	//input[@formcontrolname='password']
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Login')]"))));
 	clk(driver.findElement(By.xpath("//button[contains(text(),'Login')]")));
-	
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	try {
+		Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("invoice_header1"))));
 	clk(driver.findElement(By.id("invoice_header1")));
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("(//button[contains(text(),'Submit')])[1]"))));
 	clk(driver.findElement(By.xpath("(//button[contains(text(),'Submit')])[1]")));
+	}catch (Exception e) {
+		// TODO: handle exception COHX0F210020392
+	}
+	Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("sr_no"))));
 	sendkeys(driver.findElement(By.id("sr_no")),txn_id);
+//	clk(driver.findElement(By.xpath("//button[@type='submit']")));
+	clk(driver.findElement(By.id("dispatch_process")));
+	Thread.sleep(2000);
+	clk(driver.findElement(By.xpath("//button[contains(text(),' Approve')]")));
+	Thread.sleep(2000);
+	clk(driver.findElement(By.xpath("//button[contains(text(),'Ok')]")));
 	
-	
 
-	}
+Thread.sleep(3000);
+clk(driver.findElement(By.xpath("//span[contains(text(),'769test_dispatch_user')]|//*[@id=\"app\"]/header/app-header/div/div/div/button")));
+Thread.sleep(1000);
+clk(driver.findElement(By.xpath("//a[contains(text(),'Log out')]")));
 
 
 
 
+}
 	
 }
