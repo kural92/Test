@@ -238,7 +238,7 @@ Float total_Wallet_amt;
 			//driver.findElement(By.xpath("//android.widget.TextView[@resourceid='com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn']")).click();
 			
 			
-			for (int i = 0; i < 1; i++) {
+			for (int i = 0; i < 2; i++) {
 
 				type(m.getM3productsearch(), MobileBaseClass.getExcelData("Otcandnonrx", i, 0));
 
@@ -279,6 +279,9 @@ Float total_Wallet_amt;
 			
 	//Wallet
 			
+			Thread.sleep(3000);
+			
+			driver.swipe(0, 500, 0, 0,1000 );
 			Thread.sleep(3000);
 			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_nms_super_cash")).click();
 			

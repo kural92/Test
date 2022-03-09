@@ -274,7 +274,7 @@ System.out.println("Address was modified successfully");
 Thread.sleep(5000);
 List<WebElement> delete  = driver.findElements(By.xpath("(//android.widget.TextView[@text='DELETE'])"));
 Thread.sleep(3000);
-delete.get(1).click();
+delete.get(0).click();
 
 
 
@@ -349,7 +349,7 @@ for (int i = 0; i < 10; i++) {
 	}}
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
-Thread.sleep(3000);
+Thread.sleep(7000);
 
 //my orders
 

@@ -255,13 +255,17 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 				//Select qtyincrease = new Select(m.getQty_Incr_Decr());
 				//qtyincrease.selectByIndex(3);
 				
-			driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();	
-		
-			WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='11']"));
-			
-			Thread.sleep(3000);
-			qty_increase.click();
-		
+				Thread.sleep(3000);
+		//Increase qty//
+
+						driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
+						//Select qtyincrease = new Select(m.getQty_Incr_Decr());
+						//qtyincrease.selectByIndex(3);
+						Thread.sleep(3000);
+				WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='18']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[13]"));
+				Thread.sleep(3000);
+				qty_increase.click();
+				Thread.sleep(6000);
 		
 	//Apply Promo
 	if ((driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code"))).size()!=0) {
@@ -289,7 +293,7 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 		
 		
 			Thread.sleep(5000);
-			driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
+			//driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code")).click();
 			
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.NetmedsMarketplace.Netmeds:id/promo_code']")).sendKeys(couponcode);

@@ -343,7 +343,7 @@ Float total_Wallet_amt;
 		}
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		 radiobtn.get(i).click();
 		 Thread.sleep(3000);
 		 if(i<2) {
@@ -362,7 +362,7 @@ Float total_Wallet_amt;
 for (int i = 0; i < 5; i++) {
 			
 			Thread.sleep(3000);
-			driver.swipe(0, 1000, 0, 0, 1000);
+			driver.swipe(0, 500, 0, 0, 1000);
 			
 			if (m.getMost_Selling_products().size()!=0) {
 				
@@ -376,14 +376,16 @@ for (int i = 0; i < 5; i++) {
 
 			}
 		
-		
+			
 		
 }
 		
 System.out.println("Successfully item added to the cart");
 logger.log(Status.PASS, "Items are added successfully");	
-		
- 
+
+Thread.sleep(3000);
+driver.swipe(0, 500, 0, 1000, 1000);
+Thread.sleep(3000);
 		
 		 
 
