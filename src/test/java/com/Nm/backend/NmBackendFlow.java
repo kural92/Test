@@ -675,13 +675,19 @@ public void pickList() throws Throwable {
 	Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("sr_no"))));
 	sendkeys(driver.findElement(By.id("sr_no")),txn_id);
-//	clk(driver.findElement(By.xpath("//button[@type='submit']")));
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	js.executeScript("window.scrollTo(0,200)");
+//	clk(driver.findElement(By.xpath("//button[@type='submit']")));//*[@id="generate_label_tr"]/td[2]
+	Thread.sleep(2000);
 	clk(driver.findElement(By.id("dispatch_process")));
 	Thread.sleep(2000);
 	clk(driver.findElement(By.xpath("//button[contains(text(),' Approve')]")));
 	Thread.sleep(2000);
 	clk(driver.findElement(By.xpath("//button[contains(text(),'Ok')]")));
-	
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("swal2-title"))));
+	String dispatch_text = driver.findElement(By.id("swal2-title")).getText();
+	System.out.println(dispatch_text);
 
 Thread.sleep(3000);
 clk(driver.findElement(By.xpath("//span[contains(text(),'769test_dispatch_user')]|//*[@id=\"app\"]/header/app-header/div/div/div/button")));

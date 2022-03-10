@@ -89,6 +89,20 @@ static String totalamt;
 	@Test(enabled = false,retryAnalyzer=RetryAnalyzer.class)
 	public void cartpagescenarioone() throws Throwable {
 
+	/*	
+		Actions a = new Actions(driver);
+		a.moveToElement(driver.findElement(By.id("Nmswallet"))).build().perform();
+		a.contextClick(driver.findElement(By.id("Nmswallet"))).build().perform();
+		a.clickAndHold(driver.findElement(By.id("Nmswallet"))).build().perform();
+		a.click(driver.findElement(By.id("Nmswallet"))).build().perform();
+		a.doubleClick(driver.findElement(By.id("Nmswallet"))).build().perform();
+		a.doubleClick(driver.findElement(By.id("Nmswallet"))).build().perform();
+		a.dragAndDrop(driver.findElement(By.id("Nmswallet")), driver.findElement(By.id("Nmswallet")));
+	*/	
+		
+		
+		
+		
 		logger = report.createTest("cartpage scenario one ");
 		logger.log(Status.PASS, "************* cartpage scenario 2********************");
 		Monepom m = new Monepom();

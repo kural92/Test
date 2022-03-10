@@ -237,10 +237,10 @@ public class AlternateProduct extends MobileBaseClass {
 			btnclick(m.getAdd_To_cart_List().get(0));
 			
 			Thread.sleep(3000);
-			btnclick(m.getMostSelling_drug_name_List().get(1));
+	//		btnclick(m.getMostSelling_drug_name_List().get(1));
 			
 			Thread.sleep(5000);
-			btnclick(m.getAdd_To_cart());
+	//		btnclick(m.getAdd_To_cart());
 			
 			
 			Thread.sleep(2000);
