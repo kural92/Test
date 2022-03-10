@@ -112,7 +112,7 @@ public class AndriodPom extends MobileBaseClass{
 			return placeorder;
 		}
 		
-		@FindBy(xpath ="//android.widget.Button[@index ='1']|//android.widget.ImageView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/img_orders']|//android.widget.Button[@text='TRACK ORDER']")
+		@FindBy(xpath ="//android.widget.Button[@index ='1']|//android.widget.ImageView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/img_orders']|//android.widget.Button[@text='MY ORDERS']//android.widget.Button[@text='TRACK ORDER']")
 		private WebElement myorders;
 		public WebElement getMyorders() {
 			return myorders;
@@ -1792,7 +1792,7 @@ public List<WebElement> getViewdetails_List() {
 			}
 			
 			
-			@FindBy(	xpath ="(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/addressCheckbox'])[3]")
+			@FindBy(	xpath ="(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/addressCheckbox'])[3]|(//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/addressCheckbox'])[1]")
 			private WebElement Slctaddress;
 			public WebElement getSlctaddress() {
 				return Slctaddress;
@@ -2851,7 +2851,7 @@ public List<WebElement> getViewdetails_List() {
 			return SubCategory_list;
 		}
 
-		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/name']")
+		@FindBy(xpath="//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/name']|//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/txt_filter_type']")
 		private List<WebElement> Filterby;
 
 		public List<WebElement> getFilterby() {

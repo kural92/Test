@@ -156,7 +156,7 @@ public void OrderSuccesspageM1() throws Throwable {
 
  
 	Thread.sleep(10000);
-			String s="Patanjali Lauh Bhasm Powder 5 gm";
+			String s="Horlicks Health Drink Powder Classic Malt 500 gm (Refill Pack)";//"Patanjali Lauh Bhasm Powder 5 gm";
 	Thread.sleep(2000);
 	btnclick(m.getGotocart()); 
 	for (int i = 0; i < 2; i++) {
@@ -395,7 +395,7 @@ try {
 		
 		btnclick(m.getMyorders());
 
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 			
 		//View details
 

@@ -285,9 +285,11 @@ Thread.sleep(10000);
 		//my orders
 
 
-		btnclick(m.getMyorders());
+		//btnclick(m.getMyorders());
+		
+		driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']")).click();
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 			
 		//View details
 

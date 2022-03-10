@@ -98,7 +98,7 @@ public class CategoryPage extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
-	@Test(enabled = true,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled = true)//,retryAnalyzer=RetryAnalyzer.class)
 	public void CategoryPage() throws Throwable {
 		
 		logger =  report.createTest("Category Page");

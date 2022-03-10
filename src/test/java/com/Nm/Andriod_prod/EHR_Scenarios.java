@@ -312,7 +312,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 		driver.swipe(0, 0, 0, 2000, 1000);
 		*/
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//android.widget.TextView[@text='2015']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='2016']")).click();
 		
 		driver.findElement(By.id("android:id/button1")).click();
 		
@@ -542,7 +542,7 @@ public class EHR_Scenarios extends MobileBaseClass {
 			driver.swipe(752, 1586, 752, 2000, 1000);
 			*/
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//android.widget.TextView[@text='2015']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='2016']")).click();
 			
 			driver.findElement(By.id("android:id/button1")).click();
 			

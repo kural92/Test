@@ -262,7 +262,7 @@ return text;
 	Thread.sleep(7000);
 
 	
-	for (int i2 = 0;i2<3; i2++)
+	for (int i2 = 0;i2<1; i2++)
 	
 	{
 		
@@ -328,7 +328,7 @@ return text;
 			Thread.sleep(5000);
 		
 
-	for (int i3 = 0;i3<6; i3++)
+	for (int i3 = 0;i3<2; i3++)
 			
 			{
 				
@@ -350,7 +350,7 @@ return text;
 			
 			
 			 Thread.sleep(5000);
-			 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/checked")).click();
+			 driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/txt_filter_option")).click();
 			 Thread.sleep(5000);
 			 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']")).click();
 			 Thread.sleep(3000);
