@@ -125,7 +125,7 @@ public class OrderSuccessPage_M1 extends MsiteBaseClass {
 	
 	
 	@Test(enabled = true)
-				public void M1OrderSuccessPage() throws Throwable {
+				public void M1rderSuccessPage() throws Throwable {
 	
 	
 	
@@ -228,6 +228,8 @@ public class OrderSuccessPage_M1 extends MsiteBaseClass {
 		try {
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@text=' ADD TO CART ']")).click();
+			
+			System.out.println("successfully item added");
 		
 		}catch (Exception e) {
 			// TODO: handle exception
@@ -236,19 +238,24 @@ public class OrderSuccessPage_M1 extends MsiteBaseClass {
 		
 		//add the product
 		
-		driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and ./parent::*[@nodeName='DIV' and ./parent::*[@nodeName='A']]]")).click();
-		logger.log(Status.PASS, "Successfully navigate to cart page" );
+	//	driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and ./parent::*[@nodeName='DIV' and ./parent::*[@nodeName='A']]]")).click();
+	//	logger.log(Status.PASS, "Successfully navigate to cart page" );
 		Thread.sleep(15000);
-		driver.findElement(By.xpath("//*[@text='Proceed']")).click();
+		driver.findElement(By.xpath("//*[@text='Proceed To Cart']")).click();
+		System.out.println("Successfully navigate to search order review page");
 		logger.log(Status.PASS, "Successfully navigate to search order review page" );
-		try {
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
-		}catch (Exception e) {
+	
+	//	try {
+		//	Thread.sleep(2000);
+		//	driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+	//	}catch (Exception e) {
 			// TODO: handle exception
-		}
+	//	}
 
-
+		Thread.sleep(15000);
+	WebElement Test =	driver.findElement(By.xpath("//*[@text='Proceed']|//*[@class='btn-checkout btn btn_to_checkout']"));
+	
+	Test.click();
 		
 
 Thread.sleep(3000);

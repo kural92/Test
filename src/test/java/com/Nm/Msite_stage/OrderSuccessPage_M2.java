@@ -149,14 +149,15 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 
 			  m.getMsite_OrderNow().click();
 
-			  letschat();
+			 letschat();
 
 
-			  letschat();
+			//  letschat();
 			  Thread.sleep(10000);
 			  driver.findElement(By.xpath("//android.widget.Button[@text='UPLOAD PRESCRIPTION']|//*[@text='Upload Prescription']")).click();
 			//  m.getMsite_Upload_Prescription().click();
 			  Thread.sleep(5000);
+			  letschat();
 			  driver.findElement(By.xpath("//android.widget.Button[@text='Choose Files']|//*[@css='INPUT.ng-untouched.ng-pristine.ng-valid']")).click();
 			//  m.getMsite_Upload_Gallery().click();
 			  Thread.sleep(5000);
@@ -221,10 +222,12 @@ public class OrderSuccessPage_M2 extends MsiteBaseClass {
 			  
 			 
 			 Thread.sleep(5000);
-			  driver.findElement(By.xpath("//*[@text='Proceed']|//android.widget.Button[@text='PROCEED']")).click();
-			  
+			  //.findElement(By.xpath("//*[@text='Proceed']|//android.widget.Button[@text='PROCEED']|//*[@css='BUTTON.action.addcart']")).click();
+
+			  driver.navigate().to("https://m.netmeds.com/upload_prescription/review");
 			  Thread.sleep(10000);
-			  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']")).click();
+			  
+			  driver.findElement(By.xpath("//*[@text='Confirm Order']|//*[@text='Confirm Order' and @top='true']|//*[@css='BUTTON.btn-checkout.btn.btn_to_checkout.m-0']")).click();
 	 
 			 Thread.sleep(3000);
 				

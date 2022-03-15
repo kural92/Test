@@ -220,7 +220,7 @@ public class MsitePOM extends MsiteBaseClass{
 	public WebElement getMsite_M2_searchMedicine() {
 		return Msite_M2_searchMedicine;
 	}
-	@FindBy(xpath = "//*[@class='action addcart']|//android.widget.Button[@text='ADD TO CART']")
+	@FindBy(xpath = "//*[@class='action addcart']|//android.widget.Button[@text='ADD TO CART']|//*[@text=' ADD TO CART ']|//*[@css='BUTTON.qtybtn.qty_add.qty_pluspdp']")
 	private WebElement Addtocart;
 	public WebElement getAddtocart() {
 		return Addtocart;

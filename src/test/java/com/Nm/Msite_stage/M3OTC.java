@@ -143,7 +143,10 @@ public class M3OTC extends MsiteBaseClass {
 		Thread.sleep(6000);
 		
 		popupclose() ;
-
+	
+		
+		
+	
 
 //Let's chat handle//
 		letschat();
@@ -166,29 +169,27 @@ public class M3OTC extends MsiteBaseClass {
 // Step 6:Search Product//
 
 		Thread.sleep(5000);
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i <= 1; i++) {
 
 			type(m.getM3productsearch(), MobileBaseClass.getExcelData("Otcandnonrx", i, 0));
 			
 			logger.log(Status.PASS, "Successfully navigate to search result page");
 
 // Step 7 : Add product to the cart//
-			try {
+		
 				Thread.sleep(5000);
 
-				WebDriverWait wait = new WebDriverWait(driver, 30);
-				WebElement Cart_btn = wait.until(
-						ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='btn btn_to_cart m-0'])[1]|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.view.View[4]/android.view.View/android.widget.Button")));
+				//WebDriverWait wait = new WebDriverWait(driver, 30);
+				//WebElement Cart_btn = wait.until(
+					//	ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='btn btn_to_cart m-0'])[1]|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.view.View[4]/android.view.View/android.widget.Button|//*[@class='btn btn_to_cart m-0 ng-star-inserted']|//*[@css='BUTTON.btn.btn_to_cart.m-0.ng-star-inserted']")));
 
-				Thread.sleep(5000);
+				//Thread.sleep(5000);
+				driver.findElement(By.xpath("(//*[@nodeName='IMG' and @top='true'])[1]")).click();
 
-				btnclick(Cart_btn);
+				//btnclick(Cart_btn);
 				
-				System.out.println("successfully Items are added");
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-
+				
+			
 			
 	//Let's chat handle//
 			letschat();
@@ -197,20 +198,51 @@ public class M3OTC extends MsiteBaseClass {
 //Add to cart	
 			btnclick(m.getAddtocart());
 		
+			System.out.println("successfully Items are added");
+			
+			
+				
+			if (i==1) {
+				
+				driver.navigate().back();
+				driver.navigate().back();
+			}else {
+				
+				driver.navigate().back();
+			}
+			
+			
+			
+			
 			
 		}
 
-		try {
+		//driver.swipe(0, 1000, 0, 0, 1000);
+		
+	//	driver.swipe(0, 500, 0, 0, 1000);
+	//	Thread.sleep(5000);
+	//	driver.findElement(By.xpath("(//*[@text='Proceed To Cart'])[1]")).click();
+		
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@text='PROCEED TO SUBCSCRIPTION CART']")).click();
+		
+		
+		/*try {
+			//driver.findElement(By.xpath("//*[@text='GOT IT']|//*[@id='got_it']")).click();
+			Thread.sleep(5000);
 			
-		driver.findElement(By.xpath("//android.widget.TextView[@text='PROCEED']")).click();
-		
-		
-		}catch (Exception e) {
-			// TODO: handle exception
+			driver.findElement(By.xpath("(//*[@text='Proceed To Cart'])[1]|//*[@href='/checkout/cart/']|//*[@content-desc='PROCEED TO CART']")).click();
+			
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//*[@text='PROCEED']")).click();
 		}
+
 		
 		
-		driver.navigate().to("https://m.netmeds.com/checkout/cart/subscription");
+		catch (Exception e) {
+			
+			//driver.navigate().to("https://m.netmeds.com/checkout/cart/subscription");
+		
 		
 		
 		Thread.sleep(5000);
@@ -221,7 +253,7 @@ public class M3OTC extends MsiteBaseClass {
 
 		
 //Let's chat handle//
-		letschat();
+		//letschat();
 
 // Step 13 : Click Proceed Button//
 		Thread.sleep(5000);
@@ -245,84 +277,38 @@ public class M3OTC extends MsiteBaseClass {
 		logger.log(Status.PASS, "Successfully navigate to cartpage");
 		
 //Let's chat handle//
-		letschat();
+	//	letschat();
 		
 		Thread.sleep(5000);
+	*/	
 		
-		
-// Step 9 : Decrease qty//	
-		driver.findElement(By.xpath("(//*[@name='quantity'])[1]|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View[2]/android.view.View[4]/android.view.View/android.view.View"
-				)).click();
-		
-		
-		//Switch to Native_App
-		
-		
-        Set<String> contextNames = driver.getContextHandles();
-        for (String strContextName : contextNames) {
-            if (strContextName.contains("NATIVE_APP")) {
-                driver.context("NATIVE_APP");
-                break;
-            }
-        }
-	  
-        WebElement qty_dec = 	driver.findElement(By.xpath("(//android.widget.CheckedTextView[@resource-id='android:id/text1'])[11]"));
+/// Step 11: Decrease qty//
+		driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
+		Thread.sleep(3000);
+		WebElement qty_dec = 	driver.findElement(By.xpath("//android.widget.TextView[@text='15']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[10]"));
 		qty_dec.click();
+		//Select qtydecrease = new Select(m.getQty_Incr_Decr());
+		//qtydecrease.selectByIndex(1);
 	
 		Thread.sleep(3000);
 		
 		logger.log(Status.PASS, " quantity decreased Successfully");
 		System.out.println(" quantity decareased Successfully");
 
-		
-		 //Switch to Chrome browser
-		
-		
-        Set<String> contextNames1 = driver.getContextHandles();
-        for (String strContextName : contextNames1) {
-            if (strContextName.contains("CHROMIUM")) {
-                driver.context("CHROMIUM");
-                break;
-            }
-        }
-        
-        
-//Step 10 :Increase qty//
+		//Step 9 :Increase qty//
 
-        driver.findElement(By.xpath("(//*[@name='quantity'])[1]|//android.view.View[@resource-id='app']/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View[2]/android.view.View[4]/android.view.View/android.view.View"
-				)).click();
-		
-			
-//Switch to Native_App
-		
-		
-        Set<String> contextNames2 = driver.getContextHandles();
-        for (String strContextName : contextNames) {
-            if (strContextName.contains("NATIVE_APP")) {
-                driver.context("NATIVE_APP");
-                break;
-            }
-        }
-	  
- //Decrease quantity
-        WebElement qty_increase = 	driver.findElement(By.xpath("(//android.widget.CheckedTextView[@resource-id='android:id/text1'])[12]|//*[@text='12']"));
-		qty_increase.click();
-	
+				driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])")).click();
+				//Select qtyincrease = new Select(m.getQty_Incr_Decr());
+				//qtyincrease.selectByIndex(3);
+				Thread.sleep(3000);
+		WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='18']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[13]"));
 		Thread.sleep(3000);
-		
-		logger.log(Status.PASS, " quantity increased Successfully");
-		System.out.println(" quantity increased Successfully");
-
-		
-		 //Switch to Chrome browser
-        Set<String> contextNames3 = driver.getContextHandles();
-        for (String strContextName : contextNames1) {
-            if (strContextName.contains("CHROMIUM")) {
-                driver.context("CHROMIUM");
-                break;
-            }
-        }
-		
+		qty_increase.click();
+				//driver.findElement(By.xpath("(//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/cart_tv_item_qty'])"));
+				Thread.sleep(3000);
+				
+				logger.log(Status.PASS, " quantity increased Successfully");
+				System.out.println(" quantity increased Successfully");
 
 // Step 10 :Remove qty//
 					//btnclick(m.getRemoveitem());
