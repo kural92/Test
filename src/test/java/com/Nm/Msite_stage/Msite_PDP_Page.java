@@ -137,7 +137,7 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 				Thread.sleep(3000);
 				
 				int a = MobileBaseClass.getRowCount("AndPDP");
-				for (int i = 0; i < a; i++) {
+				for (int i = 0; i < 2; i++) {
 				
 					Thread.sleep(3000);
 					type(m.getMsite_Search_box(), MsiteBaseClass.getExcelData("AndPDP", i, 0));
@@ -145,7 +145,7 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 	              driver.hideKeyboard();
 	              
 	              Thread.sleep(5000);
-	      		
+	      		letschat();
 	      		List<WebElement> search_result  =  m.getMsite_Search_Results();
 	      		
 	      		System.out.println(search_result.size());
@@ -153,7 +153,20 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 	      		
 	    		Thread.sleep(2000);
 	    				//btnclick(m.getMsite_SearchResult_drugName());
-	    		btnclick(m.getMsite_Search_Results().get(0));
+	    	//	btnclick(m.getMsite_Search_Results().get(0));
+	    		try {
+	    			driver.findElement(By.xpath("//*[@text and @nodeName='A' and ./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV' and ./*[@id='wsearcherr_953012']]]]]")).click();
+	    		}catch (Exception e) {
+					// TODO: handle exception
+				}
+	    		
+	    		Thread.sleep(2000);
+			
+		try {
+			driver.findElement(By.xpath("//*[@text and @nodeName='A' and ./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV' and ./*[@id='wsearcherr_45296']]]]]")).click();
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 	    				Thread.sleep(10000);
 	    				
 	    				String PDP_category_Name = m.getPDP_category_Name().getText();
@@ -581,6 +594,365 @@ public class Msite_PDP_Page extends MsiteBaseClass{
 						
 								
 							}
+	
+	@Test
+	public void pdp_logic() throws Throwable {
+		
+		logger =  report.createTest("Adding Alternate Brands and Most Selling Products to Cart");
+		logger.log(Status.PASS, "*************AlterNate and Most Selling Product********************" );
+		
+		MsitePOM m = new MsitePOM();
+		
+		 driver.get("http://m.netmeds.com");
+		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+	        
+
+	        Thread.sleep(10000);
+			  try {
+			  driver.findElement(By.xpath("//span[@class='app_close'] | //*[@class='app_close']")).click();
+			  }catch (Exception e) {
+				// TODO: handle exception
+			}			  	  
+			  // Remove From Cart
+				driver.navigate().to("https://m.netmeds.com/checkout/cart");
+				for (int i = 0; i < 10; i++) {
+					Thread.sleep(10000);
+					if (!(driver.findElements(By.xpath("//*[@title='Remove item']")).size() == 0)) {
+
+						Thread.sleep(5000);
+						try {
+							driver.findElement(By.xpath("//android.view.View[@text='REMOVE']|//*[@title='Remove item']")).click();
+						} catch (Exception e) {
+							// TODO: handle exception
+						}
+
+					} else {
+						System.err.println("Successfully Product Removed from Cart");
+						break;
+
+					}
+				} 
+				
+				//////
+				Thread.sleep(5000);
+				m.getMsite_Cart_Search().click();
+				Thread.sleep(3000);
+				
+				int a = MobileBaseClass.getRowCount("AndPDP");
+				for (int i = 2; i <=2; i++) {
+				
+					Thread.sleep(3000);
+					type(m.getMsite_Search_box(), MsiteBaseClass.getExcelData("AndPDP", i, 0));
+					Thread.sleep(2000);
+	              driver.hideKeyboard();
+	              
+	              Thread.sleep(5000);
+	      		
+	      		List<WebElement> search_result  =  m.getMsite_Search_Results();
+	      		
+	      		System.out.println(search_result.size());
+	      		
+	      		
+	    		Thread.sleep(2000);
+	    				//btnclick(m.getMsite_SearchResult_drugName());
+	    		btnclick(m.getMsite_Search_Results().get(0));
+	    				Thread.sleep(10000);
+	    				
+	    				String PDP_category_Name = m.getPDP_category_Name().getText();
+						System.out.println(PDP_category_Name);
+				
+						Thread.sleep(2000);
+						if (m.getPDP_Rx_Required_List().size()==1) {
+							
+							Thread.sleep(2000);
+							String PDP_Rx_Required = m.getPDP_Rx_Required().getText();
+							System.out.println(PDP_Rx_Required);
+							
+						}
+						
+						
+						Thread.sleep(2000);
+						String PDP_Manufacture_name = m.getPDP_Manufacture_name().getText();
+						System.out.println(PDP_Manufacture_name);
+						
+						
+						Thread.sleep(2000);
+						String PDP_Best_Price = m.getPDP_Best_Price().getText();
+						System.out.println(PDP_Best_Price);
+						
+						Thread.sleep(2000);
+						if (m.getPDP_MRP_Price_List().size()==1) {
+							Thread.sleep(2000);
+							String PDP_MRP_Price = m.getPDP_MRP_Price().getText();
+							System.out.println(PDP_MRP_Price);
+						} else {
+
+							
+						}
+						
+						
+						Thread.sleep(2000);
+						driver.swipe(0, 300, 0, 0, 1000);
+						
+						Thread.sleep(2000);
+						Thread.sleep(2000);
+						if (m.getPDP_OfferAvailable_List().size()==1) {
+							
+							Thread.sleep(2000);
+							 btnclick(m.getPDP_OfferAvailable_Text());
+							 Thread.sleep(2000);
+								driver.swipe(0, 300, 0, 0, 1000);
+								
+								Thread.sleep(2000);
+								
+								List<WebElement> Coupon_code = m.getPDP_Coupon_Code();
+										Thread.sleep(2000);
+								List<WebElement> Coupon_Save_Per = m.getPDP_Coupon_Save_Percentage();
+								Thread.sleep(2000);
+								List<WebElement> Coupon_Details = m.getPDP_Coupon_Details();
+							    Thread.sleep(2000);
+								
+								if (!(Coupon_code.size()==0)) {
+									
+									for (int j = 0; j <Coupon_code.size() ; j++) {
+										
+										Thread.sleep(2000);
+										System.out.println(gettext(Coupon_code.get(j)));
+										
+										Thread.sleep(2000);
+										System.out.println(gettext(Coupon_Save_Per.get(j)));
+										
+										Thread.sleep(2000);
+										System.out.println(gettext(Coupon_Details.get(j)));
+										
+									}
+									
+								} else {
+
+								}
+								
+								
+								
+						}
+						
+						Thread.sleep(2000);
+						btnclick(m.getPDP_Manufacture_name());
+						
+						Thread.sleep(15000);
+						String manufac = m.getPDP_manufacture_Page().getText();
+						
+						if (PDP_Manufacture_name.contains(manufac)) {
+							
+							System.out.println("Manufacture Matches");
+							
+						} else {
+
+							
+							System.err.println("Manufacture not Matches");
+						}
+						
+						
+						////
+						//*[@class='back-icon']
+						Thread.sleep(2000);
+						driver.findElement(By.xpath("//*[@class='back-icon']")).click();
+						
+						
+						Thread.sleep(10000);
+						try {
+						driver.findElement(By.xpath("//*[@class='back-icon']")).click();
+						}catch (Exception e) {
+							// TODO: handle exception
+						}
+						
+					//	Thread.sleep(10000);
+					//	driver.findElement(By.xpath("//*[@class='back-icon']|//*[@css='DIV.backlink.ng-star-inserted']")).click();
+						
+						Thread.sleep(10000);
+						try {
+							btnclick(m.getMsite_Cart_Search());
+							Thread.sleep(2000);
+						btnclick(m.getSearch_X_button());
+						Thread.sleep(2000);
+						
+						} catch (Exception e) {
+							// TODO: handle exception
+						}
+						Thread.sleep(2000);
+						Thread.sleep(2000);
+						Thread.sleep(2000);
+	              
+				}
+				
+				
+				 //Share ICON
+				/////////////////
+				Thread.sleep(2000);
+				m.getSearchbarone().sendKeys(MobileBaseClass.getExcelData("AndPDP", 2, 0));
+				
+				Thread.sleep(5000);
+				driver.hideKeyboard();
+				
+				Thread.sleep(5000);
+				Thread.sleep(2000);
+				letschat();
+				try {
+					Thread.sleep(2000);
+					//	btnclick(m.getMsite_SearchResult_drugName());
+					//	m.getMsite_SearchResult_drugName().click();
+						driver.findElement(By.xpath("//*[@class='leftside-icons col-2 p-0']|(//*[@nodeName='A'])[5]|(//*[@nodeName='A'])[6]")).click();
+						
+				} catch (Exception e) {
+					Thread.sleep(2000);
+				//	btnclick(m.getMsite_Search_Results().get(0));
+				//	m.getMsite_Search_Results().get(1).click();
+				}
+						Thread.sleep(5000);
+						
+						Thread.sleep(3000);
+						btnclick(m.getPDP_Share_Icon());
+						
+						Thread.sleep(3000);
+						btnclick(m.getPDP_Share_Close_Button());
+						
+					
+					//	driver.findElement(By.xpath("//*[@class='back-icon']")).click();
+					///////  Alternade // combo // frequently 
+						Thread.sleep(3000);
+						
+						driver.swipe(0, 500, 0, 0, 1000);
+						for (int i = 0; i <10; i++) {
+							Thread.sleep(2000);
+							driver.swipe(50, 500, 0, 0, 1000);
+							if (m.getPDP_ComboPack_text().isDisplayed()) {
+								break;
+							}else {
+								
+							}
+						}
+							
+						Thread.sleep(3000);
+						if (m.getPDP_ComboPack_text().getText().contains("COMBO PACKS")) {
+							
+							Thread.sleep(3000);
+							if (m.getPDP_BuyPack_ComboList().size()==2) {
+								
+								Thread.sleep(3000);
+								String Mrp = gettext(m.getPDP_BuyPack_Combo_PriceList().get(1));
+								System.out.println(Mrp);
+								Thread.sleep(3000);
+								btnclick(m.getPDP_BuyPack_ComboList().get(1));
+								
+								Thread.sleep(3000);
+						//		btnclick(m.getSnackBar_GotIT_btn());
+								
+								Thread.sleep(5000);
+								btnclick(m.getPDP_ProceedToCart());
+								
+								Thread.sleep(10000);
+							letschat();
+								
+								Thread.sleep(5000);
+								String Mrp1 = gettext(m.getCart_Price());
+								System.out.println(Mrp1);
+								Thread.sleep(2000);
+								String qty = gettext(m.getCart_Quantity());
+								System.out.println(qty);
+								Thread.sleep(2000);
+								if (Mrp.contains(Mrp1)) {
+									
+									System.out.println("The Combo Buy Pack 4 Price Matched with PDP Page and Cart Page");
+									
+								} else {
+									
+									System.err.println("The Combo Buy Pack 4 Price is not Matched with PDP Page and Cart Page");
+
+								}
+								Thread.sleep(2000);
+								if (qty.contains("Qty : 4")) {
+									
+									System.out.println("The Combo Buy Pack 4 Quantity Matched with PDP Page and Cart Page");
+									
+								} else {
+									
+									System.err.println("The Combo Buy Pack 4 Quantity is not Matched with PDP Page and Cart Page");
+
+								}
+								
+								Thread.sleep(3000);
+								btnclick(driver.findElement(By.xpath("//*[@text='Remove']")));
+								
+								Thread.sleep(3000);
+								//driver.findElementByAccessibilityId("Navigate up").click();
+								Thread.sleep(3000);
+								
+							} else if (m.getPDP_BuyPack_ComboList().size()==1) {
+								
+								Thread.sleep(3000);
+								String Mrp = gettext(m.getPDP_BuyPack_Combo_PriceList().get(0));
+								
+								Thread.sleep(3000);
+								btnclick(m.getPDP_BuyPack_ComboList().get(0));
+								
+								Thread.sleep(3000);
+							//	btnclick(m.getSnackBar_GotIT_btn());
+								
+								Thread.sleep(3000);
+								btnclick(m.getPDP_ProceedToCart());
+								
+								Thread.sleep(5000);
+								String Mrp1 = gettext(m.getCart_Price());
+								
+								Thread.sleep(2000);
+								String qty = gettext(m.getCart_Quantity());
+								
+								Thread.sleep(2000);
+								if (Mrp.contains(Mrp1)) {
+									
+									System.out.println("The Combo Buy Pack 4 Price Matched with PDP Page and Cart Page");
+									
+								} else {
+									
+									System.err.println("The Combo Buy Pack 4 Price is not Matched with PDP Page and Cart Page");
+
+								}
+								
+								
+								Thread.sleep(2000);
+								if (qty.contains("Qty : 2")) {
+									
+									System.out.println("The Combo Buy Pack 4 Quantity Matched with PDP Page and Cart Page");
+									
+								} else {
+									
+									System.err.println("The Combo Buy Pack 4 Quantity is not Matched with PDP Page and Cart Page");
+
+								}
+								
+								
+								///
+								Thread.sleep(3000);
+								btnclick(m.getRemoveButton());
+								
+								
+								Thread.sleep(3000);
+							//	driver.findElementByAccessibilityId("Navigate up").click();
+								
+								
+							} else {
+								
+								
+							}
+
+							
+							
+							
+						} else {
+							
+							System.out.println("There is no Combo Pack Available");
+
+						}
+	}
 	
 	
 

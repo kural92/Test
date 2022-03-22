@@ -765,7 +765,7 @@ public class AndriodPom extends MobileBaseClass{
 		
 		
 		
-		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/proceed_to_checkout_btn")
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/proceed_to_checkout_btn|com.NetmedsMarketplace.Netmeds:id/cart_proceed_btn")
 		private WebElement PDP_ProceedToCart;
 		public WebElement getPDP_ProceedToCart() {
 			return PDP_ProceedToCart;

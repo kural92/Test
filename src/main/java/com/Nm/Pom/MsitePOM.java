@@ -1057,7 +1057,7 @@ public class MsitePOM extends MsiteBaseClass{
 		}
 		
 		
-		@FindBy(xpath="//*[@class='counter']")
+		@FindBy(xpath="//*[@text=' Add to Cart ']|//*[@class='counter']")
 		private WebElement PDP_Cart_btn;
 		public WebElement getPDP_Cart_btn() {
 			return PDP_Cart_btn;
@@ -1176,7 +1176,7 @@ public class MsitePOM extends MsiteBaseClass{
 				
 
 
-@FindBy(id="search")
+@FindBy(xpath = "//*[@name='q']")//(id="search")
 private WebElement Header_SearchBar;
 public WebElement getHeader_SearchBar() {
 return Header_SearchBar;

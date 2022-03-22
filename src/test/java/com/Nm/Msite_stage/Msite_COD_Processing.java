@@ -8,6 +8,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -21,6 +23,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
@@ -93,6 +96,8 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 		
 		MsitePOM m = new MsitePOM();
 		
+		for (int k = 0; k < 4; k++) {
+		
 		 driver.get("http://m.netmeds.com");
 	        
 		  driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
@@ -127,6 +132,129 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 				//////
 				Thread.sleep(5000);
 				driver.get("https://m.netmeds.com");
+
+				driver.findElement(By.xpath("//*[@text='Search for medicine & wellness products...' and @nodeName='SPAN']")).click();
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@name='q']")).sendKeys( "Horlicks Health Drink Powder Classic Malt 500 gm (Refill Pack)");//Patanjali Lauh Bhasm Powder 5 gm
+				Thread.sleep(1500);
+				driver.pressKeyCode(AndroidKeyCode.ENTER);
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@text and @nodeName='DIV' and ./parent::*[@nodeName='A' and (./preceding-sibling::* | ./following-sibling::*)[@nodeName='DIV']]]")).click();
+				// btncli(m.getSearchIcon());
+				logger.log(Status.PASS, "Successfully navigate to search result page" );
+
+				
+				//add to the cart
+				
+				Thread.sleep(3000);
+				 driver.swipe(0, 500, 0, 0, 1000);
+					try {
+						Thread.sleep(3000);
+						driver.findElement(By.xpath("//*[@text=' ADD TO CART ']")).click();
+					
+					}catch (Exception e) {
+						// TODO: handle exception
+					}
+					Thread.sleep(5000);
+					
+					//add the product
+					
+					driver.findElement(By.xpath("//*[@text and @nodeName='SPAN' and ./parent::*[@nodeName='DIV' and ./parent::*[@nodeName='A']]]")).click();
+					logger.log(Status.PASS, "Successfully navigate to cart page" );
+					Thread.sleep(15000);
+					driver.findElement(By.xpath("//*[@text='Proceed']")).click();
+					logger.log(Status.PASS, "Successfully navigate to search order review page" );
+					try {
+						Thread.sleep(2000);
+						driver.findElement(By.xpath("//*[@id='cross-button-polygon' and ./parent::*[./parent::*[./parent::*[@nodeName='DIV']]]]")).click();
+					}catch (Exception e) {
+						// TODO: handle exception
+					}
+
+
+					
+
+			Thread.sleep(3000);
+			//driver.swipe(0, 900, 0, 0, 1000);
+			Thread.sleep(3000);
+			//touchAction.tap(i-100,i1-100).perform();
+			driver.findElement(By.xpath("//*[@text='Pay']")).click();
+			Thread.sleep(3000);
+
+
+
+			for (int i = 0; i < 5; i++) {
+				
+				Thread.sleep(3000);
+				driver.swipe(0, 900, 0, 0, 1000);
+				
+				if (m.getPayment_cod_list().size()==1) {
+					
+					Thread.sleep(3000);
+					 btnclick(m.getPayment_cod());
+					break;
+				} else {
+					
+					System.out.println("Swipe Down to click on pay Button");
+
+				}}
+			
+			Thread.sleep(3000);
+			try {
+				letschat();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			Thread.sleep(3000);
+			try {
+			btnclick(m.getPayment_paybutton());
+			} catch (Exception e) {
+				driver.findElement(By.xpath("//*[@text and @nodeName='BUTTON']|//*[@text='PAY WITH CASH']")).click();
+			}
+		}
+			/*
+			driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);driver.swipe(0, 900, 0, 0, 1000);
+			Thread.sleep(3000);
+			MobileElement cod = (MobileElement) driver.findElement(By.xpath("//*[@id='nms_cod' and @name='nmsmstr_paymethod']"));cod.click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//*[@text and @nodeName='BUTTON']")).click();*/
+
+
+
+
+
+			 
+
+
+			/*Thread.sleep(3000);
+			driver.swipe(0, 900, 0, 0, 1000);*/
+
+
+			//Step 16 : Ensure order is placed successfully//
+
+			/*
+			 * Thread.sleep(10000); driver.swipe(0, 500, 0, 0, 1000); WebDriverWait wait =
+			 * new WebDriverWait(driver, 30);
+			 * wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.
+			 * xpath("//*[@text='Track Order']")))); Thread.sleep(1000);
+			 */
+				
+				
+				
+				
+				
+				
+				
+				
+	
+				
+				
+				
+				
+				
+				
+		/*		
 				
 
 				Thread.sleep(3000);
@@ -226,7 +354,7 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 				if (total<60||total>5000) {
 					
 					System.out.println("Unable to Process the payment / Cash on Delivery Option.The Net Value was Below 60 or above 5000");
-			/*	try {	
+				try {	
 					Thread.sleep(3000);
 					driver.swipe(0, 500, 0, 0, 1000);
 					
@@ -252,7 +380,7 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 				}catch (Exception e) {
 					// TODO: handle exception
 				}
-				*/
+				
 				/////
 					
 				} else {
@@ -295,7 +423,7 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 					Thread.sleep(3000);
 				
 					Thread.sleep(3000);
-					/*driver.swipe(0, 200, 0, 0, 1000);
+					driver.swipe(0, 200, 0, 0, 1000);
 				//	btnclick(m.getTrack_Order());
 				//	driver.findElement(By.xpath("//android.widget.Button[@text='TRACK ORDER']|//*[@text='TRACK ORDER']")).click();
 					 Thread.sleep(10000);
@@ -318,7 +446,7 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 					driver.get("https://m.netmeds.com/customer/orderhistory");
 					
 					Thread.sleep(10000);
-					*/
+					
 					
 					
 				}
@@ -355,23 +483,20 @@ public class Msite_COD_Processing extends MsiteBaseClass {
 						Thread.sleep(10000);
 						driver.get("https://m.netmeds.com/customer/orderhistory");
 						
-						Thread.sleep(10000);
+						Thread.sleep(10000);*/
 					
-				}
+		//		}
 				
 				
 		
 		
 
-	}
-	
-	
+//	}
 
+//}
+//	}
+
+/////
 }
-				}
-				
-				/////
-				}
-	
-	
+
 }
