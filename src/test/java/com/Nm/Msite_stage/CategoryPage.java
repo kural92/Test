@@ -38,6 +38,7 @@ public class CategoryPage extends MsiteBaseClass {
 	
 	
 	
+	
 	ExtentHtmlReporter htmlReporter;
 	 public static ExtentReports report;
 		public static  ExtentTest logger;
@@ -52,6 +53,7 @@ public class CategoryPage extends MsiteBaseClass {
 		//	capabilities.setCapability(MobileCapabilityType.UDID, "07c55fe10406");  //fc95d519 //RZ8R20GLXTA
 
 			capabilities.setCapability("platformName", "Android");
+			
 		//	capabilities.setCapability("deviceName", "vivo 1819");
 		//	capabilities.setCapability("platformVersion","10.0.0" );
 			//for m-site
