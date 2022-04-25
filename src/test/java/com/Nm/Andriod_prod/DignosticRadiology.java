@@ -97,7 +97,7 @@ public class DignosticRadiology extends MobileBaseClass {
    	
    }
 	
-	@Test(enabled=true,priority =1,retryAnalyzer=RetryAnalyzer.class)
+	@Test(enabled=true,priority =1)
 	public void Dignostic_radiology() throws Throwable {
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -107,6 +107,27 @@ public class DignosticRadiology extends MobileBaseClass {
 		
 		Thread.sleep(10000);
 		AndriodPom m = new AndriodPom();
+	
+	Thread.sleep(5000);
+	for (int i = 0; i < 16; i++) {
+		Thread.sleep(3000);
+		if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/popular_concern_diag_title']")).size() == 0)) {
+
+			try {
+				//Thread.sleep(3000);
+				 driver.swipe(0, 700, 0, 0, 1000);	
+				// driver.swipe(0, 700, 0, 0, 1000);	
+				 } catch (Exception e) {
+				// TODO: handle exception
+			}
+
+		} else {
+			logger.log(Status.PASS, "Successfully Product Removed from Cart");
+			break;
+
+		}
+	}
+	Thread.sleep(2000);
 	btnclick(m.getDiag_image());
 	Thread.sleep(3000);
 	btnclick(m.getTxtViewTitleRadio());	

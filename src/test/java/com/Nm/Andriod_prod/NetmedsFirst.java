@@ -159,11 +159,12 @@ driver.resetApp();		}
 		Thread.sleep(5000);
 		for (int i = 0; i < 16; i++) {
 			Thread.sleep(3000);
-			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/netmeds_first_title']")).size() == 0)) {
+			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/netmeds_first_action_button']")).size() == 0)) {
 
 				try {
 					Thread.sleep(3000);
-					 driver.swipe(0, 700, 0, 0, 1000);			
+					 driver.swipe(0, 700, 0, 0, 1000);	
+					// driver.swipe(0, 700, 0, 0, 1000);	
 					 } catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -178,7 +179,7 @@ driver.resetApp();		}
 		
 		SoftAssert Assert=new SoftAssert();
 			Assert.assertEquals( m.getHomepage_netmeds_first_title().getText(),"Save more with Netmeds First Membership");
-			Assert.assertNotNull(m.getHomepage_netmeds_first_sub_title().getText());
+			//Assert.assertNotNull(m.getHomepage_netmeds_first_sub_title().getText());
 			Assert.assertEquals( m.getHomepage_netmeds_first_discount().getText(),"Starting at Rs.299");
 			Assert.assertEquals( m.getHomepage_netmeds_first_action_button().getText(),"Explore Plans");
 			btnclick(m.getHomepage_netmeds_first_action_button());
@@ -233,6 +234,7 @@ m.getSearchbarone().sendKeys(s);
 	 
 Thread.sleep(2000);
 btnclick(m.getSearch_drugname());
+
 Thread.sleep(5000);
 
  driver.swipe(0, 500, 0, 0, 1000);
@@ -245,11 +247,18 @@ btnclick(m.getAddtoCartButton());
 Thread.sleep(5000);
 btnclick(m.getGotocart()); 
 Thread.sleep(5000);
-Assert.assertEquals("Become Netmeds First Member", m.getCart_prime_header_text().getText());
-Assert.assertEquals("Join membership to save much more! Exclusive offers designed for you",m.getCart_prime_sub_header_text().getText());
+Assert.assertNotNull( m.getCart_prime_header_text().getText());
+Assert.assertNotNull(m.getCart_prime_sub_header_text().getText());
+
+//Thread.sleep(3000);
+//driver.swipe(900, 500, 900, 100, 1000);
+Thread.sleep(5000);
+driver.findElement(By.xpath("//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/layout_dot']/android.widget.TextView[@index='1']")).click();
+Thread.sleep(1500);
 btnclick(m.getCart_img_circle_arrow());
 Thread.sleep(5000);
 btnclick(m.getNetmedsFirstPage_6month());
+Thread.sleep(1500);
 for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
