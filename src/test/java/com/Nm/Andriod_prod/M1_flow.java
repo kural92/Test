@@ -115,7 +115,7 @@ public class M1_flow extends MobileBaseClass {
 		Thread.sleep(10000);
 		popupclose();
 		popupclose();
-		/* */
+		
 		try {
 			
 			Thread.sleep(2000);
