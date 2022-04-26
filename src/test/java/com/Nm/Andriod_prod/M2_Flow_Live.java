@@ -193,13 +193,13 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		Thread.sleep(10000);
 	 //btncli(driver.findElement(By.xpath("//android.view.View[@index='0']"))); com.google.android.documentsui:id/icon_thumb
-		WebElement image =driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']"));
-		
+	//WebElement image =driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]|//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb']|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']"));
+		WebElement image =	driver.findElement(By.xpath("//android.widget.LinearLayout[@content-desc=\"20220426_154205.jpg, 1.92 MB, 15:42\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[1]"));
 
 		try {
 			
 			System.out.println("");
-		//	image.click();
+			image.click();
 		} catch (Exception e) { Thread.sleep(3000);
      // new TouchAction(driver).moveTo(image).waitAction(2000).press(image).perform();
 		//	new TouchAction(driver).moveTo(150, 700).waitAction(2000).tap(150, 700).perform();
@@ -220,6 +220,9 @@ public class M2_Flow_Live extends MobileBaseClass{
 		
 		Thread.sleep(2000);
 		type(m.getM2_SearchBar(), MobileBaseClass.getExcelData("AndM2", 0, 0));
+		
+		Thread.sleep(2000);
+		driver.hideKeyboard();
 		
 		Thread.sleep(5000);
 		btnclick(m.getM2_Search_AddToCart());
@@ -370,7 +373,7 @@ public class M2_Flow_Live extends MobileBaseClass{
 		}
 		
 
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		btnclick(m.getM2_OrderNow());
 		
 		

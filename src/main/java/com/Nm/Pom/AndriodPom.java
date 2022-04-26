@@ -342,7 +342,8 @@ public class AndriodPom extends MobileBaseClass{
 		
 		///////////////////////////////////////////////   M2 FLOW  ////////////////////////////////////////////////////////////////
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/order_medicine_button']")
+		//@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/order_medicine_button']")
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/order_medicine_container")
 		private WebElement m2_OrderNow;
 		public WebElement getM2_OrderNow() {
 			return m2_OrderNow;

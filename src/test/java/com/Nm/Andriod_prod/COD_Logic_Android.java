@@ -201,7 +201,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 	}
 	
 	float total ;
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		String Tot = m.getOrderReview_TotalAmount().getText();
 		System.out.println(Tot);
 		try {
@@ -273,7 +273,7 @@ public class COD_Logic_Android extends MobileBaseClass {
 			for (int j = 0; j < 7; j++) {
 				
 				Thread.sleep(3000);
-				driver.swipe(0, 600, 0, 0, 1000);
+				driver.swipe(0, 800, 0, 0, 1000);
 				Thread.sleep(1000);
 				if (m.getCOD_CheckBox_Lst().size()==1) {
 					Thread.sleep(3000);
