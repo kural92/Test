@@ -131,8 +131,29 @@ public class DiagnosticPathology extends MobileBaseClass {
 		}catch(Exception e) {
 				System.out.println("Already logged in");
 			}
-		Thread.sleep(10000);
-	btnclick(m.getDiag_image());
+		//Thread.sleep(10000);
+		Thread.sleep(5000);
+		for (int i = 0; i < 16; i++) {
+			Thread.sleep(3000);
+			if ((driver.findElements(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/popular_concern_diag_title']")).size() == 0)) {
+
+				try {
+					//Thread.sleep(3000);
+					 driver.swipe(0, 700, 0, 0, 1000);	
+					// driver.swipe(0, 700, 0, 0, 1000);	
+					 } catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			} else {
+				logger.log(Status.PASS, "Successfully Product Removed from Cart");
+				break;
+
+			}
+		}
+		Thread.sleep(2000);
+		btnclick(m.getDiag_image());
+		Thread.sleep(2000);
 	btnclick(m.getTextPinCode());	
 	type(m.getEdtPinCode(), "624709");
 	driver.hideKeyboard(); btnclick(m.getCHECK());	
