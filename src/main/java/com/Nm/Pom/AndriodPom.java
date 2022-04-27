@@ -342,7 +342,8 @@ public class AndriodPom extends MobileBaseClass{
 		
 		///////////////////////////////////////////////   M2 FLOW  ////////////////////////////////////////////////////////////////
 		
-		@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/order_medicine_button']")
+		//@FindBy(xpath = "//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/order_medicine_button']")
+		@FindBy(id="com.NetmedsMarketplace.Netmeds:id/order_medicine_container")
 		private WebElement m2_OrderNow;
 		public WebElement getM2_OrderNow() {
 			return m2_OrderNow;
@@ -1461,7 +1462,7 @@ public List<WebElement> getViewdetails_List() {
 		}
 
 
-		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/account_text")
+		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/nav_bar_item_account")
 		private WebElement Home_accountPage;
 		@FindBy(id = "com.NetmedsMarketplace.Netmeds:id/cl_elite")
 		private WebElement acountPage_NetmedsFirstmember;
@@ -2263,7 +2264,7 @@ public List<WebElement> getViewdetails_List() {
 	}
 
 
-	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/diag_image")
+	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/popular_concern_diag_action_button")
 	private WebElement diag_image;
 	@FindBy(id ="com.NetmedsMarketplace.Netmeds:id/textPinCode")
 	private WebElement textPinCode;

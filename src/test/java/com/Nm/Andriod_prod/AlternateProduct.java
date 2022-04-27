@@ -33,7 +33,7 @@ public class AlternateProduct extends MobileBaseClass {
 		@BeforeClass
 		public void launchbrowser() {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			//capabilities.setCapability(MobileCapabilityType.UDID, UDID); //RZ8R20GLXTA //GBT4C19326001968
+		//	capabilities.setCapability(MobileCapabilityType.UDID, UDID); //RZ8R20GLXTA //GBT4C19326001968
 			capabilities.setCapability("platformName", "Android");
 			//capabilities.setCapability("deviceName", "vivo 1819");
 	//		capabilities.setCapability("platformVersion","10.0.0" );
@@ -98,6 +98,7 @@ public class AlternateProduct extends MobileBaseClass {
 			driver.hideKeyboard();
 		} catch (Exception e) {
 			driver.launchApp();
+			
 		}
 		
 		
@@ -139,6 +140,8 @@ public class AlternateProduct extends MobileBaseClass {
 		Thread.sleep(5000);
 		btnclick(m.getCart_search());
 		Thread.sleep(2000);
+		
+		
 		
 		
 		Thread.sleep(3000);
