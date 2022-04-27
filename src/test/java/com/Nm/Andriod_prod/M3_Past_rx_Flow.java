@@ -76,26 +76,26 @@ public class M3_Past_rx_Flow extends MobileBaseClass {
 					
 		}
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
-   public void startReport() {
-   	
-      htmlReporter = new ExtentHtmlReporter(".//Report//AlternateBrand.html");
-       
-       //initialize ExtentReports and attach the HtmlReporter
-       report = new ExtentReports();
-       
-     // htmlReporter.setAppendExisting(true);
-       report.attachReporter(htmlReporter);
-       report.setSystemInfo("Host name", "localhost");
-       report.setSystemInfo("Environemnt", "QA");
-       report.setSystemInfo("user", "Automation Team");
-   
-       //configuration items to change the look and feel
-       //add content, manage tests etc
+  public void startReport() {
+  	
+     htmlReporter = new ExtentHtmlReporter(".//Report//AlternateBrand.html");
+      
+      //initialize ExtentReports and attach the HtmlReporter
+      report = new ExtentReports();
+      
+    // htmlReporter.setAppendExisting(true);
+      report.attachReporter(htmlReporter);
+      report.setSystemInfo("Host name", "localhost");
+      report.setSystemInfo("Environemnt", "QA");
+      report.setSystemInfo("user", "Automation Team");
+  
+      //configuration items to change the look and feel
+      //add content, manage tests etc
 
-       htmlReporter.config().setDocumentTitle("Extent Report ");
-       htmlReporter.config().setReportName("NetMeds.com");
+      htmlReporter.config().setDocumentTitle("Extent Report ");
+      htmlReporter.config().setReportName("NetMeds.com");
 
-       //htmlReporter.config().setTheme(Theme.STANDARD);
+      //htmlReporter.config().setTheme(Theme.STANDARD);
    	
    }
 	
@@ -153,6 +153,9 @@ public class M3_Past_rx_Flow extends MobileBaseClass {
 		
 		
 		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
+		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
 		btnclick(m.getCreatenew_subscription());
@@ -170,6 +173,14 @@ public class M3_Past_rx_Flow extends MobileBaseClass {
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
+try{
+				
+				driver.hideKeyboard();
+			
+			}catch (Exception e) {
+				
+				System.out.println("no keyboard available to hide");
+			}
 
 			//String Cart_Excel = MobileBaseClass.getExcelData("Otcandnonrx", i, 1);
 
@@ -290,7 +301,7 @@ System.out.println("Order was placed successfully");
 for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
+	driver.swipe(0, 1200, 0, 0, 1000);
 	
 	if (m.getPayment_cod_list().size()==1) {
 		
@@ -302,6 +313,7 @@ for (int i = 0; i < 10; i++) {
 		System.out.println("Swipe Down to click on Pay Button");
 
 	}}
+driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(3000);
@@ -309,6 +321,9 @@ Thread.sleep(3000);
 
 
 btnclick(m.getMyorders());
+
+Thread.sleep(6000);
+driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
 
 Thread.sleep(3000);
 	

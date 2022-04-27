@@ -285,6 +285,7 @@ return text;
 	 driver.findElement(By.xpath("//android.widget.TextView[@text='APPLY']")).click();
 	 Thread.sleep(7000);
 	 
+	 driver.swipe(0, 900, 0, 0, 1000);
 	 System.out.println ("drug name is "+ driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.NetmedsMarketplace.Netmeds:id/alternateBrain_drug_name']")).getText());
 	 
 	 Thread.sleep(7000);

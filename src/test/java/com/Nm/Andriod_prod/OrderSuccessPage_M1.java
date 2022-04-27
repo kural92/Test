@@ -392,7 +392,8 @@ try {
 
 		//my orders
 
-		
+//		driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
+		Thread.sleep(5000);
 		btnclick(m.getMyorders());
 
 		Thread.sleep(6000);

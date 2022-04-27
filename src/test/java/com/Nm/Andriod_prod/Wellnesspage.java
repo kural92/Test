@@ -40,7 +40,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class CategoryPage extends MobileBaseClass {
+public class Wellnesspage extends MobileBaseClass {
 
 	
 	ExtentHtmlReporter htmlReporter;
@@ -191,7 +191,7 @@ public class CategoryPage extends MobileBaseClass {
 	logger.log(Status.PASS, "Successfully Naviagted to Wellness Page");
 	//View all
 	Thread.sleep(6000);
-	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/wellness_viewAll")).click();
+	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/section_view_all")).click();
 	
 
 	
@@ -200,7 +200,7 @@ public class CategoryPage extends MobileBaseClass {
 	
 	
 		
-	System.out.println("Category Page is working properly");
+	System.out.println("Wellness Page is working properly");
 		
 		
 		

@@ -169,7 +169,7 @@ public class Youraccount_Mywallet extends MobileBaseClass {
 		
 		
 //Step 3 : Navigate to user profile//
-
+			Thread.sleep(5000);
 		btnclick(m.getUserprofile());
 		Thread.sleep(3000);
 		logger.log(Status.PASS, "Successfully navigate to userprofile");

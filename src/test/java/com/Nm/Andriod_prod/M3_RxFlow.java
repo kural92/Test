@@ -152,7 +152,8 @@ public class M3_RxFlow extends MobileBaseClass {
 		 
 			popupclose();
 		
-		
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
+		Thread.sleep(5000);
 		Thread.sleep(6000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -171,6 +172,14 @@ public class M3_RxFlow extends MobileBaseClass {
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
+try{
+				
+				driver.hideKeyboard();
+			
+			}catch (Exception e) {
+				
+				System.out.println("no keyboard available to hide");
+			}
 
 			//String Cart_Excel = MobileBaseClass.getExcelData("Otcandnonrx", i, 1);
 
@@ -303,7 +312,7 @@ System.out.println("Order was placed successfully");
 for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
+	driver.swipe(0, 1300, 0, 0, 1000);
 	
 	if (m.getPayment_cod_list().size()==1) {
 		
@@ -324,8 +333,9 @@ Thread.sleep(3000);
 
 btnclick(m.getMyorders());
 
+Thread.sleep(6000);
+driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
 Thread.sleep(3000);
-	
 //View details
 
 

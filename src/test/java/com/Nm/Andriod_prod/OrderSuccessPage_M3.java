@@ -108,8 +108,9 @@ public class OrderSuccessPage_M3 extends MobileBaseClass {
 		
 		driver.launchApp();
 			
-
-		
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
+		Thread.sleep(5000);
 		
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
@@ -126,6 +127,14 @@ public class OrderSuccessPage_M3 extends MobileBaseClass {
 		for (int i = 0; i < 2; i++) {
 
 			type(m.getM3productsearch(), MobileBaseClass.getExcelData("Otcandnonrx", i, 0));
+			try{
+				
+				driver.hideKeyboard();
+			
+			}catch (Exception e) {
+				
+				System.out.println("no keyboard available to hide");
+			}
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
@@ -217,7 +226,7 @@ System.out.println("Order was placed successfully");
 for (int i = 0; i < 10; i++) {
 	
 	Thread.sleep(3000);
-	driver.swipe(0, 900, 0, 0, 1000);
+	driver.swipe(0, 1300, 0, 0, 1000);
 	
 	if (m.getPayment_cod_list().size()==1) {
 		
@@ -229,6 +238,7 @@ for (int i = 0; i < 10; i++) {
 		System.out.println("Swipe Down to click on pay Button");
 
 	}}
+driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(10000);
@@ -349,6 +359,8 @@ Thread.sleep(3000);
 
 
 btnclick(m.getMyorders());
+Thread.sleep(3000);
+driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
 
 Thread.sleep(3000);
 	

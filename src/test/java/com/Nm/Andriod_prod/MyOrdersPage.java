@@ -163,17 +163,19 @@ static String totalamt;
 		
 		
 	//Step 3 : Navigate to user profile//
-
-			btnclick(m.getUserprofile());
-			Thread.sleep(3000);
-			logger.log(Status.PASS, "Successfully navigate to userprofile");
-			System.out.println("Successfully navigate to userprofile");
+			//Thread.sleep(3000);
+			//btnclick(m.getUserprofile());
+			//Thread.sleep(3000);
+			//logger.log(Status.PASS, "Successfully navigate to userprofile");
+			//System.out.println("Successfully navigate to userprofile");
 
 
 		
 //Cancel order//
 		
-		btnclick(m.getMyorders());
+			
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
+	//	btnclick(m.getMyorders());
 		
 		Thread.sleep(3000);
 		

@@ -165,6 +165,8 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 	
 	
 		Thread.sleep(5000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
+		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
 		btnclick(m.getCreatenew_subscription());
@@ -182,7 +184,15 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
-
+			
+			try{
+				
+				driver.hideKeyboard();
+			
+			}catch (Exception e) {
+				
+				System.out.println("no keyboard available to hide");
+			}
 			//String Cart_Excel = MobileBaseClass.getExcelData("Otcandnonrx", i, 1);
 
 			// Step 7 : Add product to the cart//
@@ -370,11 +380,11 @@ public class Uploadprescriptioncheck extends MobileBaseClass {
 			
 			Thread.sleep(2000);
 			
-			driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[3]|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']")).click();
+		//	driver.findElement(By.xpath("(//android.widget.ImageView[@resource-id ='com.google.android.documentsui:id/icon_thumb'])[4]|//android.widget.ImageView[@resource-id='com.android.documentsui:id/icon_thumb']|(androidx.cardview.widget.CardView[@resource-id='com.google.android.documentsui:id/item_root'])[3]")).click();
  
 			
 			
-			System.out.println("PDF prescriptions are attached" );
+		//	System.out.println("PDF prescriptions are attached" );
 			
 	}
 	

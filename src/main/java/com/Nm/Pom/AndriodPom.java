@@ -49,7 +49,7 @@ public class AndriodPom extends MobileBaseClass{
 			return Login;
 		}
 		
-		@FindBy(xpath ="//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/subscription_image']")
+		@FindBy(xpath ="//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/subscription_image']|//android.widget.LinearLayout[@content-desc=\"Subscription\"]")
 		private WebElement Subscription;
 		public WebElement getSubscription() {
 			return Subscription;
@@ -1167,6 +1167,13 @@ public List<WebElement> getViewdetails_List() {
 	public List<WebElement> getConsultation_Btn_List() {
 		return Consultation_Btn_List;
 	}
+	
+	
+	@FindBy(id="//android.widget.TextView[@text='Shop by Category']")
+	private List<WebElement> Shop_by_Category;	
+	public List<WebElement> getShop_by_Category() {
+		return Shop_by_Category;
+	}
 
 
 	@FindBy(id="com.NetmedsMarketplace.Netmeds:id/btn_start_consultation")
@@ -1779,7 +1786,7 @@ public List<WebElement> getViewdetails_List() {
 
 		//Delivery Address
 
-		@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/account_image']")
+		@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/account_image']|android.widget.TextView[@text='Account']|android.widget.ImageView[@resource-id='com.NetmedsMarketplace.Netmeds:id/icon']|//android.widget.FrameLayout[@content-desc='Account']")
 			private WebElement userprofile;
 			public WebElement getUserprofile() {
 			return userprofile;

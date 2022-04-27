@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.codehaus.groovy.ast.stmt.TryCatchStatement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -100,7 +101,7 @@ public class M3_OTCFlow extends MobileBaseClass {
    }
 	
 //*****************************************************************M3 Subscription OTC Flow	*********************************************************
-	@Test(enabled = true)
+	@Test(enabled = true)//,retryAnalyzer = RetryAnalyzer.class)
 	public void M3SubscriptionOTCflow() throws Throwable {
 		
 		logger =  report.createTest("M3 - Subscription OTC Flow");
@@ -149,7 +150,7 @@ public class M3_OTCFlow extends MobileBaseClass {
 		 
 			popupclose();
 		
-		
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
 		Thread.sleep(5000);
 		btnclick(m.getSubscription());
 		Thread.sleep(6000);
@@ -168,6 +169,14 @@ public class M3_OTCFlow extends MobileBaseClass {
 
 			// btncli(m.getSearchIcon());
 			logger.log(Status.PASS, "Successfully navigate to search result page");
+			try{
+				
+				driver.hideKeyboard();
+			
+			}catch (Exception e) {
+				
+				System.out.println("no keyboard available to hide");
+			}
 
 			//String Cart_Excel = MobileBaseClass.getExcelData("Otcandnonrx", i, 1);
 
@@ -180,6 +189,7 @@ public class M3_OTCFlow extends MobileBaseClass {
 						ExpectedConditions.elementToBeClickable(By.id("com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")));
 
 				Thread.sleep(3000);
+				
 
 				btnclick(Cart_btn);
 				
@@ -307,6 +317,7 @@ for (int i = 0; i < 10; i++) {
 		System.out.println("Swipe Down to click on Pay Button");
 
 	}}
+driver.swipe(0, 900, 0, 0, 1000);
 Thread.sleep(3000);
 btnclick(m.getPayment_paybutton());
 Thread.sleep(10000);
@@ -316,6 +327,9 @@ Thread.sleep(10000);
 
 
 btnclick(m.getMyorders());
+Thread.sleep(3000);
+
+driver.findElement(By.xpath("//android.widget.TextView[@text='Orders']")).click();
 
 Thread.sleep(3000);
 	

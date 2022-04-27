@@ -234,6 +234,8 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 					
 					type(m.getM3productsearch(),"Flavedon MR 35mg Tablet 10'S");
 					
+					driver.hideKeyboard();
+					
 					Thread.sleep(3000);
 			WebElement		Cart_btn = (driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/add_to_cart_btn")));
 
@@ -247,12 +249,12 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 					System.out.println("Items are available in the cart");
 				}
 				
-				
+				Thread.sleep(3000);
 				driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/cart")).click();
 				Thread.sleep(3000);
 				
 				
-				//Select qtyincrease = new Select(m.getQty_Incr_Decr());
+			/*	//Select qtyincrease = new Select(m.getQty_Incr_Decr());
 				//qtyincrease.selectByIndex(3);
 				
 				Thread.sleep(3000);
@@ -265,7 +267,7 @@ public class Youraccount_OffersPage extends MobileBaseClass {
 				WebElement qty_increase = driver.findElement(By.xpath("//android.widget.TextView[@text='18']|(//android.widget.LinearLayout[@resource-id='com.NetmedsMarketplace.Netmeds:id/cn_item_parent'])[13]"));
 				Thread.sleep(3000);
 				qty_increase.click();
-				Thread.sleep(6000);
+				Thread.sleep(6000);*/
 		
 	//Apply Promo
 	if ((driver.findElements(By.id("com.NetmedsMarketplace.Netmeds:id/chk_apply_promo_code"))).size()!=0) {

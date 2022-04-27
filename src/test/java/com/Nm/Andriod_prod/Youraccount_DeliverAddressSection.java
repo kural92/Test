@@ -219,7 +219,7 @@ public class Youraccount_DeliverAddressSection extends MobileBaseClass {
 		Thread.sleep(3000);
 		List<WebElement> delete  = driver.findElements(By.xpath("(//android.widget.TextView[@text='DELETE'])"));
 
-		delete.get(1).click();
+		delete.get(0).click();
 
 		logger.log(Status.PASS, "Address was deleted successfully");
 		System.out.println("Address was deleted successfully");
