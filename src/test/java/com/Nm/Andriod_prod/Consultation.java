@@ -47,7 +47,7 @@ public class Consultation extends MobileBaseClass {
 	
 	
 	ExtentHtmlReporter htmlReporter;
-	 public static ExtentReports report;
+	 public static ExtentReports report; 
 		public static  ExtentTest logger;
 		@BeforeClass
 		public void launchbrowser() {
