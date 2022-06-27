@@ -18,6 +18,17 @@ public class AndriodPom extends MobileBaseClass{
 	
 	
 	//********************************************M3 FLow
+		@FindBy(xpath = "//android.widget.TextView[@text ='Beauty']")
+	private WebElement Beauty;
+		public WebElement getBeauty() {
+		return Beauty;
+	}
+
+	public List<WebElement> getStartassesment() {
+		return Startassesment;
+	}
+
+
 		@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.NetmedsMarketplace.Netmeds:id/lets_start']")
 		private WebElement Letsstarted;
 		public WebElement getLetsstarted() {

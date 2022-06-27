@@ -74,13 +74,13 @@ public class BackendBaseClass {
 		js.executeScript("window.scrollBy(0,"+Size+")");
 	}
 	public static int getRowCount(String sheetName) throws Throwable {
-		FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
+		FileInputStream fis = new FileInputStream(".//Test Data//LoginList.xlsx");
 	Workbook wb = WorkbookFactory.create(fis);
 	int rowIndex = wb.getSheet(sheetName).getLastRowNum();
 	return rowIndex;
 	}
 	public static String getExcelData(String sheetName, int rowNum, int colNum) throws Throwable{
-		FileInputStream fis = new FileInputStream(".//Test Data//SMSTEST.xlsx");
+		FileInputStream fis = new FileInputStream(".//Test Data//LoginList.xlsx");
 	Workbook wb = WorkbookFactory.create(fis);
 	Sheet sh = wb.getSheet(sheetName);
 	Row row = sh.getRow(rowNum);

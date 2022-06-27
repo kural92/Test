@@ -192,7 +192,9 @@ public class Wellnesspage extends MobileBaseClass {
 	//View all
 	Thread.sleep(6000);
 	driver.findElement(By.id("com.NetmedsMarketplace.Netmeds:id/section_view_all")).click();
-	
+	String S="{\\n  \\\"branchCode\\\": \\\"301\\\",\\n  \\\"orderId\\\": \\\"${step}\\\",\\n  \\\"primaryOrderId\\\": \\\"FLA0001867214\\\",\\n  \\\"orderTimestamp\\\": \\\"2022-01-07 16:10:03.000\\\",\\n  \\\"customerId\\\": \\\"d265e6ae18\\\",\\n  \\\"billingAddress\\\": {\\n    \\\"customerName\\\": \\\"testingload\\\",\\n    \\\"addressLine1\\\": \\\"outer ring road\\\",\\n    \\\"addressLine2\\\": \\\"akme harmony 2c 701\\\",\\n    \\\"city\\\": \\\"BANGALORE\\\",\\n    \\\"state\\\": \\\"Karnataka\\\",\\n    \\\"country\\\": \\\"India\\\",\\n    \\\"postalCode\\\": \\\"560084\\\",\\n    \\\"phone\\\": \\\"9620628843\\\"\\n  },\\n \\\"shippingAddress\\\": {\\n    \\\"shippingName\\\": \\\"Vijay JB\\\",\\n    \\\"addressLine1\\\": \\\"outer ring road\\\",\\n    \\\"addressLine2\\\": \\\"akme harmony 2c 701\\\",\\n    \\\"city\\\": \\\"BANGALORE\\\",\\n    \\\"state\\\": \\\"Karnataka\\\",\\n    \\\"country\\\": \\\"India\\\",\\n    \\\"postalCode\\\": \\\"560084\\\",\\n    \\\"phone\\\": \\\"9620628843\\\"\\n  },\\n  \\\"paymentMode\\\": \\\"COD\\\",\\n  \\\"totalBillAmt\\\": 1197.00,\\n  \\\"totalDueAmt\\\": 1197.00,\\n  \\\"tenderCusWalletAcc\\\": 0,\\n  \\\"totalTndAmt\\\": 0.00,\\n  \\\"tenderPaymentGateway\\\": 0.00,\\n  \\\"shippingCharges\\\": 0.00,\\n  \\\"customerOrderSource\\\": \\\"NMS\\\",\\n  \\\"customerOrderPriorityCode\\\": \\\"N\\\",\\n  \\\"metroFlag\\\": true,\\n  \\\"orderType\\\": \\\"O\\\",\\n  \\\"lineItemCount\\\": 1,\\n  \\\"items\\\": [\\n    {\\n      \\\"productShippingCharge\\\": 0,\\n      \\\"itemId\\\": \\\"943330\\\",\\n      \\\"seqNo\\\": 1,\\n      \\\"qty\\\": 3,\\n      \\\"discountPer\\\": 0,\\n      \\\"mrp\\\": 399.00,\\n      \\\"inflammableFlag\\\": false\\n    }\\n   \\n  ]\\n}\"\r\n" + 
+			"\r\n" + 
+			"";
 
 	
 	

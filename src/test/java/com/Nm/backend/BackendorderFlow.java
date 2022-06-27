@@ -1,5 +1,8 @@
 package com.Nm.backend;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -31,23 +34,11 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 public class BackendorderFlow extends BackendBaseClass {
 
 	
-	@BeforeClass
-	public  void browser() {
-
-		System.setProperty("webdriver.chrome.driver", ".//Driver//chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
-	driver= new ChromeDriver();
-		//driver.get("https://www.netmeds.com");
-		
-		driver.manage().window().maximize();
-		
-		
 	
-		
-	}
 	@BeforeTest(groups = {"forgetPassword","sanity","reg"})
 	   public void startReport() {
 	   	
-	      htmlReporter = new ExtentHtmlReporter(".//Report//Backendorderflow.html");
+	      htmlReporter = new ExtentHtmlReporter(".//Report//pharmapanel.html");
 	       
 	       //initialize ExtentReports and attach the HtmlReporter
 	       report = new ExtentReports();
@@ -70,172 +61,54 @@ public class BackendorderFlow extends BackendBaseClass {
 		
 	@Test
 	public void test() throws Throwable {
-		backendPom s = new backendPom();
+
 		logger =  report.createTest("BackendFlow");
 		logger.log(Status.PASS, "*************order move to control center********************" );
-		int rowCount = BackendBaseClass.getRowCount("orderIds");
+		int rowCount = BackendBaseClass.getRowCount("MV1");
 		System.out.println("total order'count ="+rowCount);
-for (int i = 0; i <= rowCount; i++) {
-	
-
-		Navi("https://stg-win.netmeds.com/s1-bo/login.aspx");
-		Thread.sleep(3000);
-		sendkeys(s.getUserName_View(), "view");
-		sendkeys(s.getPassword_View(), "view123");
-		clk(s.getLoginButton_View());
-		String AppID=getExcelData("orderIds", i, 0);
-		logger.log(Status.PASS, "order id"+AppID );
-
-		sendkeys(s.getOrderCode_View(), AppID);
-		thread(1000);
+for (int i = 1; i <= rowCount; i++) {
+	System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\Automation\\Driver\\chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
+	driver= new ChromeDriver();
+		//driver.get("https://www.netmeds.com");
 		
-		clk(s.getChck1_View());
-		clk(s.getChck2_View());
-		clk(s.getChck3_View());
-		clk(s.getChck4_View());
-		clk(s.getChck5_View());
-		clk(s.getChck6_View());
-		clk(s.getChck7_View());
-		clk(s.getChck8_View());
-		clk(s.getChck9_View());
-		clk(s.getChck10_View());
-		clk(s.getChck11_View());
-		clk(s.getChck12_View());
-		clk(s.getChck13_View());
-		clk(s.getChck14_View());
+		driver.manage().window().maximize();
+		logger.log(Status.PASS, "usercount"+i );
+		Thread.sleep(3000);
+		long startTime = System.currentTimeMillis();
+		driver.get("https://s1-labs.netmeds.com/v2pharma");
 		
 	
-		clk(s.getSubmit_View());
-		
-		
-		
-		Thread.sleep(3000);
-		
-		Navi("https://stg-win.netmeds.com/s1-nmsbackpanel/UI/Common/Login_new.aspx");
-		
-		thread(5000);
-		
-		sendkeys(s.getUsername_BO(), "test");
-		sendkeys(s.getPassword_BO(), "test123");
-		clk(s.getBtnLogin_BO());
-		
-		thread(2000);
-		clk(s.getOrderUpd_BO());
-		
-		sendkeys(s.getOrderCode_BO(), AppID);
-		
-		clk(s.getViewButton_BO());
-		
-		clk(s.getViewButton1_BO());
-		
-		thread(2000);
-		
-		WebElement OrdDes = driver.findElement(By.id("ContentPlaceHolder1_ddlstatus"));
-		
-		thread(5000);
-		
-		Select se = new Select (OrdDes);
-		
-		se.selectByVisibleText("Processing");
-		
-		clk(s.getUpdateButton_BO());
-		thread(5000);
-		//driver.switchTo().window(tabs.get(0));
-		Navi("https://stg-win.netmeds.com/s1-bo/login.aspx");
-		sendkeys(s.getUserName_View(), "view");
-		sendkeys(s.getPassword_View(), "view123");
-		clk(s.getLoginButton_View());
-		
-		sendkeys(s.getOrderCode_View(), AppID);
-		thread(1000);
-		
-		clk(s.getChck1_View());
-		clk(s.getChck2_View());
-		clk(s.getChck3_View());
-		clk(s.getChck4_View());
-		clk(s.getChck5_View());
-		clk(s.getChck6_View());
-		clk(s.getChck7_View());
-		clk(s.getChck8_View());
-		clk(s.getChck9_View());
-		clk(s.getChck10_View());
-		clk(s.getChck11_View());
-		clk(s.getChck12_View());
-		clk(s.getChck13_View());
-		clk(s.getChck14_View());
-		
-		clk(s.getSubmit_View());
-		
-		WebElement StatuView1 = s.getStatus_View();
-		String ViewStatusChange = StatuView1.getText();
-		System.out.println("Status of the order has been changed to"+ ViewStatusChange);
-		
-		//driver.switchTo().window(tabs.get(1));
-		Navi("https://stg-win.netmeds.com/ccpanel/Dashboard");
-		
-		thread(10000);
+		String user=getExcelData("MV1", i, 0);
+		String pass=getExcelData("MV1", i, 1);
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
+		logger.log(Status.PASS, "username"+user );
+
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys(pass);
+		logger.log(Status.PASS, "username"+pass );
+		Select s = new Select(driver.findElement(By.xpath("//select[@id='usertype']")));
+		s.selectByVisibleText("Pharmacy");
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
 		try {
-			sendkeys(s.getUsername_FC(), "karthik.d@netmeds.com");
-			sendkeys(s.getPassword_FC(), "Netmeds@123");
-			clk(s.getLoginButton_FC());
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		thread(3000);
-		
-			clk(s.getManuSubmit_FC());
-			
-		
-			
-		//driver.navigate().to("https://stg-win.netmeds.com/ccpanel/OrderSubmit/FcSelection");
-		thread(3000);
-		
-		sendkeys(s.getOrderID_FC(),AppID);
-		clk(s.getSubmit1_FC());
-		thread(2000);
-		WebElement FC = driver.findElement(By.xpath("//select[@id='drpfcvals']"));
-		
-		Select Sel = new Select (FC);
-		Sel.selectByValue("20008");
-		clk(s.getUpdate_FC());
-		thread(1000);
-		Navi("https://stg-win.netmeds.com/s1-bo/login.aspx");
-		Thread.sleep(3000);
-		
-		try { 
-			Thread.sleep(3000);
-			sendkeys(s.getUserName_View(), "view");
-			sendkeys(s.getPassword_View(), "view123");
-			clk(s.getLoginButton_View());
-		}catch (Exception e) {
-			// TODO: handle exception
-		}
-		sendkeys(s.getOrderCode_View(), AppID);
-		thread(1000);
-		
-		clk(s.getChck1_View());
-		clk(s.getChck2_View());
-		clk(s.getChck3_View());
-		clk(s.getChck4_View());
-		clk(s.getChck5_View());
-		clk(s.getChck6_View());
-		clk(s.getChck7_View());
-		clk(s.getChck8_View());
-		clk(s.getChck9_View());
-		clk(s.getChck10_View());
-		clk(s.getChck11_View());
-		clk(s.getChck12_View());
-		clk(s.getChck13_View());
-		clk(s.getChck14_View());
-		
-		clk(s.getSubmit_View());
-		thread(3000);
-		scrolldown("300");
-		WebElement Suborder = s.getSuborderID_View();
-		String subOrID = Suborder.getText();
-		System.out.println("Sub Order ID:" + subOrID);
-		logger.log(Status.PASS, "Sub Order ID:" + subOrID);
+		String ss=driver.findElement(By.xpath("//a[@class='dropdown-toggle']")).getText();
+		assertTrue(ss.equalsIgnoreCase(user));
+		}catch(Exception e) {
 
+			TakesScreenshot screenshot = (TakesScreenshot) driver;
+			File src = screenshot.getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(src, new File("./Report/"+ user+".png"));
+			System.out.println("Successfully captured a screenshot");
+			//logger.log(Status.FAIL, result.getThrowable());
+			logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath(user+".png"));
+		
+	
+			
+			
+		}
+		long endTime   = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		System.out.println(totalTime);
+		logger.log(Status.PASS, "total excution time:" +totalTime);
+		
 }	
 	}
 
