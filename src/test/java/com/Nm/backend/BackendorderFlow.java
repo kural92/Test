@@ -1,6 +1,7 @@
 package com.Nm.backend;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.io.File;
@@ -66,8 +67,8 @@ public class BackendorderFlow extends BackendBaseClass {
 		logger.log(Status.PASS, "*************order move to control center********************" );
 		int rowCount = BackendBaseClass.getRowCount("MV1");
 		System.out.println("total order'count ="+rowCount);
-for (int i = 1; i <= rowCount; i++) {
-	System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\Automation\\Driver\\chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
+for (int i = 10; i <= rowCount; i++) {
+	System.setProperty("webdriver.chrome.driver", ".//Driver//chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
 	driver= new ChromeDriver();
 		//driver.get("https://www.netmeds.com");
 		
@@ -104,6 +105,88 @@ for (int i = 1; i <= rowCount; i++) {
 			
 			
 		}
+		
+		
+		
+		////////////////////////// 
+		Thread.sleep(3000);
+		String orderId = driver.findElement(By.xpath("(//div[@class='col_secound'])[1]")).getText();
+		System.out.println(orderId);
+		
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		
+		Thread.sleep(3000);
+		String orderId1 = driver.findElement(By.xpath("(//div[@class='col_secound'])[1]")).getText();
+		System.out.println(orderId1);
+		assertTrue(orderId.equals(orderId1));
+		Thread.sleep(3000);
+	/*	if (orderId.equals(orderId1)) {
+			System.out.println("Refresh Scenario Successfull");
+		} else {
+			System.err.println("Refresh Scenario UN-Successfull");
+		}
+	*/	
+		// Valid
+		Thread.sleep(3000);
+		driver.findElement(By.id("valid1")).click();
+		
+		/*
+		// Rx
+		Thread.sleep(3000);
+		driver.findElement(By.id("invalid1")).click();
+		
+		// Transfer
+		Thread.sleep(3000);
+		driver.findElement(By.id("transfer_to_admin")).click();
+		*/
+		//Forward
+		Thread.sleep(3000);
+		driver.findElement(By.id("validate1_forward")).click();
+		
+		
+		
+		try {
+			Thread.sleep(3000);
+			driver.findElement(By.id("pharma_doctorname_customerorder")).sendKeys("Test");
+			Thread.sleep(3000);
+			driver.findElement(By.id("pharma_patientname_customerorder")).sendKeys("Test");
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//span[contains(text(),'Submit')]")).click();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			System.out.println("No Confirmation Screen");
+		}
+		
+		
+		Thread.sleep(3000);
+		String orderId2 = driver.findElement(By.xpath("(//div[@class='col_secound'])[1]")).getText();
+		System.out.println(orderId2);
+		assertFalse(orderId1.equals(orderId2));
+		Thread.sleep(3000);
+	/*	if (!(orderId1.contains(orderId2))) {
+			System.out.println("Valid Scenario Successfull");
+		} else {
+			System.err.println("Valid Scenario Un-Successfull");
+		}
+		
+		*/
+		
+		/*
+		driver.findElement(By.xpath("//a[@data-toggle='dropdown']")).click();
+		Thread.sleep(3000);
+		
+		Actions acc = new Actions(driver);
+		acc.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Log Out')]"))).click().build().perform();
+		//driver.findElement(By.xpath("//a[contains(text(),'Log Out')]"))
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		System.out.println("Test 1 Ends");
+*/
+		
+		
+		
+		///////////////////
 		long endTime   = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
 		System.out.println(totalTime);
