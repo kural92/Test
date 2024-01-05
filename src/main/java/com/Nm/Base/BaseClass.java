@@ -79,7 +79,7 @@ public class BaseClass {
 		driver = new ChromeDriver(option);
 		driver.get(production_homeurl);
 		
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		
 		return driver;
 	}

@@ -67,7 +67,8 @@ public class BackendorderFlow extends BackendBaseClass {
 		logger.log(Status.PASS, "*************order move to control center********************" );
 		int rowCount = BackendBaseClass.getRowCount("MV1");
 		System.out.println("total order'count ="+rowCount);
-for (int i = 10; i <= rowCount; i++) {
+for (int i = 0; i <= rowCount; i++) {
+	
 	System.setProperty("webdriver.chrome.driver", ".//Driver//chromedriver.exe"); //D:\\Automation\\Driver\\chromedriver.exe
 	driver= new ChromeDriver();
 		//driver.get("https://www.netmeds.com");
@@ -92,23 +93,9 @@ for (int i = 10; i <= rowCount; i++) {
 		try {
 		String ss=driver.findElement(By.xpath("//a[@class='dropdown-toggle']")).getText();
 		assertTrue(ss.equalsIgnoreCase(user));
-		}catch(Exception e) {
+		
 
-			TakesScreenshot screenshot = (TakesScreenshot) driver;
-			File src = screenshot.getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(src, new File("./Report/"+ user+".png"));
-			System.out.println("Successfully captured a screenshot");
-			//logger.log(Status.FAIL, result.getThrowable());
-			logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath(user+".png"));
-		
-	
-			
-			
-		}
-		
-		
-		
-		////////////////////////// 
+		//////////////////////////  
 		Thread.sleep(3000);
 		String orderId = driver.findElement(By.xpath("(//div[@class='col_secound'])[1]")).getText();
 		System.out.println(orderId);
@@ -183,6 +170,23 @@ for (int i = 10; i <= rowCount; i++) {
 		driver.switchTo().alert().accept();
 		System.out.println("Test 1 Ends");
 */
+		
+		
+		}catch(Exception e) {
+
+			TakesScreenshot screenshot = (TakesScreenshot) driver;
+			File src = screenshot.getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(src, new File("./Report/"+ user+".png"));
+			System.out.println("Successfully captured a screenshot");
+			//logger.log(Status.FAIL, result.getThrowable());
+			logger.log(Status.FAIL, "Snapshot below: " + logger.addScreenCaptureFromPath(user+".png"));
+		
+	
+			
+			
+		}
+		
+		
 		
 		
 		
